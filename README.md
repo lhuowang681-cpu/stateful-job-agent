@@ -1,17 +1,16 @@
 # 🧠 Job Agent：长期求职智能体与证据约束工作台
 
-> 面向长期求职流程的个人 Agent 系统：让大模型负责理解、比较与决策，让程序负责证据、权限、状态、副作用与失败恢复。
+> 面向长期求职流程的个人 Agent 系统，覆盖岗位分析、候选经历检索、证据核验、申请状态管理和动态模拟面试。
 
-这个项目最初只是一个用于分析 JD 和准备面试的工具，后来逐步演化成一个更完整的长期求职工作台。  
-目前重点不再是“让模型多做几个功能”，而是解决三个更实际的问题：
+Job Agent 主要解决三类问题：
 
-- **语义相关不等于事实支持**：检索到相似经历，并不代表候选人真的满足岗位要求；
-- **长期任务不能只靠上下文窗口**：岗位、申请阶段、分析结果和面试记录需要持久化、可恢复、可审计；
-- **子模块高分不代表完整系统可靠**：需求抽取、检索、证据核验和最终匹配必须分层评测，才能知道错误真正发生在哪里。
+- **岗位要求与个人经历难以可靠对应**：通过原子化要求、候选检索和逐条证据核验，减少语义相似带来的误匹配；
+- **长期求职信息容易散落在不同会话中**：通过持久化状态、Checkpoint 和阶段事件记录，让岗位、申请进度和面试准备可以跨会话延续；
+- **Agent 出错后难以定位原因**：把需求抽取、检索、证据判断、聚合和最终匹配拆开评测，保留每一层的错误归因。
 
-因此，项目把 **LLM 的开放语义能力** 与 **Python 的确定性执行职责** 明确分开，并围绕四条主线持续迭代：
+项目目前围绕四条主线持续迭代：
 
-**受控 Agent Runtime｜长期状态管理｜Evidence Grounding｜分层评测与错误归因**
+**受控 Agent Runtime｜长期状态管理｜证据核验｜分层评测与错误归因**
 
 ---
 
@@ -19,139 +18,123 @@
 
 ### 🤖 受控 Agent Runtime
 
-自研轻量 `AgentLoop`，把模型每轮决策限制为：
+为了让 Agent 在长期任务中保持可控、可恢复，自研轻量 `AgentLoop`，将模型每轮决策约束为：
 
 ```text
 Finish / InputRequest / Action
 ```
 
-模型可以决定“做什么”，但不能直接修改业务状态。所有 Tool Action 都必须经过运行时统一处理：
+模型负责生成下一步动作，Runtime 负责执行约束和状态提交。当前已经实现：
 
 - Tool Registry 与输入输出 Schema
-- Tool / Skill / Runtime Policy 多层权限约束
+- Tool / Skill / Runtime Policy 多层权限控制
 - Approval 与调用预算
 - Tool Executor 与结构化 Observation
 - 独立 Verifier
 - Checkpoint / Resume
 - 原子状态提交与失败保护
 
-对于非幂等操作，如果发生“Tool 已执行，但 receipt 尚未可靠落库”的崩溃窗口，系统不会盲目重试，而是进入 `UNCERTAIN`，等待人工核对外部副作用。
+对于非幂等操作，系统会记录 Tool 执行状态和 receipt。发生执行结果不确定的崩溃窗口时，任务进入 `UNCERTAIN`，等待进一步核对，避免重复触发外部副作用。
 
 ---
 
 ### 🔎 检索与证据核验
 
-项目刻意把“**检索相关性**”和“**事实支持关系**”拆成两件事。
-
-当前主链路为：
+为了把岗位要求和候选人真实经历可靠对应，当前使用下面的处理链路：
 
 ```text
 JD
 → 岗位要求抽取
 → 原子要求
 → 候选经历召回
-→ 逐条 Evidence 判定
+→ 逐条证据判定
 → 确定性聚合
-→ JobMatch / Gap
+→ 匹配结果 / 能力缺口
 ```
 
-其中：
+主要实现包括：
 
 - 使用 `Qwen3-Embedding-0.6B + FAISS` 召回候选经历；
-- 岗位要求先拆成原子要求，避免一个复合 requirement 同时混入多个判断；
-- LLM 只负责生成语义候选与判定；
-- 原文定位、hash、provenance 上限、派生状态与最终聚合由 Python 计算；
-- quote 无法唯一定位、source 不存在、snapshot 过期或来源等级越界时直接 fail closed。
+- 将复合岗位要求拆成原子要求，降低多个条件混在一次判断中的歧义；
+- 对每个原子要求单独生成候选证据并判断支持关系；
+- 使用原文 span、hash 和 provenance 保留证据来源；
+- 由 Python 完成证据等级上限、派生状态和最终聚合；
+- quote 无法唯一定位、source 不存在、snapshot 失效或来源等级不满足约束时终止该条证据写入。
 
-这样做的目标不是让模型“看起来更聪明”，而是让最终结论能够回到候选人的原始经历，并明确区分：
-
-> **“内容很像”** 和 **“它真的能支持这个岗位要求”**
+最终每个匹配结论都可以回溯到候选人的原始经历，方便后续生成简历、准备面试和分析能力缺口。
 
 ---
 
 ### 💾 长期状态与可恢复执行
 
-项目使用 `SQLite CareerStore` 管理长期求职状态，包括：
+为了支持跨会话、跨进程的长期求职流程，使用 `SQLite CareerStore` 管理：
 
 - 公司与岗位
 - 申请阶段与阶段事件
 - 分析结果与 artifact 链接
 - 面试记录索引
-- legacy session / tracker 迁移审计
+- 历史 session / tracker 迁移信息
 
-阶段变化采用 append-only event 记录，并在同一 transaction 内更新当前状态。  
-历史数据迁移采用 source hash 去重，不覆盖、不删除旧数据；无法可靠归属的记录进入待整理队列，而不是静默猜测。
+申请阶段采用 append-only event 记录，并在同一 transaction 内更新当前状态。历史数据迁移使用 source hash 去重，无法可靠归属的记录进入待整理队列。
 
-异步 Backend 进一步验证了：
+在异步 Backend 路径中，还实现并验证了：
 
-- PostgreSQL 状态权威
-- transactional Outbox
+- PostgreSQL 状态存储
+- Transactional Outbox
 - Redis Streams 唤醒
 - Worker lease / heartbeat / fencing
 - Checkpoint Adapter
 - Tool operation ledger
 - Provider 限流、熔断与故障恢复
 
-这部分定位为 **Agent Backend 的可靠性学习与验证路径**，不宣称已经达到生产级多租户 SaaS。
+这些组件用于验证长任务、审批暂停、Worker 重启和重复投递场景下的恢复行为。
 
 ---
 
 ### 🎤 动态模拟面试
 
-动态面试不是固定题库轮播，而是根据冻结的岗位与候选人上下文逐轮决策。
-
-Interviewer 每轮只能选择一个动作：
+为了让模拟面试能够根据回答继续追问，而不是按固定题库顺序执行，Interviewer 每轮根据当前上下文选择一个动作：
 
 ```text
 追问 / 切换主题 / 只读检索 / 结束
 ```
 
-输入可以来自：
+面试上下文由以下信息组成：
 
-- JD requirements 与 Evidence
+- JD 要求与已核验 Evidence
 - 候选人的 Project Dossier
 - 公开基础题 anchor
-- 受 allowlist、budget 与 timeout 约束的只读 repository/source Tool
+- 受 allowlist、budget 和 timeout 约束的只读 repository / source Tool
+- 历史回答与当前轮次状态
 
-每次回答都会成为下一轮 observation。  
-Transcript 与最终 debrief 只消费上游 Evidence，不反向修改 Evidence，避免模拟面试中的内容污染事实层。
+每次回答都会成为下一轮输入。Transcript 和最终 debrief 使用已经生成的 Evidence 与面试轨迹，支持后续复盘和针对性准备。
 
 ---
 
 ## 🏗️ 系统架构
 
-为了避免把内部实现细节全塞进一张图，这里只保留项目最核心的业务关系：
+README 只保留最核心的业务链路，内部权限、Worker、Redis、Outbox 等实现细节放在 `docs/` 中。
 
 ```mermaid
 flowchart LR
-    U["用户 / JD"] --> A["Agent Runtime"]
-
-    A --> J["岗位分析"]
-    A --> I["动态面试"]
-    A --> T["Tool 调用"]
-
-    J --> R["Requirement 抽取"]
-    R --> K["Career Knowledge<br/>检索候选经历"]
-    K --> E["Evidence 核验"]
-    E --> M["JobMatch / Gap 分析"]
-
-    I --> C["面试上下文<br/>JD + Evidence + 历史回答"]
-    C --> I
-
-    A <--> S["CareerStore<br/>岗位 · 申请状态 · Artifact · Checkpoint"]
+    A["JD / Career Data"] --> B["Agent Runtime + CareerStore"]
+    B --> C["岗位分析与候选检索"]
+    C --> D["证据核验"]
+    D --> E["匹配结果 / 面试准备 / 申请状态"]
+    E --> F["动态模拟面试"]
 ```
 
-这张图只表达三个核心关系：
+主链路可以概括为：
 
-- **Agent Runtime** 负责统一控制模型决策、Tool 调用、权限与状态提交；
-- **岗位分析链路** 将 JD 拆成 requirement，经检索与 Evidence 核验后得到 JobMatch / Gap；
-- **CareerStore** 保存长期状态和 Checkpoint，让岗位分析、申请跟踪与动态面试可以跨会话继续。
+**输入求职信息 → Agent 统一调度与持久化 → 岗位分析和检索 → 证据核验 → 生成求职状态与准备材料 → 动态面试**
 
-更细的 Tool Policy、Verifier、PostgreSQL / Redis、Worker、Outbox 与故障恢复实现放在 `docs/` 中，不在 README 首页展开。
+详细职责边界见 [`docs/architecture.md`](docs/architecture.md)。
+
+---
 
 ## 📊 评测结果
 
-项目把 **工程合同、模型行为、Evidence 子系统和完整业务链路** 分开报告。
+评测按照 **需求抽取、检索、证据核验、父级聚合和最终匹配** 分层进行，同时保留完整链路结果。
 
 ### 🧪 真实 JD 未见留出集
 
@@ -163,7 +146,7 @@ flowchart LR
 - **42 个**有证据要求
 - **59 个**真实证据缺口
 
-评测前先冻结人工 Gold；模型运行后不修改标注，也不针对该 holdout 继续调参。
+人工 Gold 在模型运行前冻结，运行结束后未修改标注。
 
 | 指标                                                         |       结果 |
 | ------------------------------------------------------------ | ---------: |
@@ -172,30 +155,29 @@ flowchart LR
 | 有证据要求 Recall@3                                          |   **100%** |
 | 有证据要求 Recall@5                                          |   **100%** |
 | 59 个真实证据缺口中的错误支持                                |   **1 次** |
-| 父级 requirement 状态准确率                                  | **90.20%** |
+| 父级要求状态准确率                                           | **90.20%** |
 | Positive / Gap Accuracy                                      | **94.12%** |
 | Raw JD → Requirement → Evidence → JobMatch 完整链路 strength/gap correctness | **50.98%** |
 
-这组结果说明：
+这轮结果带来了两个直接结论：
 
-- **Retrieval / Evidence 层已经在 unseen 真实 JD 上表现稳定；**
-- 完整链路仍会受到 requirement miss 与下游 semantic error 影响；
-- 因此不会把 `93.07% Evidence Accuracy` 描述成“端到端准确率 93%”。
+- Retrieval / Evidence 层在未见真实 JD 上保持了较高的召回和支持精度；
+- 完整链路当前的主要损失来自 Requirement miss 和下游 semantic error。
 
-`50.98%` 被保留为完整链路的当前基线，而不是在看过 holdout 结果后继续针对性调参。
+`50.98%` 的完整链路结果作为下一阶段优化基线，后续重点放在需求抽取召回和下游语义判断上。
 
 ---
 
 ### 🧩 Agent 与可靠性评测
 
-项目还保留独立的 Agent / Backend 评测，用来回答不同问题：
+除了 Evidence 链路，还维护独立的 Agent / Backend 测试，用于验证执行约束和恢复能力：
 
-- Stateful Agent acceptance cases：工具选择、授权、跨轮指代、状态修改与恢复
-- Application Assistant：Approval、Checkpoint Resume、Grounding、重复副作用与 `UNCERTAIN`
-- Fault Injection：PostgreSQL、Redis、Worker、Provider、Queue 等故障路径
-- Mock 与真实 Provider 结果分开报告，不把 Mock 延迟或工程回归解释为真实模型性能
+- Stateful Agent acceptance cases：工具选择、授权、跨轮指代、状态修改与恢复；
+- Application Assistant：Approval、Checkpoint Resume、Grounding、重复副作用与 `UNCERTAIN`；
+- Fault Injection：PostgreSQL、Redis、Worker、Provider、Queue 等故障路径；
+- Mock Provider 与真实 Provider 分开记录，分别用于工程回归和模型行为评测。
 
-当前公开文档中，Application Assistant 的 24 条确定性场景全部通过；其意义是验证 Runtime 合同与恢复路径，不代表开放输入下真实模型同样达到 100%。
+当前公开文档中的 Application Assistant 24 条确定性场景全部通过，覆盖 Runtime 合同、审批、恢复与重复副作用处理。
 
 详细评测口径见 [`docs/evaluation.md`](docs/evaluation.md)。
 
@@ -259,9 +241,9 @@ streamlit run src/job_agent/ui/app.py
 ```
 
 实时模型调用需要在进程环境中配置对应凭据和允许的 Skill 包。  
-API Key、真实简历、SQLite、Checkpoint、日志与原始模型响应都不应提交到仓库。
+API Key、真实简历、SQLite、Checkpoint、日志与原始模型响应默认保存在本地环境。
 
-异步 Backend、Docker Compose、故障注入和压测的启动方式请查看 `docs/` 中对应文档，而不是在 README 首页展开全部运维细节。
+异步 Backend、Docker Compose、故障注入和压测的启动方式见 `docs/` 中对应文档。
 
 ---
 
@@ -277,21 +259,18 @@ API Key、真实简历、SQLite、Checkpoint、日志与原始模型响应都不
 
 ---
 
-## ⚠️ 能力边界
+## 📌 当前实现范围
 
-这个仓库是一个 **Agent 工程与评测项目**，不是生产招聘平台。
+当前版本已经覆盖：
 
-当前不会宣称：
+- 单用户长期求职状态管理
+- 岗位分析与 Evidence Grounding
+- 动态模拟面试
+- Tool 权限、审批、Checkpoint 与失败恢复
+- 真实 JD 未见留出集评测
+- Backend 异步执行、Worker 恢复与故障注入实验
 
-- 测试通过率等于真实模型语义准确率；
-- Evidence 子系统指标等于完整端到端表现；
-- Mock Provider 结果等于真实 Provider 质量；
-- Backend 压测结果构成生产 SLA；
-- 已实现生产身份系统、共享多租户 CareerStore 或任意第三方系统 exactly-once；
-- 系统可以安全地自动投递、发送真实邮件或执行不受控外部写操作；
-- JobMatch 分数等同于真实录用概率。
-
-项目更关注的是：**把哪些能力已经验证、哪些仍未证明，说清楚。**
+后续工程化方向包括多租户身份系统、更多真实外部系统接入和更完整的端到端自动化流程。
 
 ---
 
@@ -299,9 +278,9 @@ API Key、真实简历、SQLite、Checkpoint、日志与原始模型响应都不
 
 - 提高真实 JD 上的 Requirement Extraction recall
 - 降低完整 JobMatch 链路中的 downstream semantic error
-- 在不牺牲 Supported Precision 的前提下提高端到端 correctness
-- 继续使用冻结数据与未见留出集评测，而不是在 holdout 上反复调参
-- 将评测、失败恢复和 Evidence contract 保持为系统的一等能力
+- 在保持 Supported Precision 的同时提高端到端 correctness
+- 持续扩展冻结数据与未见留出集
+- 完善评测、失败恢复和 Evidence contract
 
 ---
 
