@@ -227,8 +227,8 @@ flowchart LR
 要求 **Python 3.10+**。
 
 ```bash
-git clone https://github.com/lhuowang681-cpu/agent-backend-service.git
-cd agent-backend-service
+git clone https://github.com/lhuowang681-cpu/stateful-job-agent.git
+cd stateful-job-agent
 
 python -m pip install -e ".[ui,dev]"
 python -m pytest -q
