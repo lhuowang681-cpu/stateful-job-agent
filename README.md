@@ -240,8 +240,8 @@ JD
 需要 Python 3.11+（代码使用 `datetime.UTC`）。包含 MCP/FAISS 的确定性检索与工作流测试还需 `career-knowledge` 依赖：
 
 ```bash
-git clone https://github.com/lhuowang681-cpu/agent-backend-service.git
-cd agent-backend-service
+git clone https://github.com/lhuowang681-cpu/stateful-job-agent.git
+cd stateful-job-agent
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 python -m pip install -e ".[dev,ui,career-knowledge]"

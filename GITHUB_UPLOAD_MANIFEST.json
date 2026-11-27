@@ -73,8 +73,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 21620,
-      "sha256": "dd86f15ba15e1b28e9b2135af95c596f10f593b499ed94cf6f091f0ab2674f39"
+      "bytes": 21614,
+      "sha256": "b685cbec62deecace8c46ae601aa4048e550c5c05ed285703a12bd8b7b7fbffd"
     },
     {
       "path": "compose.backend.load.yml",
@@ -6570,5 +6570,8 @@
       "kind": "bearer"
     }
   ],
-  "exportRedactions": []
+  "exportRedactions": [],
+  "navigationChanges": [
+    "README clone URL and directory corrected to stateful-job-agent"
+  ]
 }
