@@ -41,6 +41,9 @@ class ModelDecisionEvent(EventIdentity):
     model: str
     input_tokens: int | None = None
     output_tokens: int | None = None
+    cached_tokens: int | None = None
+    reasoning_tokens: int | None = None
+    cost: float | None = None
 
 
 class PolicyDecisionEvent(EventIdentity):

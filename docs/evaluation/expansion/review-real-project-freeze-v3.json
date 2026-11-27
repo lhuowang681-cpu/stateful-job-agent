@@ -1,0 +1,61 @@
+{
+  "version": "real-project-research-freeze-3",
+  "decision_before_heldout": true,
+  "dataset_hash": "733e50139158514e0a694db0841a143b57a91ccc4b61f954de4c693523a92350",
+  "manifest_sha256": "a7a4a58c4c287081422809ae93f4d96d04b03acd32c6b9aaafcb95ca27d13ede",
+  "algorithm_identity": "f063370b6d6d86eef43d113261774388f9e2a6676cb20d7c806e81d10423759b",
+  "runtime": {
+    "embedding": {
+      "dimension": 1024,
+      "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+      "max_input_tokens": 1024,
+      "model": "Qwen3-Embedding-0.6B",
+      "normalization": "l2",
+      "provider": "sentence_transformers_local",
+      "query_template": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:{query}",
+      "revision": "47191d5687dbf14319ccb312680caa31a179ed5e16539b8c06aeddc53b63ef6c"
+    },
+    "reranker": {
+      "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+      "max_pair_tokens": 512,
+      "model": "mmarco-mMiniLMv2-L12-H384-v1",
+      "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+      "score_semantics": "raw_logit"
+    },
+    "settings": {
+      "context_char_budget": 24000,
+      "dense_candidates": 20,
+      "fusion_candidates": 30,
+      "max_output": 20,
+      "relation_candidates": 8,
+      "rerank_candidates": 30,
+      "rerank_input_chars": 6000,
+      "rrf_k": 60,
+      "sparse_candidates": 20,
+      "version": "retrieval-policy-1"
+    }
+  },
+  "dev_raw_sha256": "84b5b3784f5c16502a92ee0fd9cb11dab3a3a6aff7708e422308d5bb3251761c",
+  "selected_research_profile": "E_code_aware_no_relations",
+  "selection_rule": "highest complete gold coverage on dev; candidate only, no production default change",
+  "dev_selected_complete_coverage": {
+    "cases": 16,
+    "mean": 0.875
+  },
+  "test_variants": [
+    "A_bm25",
+    "B_dense",
+    "C_hybrid",
+    "D_hybrid_rerank",
+    "E_code_aware_no_relations",
+    "F_code_aware_relations",
+    "G_flat_bm25"
+  ],
+  "repeats": 3,
+  "limit": 5,
+  "tuning_rounds": 0,
+  "human_reviewed": 0,
+  "claim_support": null,
+  "final_business_quality": null,
+  "production_recommendation": "not_established"
+}

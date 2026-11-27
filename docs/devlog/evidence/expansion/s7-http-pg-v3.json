@@ -1,0 +1,31 @@
+{
+  "phase": "S7",
+  "transport": "real_loopback_http",
+  "source_identity": "c603ae740483bdd56cbc4148c538858f7f7a07c66ea5086f043dd44349c9fc14",
+  "pid": 113814,
+  "data": "authored synthetic CC0 only",
+  "project_backend": "postgresql",
+  "checks": [
+    "real_pg_snapshot_index_task",
+    "answer_finish_source_observation_dedup",
+    "explicit_check_preferences_and_review_schedule",
+    "new_frozen_question_empty_history_hidden_rubric_same_recorded_conditions",
+    "user_correction_pause_resume_withdraw_control_original_history",
+    "deleted_payload_scrubbed_and_not_recreated",
+    "real_http_pg_project_delete_invalidates_learning_without_resurrection"
+  ],
+  "human_quality_verified": false,
+  "mastery_claim": null,
+  "model": null,
+  "index_task": "task-07f53b2bf50b49a39d5ce0babfff5621",
+  "observation_count": 3,
+  "comparison": {
+    "source_observation_id": "learn-15853c3474bf03c8562d85a7a3da24fc",
+    "status": "same_recorded_conditions",
+    "before_finding": "lexical_located",
+    "after_finding": "lexical_located",
+    "mastery_claim": null,
+    "warning": "仅比较同记录条件下的参考评价，不计算能力提升；用户纠正/撤回或条件变化时不直接比较。"
+  },
+  "status": "passed"
+}

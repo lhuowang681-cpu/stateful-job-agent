@@ -1,0 +1,6 @@
+{
+  "mirror_url": "https://repo.huaweicloud.com/redis/redis-7.2.16.tar.gz",
+  "source_sha256": "960a8ec15e34ff40e57ff16837b26b33bd81f2da6d24497bb63de532a323a18e",
+  "primary_hash_url": "https://raw.githubusercontent.com/redis/redis-hashes/master/README",
+  "bytes": 3410977
+}

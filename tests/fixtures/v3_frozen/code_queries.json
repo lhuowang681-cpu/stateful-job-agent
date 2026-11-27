@@ -1,0 +1,530 @@
+{
+  "dataset": "v3-synthetic-frozen-v1",
+  "synthetic": true,
+  "license": "CC0-1.0",
+  "gold_method": "mechanically constructed source definitions and direct import calls; not human semantic labels",
+  "files": {
+    "ledger/unit_00.py": "def commit_ticket_00(request_id, store):\n    \"\"\"Persist ticket 00 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_00.py": "from ledger.unit_00 import commit_ticket_00\n\ndef handle_00(request_id, store):\n    return commit_ticket_00(request_id, store)\n",
+    "ledger/unit_01.py": "def commit_ticket_01(request_id, store):\n    \"\"\"Persist ticket 01 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_01.py": "from ledger.unit_01 import commit_ticket_01\n\ndef handle_01(request_id, store):\n    return commit_ticket_01(request_id, store)\n",
+    "ledger/unit_02.py": "def commit_ticket_02(request_id, store):\n    \"\"\"Persist ticket 02 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_02.py": "from ledger.unit_02 import commit_ticket_02\n\ndef handle_02(request_id, store):\n    return commit_ticket_02(request_id, store)\n",
+    "ledger/unit_03.py": "def commit_ticket_03(request_id, store):\n    \"\"\"Persist ticket 03 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_03.py": "from ledger.unit_03 import commit_ticket_03\n\ndef handle_03(request_id, store):\n    return commit_ticket_03(request_id, store)\n",
+    "ledger/unit_04.py": "def commit_ticket_04(request_id, store):\n    \"\"\"Persist ticket 04 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_04.py": "from ledger.unit_04 import commit_ticket_04\n\ndef handle_04(request_id, store):\n    return commit_ticket_04(request_id, store)\n",
+    "ledger/unit_05.py": "def commit_ticket_05(request_id, store):\n    \"\"\"Persist ticket 05 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_05.py": "from ledger.unit_05 import commit_ticket_05\n\ndef handle_05(request_id, store):\n    return commit_ticket_05(request_id, store)\n",
+    "ledger/unit_06.py": "def commit_ticket_06(request_id, store):\n    \"\"\"Persist ticket 06 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_06.py": "from ledger.unit_06 import commit_ticket_06\n\ndef handle_06(request_id, store):\n    return commit_ticket_06(request_id, store)\n",
+    "ledger/unit_07.py": "def commit_ticket_07(request_id, store):\n    \"\"\"Persist ticket 07 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_07.py": "from ledger.unit_07 import commit_ticket_07\n\ndef handle_07(request_id, store):\n    return commit_ticket_07(request_id, store)\n",
+    "ledger/unit_08.py": "def commit_ticket_08(request_id, store):\n    \"\"\"Persist ticket 08 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_08.py": "from ledger.unit_08 import commit_ticket_08\n\ndef handle_08(request_id, store):\n    return commit_ticket_08(request_id, store)\n",
+    "ledger/unit_09.py": "def commit_ticket_09(request_id, store):\n    \"\"\"Persist ticket 09 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_09.py": "from ledger.unit_09 import commit_ticket_09\n\ndef handle_09(request_id, store):\n    return commit_ticket_09(request_id, store)\n",
+    "ledger/unit_10.py": "def commit_ticket_10(request_id, store):\n    \"\"\"Persist ticket 10 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_10.py": "from ledger.unit_10 import commit_ticket_10\n\ndef handle_10(request_id, store):\n    return commit_ticket_10(request_id, store)\n",
+    "ledger/unit_11.py": "def commit_ticket_11(request_id, store):\n    \"\"\"Persist ticket 11 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_11.py": "from ledger.unit_11 import commit_ticket_11\n\ndef handle_11(request_id, store):\n    return commit_ticket_11(request_id, store)\n",
+    "ledger/unit_12.py": "def commit_ticket_12(request_id, store):\n    \"\"\"Persist ticket 12 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_12.py": "from ledger.unit_12 import commit_ticket_12\n\ndef handle_12(request_id, store):\n    return commit_ticket_12(request_id, store)\n",
+    "ledger/unit_13.py": "def commit_ticket_13(request_id, store):\n    \"\"\"Persist ticket 13 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_13.py": "from ledger.unit_13 import commit_ticket_13\n\ndef handle_13(request_id, store):\n    return commit_ticket_13(request_id, store)\n",
+    "ledger/unit_14.py": "def commit_ticket_14(request_id, store):\n    \"\"\"Persist ticket 14 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_14.py": "from ledger.unit_14 import commit_ticket_14\n\ndef handle_14(request_id, store):\n    return commit_ticket_14(request_id, store)\n",
+    "ledger/unit_15.py": "def commit_ticket_15(request_id, store):\n    \"\"\"Persist ticket 15 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_15.py": "from ledger.unit_15 import commit_ticket_15\n\ndef handle_15(request_id, store):\n    return commit_ticket_15(request_id, store)\n",
+    "ledger/unit_16.py": "def commit_ticket_16(request_id, store):\n    \"\"\"Persist ticket 16 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_16.py": "from ledger.unit_16 import commit_ticket_16\n\ndef handle_16(request_id, store):\n    return commit_ticket_16(request_id, store)\n",
+    "ledger/unit_17.py": "def commit_ticket_17(request_id, store):\n    \"\"\"Persist ticket 17 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_17.py": "from ledger.unit_17 import commit_ticket_17\n\ndef handle_17(request_id, store):\n    return commit_ticket_17(request_id, store)\n",
+    "ledger/unit_18.py": "def commit_ticket_18(request_id, store):\n    \"\"\"Persist ticket 18 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_18.py": "from ledger.unit_18 import commit_ticket_18\n\ndef handle_18(request_id, store):\n    return commit_ticket_18(request_id, store)\n",
+    "ledger/unit_19.py": "def commit_ticket_19(request_id, store):\n    \"\"\"Persist ticket 19 after checking request identity.\"\"\"\n    if request_id in store:\n        return store[request_id]\n    store[request_id] = \"accepted\"\n    return store[request_id]\n",
+    "api/route_19.py": "from ledger.unit_19 import commit_ticket_19\n\ndef handle_19(request_id, store):\n    return commit_ticket_19(request_id, store)\n"
+  },
+  "queries": [
+    {
+      "id": "exact-00",
+      "query": "commit_ticket_00",
+      "gold_files": [
+        "ledger/unit_00.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_00"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-00",
+      "query": "commit_ticket_00 callers references",
+      "gold_files": [
+        "ledger/unit_00.py",
+        "api/route_00.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_00",
+        "handle_00"
+      ],
+      "kind": "cross_file"
+    },
+    {
+      "id": "exact-01",
+      "query": "commit_ticket_01",
+      "gold_files": [
+        "ledger/unit_01.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_01"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-01",
+      "query": "commit_ticket_01 callers references",
+      "gold_files": [
+        "ledger/unit_01.py",
+        "api/route_01.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_01",
+        "handle_01"
+      ],
+      "kind": "cross_file"
+    },
+    {
+      "id": "exact-02",
+      "query": "commit_ticket_02",
+      "gold_files": [
+        "ledger/unit_02.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_02"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-02",
+      "query": "commit_ticket_02 callers references",
+      "gold_files": [
+        "ledger/unit_02.py",
+        "api/route_02.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_02",
+        "handle_02"
+      ],
+      "kind": "cross_file"
+    },
+    {
+      "id": "exact-03",
+      "query": "commit_ticket_03",
+      "gold_files": [
+        "ledger/unit_03.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_03"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-03",
+      "query": "commit_ticket_03 callers references",
+      "gold_files": [
+        "ledger/unit_03.py",
+        "api/route_03.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_03",
+        "handle_03"
+      ],
+      "kind": "cross_file"
+    },
+    {
+      "id": "exact-04",
+      "query": "commit_ticket_04",
+      "gold_files": [
+        "ledger/unit_04.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_04"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-04",
+      "query": "commit_ticket_04 callers references",
+      "gold_files": [
+        "ledger/unit_04.py",
+        "api/route_04.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_04",
+        "handle_04"
+      ],
+      "kind": "cross_file"
+    },
+    {
+      "id": "exact-05",
+      "query": "commit_ticket_05",
+      "gold_files": [
+        "ledger/unit_05.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_05"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-05",
+      "query": "commit_ticket_05 callers references",
+      "gold_files": [
+        "ledger/unit_05.py",
+        "api/route_05.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_05",
+        "handle_05"
+      ],
+      "kind": "cross_file"
+    },
+    {
+      "id": "exact-06",
+      "query": "commit_ticket_06",
+      "gold_files": [
+        "ledger/unit_06.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_06"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-06",
+      "query": "commit_ticket_06 callers references",
+      "gold_files": [
+        "ledger/unit_06.py",
+        "api/route_06.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_06",
+        "handle_06"
+      ],
+      "kind": "cross_file"
+    },
+    {
+      "id": "exact-07",
+      "query": "commit_ticket_07",
+      "gold_files": [
+        "ledger/unit_07.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_07"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-07",
+      "query": "commit_ticket_07 callers references",
+      "gold_files": [
+        "ledger/unit_07.py",
+        "api/route_07.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_07",
+        "handle_07"
+      ],
+      "kind": "cross_file"
+    },
+    {
+      "id": "exact-08",
+      "query": "commit_ticket_08",
+      "gold_files": [
+        "ledger/unit_08.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_08"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-08",
+      "query": "commit_ticket_08 callers references",
+      "gold_files": [
+        "ledger/unit_08.py",
+        "api/route_08.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_08",
+        "handle_08"
+      ],
+      "kind": "cross_file"
+    },
+    {
+      "id": "exact-09",
+      "query": "commit_ticket_09",
+      "gold_files": [
+        "ledger/unit_09.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_09"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-09",
+      "query": "commit_ticket_09 callers references",
+      "gold_files": [
+        "ledger/unit_09.py",
+        "api/route_09.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_09",
+        "handle_09"
+      ],
+      "kind": "cross_file"
+    },
+    {
+      "id": "exact-10",
+      "query": "commit_ticket_10",
+      "gold_files": [
+        "ledger/unit_10.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_10"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-10",
+      "query": "commit_ticket_10 callers references",
+      "gold_files": [
+        "ledger/unit_10.py",
+        "api/route_10.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_10",
+        "handle_10"
+      ],
+      "kind": "cross_file"
+    },
+    {
+      "id": "exact-11",
+      "query": "commit_ticket_11",
+      "gold_files": [
+        "ledger/unit_11.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_11"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-11",
+      "query": "commit_ticket_11 callers references",
+      "gold_files": [
+        "ledger/unit_11.py",
+        "api/route_11.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_11",
+        "handle_11"
+      ],
+      "kind": "cross_file"
+    },
+    {
+      "id": "exact-12",
+      "query": "commit_ticket_12",
+      "gold_files": [
+        "ledger/unit_12.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_12"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-12",
+      "query": "commit_ticket_12 callers references",
+      "gold_files": [
+        "ledger/unit_12.py",
+        "api/route_12.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_12",
+        "handle_12"
+      ],
+      "kind": "cross_file"
+    },
+    {
+      "id": "exact-13",
+      "query": "commit_ticket_13",
+      "gold_files": [
+        "ledger/unit_13.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_13"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-13",
+      "query": "commit_ticket_13 callers references",
+      "gold_files": [
+        "ledger/unit_13.py",
+        "api/route_13.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_13",
+        "handle_13"
+      ],
+      "kind": "cross_file"
+    },
+    {
+      "id": "exact-14",
+      "query": "commit_ticket_14",
+      "gold_files": [
+        "ledger/unit_14.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_14"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-14",
+      "query": "commit_ticket_14 callers references",
+      "gold_files": [
+        "ledger/unit_14.py",
+        "api/route_14.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_14",
+        "handle_14"
+      ],
+      "kind": "cross_file"
+    },
+    {
+      "id": "exact-15",
+      "query": "commit_ticket_15",
+      "gold_files": [
+        "ledger/unit_15.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_15"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-15",
+      "query": "commit_ticket_15 callers references",
+      "gold_files": [
+        "ledger/unit_15.py",
+        "api/route_15.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_15",
+        "handle_15"
+      ],
+      "kind": "cross_file"
+    },
+    {
+      "id": "exact-16",
+      "query": "commit_ticket_16",
+      "gold_files": [
+        "ledger/unit_16.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_16"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-16",
+      "query": "commit_ticket_16 callers references",
+      "gold_files": [
+        "ledger/unit_16.py",
+        "api/route_16.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_16",
+        "handle_16"
+      ],
+      "kind": "cross_file"
+    },
+    {
+      "id": "exact-17",
+      "query": "commit_ticket_17",
+      "gold_files": [
+        "ledger/unit_17.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_17"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-17",
+      "query": "commit_ticket_17 callers references",
+      "gold_files": [
+        "ledger/unit_17.py",
+        "api/route_17.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_17",
+        "handle_17"
+      ],
+      "kind": "cross_file"
+    },
+    {
+      "id": "exact-18",
+      "query": "commit_ticket_18",
+      "gold_files": [
+        "ledger/unit_18.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_18"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-18",
+      "query": "commit_ticket_18 callers references",
+      "gold_files": [
+        "ledger/unit_18.py",
+        "api/route_18.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_18",
+        "handle_18"
+      ],
+      "kind": "cross_file"
+    },
+    {
+      "id": "exact-19",
+      "query": "commit_ticket_19",
+      "gold_files": [
+        "ledger/unit_19.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_19"
+      ],
+      "kind": "exact"
+    },
+    {
+      "id": "cross-19",
+      "query": "commit_ticket_19 callers references",
+      "gold_files": [
+        "ledger/unit_19.py",
+        "api/route_19.py"
+      ],
+      "gold_symbols": [
+        "commit_ticket_19",
+        "handle_19"
+      ],
+      "kind": "cross_file"
+    }
+  ]
+}

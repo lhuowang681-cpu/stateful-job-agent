@@ -1,0 +1,16 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "include_system_site_packages": false,
+  "venv_cfg": "home = C:\\Users\\1\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\ninclude-system-site-packages = false\nversion = 3.12.14\nexecutable = C:\\Users\\1\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe\ncommand = C:\\Users\\1\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe -m venv C:\\Users\\1\\Desktop\\\u5c31\u4e1aagent\\job-agent-v3\\.venv-review-r2\n",
+  "packages": {
+    "job-agent-mvp": "0.1.0",
+    "httpx": "0.28.1",
+    "fastapi": "0.115.14",
+    "pydantic": "2.14.1",
+    "langgraph": "1.2.16",
+    "pytest": "9.1.1"
+  },
+  "install_interrupted_then_completed_in_same_new_env": true,
+  "pip_check": "No broken requirements found",
+  "linux_fresh_install": "not_run"
+}

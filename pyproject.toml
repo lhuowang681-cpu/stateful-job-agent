@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "job-agent-mvp"
 version = "0.1.0"
 description = "Interview-oriented job-search multi-agent MVP with internalized fit verdict node."
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
   "fastapi>=0.115,<0.116",
   "pydantic>=2.6",
@@ -22,18 +22,39 @@ job-agent = "job_agent.cli:main"
 
 [project.optional-dependencies]
 dev = [
-  "httpx>=0.27,<0.28",
+  "httpx>=0.27,<0.29",
   "pytest>=8.0",
+  "reportlab>=4.0,<5.0",
 ]
 ui = [
   "streamlit>=1.37",
 ]
+career-knowledge = [
+  "mcp>=2.0,<3.0",
+  "numpy>=1.26",
+  "faiss-cpu>=1.8",
+  "pypdf>=5.0,<7.0",
+  "python-docx>=1.1,<2.0",
+]
+embedding = [
+  "sentence-transformers>=4.0",
+]
+workbench = [
+  "httpx>=0.27,<0.29",
+  "tree-sitter>=0.26,<0.27",
+  "tree-sitter-javascript>=0.25,<0.26",
+  "tree-sitter-typescript>=0.23,<0.24",
+  "reportlab>=4.0,<5.0",
+  "pypdf>=5.0,<7.0",
+  "python-docx>=1.1,<2.0",
+]
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["src", "."]
+include = ["job_agent*", "fit_verdict_engine*"]
 
 [tool.setuptools.package-data]
-job_agent = ["interview/resources/*.json", "backend_service/migrations/*.sql"]
+job_agent = ["interview/resources/*.json", "backend_service/migrations/*.sql", "resume_workspace/assets/*", "prompts/**/*.md"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src", "."]

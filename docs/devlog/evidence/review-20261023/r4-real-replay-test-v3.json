@@ -1,0 +1,1136 @@
+{
+  "at_utc": "2026-10-23T05:31:22.400553+00:00",
+  "cases": 140,
+  "encoder_calls": {
+    "document_calls": 0,
+    "document_passages": 0,
+    "query_calls": 100
+  },
+  "manifest_sha256": "a7a4a58c4c287081422809ae93f4d96d04b03acd32c6b9aaafcb95ca27d13ede",
+  "reference_raw_sha256": "e83520489bd7c23f19d6a7aa2ecce645394ba077d29d03800d218d42e8428b13",
+  "rows": [
+    {
+      "case_id": "real-test-learning-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-learning-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-interview_repository-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-interview_repository-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-long_term-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-long_term-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-tasks-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-tasks-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-postgres_projects-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-postgres_projects-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-index_streams-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-index_streams-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-index_dispatch-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-index_dispatch-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-project_storage-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-project_storage-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-public_knowledge-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-public_knowledge-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-retrieval_runtime-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-retrieval_runtime-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "real-test-learning-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-learning-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-interview_repository-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-interview_repository-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-long_term-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-long_term-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-tasks-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-tasks-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-postgres_projects-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-postgres_projects-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-index_streams-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-index_streams-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-index_dispatch-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-index_dispatch-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-project_storage-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-project_storage-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-public_knowledge-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-public_knowledge-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-retrieval_runtime-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-retrieval_runtime-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "real-test-learning-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-learning-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-interview_repository-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-interview_repository-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-long_term-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-long_term-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-tasks-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-tasks-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-postgres_projects-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-postgres_projects-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-index_streams-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-index_streams-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-index_dispatch-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-index_dispatch-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-project_storage-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-project_storage-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-public_knowledge-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-public_knowledge-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-retrieval_runtime-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-retrieval_runtime-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "real-test-learning-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-learning-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-interview_repository-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-interview_repository-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-long_term-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-long_term-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-tasks-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-tasks-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-postgres_projects-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-postgres_projects-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-index_streams-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-index_streams-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-index_dispatch-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-index_dispatch-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-project_storage-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-project_storage-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-public_knowledge-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-public_knowledge-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-retrieval_runtime-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-retrieval_runtime-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "real-test-learning-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-learning-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-interview_repository-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-interview_repository-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-long_term-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-long_term-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-tasks-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-tasks-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-postgres_projects-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-postgres_projects-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-index_streams-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-index_streams-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-index_dispatch-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-index_dispatch-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-project_storage-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-project_storage-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-public_knowledge-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-public_knowledge-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-retrieval_runtime-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-retrieval_runtime-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "real-test-learning-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-learning-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-interview_repository-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-interview_repository-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-long_term-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-long_term-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-tasks-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-tasks-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-postgres_projects-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-postgres_projects-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-index_streams-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-index_streams-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-index_dispatch-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-index_dispatch-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-project_storage-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-project_storage-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-public_knowledge-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-public_knowledge-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-retrieval_runtime-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-retrieval_runtime-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "real-test-learning-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "real-test-learning-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "real-test-interview_repository-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "real-test-interview_repository-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "real-test-long_term-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "real-test-long_term-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "real-test-tasks-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "real-test-tasks-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "real-test-postgres_projects-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "real-test-postgres_projects-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "real-test-index_streams-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "real-test-index_streams-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "real-test-index_dispatch-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "real-test-index_dispatch-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "real-test-project_storage-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "real-test-project_storage-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "real-test-public_knowledge-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "real-test-public_knowledge-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "real-test-retrieval_runtime-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "real-test-retrieval_runtime-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    }
+  ],
+  "same_scope": true,
+  "schema_version": "research-replay-1",
+  "status": "passed"
+}

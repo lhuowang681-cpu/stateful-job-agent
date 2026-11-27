@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="2.019" timestamp="2026-10-23T17:07:36.092537+08:00" hostname="DESKTOP-94NI4DV"><testcase classname="tests.test_rag_f3_project_boundary" name="test_guarded_model_result_and_source_boundary_survive_learning_and_fixed_practice" time="1.408"><failure message="AssertionError: ('interview_uncertain_model_call', {'evaluator_calls': 1, 'interviewer_calls': 0, 'provider_calls': 1, 'input_tokens': None, ...})&#10;assert (0 == 1)">env = (&lt;job_agent.resume_workspace.repository.SqliteResumeRepository object at 0x000001C979C559D0&gt;, &lt;starlette.testclient.Te...', 'sequence': 1, 'parent_version_id': None, ...}, &lt;test_rag_f3_project_boundary.Fixture object at 0x000001C979C55C10&gt;)
+
+    def test_guarded_model_result_and_source_boundary_survive_learning_and_fixed_practice(env):
+        ws,c,_,_=env;p=project(ws,{'reader.py':SOURCE});view=start(env,p,'read_value 原型的录用率提升多少？','llm')
+        before=view['current'];view=answer(env,view,'read_value 输入字符串并返回去空白结果，录用率提高50%。')
+&gt;       assert view['revision']==1 and view['status']!='failed',(view.get('error_code'),view['usage'])
+E       AssertionError: ('interview_uncertain_model_call', {'evaluator_calls': 1, 'interviewer_calls': 0, 'provider_calls': 1, 'input_tokens': None, ...})
+E       assert (0 == 1)
+
+tests\test_rag_f3_project_boundary.py:103: AssertionError</failure></testcase></testsuite></testsuites>

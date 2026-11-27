@@ -1,0 +1,11 @@
+{
+  "command": "node --test frontend/src/model.test.js",
+  "platform": "Windows local workspace",
+  "tests": 13,
+  "passed": 13,
+  "failed": 0,
+  "skipped": 0,
+  "duration_ms": 421.0304,
+  "scope": "frontend state logic only; no build/browser run",
+  "exit_code": 0
+}

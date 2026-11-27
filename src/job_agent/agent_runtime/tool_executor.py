@@ -86,9 +86,10 @@ class ToolExecutor:
                 "tool_input_error",
             )
 
-        execution_context = context.model_copy(
-            update={"deadline_monotonic": self._deadline_clock() + tool.spec.timeout_s}
-        )
+        deadline = self._deadline_clock() + tool.spec.timeout_s
+        if context.deadline_monotonic is not None:
+            deadline = min(deadline, context.deadline_monotonic)
+        execution_context = context.model_copy(update={"deadline_monotonic": deadline})
         try:
             execution_context.ensure_active(clock=self._deadline_clock)
             raw_output = tool.handler(parsed_input, execution_context)

@@ -1,0 +1,4166 @@
+{
+  "version": "review-deepseek-pilot-1",
+  "data": "CC0 AI-authored synthetic only",
+  "mode": "learning",
+  "model": {
+    "provider": "deepseek",
+    "requested_model": "deepseek-flash",
+    "thinking": "disabled",
+    "revision": "provider_managed",
+    "endpoint": "https://api.deepseek.com/chat/completions",
+    "response_format": "json_object"
+  },
+  "call_cap": 24,
+  "output_token_cap_per_call": 1600,
+  "auto_retries": 0,
+  "human_quality": null,
+  "billing_amount": null,
+  "learning": [
+    {
+      "category": "correct",
+      "answer": "幂等键记录执行标识，持久化执行回执；超时后先查询回执，确认后续状态，不盲目重放。",
+      "status": "complete_http_learning_loop",
+      "answer_view": {
+        "session_id": "interview-5173781cf519415eb4bdc326a2f2ed71",
+        "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+        "version_id": "ver-09a7ae4e258d49f2925b885d00af1950",
+        "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+        "jd_text": "Checkpoint 恢复 幂等",
+        "match_id": null,
+        "mode": "llm",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "status": "active",
+        "revision": 1,
+        "max_turns": 2,
+        "created_at": "2026-10-23T04:33:15.681663Z",
+        "current": {
+          "question_id": "interview-5173781cf519415eb4bdc326a2f2ed71-q2",
+          "topic_id": "agent-loop-termination",
+          "prompt": "怎样让 Agent 工具循环在重复尝试或没有进展时停止？",
+          "followup": false,
+          "references": []
+        },
+        "turns": [
+          {
+            "question": {
+              "question_id": "interview-5173781cf519415eb4bdc326a2f2ed71-q1",
+              "topic_id": "backend-idempotency",
+              "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "followup": false,
+              "references": []
+            },
+            "answer": "幂等键记录执行标识，持久化执行回执；超时后先查询回执，确认后续状态，不盲目重放。"
+          }
+        ],
+        "messages": [
+          {
+            "from": "evaluator",
+            "to": "interviewer",
+            "type": "decision_feedback",
+            "turn": 1,
+            "topic": "backend-idempotency",
+            "detail": "已提交后续行动建议；详细评价在结束后开放。"
+          },
+          {
+            "from": "interviewer",
+            "to": "coordinator",
+            "type": "routing_decision",
+            "turn": 1,
+            "action": "next",
+            "detail": "根据评估建议和剩余轮次选择下一题。"
+          }
+        ],
+        "usage": {
+          "evaluator_calls": 1,
+          "interviewer_calls": 1,
+          "provider_calls": 2,
+          "input_tokens": 2599,
+          "output_tokens": 273,
+          "active_ms": 2294,
+          "cost": null
+        },
+        "answer_pending": false,
+        "resumable": false,
+        "model_inflight": false,
+        "error_code": null,
+        "version_is_current": true,
+        "warnings": [
+          "题库技术练习，不代表真实面试表现或录用概率；本地仅按词面线索评估。",
+          "绑定本次简历版本/JD，之后编辑不会改变本场；C1 自述未独立核实，缺少材料不等于没有能力。",
+          "进行中隐藏参考要点与详细评价，结束后复盘；本次不会写简历或投递。"
+        ],
+        "track": "job",
+        "use_retrieval": false,
+        "project_id": null,
+        "snapshot_id": null,
+        "tool_trace": [],
+        "tool_calls": 0
+      },
+      "synthetic_state": {
+        "session_id": "interview-5173781cf519415eb4bdc326a2f2ed71",
+        "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+        "version_id": "ver-09a7ae4e258d49f2925b885d00af1950",
+        "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+        "jd_text": "Checkpoint 恢复 幂等",
+        "match_id": null,
+        "mode": "llm",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "created_at": "2026-10-23T04:33:15.681663Z",
+        "status": "active",
+        "revision": 1,
+        "max_turns": 2,
+        "plan": [
+          {
+            "anchor_id": "backend-idempotency",
+            "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+            "points": {
+              "p0": "persist execution identity",
+              "p1": "query provider receipt",
+              "p2": "do not blindly replay"
+            },
+            "aliases": {
+              "p0": [
+                "幂等",
+                "执行标识",
+                "request id"
+              ],
+              "p1": [
+                "回执",
+                "查询结果",
+                "查询状态"
+              ],
+              "p2": [
+                "不盲目",
+                "不要盲目",
+                "人工核对",
+                "人工对账"
+              ]
+            },
+            "followups": {
+              "p0": "怎样区分两次请求是在重试同一操作，还是发起新操作？",
+              "p1": "若外部请求只返回超时，接下来怎样判断它是否已经完成？",
+              "p2": "如果暂时无法确认上次结果，你会怎样决定下一步？"
+            },
+            "references": []
+          },
+          {
+            "anchor_id": "agent-loop-termination",
+            "prompt": "怎样让 Agent 工具循环在重复尝试或没有进展时停止？",
+            "points": {
+              "p0": "step and tool-call limits",
+              "p1": "same-action fingerprint",
+              "p2": "no-progress detection"
+            },
+            "aliases": {
+              "p0": [
+                "步数",
+                "调用上限",
+                "预算"
+              ],
+              "p1": [
+                "指纹",
+                "同一动作",
+                "fingerprint"
+              ],
+              "p2": [
+                "无进展",
+                "没有进展",
+                "重复失败"
+              ]
+            },
+            "followups": {
+              "p0": "怎样给一次执行设置边界？",
+              "p1": "如何判断这次调用是否和上次实际上相同？",
+              "p2": "如果动作不同但任务仍无进展，怎样判断是否继续？"
+            },
+            "references": []
+          },
+          {
+            "anchor_id": "agent-state-memory",
+            "prompt": "运行中的 Checkpoint 与跨会话长期记忆应该分别保存什么？",
+            "points": {
+              "p0": "pending actions and budgets",
+              "p1": "cross-run user facts",
+              "p2": "different lifecycle contracts"
+            },
+            "aliases": {
+              "p0": [
+                "待执行",
+                "预算",
+                "pending"
+              ],
+              "p1": [
+                "跨会话",
+                "长期偏好",
+                "用户事实"
+              ],
+              "p2": [
+                "生命周期",
+                "保留期限"
+              ]
+            },
+            "followups": {
+              "p0": "恢复时怎样知道还有哪些动作没有完成？",
+              "p1": "下次新任务开始时，哪些信息仍需要保留？",
+              "p2": "如果信息过期，你会怎样处理两类数据？"
+            },
+            "references": []
+          }
+        ],
+        "topic_index": 1,
+        "current": {
+          "question_id": "interview-5173781cf519415eb4bdc326a2f2ed71-q2",
+          "topic_id": "agent-loop-termination",
+          "prompt": "怎样让 Agent 工具循环在重复尝试或没有进展时停止？",
+          "followup": false,
+          "focus_id": null,
+          "references": []
+        },
+        "turns": [
+          {
+            "answered_at": "2026-10-23T04:33:17.993949Z",
+            "question": {
+              "question_id": "interview-5173781cf519415eb4bdc326a2f2ed71-q1",
+              "topic_id": "backend-idempotency",
+              "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "followup": false,
+              "focus_id": null,
+              "references": []
+            },
+            "answer": "幂等键记录执行标识，持久化执行回执；超时后先查询回执，确认后续状态，不盲目重放。",
+            "evaluation": {
+              "covered_ids": [
+                "p0",
+                "p1",
+                "p2"
+              ],
+              "missing_ids": [],
+              "claim_needs_evidence": false,
+              "recommended_action": "next",
+              "note": "回答覆盖幂等键持久化执行标识、超时后查询回执、不盲目重放三个要点，语义与评分点一致；属于方案性回答，无需额外经历证据。",
+              "point_assessments": [
+                {
+                  "point_id": "p0",
+                  "status": "correct",
+                  "answer_quote": "幂等键记录执行标识，持久化执行回执",
+                  "reason": "明确以幂等键记录执行标识并持久化回执，符合持久化执行身份。",
+                  "assessed_by": "model_semantic_unverified"
+                },
+                {
+                  "point_id": "p1",
+                  "status": "correct",
+                  "answer_quote": "超时后先查询回执，确认后续状态",
+                  "reason": "明确超时后先查询回执确认状态，符合查询提供方回执。",
+                  "assessed_by": "model_semantic_unverified"
+                },
+                {
+                  "point_id": "p2",
+                  "status": "correct",
+                  "answer_quote": "不盲目重放",
+                  "reason": "明确不盲目重放，符合避免盲目重试的要求。",
+                  "assessed_by": "model_semantic_unverified"
+                }
+              ],
+              "assessment_mode": "model_semantic_unverified",
+              "method_version": "review-r1-answer-1"
+            },
+            "decision": {
+              "action": "next",
+              "focus_id": null,
+              "retrieval_target": "none"
+            }
+          }
+        ],
+        "pending": null,
+        "next_node": "idle",
+        "model_inflight": false,
+        "error_code": null,
+        "usage": {
+          "evaluator_calls": 1,
+          "interviewer_calls": 1,
+          "provider_calls": 2,
+          "input_tokens": 2599,
+          "output_tokens": 273,
+          "active_ms": 2294,
+          "cost": null
+        },
+        "messages": [
+          {
+            "from": "evaluator",
+            "to": "interviewer",
+            "type": "decision_feedback",
+            "turn": 1,
+            "topic": "backend-idempotency",
+            "detail": "已提交后续行动建议；详细评价在结束后开放。"
+          },
+          {
+            "from": "interviewer",
+            "to": "coordinator",
+            "type": "routing_decision",
+            "turn": 1,
+            "action": "next",
+            "detail": "根据评估建议和剩余轮次选择下一题。"
+          }
+        ],
+        "use_retrieval": false,
+        "track": "job",
+        "project_id": null,
+        "snapshot_id": null,
+        "prior_session_id": null,
+        "learning_observation_id": null,
+        "learning_allow_historical_version": false,
+        "learning_condition_hash": null,
+        "bound_owner": null,
+        "tool_trace": [],
+        "tool_fingerprints": [],
+        "tool_calls": 0,
+        "evidence_packs": [],
+        "execution": {
+          "schema_version": "shared-run-1",
+          "run_id": "interview-5173781cf519415eb4bdc326a2f2ed71",
+          "trace_id": "trace-interview-5173781cf519415eb4bdc326a2f2ed71",
+          "owner_id": "alice",
+          "task": "interview",
+          "source_identity": {
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "version_id": "ver-09a7ae4e258d49f2925b885d00af1950",
+            "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+            "jd_hash": "2c12b1b8a3be4dd1d7bea01f52ff85abf4dca80340b8b68dc77a9d1a85f1aadc",
+            "project_id": "",
+            "snapshot_id": ""
+          },
+          "model_identity": {
+            "provider": "deepseek",
+            "model": "deepseek-flash",
+            "prompt": "s4-interview-1"
+          },
+          "node": "coordinator",
+          "revision": 1,
+          "status": "active",
+          "next_action": "idle",
+          "latest_feedback": {
+            "sender": "evaluator",
+            "revision": 0,
+            "outcome": "next",
+            "constraint": "错误/不确定要点需追问；词面线索与个人真实性分开判断。",
+            "artifact_hash": "ee4dfd3b454bc3985f45922d59096185770789950cb15b2e58b615f940086f8b",
+            "feedback_id": "feedback-13ee351812f3ec71cf7dab48e527eadc9073f6bd66807e3ffa3507db97bb5a1e",
+            "details": {
+              "covered_ids": [
+                "p0",
+                "p1",
+                "p2"
+              ],
+              "missing_ids": [],
+              "claim_needs_evidence": false,
+              "assessment_mode": "model_semantic_unverified",
+              "semantic_assessments_present": true,
+              "point_statuses": [
+                {
+                  "point_id": "p0",
+                  "status": "correct",
+                  "answer_quote": "幂等键记录执行标识，持久化执行回执"
+                },
+                {
+                  "point_id": "p1",
+                  "status": "correct",
+                  "answer_quote": "超时后先查询回执，确认后续状态"
+                },
+                {
+                  "point_id": "p2",
+                  "status": "correct",
+                  "answer_quote": "不盲目重放"
+                }
+              ]
+            }
+          },
+          "artifact_hashes": [],
+          "evidence_pack_ids": [],
+          "limits": {
+            "role_calls": 4,
+            "tools": 18,
+            "input_chars": 30000,
+            "active_ms": 120000
+          },
+          "usage": {
+            "evaluator_calls": 1,
+            "interviewer_calls": 1,
+            "provider_calls": 2,
+            "input_tokens": 2599,
+            "output_tokens": 273,
+            "active_ms": 2294,
+            "cost": null,
+            "tool_calls": 0
+          },
+          "context_incomplete": false,
+          "recovery": "none",
+          "attempt": 1,
+          "execution_token": "5cd197bda606417086716467dbfc079d",
+          "lease_until": 1792730595.6985903,
+          "event_seq": 6,
+          "events": [
+            {
+              "seq": 1,
+              "role": "evaluator",
+              "phase": "started",
+              "revision": 0,
+              "input_hash": "b7e35af9e7888d30213c7545238afee2c04dd99e6ceb9590265140a9f0fbd5ce",
+              "output_hash": null,
+              "feedback_id": null,
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:15.714243+00:00",
+              "metrics": {}
+            },
+            {
+              "seq": 2,
+              "role": "evaluator",
+              "phase": "completed",
+              "revision": 0,
+              "input_hash": null,
+              "output_hash": "5a495df84be85b013a363c2f7e5ed1de7eed749ab2de6997ee532e11083dfb7c",
+              "feedback_id": null,
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:17.228513+00:00",
+              "metrics": {
+                "provider": "deepseek",
+                "model": "deepseek-flash",
+                "skill_id": "interview-evaluator",
+                "skill_version": "s4-v1",
+                "prompt_version": "s4-interview-1",
+                "latency_ms": 1508,
+                "input_tokens": 1258,
+                "output_tokens": 252,
+                "schema_valid": true,
+                "fallback_used": false,
+                "error_code": null,
+                "finish_reason": "stop",
+                "completion_truncated": false
+              }
+            },
+            {
+              "seq": 3,
+              "role": "evaluator",
+              "phase": "gate",
+              "revision": 0,
+              "input_hash": null,
+              "output_hash": "ee4dfd3b454bc3985f45922d59096185770789950cb15b2e58b615f940086f8b",
+              "feedback_id": "feedback-13ee351812f3ec71cf7dab48e527eadc9073f6bd66807e3ffa3507db97bb5a1e",
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:17.231793+00:00",
+              "metrics": {}
+            },
+            {
+              "seq": 4,
+              "role": "interviewer",
+              "phase": "started",
+              "revision": 0,
+              "input_hash": "3d58a462a7bbc076ef6a4710feced809900a4ec705cd62022291d65071e21509",
+              "output_hash": null,
+              "feedback_id": "feedback-13ee351812f3ec71cf7dab48e527eadc9073f6bd66807e3ffa3507db97bb5a1e",
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:17.237552+00:00",
+              "metrics": {}
+            },
+            {
+              "seq": 5,
+              "role": "interviewer",
+              "phase": "completed",
+              "revision": 0,
+              "input_hash": null,
+              "output_hash": "13aa5845a433c9260aa4bd56da55520bd00d62d2d8d0f7d224d347b194921f23",
+              "feedback_id": "feedback-13ee351812f3ec71cf7dab48e527eadc9073f6bd66807e3ffa3507db97bb5a1e",
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:17.986816+00:00",
+              "metrics": {
+                "provider": "deepseek",
+                "model": "deepseek-flash",
+                "skill_id": "interview-interviewer",
+                "skill_version": "s4-v1",
+                "prompt_version": "s4-interview-1",
+                "latency_ms": 745,
+                "input_tokens": 1341,
+                "output_tokens": 21,
+                "schema_valid": true,
+                "fallback_used": false,
+                "error_code": null,
+                "finish_reason": "stop",
+                "completion_truncated": false
+              }
+            },
+            {
+              "seq": 6,
+              "role": "coordinator",
+              "phase": "route",
+              "revision": 1,
+              "input_hash": null,
+              "output_hash": null,
+              "feedback_id": "feedback-13ee351812f3ec71cf7dab48e527eadc9073f6bd66807e3ffa3507db97bb5a1e",
+              "code": "active",
+              "recorded_at": "2026-10-23T04:33:17.994001+00:00",
+              "metrics": {}
+            }
+          ],
+          "approval": null,
+          "independent_truth": "not_verified"
+        }
+      },
+      "observations": {
+        "added": 3,
+        "source_session_id": "interview-5173781cf519415eb4bdc326a2f2ed71",
+        "observations": [
+          {
+            "observation_id": "learn-2747d9b7a3ca39f4f176c5be83ef3a7d",
+            "session_id": "interview-5173781cf519415eb4bdc326a2f2ed71",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792729998.1116464,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "幂等键记录执行标识，持久化执行回执；超时后先查询回执，确认后续状态，不盲目重放。",
+              "answer_hash": "61dc4017668cc78436c7feb3db3fffcb08a5e13640bce299a90c3505ad4a589a",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "06c5d93a2f9b9cb3f9067cefbfeda729c28164bad7146af763b768c3a25b016d",
+              "evaluation_note": "回答覆盖幂等键持久化执行标识、超时后查询回执、不盲目重放三个要点，语义与评分点一致；属于方案性回答，无需额外经历证据。",
+              "finding": "correct",
+              "independent_mastery": "not_established",
+              "knowledge_point": "do not blindly replay",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792729997.993949,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "不盲目重放",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p2",
+                "reason": "明确不盲目重放，符合避免盲目重试的要求。",
+                "status": "correct"
+              },
+              "point_id": "p2",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-5173781cf519415eb4bdc326a2f2ed71-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-5173781cf519415eb4bdc326a2f2ed71",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792729998.1116195,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          },
+          {
+            "observation_id": "learn-6d595f999b20ab34d947b40d38d9f417",
+            "session_id": "interview-5173781cf519415eb4bdc326a2f2ed71",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792729998.1115198,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "幂等键记录执行标识，持久化执行回执；超时后先查询回执，确认后续状态，不盲目重放。",
+              "answer_hash": "61dc4017668cc78436c7feb3db3fffcb08a5e13640bce299a90c3505ad4a589a",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "9ea86bdc034db7288fd02e5de54edac063b105c950f21b6567e138449a943c54",
+              "evaluation_note": "回答覆盖幂等键持久化执行标识、超时后查询回执、不盲目重放三个要点，语义与评分点一致；属于方案性回答，无需额外经历证据。",
+              "finding": "correct",
+              "independent_mastery": "not_established",
+              "knowledge_point": "query provider receipt",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792729997.993949,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "超时后先查询回执，确认后续状态",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p1",
+                "reason": "明确超时后先查询回执确认状态，符合查询提供方回执。",
+                "status": "correct"
+              },
+              "point_id": "p1",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-5173781cf519415eb4bdc326a2f2ed71-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-5173781cf519415eb4bdc326a2f2ed71",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792729998.1114902,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          },
+          {
+            "observation_id": "learn-3f418e3b9fc1c04631f6ee5587efde11",
+            "session_id": "interview-5173781cf519415eb4bdc326a2f2ed71",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792729998.1112797,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "幂等键记录执行标识，持久化执行回执；超时后先查询回执，确认后续状态，不盲目重放。",
+              "answer_hash": "61dc4017668cc78436c7feb3db3fffcb08a5e13640bce299a90c3505ad4a589a",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "dd1f3c89221acf74624aba278df4a4566a9d108a5bdd52f32bc7a6e809da41b0",
+              "evaluation_note": "回答覆盖幂等键持久化执行标识、超时后查询回执、不盲目重放三个要点，语义与评分点一致；属于方案性回答，无需额外经历证据。",
+              "finding": "correct",
+              "independent_mastery": "not_established",
+              "knowledge_point": "persist execution identity",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792729997.993949,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "幂等键记录执行标识，持久化执行回执",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p0",
+                "reason": "明确以幂等键记录执行标识并持久化回执，符合持久化执行身份。",
+                "status": "correct"
+              },
+              "point_id": "p0",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-5173781cf519415eb4bdc326a2f2ed71-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-5173781cf519415eb4bdc326a2f2ed71",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792729998.1112463,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          }
+        ],
+        "warning": "练习观察可纠正，不是用户能力画像、个人经历证明或已掌握结论。"
+      },
+      "queue": {
+        "preferences": {
+          "revision": 0,
+          "cadence_days": 3,
+          "daily_limit": 10,
+          "paused": false,
+          "include_new": true,
+          "source": "system_default"
+        },
+        "items": [
+          {
+            "observation_id": "learn-2747d9b7a3ca39f4f176c5be83ef3a7d",
+            "session_id": "interview-5173781cf519415eb4bdc326a2f2ed71",
+            "revision": 4,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792729998.1116464,
+            "confirmed": true,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "review_due",
+            "payload": {
+              "answer": "幂等键记录执行标识，持久化执行回执；超时后先查询回执，确认后续状态，不盲目重放。",
+              "answer_hash": "61dc4017668cc78436c7feb3db3fffcb08a5e13640bce299a90c3505ad4a589a",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "06c5d93a2f9b9cb3f9067cefbfeda729c28164bad7146af763b768c3a25b016d",
+              "evaluation_note": "回答覆盖幂等键持久化执行标识、超时后查询回执、不盲目重放三个要点，语义与评分点一致；属于方案性回答，无需额外经历证据。",
+              "finding": "correct",
+              "independent_mastery": "not_established",
+              "knowledge_point": "do not blindly replay",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792729997.993949,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "不盲目重放",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p2",
+                "reason": "明确不盲目重放，符合避免盲目重试的要求。",
+                "status": "correct"
+              },
+              "point_id": "p2",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-5173781cf519415eb4bdc326a2f2ed71-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-5173781cf519415eb4bdc326a2f2ed71",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "checked_at": 1792729998.311553,
+              "confirmed": true,
+              "correction_source": "explicit_user",
+              "deleted": false,
+              "due_at": 1792729998.367196,
+              "last_reviewed_at": 1792729998.311553,
+              "paused": false,
+              "user_finding": "unsure",
+              "user_note": "合成用户纠正，不作为已掌握。"
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "user_corrected",
+            "reason": "scheduled_time_reached"
+          },
+          {
+            "observation_id": "learn-3f418e3b9fc1c04631f6ee5587efde11",
+            "session_id": "interview-5173781cf519415eb4bdc326a2f2ed71",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792729998.1112797,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "幂等键记录执行标识，持久化执行回执；超时后先查询回执，确认后续状态，不盲目重放。",
+              "answer_hash": "61dc4017668cc78436c7feb3db3fffcb08a5e13640bce299a90c3505ad4a589a",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "dd1f3c89221acf74624aba278df4a4566a9d108a5bdd52f32bc7a6e809da41b0",
+              "evaluation_note": "回答覆盖幂等键持久化执行标识、超时后查询回执、不盲目重放三个要点，语义与评分点一致；属于方案性回答，无需额外经历证据。",
+              "finding": "correct",
+              "independent_mastery": "not_established",
+              "knowledge_point": "persist execution identity",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792729997.993949,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "幂等键记录执行标识，持久化执行回执",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p0",
+                "reason": "明确以幂等键记录执行标识并持久化回执，符合持久化执行身份。",
+                "status": "correct"
+              },
+              "point_id": "p0",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-5173781cf519415eb4bdc326a2f2ed71-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-5173781cf519415eb4bdc326a2f2ed71",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792729998.1112463,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          },
+          {
+            "observation_id": "learn-6d595f999b20ab34d947b40d38d9f417",
+            "session_id": "interview-5173781cf519415eb4bdc326a2f2ed71",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792729998.1115198,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "幂等键记录执行标识，持久化执行回执；超时后先查询回执，确认后续状态，不盲目重放。",
+              "answer_hash": "61dc4017668cc78436c7feb3db3fffcb08a5e13640bce299a90c3505ad4a589a",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "9ea86bdc034db7288fd02e5de54edac063b105c950f21b6567e138449a943c54",
+              "evaluation_note": "回答覆盖幂等键持久化执行标识、超时后查询回执、不盲目重放三个要点，语义与评分点一致；属于方案性回答，无需额外经历证据。",
+              "finding": "correct",
+              "independent_mastery": "not_established",
+              "knowledge_point": "query provider receipt",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792729997.993949,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "超时后先查询回执，确认后续状态",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p1",
+                "reason": "明确超时后先查询回执确认状态，符合查询提供方回执。",
+                "status": "correct"
+              },
+              "point_id": "p1",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-5173781cf519415eb4bdc326a2f2ed71-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-5173781cf519415eb4bdc326a2f2ed71",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792729998.1114902,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          }
+        ],
+        "reviewed_today": 1,
+        "remaining_today": 9,
+        "day_timezone": "Asia/Shanghai",
+        "counts": {
+          "new": 2,
+          "review_due": 1,
+          "reviewed": 0,
+          "paused": 0,
+          "historical_version": 0,
+          "expired": 0,
+          "excluded": 0
+        },
+        "rule_version": "s7-review-rules-1",
+        "warning": "按用户核对与时间生成建议；标已复核不代表已经掌握。"
+      },
+      "practice_initial": {
+        "session_id": "interview-e0f9fa0019e146859f7d86155c82363b",
+        "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+        "version_id": "ver-09a7ae4e258d49f2925b885d00af1950",
+        "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+        "jd_text": "Checkpoint 恢复 幂等",
+        "match_id": null,
+        "mode": "llm",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "status": "active",
+        "revision": 0,
+        "max_turns": 2,
+        "created_at": "2026-10-23T04:33:18.485711Z",
+        "current": {
+          "question_id": "interview-e0f9fa0019e146859f7d86155c82363b-q1",
+          "topic_id": "backend-idempotency",
+          "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+          "followup": false,
+          "references": []
+        },
+        "turns": [],
+        "messages": [
+          {
+            "from": "coordinator",
+            "to": "interviewer",
+            "type": "learning_fixed_source",
+            "turn": 0,
+            "detail": "复用已核对观察的固定题目与来源；新场次不包含旧回答，仍不认定掌握。"
+          }
+        ],
+        "usage": {
+          "evaluator_calls": 0,
+          "interviewer_calls": 0,
+          "provider_calls": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "active_ms": 0,
+          "cost": null
+        },
+        "answer_pending": false,
+        "resumable": false,
+        "model_inflight": false,
+        "error_code": null,
+        "version_is_current": true,
+        "warnings": [
+          "题库技术练习，不代表真实面试表现或录用概率；本地仅按词面线索评估。",
+          "绑定本次简历版本/JD，之后编辑不会改变本场；C1 自述未独立核实，缺少材料不等于没有能力。",
+          "进行中隐藏参考要点与详细评价，结束后复盘；本次不会写简历或投递。"
+        ],
+        "track": "weakness",
+        "use_retrieval": true,
+        "project_id": null,
+        "snapshot_id": null,
+        "tool_trace": [],
+        "tool_calls": 0
+      },
+      "practice_answer": {
+        "session_id": "interview-e0f9fa0019e146859f7d86155c82363b",
+        "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+        "version_id": "ver-09a7ae4e258d49f2925b885d00af1950",
+        "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+        "jd_text": "Checkpoint 恢复 幂等",
+        "match_id": null,
+        "mode": "llm",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "status": "complete",
+        "revision": 1,
+        "max_turns": 2,
+        "created_at": "2026-10-23T04:33:18.485711Z",
+        "current": null,
+        "turns": [
+          {
+            "question": {
+              "question_id": "interview-e0f9fa0019e146859f7d86155c82363b-q1",
+              "topic_id": "backend-idempotency",
+              "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "followup": false,
+              "references": []
+            },
+            "answer": "幂等键记录执行标识，持久化执行回执；超时后先查询回执，确认后续状态，不盲目重放。"
+          }
+        ],
+        "messages": [
+          {
+            "from": "coordinator",
+            "to": "interviewer",
+            "type": "learning_fixed_source",
+            "turn": 0,
+            "detail": "复用已核对观察的固定题目与来源；新场次不包含旧回答，仍不认定掌握。"
+          },
+          {
+            "from": "evaluator",
+            "to": "interviewer",
+            "type": "decision_feedback",
+            "turn": 1,
+            "topic": "backend-idempotency",
+            "detail": "已提交后续行动建议；详细评价在结束后开放。"
+          },
+          {
+            "from": "interviewer",
+            "to": "coordinator",
+            "type": "routing_decision",
+            "turn": 1,
+            "action": "finish",
+            "detail": "已结束练习"
+          }
+        ],
+        "usage": {
+          "evaluator_calls": 1,
+          "interviewer_calls": 1,
+          "provider_calls": 2,
+          "input_tokens": 2874,
+          "output_tokens": 284,
+          "active_ms": 2934,
+          "cost": null
+        },
+        "answer_pending": false,
+        "resumable": false,
+        "model_inflight": false,
+        "error_code": null,
+        "version_is_current": true,
+        "warnings": [
+          "题库技术练习，不代表真实面试表现或录用概率；本地仅按词面线索评估。",
+          "绑定本次简历版本/JD，之后编辑不会改变本场；C1 自述未独立核实，缺少材料不等于没有能力。",
+          "进行中隐藏参考要点与详细评价，结束后复盘；本次不会写简历或投递。"
+        ],
+        "track": "weakness",
+        "use_retrieval": true,
+        "project_id": null,
+        "snapshot_id": null,
+        "tool_trace": [],
+        "tool_calls": 0
+      },
+      "practice_observations": {
+        "added": 3,
+        "source_session_id": "interview-e0f9fa0019e146859f7d86155c82363b",
+        "observations": [
+          {
+            "observation_id": "learn-44e8aa86286f4df2fb1f069c58e7395d",
+            "session_id": "interview-e0f9fa0019e146859f7d86155c82363b",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792730001.5916965,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "幂等键记录执行标识，持久化执行回执；超时后先查询回执，确认后续状态，不盲目重放。",
+              "answer_hash": "61dc4017668cc78436c7feb3db3fffcb08a5e13640bce299a90c3505ad4a589a",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "06c5d93a2f9b9cb3f9067cefbfeda729c28164bad7146af763b768c3a25b016d",
+              "evaluation_note": "回答覆盖持久化执行标识、查询回执、不盲目重放三个要点，语义与评分点一致；属于方案性回答，无需额外经历证据。",
+              "finding": "correct",
+              "independent_mastery": "not_established",
+              "knowledge_point": "do not blindly replay",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792730001.479069,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "不盲目重放",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p2",
+                "reason": "明确不盲目重放，符合避免盲目重试。",
+                "status": "correct"
+              },
+              "point_id": "p2",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-e0f9fa0019e146859f7d86155c82363b-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-e0f9fa0019e146859f7d86155c82363b",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792730001.5916212,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          },
+          {
+            "observation_id": "learn-55384eb1bbf064c7146125edfc639bc1",
+            "session_id": "interview-e0f9fa0019e146859f7d86155c82363b",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792730001.5913966,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "幂等键记录执行标识，持久化执行回执；超时后先查询回执，确认后续状态，不盲目重放。",
+              "answer_hash": "61dc4017668cc78436c7feb3db3fffcb08a5e13640bce299a90c3505ad4a589a",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "9ea86bdc034db7288fd02e5de54edac063b105c950f21b6567e138449a943c54",
+              "evaluation_note": "回答覆盖持久化执行标识、查询回执、不盲目重放三个要点，语义与评分点一致；属于方案性回答，无需额外经历证据。",
+              "finding": "correct",
+              "independent_mastery": "not_established",
+              "knowledge_point": "query provider receipt",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792730001.479069,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "超时后先查询回执，确认后续状态",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p1",
+                "reason": "明确超时后先查询回执确认状态，符合查询提供方回执。",
+                "status": "correct"
+              },
+              "point_id": "p1",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-e0f9fa0019e146859f7d86155c82363b-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-e0f9fa0019e146859f7d86155c82363b",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792730001.5913126,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          },
+          {
+            "observation_id": "learn-77734a487885fa1ae72eae1bb482cd18",
+            "session_id": "interview-e0f9fa0019e146859f7d86155c82363b",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792730001.5907032,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "幂等键记录执行标识，持久化执行回执；超时后先查询回执，确认后续状态，不盲目重放。",
+              "answer_hash": "61dc4017668cc78436c7feb3db3fffcb08a5e13640bce299a90c3505ad4a589a",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "dd1f3c89221acf74624aba278df4a4566a9d108a5bdd52f32bc7a6e809da41b0",
+              "evaluation_note": "回答覆盖持久化执行标识、查询回执、不盲目重放三个要点，语义与评分点一致；属于方案性回答，无需额外经历证据。",
+              "finding": "correct",
+              "independent_mastery": "not_established",
+              "knowledge_point": "persist execution identity",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792730001.479069,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "幂等键记录执行标识，持久化执行回执",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p0",
+                "reason": "明确以幂等键记录执行标识并持久化回执，符合持久化执行身份。",
+                "status": "correct"
+              },
+              "point_id": "p0",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-e0f9fa0019e146859f7d86155c82363b-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-e0f9fa0019e146859f7d86155c82363b",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792730001.5906081,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          }
+        ],
+        "warning": "练习观察可纠正，不是用户能力画像、个人经历证明或已掌握结论。"
+      }
+    },
+    {
+      "category": "partial",
+      "answer": "幂等键记录执行标识，但我还不清楚如何查询执行结果。",
+      "status": "source_observation_created",
+      "answer_view": {
+        "session_id": "interview-cd2f11f79d07464d890c617693dd03e0",
+        "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+        "version_id": "ver-09a7ae4e258d49f2925b885d00af1950",
+        "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+        "jd_text": "Checkpoint 恢复 幂等",
+        "match_id": null,
+        "mode": "llm",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "status": "active",
+        "revision": 1,
+        "max_turns": 2,
+        "created_at": "2026-10-23T04:33:21.775236Z",
+        "current": {
+          "question_id": "interview-cd2f11f79d07464d890c617693dd03e0-q2",
+          "topic_id": "backend-idempotency",
+          "prompt": "若外部请求只返回超时，接下来怎样判断它是否已经完成？",
+          "followup": true,
+          "references": []
+        },
+        "turns": [
+          {
+            "question": {
+              "question_id": "interview-cd2f11f79d07464d890c617693dd03e0-q1",
+              "topic_id": "backend-idempotency",
+              "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "followup": false,
+              "references": []
+            },
+            "answer": "幂等键记录执行标识，但我还不清楚如何查询执行结果。"
+          }
+        ],
+        "messages": [
+          {
+            "from": "evaluator",
+            "to": "interviewer",
+            "type": "decision_feedback",
+            "turn": 1,
+            "topic": "backend-idempotency",
+            "detail": "已提交后续行动建议；详细评价在结束后开放。"
+          },
+          {
+            "from": "interviewer",
+            "to": "coordinator",
+            "type": "routing_decision",
+            "turn": 1,
+            "action": "follow_up",
+            "detail": "根据评估建议和剩余轮次选择下一题。"
+          }
+        ],
+        "usage": {
+          "evaluator_calls": 1,
+          "interviewer_calls": 1,
+          "provider_calls": 2,
+          "input_tokens": 2582,
+          "output_tokens": 279,
+          "active_ms": 2769,
+          "cost": null
+        },
+        "answer_pending": false,
+        "resumable": false,
+        "model_inflight": false,
+        "error_code": null,
+        "version_is_current": true,
+        "warnings": [
+          "题库技术练习，不代表真实面试表现或录用概率；本地仅按词面线索评估。",
+          "绑定本次简历版本/JD，之后编辑不会改变本场；C1 自述未独立核实，缺少材料不等于没有能力。",
+          "进行中隐藏参考要点与详细评价，结束后复盘；本次不会写简历或投递。"
+        ],
+        "track": "job",
+        "use_retrieval": false,
+        "project_id": null,
+        "snapshot_id": null,
+        "tool_trace": [],
+        "tool_calls": 0
+      },
+      "synthetic_state": {
+        "session_id": "interview-cd2f11f79d07464d890c617693dd03e0",
+        "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+        "version_id": "ver-09a7ae4e258d49f2925b885d00af1950",
+        "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+        "jd_text": "Checkpoint 恢复 幂等",
+        "match_id": null,
+        "mode": "llm",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "created_at": "2026-10-23T04:33:21.775236Z",
+        "status": "active",
+        "revision": 1,
+        "max_turns": 2,
+        "plan": [
+          {
+            "anchor_id": "backend-idempotency",
+            "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+            "points": {
+              "p0": "persist execution identity",
+              "p1": "query provider receipt",
+              "p2": "do not blindly replay"
+            },
+            "aliases": {
+              "p0": [
+                "幂等",
+                "执行标识",
+                "request id"
+              ],
+              "p1": [
+                "回执",
+                "查询结果",
+                "查询状态"
+              ],
+              "p2": [
+                "不盲目",
+                "不要盲目",
+                "人工核对",
+                "人工对账"
+              ]
+            },
+            "followups": {
+              "p0": "怎样区分两次请求是在重试同一操作，还是发起新操作？",
+              "p1": "若外部请求只返回超时，接下来怎样判断它是否已经完成？",
+              "p2": "如果暂时无法确认上次结果，你会怎样决定下一步？"
+            },
+            "references": []
+          },
+          {
+            "anchor_id": "agent-loop-termination",
+            "prompt": "怎样让 Agent 工具循环在重复尝试或没有进展时停止？",
+            "points": {
+              "p0": "step and tool-call limits",
+              "p1": "same-action fingerprint",
+              "p2": "no-progress detection"
+            },
+            "aliases": {
+              "p0": [
+                "步数",
+                "调用上限",
+                "预算"
+              ],
+              "p1": [
+                "指纹",
+                "同一动作",
+                "fingerprint"
+              ],
+              "p2": [
+                "无进展",
+                "没有进展",
+                "重复失败"
+              ]
+            },
+            "followups": {
+              "p0": "怎样给一次执行设置边界？",
+              "p1": "如何判断这次调用是否和上次实际上相同？",
+              "p2": "如果动作不同但任务仍无进展，怎样判断是否继续？"
+            },
+            "references": []
+          },
+          {
+            "anchor_id": "agent-state-memory",
+            "prompt": "运行中的 Checkpoint 与跨会话长期记忆应该分别保存什么？",
+            "points": {
+              "p0": "pending actions and budgets",
+              "p1": "cross-run user facts",
+              "p2": "different lifecycle contracts"
+            },
+            "aliases": {
+              "p0": [
+                "待执行",
+                "预算",
+                "pending"
+              ],
+              "p1": [
+                "跨会话",
+                "长期偏好",
+                "用户事实"
+              ],
+              "p2": [
+                "生命周期",
+                "保留期限"
+              ]
+            },
+            "followups": {
+              "p0": "恢复时怎样知道还有哪些动作没有完成？",
+              "p1": "下次新任务开始时，哪些信息仍需要保留？",
+              "p2": "如果信息过期，你会怎样处理两类数据？"
+            },
+            "references": []
+          }
+        ],
+        "topic_index": 0,
+        "current": {
+          "question_id": "interview-cd2f11f79d07464d890c617693dd03e0-q2",
+          "topic_id": "backend-idempotency",
+          "prompt": "若外部请求只返回超时，接下来怎样判断它是否已经完成？",
+          "followup": true,
+          "focus_id": "p1",
+          "references": []
+        },
+        "turns": [
+          {
+            "answered_at": "2026-10-23T04:33:24.563580Z",
+            "question": {
+              "question_id": "interview-cd2f11f79d07464d890c617693dd03e0-q1",
+              "topic_id": "backend-idempotency",
+              "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "followup": false,
+              "focus_id": null,
+              "references": []
+            },
+            "answer": "幂等键记录执行标识，但我还不清楚如何查询执行结果。",
+            "evaluation": {
+              "covered_ids": [
+                "p0",
+                "p2"
+              ],
+              "missing_ids": [
+                "p1"
+              ],
+              "claim_needs_evidence": true,
+              "recommended_action": "follow_up",
+              "note": "回答提到用幂等键记录执行标识，符合持久化执行身份；也明确不盲目重放，但未说明如何查询外部请求结果，p1缺失。个人原型经历未经核实，需补充证据。",
+              "point_assessments": [
+                {
+                  "point_id": "p0",
+                  "status": "correct",
+                  "answer_quote": "幂等键记录执行标识",
+                  "reason": "回答明确用幂等键记录执行标识，符合持久化执行身份要求。",
+                  "assessed_by": "model_semantic_unverified"
+                },
+                {
+                  "point_id": "p1",
+                  "status": "uncertain",
+                  "answer_quote": "但我还不清楚如何查询执行结果",
+                  "reason": "回答承认不清楚如何查询执行结果，未提供查询外部回执的方案。",
+                  "assessed_by": "model_semantic_unverified"
+                },
+                {
+                  "point_id": "p2",
+                  "status": "correct",
+                  "answer_quote": "幂等键记录执行标识",
+                  "reason": "回答未主张直接重放，且以幂等键标识执行，体现不盲目重放。",
+                  "assessed_by": "model_semantic_unverified"
+                }
+              ],
+              "assessment_mode": "model_semantic_unverified",
+              "method_version": "review-r1-answer-1"
+            },
+            "decision": {
+              "action": "follow_up",
+              "focus_id": "p1",
+              "retrieval_target": "none"
+            }
+          }
+        ],
+        "pending": null,
+        "next_node": "idle",
+        "model_inflight": false,
+        "error_code": null,
+        "usage": {
+          "evaluator_calls": 1,
+          "interviewer_calls": 1,
+          "provider_calls": 2,
+          "input_tokens": 2582,
+          "output_tokens": 279,
+          "active_ms": 2769,
+          "cost": null
+        },
+        "messages": [
+          {
+            "from": "evaluator",
+            "to": "interviewer",
+            "type": "decision_feedback",
+            "turn": 1,
+            "topic": "backend-idempotency",
+            "detail": "已提交后续行动建议；详细评价在结束后开放。"
+          },
+          {
+            "from": "interviewer",
+            "to": "coordinator",
+            "type": "routing_decision",
+            "turn": 1,
+            "action": "follow_up",
+            "detail": "根据评估建议和剩余轮次选择下一题。"
+          }
+        ],
+        "use_retrieval": false,
+        "track": "job",
+        "project_id": null,
+        "snapshot_id": null,
+        "prior_session_id": null,
+        "learning_observation_id": null,
+        "learning_allow_historical_version": false,
+        "learning_condition_hash": null,
+        "bound_owner": null,
+        "tool_trace": [],
+        "tool_fingerprints": [],
+        "tool_calls": 0,
+        "evidence_packs": [],
+        "execution": {
+          "schema_version": "shared-run-1",
+          "run_id": "interview-cd2f11f79d07464d890c617693dd03e0",
+          "trace_id": "trace-interview-cd2f11f79d07464d890c617693dd03e0",
+          "owner_id": "alice",
+          "task": "interview",
+          "source_identity": {
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "version_id": "ver-09a7ae4e258d49f2925b885d00af1950",
+            "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+            "jd_hash": "2c12b1b8a3be4dd1d7bea01f52ff85abf4dca80340b8b68dc77a9d1a85f1aadc",
+            "project_id": "",
+            "snapshot_id": ""
+          },
+          "model_identity": {
+            "provider": "deepseek",
+            "model": "deepseek-flash",
+            "prompt": "s4-interview-1"
+          },
+          "node": "coordinator",
+          "revision": 1,
+          "status": "active",
+          "next_action": "idle",
+          "latest_feedback": {
+            "sender": "evaluator",
+            "revision": 0,
+            "outcome": "follow_up",
+            "constraint": "错误/不确定要点需追问；词面线索与个人真实性分开判断。",
+            "artifact_hash": "0786cb2baace4b008d5014f07f3f519bd19358560580878ce69b56da4838706c",
+            "feedback_id": "feedback-52ea64fb359a0bc063b357f86f42e7687e1eb18f47300c1e5d65e7c2458021ca",
+            "details": {
+              "covered_ids": [
+                "p0",
+                "p2"
+              ],
+              "missing_ids": [
+                "p1"
+              ],
+              "claim_needs_evidence": true,
+              "assessment_mode": "model_semantic_unverified",
+              "semantic_assessments_present": true,
+              "point_statuses": [
+                {
+                  "point_id": "p0",
+                  "status": "correct",
+                  "answer_quote": "幂等键记录执行标识"
+                },
+                {
+                  "point_id": "p1",
+                  "status": "uncertain",
+                  "answer_quote": "但我还不清楚如何查询执行结果"
+                },
+                {
+                  "point_id": "p2",
+                  "status": "correct",
+                  "answer_quote": "幂等键记录执行标识"
+                }
+              ]
+            }
+          },
+          "artifact_hashes": [],
+          "evidence_pack_ids": [],
+          "limits": {
+            "role_calls": 4,
+            "tools": 18,
+            "input_chars": 30000,
+            "active_ms": 120000
+          },
+          "usage": {
+            "evaluator_calls": 1,
+            "interviewer_calls": 1,
+            "provider_calls": 2,
+            "input_tokens": 2582,
+            "output_tokens": 279,
+            "active_ms": 2769,
+            "cost": null,
+            "tool_calls": 0
+          },
+          "context_incomplete": false,
+          "recovery": "none",
+          "attempt": 1,
+          "execution_token": "11c523f20b79425dafb6e5dce5d28a07",
+          "lease_until": 1792730601.7934306,
+          "event_seq": 6,
+          "events": [
+            {
+              "seq": 1,
+              "role": "evaluator",
+              "phase": "started",
+              "revision": 0,
+              "input_hash": "a70794981635e5d241d43039cd778c478d19e85992518fe3faba43a8e89ec065",
+              "output_hash": null,
+              "feedback_id": null,
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:21.806112+00:00",
+              "metrics": {}
+            },
+            {
+              "seq": 2,
+              "role": "evaluator",
+              "phase": "completed",
+              "revision": 0,
+              "input_hash": null,
+              "output_hash": "35cd4fee8a98624db58de3ee2ed2b91a4d77122b48bce55b2f997a495fbbbc4e",
+              "feedback_id": null,
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:23.841416+00:00",
+              "metrics": {
+                "provider": "deepseek",
+                "model": "deepseek-flash",
+                "skill_id": "interview-evaluator",
+                "skill_version": "s4-v1",
+                "prompt_version": "s4-interview-1",
+                "latency_ms": 2030,
+                "input_tokens": 1244,
+                "output_tokens": 255,
+                "schema_valid": true,
+                "fallback_used": false,
+                "error_code": null,
+                "finish_reason": "stop",
+                "completion_truncated": false
+              }
+            },
+            {
+              "seq": 3,
+              "role": "evaluator",
+              "phase": "gate",
+              "revision": 0,
+              "input_hash": null,
+              "output_hash": "0786cb2baace4b008d5014f07f3f519bd19358560580878ce69b56da4838706c",
+              "feedback_id": "feedback-52ea64fb359a0bc063b357f86f42e7687e1eb18f47300c1e5d65e7c2458021ca",
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:23.842643+00:00",
+              "metrics": {}
+            },
+            {
+              "seq": 4,
+              "role": "interviewer",
+              "phase": "started",
+              "revision": 0,
+              "input_hash": "f79a273bf9970723bb6d695a6d79072f7e55f6f14cc2c78f303e23c016505f0b",
+              "output_hash": null,
+              "feedback_id": "feedback-52ea64fb359a0bc063b357f86f42e7687e1eb18f47300c1e5d65e7c2458021ca",
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:23.848962+00:00",
+              "metrics": {}
+            },
+            {
+              "seq": 5,
+              "role": "interviewer",
+              "phase": "completed",
+              "revision": 0,
+              "input_hash": null,
+              "output_hash": "d18375b1062e223334c1775c0a9e6eef02cdcb7da6fd0b18ebef009cede9e44b",
+              "feedback_id": "feedback-52ea64fb359a0bc063b357f86f42e7687e1eb18f47300c1e5d65e7c2458021ca",
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:24.557155+00:00",
+              "metrics": {
+                "provider": "deepseek",
+                "model": "deepseek-flash",
+                "skill_id": "interview-interviewer",
+                "skill_version": "s4-v1",
+                "prompt_version": "s4-interview-1",
+                "latency_ms": 704,
+                "input_tokens": 1338,
+                "output_tokens": 24,
+                "schema_valid": true,
+                "fallback_used": false,
+                "error_code": null,
+                "finish_reason": "stop",
+                "completion_truncated": false
+              }
+            },
+            {
+              "seq": 6,
+              "role": "coordinator",
+              "phase": "route",
+              "revision": 1,
+              "input_hash": null,
+              "output_hash": null,
+              "feedback_id": "feedback-52ea64fb359a0bc063b357f86f42e7687e1eb18f47300c1e5d65e7c2458021ca",
+              "code": "active",
+              "recorded_at": "2026-10-23T04:33:24.563653+00:00",
+              "metrics": {}
+            }
+          ],
+          "approval": null,
+          "independent_truth": "not_verified"
+        }
+      },
+      "observations": {
+        "added": 3,
+        "source_session_id": "interview-cd2f11f79d07464d890c617693dd03e0",
+        "observations": [
+          {
+            "observation_id": "learn-1857e169cde2e032eba007ea4e1256cd",
+            "session_id": "interview-cd2f11f79d07464d890c617693dd03e0",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792730004.6800318,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "幂等键记录执行标识，但我还不清楚如何查询执行结果。",
+              "answer_hash": "7c50834bb174d44dfc8b8011e6b54b6a836e0d3093ab0cc5e4f8ad4926f8b270",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "06c5d93a2f9b9cb3f9067cefbfeda729c28164bad7146af763b768c3a25b016d",
+              "evaluation_note": "回答提到用幂等键记录执行标识，符合持久化执行身份；也明确不盲目重放，但未说明如何查询外部请求结果，p1缺失。个人原型经历未经核实，需补充证据。",
+              "finding": "correct",
+              "independent_mastery": "not_established",
+              "knowledge_point": "do not blindly replay",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792730004.56358,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "幂等键记录执行标识",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p2",
+                "reason": "回答未主张直接重放，且以幂等键标识执行，体现不盲目重放。",
+                "status": "correct"
+              },
+              "point_id": "p2",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-cd2f11f79d07464d890c617693dd03e0-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-cd2f11f79d07464d890c617693dd03e0",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792730004.679958,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          },
+          {
+            "observation_id": "learn-f1874174b320d668846fe4fdec17649c",
+            "session_id": "interview-cd2f11f79d07464d890c617693dd03e0",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792730004.679738,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "幂等键记录执行标识，但我还不清楚如何查询执行结果。",
+              "answer_hash": "7c50834bb174d44dfc8b8011e6b54b6a836e0d3093ab0cc5e4f8ad4926f8b270",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "9ea86bdc034db7288fd02e5de54edac063b105c950f21b6567e138449a943c54",
+              "evaluation_note": "回答提到用幂等键记录执行标识，符合持久化执行身份；也明确不盲目重放，但未说明如何查询外部请求结果，p1缺失。个人原型经历未经核实，需补充证据。",
+              "finding": "uncertain",
+              "independent_mastery": "not_established",
+              "knowledge_point": "query provider receipt",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792730004.56358,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "但我还不清楚如何查询执行结果",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p1",
+                "reason": "回答承认不清楚如何查询执行结果，未提供查询外部回执的方案。",
+                "status": "uncertain"
+              },
+              "point_id": "p1",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-cd2f11f79d07464d890c617693dd03e0-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-cd2f11f79d07464d890c617693dd03e0",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792730004.6796525,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          },
+          {
+            "observation_id": "learn-683c02a965b7052dc6bd0c4ea39f4802",
+            "session_id": "interview-cd2f11f79d07464d890c617693dd03e0",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792730004.6790457,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "幂等键记录执行标识，但我还不清楚如何查询执行结果。",
+              "answer_hash": "7c50834bb174d44dfc8b8011e6b54b6a836e0d3093ab0cc5e4f8ad4926f8b270",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "dd1f3c89221acf74624aba278df4a4566a9d108a5bdd52f32bc7a6e809da41b0",
+              "evaluation_note": "回答提到用幂等键记录执行标识，符合持久化执行身份；也明确不盲目重放，但未说明如何查询外部请求结果，p1缺失。个人原型经历未经核实，需补充证据。",
+              "finding": "correct",
+              "independent_mastery": "not_established",
+              "knowledge_point": "persist execution identity",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792730004.56358,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "幂等键记录执行标识",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p0",
+                "reason": "回答明确用幂等键记录执行标识，符合持久化执行身份要求。",
+                "status": "correct"
+              },
+              "point_id": "p0",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-cd2f11f79d07464d890c617693dd03e0-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-cd2f11f79d07464d890c617693dd03e0",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792730004.6789498,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          }
+        ],
+        "warning": "练习观察可纠正，不是用户能力画像、个人经历证明或已掌握结论。"
+      }
+    },
+    {
+      "category": "incorrect",
+      "answer": "幂等就是每次生成不同的请求键，超时后直接重新执行，不用保存回执。",
+      "status": "source_observation_created",
+      "answer_view": {
+        "session_id": "interview-0718d09206474eaeb989cbc805afb227",
+        "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+        "version_id": "ver-09a7ae4e258d49f2925b885d00af1950",
+        "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+        "jd_text": "Checkpoint 恢复 幂等",
+        "match_id": null,
+        "mode": "llm",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "status": "active",
+        "revision": 1,
+        "max_turns": 2,
+        "created_at": "2026-10-23T04:33:24.876951Z",
+        "current": {
+          "question_id": "interview-0718d09206474eaeb989cbc805afb227-q2",
+          "topic_id": "backend-idempotency",
+          "prompt": "怎样区分两次请求是在重试同一操作，还是发起新操作？",
+          "followup": true,
+          "references": []
+        },
+        "turns": [
+          {
+            "question": {
+              "question_id": "interview-0718d09206474eaeb989cbc805afb227-q1",
+              "topic_id": "backend-idempotency",
+              "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "followup": false,
+              "references": []
+            },
+            "answer": "幂等就是每次生成不同的请求键，超时后直接重新执行，不用保存回执。"
+          }
+        ],
+        "messages": [
+          {
+            "from": "evaluator",
+            "to": "interviewer",
+            "type": "decision_feedback",
+            "turn": 1,
+            "topic": "backend-idempotency",
+            "detail": "已提交后续行动建议；详细评价在结束后开放。"
+          },
+          {
+            "from": "interviewer",
+            "to": "coordinator",
+            "type": "routing_decision",
+            "turn": 1,
+            "action": "follow_up",
+            "detail": "根据评估建议和剩余轮次选择下一题。"
+          }
+        ],
+        "usage": {
+          "evaluator_calls": 1,
+          "interviewer_calls": 1,
+          "provider_calls": 2,
+          "input_tokens": 2573,
+          "output_tokens": 254,
+          "active_ms": 2626,
+          "cost": null
+        },
+        "answer_pending": false,
+        "resumable": false,
+        "model_inflight": false,
+        "error_code": null,
+        "version_is_current": true,
+        "warnings": [
+          "题库技术练习，不代表真实面试表现或录用概率；本地仅按词面线索评估。",
+          "绑定本次简历版本/JD，之后编辑不会改变本场；C1 自述未独立核实，缺少材料不等于没有能力。",
+          "进行中隐藏参考要点与详细评价，结束后复盘；本次不会写简历或投递。"
+        ],
+        "track": "job",
+        "use_retrieval": false,
+        "project_id": null,
+        "snapshot_id": null,
+        "tool_trace": [],
+        "tool_calls": 0
+      },
+      "synthetic_state": {
+        "session_id": "interview-0718d09206474eaeb989cbc805afb227",
+        "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+        "version_id": "ver-09a7ae4e258d49f2925b885d00af1950",
+        "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+        "jd_text": "Checkpoint 恢复 幂等",
+        "match_id": null,
+        "mode": "llm",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "created_at": "2026-10-23T04:33:24.876951Z",
+        "status": "active",
+        "revision": 1,
+        "max_turns": 2,
+        "plan": [
+          {
+            "anchor_id": "backend-idempotency",
+            "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+            "points": {
+              "p0": "persist execution identity",
+              "p1": "query provider receipt",
+              "p2": "do not blindly replay"
+            },
+            "aliases": {
+              "p0": [
+                "幂等",
+                "执行标识",
+                "request id"
+              ],
+              "p1": [
+                "回执",
+                "查询结果",
+                "查询状态"
+              ],
+              "p2": [
+                "不盲目",
+                "不要盲目",
+                "人工核对",
+                "人工对账"
+              ]
+            },
+            "followups": {
+              "p0": "怎样区分两次请求是在重试同一操作，还是发起新操作？",
+              "p1": "若外部请求只返回超时，接下来怎样判断它是否已经完成？",
+              "p2": "如果暂时无法确认上次结果，你会怎样决定下一步？"
+            },
+            "references": []
+          },
+          {
+            "anchor_id": "agent-loop-termination",
+            "prompt": "怎样让 Agent 工具循环在重复尝试或没有进展时停止？",
+            "points": {
+              "p0": "step and tool-call limits",
+              "p1": "same-action fingerprint",
+              "p2": "no-progress detection"
+            },
+            "aliases": {
+              "p0": [
+                "步数",
+                "调用上限",
+                "预算"
+              ],
+              "p1": [
+                "指纹",
+                "同一动作",
+                "fingerprint"
+              ],
+              "p2": [
+                "无进展",
+                "没有进展",
+                "重复失败"
+              ]
+            },
+            "followups": {
+              "p0": "怎样给一次执行设置边界？",
+              "p1": "如何判断这次调用是否和上次实际上相同？",
+              "p2": "如果动作不同但任务仍无进展，怎样判断是否继续？"
+            },
+            "references": []
+          },
+          {
+            "anchor_id": "agent-state-memory",
+            "prompt": "运行中的 Checkpoint 与跨会话长期记忆应该分别保存什么？",
+            "points": {
+              "p0": "pending actions and budgets",
+              "p1": "cross-run user facts",
+              "p2": "different lifecycle contracts"
+            },
+            "aliases": {
+              "p0": [
+                "待执行",
+                "预算",
+                "pending"
+              ],
+              "p1": [
+                "跨会话",
+                "长期偏好",
+                "用户事实"
+              ],
+              "p2": [
+                "生命周期",
+                "保留期限"
+              ]
+            },
+            "followups": {
+              "p0": "恢复时怎样知道还有哪些动作没有完成？",
+              "p1": "下次新任务开始时，哪些信息仍需要保留？",
+              "p2": "如果信息过期，你会怎样处理两类数据？"
+            },
+            "references": []
+          }
+        ],
+        "topic_index": 0,
+        "current": {
+          "question_id": "interview-0718d09206474eaeb989cbc805afb227-q2",
+          "topic_id": "backend-idempotency",
+          "prompt": "怎样区分两次请求是在重试同一操作，还是发起新操作？",
+          "followup": true,
+          "focus_id": "p0",
+          "references": []
+        },
+        "turns": [
+          {
+            "answered_at": "2026-10-23T04:33:27.518225Z",
+            "question": {
+              "question_id": "interview-0718d09206474eaeb989cbc805afb227-q1",
+              "topic_id": "backend-idempotency",
+              "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "followup": false,
+              "focus_id": null,
+              "references": []
+            },
+            "answer": "幂等就是每次生成不同的请求键，超时后直接重新执行，不用保存回执。",
+            "evaluation": {
+              "covered_ids": [],
+              "missing_ids": [
+                "p0",
+                "p1",
+                "p2"
+              ],
+              "claim_needs_evidence": true,
+              "recommended_action": "follow_up",
+              "note": "回答主张每次生成不同请求键、超时直接重执行且不保存回执，与持久化执行身份、查询回执、避免盲目重放三点均相悖；个人做法未经核实，需追问证据。",
+              "point_assessments": [
+                {
+                  "point_id": "p0",
+                  "status": "incorrect",
+                  "answer_quote": "幂等就是每次生成不同的请求键",
+                  "reason": "每次生成不同请求键，未持久化执行身份，反而破坏幂等",
+                  "assessed_by": "model_semantic_unverified"
+                },
+                {
+                  "point_id": "p1",
+                  "status": "incorrect",
+                  "answer_quote": "不用保存回执",
+                  "reason": "明确不保存回执，未查询服务商回执",
+                  "assessed_by": "model_semantic_unverified"
+                },
+                {
+                  "point_id": "p2",
+                  "status": "incorrect",
+                  "answer_quote": "超时后直接重新执行",
+                  "reason": "超时直接重执行属于盲目重放，未先确认结果",
+                  "assessed_by": "model_semantic_unverified"
+                }
+              ],
+              "assessment_mode": "model_semantic_unverified",
+              "method_version": "review-r1-answer-1"
+            },
+            "decision": {
+              "action": "follow_up",
+              "focus_id": "p0",
+              "retrieval_target": "none"
+            }
+          }
+        ],
+        "pending": null,
+        "next_node": "idle",
+        "model_inflight": false,
+        "error_code": null,
+        "usage": {
+          "evaluator_calls": 1,
+          "interviewer_calls": 1,
+          "provider_calls": 2,
+          "input_tokens": 2573,
+          "output_tokens": 254,
+          "active_ms": 2626,
+          "cost": null
+        },
+        "messages": [
+          {
+            "from": "evaluator",
+            "to": "interviewer",
+            "type": "decision_feedback",
+            "turn": 1,
+            "topic": "backend-idempotency",
+            "detail": "已提交后续行动建议；详细评价在结束后开放。"
+          },
+          {
+            "from": "interviewer",
+            "to": "coordinator",
+            "type": "routing_decision",
+            "turn": 1,
+            "action": "follow_up",
+            "detail": "根据评估建议和剩余轮次选择下一题。"
+          }
+        ],
+        "use_retrieval": false,
+        "track": "job",
+        "project_id": null,
+        "snapshot_id": null,
+        "prior_session_id": null,
+        "learning_observation_id": null,
+        "learning_allow_historical_version": false,
+        "learning_condition_hash": null,
+        "bound_owner": null,
+        "tool_trace": [],
+        "tool_fingerprints": [],
+        "tool_calls": 0,
+        "evidence_packs": [],
+        "execution": {
+          "schema_version": "shared-run-1",
+          "run_id": "interview-0718d09206474eaeb989cbc805afb227",
+          "trace_id": "trace-interview-0718d09206474eaeb989cbc805afb227",
+          "owner_id": "alice",
+          "task": "interview",
+          "source_identity": {
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "version_id": "ver-09a7ae4e258d49f2925b885d00af1950",
+            "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+            "jd_hash": "2c12b1b8a3be4dd1d7bea01f52ff85abf4dca80340b8b68dc77a9d1a85f1aadc",
+            "project_id": "",
+            "snapshot_id": ""
+          },
+          "model_identity": {
+            "provider": "deepseek",
+            "model": "deepseek-flash",
+            "prompt": "s4-interview-1"
+          },
+          "node": "coordinator",
+          "revision": 1,
+          "status": "active",
+          "next_action": "idle",
+          "latest_feedback": {
+            "sender": "evaluator",
+            "revision": 0,
+            "outcome": "follow_up",
+            "constraint": "错误/不确定要点需追问；词面线索与个人真实性分开判断。",
+            "artifact_hash": "ac75156a649a5beebe78ae946dffba718674cfcb758411c14cf8bb262952fc30",
+            "feedback_id": "feedback-e2d3b384edbaefc808938a16c162165368dea682812d22a52d8310e89bbb3737",
+            "details": {
+              "covered_ids": [],
+              "missing_ids": [
+                "p0",
+                "p1",
+                "p2"
+              ],
+              "claim_needs_evidence": true,
+              "assessment_mode": "model_semantic_unverified",
+              "semantic_assessments_present": true,
+              "point_statuses": [
+                {
+                  "point_id": "p0",
+                  "status": "incorrect",
+                  "answer_quote": "幂等就是每次生成不同的请求键"
+                },
+                {
+                  "point_id": "p1",
+                  "status": "incorrect",
+                  "answer_quote": "不用保存回执"
+                },
+                {
+                  "point_id": "p2",
+                  "status": "incorrect",
+                  "answer_quote": "超时后直接重新执行"
+                }
+              ]
+            }
+          },
+          "artifact_hashes": [],
+          "evidence_pack_ids": [],
+          "limits": {
+            "role_calls": 4,
+            "tools": 18,
+            "input_chars": 30000,
+            "active_ms": 120000
+          },
+          "usage": {
+            "evaluator_calls": 1,
+            "interviewer_calls": 1,
+            "provider_calls": 2,
+            "input_tokens": 2573,
+            "output_tokens": 254,
+            "active_ms": 2626,
+            "cost": null,
+            "tool_calls": 0
+          },
+          "context_incomplete": false,
+          "recovery": "none",
+          "attempt": 1,
+          "execution_token": "e3d83ba83e0d43359a2dcf76f0f1ddac",
+          "lease_until": 1792730604.8904526,
+          "event_seq": 6,
+          "events": [
+            {
+              "seq": 1,
+              "role": "evaluator",
+              "phase": "started",
+              "revision": 0,
+              "input_hash": "dbc0c6c6e45df90c4b5bca03ee71e1242cfe349bb093e106aaab3f70b0324236",
+              "output_hash": null,
+              "feedback_id": null,
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:24.901844+00:00",
+              "metrics": {}
+            },
+            {
+              "seq": 2,
+              "role": "evaluator",
+              "phase": "completed",
+              "revision": 0,
+              "input_hash": null,
+              "output_hash": "8bdc26dab004cc119f59e4c8a9118c3c6e3378a8fb1b1bfe3e2e0ee881e6265b",
+              "feedback_id": null,
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:26.709389+00:00",
+              "metrics": {
+                "provider": "deepseek",
+                "model": "deepseek-flash",
+                "skill_id": "interview-evaluator",
+                "skill_version": "s4-v1",
+                "prompt_version": "s4-interview-1",
+                "latency_ms": 1802,
+                "input_tokens": 1247,
+                "output_tokens": 230,
+                "schema_valid": true,
+                "fallback_used": false,
+                "error_code": null,
+                "finish_reason": "stop",
+                "completion_truncated": false
+              }
+            },
+            {
+              "seq": 3,
+              "role": "evaluator",
+              "phase": "gate",
+              "revision": 0,
+              "input_hash": null,
+              "output_hash": "ac75156a649a5beebe78ae946dffba718674cfcb758411c14cf8bb262952fc30",
+              "feedback_id": "feedback-e2d3b384edbaefc808938a16c162165368dea682812d22a52d8310e89bbb3737",
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:26.710454+00:00",
+              "metrics": {}
+            },
+            {
+              "seq": 4,
+              "role": "interviewer",
+              "phase": "started",
+              "revision": 0,
+              "input_hash": "eed4d763e9c31e8448fdeb3de520cf051bdb662e369743933bd50f3fe08a6125",
+              "output_hash": null,
+              "feedback_id": "feedback-e2d3b384edbaefc808938a16c162165368dea682812d22a52d8310e89bbb3737",
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:26.716761+00:00",
+              "metrics": {}
+            },
+            {
+              "seq": 5,
+              "role": "interviewer",
+              "phase": "completed",
+              "revision": 0,
+              "input_hash": null,
+              "output_hash": "cf2be5f9c1bafb2bb79945e68aed5bf1101ef0a7cc9aced54d92f5fb59caa91b",
+              "feedback_id": "feedback-e2d3b384edbaefc808938a16c162165368dea682812d22a52d8310e89bbb3737",
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:27.511841+00:00",
+              "metrics": {
+                "provider": "deepseek",
+                "model": "deepseek-flash",
+                "skill_id": "interview-interviewer",
+                "skill_version": "s4-v1",
+                "prompt_version": "s4-interview-1",
+                "latency_ms": 790,
+                "input_tokens": 1326,
+                "output_tokens": 24,
+                "schema_valid": true,
+                "fallback_used": false,
+                "error_code": null,
+                "finish_reason": "stop",
+                "completion_truncated": false
+              }
+            },
+            {
+              "seq": 6,
+              "role": "coordinator",
+              "phase": "route",
+              "revision": 1,
+              "input_hash": null,
+              "output_hash": null,
+              "feedback_id": "feedback-e2d3b384edbaefc808938a16c162165368dea682812d22a52d8310e89bbb3737",
+              "code": "active",
+              "recorded_at": "2026-10-23T04:33:27.518296+00:00",
+              "metrics": {}
+            }
+          ],
+          "approval": null,
+          "independent_truth": "not_verified"
+        }
+      },
+      "observations": {
+        "added": 3,
+        "source_session_id": "interview-0718d09206474eaeb989cbc805afb227",
+        "observations": [
+          {
+            "observation_id": "learn-b7d2c4e3133f59966cd90320d30ffeb9",
+            "session_id": "interview-0718d09206474eaeb989cbc805afb227",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792730007.6347964,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "幂等就是每次生成不同的请求键，超时后直接重新执行，不用保存回执。",
+              "answer_hash": "e2ece7cb7ac516ae09ce7ac787cddbfbcb9b73303da5133713101f1dd9344e26",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "06c5d93a2f9b9cb3f9067cefbfeda729c28164bad7146af763b768c3a25b016d",
+              "evaluation_note": "回答主张每次生成不同请求键、超时直接重执行且不保存回执，与持久化执行身份、查询回执、避免盲目重放三点均相悖；个人做法未经核实，需追问证据。",
+              "finding": "incorrect",
+              "independent_mastery": "not_established",
+              "knowledge_point": "do not blindly replay",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792730007.518225,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "超时后直接重新执行",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p2",
+                "reason": "超时直接重执行属于盲目重放，未先确认结果",
+                "status": "incorrect"
+              },
+              "point_id": "p2",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-0718d09206474eaeb989cbc805afb227-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-0718d09206474eaeb989cbc805afb227",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792730007.634719,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          },
+          {
+            "observation_id": "learn-675139f7e5be88ae79f0ced2c64465be",
+            "session_id": "interview-0718d09206474eaeb989cbc805afb227",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792730007.6344762,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "幂等就是每次生成不同的请求键，超时后直接重新执行，不用保存回执。",
+              "answer_hash": "e2ece7cb7ac516ae09ce7ac787cddbfbcb9b73303da5133713101f1dd9344e26",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "9ea86bdc034db7288fd02e5de54edac063b105c950f21b6567e138449a943c54",
+              "evaluation_note": "回答主张每次生成不同请求键、超时直接重执行且不保存回执，与持久化执行身份、查询回执、避免盲目重放三点均相悖；个人做法未经核实，需追问证据。",
+              "finding": "incorrect",
+              "independent_mastery": "not_established",
+              "knowledge_point": "query provider receipt",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792730007.518225,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "不用保存回执",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p1",
+                "reason": "明确不保存回执，未查询服务商回执",
+                "status": "incorrect"
+              },
+              "point_id": "p1",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-0718d09206474eaeb989cbc805afb227-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-0718d09206474eaeb989cbc805afb227",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792730007.6343915,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          },
+          {
+            "observation_id": "learn-c8b9874cddf55acbfddcd1b93b1bf161",
+            "session_id": "interview-0718d09206474eaeb989cbc805afb227",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792730007.6337771,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "幂等就是每次生成不同的请求键，超时后直接重新执行，不用保存回执。",
+              "answer_hash": "e2ece7cb7ac516ae09ce7ac787cddbfbcb9b73303da5133713101f1dd9344e26",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "dd1f3c89221acf74624aba278df4a4566a9d108a5bdd52f32bc7a6e809da41b0",
+              "evaluation_note": "回答主张每次生成不同请求键、超时直接重执行且不保存回执，与持久化执行身份、查询回执、避免盲目重放三点均相悖；个人做法未经核实，需追问证据。",
+              "finding": "incorrect",
+              "independent_mastery": "not_established",
+              "knowledge_point": "persist execution identity",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792730007.518225,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "幂等就是每次生成不同的请求键",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p0",
+                "reason": "每次生成不同请求键，未持久化执行身份，反而破坏幂等",
+                "status": "incorrect"
+              },
+              "point_id": "p0",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-0718d09206474eaeb989cbc805afb227-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-0718d09206474eaeb989cbc805afb227",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792730007.6336825,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          }
+        ],
+        "warning": "练习观察可纠正，不是用户能力画像、个人经历证明或已掌握结论。"
+      }
+    },
+    {
+      "category": "dont_know",
+      "answer": "这个问题我暂时不会回答。",
+      "status": "source_observation_created",
+      "answer_view": {
+        "session_id": "interview-f5404bf129b5461bbf0b7de00f171b71",
+        "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+        "version_id": "ver-09a7ae4e258d49f2925b885d00af1950",
+        "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+        "jd_text": "Checkpoint 恢复 幂等",
+        "match_id": null,
+        "mode": "llm",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "status": "active",
+        "revision": 1,
+        "max_turns": 2,
+        "created_at": "2026-10-23T04:33:27.834215Z",
+        "current": {
+          "question_id": "interview-f5404bf129b5461bbf0b7de00f171b71-q2",
+          "topic_id": "backend-idempotency",
+          "prompt": "怎样区分两次请求是在重试同一操作，还是发起新操作？",
+          "followup": true,
+          "references": []
+        },
+        "turns": [
+          {
+            "question": {
+              "question_id": "interview-f5404bf129b5461bbf0b7de00f171b71-q1",
+              "topic_id": "backend-idempotency",
+              "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "followup": false,
+              "references": []
+            },
+            "answer": "这个问题我暂时不会回答。"
+          }
+        ],
+        "messages": [
+          {
+            "from": "evaluator",
+            "to": "interviewer",
+            "type": "decision_feedback",
+            "turn": 1,
+            "topic": "backend-idempotency",
+            "detail": "已提交后续行动建议；详细评价在结束后开放。"
+          },
+          {
+            "from": "interviewer",
+            "to": "coordinator",
+            "type": "routing_decision",
+            "turn": 1,
+            "action": "follow_up",
+            "detail": "根据评估建议和剩余轮次选择下一题。"
+          }
+        ],
+        "usage": {
+          "evaluator_calls": 1,
+          "interviewer_calls": 1,
+          "provider_calls": 2,
+          "input_tokens": 2546,
+          "output_tokens": 217,
+          "active_ms": 2392,
+          "cost": null
+        },
+        "answer_pending": false,
+        "resumable": false,
+        "model_inflight": false,
+        "error_code": null,
+        "version_is_current": true,
+        "warnings": [
+          "题库技术练习，不代表真实面试表现或录用概率；本地仅按词面线索评估。",
+          "绑定本次简历版本/JD，之后编辑不会改变本场；C1 自述未独立核实，缺少材料不等于没有能力。",
+          "进行中隐藏参考要点与详细评价，结束后复盘；本次不会写简历或投递。"
+        ],
+        "track": "job",
+        "use_retrieval": false,
+        "project_id": null,
+        "snapshot_id": null,
+        "tool_trace": [],
+        "tool_calls": 0
+      },
+      "synthetic_state": {
+        "session_id": "interview-f5404bf129b5461bbf0b7de00f171b71",
+        "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+        "version_id": "ver-09a7ae4e258d49f2925b885d00af1950",
+        "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+        "jd_text": "Checkpoint 恢复 幂等",
+        "match_id": null,
+        "mode": "llm",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "created_at": "2026-10-23T04:33:27.834215Z",
+        "status": "active",
+        "revision": 1,
+        "max_turns": 2,
+        "plan": [
+          {
+            "anchor_id": "backend-idempotency",
+            "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+            "points": {
+              "p0": "persist execution identity",
+              "p1": "query provider receipt",
+              "p2": "do not blindly replay"
+            },
+            "aliases": {
+              "p0": [
+                "幂等",
+                "执行标识",
+                "request id"
+              ],
+              "p1": [
+                "回执",
+                "查询结果",
+                "查询状态"
+              ],
+              "p2": [
+                "不盲目",
+                "不要盲目",
+                "人工核对",
+                "人工对账"
+              ]
+            },
+            "followups": {
+              "p0": "怎样区分两次请求是在重试同一操作，还是发起新操作？",
+              "p1": "若外部请求只返回超时，接下来怎样判断它是否已经完成？",
+              "p2": "如果暂时无法确认上次结果，你会怎样决定下一步？"
+            },
+            "references": []
+          },
+          {
+            "anchor_id": "agent-loop-termination",
+            "prompt": "怎样让 Agent 工具循环在重复尝试或没有进展时停止？",
+            "points": {
+              "p0": "step and tool-call limits",
+              "p1": "same-action fingerprint",
+              "p2": "no-progress detection"
+            },
+            "aliases": {
+              "p0": [
+                "步数",
+                "调用上限",
+                "预算"
+              ],
+              "p1": [
+                "指纹",
+                "同一动作",
+                "fingerprint"
+              ],
+              "p2": [
+                "无进展",
+                "没有进展",
+                "重复失败"
+              ]
+            },
+            "followups": {
+              "p0": "怎样给一次执行设置边界？",
+              "p1": "如何判断这次调用是否和上次实际上相同？",
+              "p2": "如果动作不同但任务仍无进展，怎样判断是否继续？"
+            },
+            "references": []
+          },
+          {
+            "anchor_id": "agent-state-memory",
+            "prompt": "运行中的 Checkpoint 与跨会话长期记忆应该分别保存什么？",
+            "points": {
+              "p0": "pending actions and budgets",
+              "p1": "cross-run user facts",
+              "p2": "different lifecycle contracts"
+            },
+            "aliases": {
+              "p0": [
+                "待执行",
+                "预算",
+                "pending"
+              ],
+              "p1": [
+                "跨会话",
+                "长期偏好",
+                "用户事实"
+              ],
+              "p2": [
+                "生命周期",
+                "保留期限"
+              ]
+            },
+            "followups": {
+              "p0": "恢复时怎样知道还有哪些动作没有完成？",
+              "p1": "下次新任务开始时，哪些信息仍需要保留？",
+              "p2": "如果信息过期，你会怎样处理两类数据？"
+            },
+            "references": []
+          }
+        ],
+        "topic_index": 0,
+        "current": {
+          "question_id": "interview-f5404bf129b5461bbf0b7de00f171b71-q2",
+          "topic_id": "backend-idempotency",
+          "prompt": "怎样区分两次请求是在重试同一操作，还是发起新操作？",
+          "followup": true,
+          "focus_id": "p0",
+          "references": []
+        },
+        "turns": [
+          {
+            "answered_at": "2026-10-23T04:33:30.242681Z",
+            "question": {
+              "question_id": "interview-f5404bf129b5461bbf0b7de00f171b71-q1",
+              "topic_id": "backend-idempotency",
+              "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "followup": false,
+              "focus_id": null,
+              "references": []
+            },
+            "answer": "这个问题我暂时不会回答。",
+            "evaluation": {
+              "covered_ids": [],
+              "missing_ids": [
+                "p0",
+                "p1",
+                "p2"
+              ],
+              "claim_needs_evidence": false,
+              "recommended_action": "follow_up",
+              "note": "回答明确表示暂不回答，未涉及持久化执行标识、查询服务商回执或不盲目重放任何要点，需追问。",
+              "point_assessments": [
+                {
+                  "point_id": "p0",
+                  "status": "uncertain",
+                  "answer_quote": "",
+                  "reason": "回答未提及持久化执行标识，无法判断。",
+                  "assessed_by": "model_semantic_unverified"
+                },
+                {
+                  "point_id": "p1",
+                  "status": "uncertain",
+                  "answer_quote": "",
+                  "reason": "回答未提及查询服务商回执，无法判断。",
+                  "assessed_by": "model_semantic_unverified"
+                },
+                {
+                  "point_id": "p2",
+                  "status": "uncertain",
+                  "answer_quote": "",
+                  "reason": "回答未提及避免盲目重放，无法判断。",
+                  "assessed_by": "model_semantic_unverified"
+                }
+              ],
+              "assessment_mode": "model_semantic_unverified",
+              "method_version": "review-r1-answer-1"
+            },
+            "decision": {
+              "action": "follow_up",
+              "focus_id": "p0",
+              "retrieval_target": "none"
+            }
+          }
+        ],
+        "pending": null,
+        "next_node": "idle",
+        "model_inflight": false,
+        "error_code": null,
+        "usage": {
+          "evaluator_calls": 1,
+          "interviewer_calls": 1,
+          "provider_calls": 2,
+          "input_tokens": 2546,
+          "output_tokens": 217,
+          "active_ms": 2392,
+          "cost": null
+        },
+        "messages": [
+          {
+            "from": "evaluator",
+            "to": "interviewer",
+            "type": "decision_feedback",
+            "turn": 1,
+            "topic": "backend-idempotency",
+            "detail": "已提交后续行动建议；详细评价在结束后开放。"
+          },
+          {
+            "from": "interviewer",
+            "to": "coordinator",
+            "type": "routing_decision",
+            "turn": 1,
+            "action": "follow_up",
+            "detail": "根据评估建议和剩余轮次选择下一题。"
+          }
+        ],
+        "use_retrieval": false,
+        "track": "job",
+        "project_id": null,
+        "snapshot_id": null,
+        "prior_session_id": null,
+        "learning_observation_id": null,
+        "learning_allow_historical_version": false,
+        "learning_condition_hash": null,
+        "bound_owner": null,
+        "tool_trace": [],
+        "tool_fingerprints": [],
+        "tool_calls": 0,
+        "evidence_packs": [],
+        "execution": {
+          "schema_version": "shared-run-1",
+          "run_id": "interview-f5404bf129b5461bbf0b7de00f171b71",
+          "trace_id": "trace-interview-f5404bf129b5461bbf0b7de00f171b71",
+          "owner_id": "alice",
+          "task": "interview",
+          "source_identity": {
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "version_id": "ver-09a7ae4e258d49f2925b885d00af1950",
+            "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+            "jd_hash": "2c12b1b8a3be4dd1d7bea01f52ff85abf4dca80340b8b68dc77a9d1a85f1aadc",
+            "project_id": "",
+            "snapshot_id": ""
+          },
+          "model_identity": {
+            "provider": "deepseek",
+            "model": "deepseek-flash",
+            "prompt": "s4-interview-1"
+          },
+          "node": "coordinator",
+          "revision": 1,
+          "status": "active",
+          "next_action": "idle",
+          "latest_feedback": {
+            "sender": "evaluator",
+            "revision": 0,
+            "outcome": "follow_up",
+            "constraint": "错误/不确定要点需追问；词面线索与个人真实性分开判断。",
+            "artifact_hash": "dd0615b3874f77e24fdac9e68abf8d727c4b47733806ca74e9987c08f024e922",
+            "feedback_id": "feedback-60ed8f88febb51d03dcf78ec9cc828bbdb04626d63936f02eabf5e721082ffb5",
+            "details": {
+              "covered_ids": [],
+              "missing_ids": [
+                "p0",
+                "p1",
+                "p2"
+              ],
+              "claim_needs_evidence": false,
+              "assessment_mode": "model_semantic_unverified",
+              "semantic_assessments_present": true,
+              "point_statuses": [
+                {
+                  "point_id": "p0",
+                  "status": "uncertain",
+                  "answer_quote": ""
+                },
+                {
+                  "point_id": "p1",
+                  "status": "uncertain",
+                  "answer_quote": ""
+                },
+                {
+                  "point_id": "p2",
+                  "status": "uncertain",
+                  "answer_quote": ""
+                }
+              ]
+            }
+          },
+          "artifact_hashes": [],
+          "evidence_pack_ids": [],
+          "limits": {
+            "role_calls": 4,
+            "tools": 18,
+            "input_chars": 30000,
+            "active_ms": 120000
+          },
+          "usage": {
+            "evaluator_calls": 1,
+            "interviewer_calls": 1,
+            "provider_calls": 2,
+            "input_tokens": 2546,
+            "output_tokens": 217,
+            "active_ms": 2392,
+            "cost": null,
+            "tool_calls": 0
+          },
+          "context_incomplete": false,
+          "recovery": "none",
+          "attempt": 1,
+          "execution_token": "2c10c1782d6f438abcb99ab47f9b8c3c",
+          "lease_until": 1792730607.8496013,
+          "event_seq": 6,
+          "events": [
+            {
+              "seq": 1,
+              "role": "evaluator",
+              "phase": "started",
+              "revision": 0,
+              "input_hash": "78479c90d64c78ba02faa101a4904615cfea5bb85aaf1f49f90ae8bd205cfa43",
+              "output_hash": null,
+              "feedback_id": null,
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:27.862294+00:00",
+              "metrics": {}
+            },
+            {
+              "seq": 2,
+              "role": "evaluator",
+              "phase": "completed",
+              "revision": 0,
+              "input_hash": null,
+              "output_hash": "d6d95928791fd1a5afc8ed65bb153154dd104ec0dfa024e8bb30a74efd6fb41d",
+              "feedback_id": null,
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:29.368976+00:00",
+              "metrics": {
+                "provider": "deepseek",
+                "model": "deepseek-flash",
+                "skill_id": "interview-evaluator",
+                "skill_version": "s4-v1",
+                "prompt_version": "s4-interview-1",
+                "latency_ms": 1502,
+                "input_tokens": 1235,
+                "output_tokens": 193,
+                "schema_valid": true,
+                "fallback_used": false,
+                "error_code": null,
+                "finish_reason": "stop",
+                "completion_truncated": false
+              }
+            },
+            {
+              "seq": 3,
+              "role": "evaluator",
+              "phase": "gate",
+              "revision": 0,
+              "input_hash": null,
+              "output_hash": "dd0615b3874f77e24fdac9e68abf8d727c4b47733806ca74e9987c08f024e922",
+              "feedback_id": "feedback-60ed8f88febb51d03dcf78ec9cc828bbdb04626d63936f02eabf5e721082ffb5",
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:29.369399+00:00",
+              "metrics": {}
+            },
+            {
+              "seq": 4,
+              "role": "interviewer",
+              "phase": "started",
+              "revision": 0,
+              "input_hash": "73741a8b9ec2a3d4efa4c0f055da141ac24f00f4214b1eeda909afdfcf285eff",
+              "output_hash": null,
+              "feedback_id": "feedback-60ed8f88febb51d03dcf78ec9cc828bbdb04626d63936f02eabf5e721082ffb5",
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:29.373496+00:00",
+              "metrics": {}
+            },
+            {
+              "seq": 5,
+              "role": "interviewer",
+              "phase": "completed",
+              "revision": 0,
+              "input_hash": null,
+              "output_hash": "cf2be5f9c1bafb2bb79945e68aed5bf1101ef0a7cc9aced54d92f5fb59caa91b",
+              "feedback_id": "feedback-60ed8f88febb51d03dcf78ec9cc828bbdb04626d63936f02eabf5e721082ffb5",
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:30.235422+00:00",
+              "metrics": {
+                "provider": "deepseek",
+                "model": "deepseek-flash",
+                "skill_id": "interview-interviewer",
+                "skill_version": "s4-v1",
+                "prompt_version": "s4-interview-1",
+                "latency_ms": 857,
+                "input_tokens": 1311,
+                "output_tokens": 24,
+                "schema_valid": true,
+                "fallback_used": false,
+                "error_code": null,
+                "finish_reason": "stop",
+                "completion_truncated": false
+              }
+            },
+            {
+              "seq": 6,
+              "role": "coordinator",
+              "phase": "route",
+              "revision": 1,
+              "input_hash": null,
+              "output_hash": null,
+              "feedback_id": "feedback-60ed8f88febb51d03dcf78ec9cc828bbdb04626d63936f02eabf5e721082ffb5",
+              "code": "active",
+              "recorded_at": "2026-10-23T04:33:30.242721+00:00",
+              "metrics": {}
+            }
+          ],
+          "approval": null,
+          "independent_truth": "not_verified"
+        }
+      },
+      "observations": {
+        "added": 3,
+        "source_session_id": "interview-f5404bf129b5461bbf0b7de00f171b71",
+        "observations": [
+          {
+            "observation_id": "learn-322fe1e22c71cb5733bb5070205f2413",
+            "session_id": "interview-f5404bf129b5461bbf0b7de00f171b71",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792730010.3578887,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "这个问题我暂时不会回答。",
+              "answer_hash": "65d7b60976c8e0fe3177fcac98358652b5909f0e240556eca18e1440438c8236",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "06c5d93a2f9b9cb3f9067cefbfeda729c28164bad7146af763b768c3a25b016d",
+              "evaluation_note": "回答明确表示暂不回答，未涉及持久化执行标识、查询服务商回执或不盲目重放任何要点，需追问。",
+              "finding": "uncertain",
+              "independent_mastery": "not_established",
+              "knowledge_point": "do not blindly replay",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792730010.242681,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p2",
+                "reason": "回答未提及避免盲目重放，无法判断。",
+                "status": "uncertain"
+              },
+              "point_id": "p2",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-f5404bf129b5461bbf0b7de00f171b71-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-f5404bf129b5461bbf0b7de00f171b71",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792730010.3578405,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          },
+          {
+            "observation_id": "learn-7f6cc414ac0429fa628c0ce3d8bfe22f",
+            "session_id": "interview-f5404bf129b5461bbf0b7de00f171b71",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792730010.357656,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "这个问题我暂时不会回答。",
+              "answer_hash": "65d7b60976c8e0fe3177fcac98358652b5909f0e240556eca18e1440438c8236",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "9ea86bdc034db7288fd02e5de54edac063b105c950f21b6567e138449a943c54",
+              "evaluation_note": "回答明确表示暂不回答，未涉及持久化执行标识、查询服务商回执或不盲目重放任何要点，需追问。",
+              "finding": "uncertain",
+              "independent_mastery": "not_established",
+              "knowledge_point": "query provider receipt",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792730010.242681,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p1",
+                "reason": "回答未提及查询服务商回执，无法判断。",
+                "status": "uncertain"
+              },
+              "point_id": "p1",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-f5404bf129b5461bbf0b7de00f171b71-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-f5404bf129b5461bbf0b7de00f171b71",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792730010.3576033,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          },
+          {
+            "observation_id": "learn-56744b0b5bac0a0ba7b139fe79d8c73c",
+            "session_id": "interview-f5404bf129b5461bbf0b7de00f171b71",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792730010.357245,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "这个问题我暂时不会回答。",
+              "answer_hash": "65d7b60976c8e0fe3177fcac98358652b5909f0e240556eca18e1440438c8236",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "dd1f3c89221acf74624aba278df4a4566a9d108a5bdd52f32bc7a6e809da41b0",
+              "evaluation_note": "回答明确表示暂不回答，未涉及持久化执行标识、查询服务商回执或不盲目重放任何要点，需追问。",
+              "finding": "uncertain",
+              "independent_mastery": "not_established",
+              "knowledge_point": "persist execution identity",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792730010.242681,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p0",
+                "reason": "回答未提及持久化执行标识，无法判断。",
+                "status": "uncertain"
+              },
+              "point_id": "p0",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-f5404bf129b5461bbf0b7de00f171b71-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-f5404bf129b5461bbf0b7de00f171b71",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792730010.3571866,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          }
+        ],
+        "warning": "练习观察可纠正，不是用户能力画像、个人经历证明或已掌握结论。"
+      }
+    },
+    {
+      "category": "insufficient_evidence",
+      "answer": "源码有接口定义，但我没有运行记录，无法证明生产运行或我个人负责过部署。",
+      "status": "source_observation_created",
+      "answer_view": {
+        "session_id": "interview-ddd69e98168c4d0a846030eaae459795",
+        "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+        "version_id": "ver-09a7ae4e258d49f2925b885d00af1950",
+        "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+        "jd_text": "Checkpoint 恢复 幂等",
+        "match_id": null,
+        "mode": "llm",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "status": "active",
+        "revision": 1,
+        "max_turns": 2,
+        "created_at": "2026-10-23T04:33:30.554500Z",
+        "current": {
+          "question_id": "interview-ddd69e98168c4d0a846030eaae459795-q2",
+          "topic_id": "backend-idempotency",
+          "prompt": "怎样区分两次请求是在重试同一操作，还是发起新操作？",
+          "followup": true,
+          "references": []
+        },
+        "turns": [
+          {
+            "question": {
+              "question_id": "interview-ddd69e98168c4d0a846030eaae459795-q1",
+              "topic_id": "backend-idempotency",
+              "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "followup": false,
+              "references": []
+            },
+            "answer": "源码有接口定义，但我没有运行记录，无法证明生产运行或我个人负责过部署。"
+          }
+        ],
+        "messages": [
+          {
+            "from": "evaluator",
+            "to": "interviewer",
+            "type": "decision_feedback",
+            "turn": 1,
+            "topic": "backend-idempotency",
+            "detail": "已提交后续行动建议；详细评价在结束后开放。"
+          },
+          {
+            "from": "interviewer",
+            "to": "coordinator",
+            "type": "routing_decision",
+            "turn": 1,
+            "action": "follow_up",
+            "detail": "根据评估建议和剩余轮次选择下一题。"
+          }
+        ],
+        "usage": {
+          "evaluator_calls": 1,
+          "interviewer_calls": 1,
+          "provider_calls": 2,
+          "input_tokens": 2563,
+          "output_tokens": 265,
+          "active_ms": 3020,
+          "cost": null
+        },
+        "answer_pending": false,
+        "resumable": false,
+        "model_inflight": false,
+        "error_code": null,
+        "version_is_current": true,
+        "warnings": [
+          "题库技术练习，不代表真实面试表现或录用概率；本地仅按词面线索评估。",
+          "绑定本次简历版本/JD，之后编辑不会改变本场；C1 自述未独立核实，缺少材料不等于没有能力。",
+          "进行中隐藏参考要点与详细评价，结束后复盘；本次不会写简历或投递。"
+        ],
+        "track": "job",
+        "use_retrieval": false,
+        "project_id": null,
+        "snapshot_id": null,
+        "tool_trace": [],
+        "tool_calls": 0
+      },
+      "synthetic_state": {
+        "session_id": "interview-ddd69e98168c4d0a846030eaae459795",
+        "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+        "version_id": "ver-09a7ae4e258d49f2925b885d00af1950",
+        "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+        "jd_text": "Checkpoint 恢复 幂等",
+        "match_id": null,
+        "mode": "llm",
+        "provider": "deepseek",
+        "model": "deepseek-flash",
+        "created_at": "2026-10-23T04:33:30.554500Z",
+        "status": "active",
+        "revision": 1,
+        "max_turns": 2,
+        "plan": [
+          {
+            "anchor_id": "backend-idempotency",
+            "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+            "points": {
+              "p0": "persist execution identity",
+              "p1": "query provider receipt",
+              "p2": "do not blindly replay"
+            },
+            "aliases": {
+              "p0": [
+                "幂等",
+                "执行标识",
+                "request id"
+              ],
+              "p1": [
+                "回执",
+                "查询结果",
+                "查询状态"
+              ],
+              "p2": [
+                "不盲目",
+                "不要盲目",
+                "人工核对",
+                "人工对账"
+              ]
+            },
+            "followups": {
+              "p0": "怎样区分两次请求是在重试同一操作，还是发起新操作？",
+              "p1": "若外部请求只返回超时，接下来怎样判断它是否已经完成？",
+              "p2": "如果暂时无法确认上次结果，你会怎样决定下一步？"
+            },
+            "references": []
+          },
+          {
+            "anchor_id": "agent-loop-termination",
+            "prompt": "怎样让 Agent 工具循环在重复尝试或没有进展时停止？",
+            "points": {
+              "p0": "step and tool-call limits",
+              "p1": "same-action fingerprint",
+              "p2": "no-progress detection"
+            },
+            "aliases": {
+              "p0": [
+                "步数",
+                "调用上限",
+                "预算"
+              ],
+              "p1": [
+                "指纹",
+                "同一动作",
+                "fingerprint"
+              ],
+              "p2": [
+                "无进展",
+                "没有进展",
+                "重复失败"
+              ]
+            },
+            "followups": {
+              "p0": "怎样给一次执行设置边界？",
+              "p1": "如何判断这次调用是否和上次实际上相同？",
+              "p2": "如果动作不同但任务仍无进展，怎样判断是否继续？"
+            },
+            "references": []
+          },
+          {
+            "anchor_id": "agent-state-memory",
+            "prompt": "运行中的 Checkpoint 与跨会话长期记忆应该分别保存什么？",
+            "points": {
+              "p0": "pending actions and budgets",
+              "p1": "cross-run user facts",
+              "p2": "different lifecycle contracts"
+            },
+            "aliases": {
+              "p0": [
+                "待执行",
+                "预算",
+                "pending"
+              ],
+              "p1": [
+                "跨会话",
+                "长期偏好",
+                "用户事实"
+              ],
+              "p2": [
+                "生命周期",
+                "保留期限"
+              ]
+            },
+            "followups": {
+              "p0": "恢复时怎样知道还有哪些动作没有完成？",
+              "p1": "下次新任务开始时，哪些信息仍需要保留？",
+              "p2": "如果信息过期，你会怎样处理两类数据？"
+            },
+            "references": []
+          }
+        ],
+        "topic_index": 0,
+        "current": {
+          "question_id": "interview-ddd69e98168c4d0a846030eaae459795-q2",
+          "topic_id": "backend-idempotency",
+          "prompt": "怎样区分两次请求是在重试同一操作，还是发起新操作？",
+          "followup": true,
+          "focus_id": "p0",
+          "references": []
+        },
+        "turns": [
+          {
+            "answered_at": "2026-10-23T04:33:33.590965Z",
+            "question": {
+              "question_id": "interview-ddd69e98168c4d0a846030eaae459795-q1",
+              "topic_id": "backend-idempotency",
+              "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "followup": false,
+              "focus_id": null,
+              "references": []
+            },
+            "answer": "源码有接口定义，但我没有运行记录，无法证明生产运行或我个人负责过部署。",
+            "evaluation": {
+              "covered_ids": [],
+              "missing_ids": [
+                "p0",
+                "p1",
+                "p2"
+              ],
+              "claim_needs_evidence": true,
+              "recommended_action": "follow_up",
+              "note": "回答仅声明无运行记录、无法证明生产部署，未涉及持久化执行身份、查询服务商回执或不盲目重放，三个要点均未覆盖。",
+              "point_assessments": [
+                {
+                  "point_id": "p0",
+                  "status": "uncertain",
+                  "answer_quote": "",
+                  "reason": "回答未提及持久化执行身份或幂等键，无法判断。",
+                  "assessed_by": "model_semantic_unverified"
+                },
+                {
+                  "point_id": "p1",
+                  "status": "uncertain",
+                  "answer_quote": "",
+                  "reason": "回答未提及查询外部服务商回执或结果。",
+                  "assessed_by": "model_semantic_unverified"
+                },
+                {
+                  "point_id": "p2",
+                  "status": "uncertain",
+                  "answer_quote": "",
+                  "reason": "回答未说明是否避免盲目重放。",
+                  "assessed_by": "model_semantic_unverified"
+                }
+              ],
+              "assessment_mode": "model_semantic_unverified",
+              "method_version": "review-r1-answer-1"
+            },
+            "decision": {
+              "action": "follow_up",
+              "focus_id": "p0",
+              "retrieval_target": "none"
+            }
+          }
+        ],
+        "pending": null,
+        "next_node": "idle",
+        "model_inflight": false,
+        "error_code": null,
+        "usage": {
+          "evaluator_calls": 1,
+          "interviewer_calls": 1,
+          "provider_calls": 2,
+          "input_tokens": 2563,
+          "output_tokens": 265,
+          "active_ms": 3020,
+          "cost": null
+        },
+        "messages": [
+          {
+            "from": "evaluator",
+            "to": "interviewer",
+            "type": "decision_feedback",
+            "turn": 1,
+            "topic": "backend-idempotency",
+            "detail": "已提交后续行动建议；详细评价在结束后开放。"
+          },
+          {
+            "from": "interviewer",
+            "to": "coordinator",
+            "type": "routing_decision",
+            "turn": 1,
+            "action": "follow_up",
+            "detail": "根据评估建议和剩余轮次选择下一题。"
+          }
+        ],
+        "use_retrieval": false,
+        "track": "job",
+        "project_id": null,
+        "snapshot_id": null,
+        "prior_session_id": null,
+        "learning_observation_id": null,
+        "learning_allow_historical_version": false,
+        "learning_condition_hash": null,
+        "bound_owner": null,
+        "tool_trace": [],
+        "tool_fingerprints": [],
+        "tool_calls": 0,
+        "evidence_packs": [],
+        "execution": {
+          "schema_version": "shared-run-1",
+          "run_id": "interview-ddd69e98168c4d0a846030eaae459795",
+          "trace_id": "trace-interview-ddd69e98168c4d0a846030eaae459795",
+          "owner_id": "alice",
+          "task": "interview",
+          "source_identity": {
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "version_id": "ver-09a7ae4e258d49f2925b885d00af1950",
+            "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+            "jd_hash": "2c12b1b8a3be4dd1d7bea01f52ff85abf4dca80340b8b68dc77a9d1a85f1aadc",
+            "project_id": "",
+            "snapshot_id": ""
+          },
+          "model_identity": {
+            "provider": "deepseek",
+            "model": "deepseek-flash",
+            "prompt": "s4-interview-1"
+          },
+          "node": "coordinator",
+          "revision": 1,
+          "status": "active",
+          "next_action": "idle",
+          "latest_feedback": {
+            "sender": "evaluator",
+            "revision": 0,
+            "outcome": "follow_up",
+            "constraint": "错误/不确定要点需追问；词面线索与个人真实性分开判断。",
+            "artifact_hash": "fd516eca7eb80498f4ca6addbcda891d37c75817c51dff6c6e0144bb5b5cd0e7",
+            "feedback_id": "feedback-23567257ccf49b28cb94ad18661181a81e1d990bdb6b93ea0a64ca2d5d196db9",
+            "details": {
+              "covered_ids": [],
+              "missing_ids": [
+                "p0",
+                "p1",
+                "p2"
+              ],
+              "claim_needs_evidence": true,
+              "assessment_mode": "model_semantic_unverified",
+              "semantic_assessments_present": true,
+              "point_statuses": [
+                {
+                  "point_id": "p0",
+                  "status": "uncertain",
+                  "answer_quote": ""
+                },
+                {
+                  "point_id": "p1",
+                  "status": "uncertain",
+                  "answer_quote": ""
+                },
+                {
+                  "point_id": "p2",
+                  "status": "uncertain",
+                  "answer_quote": ""
+                }
+              ]
+            }
+          },
+          "artifact_hashes": [],
+          "evidence_pack_ids": [],
+          "limits": {
+            "role_calls": 4,
+            "tools": 18,
+            "input_chars": 30000,
+            "active_ms": 120000
+          },
+          "usage": {
+            "evaluator_calls": 1,
+            "interviewer_calls": 1,
+            "provider_calls": 2,
+            "input_tokens": 2563,
+            "output_tokens": 265,
+            "active_ms": 3020,
+            "cost": null,
+            "tool_calls": 0
+          },
+          "context_incomplete": false,
+          "recovery": "none",
+          "attempt": 1,
+          "execution_token": "990a46b56fb24ba0b52b6c8962bd8c5f",
+          "lease_until": 1792730610.5690877,
+          "event_seq": 6,
+          "events": [
+            {
+              "seq": 1,
+              "role": "evaluator",
+              "phase": "started",
+              "revision": 0,
+              "input_hash": "aa7770ef126bd6412e14b035fb9aca4eb174c627746c0215f10710f0b1ec002a",
+              "output_hash": null,
+              "feedback_id": null,
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:30.580350+00:00",
+              "metrics": {}
+            },
+            {
+              "seq": 2,
+              "role": "evaluator",
+              "phase": "completed",
+              "revision": 0,
+              "input_hash": null,
+              "output_hash": "9c44fa80727ed442f4ca22b17d303ae9df980edafe2ea40ae6d570adf00664c7",
+              "feedback_id": null,
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:32.587377+00:00",
+              "metrics": {
+                "provider": "deepseek",
+                "model": "deepseek-flash",
+                "skill_id": "interview-evaluator",
+                "skill_version": "s4-v1",
+                "prompt_version": "s4-interview-1",
+                "latency_ms": 2002,
+                "input_tokens": 1247,
+                "output_tokens": 241,
+                "schema_valid": true,
+                "fallback_used": false,
+                "error_code": null,
+                "finish_reason": "stop",
+                "completion_truncated": false
+              }
+            },
+            {
+              "seq": 3,
+              "role": "evaluator",
+              "phase": "gate",
+              "revision": 0,
+              "input_hash": null,
+              "output_hash": "fd516eca7eb80498f4ca6addbcda891d37c75817c51dff6c6e0144bb5b5cd0e7",
+              "feedback_id": "feedback-23567257ccf49b28cb94ad18661181a81e1d990bdb6b93ea0a64ca2d5d196db9",
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:32.587918+00:00",
+              "metrics": {}
+            },
+            {
+              "seq": 4,
+              "role": "interviewer",
+              "phase": "started",
+              "revision": 0,
+              "input_hash": "30f7d44ecf1250474f37c9ef8e415d272a8ecf4ce473b9f34d2f71695c3e8c49",
+              "output_hash": null,
+              "feedback_id": "feedback-23567257ccf49b28cb94ad18661181a81e1d990bdb6b93ea0a64ca2d5d196db9",
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:32.594069+00:00",
+              "metrics": {}
+            },
+            {
+              "seq": 5,
+              "role": "interviewer",
+              "phase": "completed",
+              "revision": 0,
+              "input_hash": null,
+              "output_hash": "cf2be5f9c1bafb2bb79945e68aed5bf1101ef0a7cc9aced54d92f5fb59caa91b",
+              "feedback_id": "feedback-23567257ccf49b28cb94ad18661181a81e1d990bdb6b93ea0a64ca2d5d196db9",
+              "code": null,
+              "recorded_at": "2026-10-23T04:33:33.584191+00:00",
+              "metrics": {
+                "provider": "deepseek",
+                "model": "deepseek-flash",
+                "skill_id": "interview-interviewer",
+                "skill_version": "s4-v1",
+                "prompt_version": "s4-interview-1",
+                "latency_ms": 982,
+                "input_tokens": 1316,
+                "output_tokens": 24,
+                "schema_valid": true,
+                "fallback_used": false,
+                "error_code": null,
+                "finish_reason": "stop",
+                "completion_truncated": false
+              }
+            },
+            {
+              "seq": 6,
+              "role": "coordinator",
+              "phase": "route",
+              "revision": 1,
+              "input_hash": null,
+              "output_hash": null,
+              "feedback_id": "feedback-23567257ccf49b28cb94ad18661181a81e1d990bdb6b93ea0a64ca2d5d196db9",
+              "code": "active",
+              "recorded_at": "2026-10-23T04:33:33.591000+00:00",
+              "metrics": {}
+            }
+          ],
+          "approval": null,
+          "independent_truth": "not_verified"
+        }
+      },
+      "observations": {
+        "added": 3,
+        "source_session_id": "interview-ddd69e98168c4d0a846030eaae459795",
+        "observations": [
+          {
+            "observation_id": "learn-2dc817da2dd09292fa372ce6012140e6",
+            "session_id": "interview-ddd69e98168c4d0a846030eaae459795",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792730013.7032785,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "源码有接口定义，但我没有运行记录，无法证明生产运行或我个人负责过部署。",
+              "answer_hash": "ae9e6d5f870f20dbfbfa85f505d2f147ebebfb78950cb10415eb49fdd8f58f5c",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "06c5d93a2f9b9cb3f9067cefbfeda729c28164bad7146af763b768c3a25b016d",
+              "evaluation_note": "回答仅声明无运行记录、无法证明生产部署，未涉及持久化执行身份、查询服务商回执或不盲目重放，三个要点均未覆盖。",
+              "finding": "uncertain",
+              "independent_mastery": "not_established",
+              "knowledge_point": "do not blindly replay",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792730013.590965,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p2",
+                "reason": "回答未说明是否避免盲目重放。",
+                "status": "uncertain"
+              },
+              "point_id": "p2",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-ddd69e98168c4d0a846030eaae459795-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-ddd69e98168c4d0a846030eaae459795",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792730013.7032542,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          },
+          {
+            "observation_id": "learn-9a5276b5ea93fa81cae8899bb147ad58",
+            "session_id": "interview-ddd69e98168c4d0a846030eaae459795",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792730013.7031832,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "源码有接口定义，但我没有运行记录，无法证明生产运行或我个人负责过部署。",
+              "answer_hash": "ae9e6d5f870f20dbfbfa85f505d2f147ebebfb78950cb10415eb49fdd8f58f5c",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "9ea86bdc034db7288fd02e5de54edac063b105c950f21b6567e138449a943c54",
+              "evaluation_note": "回答仅声明无运行记录、无法证明生产部署，未涉及持久化执行身份、查询服务商回执或不盲目重放，三个要点均未覆盖。",
+              "finding": "uncertain",
+              "independent_mastery": "not_established",
+              "knowledge_point": "query provider receipt",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792730013.590965,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p1",
+                "reason": "回答未提及查询外部服务商回执或结果。",
+                "status": "uncertain"
+              },
+              "point_id": "p1",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-ddd69e98168c4d0a846030eaae459795-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-ddd69e98168c4d0a846030eaae459795",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792730013.7031553,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          },
+          {
+            "observation_id": "learn-54fde6b3f7914eaede1ad4827a309ab7",
+            "session_id": "interview-ddd69e98168c4d0a846030eaae459795",
+            "revision": 0,
+            "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+            "created_at": 1792730013.7025516,
+            "confirmed": false,
+            "paused": false,
+            "independent_mastery": "not_established",
+            "status": "valid",
+            "queue_bucket": "new",
+            "payload": {
+              "answer": "源码有接口定义，但我没有运行记录，无法证明生产运行或我个人负责过部署。",
+              "answer_hash": "ae9e6d5f870f20dbfbfa85f505d2f147ebebfb78950cb10415eb49fdd8f58f5c",
+              "assessment_mode": "model_semantic_unverified",
+              "condition_hash": "dd1f3c89221acf74624aba278df4a4566a9d108a5bdd52f32bc7a6e809da41b0",
+              "evaluation_note": "回答仅声明无运行记录、无法证明生产部署，未涉及持久化执行身份、查询服务商回执或不盲目重放，三个要点均未覆盖。",
+              "finding": "uncertain",
+              "independent_mastery": "not_established",
+              "knowledge_point": "persist execution identity",
+              "method_version": "review-r1-answer-1",
+              "mode": "llm",
+              "model": "deepseek-flash",
+              "observation_time_source": "answer_committed_at",
+              "observed_at": 1792730013.590965,
+              "personal_experience_truth": "not_verified",
+              "point_assessment": {
+                "answer_quote": "",
+                "assessed_by": "model_semantic_unverified",
+                "point_id": "p0",
+                "reason": "回答未提及持久化执行身份或幂等键，无法判断。",
+                "status": "uncertain"
+              },
+              "point_id": "p0",
+              "provider": "deepseek",
+              "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+              "question_id": "interview-ddd69e98168c4d0a846030eaae459795-q1",
+              "references": [],
+              "resume_id": "res-043ab276ae3f42688161d1a0f7dfeadf",
+              "rubric_hash": "4987087630a8648eaa2dfd6c0811cd50adf1936b7babde995af7b0c0edef1833",
+              "session_id": "interview-ddd69e98168c4d0a846030eaae459795",
+              "topic_id": "backend-idempotency",
+              "version_hash": "21244c6cb35f853cfb8e98d4c8f8ebcb2a565cf8126e153ea803cbe7a660bd4f",
+              "version_id": "ver-09a7ae4e258d49f2925b885d00af1950"
+            },
+            "controls": {
+              "confirmed": false,
+              "deleted": false,
+              "due_at": 1792730013.70246,
+              "paused": false
+            },
+            "historical_version": false,
+            "source_age_days": 0,
+            "confidence": "single_observation",
+            "reason": "awaiting_user_check"
+          }
+        ],
+        "warning": "练习观察可纠正，不是用户能力画像、个人经历证明或已掌握结论。"
+      }
+    }
+  ],
+  "rows": [],
+  "status": "completed",
+  "calls": [
+    {
+      "index": 1,
+      "dispatched": true,
+      "prompt_hash": "8872ddd00e614b677d57ebf69e296f5a5cec644871bf0857005f1271d95843fa",
+      "input_chars": 3759,
+      "max_output_tokens": 900,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 1258,
+        "completion_tokens": 252,
+        "total_tokens": 1510,
+        "prompt_tokens_details": {
+          "cached_tokens": 768
+        },
+        "prompt_cache_hit_tokens": 768,
+        "prompt_cache_miss_tokens": 490
+      },
+      "raw_output": "{\"covered_ids\":[\"p0\",\"p1\",\"p2\"],\"missing_ids\":[],\"claim_needs_evidence\":false,\"recommended_action\":\"next\",\"note\":\"回答覆盖幂等键持久化执行标识、超时后查询回执、不盲目重放三个要点，语义与评分点一致；属于方案性回答，无需额外经历证据。\",\"point_assessments\":[{\"point_id\":\"p0\",\"status\":\"correct\",\"answer_quote\":\"幂等键记录执行标识，持久化执行回执\",\"reason\":\"明确以幂等键记录执行标识并持久化回执，符合持久化执行身份。\",\"assessed_by\":\"model_semantic_unverified\"},{\"point_id\":\"p1\",\"status\":\"correct\",\"answer_quote\":\"超时后先查询回执，确认后续状态\",\"reason\":\"明确超时后先查询回执确认状态，符合查询提供方回执。\",\"assessed_by\":\"model_semantic_unverified\"},{\"point_id\":\"p2\",\"status\":\"correct\",\"answer_quote\":\"不盲目重放\",\"reason\":\"明确不盲目重放，符合避免盲目重试的要求。\",\"assessed_by\":\"model_semantic_unverified\"}]}",
+      "finish_reason": "stop",
+      "input_tokens": 1258,
+      "output_tokens": 252,
+      "latency_ms": 1507.87
+    },
+    {
+      "index": 2,
+      "dispatched": true,
+      "prompt_hash": "0f63cb4180e36d5db70856f07bc2dc06a6d61f4a218f552a35bb08da2dd138b3",
+      "input_chars": 3444,
+      "max_output_tokens": 900,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 1341,
+        "completion_tokens": 21,
+        "total_tokens": 1362,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 1085
+      },
+      "raw_output": "{\"action\": \"next\", \"focus_id\": null, \"retrieval_target\": \"none\"}",
+      "finish_reason": "stop",
+      "input_tokens": 1341,
+      "output_tokens": 21,
+      "latency_ms": 744.86
+    },
+    {
+      "index": 3,
+      "dispatched": true,
+      "prompt_hash": "308a441ce67058b43d0b32f6d009252a812d044ebce3c10fd34e6473f243bd32",
+      "input_chars": 4114,
+      "max_output_tokens": 900,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 1375,
+        "completion_tokens": 263,
+        "total_tokens": 1638,
+        "prompt_tokens_details": {
+          "cached_tokens": 768
+        },
+        "prompt_cache_hit_tokens": 768,
+        "prompt_cache_miss_tokens": 607
+      },
+      "raw_output": "{\"covered_ids\":[\"p0\",\"p1\",\"p2\"],\"missing_ids\":[],\"claim_needs_evidence\":false,\"recommended_action\":\"next\",\"note\":\"回答覆盖持久化执行标识、查询回执、不盲目重放三个要点，语义与评分点一致；属于方案性回答，无需额外经历证据。\",\"point_assessments\":[{\"point_id\":\"p0\",\"status\":\"correct\",\"answer_quote\":\"幂等键记录执行标识，持久化执行回执\",\"reason\":\"明确以幂等键记录执行标识并持久化回执，符合持久化执行身份。\",\"assessed_by\":\"model_semantic_unverified\"},{\"point_id\":\"p1\",\"status\":\"correct\",\"answer_quote\":\"超时后先查询回执，确认后续状态\",\"reason\":\"明确超时后先查询回执确认状态，符合查询提供方回执。\",\"assessed_by\":\"model_semantic_unverified\"},{\"point_id\":\"p2\",\"status\":\"correct\",\"answer_quote\":\"不盲目重放\",\"reason\":\"明确不盲目重放，符合避免盲目重试。\",\"assessed_by\":\"model_semantic_unverified\"}],\"assessment_mode\":\"model_semantic_unverified\",\"method_version\":\"legacy-lexical\"}",
+      "finish_reason": "stop",
+      "input_tokens": 1375,
+      "output_tokens": 263,
+      "latency_ms": 1903.85
+    },
+    {
+      "index": 4,
+      "dispatched": true,
+      "prompt_hash": "09918bf8cbfc9a9cb7d501827215eff11915e6b911701d5b9b6b5f234a41a1d4",
+      "input_chars": 3938,
+      "max_output_tokens": 900,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 1499,
+        "completion_tokens": 21,
+        "total_tokens": 1520,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1499
+      },
+      "raw_output": "{\"action\": \"next\", \"focus_id\": null, \"retrieval_target\": \"none\"}",
+      "finish_reason": "stop",
+      "input_tokens": 1499,
+      "output_tokens": 21,
+      "latency_ms": 993.24
+    },
+    {
+      "index": 5,
+      "dispatched": true,
+      "prompt_hash": "77629e8a4d865bc68c70ab48bb82e56c70e67ab8e973171ca2014afba982251e",
+      "input_chars": 3744,
+      "max_output_tokens": 900,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 1244,
+        "completion_tokens": 255,
+        "total_tokens": 1499,
+        "prompt_tokens_details": {
+          "cached_tokens": 768
+        },
+        "prompt_cache_hit_tokens": 768,
+        "prompt_cache_miss_tokens": 476
+      },
+      "raw_output": "{\"covered_ids\":[\"p0\",\"p2\"],\"missing_ids\":[\"p1\"],\"claim_needs_evidence\":true,\"recommended_action\":\"follow_up\",\"note\":\"回答提到用幂等键记录执行标识，符合持久化执行身份；也明确不盲目重放，但未说明如何查询外部请求结果，p1缺失。个人原型经历未经核实，需补充证据。\",\"point_assessments\":[{\"point_id\":\"p0\",\"status\":\"correct\",\"reason\":\"回答明确用幂等键记录执行标识，符合持久化执行身份要求。\",\"answer_quote\":\"幂等键记录执行标识\",\"assessed_by\":\"model_semantic_unverified\"},{\"point_id\":\"p1\",\"status\":\"uncertain\",\"reason\":\"回答承认不清楚如何查询执行结果，未提供查询外部回执的方案。\",\"answer_quote\":\"但我还不清楚如何查询执行结果\",\"assessed_by\":\"model_semantic_unverified\"},{\"point_id\":\"p2\",\"status\":\"correct\",\"reason\":\"回答未主张直接重放，且以幂等键标识执行，体现不盲目重放。\",\"answer_quote\":\"幂等键记录执行标识\",\"assessed_by\":\"model_semantic_unverified\"}]}",
+      "finish_reason": "stop",
+      "input_tokens": 1244,
+      "output_tokens": 255,
+      "latency_ms": 2030.38
+    },
+    {
+      "index": 6,
+      "dispatched": true,
+      "prompt_hash": "510fd347140bbb65e1ae8ed0b110b023622406e85f05b8471cc57b4460a358b9",
+      "input_chars": 3472,
+      "max_output_tokens": 900,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 1338,
+        "completion_tokens": 24,
+        "total_tokens": 1362,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 1082
+      },
+      "raw_output": "{\"action\": \"follow_up\", \"focus_id\": \"p1\", \"retrieval_target\": \"none\"}",
+      "finish_reason": "stop",
+      "input_tokens": 1338,
+      "output_tokens": 24,
+      "latency_ms": 703.91
+    },
+    {
+      "index": 7,
+      "dispatched": true,
+      "prompt_hash": "fd8e8596303cc4435dc3cdd7aac256b86c2f2d2f6cf210943b248128f775b275",
+      "input_chars": 3751,
+      "max_output_tokens": 900,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 1247,
+        "completion_tokens": 230,
+        "total_tokens": 1477,
+        "prompt_tokens_details": {
+          "cached_tokens": 768
+        },
+        "prompt_cache_hit_tokens": 768,
+        "prompt_cache_miss_tokens": 479
+      },
+      "raw_output": "{\"covered_ids\":[],\"missing_ids\":[\"p0\",\"p1\",\"p2\"],\"claim_needs_evidence\":true,\"recommended_action\":\"follow_up\",\"note\":\"回答主张每次生成不同请求键、超时直接重执行且不保存回执，与持久化执行身份、查询回执、避免盲目重放三点均相悖；个人做法未经核实，需追问证据。\",\"point_assessments\":[{\"point_id\":\"p0\",\"status\":\"incorrect\",\"answer_quote\":\"幂等就是每次生成不同的请求键\",\"reason\":\"每次生成不同请求键，未持久化执行身份，反而破坏幂等\"},{\"point_id\":\"p1\",\"status\":\"incorrect\",\"answer_quote\":\"不用保存回执\",\"reason\":\"明确不保存回执，未查询服务商回执\"},{\"point_id\":\"p2\",\"status\":\"incorrect\",\"answer_quote\":\"超时后直接重新执行\",\"reason\":\"超时直接重执行属于盲目重放，未先确认结果\"}],\"assessment_mode\":\"model_semantic_unverified\",\"method_version\":\"legacy-lexical\"}",
+      "finish_reason": "stop",
+      "input_tokens": 1247,
+      "output_tokens": 230,
+      "latency_ms": 1802.66
+    },
+    {
+      "index": 8,
+      "dispatched": true,
+      "prompt_hash": "a503b790eb2b279f8c1c05dff8674f023f382758d6c98a9bbbf241355a51d40c",
+      "input_chars": 3490,
+      "max_output_tokens": 900,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 1326,
+        "completion_tokens": 24,
+        "total_tokens": 1350,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 1070
+      },
+      "raw_output": "{\"action\": \"follow_up\", \"focus_id\": \"p0\", \"retrieval_target\": \"none\"}",
+      "finish_reason": "stop",
+      "input_tokens": 1326,
+      "output_tokens": 24,
+      "latency_ms": 790.69
+    },
+    {
+      "index": 9,
+      "dispatched": true,
+      "prompt_hash": "c23686c070b0be2b541b0f745cfb279a37277dc8ab98cb51ca38dc56d39160d3",
+      "input_chars": 3731,
+      "max_output_tokens": 900,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 1235,
+        "completion_tokens": 193,
+        "total_tokens": 1428,
+        "prompt_tokens_details": {
+          "cached_tokens": 768
+        },
+        "prompt_cache_hit_tokens": 768,
+        "prompt_cache_miss_tokens": 467
+      },
+      "raw_output": "{\"covered_ids\": [], \"missing_ids\": [\"p0\", \"p1\", \"p2\"], \"claim_needs_evidence\": false, \"recommended_action\": \"follow_up\", \"note\": \"回答明确表示暂不回答，未涉及持久化执行标识、查询服务商回执或不盲目重放任何要点，需追问。\", \"point_assessments\": [{\"point_id\": \"p0\", \"status\": \"uncertain\", \"answer_quote\": \"\", \"reason\": \"回答未提及持久化执行标识，无法判断。\"}, {\"point_id\": \"p1\", \"status\": \"uncertain\", \"answer_quote\": \"\", \"reason\": \"回答未提及查询服务商回执，无法判断。\"}, {\"point_id\": \"p2\", \"status\": \"uncertain\", \"answer_quote\": \"\", \"reason\": \"回答未提及避免盲目重放，无法判断。\"}]}",
+      "finish_reason": "stop",
+      "input_tokens": 1235,
+      "output_tokens": 193,
+      "latency_ms": 1501.99
+    },
+    {
+      "index": 10,
+      "dispatched": true,
+      "prompt_hash": "131f3430faee79f20bad0b7d4b543488546bbdf45f5f40d89958f0a94ab4b2ea",
+      "input_chars": 3413,
+      "max_output_tokens": 900,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 1311,
+        "completion_tokens": 24,
+        "total_tokens": 1335,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 1055
+      },
+      "raw_output": "{\"action\": \"follow_up\", \"focus_id\": \"p0\", \"retrieval_target\": \"none\"}",
+      "finish_reason": "stop",
+      "input_tokens": 1311,
+      "output_tokens": 24,
+      "latency_ms": 857.47
+    },
+    {
+      "index": 11,
+      "dispatched": true,
+      "prompt_hash": "6f1f1f7ff17b8b8db328ab608589b09ca4f6bd99088d19e3fa396546a517c8e0",
+      "input_chars": 3754,
+      "max_output_tokens": 900,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 1247,
+        "completion_tokens": 241,
+        "total_tokens": 1488,
+        "prompt_tokens_details": {
+          "cached_tokens": 768
+        },
+        "prompt_cache_hit_tokens": 768,
+        "prompt_cache_miss_tokens": 479
+      },
+      "raw_output": "{\"covered_ids\": [], \"missing_ids\": [\"p0\", \"p1\", \"p2\"], \"claim_needs_evidence\": true, \"recommended_action\": \"follow_up\", \"note\": \"回答仅声明无运行记录、无法证明生产部署，未涉及持久化执行身份、查询服务商回执或不盲目重放，三个要点均未覆盖。\", \"point_assessments\": [{\"point_id\": \"p0\", \"status\": \"uncertain\", \"reason\": \"回答未提及持久化执行身份或幂等键，无法判断。\", \"answer_quote\": \"\", \"assessed_by\": \"model_semantic_unverified\"}, {\"point_id\": \"p1\", \"status\": \"uncertain\", \"reason\": \"回答未提及查询外部服务商回执或结果。\", \"answer_quote\": \"\", \"assessed_by\": \"model_semantic_unverified\"}, {\"point_id\": \"p2\", \"status\": \"uncertain\", \"reason\": \"回答未说明是否避免盲目重放。\", \"answer_quote\": \"\", \"assessed_by\": \"model_semantic_unverified\"}]}",
+      "finish_reason": "stop",
+      "input_tokens": 1247,
+      "output_tokens": 241,
+      "latency_ms": 2002.42
+    },
+    {
+      "index": 12,
+      "dispatched": true,
+      "prompt_hash": "9643c4df1781da6dad96baa469585c0aec289c3bc2c8e1cedaca4dc856205d4b",
+      "input_chars": 3432,
+      "max_output_tokens": 900,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 1316,
+        "completion_tokens": 24,
+        "total_tokens": 1340,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 1060
+      },
+      "raw_output": "{\"action\": \"follow_up\", \"focus_id\": \"p0\", \"retrieval_target\": \"none\"}",
+      "finish_reason": "stop",
+      "input_tokens": 1316,
+      "output_tokens": 24,
+      "latency_ms": 982.75
+    }
+  ],
+  "source_hash": "6e1ebfa28965fafaf0a8056bf3492e2c383141a57ec2b5c08cec73c89e40eb80"
+}

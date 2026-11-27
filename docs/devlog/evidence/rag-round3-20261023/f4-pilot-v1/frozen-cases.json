@@ -1,0 +1,34 @@
+{
+  "cases": [
+    {
+      "case_id": "P1",
+      "query": "CodeRAGService.read_code_range 的参数检查和返回边界",
+      "answer": "read_code_range要求1<=start<=end，最多120行；通过projects.read_file读指定owner项目快照，检查越界，切取原文并拒绝超过12000字符。引用ID绑定快照、路径、行号和文件hash，返回EvidenceReference。以上只解释固定快照的静态源码，不能证明实际运行、生产部署、真实录用效果或个人贡献。",
+      "expected_symbol": "read_code_range",
+      "scope": "full",
+      "learning": false
+    },
+    {
+      "case_id": "P2",
+      "query": "EvidenceReference.boundaries 显示什么，未显示什么",
+      "answer": "我只知道boundaries返回引用边界；具体各字段的意义和失败分支不会解释，暂时无法判断。以上只解释固定快照的静态源码，不能证明实际运行、生产部署、真实录用效果或个人贡献。",
+      "expected_symbol": "boundaries",
+      "scope": "full",
+      "learning": false
+    },
+    {
+      "case_id": "P3",
+      "query": "risk_flags 实际录用率提高了多少？",
+      "answer": "risk_flags转交requested_boundary_flags。录用率提高50%，系统已经部署。",
+      "expected_symbol": "risk_flags",
+      "scope": "full",
+      "learning": false
+    }
+  ],
+  "source_manifest_sha256": "585155f74cae81880bcaf09cf1dc113aa69c9c7c61afac84078f5da2e487fc06",
+  "synthetic_persona_answers_actions": true,
+  "human_gold": 0,
+  "paid_calls": 0,
+  "no_retry": true,
+  "phase": "pilot"
+}

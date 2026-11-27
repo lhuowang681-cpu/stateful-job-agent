@@ -54,9 +54,7 @@ def test_v2_live_runner_commits_sparse_bundle_without_legacy_artifacts(tmp_path)
                 output_schema=StructuredJD,
             )
 
-    provider = MockLLMProvider(
-            [{"parents": [], "atoms": [], "warnings": []}]
-    )
+    provider = MockLLMProvider([{"requirements": [], "warnings": []}])
     runtime = RuntimeContext(
         provider=provider,
         harness=LLMHarness(provider),

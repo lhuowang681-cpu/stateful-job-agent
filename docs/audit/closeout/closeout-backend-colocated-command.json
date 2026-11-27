@@ -1,0 +1,15 @@
+[
+  "/tmp/job-agent-closeout-dmoJ7Z/venv/bin/python",
+  "-u",
+  "-m",
+  "pytest",
+  "-vv",
+  "--tb=short",
+  "-o",
+  "faulthandler_timeout=30",
+  "--basetemp=/tmp/job-agent-closeout-dmoJ7Z/test-closeout-backend-colocated",
+  "--junitxml=/tmp/job-agent-closeout-dmoJ7Z/closeout-backend-colocated.xml",
+  "tests/test_backend_service_persistence.py",
+  "tests/test_backend_service_reliability.py",
+  "tests/test_application_assistant_evaluation.py"
+]

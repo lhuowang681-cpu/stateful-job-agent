@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-import hashlib
-import unicodedata
 from pathlib import Path, PurePosixPath
 
 from job_agent.evidence.contracts import (
@@ -13,6 +11,7 @@ from job_agent.evidence.contracts import (
     SourceSpan,
 )
 from job_agent.evidence.paths import EvidenceArtifactPaths
+from job_agent.text_identity import normalize_text, sha256_bytes
 
 
 _DENIED_ARTIFACT_TYPES = {
@@ -32,14 +31,6 @@ def normalize_artifact_type(value: str | None, *, kind: str) -> str | None:
     if kind == "original_resume":
         return "original_resume"
     return None
-
-
-def sha256_bytes(value: bytes) -> str:
-    return hashlib.sha256(value).hexdigest()
-
-
-def normalize_text(value: str) -> str:
-    return unicodedata.normalize("NFC", value.replace("\r\n", "\n").replace("\r", "\n"))
 
 
 class EvidenceSourceStore:
@@ -166,7 +157,8 @@ class EvidenceSourceStore:
 
     @staticmethod
     def _validate_input_policy(item: SourceInput) -> None:
-        if item.artifact_type and item.artifact_type.casefold() in _DENIED_ARTIFACT_TYPES:
+        artifact_type = normalize_artifact_type(item.artifact_type, kind=item.kind)
+        if artifact_type in _DENIED_ARTIFACT_TYPES:
             raise EvidenceV2Error("generated_source_forbidden")
         if item.path:
             parts = [part.casefold() for part in PurePosixPath(item.path.replace("\\", "/")).parts]

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import datetime, timezone
 from enum import Enum
 from time import monotonic
 from typing import Annotated, Any, Callable, Literal, Union
@@ -48,6 +49,13 @@ class RuntimeToolSpec(StrictModel):
         return self
 
 
+class AgentTurn(StrictModel):
+    turn_id: str = Field(min_length=1)
+    session_id: str = Field(min_length=1)
+    user_input: str = Field(min_length=1)
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+
 class AgentAction(StrictModel):
     kind: Literal["action"] = "action"
     action_id: str = Field(min_length=1)
@@ -59,7 +67,8 @@ class AgentAction(StrictModel):
 
 class AgentFinish(StrictModel):
     kind: Literal["finish"] = "finish"
-    result: dict[str, Any]
+    # Existing Runtime structured response payload.
+    result: dict[str, Any] = Field(min_length=1)
     completion_evidence: list[str] = Field(min_length=1)
     unresolved_items: list[str] = Field(default_factory=list)
     confidence: float = Field(ge=0.0, le=1.0)
@@ -68,6 +77,9 @@ class AgentFinish(StrictModel):
 class UserInputRequest(StrictModel):
     request_id: str = Field(min_length=1)
     prompt: str = Field(min_length=1)
+    reason: str = Field(default="missing_information", min_length=1)
+    required_fields: list[str] = Field(default_factory=list)
+    choices: list[str] = Field(default_factory=list)
     response_schema: dict[str, Any] = Field(default_factory=dict)
     context_summary: str = ""
     allow_cancel: bool = True
@@ -125,6 +137,8 @@ class AgentModelResponse(StrictModel):
     decision: AgentDecision
     input_tokens: int | None = Field(default=None, ge=0)
     output_tokens: int | None = Field(default=None, ge=0)
+    cached_tokens: int | None = Field(default=None, ge=0)
+    reasoning_tokens: int | None = Field(default=None, ge=0)
     cost: float | None = Field(default=None, ge=0.0)
     provider: str = "unknown"
     model: str = "unknown"
@@ -156,6 +170,41 @@ class ToolObservation(StrictModel):
             raise ValueError("error observations require an error_code")
         if not is_error and self.error_code is not None:
             raise ValueError("successful observations cannot include an error_code")
+        return self
+
+
+class AgentObservationOutcome(str, Enum):
+    SUCCEEDED = "succeeded"
+    FAILED = "failed"
+    WAITING_FOR_APPROVAL = "waiting_for_approval"
+    WAITING_FOR_USER = "waiting_for_user"
+
+
+class AgentObservation(StrictModel):
+    action_id: str = Field(min_length=1)
+    tool_name: str = Field(min_length=1)
+    outcome: AgentObservationOutcome
+    result: dict[str, Any] = Field(default_factory=dict)
+    error_summary: str | None = Field(default=None, min_length=1)
+    approval_required: bool = False
+    user_input_required: bool = False
+
+    @model_validator(mode="after")
+    def validate_outcome_contract(self):
+        if self.approval_required and self.user_input_required:
+            raise ValueError("an observation cannot wait for approval and user input")
+        if self.outcome == AgentObservationOutcome.SUCCEEDED:
+            if self.error_summary is not None:
+                raise ValueError("successful observations cannot include an error summary")
+        elif self.outcome == AgentObservationOutcome.FAILED:
+            if self.error_summary is None:
+                raise ValueError("failed observations require an error summary")
+        elif self.outcome == AgentObservationOutcome.WAITING_FOR_APPROVAL:
+            if not self.approval_required:
+                raise ValueError("approval-waiting observations must require approval")
+        elif self.outcome == AgentObservationOutcome.WAITING_FOR_USER:
+            if not self.user_input_required:
+                raise ValueError("user-waiting observations must require user input")
         return self
 
 
@@ -238,6 +287,18 @@ class VerificationResult(StrictModel):
     reason_code: str
     feedback: str
     evidence_refs: list[str] = Field(default_factory=list)
+
+
+class AgentLoopTerminationReason(str, Enum):
+    FINISHED = "finished"
+    WAITING_FOR_USER = "waiting_for_user"
+    WAITING_FOR_APPROVAL = "waiting_for_approval"
+    STEP_BUDGET_EXHAUSTED = "step_budget_exhausted"
+    FATAL_ERROR = "fatal_error"
+
+
+class AgentLoopConfig(StrictModel):
+    max_steps: int = Field(default=8, ge=1)
 
 
 class AgentRunStatus(str, Enum):

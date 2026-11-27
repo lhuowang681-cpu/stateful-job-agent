@@ -1,0 +1,437 @@
+{
+  "version": "support-label-file-1",
+  "source_git": "ce209af86addcb016c1b70538e1772b9abf260be",
+  "corpus_snapshot": "corpus-4637d90185981267aef7b53d4fbff1ae0b2b3cddf1eb288bbe7c62f440c6f211",
+  "labels": [
+    {
+      "version": "support-label-1",
+      "case_id": "rag16-upload-limits",
+      "corpus_snapshot": "corpus-4637d90185981267aef7b53d4fbff1ae0b2b3cddf1eb288bbe7c62f440c6f211",
+      "answerable": true,
+      "minimal_spans": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/ingestion.py",
+          "content_hash": "3cba0f9f28612ace76fc3c69024d3c01107a4132cd0faaefd7edc94c703da020",
+          "start_line": 17,
+          "end_line": 35,
+          "quote": "    suffix = Path(filename.replace(\"\\\\\", \"/\")).suffix.lower()\n    if suffix not in {\".txt\", \".md\", \".pdf\", \".docx\"}:\n        raise ImportErrorCode(\"unsupported_file_type\")\n    if not data:\n        raise ImportErrorCode(\"empty_upload\")\n    if len(data) > MAX_UPLOAD_BYTES:\n        raise ImportErrorCode(\"upload_too_large\")\n    if suffix == \".pdf\":\n        if not data.startswith(b\"%PDF-\"):\n            raise ImportErrorCode(\"invalid_pdf\")\n        try:\n            from pypdf import PdfReader\n            reader = PdfReader(io.BytesIO(data))\n            if reader.is_encrypted:\n                raise ImportErrorCode(\"encrypted_pdf\")\n            if len(reader.pages) > 40:\n                raise ImportErrorCode(\"too_many_pages\")\n        except ImportErrorCode:\n            raise\n"
+        }
+      ],
+      "symbol_ranges": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/ingestion.py",
+          "content_hash": "3cba0f9f28612ace76fc3c69024d3c01107a4132cd0faaefd7edc94c703da020",
+          "start_line": 15,
+          "end_line": 60,
+          "quote": "def extract_upload(filename: str, data: bytes):\n    \"\"\"No client-controlled paths, archive extraction or external OCR calls.\"\"\"\n    suffix = Path(filename.replace(\"\\\\\", \"/\")).suffix.lower()\n    if suffix not in {\".txt\", \".md\", \".pdf\", \".docx\"}:\n        raise ImportErrorCode(\"unsupported_file_type\")\n    if not data:\n        raise ImportErrorCode(\"empty_upload\")\n    if len(data) > MAX_UPLOAD_BYTES:\n        raise ImportErrorCode(\"upload_too_large\")\n    if suffix == \".pdf\":\n        if not data.startswith(b\"%PDF-\"):\n            raise ImportErrorCode(\"invalid_pdf\")\n        try:\n            from pypdf import PdfReader\n            reader = PdfReader(io.BytesIO(data))\n            if reader.is_encrypted:\n                raise ImportErrorCode(\"encrypted_pdf\")\n            if len(reader.pages) > 40:\n                raise ImportErrorCode(\"too_many_pages\")\n        except ImportErrorCode:\n            raise\n        except Exception as exc:\n            raise ImportErrorCode(\"invalid_pdf\") from exc\n    if suffix == \".docx\":\n        try:\n            with zipfile.ZipFile(io.BytesIO(data)) as archive:\n                files = archive.infolist()\n                if len(files) > 2000 or sum(item.file_size for item in files) > 30 * 1024 * 1024:\n                    raise ImportErrorCode(\"expanded_document_too_large\")\n                if \"word/document.xml\" not in archive.namelist():\n                    raise ImportErrorCode(\"invalid_docx\")\n                if any(item.flag_bits & 1 for item in files):\n                    raise ImportErrorCode(\"encrypted_docx\")\n        except (zipfile.BadZipFile, RuntimeError) as exc:\n            raise ImportErrorCode(\"invalid_docx\") from exc\n    with TemporaryDirectory(prefix=\"resume-import-\") as directory:\n        path = Path(directory) / (\"upload\" + suffix)\n        path.write_bytes(data)\n        try:\n            result = load_source(path)\n        except ValueError as exc:\n            code = \"needs_ocr\" if suffix == \".pdf\" and \"no extractable text\" in str(exc).lower() else \"document_extraction_failed\"\n            raise ImportErrorCode(code) from exc\n    if len(result.text) > 100_000:\n        raise ImportErrorCode(\"extracted_text_too_large\")\n    return result\n"
+        }
+      ],
+      "requirement": "all",
+      "annotation_status": "ai_candidate",
+      "rationale": "Need all early upload/PDF checks; not OCR or successful document extraction."
+    },
+    {
+      "version": "support-label-1",
+      "case_id": "rag16-archive-path",
+      "corpus_snapshot": "corpus-4637d90185981267aef7b53d4fbff1ae0b2b3cddf1eb288bbe7c62f440c6f211",
+      "answerable": true,
+      "minimal_spans": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/project_import.py",
+          "content_hash": "1ffae0b025892cf4e9aebcf8ce692ab2d6293da76d332375511faabb097c14f0",
+          "start_line": 23,
+          "end_line": 31,
+          "quote": "    value=unicodedata.normalize('NFC',value)\n    if not value or len(value)>240 or '\\\\' in value or re.search(r'[\\x00-\\x1f:<>\"|?*]',value):\n        raise WorkspaceConflict('unsafe_archive_path')\n    path=PurePosixPath(value)\n    if path.is_absolute() or any(x in ('','..','.') or x.endswith(('.', ' ')) for x in value.split('/')) or len(path.parts)>14:\n        raise WorkspaceConflict('unsafe_archive_path')\n    if any(re.fullmatch(r'(?:con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\\..*)?',p,re.I) for p in path.parts):\n        raise WorkspaceConflict('unsafe_archive_path')\n    return path.as_posix()\n"
+        }
+      ],
+      "symbol_ranges": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/project_import.py",
+          "content_hash": "1ffae0b025892cf4e9aebcf8ce692ab2d6293da76d332375511faabb097c14f0",
+          "start_line": 22,
+          "end_line": 31,
+          "quote": "def checked_path(value: str) -> str:\n    value=unicodedata.normalize('NFC',value)\n    if not value or len(value)>240 or '\\\\' in value or re.search(r'[\\x00-\\x1f:<>\"|?*]',value):\n        raise WorkspaceConflict('unsafe_archive_path')\n    path=PurePosixPath(value)\n    if path.is_absolute() or any(x in ('','..','.') or x.endswith(('.', ' ')) for x in value.split('/')) or len(path.parts)>14:\n        raise WorkspaceConflict('unsafe_archive_path')\n    if any(re.fullmatch(r'(?:con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\\..*)?',p,re.I) for p in path.parts):\n        raise WorkspaceConflict('unsafe_archive_path')\n    return path.as_posix()\n"
+        }
+      ],
+      "requirement": "all",
+      "annotation_status": "ai_candidate",
+      "rationale": "Canonical Unicode, unsafe components, depth and platform device names together."
+    },
+    {
+      "version": "support-label-1",
+      "case_id": "rag16-zip-preflight",
+      "corpus_snapshot": "corpus-4637d90185981267aef7b53d4fbff1ae0b2b3cddf1eb288bbe7c62f440c6f211",
+      "answerable": true,
+      "minimal_spans": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/project_import.py",
+          "content_hash": "1ffae0b025892cf4e9aebcf8ce692ab2d6293da76d332375511faabb097c14f0",
+          "start_line": 44,
+          "end_line": 64,
+          "quote": "    if not data or len(data)>MAX_ARCHIVE_BYTES:raise WorkspaceConflict('archive_upload_limit')\n    files={};skipped=0;seen=set()\n    try:\n        with ZipFile(BytesIO(data)) as archive:\n            infos=archive.infolist()\n            if len(infos)>MAX_FILES or sum(x.file_size for x in infos)>MAX_EXPANDED_BYTES:\n                raise WorkspaceConflict('archive_expansion_limit')\n            for info in infos:\n                if info.flag_bits&1:raise WorkspaceConflict('encrypted_archive_not_supported')\n                mode=(info.external_attr>>16)&0xFFFF\n                if stat.S_ISLNK(mode) or (stat.S_IFMT(mode) and not (stat.S_ISREG(mode) or stat.S_ISDIR(mode))):\n                    raise WorkspaceConflict('archive_symlink_or_special_file')\n                name=info.filename.rstrip('/') if info.is_dir() else info.filename\n                path=checked_path(name)\n                if path.casefold() in seen:raise WorkspaceConflict('archive_duplicate_path')\n                seen.add(path.casefold())\n                if info.is_dir():continue\n                if excluded(path) or (PurePosixPath(path).suffix.casefold() not in ALLOWED_SUFFIXES and PurePosixPath(path).name.casefold() not in {'license','copying','notice'}):\n                    skipped+=1;continue\n                # Never decompress excluded binary/assets. Whole-archive expanded\n                # size/count limits still cover them before this loop.\n"
+        }
+      ],
+      "symbol_ranges": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/project_import.py",
+          "content_hash": "1ffae0b025892cf4e9aebcf8ce692ab2d6293da76d332375511faabb097c14f0",
+          "start_line": 43,
+          "end_line": 87,
+          "quote": "def scan_zip(data: bytes, *, strip_single_root=False):\n    if not data or len(data)>MAX_ARCHIVE_BYTES:raise WorkspaceConflict('archive_upload_limit')\n    files={};skipped=0;seen=set()\n    try:\n        with ZipFile(BytesIO(data)) as archive:\n            infos=archive.infolist()\n            if len(infos)>MAX_FILES or sum(x.file_size for x in infos)>MAX_EXPANDED_BYTES:\n                raise WorkspaceConflict('archive_expansion_limit')\n            for info in infos:\n                if info.flag_bits&1:raise WorkspaceConflict('encrypted_archive_not_supported')\n                mode=(info.external_attr>>16)&0xFFFF\n                if stat.S_ISLNK(mode) or (stat.S_IFMT(mode) and not (stat.S_ISREG(mode) or stat.S_ISDIR(mode))):\n                    raise WorkspaceConflict('archive_symlink_or_special_file')\n                name=info.filename.rstrip('/') if info.is_dir() else info.filename\n                path=checked_path(name)\n                if path.casefold() in seen:raise WorkspaceConflict('archive_duplicate_path')\n                seen.add(path.casefold())\n                if info.is_dir():continue\n                if excluded(path) or (PurePosixPath(path).suffix.casefold() not in ALLOWED_SUFFIXES and PurePosixPath(path).name.casefold() not in {'license','copying','notice'}):\n                    skipped+=1;continue\n                # Never decompress excluded binary/assets. Whole-archive expanded\n                # size/count limits still cover them before this loop.\n                if info.file_size>MAX_FILE_BYTES or info.file_size>max(1,info.compress_size)*200:\n                    raise WorkspaceConflict('archive_file_limit')\n                raw=archive.read(info)\n                if b'\\x00' in raw:skipped+=1;continue\n                try:text=raw.decode('utf-8-sig')\n                except UnicodeDecodeError:\n                    try:text=raw.decode('gb18030')\n                    except UnicodeDecodeError:skipped+=1;continue\n                if excluded(path,text):skipped+=1;continue\n                # Preserve text/line identity; do not normalize newlines or Unicode.\n                if text.strip():files[path]=text\n    except (BadZipFile, RuntimeError, NotImplementedError) as exc:\n        raise WorkspaceConflict('invalid_project_archive') from exc\n    if not files:raise WorkspaceConflict('no_indexable_project_files')\n    # GitHub/codeload zips have one enclosing directory, which is not a repo path.\n    roots={PurePosixPath(p).parts[0] for p in files}\n    removed_root=None\n    if strip_single_root and len(roots)==1 and all(len(PurePosixPath(p).parts)>1 for p in files):\n        removed_root=next(iter(roots))\n        files={'/'.join(PurePosixPath(p).parts[1:]):text for p,text in files.items()}\n    return files,{'archive_sha256':sha256(data).hexdigest(),'skipped_files':skipped,'stored_files':len(files),\n                  'executed':False,'safety_version':'zip-scan-v3-2','file_hash_basis':'sha256_of_decoded_text_utf8; newlines_preserved',\n                  'decoding':'utf8-sig_or_gb18030; unrecognized_and_binary_excluded','removed_root':removed_root}\n"
+        }
+      ],
+      "requirement": "all",
+      "annotation_status": "ai_candidate",
+      "rationale": "Requires all pre-decompression checks, not a claim that importing executes tests."
+    },
+    {
+      "version": "support-label-1",
+      "case_id": "rag16-github-boundary",
+      "corpus_snapshot": "corpus-4637d90185981267aef7b53d4fbff1ae0b2b3cddf1eb288bbe7c62f440c6f211",
+      "answerable": true,
+      "minimal_spans": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/github_import.py",
+          "content_hash": "3b51e6b2b3e57d45955b6406236f193b5998e3940d2e33f088d4552375cfe99f",
+          "start_line": 24,
+          "end_line": 31,
+          "quote": "    parsed=urlsplit(url)\n    if parsed.scheme!='https' or parsed.netloc!='github.com' or parsed.query or parsed.fragment:\n        raise WorkspaceConflict('github_public_https_url_required')\n    match=re.fullmatch(r'/([A-Za-z0-9_.-]{1,80})/([A-Za-z0-9_.-]{1,100})/?',parsed.path)\n    if not match:raise WorkspaceConflict('github_repository_url_required')\n    owner,repo=match.groups();repo=repo.removesuffix('.git')\n    if owner in ('.','..') or repo in ('','.','..'):raise WorkspaceConflict('github_repository_url_required')\n    return owner,repo\n"
+        },
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/github_import.py",
+          "content_hash": "3b51e6b2b3e57d45955b6406236f193b5998e3940d2e33f088d4552375cfe99f",
+          "start_line": 35,
+          "end_line": 39,
+          "quote": "    if host not in {'api.github.com','codeload.github.com'}:raise WorkspaceConflict('github_host_not_allowed')\n    try:addresses=socket.getaddrinfo(host,443,type=socket.SOCK_STREAM)\n    except OSError as exc:raise WorkspaceConflict('github_dns_unavailable') from exc\n    if not addresses or any(not ipaddress.ip_address(a[4][0]).is_global for a in addresses):\n        raise WorkspaceConflict('github_private_address_rejected')\n"
+        }
+      ],
+      "symbol_ranges": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/github_import.py",
+          "content_hash": "3b51e6b2b3e57d45955b6406236f193b5998e3940d2e33f088d4552375cfe99f",
+          "start_line": 23,
+          "end_line": 31,
+          "quote": "def repository_slug(url):\n    parsed=urlsplit(url)\n    if parsed.scheme!='https' or parsed.netloc!='github.com' or parsed.query or parsed.fragment:\n        raise WorkspaceConflict('github_public_https_url_required')\n    match=re.fullmatch(r'/([A-Za-z0-9_.-]{1,80})/([A-Za-z0-9_.-]{1,100})/?',parsed.path)\n    if not match:raise WorkspaceConflict('github_repository_url_required')\n    owner,repo=match.groups();repo=repo.removesuffix('.git')\n    if owner in ('.','..') or repo in ('','.','..'):raise WorkspaceConflict('github_repository_url_required')\n    return owner,repo\n"
+        },
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/github_import.py",
+          "content_hash": "3b51e6b2b3e57d45955b6406236f193b5998e3940d2e33f088d4552375cfe99f",
+          "start_line": 34,
+          "end_line": 39,
+          "quote": "def check_public_host(host):\n    if host not in {'api.github.com','codeload.github.com'}:raise WorkspaceConflict('github_host_not_allowed')\n    try:addresses=socket.getaddrinfo(host,443,type=socket.SOCK_STREAM)\n    except OSError as exc:raise WorkspaceConflict('github_dns_unavailable') from exc\n    if not addresses or any(not ipaddress.ip_address(a[4][0]).is_global for a in addresses):\n        raise WorkspaceConflict('github_private_address_rejected')\n"
+        }
+      ],
+      "requirement": "all",
+      "annotation_status": "ai_candidate",
+      "rationale": "Separate URL and DNS checks; static safeguards do not prove a real account scan."
+    },
+    {
+      "version": "support-label-1",
+      "case_id": "rag16-pdf-owner-hash",
+      "corpus_snapshot": "corpus-4637d90185981267aef7b53d4fbff1ae0b2b3cddf1eb288bbe7c62f440c6f211",
+      "answerable": true,
+      "minimal_spans": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/pdf_export.py",
+          "content_hash": "2dc729a7f678c3339766fef67aabfe10be0ccdb9a7332e13f527dc5d4759b3ae",
+          "start_line": 140,
+          "end_line": 150,
+          "quote": "        row = db.execute('''SELECT e.*,v.resume_id FROM rw_pdf_exports e\n            JOIN rw_versions v ON e.version_id=v.version_id JOIN rw_resumes r ON r.resume_id=v.resume_id\n            WHERE e.export_id=? AND r.owner_id=?''', (export_id, owner)).fetchone()\n        if row is None:\n            raise WorkspaceNotFound('pdf_not_found')\n        version = self.workspace._version(db, row['resume_id'], row['version_id'])\n        self.workspace._validate_document(db, owner, version.document)\n        if (row['content_hash'] != version.content_hash or not version.confirmed_at\n                or sha256(row['pdf_bytes']).hexdigest() != row['pdf_hash']):\n            raise WorkspaceConflict('pdf_integrity_failed')\n        return row\n"
+        }
+      ],
+      "symbol_ranges": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/pdf_export.py",
+          "content_hash": "2dc729a7f678c3339766fef67aabfe10be0ccdb9a7332e13f527dc5d4759b3ae",
+          "start_line": 139,
+          "end_line": 150,
+          "quote": "    def _get(self, db, owner, export_id):\n        row = db.execute('''SELECT e.*,v.resume_id FROM rw_pdf_exports e\n            JOIN rw_versions v ON e.version_id=v.version_id JOIN rw_resumes r ON r.resume_id=v.resume_id\n            WHERE e.export_id=? AND r.owner_id=?''', (export_id, owner)).fetchone()\n        if row is None:\n            raise WorkspaceNotFound('pdf_not_found')\n        version = self.workspace._version(db, row['resume_id'], row['version_id'])\n        self.workspace._validate_document(db, owner, version.document)\n        if (row['content_hash'] != version.content_hash or not version.confirmed_at\n                or sha256(row['pdf_bytes']).hexdigest() != row['pdf_hash']):\n            raise WorkspaceConflict('pdf_integrity_failed')\n        return row\n"
+        }
+      ],
+      "requirement": "all",
+      "annotation_status": "ai_candidate",
+      "rationale": "Owner join, source version confirmation and hash must all be checked."
+    },
+    {
+      "version": "support-label-1",
+      "case_id": "rag16-match-load",
+      "corpus_snapshot": "corpus-4637d90185981267aef7b53d4fbff1ae0b2b3cddf1eb288bbe7c62f440c6f211",
+      "answerable": true,
+      "minimal_spans": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/match_repository.py",
+          "content_hash": "401ae83cd38a830e970100ccbcd56ad3abb76f70b059c53be5befba01145e6f0",
+          "start_line": 106,
+          "end_line": 114,
+          "quote": "        row = self._row(db,owner,match_id)\n        if row['status'] != 'complete':raise WorkspaceConflict('match_not_complete')\n        if digest(row['payload_json'])!=row['payload_hash']:\n            raise InvalidProvenance('match_integrity_failed')\n        payload = MatchPayload.model_validate_json(row['payload_json'])\n        version = self.workspace._version(db,row['resume_id'],row['version_id'])\n        self.workspace._validate_document(db,owner,version.document)\n        self._validate_payload(row,payload,version)\n        return row, payload, version\n"
+        }
+      ],
+      "symbol_ranges": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/match_repository.py",
+          "content_hash": "401ae83cd38a830e970100ccbcd56ad3abb76f70b059c53be5befba01145e6f0",
+          "start_line": 105,
+          "end_line": 114,
+          "quote": "    def _load(self, db, owner, match_id):\n        row = self._row(db,owner,match_id)\n        if row['status'] != 'complete':raise WorkspaceConflict('match_not_complete')\n        if digest(row['payload_json'])!=row['payload_hash']:\n            raise InvalidProvenance('match_integrity_failed')\n        payload = MatchPayload.model_validate_json(row['payload_json'])\n        version = self.workspace._version(db,row['resume_id'],row['version_id'])\n        self.workspace._validate_document(db,owner,version.document)\n        self._validate_payload(row,payload,version)\n        return row, payload, version\n"
+        }
+      ],
+      "requirement": "all",
+      "annotation_status": "ai_candidate",
+      "rationale": "Need incomplete status guard, payload hash, current source validation and delegated binding check."
+    },
+    {
+      "version": "support-label-1",
+      "case_id": "rag16-source-read",
+      "corpus_snapshot": "corpus-4637d90185981267aef7b53d4fbff1ae0b2b3cddf1eb288bbe7c62f440c6f211",
+      "answerable": true,
+      "minimal_spans": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/matching.py",
+          "content_hash": "b6a739d4a54ce77e9ece91b486041a468fe7e66983963114b2038a6c50a6bdfe",
+          "start_line": 74,
+          "end_line": 78,
+          "quote": "        ref = self._document(catalog, source_id)\n        text = self.texts.get(source_id)\n        if text is None or digest(text) != ref.content_hash:\n            raise MatchError('match_source_integrity_failed')\n        return text\n"
+        }
+      ],
+      "symbol_ranges": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/matching.py",
+          "content_hash": "b6a739d4a54ce77e9ece91b486041a468fe7e66983963114b2038a6c50a6bdfe",
+          "start_line": 73,
+          "end_line": 78,
+          "quote": "    def read(self, catalog: SourceCatalog, source_id: str) -> str:\n        ref = self._document(catalog, source_id)\n        text = self.texts.get(source_id)\n        if text is None or digest(text) != ref.content_hash:\n            raise MatchError('match_source_integrity_failed')\n        return text\n"
+        }
+      ],
+      "requirement": "all",
+      "annotation_status": "ai_candidate",
+      "rationale": "Catalog document lookup plus exact text digest; no personal fact verification implied."
+    },
+    {
+      "version": "support-label-1",
+      "case_id": "rag16-parse-exact",
+      "corpus_snapshot": "corpus-4637d90185981267aef7b53d4fbff1ae0b2b3cddf1eb288bbe7c62f440c6f211",
+      "answerable": true,
+      "minimal_spans": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/parsing.py",
+          "content_hash": "48ccac9951623d18ef64d98c62505cbb56eedb6fb06e08e6698f00157ce0f293",
+          "start_line": 37,
+          "end_line": 54,
+          "quote": "    for item in candidate.fields:\r\n        checked_path(item.path)\r\n        if item.path in paths:\r\n            raise ParseError(\"duplicate_field_path\")\r\n        paths.add(item.path)\r\n        quote = item.exact_quote\r\n        start = item.start\r\n        if start is None or item.end != start + len(quote) or source.text[start:item.end] != quote:\r\n            start = source.text.find(quote)\r\n            if start < 0:\r\n                raise ParseError(\"quote_not_found\")\r\n            if source.text.find(quote, start + 1) >= 0:\r\n                raise ParseError(\"ambiguous_quote\")\r\n        fact = ResumeFact(\r\n            fact_id=\"f-\" + hashlib.sha256(f\"{source.source_id}:{item.path}\".encode()).hexdigest()[:20],\r\n            text=quote, source=SourceSpan(source_id=source.source_id, content_hash=source.content_hash,\r\n                                         start=start, end=start + len(quote)),\r\n        )\r\n"
+        },
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/parsing.py",
+          "content_hash": "48ccac9951623d18ef64d98c62505cbb56eedb6fb06e08e6698f00157ce0f293",
+          "start_line": 58,
+          "end_line": 66,
+          "quote": "        if isinstance(value, list):\r\n            if any(item is None for item in value):\r\n                raise ParseError(\"sparse_field_indexes\")\r\n            for item in value:\r\n                sparse(item)\r\n        elif isinstance(value, dict):\r\n            for item in value.values():\r\n                sparse(item)\r\n    sparse(payload)\r\n"
+        }
+      ],
+      "symbol_ranges": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/parsing.py",
+          "content_hash": "48ccac9951623d18ef64d98c62505cbb56eedb6fb06e08e6698f00157ce0f293",
+          "start_line": 34,
+          "end_line": 67,
+          "quote": "def materialize(source: SourceRecord, candidate: ParseCandidate) -> DraftDocument:\r\n    payload: dict = {\"personal\": {}}\r\n    paths = set()\r\n    for item in candidate.fields:\r\n        checked_path(item.path)\r\n        if item.path in paths:\r\n            raise ParseError(\"duplicate_field_path\")\r\n        paths.add(item.path)\r\n        quote = item.exact_quote\r\n        start = item.start\r\n        if start is None or item.end != start + len(quote) or source.text[start:item.end] != quote:\r\n            start = source.text.find(quote)\r\n            if start < 0:\r\n                raise ParseError(\"quote_not_found\")\r\n            if source.text.find(quote, start + 1) >= 0:\r\n                raise ParseError(\"ambiguous_quote\")\r\n        fact = ResumeFact(\r\n            fact_id=\"f-\" + hashlib.sha256(f\"{source.source_id}:{item.path}\".encode()).hexdigest()[:20],\r\n            text=quote, source=SourceSpan(source_id=source.source_id, content_hash=source.content_hash,\r\n                                         start=start, end=start + len(quote)),\r\n        )\r\n        set_field(payload, item.path, fact.model_dump(mode=\"json\"))\r\n    # Reject sparse parser indexes rather than silently changing their meaning.\r\n    def sparse(value):\r\n        if isinstance(value, list):\r\n            if any(item is None for item in value):\r\n                raise ParseError(\"sparse_field_indexes\")\r\n            for item in value:\r\n                sparse(item)\r\n        elif isinstance(value, dict):\r\n            for item in value.values():\r\n                sparse(item)\r\n    sparse(payload)\r\n    return DraftDocument.model_validate(compact(payload))\r\n"
+        }
+      ],
+      "requirement": "all",
+      "annotation_status": "ai_candidate",
+      "rationale": "All unique quote/path and sparse-index controls are necessary; model defaults are not evidence."
+    },
+    {
+      "version": "support-label-1",
+      "case_id": "rag16-match-chain",
+      "corpus_snapshot": "corpus-4637d90185981267aef7b53d4fbff1ae0b2b3cddf1eb288bbe7c62f440c6f211",
+      "answerable": true,
+      "minimal_spans": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/match_repository.py",
+          "content_hash": "401ae83cd38a830e970100ccbcd56ad3abb76f70b059c53be5befba01145e6f0",
+          "start_line": 90,
+          "end_line": 103,
+          "quote": "    def _validate_payload(row,payload,version):\n        raw = row['request_json']\n        if digest(row['resume_id']+raw)!=row['request_hash']:\n            raise InvalidProvenance('match_integrity_failed')\n        request = json.loads(raw)\n        if (payload.match_id!=row['match_id'] or payload.resume_id!=row['resume_id'] or payload.version_id!=version.version_id\n            or payload.version_hash!=version.content_hash or payload.jd_text!=request['jd_text']\n            or payload.title!=request['title'] or payload.mode!=request['mode']\n            or payload.bundle.manifest.run_id!=row['match_id']):\n            raise InvalidProvenance('match_integrity_failed')\n        row_views(payload,version)  # Hash/quote/C1/JD exclusion validated on write and read.\n        expected = propose_order(version,VersionSourceStore(version,payload.jd_text),payload.bundle)\n        if payload.proposals != expected:\n            raise InvalidProvenance('match_proposals_changed')\n"
+        },
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/matching.py",
+          "content_hash": "b6a739d4a54ce77e9ece91b486041a468fe7e66983963114b2038a6c50a6bdfe",
+          "start_line": 271,
+          "end_line": 275,
+          "quote": "def row_views(payload: MatchPayload, version: VersionRecord) -> list[MatchRowView]:\n    store = VersionSourceStore(version,payload.jd_text)\n    validate_bundle(store,payload.bundle)\n    results = {r.atom_id:r for r in payload.bundle.mapping.atom_results}\n    parents = {p.requirement_id:p for p in payload.bundle.requirements.parents}\n"
+        },
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/matching.py",
+          "content_hash": "b6a739d4a54ce77e9ece91b486041a468fe7e66983963114b2038a6c50a6bdfe",
+          "start_line": 245,
+          "end_line": 268,
+          "quote": "def validate_bundle(store: VersionSourceStore, bundle: EvidenceBundle):\n    if bundle.sources != store.catalog:\n        raise MatchError('match_source_integrity_failed')\n    if bundle.manifest.source_fingerprint != digest(''.join(d.content_hash for d in store.catalog.documents)):\n        raise MatchError('match_source_integrity_failed')\n    for parent in bundle.requirements.parents:\n        if parent.source_span.source_id != 'jd':raise MatchError('invalid_jd_span')\n        store.validate_span(store.catalog,parent.source_span)\n    for atom in bundle.requirements.atoms:\n        if atom.source_span.source_id != 'jd':raise MatchError('invalid_jd_span')\n        store.validate_span(store.catalog,atom.source_span)\n    if {a.atom_id for a in bundle.requirements.atoms}!={r.atom_id for r in bundle.mapping.atom_results}:\n        raise MatchError('invalid_mapping_coverage')\n    for result in bundle.mapping.atom_results:\n        for link in result.links:\n            if link.source_span.source_id not in store.origins or link.level.value!='C1' or not link.needs_confirmation:\n                raise MatchError('match_evidence_boundary_violation')\n            store.validate_span(store.catalog,link.source_span)\n        if result.match_status != EvidenceMappingService._match_status(result.links):\n            raise MatchError('invalid_match_status')\n        if result.has_contradiction != any(l.support_status=='contradictory' for l in result.links):\n            raise MatchError('invalid_conflict_flag')\n    if EvidenceProjectionService().for_resume(bundle).claims:\n        raise MatchError('match_evidence_boundary_violation')\n"
+        }
+      ],
+      "symbol_ranges": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/match_repository.py",
+          "content_hash": "401ae83cd38a830e970100ccbcd56ad3abb76f70b059c53be5befba01145e6f0",
+          "start_line": 90,
+          "end_line": 103,
+          "quote": "    def _validate_payload(row,payload,version):\n        raw = row['request_json']\n        if digest(row['resume_id']+raw)!=row['request_hash']:\n            raise InvalidProvenance('match_integrity_failed')\n        request = json.loads(raw)\n        if (payload.match_id!=row['match_id'] or payload.resume_id!=row['resume_id'] or payload.version_id!=version.version_id\n            or payload.version_hash!=version.content_hash or payload.jd_text!=request['jd_text']\n            or payload.title!=request['title'] or payload.mode!=request['mode']\n            or payload.bundle.manifest.run_id!=row['match_id']):\n            raise InvalidProvenance('match_integrity_failed')\n        row_views(payload,version)  # Hash/quote/C1/JD exclusion validated on write and read.\n        expected = propose_order(version,VersionSourceStore(version,payload.jd_text),payload.bundle)\n        if payload.proposals != expected:\n            raise InvalidProvenance('match_proposals_changed')\n"
+        },
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/matching.py",
+          "content_hash": "b6a739d4a54ce77e9ece91b486041a468fe7e66983963114b2038a6c50a6bdfe",
+          "start_line": 271,
+          "end_line": 289,
+          "quote": "def row_views(payload: MatchPayload, version: VersionRecord) -> list[MatchRowView]:\n    store = VersionSourceStore(version,payload.jd_text)\n    validate_bundle(store,payload.bundle)\n    results = {r.atom_id:r for r in payload.bundle.mapping.atom_results}\n    parents = {p.requirement_id:p for p in payload.bundle.requirements.parents}\n    rows = []\n    for atom in payload.bundle.requirements.atoms:\n        result = results[atom.atom_id]\n        links = []\n        for link in result.links:\n            path, fact = store.origins[link.source_span.source_id]\n            span = link.source_span\n            original_span = fact.source.model_copy(update={'start':fact.source.start+span.start_offset,'end':fact.source.start+span.end_offset})\n            links.append(MatchLinkView(path=path,quote=span.exact_quote,\n                fact=fact.model_copy(update={'text':span.exact_quote,'source':original_span}),support_status=link.support_status))\n        rows.append(MatchRowView(atom_id=atom.atom_id,text=atom.text,importance=parents[atom.parent_requirement_id].importance,\n            jd_quote=atom.source_span.exact_quote,jd_start=atom.source_span.start_offset,jd_end=atom.source_span.end_offset,\n            match_status=result.match_status,has_contradiction=result.has_contradiction,rationale=result.rationale,links=links))\n    return rows\n"
+        },
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/matching.py",
+          "content_hash": "b6a739d4a54ce77e9ece91b486041a468fe7e66983963114b2038a6c50a6bdfe",
+          "start_line": 245,
+          "end_line": 268,
+          "quote": "def validate_bundle(store: VersionSourceStore, bundle: EvidenceBundle):\n    if bundle.sources != store.catalog:\n        raise MatchError('match_source_integrity_failed')\n    if bundle.manifest.source_fingerprint != digest(''.join(d.content_hash for d in store.catalog.documents)):\n        raise MatchError('match_source_integrity_failed')\n    for parent in bundle.requirements.parents:\n        if parent.source_span.source_id != 'jd':raise MatchError('invalid_jd_span')\n        store.validate_span(store.catalog,parent.source_span)\n    for atom in bundle.requirements.atoms:\n        if atom.source_span.source_id != 'jd':raise MatchError('invalid_jd_span')\n        store.validate_span(store.catalog,atom.source_span)\n    if {a.atom_id for a in bundle.requirements.atoms}!={r.atom_id for r in bundle.mapping.atom_results}:\n        raise MatchError('invalid_mapping_coverage')\n    for result in bundle.mapping.atom_results:\n        for link in result.links:\n            if link.source_span.source_id not in store.origins or link.level.value!='C1' or not link.needs_confirmation:\n                raise MatchError('match_evidence_boundary_violation')\n            store.validate_span(store.catalog,link.source_span)\n        if result.match_status != EvidenceMappingService._match_status(result.links):\n            raise MatchError('invalid_match_status')\n        if result.has_contradiction != any(l.support_status=='contradictory' for l in result.links):\n            raise MatchError('invalid_conflict_flag')\n    if EvidenceProjectionService().for_resume(bundle).claims:\n        raise MatchError('match_evidence_boundary_violation')\n"
+        }
+      ],
+      "requirement": "all",
+      "annotation_status": "ai_candidate",
+      "rationale": "Read/write binding, real delegated validation and C1 source scope are distinct requirements."
+    },
+    {
+      "version": "support-label-1",
+      "case_id": "rag16-upload-versus-quote",
+      "corpus_snapshot": "corpus-4637d90185981267aef7b53d4fbff1ae0b2b3cddf1eb288bbe7c62f440c6f211",
+      "answerable": true,
+      "minimal_spans": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/ingestion.py",
+          "content_hash": "3cba0f9f28612ace76fc3c69024d3c01107a4132cd0faaefd7edc94c703da020",
+          "start_line": 17,
+          "end_line": 23,
+          "quote": "    suffix = Path(filename.replace(\"\\\\\", \"/\")).suffix.lower()\n    if suffix not in {\".txt\", \".md\", \".pdf\", \".docx\"}:\n        raise ImportErrorCode(\"unsupported_file_type\")\n    if not data:\n        raise ImportErrorCode(\"empty_upload\")\n    if len(data) > MAX_UPLOAD_BYTES:\n        raise ImportErrorCode(\"upload_too_large\")\n"
+        },
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/parsing.py",
+          "content_hash": "48ccac9951623d18ef64d98c62505cbb56eedb6fb06e08e6698f00157ce0f293",
+          "start_line": 37,
+          "end_line": 54,
+          "quote": "    for item in candidate.fields:\r\n        checked_path(item.path)\r\n        if item.path in paths:\r\n            raise ParseError(\"duplicate_field_path\")\r\n        paths.add(item.path)\r\n        quote = item.exact_quote\r\n        start = item.start\r\n        if start is None or item.end != start + len(quote) or source.text[start:item.end] != quote:\r\n            start = source.text.find(quote)\r\n            if start < 0:\r\n                raise ParseError(\"quote_not_found\")\r\n            if source.text.find(quote, start + 1) >= 0:\r\n                raise ParseError(\"ambiguous_quote\")\r\n        fact = ResumeFact(\r\n            fact_id=\"f-\" + hashlib.sha256(f\"{source.source_id}:{item.path}\".encode()).hexdigest()[:20],\r\n            text=quote, source=SourceSpan(source_id=source.source_id, content_hash=source.content_hash,\r\n                                         start=start, end=start + len(quote)),\r\n        )\r\n"
+        }
+      ],
+      "symbol_ranges": [
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/ingestion.py",
+          "content_hash": "3cba0f9f28612ace76fc3c69024d3c01107a4132cd0faaefd7edc94c703da020",
+          "start_line": 15,
+          "end_line": 60,
+          "quote": "def extract_upload(filename: str, data: bytes):\n    \"\"\"No client-controlled paths, archive extraction or external OCR calls.\"\"\"\n    suffix = Path(filename.replace(\"\\\\\", \"/\")).suffix.lower()\n    if suffix not in {\".txt\", \".md\", \".pdf\", \".docx\"}:\n        raise ImportErrorCode(\"unsupported_file_type\")\n    if not data:\n        raise ImportErrorCode(\"empty_upload\")\n    if len(data) > MAX_UPLOAD_BYTES:\n        raise ImportErrorCode(\"upload_too_large\")\n    if suffix == \".pdf\":\n        if not data.startswith(b\"%PDF-\"):\n            raise ImportErrorCode(\"invalid_pdf\")\n        try:\n            from pypdf import PdfReader\n            reader = PdfReader(io.BytesIO(data))\n            if reader.is_encrypted:\n                raise ImportErrorCode(\"encrypted_pdf\")\n            if len(reader.pages) > 40:\n                raise ImportErrorCode(\"too_many_pages\")\n        except ImportErrorCode:\n            raise\n        except Exception as exc:\n            raise ImportErrorCode(\"invalid_pdf\") from exc\n    if suffix == \".docx\":\n        try:\n            with zipfile.ZipFile(io.BytesIO(data)) as archive:\n                files = archive.infolist()\n                if len(files) > 2000 or sum(item.file_size for item in files) > 30 * 1024 * 1024:\n                    raise ImportErrorCode(\"expanded_document_too_large\")\n                if \"word/document.xml\" not in archive.namelist():\n                    raise ImportErrorCode(\"invalid_docx\")\n                if any(item.flag_bits & 1 for item in files):\n                    raise ImportErrorCode(\"encrypted_docx\")\n        except (zipfile.BadZipFile, RuntimeError) as exc:\n            raise ImportErrorCode(\"invalid_docx\") from exc\n    with TemporaryDirectory(prefix=\"resume-import-\") as directory:\n        path = Path(directory) / (\"upload\" + suffix)\n        path.write_bytes(data)\n        try:\n            result = load_source(path)\n        except ValueError as exc:\n            code = \"needs_ocr\" if suffix == \".pdf\" and \"no extractable text\" in str(exc).lower() else \"document_extraction_failed\"\n            raise ImportErrorCode(code) from exc\n    if len(result.text) > 100_000:\n        raise ImportErrorCode(\"extracted_text_too_large\")\n    return result\n"
+        },
+        {
+          "document_id": "test-code/src/job_agent/resume_workspace/parsing.py",
+          "content_hash": "48ccac9951623d18ef64d98c62505cbb56eedb6fb06e08e6698f00157ce0f293",
+          "start_line": 34,
+          "end_line": 67,
+          "quote": "def materialize(source: SourceRecord, candidate: ParseCandidate) -> DraftDocument:\r\n    payload: dict = {\"personal\": {}}\r\n    paths = set()\r\n    for item in candidate.fields:\r\n        checked_path(item.path)\r\n        if item.path in paths:\r\n            raise ParseError(\"duplicate_field_path\")\r\n        paths.add(item.path)\r\n        quote = item.exact_quote\r\n        start = item.start\r\n        if start is None or item.end != start + len(quote) or source.text[start:item.end] != quote:\r\n            start = source.text.find(quote)\r\n            if start < 0:\r\n                raise ParseError(\"quote_not_found\")\r\n            if source.text.find(quote, start + 1) >= 0:\r\n                raise ParseError(\"ambiguous_quote\")\r\n        fact = ResumeFact(\r\n            fact_id=\"f-\" + hashlib.sha256(f\"{source.source_id}:{item.path}\".encode()).hexdigest()[:20],\r\n            text=quote, source=SourceSpan(source_id=source.source_id, content_hash=source.content_hash,\r\n                                         start=start, end=start + len(quote)),\r\n        )\r\n        set_field(payload, item.path, fact.model_dump(mode=\"json\"))\r\n    # Reject sparse parser indexes rather than silently changing their meaning.\r\n    def sparse(value):\r\n        if isinstance(value, list):\r\n            if any(item is None for item in value):\r\n                raise ParseError(\"sparse_field_indexes\")\r\n            for item in value:\r\n                sparse(item)\r\n        elif isinstance(value, dict):\r\n            for item in value.values():\r\n                sparse(item)\r\n    sparse(payload)\r\n    return DraftDocument.model_validate(compact(payload))\r\n"
+        }
+      ],
+      "requirement": "all",
+      "annotation_status": "ai_candidate",
+      "rationale": "Compare two actual validation responsibilities without inventing a direct call edge."
+    },
+    {
+      "version": "support-label-1",
+      "case_id": "rag16-identity-design",
+      "corpus_snapshot": "corpus-4637d90185981267aef7b53d4fbff1ae0b2b3cddf1eb288bbe7c62f440c6f211",
+      "answerable": true,
+      "minimal_spans": [
+        {
+          "document_id": "test-code/docs/tech-specs/expansion/S1-corpus-contract.md",
+          "content_hash": "9c0cf6c73419e09396126c96a965c21c99f27d5931c1b0a831cf0b641316a162",
+          "start_line": 15,
+          "end_line": 15,
+          "quote": "`knowledge/index_manifest.py`新增EmbeddingIdentity（provider/model/revision/dimension/normalization/query_template）和IndexManifest（corpus_kind/scope/input_hash/parser_version/splitter_version/embedding）。规范JSON→SHA256；任何一项变化都失效。scope来自可信服务owner/project/snapshot或public，先鉴权再编码。input_hash包含实际embedding文本及顺序，不只chunk_id。\r\n"
+        },
+        {
+          "document_id": "test-code/docs/tech-specs/expansion/S1-corpus-contract.md",
+          "content_hash": "9c0cf6c73419e09396126c96a965c21c99f27d5931c1b0a831cf0b641316a162",
+          "start_line": 17,
+          "end_line": 17,
+          "quote": "CodeRAG复用现有vectors表model_id字段保存manifest键，无破坏性DDL；旧键不静默复用，重建沿用级联。Public缓存同身份，引用仍用title/body，不能引用tags或私有rubric。维度/有限值/非零验证保留。测试替身身份明确test，不算真实模型。\r\n"
+        }
+      ],
+      "symbol_ranges": [],
+      "requirement": "all",
+      "annotation_status": "ai_candidate",
+      "rationale": "Dated design intention only; not evidence of deployment or human review completion."
+    },
+    {
+      "version": "support-label-1",
+      "case_id": "rag16-pack-design",
+      "corpus_snapshot": "corpus-4637d90185981267aef7b53d4fbff1ae0b2b3cddf1eb288bbe7c62f440c6f211",
+      "answerable": true,
+      "minimal_spans": [
+        {
+          "document_id": "test-code/docs/tech-specs/expansion/S3-evidence-pack.md",
+          "content_hash": "c7bce488c4801fae37d7743b72e8f457726420a6daca53fe49231448594c34d1",
+          "start_line": 18,
+          "end_line": 19,
+          "quote": "- ClaimAssessment独立于Reference，任意语义断言默认needs_judgment；可确定的“定位到了某原文”只代表定位。个人参与/量化成果请求缺独立材料标insufficient_evidence；自述和代码不升级independent_truth。来源相矛盾需显式证据，不凭词面编conflict。\n- EvidencePack含pack/plan/config/trace身份、固定范围、两轮各自结果/原文引用/预算/降级/缺失、claim assessments、answer_policy（limited_source_only/needs_input）和visible_roles。所有状态有简短可审核理由，不存模型内部思维链。\n"
+        },
+        {
+          "document_id": "test-code/docs/tech-specs/expansion/S3-evidence-pack.md",
+          "content_hash": "c7bce488c4801fae37d7743b72e8f457726420a6daca53fe49231448594c34d1",
+          "start_line": 25,
+          "end_line": 28,
+          "quote": "3. 所有调用前检查剩余会话/本pack工具次数、deadline、模型调用/输入上界、quote字符；到限输出budget_exhausted和已有可引用内容，不再继续。同步GPU无硬抢占保证，调用后超时停止后续步骤并标明超限。\n4. InterviewState增加内部evidence_packs；RetrievalInterviewEngine.prepare消费pack的安全item选题，仍通过已有private_question内部取rubric；活动HTTP视图只公开允许的题面/来源位置和安全摘要，不能泄露技术参考答案/别题rubric。Evaluator/Interviewer收到同一pack身份与分层状态，未知支持不得自动放行。后续S4再补完整共享State和事实审查。\n5. followup原get_symbol/find_references仍计数；新增读取结果按同引用合同校验后更新pack，不重新执行已经完成的工具或未知模型动作。\n6. 新增鉴权HTTP `/api/v2/evidence/retrieve` 供合成验收/后续写作使用：输入query/scope/项目快照/待判claims，scope私有时先查owner。独立请求使用同Registry/Policy/Executor及临时执行state，而非无限服务直调；请求体不接受owner。缺来源与非法来源分别返回不足/404/409。\n"
+        }
+      ],
+      "symbol_ranges": [],
+      "requirement": "all",
+      "annotation_status": "ai_candidate",
+      "rationale": "Dated design contract, not actual measurement. Source support and bounded execution are separate."
+    },
+    {
+      "version": "support-label-1",
+      "case_id": "rag16-ocr-measurement",
+      "corpus_snapshot": "corpus-4637d90185981267aef7b53d4fbff1ae0b2b3cddf1eb288bbe7c62f440c6f211",
+      "answerable": false,
+      "minimal_spans": [],
+      "symbol_ranges": [],
+      "requirement": "all",
+      "annotation_status": "ai_candidate",
+      "rationale": "No OCR accuracy measurement or sample is provided; code says needs_ocr, not99.9% success."
+    },
+    {
+      "version": "support-label-1",
+      "case_id": "rag16-all-private-scanned",
+      "corpus_snapshot": "corpus-4637d90185981267aef7b53d4fbff1ae0b2b3cddf1eb288bbe7c62f440c6f211",
+      "answerable": false,
+      "minimal_spans": [],
+      "symbol_ranges": [],
+      "requirement": "all",
+      "annotation_status": "ai_candidate",
+      "rationale": "No real account-wide private scan or deployment evidence; importer safeguards cannot establish this premise."
+    },
+    {
+      "version": "support-label-1",
+      "case_id": "rag16-historical-human",
+      "corpus_snapshot": "corpus-4637d90185981267aef7b53d4fbff1ae0b2b3cddf1eb288bbe7c62f440c6f211",
+      "answerable": false,
+      "minimal_spans": [],
+      "symbol_ranges": [],
+      "requirement": "all",
+      "annotation_status": "ai_candidate",
+      "rationale": "Dated in_progress design/plan cannot establish current human review completion or rate."
+    },
+    {
+      "version": "support-label-1",
+      "case_id": "rag16-pdf-outcome",
+      "corpus_snapshot": "corpus-4637d90185981267aef7b53d4fbff1ae0b2b3cddf1eb288bbe7c62f440c6f211",
+      "answerable": false,
+      "minimal_spans": [],
+      "symbol_ranges": [],
+      "requirement": "all",
+      "annotation_status": "ai_candidate",
+      "rationale": "Template rendering code has no hiring outcome controlled trial or online business measurements."
+    }
+  ],
+  "human_reviewed": 0
+}

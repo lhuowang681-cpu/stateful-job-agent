@@ -64,6 +64,8 @@ class ProviderTrace(StrictModel):
     fallback_used: bool = False
     error_code: str | None = None
     error_detail: str | None = None
+    finish_reason: str | None = None
+    completion_truncated: bool | None = None
 
 
 class ProviderResult(ProviderTrace):

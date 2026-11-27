@@ -1,0 +1,14 @@
+{
+  "scope": "real local uvicorn HTTP smoke; synthetic data; no LLM",
+  "checks": {
+    "health": true,
+    "unauthenticated_denied": true,
+    "create_source": true,
+    "create_structured_resume": true,
+    "confirm_exact_version": true,
+    "read_confirmed_version": true,
+    "delete_resume": true,
+    "delete_unreferenced_source": true
+  },
+  "server_stopped": true
+}

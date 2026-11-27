@@ -1,0 +1,34 @@
+{
+  "before": {
+    "jobs": 1,
+    "projects": 1,
+    "job_stages": [
+      "applied"
+    ],
+    "event_counts": [
+      2
+    ],
+    "snapshot_counts": [
+      1
+    ],
+    "payload_sha256": "c33b82a40d7d91776724f22fbb2288cc43f07c1af6e0bda9ffd72ac1691451b7",
+    "private_material": false
+  },
+  "after": {
+    "jobs": 1,
+    "projects": 1,
+    "job_stages": [
+      "applied"
+    ],
+    "event_counts": [
+      2
+    ],
+    "snapshot_counts": [
+      1
+    ],
+    "payload_sha256": "c33b82a40d7d91776724f22fbb2288cc43f07c1af6e0bda9ffd72ac1691451b7",
+    "private_material": false
+  },
+  "restart_result": "PASS",
+  "second_user_projects_empty": true
+}

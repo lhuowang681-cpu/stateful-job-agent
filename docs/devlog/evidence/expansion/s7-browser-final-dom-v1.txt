@@ -1,0 +1,238 @@
+- complementary:
+  - generic: ↗
+  - text: 行远
+  - generic: 求职工作台
+  - button "▤ 简历档案"
+  - text: 已保存简历
+  - generic: "1"
+  - button "S7合成练习 1 个版本":
+    - strong: S7合成练习
+    - generic: 1 个版本
+- main:
+  - generic: 我的空间 / 简历档案
+  - button "管理来源材料"
+  - generic: 合成演示
+  - paragraph: YOUR EXPERIENCE, YOUR STORY
+  - heading "让每一份经历，清楚可信。" [level=1]
+  - paragraph: 先整理事实，再表达价值。每次修改都保留自己的来路。
+  - button "＋ 导入新简历"
+  - list:
+    - generic: "1"
+    - text: 导入材料
+    - generic: "2"
+    - text: 核对与补充
+    - generic: "3"
+    - text: 保存与确认
+  - generic: 当前为合成演示，模型已关闭。请勿填写真实私人资料；退出服务后演示数据会清理。
+  - paragraph: 岗位匹配 · 有据可查
+  - heading "这份经历，如何对应目标岗位？" [level=2]
+  - button "分析目标岗位 →"
+  - paragraph: 以当前查看的第 1 版为输入，保存 JD 和分析快照。缺少材料不代表你没有相关能力。
+  - paragraph: 协作整理 · 保留事实
+  - heading "从已有经历中，选出适合岗位的摘要" [level=2]
+  - button "协作整理摘要 →"
+  - paragraph: 整理者选取完整原句，评审者可要求改选，最多修订两轮。来源对上、岗位相关、事实真实和用户接受是不同判断，由你决定是否加入摘要。
+  - paragraph: 从岗位到面试 · 有界协作
+  - heading "练习回答，让下一题回应你的薄弱点" [level=2]
+  - button "收起面试练习"
+  - paragraph: 评估者给出后续行动建议，面试官决定追问或换题。参考要点和详细评价在结束后开放，练习不会改写简历。
+  - generic: 本场练习目标
+  - combobox "本场练习目标":
+    - option "岗位面试 · 公共题库检索" [selected]
+    - option "项目源码 · 函数与测试追问"
+    - option "薄弱项 · 从已结束场次复习"
+  - paragraph: 工具只读取所选用户范围的资料，最多18次；公开知识用于概念练习，项目源码用于实现分析，个人经历保持未独立核实。
+  - generic: 本场岗位 JD
+  - button "填入合成面试岗位"
+  - textbox "本场岗位 JD"
+  - paragraph: 新场次绑定当前第 1 版及此处 JD 快照。
+  - generic: 练习方式
+  - combobox "练习方式":
+    - option "本地题库与规则反馈 · 无模型调用" [selected]
+    - option "在线评估与选题 · 尚未配置" [disabled]
+  - generic: 最多回答轮数
+  - combobox "最多回答轮数":
+    - option "2 轮"
+    - option "3 轮"
+    - option "4 轮" [selected]
+    - option "5 轮"
+    - option "6 轮"
+  - button "建立本场面试快照" [disabled]
+  - generic "面试练习记录 · 2"
+  - button "刷新面试记录"
+  - strong: 2026/10/22 22:56:25
+  - generic: 本场已结束 · 已回答 1 轮
+  - button "查看本场"
+  - strong: 2026/10/22 22:54:32
+  - generic: 本场已结束 · 已回答 1 轮
+  - button "查看本场"
+  - heading "本场已结束" [level=3]
+  - generic: 规则练习 · 非模型质量成绩
+  - paragraph: local-rules / scoped-retrieval-rules-v3 · 已回答 1/2 轮 · 每主题最多一次追问 · 模型请求预留 0 次（最多 4 次）
+  - paragraph: 题库技术练习，不代表真实面试表现或录用概率；本地仅按词面线索评估。
+  - paragraph: 绑定本次简历版本/JD，之后编辑不会改变本场；C1 自述未独立核实，缺少材料不等于没有能力。
+  - paragraph: 进行中隐藏参考要点与详细评价，结束后复盘；本次不会写简历或投递。
+  - generic "本场 JD"
+  - generic "已答 1 · Checkpoint和跨会话长期记忆分别应该保存什么？"
+  - generic "真实资料工具调用 · 0/18"
+  - generic "面试协作交接 · 3"
+  - button "准备新一场（不会自动执行）"
+  - heading "结束后复盘 · 规则参考" [level=3]
+  - paragraph: 未覆盖可能是表达或规则识别问题，不代表没有能力；个人经历需补充材料，当前未独立核实。
+  - paragraph: 本条再次练习：来源或评价条件变化，不直接比较。 仅比较同记录条件下的参考评价，不计算能力提升；用户纠正/撤回或条件变化时不直接比较。
+  - paragraph: 通用知识/源码实现/个人贡献分别判断；源码存在和测试文件不代表已运行或本人完成。
+  - article:
+    - heading "1. Checkpoint和跨会话长期记忆分别应该保存什么？" [level=3]
+    - paragraph: 已定位要点：线程运行状态；跨会话业务信息；内存与持久化边界
+    - paragraph: 待补充或未识别：本轮参考要点已覆盖
+    - paragraph: 规则仅定位表达线索；未命中不等于不会，个人自述未经过独立核实。
+  - heading "继续学习 · 带来源的公共资料" [level=3]
+  - paragraph: 仅作概念参考，不作为个人经历证明；摘要是本项目整理，并非官方逐字引用。
+  - article:
+    - heading "Checkpoint与长期记忆" [level=3]
+    - paragraph: Checkpoint保存一次线程运行的状态，便于继续对话、中断恢复和人工交互。Store保存跨线程使用的业务信息，例如用户偏好。内存Saver在进程退出后会丢失，持久化需要相应存储。本项目的业务版本、岗位档案与执行检查点是不同数据，不能把保存聊天记录说成实现了全部恢复机制。
+    - link "阅读参考资料 ↗":
+      - /url: https://docs.langchain.com/oss/python/langgraph/persistence
+    - paragraph: LangGraph rolling docs; checked 2026-10-20 · CC0-1.0 · 9a0c2e3f5fb9
+  - article:
+    - heading "外部超时与幂等回执" [level=3]
+    - paragraph: 消费组的待确认消息需要与业务完成状态区分。本项目采用的可靠性原则是：相同逻辑操作使用稳定请求键，先查回执；外部请求超时不等于操作失败。数据库状态无法和任意外部服务形成一个本地事务，结果未知时应查询、核对或等待人工处理，不能盲目重发。该设计原则是本项目综合，不是Redis提供跨系统恰好一次保证。
+    - link "阅读参考资料 ↗":
+      - /url: https://redis.io/docs/latest/commands/xreadgroup/
+    - paragraph: Redis rolling command reference; checked 2026-10-20 · CC0-1.0 · 200ca7998e99
+  - heading "我的学习记录与复习" [level=3]
+  - button "刷新学习记录"
+  - paragraph: 从已回答、已结束的面试生成带来源的观察，由你核对和纠正。这里不自动形成能力画像，也不会把观察写进简历。
+  - button "将本场已答内容保存为学习观察"
+  - generic "调整复习节奏 · 你的明确偏好" [active]
+  - paragraph: 新观察 3 · 到期 0 · 已复核 0 · 暂停 0 · 历史版本 0 · 久未核对 0 · 失效 3
+  - paragraph: 本次建议 1 条，今日已复核 1 条，剩余建议额度 1 条（按上海日期）。标记已复核只安排下次时间，不认定学会。
+  - paragraph: 建议先看：线程运行状态
+  - paragraph: 已保存 6 条；最多展示最近200条，单用户存储上限2000条。
+  - generic "内存与持久化边界 · 新观察，待你核对"
+  - option "我还需要练习"
+  - option "我暂不确定" [selected]
+  - option "我自述已理解"
+  - option "现在"
+  - option "1天后"
+  - option "3天后" [selected]
+  - option "7天后"
+  - option "14天后"
+  - option "30天后"
+  - option "本地规则反馈" [selected]
+  - option "配置的模型" [disabled]
+  - generic "跨会话业务信息 · 新观察，待你核对"
+  - option "我还需要练习"
+  - option "我暂不确定" [selected]
+  - option "我自述已理解"
+  - option "现在"
+  - option "1天后"
+  - option "3天后" [selected]
+  - option "7天后"
+  - option "14天后"
+  - option "30天后"
+  - option "本地规则反馈" [selected]
+  - option "配置的模型" [disabled]
+  - generic "线程运行状态 · 新观察，待你核对"
+  - option "我还需要练习"
+  - option "我暂不确定" [selected]
+  - option "我自述已理解"
+  - option "现在"
+  - option "1天后"
+  - option "3天后" [selected]
+  - option "7天后"
+  - option "14天后"
+  - option "30天后"
+  - option "本地规则反馈" [selected]
+  - option "配置的模型" [disabled]
+  - generic "来源已失效或评价已撤回 · 来源不可用"
+  - generic "来源已失效或评价已撤回 · 来源不可用"
+  - generic "来源已失效或评价已撤回 · 来源不可用"
+  - paragraph: 确认后导出
+  - heading "把这一版，带去下一次机会。" [level=2]
+  - generic: 第 1 版
+  - paragraph: PDF 只使用这份已确认版本，保留可选择的文字。修改后需要重新保存、确认和导出。
+  - text: 简历模板
+  - combobox "简历模板":
+    - option "经典 · 舒展留白" [selected]
+    - option "紧凑 · 居中标题"
+  - button "生成 PDF 预览" [disabled]
+  - paragraph: 先在编辑区确认此版本，再生成正式 PDF。
+  - generic "局部措辞优化 · 独立送审与人工接受":
+    - strong: 局部措辞优化 · 独立送审与人工接受
+  - option "使用 Python 实现 RAG 检索接口。" [selected]
+  - option "未使用 Kubernetes 进行生产部署。"
+  - option "本地受限措辞转换" [selected]
+  - option "在线 Writer / Reviewer" [disabled]
+  - paragraph: 02 / 核对与编辑
+  - heading "简历 · 第 1 版" [level=2]
+  - generic: 待最终确认
+  - heading "个人信息" [level=3]
+  - generic: 姓名为必填项
+  - generic: 姓名 *
+  - textbox "姓名 *": 合成同学
+  - button "查看原文依据 ↗"
+  - generic: 邮箱
+  - textbox "邮箱": <redacted>
+  - button "查看原文依据 ↗"
+  - generic: 电话
+  - textbox "电话"
+  - generic: 城市
+  - textbox "城市"
+  - button "＋ 添加链接"
+  - heading "教育经历" [level=3]
+  - button "＋ 添加"
+  - paragraph: 尚未识别到此类经历，可按实际情况补充。
+  - heading "工作与实习" [level=3]
+  - button "＋ 添加"
+  - paragraph: 尚未识别到此类经历，可按实际情况补充。
+  - heading "项目经历" [level=3]
+  - button "＋ 添加"
+  - paragraph: "01"
+  - generic: 项目名称 *
+  - textbox "项目名称 *": 检索平台
+  - button "查看原文依据 ↗"
+  - generic: 角色
+  - textbox "角色": 后端开发
+  - button "查看原文依据 ↗"
+  - generic: 时间
+  - textbox "时间": "2025"
+  - button "查看原文依据 ↗"
+  - generic: 经历描述
+  - textbox "经历描述": 使用 Python 实现 RAG 检索接口。
+  - button "查看原文依据 ↗"
+  - generic: 经历描述
+  - textbox "经历描述": 未使用 Kubernetes 进行生产部署。
+  - button "查看原文依据 ↗"
+  - button "＋ 添加一条描述"
+  - heading "技能" [level=3]
+  - button "＋ 添加"
+  - generic: 技能 1
+  - textbox "技能 1": Python
+  - button "查看原文依据 ↗"
+  - generic: 技能 2
+  - textbox "技能 2": SQL
+  - button "查看原文依据 ↗"
+  - heading "个人简介" [level=3]
+  - button "＋ 添加"
+  - checkbox "我已核对字段，补充内容是我的真实自述。"
+  - text: 我已核对字段，补充内容是我的真实自述。
+  - button "保存为新版本" [disabled]
+  - button "确认当前版本"
+  - complementary:
+    - heading "来源原文" [level=3]
+    - generic: 只读保留
+    - combobox "选择来源":
+      - option "S7合成演示" [selected]
+    - generic: 姓名：合成同学 邮箱：synthetic@example.invalid 项目经历 检索平台 | 后端开发 | 2025 - 使用 Python 实现 RAG 检索接口。 - 未使用 Kubernetes 进行生产部署。 技能 Python、SQL
+    - paragraph: 引用可验证文字来源；不能独立证明经历真实性。
+    - heading "版本记录" [level=3]
+    - generic: 1 个版本
+    - button "第 1 版 · 最新 待确认 · 2026/10/22 22:52:30":
+      - strong: 第 1 版 · 最新
+      - generic: 待确认 · 2026/10/22 22:52:30
+    - strong: 你始终保留决定权
+    - paragraph: 清空字段会从新版中移除，旧版与原文仍保留。
+    - button "删除简历及版本"
+  - text: 行远 · 求职工作台
+  - generic: 经历 → 岗位 → 准备 → 成长

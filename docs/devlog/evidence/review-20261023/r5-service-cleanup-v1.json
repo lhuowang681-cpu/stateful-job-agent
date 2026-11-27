@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "owned_redis_pid": 140982,
+  "version": "7.2.16",
+  "verified_pid_and_owned_directory_before_shutdown": true,
+  "shutdown": "nosave",
+  "dedicated_port_closed": true,
+  "original_services_modified": false,
+  "evidence_and_data_retained": true,
+  "deepseek_key_present": false
+}

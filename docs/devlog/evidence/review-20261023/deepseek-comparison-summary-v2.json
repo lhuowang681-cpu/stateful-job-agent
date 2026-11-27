@@ -1,0 +1,46 @@
+{
+  "version": "comparison-summary-2",
+  "dataset_hash": "4089ffc8a3f1ae84688c6a5d00f3e369987f2f77ecd944a4304ebba7c706e7f7",
+  "actual_calls": 100,
+  "actual_total_tokens": 123092,
+  "human_usefulness": null,
+  "semantic_accuracy": null,
+  "billing_amount": null,
+  "paths": {
+    "writer_once": {
+      "rows": 30,
+      "statuses": {
+        "candidate_passed_gate": 6,
+        "needs_input": 24
+      },
+      "passed_changed_from_source": 6,
+      "passed_final_text_same_as_first_draft": 6,
+      "attributed_calls_including_shared_first": 30,
+      "actual_new_network_calls_excluding_shared_first": 30
+    },
+    "self_revision": {
+      "rows": 30,
+      "statuses": {
+        "candidate_passed_gate": 11,
+        "no_progress": 10,
+        "needs_input": 9
+      },
+      "passed_changed_from_source": 11,
+      "passed_final_text_same_as_first_draft": 11,
+      "attributed_calls_including_shared_first": 70,
+      "actual_new_network_calls_excluding_shared_first": 40
+    },
+    "writer_reviewer": {
+      "rows": 30,
+      "statuses": {
+        "candidate_passed_gate": 21,
+        "needs_input": 9
+      },
+      "passed_changed_from_source": 21,
+      "passed_final_text_same_as_first_draft": 21,
+      "attributed_calls_including_shared_first": 60,
+      "actual_new_network_calls_excluding_shared_first": 30
+    }
+  },
+  "shared_first_hash_consistent": true
+}

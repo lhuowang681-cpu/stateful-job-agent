@@ -1,0 +1,41 @@
+{
+  "metadata_url": "https://repo.huaweicloud.com/ubuntu/dists/jammy-security/main/binary-amd64/Packages.xz",
+  "metadata_sha256": "67afd3e4ba43a26e313e4396abf9bece3786aabf094a2b89440560c32a38e1a6",
+  "packages": [
+    {
+      "Package": "libpq5",
+      "Version": "14.24-0ubuntu0.22.04.1",
+      "Filename": "pool/main/p/postgresql-14/libpq5_14.24-0ubuntu0.22.04.1_amd64.deb",
+      "SHA256": "79f9af127350c5bbf4c1722ebc4aa7d31ae4fd71b0404e501f7a76ed65709e0d",
+      "Depends": "libc6 (>= 2.33), libgssapi-krb5-2 (>= 1.17), libldap-2.5-0 (>= 2.5.4), libssl3 (>= 3.0.0~~alpha1)"
+    },
+    {
+      "Package": "postgresql-14",
+      "Version": "14.24-0ubuntu0.22.04.1",
+      "Filename": "pool/main/p/postgresql-14/postgresql-14_14.24-0ubuntu0.22.04.1_amd64.deb",
+      "SHA256": "d3f5c254fac89a46d9c92c3f098a1c8635b3445f5d9fd609a05041cda6ed4aef",
+      "Depends": "locales | locales-all, postgresql-client-14, postgresql-common (>= 229~), ssl-cert, tzdata, debconf (>= 0.5) | debconf-2.0, libc6 (>= 2.34), libgcc-s1 (>= 3.3.1), libgssapi-krb5-2 (>= 1.14+dfsg), libicu70 (>= 70.1-1~), libldap-2.5-0 (>= 2.5.4), libllvm14, liblz4-1 (>= 0.0~r130), libpam0g (>= 0.99.7.1), libpq5 (>= 14~~), libselinux1 (>= 3.1~), libssl3 (>= 3.0.0~~alpha1), libstdc++6 (>= 11), libsystemd0, libuuid1 (>= 2.16), libxml2 (>= 2.7.4), libxslt1.1 (>= 1.1.25), zlib1g (>= 1:1.1.4)"
+    },
+    {
+      "Package": "postgresql-client-14",
+      "Version": "14.24-0ubuntu0.22.04.1",
+      "Filename": "pool/main/p/postgresql-14/postgresql-client-14_14.24-0ubuntu0.22.04.1_amd64.deb",
+      "SHA256": "d63f6b9020c137fe6c47f9f68cababdd2f09f57ff26df79768daa0f3d3a35e8a",
+      "Depends": "libpq5 (>= 14.24), postgresql-client-common (>= 182~), sensible-utils, libc6 (>= 2.34), libreadline8 (>= 6.0), libssl3 (>= 3.0.0~~alpha1), zlib1g (>= 1:1.1.4)"
+    }
+  ],
+  "metadata_actual_source_url": "https://security.ubuntu.com/ubuntu/dists/jammy-security/main/binary-amd64/Packages.xz",
+  "download_mirror_url": "https://repo.huaweicloud.com/ubuntu/",
+  "package_hashes_match_primary_metadata": true,
+  "runtime": {
+    "directory": "/tmp/job-agent-v3-pg-s5-20261022",
+    "user": "nobody",
+    "unix_socket_only": true,
+    "port": 55432,
+    "system_packages_installed": false,
+    "listen_addresses": ""
+  },
+  "server_restart_log": "could not change directory to \"/root/autodl-tmp/study/job-agent-v3\": Permission denied\nwaiting for server to shut down.... done\nserver stopped\ncould not change directory to \"/root/autodl-tmp/study/job-agent-v3\": Permission denied\nwaiting for server to start.... done\nserver started\n",
+  "server_initial_pid": "could not change directory to \"/root/autodl-tmp/study/job-agent-v3\": Permission denied\npg_ctl: server is running (PID: 98327)\n/tmp/job-agent-v3-pg-s5-20261022/dist/usr/lib/postgresql/14/bin/postgres \"-D\" \"/tmp/job-agent-v3-pg-s5-20261022/data\" \"-k\" \"/tmp/job-agent-v3-pg-s5-20261022/socket\" \"-p\" \"55432\" \"-c\" \"listen_addresses=\" \"-c\" \"max_connections=40\" \"-c\" \"shared_buffers=64MB\"\n",
+  "server_pid_after_restart": 98611
+}

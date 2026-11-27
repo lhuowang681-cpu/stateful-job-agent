@@ -1,0 +1,1056 @@
+{
+  "status": "passed",
+  "compared": 210,
+  "rows": [
+    {
+      "case_id": "real-dev-code_rag-1",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_rag-2",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_parser-1",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_parser-2",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-repository-1",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-repository-2",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-claim_audit-1",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-claim_audit-2",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-rewrite-1",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-rewrite-2",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-execution_state-1",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-execution_state-2",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-unified_trace-1",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-unified_trace-2",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_pack-1",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_pack-2",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_reference-1",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_reference-2",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-sqlite_code_indexes-1",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-sqlite_code_indexes-2",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_rag-1",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_rag-2",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_parser-1",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_parser-2",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-repository-1",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-repository-2",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-claim_audit-1",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-claim_audit-2",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-rewrite-1",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-rewrite-2",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-execution_state-1",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-execution_state-2",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-unified_trace-1",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-unified_trace-2",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_pack-1",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_pack-2",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_reference-1",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_reference-2",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-sqlite_code_indexes-1",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-sqlite_code_indexes-2",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_rag-1",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_rag-2",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_parser-1",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_parser-2",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-repository-1",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-repository-2",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-claim_audit-1",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-claim_audit-2",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-rewrite-1",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-rewrite-2",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-execution_state-1",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-execution_state-2",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-unified_trace-1",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-unified_trace-2",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_pack-1",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_pack-2",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_reference-1",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_reference-2",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-sqlite_code_indexes-1",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-sqlite_code_indexes-2",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_rag-1",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_rag-2",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_parser-1",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_parser-2",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-repository-1",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-repository-2",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-claim_audit-1",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-claim_audit-2",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-rewrite-1",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-rewrite-2",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-execution_state-1",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-execution_state-2",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-unified_trace-1",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-unified_trace-2",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_pack-1",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_pack-2",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_reference-1",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_reference-2",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-sqlite_code_indexes-1",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-sqlite_code_indexes-2",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_rag-1",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_rag-2",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_parser-1",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_parser-2",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-repository-1",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-repository-2",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-claim_audit-1",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-claim_audit-2",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-rewrite-1",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-rewrite-2",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-execution_state-1",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-execution_state-2",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-unified_trace-1",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-unified_trace-2",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_pack-1",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_pack-2",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_reference-1",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_reference-2",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-sqlite_code_indexes-1",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-sqlite_code_indexes-2",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_rag-1",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_rag-2",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_parser-1",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_parser-2",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-repository-1",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-repository-2",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-claim_audit-1",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-claim_audit-2",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-rewrite-1",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-rewrite-2",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-execution_state-1",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-execution_state-2",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-unified_trace-1",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-unified_trace-2",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_pack-1",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_pack-2",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_reference-1",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_reference-2",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-sqlite_code_indexes-1",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-sqlite_code_indexes-2",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_rag-1",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_rag-2",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_parser-1",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-code_parser-2",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-repository-1",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-repository-2",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-claim_audit-1",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-claim_audit-2",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-rewrite-1",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-rewrite-2",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-execution_state-1",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-execution_state-2",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-unified_trace-1",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-unified_trace-2",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_pack-1",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_pack-2",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_reference-1",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-evidence_reference-2",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-sqlite_code_indexes-1",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "real-dev-sqlite_code_indexes-2",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S2-1",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S2-2",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S4-3",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S4-4",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S5-5",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S5-6",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S6-7",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S6-8",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S7-9",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S7-10",
+      "variant": "A_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S2-1",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S2-2",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S4-3",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S4-4",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S5-5",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S5-6",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S6-7",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S6-8",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S7-9",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S7-10",
+      "variant": "B_dense",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S2-1",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S2-2",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S4-3",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S4-4",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S5-5",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S5-6",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S6-7",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S6-8",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S7-9",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S7-10",
+      "variant": "C_hybrid",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S2-1",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S2-2",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S4-3",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S4-4",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S5-5",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S5-6",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S6-7",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S6-8",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S7-9",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S7-10",
+      "variant": "D_hybrid_rerank",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S2-1",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S2-2",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S4-3",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S4-4",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S5-5",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S5-6",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S6-7",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S6-8",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S7-9",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S7-10",
+      "variant": "E_code_direct",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S2-1",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S2-2",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S4-3",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S4-4",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S5-5",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S5-6",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S6-7",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S6-8",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S7-9",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S7-10",
+      "variant": "F_legacy_relations",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S2-1",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S2-2",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S4-3",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S4-4",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S5-5",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S5-6",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S6-7",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S6-8",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S7-9",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    },
+    {
+      "case_id": "design-addendum-S7-10",
+      "variant": "G_flat_bm25",
+      "identical_references": true
+    }
+  ]
+}

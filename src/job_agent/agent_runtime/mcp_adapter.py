@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Protocol
 
-from pydantic import BaseModel, create_model
+from pydantic import BaseModel, Field, create_model
 
 from job_agent.agent_runtime.contracts import ToolContext, ToolEffect
 from job_agent.agent_runtime.tool_registry import ToolRegistry
@@ -46,11 +46,27 @@ def schema_to_model(
     for field_name, field_schema in properties.items():
         json_type = field_schema.get("type", "string")
         python_type = TYPE_MAP.get(json_type, Any)
-
-        if field_name in required:
-            fields[field_name] = (python_type, ...)
-        else:
-            fields[field_name] = (python_type, None)
+        constraints = {
+            key: field_schema[schema_key]
+            for schema_key, key in (
+                ("minimum", "ge"),
+                ("maximum", "le"),
+                ("exclusiveMinimum", "gt"),
+                ("exclusiveMaximum", "lt"),
+                ("minLength", "min_length"),
+                ("maxLength", "max_length"),
+                ("minItems", "min_length"),
+                ("maxItems", "max_length"),
+            )
+            if schema_key in field_schema
+        }
+        if "description" in field_schema:
+            constraints["description"] = field_schema["description"]
+        default = ... if field_name in required else None
+        fields[field_name] = (
+            python_type,
+            Field(default, **constraints),
+        )
 
     return create_model(
         f"{name}Input",

@@ -1,0 +1,15 @@
+{
+  "version": "portable-source-2",
+  "data": "public synthetic research tables only; no resume/interview/learning rows",
+  "original_manifest_sha256": "ae82369316a23a4fade728ed6b25015b4cd784f98363edcdc1276c5da6bee5f1",
+  "dumps": {
+    "dev": {
+      "sha256": "e5d57f870079cc05187bed2f209321b18f38bc05dbec7cf0c19de724a720e5c6",
+      "original_db_sha256": "e283181177c646c2e819eba3b517e7b7abbcb487f0c69fb13f2c2acf0a4cf8d9"
+    },
+    "test": {
+      "sha256": "1b5a99d600bce32474ed7b3f26f0779151e7498fced5d837bbf54be84d0c3a93",
+      "original_db_sha256": "2516a6a88b7f5cc8837e1448ba59aa8114013d498aac04c7602f288cc75f7a13"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "test": "tests.test_career_knowledge_mcp::test_real_qwen_retrieval_through_career_mcp",
+    "reason": "QWEN_EMBEDDING_MODEL_PATH is unavailable"
+  },
+  {
+    "test": "tests.test_durable_career_state::test_deepseek_long_horizon_decisions[Example AI \\u90a3\\u4e2a\\u5c97\\u4f4d\\u73b0\\u5728\\u4ec0\\u4e48\\u60c5\\u51b5\\uff1f-action-career.read_durable_state]",
+    "reason": "explicit DeepSeek durable-state acceptance opt-in required"
+  },
+  {
+    "test": "tests.test_durable_career_state::test_deepseek_long_horizon_decisions[\\u5f53\\u65f6 Kubernetes \\u662f\\u4e0d\\u662f\\u6211\\u7684 gap\\uff1f-action-career.read_durable_state]",
+    "reason": "explicit DeepSeek durable-state acceptance opt-in required"
+  },
+  {
+    "test": "tests.test_durable_career_state::test_deepseek_long_horizon_decisions[\\u4ee5\\u540e\\u4e0a\\u6d77\\u7684\\u5c97\\u4f4d\\u6211\\u4e5f\\u53ef\\u4ee5\\u8003\\u8651\\u3002-action-memory.update_job_location_preference]",
+    "reason": "explicit DeepSeek durable-state acceptance opt-in required"
+  },
+  {
+    "test": "tests.test_durable_career_state::test_deepseek_long_horizon_decisions[Example AI \\u90a3\\u4e2a\\u5c97\\u4f4d-input_request-None]",
+    "reason": "explicit DeepSeek durable-state acceptance opt-in required"
+  },
+  {
+    "test": "tests.test_jd_match_analysis::test_synthetic_jd_match_analysis_with_real_qwen",
+    "reason": "QWEN_EMBEDDING_MODEL_PATH is unavailable"
+  },
+  {
+    "test": "tests.test_knowledge_ingestion_real::test_real_career_text_ingestion_and_retrieval",
+    "reason": "QWEN_EMBEDDING_MODEL_PATH is not set"
+  },
+  {
+    "test": "tests.test_knowledge_real_embedding::test_real_embedding_retrieves_semantic_match",
+    "reason": "QWEN_EMBEDDING_MODEL_PATH is not set"
+  },
+  {
+    "test": "tests.test_knowledge_retrieval_benchmark::test_real_retrieval_benchmark",
+    "reason": "QWEN_EMBEDDING_MODEL_PATH is not set"
+  },
+  {
+    "test": "tests.test_natural_language_agent_loop::test_deepseek_agent_decision_acceptance",
+    "reason": "explicit DeepSeek agent eval opt-in and API_KEY are required"
+  },
+  {
+    "test": "tests.test_natural_language_agent_loop::test_local_qwen_agent_decision_smoke",
+    "reason": "explicit local model opt-in and QWEN2_5_MODEL_PATH are required"
+  },
+  {
+    "test": "tests.test_real_model_end_to_end_validation::test_real_model_requirement_analysis_eval",
+    "reason": "JOB_AGENT_REAL_MODEL_PATH is unavailable"
+  },
+  {
+    "test": "tests.test_real_model_end_to_end_validation::test_real_model_job_analysis_eval",
+    "reason": "QWEN_EMBEDDING_MODEL_PATH is unavailable"
+  },
+  {
+    "test": "tests.test_real_model_end_to_end_validation::test_real_model_full_job_search_workflow",
+    "reason": "QWEN_EMBEDDING_MODEL_PATH is unavailable"
+  },
+  {
+    "test": "tests.test_stateful_agent_evaluation::test_deepseek_stateful_frozen_acceptance",
+    "reason": "explicit DeepSeek stateful eval opt-in and API_KEY are required"
+  },
+  {
+    "test": "tests.test_stateful_agent_evaluation::test_local_qwen_stateful_eval",
+    "reason": "explicit local stateful eval opt-in and model path are required"
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "staged_files": 821,
+  "staged_bytes": 45519919,
+  "database_or_runtime_staged": false,
+  "concurrent_handbook_staged": false,
+  "scope": "exact pre-review public source manifest, excluding two derived SQLite fixture binaries"
+}

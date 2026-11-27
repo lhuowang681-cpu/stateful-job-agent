@@ -1,0 +1,921 @@
+{
+  "version": "real-route-http-1",
+  "transport": "real_loopback_http",
+  "generative_calls": 0,
+  "requested_mode": "local_demo",
+  "scope_selection": "actual UI default job versus explicit project",
+  "auto_intent_routing_implemented": false,
+  "model_quality": null,
+  "human_reviewed": 0,
+  "subset": "unanswerable_only",
+  "rows": [
+    {
+      "case_id": "real-dev-rewrite-2",
+      "split": "dev",
+      "query": "局部改写已使真实用户录用率提高了多少？",
+      "answerable": false,
+      "entry": "default_job_track_natural_text",
+      "http_status": 201,
+      "business_status": "active",
+      "returned_track": "job",
+      "detail": null,
+      "references": [
+        {
+          "evidence_id": "public-6e1456ae6ec077d87b7901450a81",
+          "scope": "public_knowledge",
+          "owner_id": null,
+          "project_id": null,
+          "snapshot_id": "knowledge-f2f825acdbfdd2c72725ef8684b2cde912f342f421830945e5edf74a1b49cd15",
+          "source_id": "question-citation",
+          "content_hash": "54c97396d309aa99184c4e84729a42ad1caca78a493974e377ccb945a274be40",
+          "path": "knowledge/question-citation.md",
+          "start_line": 1,
+          "end_line": 2,
+          "commit": null,
+          "retrieval_method": "hybrid_rerank",
+          "evidence_kind": "question",
+          "supports_claim": "needs_judgment",
+          "quote": "快照引用、哈希与版本 · 练习\n文件更新或重建索引后，怎样保证历史代码引用没有悄悄变义？",
+          "independent_truth": "not_verified"
+        }
+      ],
+      "question": "文件更新或重建索引后，怎样保证历史代码引用没有悄悄变义？",
+      "requested_project_scope_match": false,
+      "retrieved_other_scope": true,
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "interviewer",
+          "tool": "question_search",
+          "status": "ok",
+          "duration_ms": 101,
+          "turn": 0,
+          "error_code": null
+        }
+      ],
+      "semantic_answer_quality": null,
+      "retrieval_policies": [
+        {
+          "answer_policy": "limited_source_only",
+          "missing": []
+        }
+      ]
+    },
+    {
+      "case_id": "real-dev-rewrite-2",
+      "split": "dev",
+      "query": "局部改写已使真实用户录用率提高了多少？",
+      "answerable": false,
+      "entry": "explicit_project_selection",
+      "http_status": 201,
+      "business_status": "active",
+      "returned_track": "project",
+      "detail": null,
+      "references": [
+        {
+          "evidence_id": "ev-f161858f4554f7aa99ffa494cbca",
+          "scope": "private_project",
+          "owner_id": "synthetic-research-owner",
+          "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+          "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+          "source_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631:src/job_agent/resume_workspace/rewrite.py",
+          "content_hash": "bf4bfb071bc96a5324509eae4f670170a09777a45bf6a5d29f79c0e4df716779",
+          "path": "src/job_agent/resume_workspace/rewrite.py",
+          "start_line": 27,
+          "end_line": 28,
+          "commit": null,
+          "retrieval_method": "static_call",
+          "evidence_kind": "code",
+          "supports_claim": "needs_judgment",
+          "quote": "def encoded(value):\n    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':'))\n",
+          "independent_truth": "not_verified"
+        }
+      ],
+      "question": "请结合 src/job_agent/resume_workspace/rewrite.py 中的 encoded 说明输入、主要行为和失败边界，并区分你的参与范围与源码能证明的内容。",
+      "requested_project_scope_match": true,
+      "retrieved_other_scope": false,
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "interviewer",
+          "tool": "code_search",
+          "status": "ok",
+          "duration_ms": 467,
+          "turn": 0,
+          "error_code": null
+        }
+      ],
+      "semantic_answer_quality": null,
+      "retrieval_policies": [
+        {
+          "answer_policy": "limited_source_only",
+          "missing": []
+        }
+      ]
+    },
+    {
+      "case_id": "real-dev-execution_state-2",
+      "split": "dev",
+      "query": "共享执行状态已在生产抵挡过多少次越权访问？",
+      "answerable": false,
+      "entry": "default_job_track_natural_text",
+      "http_status": 201,
+      "business_status": "active",
+      "returned_track": "job",
+      "detail": null,
+      "references": [
+        {
+          "evidence_id": "public-0c30de01a4ef05bf0e824faacdf2",
+          "scope": "public_knowledge",
+          "owner_id": null,
+          "project_id": null,
+          "snapshot_id": "knowledge-b5e11b098a7d5b055df151df5f26eb0f914ea3a99da40bbce2477de3e475017c",
+          "source_id": "question-idempotency",
+          "content_hash": "7f9c636c496a3d3ede694551681a6d3cffdcc6288d7c9c00ed1edb6644e1eef2",
+          "path": "knowledge/question-idempotency.md",
+          "start_line": 1,
+          "end_line": 2,
+          "commit": null,
+          "retrieval_method": "hybrid_rerank",
+          "evidence_kind": "question",
+          "supports_claim": "needs_judgment",
+          "quote": "外部超时与幂等回执 · 练习\n外部请求超时后，为什么不能直接把任务当失败重试？",
+          "independent_truth": "not_verified"
+        }
+      ],
+      "question": "外部请求超时后，为什么不能直接把任务当失败重试？",
+      "requested_project_scope_match": false,
+      "retrieved_other_scope": true,
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "interviewer",
+          "tool": "question_search",
+          "status": "ok",
+          "duration_ms": 90,
+          "turn": 0,
+          "error_code": null
+        }
+      ],
+      "semantic_answer_quality": null,
+      "retrieval_policies": [
+        {
+          "answer_policy": "limited_source_only",
+          "missing": []
+        }
+      ]
+    },
+    {
+      "case_id": "real-dev-execution_state-2",
+      "split": "dev",
+      "query": "共享执行状态已在生产抵挡过多少次越权访问？",
+      "answerable": false,
+      "entry": "explicit_project_selection",
+      "http_status": 201,
+      "business_status": "active",
+      "returned_track": "project",
+      "detail": null,
+      "references": [
+        {
+          "evidence_id": "ev-fb122a00c1cd4809edc1fa9ef1c4",
+          "scope": "private_project",
+          "owner_id": "synthetic-research-owner",
+          "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+          "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+          "source_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631:src/job_agent/resume_workspace/unified_trace.py",
+          "content_hash": "714c9fef879a3cf93c5cce488e904e38f70ffc0e9a9d851a0cbd8cdf73f78b83",
+          "path": "src/job_agent/resume_workspace/unified_trace.py",
+          "start_line": 78,
+          "end_line": 140,
+          "commit": null,
+          "retrieval_method": "rerank",
+          "evidence_kind": "code",
+          "supports_claim": "needs_judgment",
+          "quote": "def from_execution(execution,*,tool_trace=(),packs=()):\n    if execution is None:\n        from job_agent.resume_workspace.repository import WorkspaceConflict\n        raise WorkspaceConflict('trace_legacy_execution_unavailable')\n    state=execution if isinstance(execution,SharedRunState) else SharedRunState.model_validate(execution)\n    state.validate_binding(state.owner_id,state.run_id,state.source_identity)\n    rid=opaque(state.run_id);tid=opaque(state.trace_id);root=rid+'-root';rows=[]\n    material=state_hash(state.source_identity);model=state_hash(state.model_identity)\n    def emit(**kw):\n        row=UnifiedTraceEvent(trace_id=tid,run_id=rid,seq=len(rows),material_hash=material,\n            model_identity_hash=model,**kw);rows.append(row.model_dump(mode='json'))\n    usage=state.usage;calls=integer(usage.get('provider_calls'));rule_only=calls==0\n    emit(span_id=root,source_stream='run_state',source_seq=0,kind='run',phase='snapshot',\n        status=state.status if state.status in ('active','running','complete','failed','unknown','accepted','rejected','awaiting_approval','needs_input','paused','pending') else 'other',\n        attempt=state.attempt,revision=state.revision,input_hash=material,\n        input_tokens=0 if rule_only else integer(usage.get('input_tokens')),\n        output_tokens=0 if rule_only else integer(usage.get('output_tokens')),cost=number(usage.get('cost')),\n        usage_scope='run_aggregate',provider_calls=calls,\n        usage_missing_reason='no_provider_calls' if rule_only else 'cost_unavailable_or_provider_usage_missing',\n        approval_status='recorded' if state.approval else 'absent',approval_hash=state_hash(state.approval) if state.approval else None)\n    active={}\n    for event in state.events:\n        key=(event.role,event.revision)\n        if event.phase=='started':active[key]=rid+'-role-'+str(event.seq)\n        span=active.get(key,rid+'-event-'+str(event.seq));metrics=event.metrics\n        time=timestamp(event.recorded_at);scope='call' if event.phase=='completed' and metrics else 'not_applicable' if rule_only else 'unknown'\n        emit(span_id=span,parent_span_id=root,source_stream='role_events',source_seq=event.seq,kind='role',\n            phase=event.phase,status='failed' if event.phase=='stopped' else 'recorded',attempt=state.attempt,\n            revision=event.revision,role_id=opaque(event.role),recorded_at_utc=time,\n            started_at_utc=time if event.phase=='started' else None,\n            ended_at_utc=time if event.phase in ('completed','stopped') else None,\n            duration_ms=number(metrics.get('latency_ms')),time_quality='recorded' if time else 'duration_only' if number(metrics.get('latency_ms')) is not None else 'unknown',\n            input_hash=event.input_hash,output_hash=event.output_hash,\n            input_tokens=integer(metrics.get('input_tokens')) if scope=='call' else None,\n            output_tokens=integer(metrics.get('output_tokens')) if scope=='call' else None,\n            usage_scope=scope,usage_missing_reason=None if scope=='call' and metrics.get('input_tokens') is not None and metrics.get('output_tokens') is not None else 'no_per_call_usage_recorded',\n            error_code_id=opaque(event.code or metrics.get('error_code')),\n            fallback_used=metrics.get('fallback_used') if type(metrics.get('fallback_used')) is bool else None,\n            correlation_id=opaque(event.feedback_id))\n        # The root stores full identity; this row describes the actual provider call.\n        rows[-1]['model_identity_hash']=_model_hash(metrics,state.model_identity)\n        if event.phase in ('completed','stopped'):active.pop(key,None)\n    for i,tool in enumerate(tool_trace,1):\n        duration=number(tool.get('duration_ms'))\n        emit(span_id=rid+'-tool-'+str(i),parent_span_id=root,source_stream='tools',source_seq=integer(tool.get('index')) or i,\n            kind='tool',phase='observation',status='failed' if tool.get('error_code') else 'recorded',attempt=state.attempt,\n            revision=integer(tool.get('turn')),role_id=opaque(tool.get('role')),tool_id=opaque(tool.get('tool')),\n            duration_ms=duration,time_quality='duration_only' if duration is not None else 'unknown',\n            usage_scope='not_applicable',usage_missing_reason='tool_event_has_no_provider_usage',error_code_id=opaque(tool.get('error_code')))\n    for pack_index,pack in enumerate(packs,1):\n        raw=pack.model_dump(mode='json') if hasattr(pack,'model_dump') else pack\n        for round_index,round_ in enumerate(raw.get('rounds',()),1):\n            trace=round_.get('retrieval_trace',{});duration=number(round_.get('elapsed_ms'))\n            emit(span_id=rid+f'-pack-{pack_index}-round-{round_index}',parent_span_id=root,\n                source_stream='retrieval_rounds',source_seq=round_index,kind='retrieval',phase='observation',status='recorded',\n                attempt=state.attempt,tool_id=opaque(round_.get('tool')),duration_ms=duration,\n                time_quality='duration_only' if duration is not None else 'unknown',\n                evidence_ids=[opaque(x) for x in round_.get('retained_evidence_ids',())[:40]],\n                config_identity=opaque(trace.get('config_identity')),index_identity=opaque(trace.get('index_identity')),\n                input_hash=state_hash(round_.get('query','')),usage_scope='not_applicable',\n                usage_missing_reason='retrieval_not_a_generation_call',correlation_id=opaque(raw.get('pack_id')))\n    if len(rows)>512:raise ValueError('trace_export_budget')\n    return envelope(rows,task=state.task)\n",
+          "independent_truth": "not_verified"
+        }
+      ],
+      "question": "请结合 src/job_agent/resume_workspace/unified_trace.py 中的 from_execution 说明输入、主要行为和失败边界，并区分你的参与范围与源码能证明的内容。",
+      "requested_project_scope_match": true,
+      "retrieved_other_scope": false,
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "interviewer",
+          "tool": "code_search",
+          "status": "ok",
+          "duration_ms": 404,
+          "turn": 0,
+          "error_code": null
+        }
+      ],
+      "semantic_answer_quality": null,
+      "retrieval_policies": [
+        {
+          "answer_policy": "limited_source_only",
+          "missing": []
+        }
+      ]
+    },
+    {
+      "case_id": "real-dev-unified_trace-2",
+      "split": "dev",
+      "query": "该统一追踪服务本季度生产可用率达到多少？",
+      "answerable": false,
+      "entry": "default_job_track_natural_text",
+      "http_status": 201,
+      "business_status": "active",
+      "returned_track": "job",
+      "detail": null,
+      "references": [
+        {
+          "evidence_id": "public-7de7023ae9ce19ada46ac8a448f6",
+          "scope": "public_knowledge",
+          "owner_id": null,
+          "project_id": null,
+          "snapshot_id": "knowledge-f068d34d2c61b1cb60d979e2450353baf85e02eeafeaed47a6e899d7674d72c8",
+          "source_id": "question-provenance",
+          "content_hash": "de80b77f2837cb1df43aad576a4dddd4905453a210f1cb92a1b815bf0fe7b0bb",
+          "path": "knowledge/question-provenance.md",
+          "start_line": 1,
+          "end_line": 2,
+          "commit": null,
+          "retrieval_method": "hybrid_rerank",
+          "evidence_kind": "question",
+          "supports_claim": "needs_judgment",
+          "quote": "检索相关性与事实支持 · 练习\n检索到技术相关文档后，为什么不能直接把该技术写进用户简历？",
+          "independent_truth": "not_verified"
+        }
+      ],
+      "question": "检索到技术相关文档后，为什么不能直接把该技术写进用户简历？",
+      "requested_project_scope_match": false,
+      "retrieved_other_scope": true,
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "interviewer",
+          "tool": "question_search",
+          "status": "ok",
+          "duration_ms": 77,
+          "turn": 0,
+          "error_code": null
+        }
+      ],
+      "semantic_answer_quality": null,
+      "retrieval_policies": [
+        {
+          "answer_policy": "limited_source_only",
+          "missing": []
+        }
+      ]
+    },
+    {
+      "case_id": "real-dev-unified_trace-2",
+      "split": "dev",
+      "query": "该统一追踪服务本季度生产可用率达到多少？",
+      "answerable": false,
+      "entry": "explicit_project_selection",
+      "http_status": 201,
+      "business_status": "active",
+      "returned_track": "project",
+      "detail": null,
+      "references": [
+        {
+          "evidence_id": "ev-e8444b91f7ebe4a43f2162fdab83",
+          "scope": "private_project",
+          "owner_id": "synthetic-research-owner",
+          "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+          "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+          "source_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631:src/job_agent/resume_workspace/unified_trace.py",
+          "content_hash": "714c9fef879a3cf93c5cce488e904e38f70ffc0e9a9d851a0cbd8cdf73f78b83",
+          "path": "src/job_agent/resume_workspace/unified_trace.py",
+          "start_line": 32,
+          "end_line": 70,
+          "commit": null,
+          "retrieval_method": "rerank",
+          "evidence_kind": "code",
+          "supports_claim": "needs_judgment",
+          "quote": "class UnifiedTraceEvent(StrictModel):\n    schema_version:Literal['job-agent-trace-1']='job-agent-trace-1'\n    trace_id:str\n    run_id:str\n    span_id:str\n    parent_span_id:str|None=None\n    seq:int=Field(ge=0)\n    source_stream:Literal['run_state','role_events','tools','retrieval_rounds','task_events','task_snapshot']\n    source_seq:int=Field(ge=0)\n    kind:Literal['run','role','tool','retrieval','task']\n    phase:str\n    status:str\n    attempt:int|None=Field(default=None,ge=0)\n    revision:int|None=Field(default=None,ge=0)\n    role_id:str|None=None\n    tool_id:str|None=None\n    recorded_at_utc:str|None=None\n    started_at_utc:str|None=None\n    ended_at_utc:str|None=None\n    duration_ms:float|None=Field(default=None,ge=0)\n    time_quality:Literal['recorded','duration_only','unknown']='unknown'\n    model_identity_hash:str|None=None\n    material_hash:str|None=None\n    input_hash:str|None=None\n    output_hash:str|None=None\n    evidence_ids:list[str]=Field(default_factory=list,max_length=40)\n    config_identity:str|None=None\n    index_identity:str|None=None\n    input_tokens:int|None=Field(default=None,ge=0)\n    output_tokens:int|None=Field(default=None,ge=0)\n    cost:float|None=Field(default=None,ge=0)\n    usage_scope:Literal['run_aggregate','call','not_applicable','unknown']='unknown'\n    usage_missing_reason:str|None=None\n    provider_calls:int|None=Field(default=None,ge=0)\n    error_code_id:str|None=None\n    fallback_used:bool|None=None\n    approval_status:Literal['recorded','absent']='absent'\n    approval_hash:str|None=None\n    correlation_id:str|None=None\n",
+          "independent_truth": "not_verified"
+        }
+      ],
+      "question": "请结合 src/job_agent/resume_workspace/unified_trace.py 中的 UnifiedTraceEvent 说明输入、主要行为和失败边界，并区分你的参与范围与源码能证明的内容。",
+      "requested_project_scope_match": true,
+      "retrieved_other_scope": false,
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "interviewer",
+          "tool": "code_search",
+          "status": "ok",
+          "duration_ms": 402,
+          "turn": 0,
+          "error_code": null
+        }
+      ],
+      "semantic_answer_quality": null,
+      "retrieval_policies": [
+        {
+          "answer_policy": "limited_source_only",
+          "missing": []
+        }
+      ]
+    },
+    {
+      "case_id": "real-dev-evidence_pack-2",
+      "split": "dev",
+      "query": "证据工具的线上吞吐基准和压测机器配置是什么？",
+      "answerable": false,
+      "entry": "default_job_track_natural_text",
+      "http_status": 201,
+      "business_status": "active",
+      "returned_track": "job",
+      "detail": null,
+      "references": [
+        {
+          "evidence_id": "public-7de7023ae9ce19ada46ac8a448f6",
+          "scope": "public_knowledge",
+          "owner_id": null,
+          "project_id": null,
+          "snapshot_id": "knowledge-f068d34d2c61b1cb60d979e2450353baf85e02eeafeaed47a6e899d7674d72c8",
+          "source_id": "question-provenance",
+          "content_hash": "de80b77f2837cb1df43aad576a4dddd4905453a210f1cb92a1b815bf0fe7b0bb",
+          "path": "knowledge/question-provenance.md",
+          "start_line": 1,
+          "end_line": 2,
+          "commit": null,
+          "retrieval_method": "hybrid_rerank",
+          "evidence_kind": "question",
+          "supports_claim": "needs_judgment",
+          "quote": "检索相关性与事实支持 · 练习\n检索到技术相关文档后，为什么不能直接把该技术写进用户简历？",
+          "independent_truth": "not_verified"
+        }
+      ],
+      "question": "检索到技术相关文档后，为什么不能直接把该技术写进用户简历？",
+      "requested_project_scope_match": false,
+      "retrieved_other_scope": true,
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "interviewer",
+          "tool": "question_search",
+          "status": "ok",
+          "duration_ms": 76,
+          "turn": 0,
+          "error_code": null
+        },
+        {
+          "index": 2,
+          "role": "interviewer",
+          "tool": "question_search",
+          "status": "ok",
+          "duration_ms": 75,
+          "turn": 0,
+          "error_code": null
+        }
+      ],
+      "semantic_answer_quality": null,
+      "retrieval_policies": [
+        {
+          "answer_policy": "needs_input",
+          "missing": [
+            "runtime_measurements_unverified"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "real-dev-evidence_pack-2",
+      "split": "dev",
+      "query": "证据工具的线上吞吐基准和压测机器配置是什么？",
+      "answerable": false,
+      "entry": "explicit_project_selection",
+      "http_status": 201,
+      "business_status": "active",
+      "returned_track": "project",
+      "detail": null,
+      "references": [
+        {
+          "evidence_id": "ev-bab896844f796c8b7a0b9bc18818",
+          "scope": "private_project",
+          "owner_id": "synthetic-research-owner",
+          "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+          "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+          "source_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631:src/job_agent/resume_workspace/evidence_pack.py",
+          "content_hash": "4f38cf2c5d1a335ed24bb700d4732e06af8e88b0256b030b61daf5f015ac8b3e",
+          "path": "src/job_agent/resume_workspace/evidence_pack.py",
+          "start_line": 71,
+          "end_line": 81,
+          "commit": null,
+          "retrieval_method": "rerank",
+          "evidence_kind": "code",
+          "supports_claim": "needs_judgment",
+          "quote": "class EvidenceRound(StrictModel):\n    index:int\n    query:str\n    tool:str\n    returned_evidence_ids:list[str]\n    retained_evidence_ids:list[str]\n    added_items:int\n    distinct_paths_after:int\n    elapsed_ms:int\n    warnings:list[str]=Field(default_factory=list)\n    retrieval_trace:dict[str,Any]=Field(default_factory=dict)\n",
+          "independent_truth": "not_verified"
+        }
+      ],
+      "question": "请结合 src/job_agent/resume_workspace/evidence_pack.py 中的 EvidenceRound 说明输入、主要行为和失败边界，并区分你的参与范围与源码能证明的内容。",
+      "requested_project_scope_match": true,
+      "retrieved_other_scope": false,
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "interviewer",
+          "tool": "code_search",
+          "status": "ok",
+          "duration_ms": 390,
+          "turn": 0,
+          "error_code": null
+        },
+        {
+          "index": 2,
+          "role": "interviewer",
+          "tool": "code_search",
+          "status": "ok",
+          "duration_ms": 385,
+          "turn": 0,
+          "error_code": null
+        }
+      ],
+      "semantic_answer_quality": null,
+      "retrieval_policies": [
+        {
+          "answer_policy": "needs_input",
+          "missing": [
+            "runtime_measurements_unverified"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "real-test-postgres_projects-2",
+      "split": "test",
+      "query": "PostgreSQL 生产集群目前支持多少并发租户及故障切换时延？",
+      "answerable": false,
+      "entry": "default_job_track_natural_text",
+      "http_status": 201,
+      "business_status": "active",
+      "returned_track": "job",
+      "detail": null,
+      "references": [
+        {
+          "evidence_id": "public-32a5e1b43275177a2997caf08790",
+          "scope": "public_knowledge",
+          "owner_id": null,
+          "project_id": null,
+          "snapshot_id": "knowledge-f0e0c7b5fda8d6ad132ec1104ba51503fc3c3ff07c361192e2fb40ecf49ff417",
+          "source_id": "question-transaction",
+          "content_hash": "698aa314afe37132b8fd4a9f123bc6530082ab08ec0881a89e3a01dab1eb6492",
+          "path": "knowledge/question-transaction.md",
+          "start_line": 1,
+          "end_line": 2,
+          "commit": null,
+          "retrieval_method": "hybrid_rerank",
+          "evidence_kind": "question",
+          "supports_claim": "needs_judgment",
+          "quote": "业务事务与消息投递 · 练习\n为什么任务记录和消息投递之间需要考虑Outbox以及消费者去重？",
+          "independent_truth": "not_verified"
+        }
+      ],
+      "question": "为什么任务记录和消息投递之间需要考虑Outbox以及消费者去重？",
+      "requested_project_scope_match": false,
+      "retrieved_other_scope": true,
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "interviewer",
+          "tool": "question_search",
+          "status": "ok",
+          "duration_ms": 85,
+          "turn": 0,
+          "error_code": null
+        }
+      ],
+      "semantic_answer_quality": null,
+      "retrieval_policies": [
+        {
+          "answer_policy": "limited_source_only",
+          "missing": []
+        }
+      ]
+    },
+    {
+      "case_id": "real-test-postgres_projects-2",
+      "split": "test",
+      "query": "PostgreSQL 生产集群目前支持多少并发租户及故障切换时延？",
+      "answerable": false,
+      "entry": "explicit_project_selection",
+      "http_status": 201,
+      "business_status": "active",
+      "returned_track": "project",
+      "detail": null,
+      "references": [
+        {
+          "evidence_id": "ev-00ad9bcf61c6824fa8fc3f104afb",
+          "scope": "private_project",
+          "owner_id": "synthetic-research-owner",
+          "project_id": "project-590650a7c8814b9bbda5f1dd9001cc38",
+          "snapshot_id": "snapshot-05809528aae547e898b4b437c6a8746f",
+          "source_id": "snapshot-05809528aae547e898b4b437c6a8746f:src/job_agent/resume_workspace/postgres_projects.py",
+          "content_hash": "13c0de85e0f109cb73cabc2e4f6baf72bb7c12c9e9d2cf480037ad1b852eed99",
+          "path": "src/job_agent/resume_workspace/postgres_projects.py",
+          "start_line": 182,
+          "end_line": 261,
+          "commit": null,
+          "retrieval_method": "rerank",
+          "evidence_kind": "code",
+          "supports_claim": "needs_judgment",
+          "quote": "class PostgresIndexTaskRepository:\n    atomic_publication=True\n    def __init__(self,database,projects,*,lease_seconds=30,config_identity='',dispatch_mode='polling'):\n        if not .3<=lease_seconds<=120:raise ValueError('task_lease_seconds_invalid')\n        self.workspace=database;self.projects=projects;self.lease_seconds=lease_seconds;self.config_identity=config_identity\n        from job_agent.resume_workspace.index_dispatch import IndexDispatchRepository\n        self.dispatch_mode=dispatch_mode;self.dispatch=IndexDispatchRepository(database,self,dispatch_mode)\n\n    @staticmethod\n    def event(db,task_id,kind):\n        row=db.execute('UPDATE v3_tasks SET event_seq=event_seq+1 WHERE task_id=%s RETURNING event_seq,attempts',(task_id,)).fetchone()\n        db.execute(f'INSERT INTO v3_task_events VALUES (%s,%s,%s,%s,{DB_NOW})',(task_id,row['event_seq'],kind,row['attempts']))\n\n    def submit(self,owner,project_id,request):\n        from job_agent.resume_workspace.code_rag import INDEX_VERSION\n        self.projects.files(owner,project_id,request.snapshot_id)\n        if not self.config_identity:raise WorkspaceConflict('task_index_config_required')\n        hashed=digest({'project':project_id,'snapshot':request.snapshot_id,'kind':'code_index'})\n        with self.workspace._connection(write=True) as db:\n            db.execute('SELECT pg_advisory_xact_lock(hashtextextended(%s,0))',('v3-task-quota',))\n            self.projects._project(db,owner,project_id,lock=True)\n            snapshot=db.execute('SELECT * FROM v3_project_snapshots WHERE project_id=%s AND snapshot_id=%s FOR UPDATE',(project_id,request.snapshot_id)).fetchone()\n            if snapshot is None:raise WorkspaceNotFound('snapshot_not_found')\n            old=db.execute('SELECT task_id,request_hash FROM v3_tasks WHERE owner_id=%s AND request_key=%s',(owner,request.request_key)).fetchone()\n            if old:\n                if old['request_hash']!=hashed:raise WorkspaceConflict('task_request_key_conflict')\n                return old['task_id']\n            active=list(db.execute(\"SELECT owner_id FROM v3_tasks WHERE status IN ('QUEUED','RUNNING')\"))\n            if len(active)>=20 or sum(r['owner_id']==owner for r in active)>=3:raise WorkspaceConflict('task_queue_quota_reached')\n            generation=snapshot['desired_generation']+1;task_id='task-'+uuid4().hex\n            db.execute('UPDATE v3_project_snapshots SET desired_generation=%s WHERE snapshot_id=%s',(generation,request.snapshot_id))\n            db.execute(f'''INSERT INTO v3_tasks(task_id,owner_id,project_id,snapshot_id,request_key,request_hash,index_version,\n                config_identity,generation,status,stage,created_at,updated_at)\n                VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,'QUEUED','queued',{DB_NOW},{DB_NOW})''',\n                (task_id,owner,project_id,request.snapshot_id,request.request_key,hashed,INDEX_VERSION,self.config_identity,generation))\n            self.event(db,task_id,'submitted')\n            self.dispatch.enqueue(db,task_id,generation)\n            return task_id\n\n    def get(self,owner,task_id):\n        with self.workspace._connection() as db:\n            row=db.execute('SELECT * FROM v3_tasks WHERE owner_id=%s AND task_id=%s',(owner,task_id)).fetchone()\n            if row is None:raise WorkspaceNotFound('task_not_found')\n            return {k:row[k] for k in ('task_id','project_id','snapshot_id','status','stage','attempts','created_at','updated_at','error_code','generation','config_identity')}|{\n                'result':json.loads(row['result']) if row['result'] else None,\n                'events':[dict(r) for r in db.execute('SELECT seq,kind,attempt,recorded_at FROM v3_task_events WHERE task_id=%s ORDER BY seq',(task_id,))]}\n\n    def history(self,owner,project_id):\n        with self.workspace._connection() as db:\n            self.projects._project(db,owner,project_id)\n            ids=[r['task_id'] for r in db.execute('SELECT task_id FROM v3_tasks WHERE owner_id=%s AND project_id=%s ORDER BY created_at DESC LIMIT 100',(owner,project_id))]\n        return [self.get(owner,tid) for tid in ids]\n\n    def claim(self):\n        if self.dispatch_mode!='polling':raise WorkspaceConflict('polling_worker_disabled')\n        with self.workspace._connection(write=True) as db:\n            self.dispatch.assert_mode(db)\n            exhausted=list(db.execute(f'''UPDATE v3_tasks SET status='FAILED',stage='stopped',error_code='worker_recovery_exhausted',\n                lease_token=NULL,updated_at={DB_NOW} WHERE status='RUNNING' AND lease_until<={DB_NOW} AND attempts>=3 RETURNING task_id'''))\n            for row in exhausted:self.event(db,row['task_id'],'recovery_exhausted')\n            stale=list(db.execute(f'''UPDATE v3_tasks t SET status='FAILED',stage='stopped',error_code='task_superseded',updated_at={DB_NOW}\n                FROM v3_project_snapshots s WHERE t.snapshot_id=s.snapshot_id AND t.generation<>s.desired_generation AND t.status='QUEUED' RETURNING t.task_id'''))\n            for row in stale:self.event(db,row['task_id'],'superseded')\n            row=db.execute(f'''SELECT * FROM v3_tasks WHERE status='QUEUED' OR\n                (status='RUNNING' AND lease_until<={DB_NOW} AND attempts<3)\n                ORDER BY created_at,task_id LIMIT 1 FOR UPDATE SKIP LOCKED''').fetchone()\n            if row is None:return None\n            claim=db.execute(f'''UPDATE v3_tasks SET status='RUNNING',stage='parsing',lease_token=%s,\n                lease_until={DB_NOW}+%s,attempts=attempts+1,updated_at={DB_NOW} WHERE task_id=%s RETURNING *''',\n                (uuid4().hex,self.lease_seconds,row['task_id'])).fetchone()\n            self.event(db,row['task_id'],'claimed')\n            return dict(claim)\n\n    def guard(self,db,claim):\n        self.dispatch.assert_mode(db)\n        row=db.execute(f'SELECT *,lease_until>{DB_NOW} AS live FROM v3_tasks WHERE task_id=%s FOR UPDATE',(claim['task_id'],)).fetchone()\n        if row is None or row['status']!='RUNNING' or not row['live'] or any(row[k]!=claim[k] for k in (\n            'owner_id','project_id','snapshot_id','lease_token','generation','config_identity','index_version')):\n            raise WorkspaceConflict('task_lease_lost')\n        return row\n",
+          "independent_truth": "not_verified"
+        }
+      ],
+      "question": "请结合 src/job_agent/resume_workspace/postgres_projects.py 中的 PostgresIndexTaskRepository 说明输入、主要行为和失败边界，并区分你的参与范围与源码能证明的内容。",
+      "requested_project_scope_match": true,
+      "retrieved_other_scope": false,
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "interviewer",
+          "tool": "code_search",
+          "status": "ok",
+          "duration_ms": 484,
+          "turn": 0,
+          "error_code": null
+        }
+      ],
+      "semantic_answer_quality": null,
+      "retrieval_policies": [
+        {
+          "answer_policy": "limited_source_only",
+          "missing": []
+        }
+      ]
+    },
+    {
+      "case_id": "real-test-index_streams-2",
+      "split": "test",
+      "query": "Redis 索引调度线上端到端延迟的全年分位数是多少？",
+      "answerable": false,
+      "entry": "default_job_track_natural_text",
+      "http_status": 201,
+      "business_status": "active",
+      "returned_track": "job",
+      "detail": null,
+      "references": [
+        {
+          "evidence_id": "public-6e1456ae6ec077d87b7901450a81",
+          "scope": "public_knowledge",
+          "owner_id": null,
+          "project_id": null,
+          "snapshot_id": "knowledge-f2f825acdbfdd2c72725ef8684b2cde912f342f421830945e5edf74a1b49cd15",
+          "source_id": "question-citation",
+          "content_hash": "54c97396d309aa99184c4e84729a42ad1caca78a493974e377ccb945a274be40",
+          "path": "knowledge/question-citation.md",
+          "start_line": 1,
+          "end_line": 2,
+          "commit": null,
+          "retrieval_method": "hybrid_rerank",
+          "evidence_kind": "question",
+          "supports_claim": "needs_judgment",
+          "quote": "快照引用、哈希与版本 · 练习\n文件更新或重建索引后，怎样保证历史代码引用没有悄悄变义？",
+          "independent_truth": "not_verified"
+        }
+      ],
+      "question": "文件更新或重建索引后，怎样保证历史代码引用没有悄悄变义？",
+      "requested_project_scope_match": false,
+      "retrieved_other_scope": true,
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "interviewer",
+          "tool": "question_search",
+          "status": "ok",
+          "duration_ms": 76,
+          "turn": 0,
+          "error_code": null
+        }
+      ],
+      "semantic_answer_quality": null,
+      "retrieval_policies": [
+        {
+          "answer_policy": "limited_source_only",
+          "missing": []
+        }
+      ]
+    },
+    {
+      "case_id": "real-test-index_streams-2",
+      "split": "test",
+      "query": "Redis 索引调度线上端到端延迟的全年分位数是多少？",
+      "answerable": false,
+      "entry": "explicit_project_selection",
+      "http_status": 201,
+      "business_status": "active",
+      "returned_track": "project",
+      "detail": null,
+      "references": [
+        {
+          "evidence_id": "ev-f52607dc1851aeda341971a5a77c",
+          "scope": "private_project",
+          "owner_id": "synthetic-research-owner",
+          "project_id": "project-590650a7c8814b9bbda5f1dd9001cc38",
+          "snapshot_id": "snapshot-05809528aae547e898b4b437c6a8746f",
+          "source_id": "snapshot-05809528aae547e898b4b437c6a8746f:src/job_agent/resume_workspace/index_streams.py",
+          "content_hash": "4aeba0422f763d4c3d1bfa61431760ad993ebcfb580259eb39c073934b84e3ab",
+          "path": "src/job_agent/resume_workspace/index_streams.py",
+          "start_line": 6,
+          "end_line": 29,
+          "commit": null,
+          "retrieval_method": "rerank",
+          "evidence_kind": "code",
+          "supports_claim": "needs_judgment",
+          "quote": "class IndexStreamQueue(RedisStreamDispatchQueue):\n    def __init__(self,redis_url,authority,*,max_entries=10000):\n        if not 100<=max_entries<=100000:raise ValueError('index_stream_retention_invalid')\n        super().__init__(redis_url,stream_name='job-agent:v3:'+authority,group_name='index-workers',\n            client_parameters={'socket_timeout':2,'socket_connect_timeout':2})\n        self.max_entries=max_entries;self.reclaim_cursor='0-0'\n\n    def publish(self,event):\n        fields={k:str(event[k]) for k in ('authority','event_id','task_id','generation')}\n        return self._redis.xadd(self.stream_name,fields,maxlen=self.max_entries,approximate=True)\n\n    _delivery=staticmethod(decode_delivery)\n\n    def reclaim(self,*,consumer_name,min_idle_ms,count=10):\n        response=self._redis.xautoclaim(self.stream_name,self.group_name,consumer_name,\n            min_idle_ms,self.reclaim_cursor,count=count)\n        self.reclaim_cursor=response[0]\n        # Deleted pending IDs are handled by the PG reconciliation path, never\n        # treated as successful business execution.\n        return [decode_delivery(mid,fields) for mid,fields in response[1]]\n\n    def monitoring(self):\n        return {'lag':self.depth(),'pending':self.pending(),'retained_entries':self.retained_entries(),\n            'configured_max_entries_approximate':self.max_entries,'reclaim_cursor':self.reclaim_cursor}\n",
+          "independent_truth": "not_verified"
+        }
+      ],
+      "question": "请结合 src/job_agent/resume_workspace/index_streams.py 中的 IndexStreamQueue 说明输入、主要行为和失败边界，并区分你的参与范围与源码能证明的内容。",
+      "requested_project_scope_match": true,
+      "retrieved_other_scope": false,
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "interviewer",
+          "tool": "code_search",
+          "status": "ok",
+          "duration_ms": 451,
+          "turn": 0,
+          "error_code": null
+        }
+      ],
+      "semantic_answer_quality": null,
+      "retrieval_policies": [
+        {
+          "answer_policy": "limited_source_only",
+          "missing": []
+        }
+      ]
+    },
+    {
+      "case_id": "real-test-index_dispatch-2",
+      "split": "test",
+      "query": "现有 Outbox 已在生产确保零次消息丢失的证据是什么？",
+      "answerable": false,
+      "entry": "default_job_track_natural_text",
+      "http_status": 201,
+      "business_status": "active",
+      "returned_track": "job",
+      "detail": null,
+      "references": [
+        {
+          "evidence_id": "public-32a5e1b43275177a2997caf08790",
+          "scope": "public_knowledge",
+          "owner_id": null,
+          "project_id": null,
+          "snapshot_id": "knowledge-f0e0c7b5fda8d6ad132ec1104ba51503fc3c3ff07c361192e2fb40ecf49ff417",
+          "source_id": "question-transaction",
+          "content_hash": "698aa314afe37132b8fd4a9f123bc6530082ab08ec0881a89e3a01dab1eb6492",
+          "path": "knowledge/question-transaction.md",
+          "start_line": 1,
+          "end_line": 2,
+          "commit": null,
+          "retrieval_method": "hybrid_rerank",
+          "evidence_kind": "question",
+          "supports_claim": "needs_judgment",
+          "quote": "业务事务与消息投递 · 练习\n为什么任务记录和消息投递之间需要考虑Outbox以及消费者去重？",
+          "independent_truth": "not_verified"
+        }
+      ],
+      "question": "为什么任务记录和消息投递之间需要考虑Outbox以及消费者去重？",
+      "requested_project_scope_match": false,
+      "retrieved_other_scope": true,
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "interviewer",
+          "tool": "question_search",
+          "status": "ok",
+          "duration_ms": 77,
+          "turn": 0,
+          "error_code": null
+        }
+      ],
+      "semantic_answer_quality": null,
+      "retrieval_policies": [
+        {
+          "answer_policy": "limited_source_only",
+          "missing": []
+        }
+      ]
+    },
+    {
+      "case_id": "real-test-index_dispatch-2",
+      "split": "test",
+      "query": "现有 Outbox 已在生产确保零次消息丢失的证据是什么？",
+      "answerable": false,
+      "entry": "explicit_project_selection",
+      "http_status": 201,
+      "business_status": "active",
+      "returned_track": "project",
+      "detail": null,
+      "references": [
+        {
+          "evidence_id": "ev-732cebe02943fde8712cc3e37b1b",
+          "scope": "private_project",
+          "owner_id": "synthetic-research-owner",
+          "project_id": "project-590650a7c8814b9bbda5f1dd9001cc38",
+          "snapshot_id": "snapshot-05809528aae547e898b4b437c6a8746f",
+          "source_id": "snapshot-05809528aae547e898b4b437c6a8746f:src/job_agent/resume_workspace/index_dispatch.py",
+          "content_hash": "3d9cc977fc9fd04de01b64398eeafe8145dfc8796e62e0adf0c8f269495cb797",
+          "path": "src/job_agent/resume_workspace/index_dispatch.py",
+          "start_line": 44,
+          "end_line": 48,
+          "commit": null,
+          "retrieval_method": "static_call",
+          "evidence_kind": "code",
+          "supports_claim": "needs_judgment",
+          "quote": "    def assert_mode(self,db):\n        db.execute('SELECT pg_advisory_xact_lock_shared(hashtextextended(%s,0))',(self.database.schema+':dispatch-mode',))\n        current=db.execute('SELECT mode,authority FROM v3_dispatch_control WHERE singleton=1').fetchone()\n        if current['mode']!=self.mode or current['authority']!=self.authority:\n            raise WorkspaceConflict('index_dispatch_mode_changed')\n",
+          "independent_truth": "not_verified"
+        }
+      ],
+      "question": "请结合 src/job_agent/resume_workspace/index_dispatch.py 中的 IndexDispatchRepository.assert_mode 说明输入、主要行为和失败边界，并区分你的参与范围与源码能证明的内容。",
+      "requested_project_scope_match": true,
+      "retrieved_other_scope": false,
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "interviewer",
+          "tool": "code_search",
+          "status": "ok",
+          "duration_ms": 439,
+          "turn": 0,
+          "error_code": null
+        }
+      ],
+      "semantic_answer_quality": null,
+      "retrieval_policies": [
+        {
+          "answer_policy": "limited_source_only",
+          "missing": []
+        }
+      ]
+    },
+    {
+      "case_id": "real-test-project_storage-2",
+      "split": "test",
+      "query": "所有客户的数据已经完成无损跨库迁移的生产验收报告在哪里？",
+      "answerable": false,
+      "entry": "default_job_track_natural_text",
+      "http_status": 201,
+      "business_status": "active",
+      "returned_track": "job",
+      "detail": null,
+      "references": [
+        {
+          "evidence_id": "public-32a5e1b43275177a2997caf08790",
+          "scope": "public_knowledge",
+          "owner_id": null,
+          "project_id": null,
+          "snapshot_id": "knowledge-f0e0c7b5fda8d6ad132ec1104ba51503fc3c3ff07c361192e2fb40ecf49ff417",
+          "source_id": "question-transaction",
+          "content_hash": "698aa314afe37132b8fd4a9f123bc6530082ab08ec0881a89e3a01dab1eb6492",
+          "path": "knowledge/question-transaction.md",
+          "start_line": 1,
+          "end_line": 2,
+          "commit": null,
+          "retrieval_method": "hybrid_rerank",
+          "evidence_kind": "question",
+          "supports_claim": "needs_judgment",
+          "quote": "业务事务与消息投递 · 练习\n为什么任务记录和消息投递之间需要考虑Outbox以及消费者去重？",
+          "independent_truth": "not_verified"
+        }
+      ],
+      "question": "为什么任务记录和消息投递之间需要考虑Outbox以及消费者去重？",
+      "requested_project_scope_match": false,
+      "retrieved_other_scope": true,
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "interviewer",
+          "tool": "question_search",
+          "status": "ok",
+          "duration_ms": 76,
+          "turn": 0,
+          "error_code": null
+        }
+      ],
+      "semantic_answer_quality": null,
+      "retrieval_policies": [
+        {
+          "answer_policy": "limited_source_only",
+          "missing": []
+        }
+      ]
+    },
+    {
+      "case_id": "real-test-project_storage-2",
+      "split": "test",
+      "query": "所有客户的数据已经完成无损跨库迁移的生产验收报告在哪里？",
+      "answerable": false,
+      "entry": "explicit_project_selection",
+      "http_status": 201,
+      "business_status": "active",
+      "returned_track": "project",
+      "detail": null,
+      "references": [
+        {
+          "evidence_id": "ev-c50d86e1564b092d05e930a0017a",
+          "scope": "private_project",
+          "owner_id": "synthetic-research-owner",
+          "project_id": "project-590650a7c8814b9bbda5f1dd9001cc38",
+          "snapshot_id": "snapshot-05809528aae547e898b4b437c6a8746f",
+          "source_id": "snapshot-05809528aae547e898b4b437c6a8746f:src/job_agent/resume_workspace/learning.py",
+          "content_hash": "1c7c7f68dc607e3a4270815e831278bc9591456ac91a31418c7bf85418425827",
+          "path": "src/job_agent/resume_workspace/learning.py",
+          "start_line": 200,
+          "end_line": 224,
+          "commit": null,
+          "retrieval_method": "rerank",
+          "evidence_kind": "code",
+          "supports_claim": "needs_judgment",
+          "quote": "    def materialize(self,owner,sid):\n        with self.workspace._connection(write=True) as db:\n            _,s,_=self.interviews._load(db,owner,sid)\n            if s.status!='complete':raise WorkspaceConflict('learning_requires_completed_source')\n            topics={t.anchor_id:t for t in s.plan};withdrawn=withdrawn_questions(db,owner,sid)\n            if any(not usable_evaluation_source(s,t,topics[t.question.topic_id]) for t in s.turns if t.question.question_id not in withdrawn):\n                raise WorkspaceConflict('learning_source_incomplete_semantic_review')\n            payloads=[observation_payload(s,t,topics[t.question.topic_id],point) for t in s.turns if t.question.question_id not in withdrawn\n                for point in ([t.question.focus_id] if t.question.focus_id in topics[t.question.topic_id].points else topics[t.question.topic_id].points)]\n            if len(payloads)>100:raise WorkspaceConflict('learning_session_quota_reached')\n            quota=db.execute('SELECT COUNT(*) FROM rw_learning_observations WHERE owner_id=?',(owner,)).fetchone()[0]\n            added=0\n            for data in payloads:\n                fp=digest(data);key='learn-'+digest([owner,sid,data['question_id'],data['point_id'],fp])[:32]\n                old_scope=db.execute('SELECT controls FROM rw_learning_observations WHERE owner_id=? AND session_id=? AND question_id=? AND point_id=?',\n                    (owner,sid,data['question_id'],data['point_id'])).fetchall()\n                if any(json.loads(old['controls']).get('deleted') for old in old_scope):continue\n                if db.execute('SELECT 1 FROM rw_learning_observations WHERE observation_id=?',(key,)).fetchone():continue\n                if quota+added>=2000:raise WorkspaceConflict('learning_owner_quota_reached')\n                raw=encoded(data);controls=encoded({'confirmed':False,'paused':False,'deleted':False,'due_at':self.clock()})\n                db.execute('INSERT INTO rw_learning_observations VALUES (?,?,?,?,?,?,?,?,?,?,0,?)',\n                    (key,owner,sid,data['question_id'],data['point_id'],fp,raw,digest(raw),controls,digest(controls),self.clock()))\n                added+=1\n        return {'added':added,'source_session_id':sid,'observations':[v for v in self.list(owner) if v['session_id']==sid],\n            'warning':'练习观察可纠正，不是用户能力画像、个人经历证明或已掌握结论。'}\n",
+          "independent_truth": "not_verified"
+        }
+      ],
+      "question": "请结合 src/job_agent/resume_workspace/learning.py 中的 LearningRepository.materialize 说明输入、主要行为和失败边界，并区分你的参与范围与源码能证明的内容。",
+      "requested_project_scope_match": true,
+      "retrieved_other_scope": false,
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "interviewer",
+          "tool": "code_search",
+          "status": "ok",
+          "duration_ms": 430,
+          "turn": 0,
+          "error_code": null
+        }
+      ],
+      "semantic_answer_quality": null,
+      "retrieval_policies": [
+        {
+          "answer_policy": "limited_source_only",
+          "missing": []
+        }
+      ]
+    }
+  ],
+  "status": "completed",
+  "runtime": {
+    "dense_configured": true,
+    "dense_loaded": true,
+    "embedding_identity": {
+      "provider": "sentence_transformers_local",
+      "model": "Qwen3-Embedding-0.6B",
+      "revision": "47191d5687dbf14319ccb312680caa31a179ed5e16539b8c06aeddc53b63ef6c",
+      "dimension": 1024,
+      "normalization": "l2",
+      "query_template": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:{query}",
+      "max_input_tokens": 1024,
+      "encoder_version": "5.7.0/4.57.6/2.5.1+cu121"
+    },
+    "rerank_loaded": true,
+    "quality_verified": false,
+    "reranker_identity": {
+      "model": "mmarco-mMiniLMv2-L12-H384-v1",
+      "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+      "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+      "max_pair_tokens": 512,
+      "score_semantics": "raw_logit"
+    },
+    "retrieval_settings": {
+      "sparse_candidates": 20,
+      "dense_candidates": 20,
+      "fusion_candidates": 30,
+      "rerank_candidates": 30,
+      "max_output": 20,
+      "relation_candidates": 8,
+      "context_char_budget": 24000,
+      "rerank_input_chars": 6000,
+      "rrf_k": 60,
+      "version": "retrieval-policy-1"
+    },
+    "retrieval_config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+    "vector_build": "code_index_transaction/public_startup",
+    "default_code_method": "code_aware",
+    "default_public_method": "hybrid"
+  },
+  "summary": {
+    "default_job_track_natural_text": {
+      "attempts": 8,
+      "http_201": 8,
+      "requested_project_scope_match": 0,
+      "other_scope": 8
+    },
+    "explicit_project_selection": {
+      "attempts": 8,
+      "http_201": 8,
+      "requested_project_scope_match": 8,
+      "other_scope": 0
+    }
+  }
+}

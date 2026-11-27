@@ -1,0 +1,45 @@
+{
+  "scope": "read-only HTTP assertions after real manual CUA interactions; synthetic/public data only",
+  "resume_versions": 2,
+  "confirmed_sequence": 2,
+  "pdf_pages": 1,
+  "pdf_sha256": "3e80e6b657ad5f68c35aed91320aa42db462a2e2d92da13b97323b85e6eca5b8",
+  "pdf_matches_approved_version": true,
+  "source_zip_files": 6,
+  "background_task_status": "SUCCEEDED",
+  "interview_modes": [
+    "job",
+    "project",
+    "weakness"
+  ],
+  "all_three_finished": true,
+  "source_tool_trace": [
+    {
+      "tool": "code_search",
+      "status": "ok"
+    },
+    {
+      "tool": "get_symbol",
+      "status": "ok"
+    },
+    {
+      "tool": "find_references",
+      "status": "ok"
+    }
+  ],
+  "review_has_public_learning_resources": true,
+  "different_topic_comparison": "not_comparable",
+  "job_stage": "applied",
+  "job_version_interview_links": 3,
+  "second_user_resume_count": 0,
+  "second_user_project_count": 1,
+  "foreign_session_and_task_http_status": 404,
+  "model_calls": 0,
+  "screenshots": [
+    "f7-pdf-v2-detail.png",
+    "f7-async-index.png",
+    "f7-weakness-review.png",
+    "f7-job-version-links.png",
+    "f7-second-user.png"
+  ]
+}

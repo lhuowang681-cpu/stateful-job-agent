@@ -1,0 +1,18 @@
+........................................................................ [ 10%]
+........................................................................ [ 21%]
+........................................................................ [ 31%]
+........................................................................ [ 42%]
+........................................................................ [ 52%]
+.............................................s....................ssssss [ 63%]
+sssssssssss..........................................s.................. [ 73%]
+...................s.s.s.s.s.s.sssssss.ss............................... [ 84%]
+........................................................................ [ 95%]
+..................................                                       [100%]
+=============================== warnings summary ===============================
+../venv/lib/python3.11/site-packages/starlette/testclient.py:37
+  /root/autodl-tmp/study/job-agent-v3/output/rag-round3-20261023/f5-verify-linux-v2/venv/lib/python3.11/site-packages/starlette/testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+648 passed, 35 skipped, 1 warning in 68.79s (0:01:08)
+{"status": "passed", "offline_retrieval_gate": "passed", "generative_calls": 0, "real_models_loaded": false, "real_services_lane": "not_this_command"}

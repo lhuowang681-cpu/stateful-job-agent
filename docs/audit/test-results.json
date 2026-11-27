@@ -1,0 +1,1756 @@
+[
+  {
+    "run": "baseline-full",
+    "tests": 3,
+    "passed": 0,
+    "failed": 0,
+    "errors": 3,
+    "skipped": 0,
+    "seconds": 12.603,
+    "issues": [
+      {
+        "test": "::tests.test_knowledge_ingestion_real",
+        "status": "error",
+        "message": "collection failure"
+      },
+      {
+        "test": "::tests.test_knowledge_real_embedding",
+        "status": "error",
+        "message": "collection failure"
+      },
+      {
+        "test": "::tests.test_knowledge_retrieval_benchmark",
+        "status": "error",
+        "message": "collection failure"
+      }
+    ],
+    "skip_reasons": {},
+    "by_module": {
+      "": {
+        "error": 3
+      }
+    }
+  },
+  {
+    "run": "baseline-focused",
+    "tests": 1,
+    "passed": 0,
+    "failed": 0,
+    "errors": 1,
+    "skipped": 0,
+    "seconds": 4.001,
+    "issues": [
+      {
+        "test": "::tests.test_knowledge_faiss_vector_index",
+        "status": "error",
+        "message": "collection failure"
+      }
+    ],
+    "skip_reasons": {},
+    "by_module": {
+      "": {
+        "error": 1
+      }
+    }
+  },
+  {
+    "run": "baseline-focused-threads1",
+    "tests": 75,
+    "passed": 74,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 3.588,
+    "issues": [
+      {
+        "test": "tests.test_ui_live_runtime::test_v2_live_runner_commits_sparse_bundle_without_legacy_artifacts",
+        "status": "failure",
+        "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Documents\\\\Codex\\\\2026-10-18\\\\ssh-p-27392-root-192-168-2\\\\work\\\\tmp\\\\pytest-of-1\\\\pytest-1\\\\test_v2_live_runner_commits_sp0\\\\sessions\\\\.acme_agent_en"
+      }
+    ],
+    "skip_reasons": {},
+    "by_module": {
+      "tests.test_evidence_requirement_analyzer": {
+        "passed": 7
+      },
+      "tests.test_evidence_mapping_v2": {
+        "passed": 3
+      },
+      "tests.test_evidence_source_store": {
+        "passed": 14
+      },
+      "tests.test_evidence_level_policy": {
+        "passed": 2
+      },
+      "tests.test_evidence_projections": {
+        "passed": 4
+      },
+      "tests.test_evidence_fit_policy_v2": {
+        "passed": 4
+      },
+      "tests.test_evidence_artifact_repository": {
+        "passed": 4
+      },
+      "tests.test_retrieved_evidence_mapping": {
+        "passed": 10
+      },
+      "tests.test_knowledge_faiss_vector_index": {
+        "passed": 4
+      },
+      "tests.test_knowledge_candidate_evidence": {
+        "passed": 3
+      },
+      "tests.test_ui_live_runtime": {
+        "passed": 4,
+        "failure": 1
+      },
+      "tests.test_agent_policy": {
+        "passed": 5
+      },
+      "tests.test_agent_budgets": {
+        "passed": 6
+      },
+      "tests.test_agent_checkpoint": {
+        "passed": 4
+      }
+    }
+  },
+  {
+    "run": "baseline-focused-shortpath",
+    "tests": 1,
+    "passed": 0,
+    "failed": 0,
+    "errors": 1,
+    "skipped": 0,
+    "seconds": 4.125,
+    "issues": [
+      {
+        "test": "::tests.test_knowledge_faiss_vector_index",
+        "status": "error",
+        "message": "collection failure"
+      }
+    ],
+    "skip_reasons": {},
+    "by_module": {
+      "": {
+        "error": 1
+      }
+    }
+  },
+  {
+    "run": "baseline-focused-local",
+    "tests": 75,
+    "passed": 75,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 1.5,
+    "issues": [],
+    "skip_reasons": {},
+    "by_module": {
+      "tests.test_evidence_requirement_analyzer": {
+        "passed": 7
+      },
+      "tests.test_evidence_mapping_v2": {
+        "passed": 3
+      },
+      "tests.test_evidence_source_store": {
+        "passed": 14
+      },
+      "tests.test_evidence_level_policy": {
+        "passed": 2
+      },
+      "tests.test_evidence_projections": {
+        "passed": 4
+      },
+      "tests.test_evidence_fit_policy_v2": {
+        "passed": 4
+      },
+      "tests.test_evidence_artifact_repository": {
+        "passed": 4
+      },
+      "tests.test_retrieved_evidence_mapping": {
+        "passed": 10
+      },
+      "tests.test_knowledge_faiss_vector_index": {
+        "passed": 4
+      },
+      "tests.test_knowledge_candidate_evidence": {
+        "passed": 3
+      },
+      "tests.test_ui_live_runtime": {
+        "passed": 5
+      },
+      "tests.test_agent_policy": {
+        "passed": 5
+      },
+      "tests.test_agent_budgets": {
+        "passed": 6
+      },
+      "tests.test_agent_checkpoint": {
+        "passed": 4
+      }
+    }
+  },
+  {
+    "run": "regressions-before-fix",
+    "tests": 16,
+    "passed": 1,
+    "failed": 15,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 0.578,
+    "issues": [
+      {
+        "test": "tests.test_source_audit_regressions::test_source_kind_cannot_be_promoted_by_artifact_metadata[experiment_record-original_resume-C1]",
+        "status": "failure",
+        "message": "AssertionError: assert <EvidenceLevel.C2: 'C2'> == <EvidenceLevel.C1: 'C1'>"
+      },
+      {
+        "test": "tests.test_source_audit_regressions::test_source_kind_cannot_be_promoted_by_artifact_metadata[experiment_record-raw_jd-None]",
+        "status": "failure",
+        "message": "AssertionError: assert <EvidenceLevel.C2: 'C2'> == <EvidenceLevel.NONE: 'None'>"
+      },
+      {
+        "test": "tests.test_source_audit_regressions::test_source_kind_cannot_be_promoted_by_artifact_metadata[production_log-original_resume-C1]",
+        "status": "failure",
+        "message": "AssertionError: assert <EvidenceLevel.C3: 'C3'> == <EvidenceLevel.C1: 'C1'>"
+      },
+      {
+        "test": "tests.test_source_audit_regressions::test_source_kind_cannot_be_promoted_by_artifact_metadata[production_log-raw_jd-None]",
+        "status": "failure",
+        "message": "AssertionError: assert <EvidenceLevel.C3: 'C3'> == <EvidenceLevel.NONE: 'None'>"
+      },
+      {
+        "test": "tests.test_source_audit_regressions::test_generated_artifact_aliases_cannot_enter_candidate_pool[ Target-Resume ]",
+        "status": "failure",
+        "message": "Failed: DID NOT RAISE EvidenceV2Error"
+      },
+      {
+        "test": "tests.test_source_audit_regressions::test_generated_artifact_aliases_cannot_enter_candidate_pool[ANSWER CARD]",
+        "status": "failure",
+        "message": "Failed: DID NOT RAISE EvidenceV2Error"
+      },
+      {
+        "test": "tests.test_source_audit_regressions::test_generated_artifact_aliases_cannot_enter_candidate_pool[Interview-Debrief]",
+        "status": "failure",
+        "message": "Failed: DID NOT RAISE EvidenceV2Error"
+      },
+      {
+        "test": "tests.test_source_audit_regressions::test_generated_artifact_aliases_cannot_enter_candidate_pool[ INTERVIEW_TRANSCRIPT ]",
+        "status": "failure",
+        "message": "Failed: DID NOT RAISE EvidenceV2Error"
+      },
+      {
+        "test": "tests.test_source_audit_regressions::test_generated_artifact_aliases_cannot_enter_candidate_pool[interview-score]",
+        "status": "failure",
+        "message": "Failed: DID NOT RAISE EvidenceV2Error"
+      },
+      {
+        "test": "tests.test_source_audit_regressions::test_resume_projection_preserves_but_does_not_promote_conflicting_evidence[False]",
+        "status": "failure",
+        "message": "AssertionError: assert [ResumeEvidenceClaim(atom_id='a1', claim='独立设计并运行过模型评测', level=<EvidenceLevel.C2: 'C2'>, link_ids=['l1'], boundary=None)] == []"
+      },
+      {
+        "test": "tests.test_source_audit_regressions::test_resume_projection_preserves_but_does_not_promote_conflicting_evidence[True]",
+        "status": "failure",
+        "message": "AssertionError: assert [ResumeEvidenceClaim(atom_id='a1', claim='独立设计并运行过模型评测', level=<EvidenceLevel.C2: 'C2'>, link_ids=['l1'], boundary=None)] == []"
+      },
+      {
+        "test": "tests.test_source_audit_regressions::test_resume_projection_does_not_promote_pending_c2_evidence",
+        "status": "failure",
+        "message": "AssertionError: assert [ResumeEvidenceClaim(atom_id='a1', claim='独立设计并运行过模型评测', level=<EvidenceLevel.C2: 'C2'>, link_ids=['l1'], boundary=None)] == []"
+      },
+      {
+        "test": "tests.test_source_audit_regressions::test_mapping_derives_c1_confirmation_even_if_model_omits_it",
+        "status": "failure",
+        "message": "AssertionError: assert False is True"
+      },
+      {
+        "test": "tests.test_source_audit_regressions::test_pipeline_records_the_executed_prompt_versions",
+        "status": "failure",
+        "message": "AssertionError: assert 'evidence-requirements-v2' == 'evidence-requirements-v2.6-compact-semantic'"
+      },
+      {
+        "test": "tests.test_source_audit_regressions::test_embedding_import_is_optional_but_real_construction_requires_dependency",
+        "status": "failure",
+        "message": "ModuleNotFoundError: synthetic absent dependency"
+      }
+    ],
+    "skip_reasons": {},
+    "by_module": {
+      "tests.test_source_audit_regressions": {
+        "failure": 15,
+        "passed": 1
+      }
+    }
+  },
+  {
+    "run": "regressions-after-fix",
+    "tests": 16,
+    "passed": 16,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 0.389,
+    "issues": [],
+    "skip_reasons": {},
+    "by_module": {
+      "tests.test_source_audit_regressions": {
+        "passed": 16
+      }
+    }
+  },
+  {
+    "run": "regression-full",
+    "tests": 574,
+    "passed": 506,
+    "failed": 5,
+    "errors": 13,
+    "skipped": 50,
+    "seconds": 95.199,
+    "issues": [
+      {
+        "test": "tests.test_application_assistant_evaluation::test_application_assistant_eval_runs_real_loop_approval_and_recovery",
+        "status": "failure",
+        "message": "RuntimeError: application_eval_approval_missing"
+      },
+      {
+        "test": "tests.test_backend_service_reliability::test_provider_admission_enforces_fairness_cooldown_circuit_and_fail_closed",
+        "status": "failure",
+        "message": "redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:63799. 由于目标计算机积极拒绝，无法连接。."
+      },
+      {
+        "test": "tests.test_backend_service_reliability::test_provider_admission_is_call_scoped_and_local_errors_do_not_open_circuit",
+        "status": "failure",
+        "message": "redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:63799. 由于目标计算机积极拒绝，无法连接。."
+      },
+      {
+        "test": "tests.test_career_knowledge_mcp::test_career_mcp_tool_returns_structured_provenance",
+        "status": "error",
+        "message": "failed on setup with \"RuntimeError: MCP bridge failed to start\""
+      },
+      {
+        "test": "tests.test_career_knowledge_mcp::test_runtime_calls_career_knowledge_through_governed_mcp",
+        "status": "error",
+        "message": "failed on setup with \"RuntimeError: MCP bridge failed to start\""
+      },
+      {
+        "test": "tests.test_career_knowledge_mcp::test_runtime_policy_denial_never_reaches_mcp_server",
+        "status": "error",
+        "message": "failed on setup with \"RuntimeError: MCP bridge failed to start\""
+      },
+      {
+        "test": "tests.test_career_knowledge_mcp::test_invalid_top_k_is_runtime_tool_input_error",
+        "status": "error",
+        "message": "failed on setup with \"RuntimeError: MCP bridge failed to start\""
+      },
+      {
+        "test": "tests.test_durable_career_knowledge::test_mcp_query_survives_server_process_restart",
+        "status": "failure",
+        "message": "RuntimeError: MCP bridge failed to start"
+      },
+      {
+        "test": "tests.test_end_to_end_job_search_workflow::test_end_to_end_job_search_workflow_matches_demo_artifact",
+        "status": "error",
+        "message": "failed on setup with \"RuntimeError: MCP bridge failed to start\""
+      },
+      {
+        "test": "tests.test_end_to_end_job_search_workflow::test_knowledge_policy_deny_stops_before_application_write",
+        "status": "error",
+        "message": "failed on setup with \"RuntimeError: MCP bridge failed to start\""
+      },
+      {
+        "test": "tests.test_end_to_end_job_search_workflow::test_application_policy_deny_causes_no_mutation",
+        "status": "error",
+        "message": "failed on setup with \"RuntimeError: MCP bridge failed to start\""
+      },
+      {
+        "test": "tests.test_job_specific_interview_preparation::test_first_interview_prep_is_job_specific_and_grounded",
+        "status": "error",
+        "message": "failed on setup with \"RuntimeError: MCP bridge failed to start\""
+      },
+      {
+        "test": "tests.test_job_specific_interview_preparation::test_unknown_or_non_interview_application_is_rejected",
+        "status": "error",
+        "message": "failed on setup with \"RuntimeError: MCP bridge failed to start\""
+      },
+      {
+        "test": "tests.test_job_specific_interview_preparation::test_runtime_policy_deny_has_no_knowledge_fallback",
+        "status": "error",
+        "message": "failed on setup with \"RuntimeError: MCP bridge failed to start\""
+      },
+      {
+        "test": "tests.test_memory_aware_job_analysis::test_hangzhou_job_uses_memory_and_governed_capability_evidence",
+        "status": "error",
+        "message": "failed on setup with \"RuntimeError: MCP bridge failed to start\""
+      },
+      {
+        "test": "tests.test_memory_aware_job_analysis::test_shanghai_changes_only_preference_fit",
+        "status": "error",
+        "message": "failed on setup with \"RuntimeError: MCP bridge failed to start\""
+      },
+      {
+        "test": "tests.test_memory_aware_job_analysis::test_policy_denial_stops_job_analysis_without_retriever_fallback",
+        "status": "error",
+        "message": "failed on setup with \"RuntimeError: MCP bridge failed to start\""
+      },
+      {
+        "test": "tests.test_ui_app_test.TestAppSmoke::test_app_loads_without_exception",
+        "status": "failure",
+        "message": "FileNotFoundError: AppTest script not found at D:\\作业\\研\\实验\\agent-backend-service\\tests\\src\\job_agent\\ui\\app.py. Relative paths are resolved against the file that calls AppTest.from_file()."
+      }
+    ],
+    "skip_reasons": {
+      "Phase 3 PostgreSQL is not running": 20,
+      "Phase 4 PostgreSQL is not running": 14,
+      "QWEN_EMBEDDING_MODEL_PATH is unavailable": 4,
+      "explicit DeepSeek durable-state acceptance opt-in required": 4,
+      "QWEN_EMBEDDING_MODEL_PATH is not set": 3,
+      "explicit DeepSeek agent eval opt-in and API_KEY are required": 1,
+      "explicit local model opt-in and QWEN2_5_MODEL_PATH are required": 1,
+      "JOB_AGENT_REAL_MODEL_PATH is unavailable": 1,
+      "explicit DeepSeek stateful eval opt-in and API_KEY are required": 1,
+      "explicit local stateful eval opt-in and model path are required": 1
+    },
+    "by_module": {
+      "tests.test_adaptive_interview_blueprint": {
+        "passed": 2
+      },
+      "tests.test_adaptive_interview_contracts": {
+        "passed": 4
+      },
+      "tests.test_adaptive_interview_controller": {
+        "passed": 3
+      },
+      "tests.test_adaptive_interview_debrief": {
+        "passed": 5
+      },
+      "tests.test_adaptive_interview_run_store": {
+        "passed": 3
+      },
+      "tests.test_adaptive_interview_tools": {
+        "passed": 3
+      },
+      "tests.test_agent_budgets": {
+        "passed": 6
+      },
+      "tests.test_agent_checkpoint": {
+        "passed": 4
+      },
+      "tests.test_agent_context": {
+        "passed": 11
+      },
+      "tests.test_agent_eval_harness": {
+        "passed": 5
+      },
+      "tests.test_agent_graph_runtime": {
+        "passed": 20
+      },
+      "tests.test_agent_interaction_contract": {
+        "passed": 14
+      },
+      "tests.test_agent_loop": {
+        "passed": 6
+      },
+      "tests.test_agent_ops": {
+        "passed": 27
+      },
+      "tests.test_agent_policy": {
+        "passed": 5
+      },
+      "tests.test_agent_tool_registry": {
+        "passed": 8
+      },
+      "tests.test_application_assistant_evaluation": {
+        "passed": 1,
+        "failure": 1
+      },
+      "tests.test_application_assistant_search": {
+        "passed": 1
+      },
+      "tests.test_atomic_evidence_v2": {
+        "passed": 14
+      },
+      "tests.test_atomic_io": {
+        "passed": 4
+      },
+      "tests.test_backend_service": {
+        "passed": 15
+      },
+      "tests.test_backend_service_persistence": {
+        "skipped": 20,
+        "passed": 3
+      },
+      "tests.test_backend_service_reliability": {
+        "skipped": 14,
+        "failure": 2
+      },
+      "tests.test_career_knowledge_mcp": {
+        "passed": 1,
+        "error": 4,
+        "skipped": 1
+      },
+      "tests.test_career_store": {
+        "passed": 5
+      },
+      "tests.test_durable_career_knowledge": {
+        "passed": 12,
+        "failure": 1
+      },
+      "tests.test_durable_career_state": {
+        "passed": 6,
+        "skipped": 4
+      },
+      "tests.test_end_to_end_job_search_workflow": {
+        "error": 3
+      },
+      "tests.test_evidence_artifact_repository": {
+        "passed": 4
+      },
+      "tests.test_evidence_eval_contracts": {
+        "passed": 4
+      },
+      "tests.test_evidence_eval_corpus_v2": {
+        "passed": 5
+      },
+      "tests.test_evidence_eval_corpus_v5": {
+        "passed": 2
+      },
+      "tests.test_evidence_eval_metrics": {
+        "passed": 3
+      },
+      "tests.test_evidence_fit_policy_v2": {
+        "passed": 4
+      },
+      "tests.test_evidence_level_policy": {
+        "passed": 2
+      },
+      "tests.test_evidence_live_eval": {
+        "passed": 14
+      },
+      "tests.test_evidence_mapping_v2": {
+        "passed": 3
+      },
+      "tests.test_evidence_projections": {
+        "passed": 4
+      },
+      "tests.test_evidence_requirement_analyzer": {
+        "passed": 7
+      },
+      "tests.test_evidence_source_store": {
+        "passed": 14
+      },
+      "tests.test_evidence_text_identity": {
+        "passed": 2
+      },
+      "tests.test_evidence_v2_contracts": {
+        "passed": 4
+      },
+      "tests.test_governed_application_lifecycle": {
+        "passed": 4
+      },
+      "tests.test_governed_application_tracking": {
+        "passed": 3
+      },
+      "tests.test_grounded_resume_tailoring": {
+        "passed": 10
+      },
+      "tests.test_interview_context_builder": {
+        "passed": 5
+      },
+      "tests.test_interview_question_bank": {
+        "passed": 3
+      },
+      "tests.test_jd_match_analysis": {
+        "passed": 1,
+        "skipped": 1
+      },
+      "tests.test_job_specific_interview_preparation": {
+        "error": 3
+      },
+      "tests.test_job_workspace": {
+        "passed": 9
+      },
+      "tests.test_knowledge_bm25": {
+        "passed": 4
+      },
+      "tests.test_knowledge_candidate_evidence": {
+        "passed": 3
+      },
+      "tests.test_knowledge_career_benchmark": {
+        "passed": 3
+      },
+      "tests.test_knowledge_contracts": {
+        "passed": 17
+      },
+      "tests.test_knowledge_eval": {
+        "passed": 5
+      },
+      "tests.test_knowledge_faiss_vector_index": {
+        "passed": 4
+      },
+      "tests.test_knowledge_ingestion": {
+        "passed": 6
+      },
+      "tests.test_knowledge_ingestion_real": {
+        "skipped": 1
+      },
+      "tests.test_knowledge_real_embedding": {
+        "skipped": 1
+      },
+      "tests.test_knowledge_retrieval_benchmark": {
+        "skipped": 1
+      },
+      "tests.test_knowledge_retriever": {
+        "passed": 1
+      },
+      "tests.test_knowledge_rrf": {
+        "passed": 4
+      },
+      "tests.test_knowledge_vector_index": {
+        "passed": 3
+      },
+      "tests.test_llm_agentization_runtime": {
+        "passed": 26
+      },
+      "tests.test_mcp_adapter": {
+        "passed": 2
+      },
+      "tests.test_mcp_real_runtime": {
+        "passed": 4
+      },
+      "tests.test_memory_aware_job_analysis": {
+        "error": 3
+      },
+      "tests.test_natural_language_agent_loop": {
+        "passed": 10,
+        "skipped": 2
+      },
+      "tests.test_project_dossier": {
+        "passed": 3
+      },
+      "tests.test_real_career_data_evaluation": {
+        "passed": 7
+      },
+      "tests.test_real_model_end_to_end_validation": {
+        "passed": 1,
+        "skipped": 3
+      },
+      "tests.test_reliability_fault_injection": {
+        "passed": 17
+      },
+      "tests.test_requirement_evidence": {
+        "passed": 8
+      },
+      "tests.test_retrieved_evidence_mapping": {
+        "passed": 10
+      },
+      "tests.test_semantic_agents": {
+        "passed": 10
+      },
+      "tests.test_source_audit_regressions": {
+        "passed": 16
+      },
+      "tests.test_stateful_agent_evaluation": {
+        "passed": 6,
+        "skipped": 2
+      },
+      "tests.test_stateful_interview_copilot": {
+        "passed": 8
+      },
+      "tests.test_tool_use_v2": {
+        "passed": 7
+      },
+      "tests.test_ui_adaptive_interview": {
+        "passed": 5
+      },
+      "tests.test_ui_app_test.TestAppSmoke": {
+        "failure": 1
+      },
+      "tests.test_ui_app_test.TestMockInterviewAppTest": {
+        "passed": 2
+      },
+      "tests.test_ui_app_test.TestApplicationOpsAppTest": {
+        "passed": 1
+      },
+      "tests.test_ui_app_test.TestInformationArchitecture": {
+        "passed": 2
+      },
+      "tests.test_ui_evidence_v2": {
+        "passed": 3
+      },
+      "tests.test_ui_live_runtime": {
+        "passed": 5
+      },
+      "tests.test_ui_resume_loop": {
+        "passed": 6
+      },
+      "tests.test_unseen_career_holdout": {
+        "passed": 2
+      }
+    }
+  },
+  {
+    "run": "regression-repaired-workflows",
+    "tests": 41,
+    "passed": 40,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 10.064,
+    "issues": [
+      {
+        "test": "tests.test_application_assistant_evaluation::test_application_assistant_eval_runs_real_loop_approval_and_recovery",
+        "status": "failure",
+        "message": "AssertionError: assert 0 == 24"
+      }
+    ],
+    "skip_reasons": {},
+    "by_module": {
+      "tests.test_source_audit_regressions": {
+        "passed": 17
+      },
+      "tests.test_application_assistant_evaluation": {
+        "passed": 1,
+        "failure": 1
+      },
+      "tests.test_end_to_end_job_search_workflow": {
+        "passed": 3
+      },
+      "tests.test_durable_career_knowledge": {
+        "passed": 13
+      },
+      "tests.test_ui_app_test.TestAppSmoke": {
+        "passed": 1
+      },
+      "tests.test_ui_app_test.TestMockInterviewAppTest": {
+        "passed": 2
+      },
+      "tests.test_ui_app_test.TestApplicationOpsAppTest": {
+        "passed": 1
+      },
+      "tests.test_ui_app_test.TestInformationArchitecture": {
+        "passed": 2
+      }
+    }
+  },
+  {
+    "run": "regression-final",
+    "tests": 575,
+    "passed": 522,
+    "failed": 3,
+    "errors": 0,
+    "skipped": 50,
+    "seconds": 101.805,
+    "issues": [
+      {
+        "test": "tests.test_application_assistant_evaluation::test_application_assistant_eval_runs_real_loop_approval_and_recovery",
+        "status": "failure",
+        "message": "AssertionError: assert 0 == 24"
+      },
+      {
+        "test": "tests.test_backend_service_reliability::test_provider_admission_enforces_fairness_cooldown_circuit_and_fail_closed",
+        "status": "failure",
+        "message": "redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:63799. 由于目标计算机积极拒绝，无法连接。."
+      },
+      {
+        "test": "tests.test_backend_service_reliability::test_provider_admission_is_call_scoped_and_local_errors_do_not_open_circuit",
+        "status": "failure",
+        "message": "redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:63799. 由于目标计算机积极拒绝，无法连接。."
+      }
+    ],
+    "skip_reasons": {
+      "Phase 3 PostgreSQL is not running": 20,
+      "Phase 4 PostgreSQL is not running": 14,
+      "QWEN_EMBEDDING_MODEL_PATH is unavailable": 4,
+      "explicit DeepSeek durable-state acceptance opt-in required": 4,
+      "QWEN_EMBEDDING_MODEL_PATH is not set": 3,
+      "explicit DeepSeek agent eval opt-in and API_KEY are required": 1,
+      "explicit local model opt-in and QWEN2_5_MODEL_PATH are required": 1,
+      "JOB_AGENT_REAL_MODEL_PATH is unavailable": 1,
+      "explicit DeepSeek stateful eval opt-in and API_KEY are required": 1,
+      "explicit local stateful eval opt-in and model path are required": 1
+    },
+    "by_module": {
+      "tests.test_adaptive_interview_blueprint": {
+        "passed": 2
+      },
+      "tests.test_adaptive_interview_contracts": {
+        "passed": 4
+      },
+      "tests.test_adaptive_interview_controller": {
+        "passed": 3
+      },
+      "tests.test_adaptive_interview_debrief": {
+        "passed": 5
+      },
+      "tests.test_adaptive_interview_run_store": {
+        "passed": 3
+      },
+      "tests.test_adaptive_interview_tools": {
+        "passed": 3
+      },
+      "tests.test_agent_budgets": {
+        "passed": 6
+      },
+      "tests.test_agent_checkpoint": {
+        "passed": 4
+      },
+      "tests.test_agent_context": {
+        "passed": 11
+      },
+      "tests.test_agent_eval_harness": {
+        "passed": 5
+      },
+      "tests.test_agent_graph_runtime": {
+        "passed": 20
+      },
+      "tests.test_agent_interaction_contract": {
+        "passed": 14
+      },
+      "tests.test_agent_loop": {
+        "passed": 6
+      },
+      "tests.test_agent_ops": {
+        "passed": 27
+      },
+      "tests.test_agent_policy": {
+        "passed": 5
+      },
+      "tests.test_agent_tool_registry": {
+        "passed": 8
+      },
+      "tests.test_application_assistant_evaluation": {
+        "passed": 1,
+        "failure": 1
+      },
+      "tests.test_application_assistant_search": {
+        "passed": 1
+      },
+      "tests.test_atomic_evidence_v2": {
+        "passed": 14
+      },
+      "tests.test_atomic_io": {
+        "passed": 4
+      },
+      "tests.test_backend_service": {
+        "passed": 15
+      },
+      "tests.test_backend_service_persistence": {
+        "skipped": 20,
+        "passed": 3
+      },
+      "tests.test_backend_service_reliability": {
+        "skipped": 14,
+        "failure": 2
+      },
+      "tests.test_career_knowledge_mcp": {
+        "passed": 5,
+        "skipped": 1
+      },
+      "tests.test_career_store": {
+        "passed": 5
+      },
+      "tests.test_durable_career_knowledge": {
+        "passed": 13
+      },
+      "tests.test_durable_career_state": {
+        "passed": 6,
+        "skipped": 4
+      },
+      "tests.test_end_to_end_job_search_workflow": {
+        "passed": 3
+      },
+      "tests.test_evidence_artifact_repository": {
+        "passed": 4
+      },
+      "tests.test_evidence_eval_contracts": {
+        "passed": 4
+      },
+      "tests.test_evidence_eval_corpus_v2": {
+        "passed": 5
+      },
+      "tests.test_evidence_eval_corpus_v5": {
+        "passed": 2
+      },
+      "tests.test_evidence_eval_metrics": {
+        "passed": 3
+      },
+      "tests.test_evidence_fit_policy_v2": {
+        "passed": 4
+      },
+      "tests.test_evidence_level_policy": {
+        "passed": 2
+      },
+      "tests.test_evidence_live_eval": {
+        "passed": 14
+      },
+      "tests.test_evidence_mapping_v2": {
+        "passed": 3
+      },
+      "tests.test_evidence_projections": {
+        "passed": 4
+      },
+      "tests.test_evidence_requirement_analyzer": {
+        "passed": 7
+      },
+      "tests.test_evidence_source_store": {
+        "passed": 14
+      },
+      "tests.test_evidence_text_identity": {
+        "passed": 2
+      },
+      "tests.test_evidence_v2_contracts": {
+        "passed": 4
+      },
+      "tests.test_governed_application_lifecycle": {
+        "passed": 4
+      },
+      "tests.test_governed_application_tracking": {
+        "passed": 3
+      },
+      "tests.test_grounded_resume_tailoring": {
+        "passed": 10
+      },
+      "tests.test_interview_context_builder": {
+        "passed": 5
+      },
+      "tests.test_interview_question_bank": {
+        "passed": 3
+      },
+      "tests.test_jd_match_analysis": {
+        "passed": 1,
+        "skipped": 1
+      },
+      "tests.test_job_specific_interview_preparation": {
+        "passed": 3
+      },
+      "tests.test_job_workspace": {
+        "passed": 9
+      },
+      "tests.test_knowledge_bm25": {
+        "passed": 4
+      },
+      "tests.test_knowledge_candidate_evidence": {
+        "passed": 3
+      },
+      "tests.test_knowledge_career_benchmark": {
+        "passed": 3
+      },
+      "tests.test_knowledge_contracts": {
+        "passed": 17
+      },
+      "tests.test_knowledge_eval": {
+        "passed": 5
+      },
+      "tests.test_knowledge_faiss_vector_index": {
+        "passed": 4
+      },
+      "tests.test_knowledge_ingestion": {
+        "passed": 6
+      },
+      "tests.test_knowledge_ingestion_real": {
+        "skipped": 1
+      },
+      "tests.test_knowledge_real_embedding": {
+        "skipped": 1
+      },
+      "tests.test_knowledge_retrieval_benchmark": {
+        "skipped": 1
+      },
+      "tests.test_knowledge_retriever": {
+        "passed": 1
+      },
+      "tests.test_knowledge_rrf": {
+        "passed": 4
+      },
+      "tests.test_knowledge_vector_index": {
+        "passed": 3
+      },
+      "tests.test_llm_agentization_runtime": {
+        "passed": 26
+      },
+      "tests.test_mcp_adapter": {
+        "passed": 2
+      },
+      "tests.test_mcp_real_runtime": {
+        "passed": 4
+      },
+      "tests.test_memory_aware_job_analysis": {
+        "passed": 3
+      },
+      "tests.test_natural_language_agent_loop": {
+        "passed": 10,
+        "skipped": 2
+      },
+      "tests.test_project_dossier": {
+        "passed": 3
+      },
+      "tests.test_real_career_data_evaluation": {
+        "passed": 7
+      },
+      "tests.test_real_model_end_to_end_validation": {
+        "passed": 1,
+        "skipped": 3
+      },
+      "tests.test_reliability_fault_injection": {
+        "passed": 17
+      },
+      "tests.test_requirement_evidence": {
+        "passed": 8
+      },
+      "tests.test_retrieved_evidence_mapping": {
+        "passed": 10
+      },
+      "tests.test_semantic_agents": {
+        "passed": 10
+      },
+      "tests.test_source_audit_regressions": {
+        "passed": 17
+      },
+      "tests.test_stateful_agent_evaluation": {
+        "passed": 6,
+        "skipped": 2
+      },
+      "tests.test_stateful_interview_copilot": {
+        "passed": 8
+      },
+      "tests.test_tool_use_v2": {
+        "passed": 7
+      },
+      "tests.test_ui_adaptive_interview": {
+        "passed": 5
+      },
+      "tests.test_ui_app_test.TestAppSmoke": {
+        "passed": 1
+      },
+      "tests.test_ui_app_test.TestMockInterviewAppTest": {
+        "passed": 2
+      },
+      "tests.test_ui_app_test.TestApplicationOpsAppTest": {
+        "passed": 1
+      },
+      "tests.test_ui_app_test.TestInformationArchitecture": {
+        "passed": 2
+      },
+      "tests.test_ui_evidence_v2": {
+        "passed": 3
+      },
+      "tests.test_ui_live_runtime": {
+        "passed": 5
+      },
+      "tests.test_ui_resume_loop": {
+        "passed": 6
+      },
+      "tests.test_unseen_career_holdout": {
+        "passed": 2
+      }
+    }
+  },
+  {
+    "run": "closeout-evaluation",
+    "tests": 11,
+    "passed": 11,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 1.766,
+    "issues": [],
+    "skip_reasons": {},
+    "by_module": {
+      "tests.test_application_assistant_evaluation": {
+        "passed": 11
+      }
+    }
+  },
+  {
+    "run": "closeout-redis",
+    "tests": 2,
+    "passed": 2,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 5.24,
+    "issues": [],
+    "skip_reasons": {},
+    "by_module": {
+      "tests.test_backend_service_reliability": {
+        "passed": 2
+      }
+    }
+  },
+  {
+    "run": "closeout-backend",
+    "tests": 50,
+    "passed": 43,
+    "failed": 7,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 124.297,
+    "issues": [
+      {
+        "test": "tests.test_backend_service_persistence::test_tool_inflight_without_receipt_becomes_uncertain_without_replay",
+        "status": "failure",
+        "message": "job_agent.backend_service.postgres_repository.StaleAttemptError: stale_or_expired_attempt"
+      },
+      {
+        "test": "tests.test_backend_service_persistence::test_backpressure_outbox_waits_until_run_is_dispatchable",
+        "status": "failure",
+        "message": "AssertionError: assert [RunDispatchMessage(message_id='52e1a3dc-0867-423a-b45c-2dfc368bae8e', user_id='persistent-user-a', run_id='4856b90b-7724-43ce-b071-db562db66d6a', dispatch_generation=2, enqueued_at=datetime.dateti"
+      },
+      {
+        "test": "tests.test_backend_service_persistence::test_concurrent_claims_serialize_same_user_session",
+        "status": "failure",
+        "message": "AssertionError: assert [RunDispatchMessage(message_id='7b2c7bdd-103f-4f6b-a823-260abda9e0a6', user_id='persistent-user-a', run_id='dde3f22f-8136-4d88-9e48-7aa899b29252', dispatch_generation=2, enqueued_at=datetime.dateti"
+      },
+      {
+        "test": "tests.test_backend_service_persistence::test_stale_attempt_cannot_overwrite_or_delete_newer_checkpoint",
+        "status": "failure",
+        "message": "job_agent.backend_service.postgres_repository.StaleAttemptError: stale_or_expired_attempt"
+      },
+      {
+        "test": "tests.test_backend_service_reliability::test_model_completed_before_state_write_replays_after_lease_recovery",
+        "status": "failure",
+        "message": "job_agent.backend_service.postgres_repository.StaleAttemptError: stale_or_expired_attempt"
+      },
+      {
+        "test": "tests.test_backend_service_reliability::test_redis_loss_is_reconciled_while_other_backlog_remains",
+        "status": "failure",
+        "message": "assert 2 == 0"
+      },
+      {
+        "test": "tests.test_backend_service_reliability::test_application_tool_crash_recovers_to_run_and_ledger_uncertain_without_replay",
+        "status": "failure",
+        "message": "job_agent.backend_service.postgres_repository.StaleAttemptError: stale_or_expired_attempt"
+      }
+    ],
+    "skip_reasons": {},
+    "by_module": {
+      "tests.test_backend_service_persistence": {
+        "passed": 19,
+        "failure": 4
+      },
+      "tests.test_backend_service_reliability": {
+        "passed": 13,
+        "failure": 3
+      },
+      "tests.test_application_assistant_evaluation": {
+        "passed": 11
+      }
+    }
+  },
+  {
+    "run": "closeout-backend-colocated",
+    "tests": 50,
+    "passed": 50,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 6.099,
+    "issues": [],
+    "skip_reasons": {},
+    "by_module": {
+      "tests.test_backend_service_persistence": {
+        "passed": 23
+      },
+      "tests.test_backend_service_reliability": {
+        "passed": 16
+      },
+      "tests.test_application_assistant_evaluation": {
+        "passed": 11
+      }
+    }
+  },
+  {
+    "run": "closeout-full-colocated",
+    "tests": 584,
+    "passed": 567,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 16,
+    "seconds": 36.182,
+    "issues": [
+      {
+        "test": "tests.test_durable_career_knowledge::test_private_career_sources_are_gitignored",
+        "status": "failure",
+        "message": "subprocess.CalledProcessError: Command '['git', 'check-ignore', 'data/private/resume.pdf', 'data/career_sources/resume.pdf', 'data/career_sources/manifest.json']' returned non-zero exit status 128."
+      }
+    ],
+    "skip_reasons": {
+      "QWEN_EMBEDDING_MODEL_PATH is unavailable": 4,
+      "explicit DeepSeek durable-state acceptance opt-in required": 4,
+      "QWEN_EMBEDDING_MODEL_PATH is not set": 3,
+      "explicit DeepSeek agent eval opt-in and API_KEY are required": 1,
+      "explicit local model opt-in and QWEN2_5_MODEL_PATH are required": 1,
+      "JOB_AGENT_REAL_MODEL_PATH is unavailable": 1,
+      "explicit DeepSeek stateful eval opt-in and API_KEY are required": 1,
+      "explicit local stateful eval opt-in and model path are required": 1
+    },
+    "by_module": {
+      "tests.test_adaptive_interview_blueprint": {
+        "passed": 2
+      },
+      "tests.test_adaptive_interview_contracts": {
+        "passed": 4
+      },
+      "tests.test_adaptive_interview_controller": {
+        "passed": 3
+      },
+      "tests.test_adaptive_interview_debrief": {
+        "passed": 5
+      },
+      "tests.test_adaptive_interview_run_store": {
+        "passed": 3
+      },
+      "tests.test_adaptive_interview_tools": {
+        "passed": 3
+      },
+      "tests.test_agent_budgets": {
+        "passed": 6
+      },
+      "tests.test_agent_checkpoint": {
+        "passed": 4
+      },
+      "tests.test_agent_context": {
+        "passed": 11
+      },
+      "tests.test_agent_eval_harness": {
+        "passed": 5
+      },
+      "tests.test_agent_graph_runtime": {
+        "passed": 20
+      },
+      "tests.test_agent_interaction_contract": {
+        "passed": 14
+      },
+      "tests.test_agent_loop": {
+        "passed": 6
+      },
+      "tests.test_agent_ops": {
+        "passed": 27
+      },
+      "tests.test_agent_policy": {
+        "passed": 5
+      },
+      "tests.test_agent_tool_registry": {
+        "passed": 8
+      },
+      "tests.test_application_assistant_evaluation": {
+        "passed": 11
+      },
+      "tests.test_application_assistant_search": {
+        "passed": 1
+      },
+      "tests.test_atomic_evidence_v2": {
+        "passed": 14
+      },
+      "tests.test_atomic_io": {
+        "passed": 4
+      },
+      "tests.test_backend_service": {
+        "passed": 15
+      },
+      "tests.test_backend_service_persistence": {
+        "passed": 23
+      },
+      "tests.test_backend_service_reliability": {
+        "passed": 16
+      },
+      "tests.test_career_knowledge_mcp": {
+        "passed": 5,
+        "skipped": 1
+      },
+      "tests.test_career_store": {
+        "passed": 5
+      },
+      "tests.test_durable_career_knowledge": {
+        "passed": 12,
+        "failure": 1
+      },
+      "tests.test_durable_career_state": {
+        "passed": 6,
+        "skipped": 4
+      },
+      "tests.test_end_to_end_job_search_workflow": {
+        "passed": 3
+      },
+      "tests.test_evidence_artifact_repository": {
+        "passed": 4
+      },
+      "tests.test_evidence_eval_contracts": {
+        "passed": 4
+      },
+      "tests.test_evidence_eval_corpus_v2": {
+        "passed": 5
+      },
+      "tests.test_evidence_eval_corpus_v5": {
+        "passed": 2
+      },
+      "tests.test_evidence_eval_metrics": {
+        "passed": 3
+      },
+      "tests.test_evidence_fit_policy_v2": {
+        "passed": 4
+      },
+      "tests.test_evidence_level_policy": {
+        "passed": 2
+      },
+      "tests.test_evidence_live_eval": {
+        "passed": 14
+      },
+      "tests.test_evidence_mapping_v2": {
+        "passed": 3
+      },
+      "tests.test_evidence_projections": {
+        "passed": 4
+      },
+      "tests.test_evidence_requirement_analyzer": {
+        "passed": 7
+      },
+      "tests.test_evidence_source_store": {
+        "passed": 14
+      },
+      "tests.test_evidence_text_identity": {
+        "passed": 2
+      },
+      "tests.test_evidence_v2_contracts": {
+        "passed": 4
+      },
+      "tests.test_governed_application_lifecycle": {
+        "passed": 4
+      },
+      "tests.test_governed_application_tracking": {
+        "passed": 3
+      },
+      "tests.test_grounded_resume_tailoring": {
+        "passed": 10
+      },
+      "tests.test_interview_context_builder": {
+        "passed": 5
+      },
+      "tests.test_interview_question_bank": {
+        "passed": 3
+      },
+      "tests.test_jd_match_analysis": {
+        "passed": 1,
+        "skipped": 1
+      },
+      "tests.test_job_specific_interview_preparation": {
+        "passed": 3
+      },
+      "tests.test_job_workspace": {
+        "passed": 9
+      },
+      "tests.test_knowledge_bm25": {
+        "passed": 4
+      },
+      "tests.test_knowledge_candidate_evidence": {
+        "passed": 3
+      },
+      "tests.test_knowledge_career_benchmark": {
+        "passed": 3
+      },
+      "tests.test_knowledge_contracts": {
+        "passed": 17
+      },
+      "tests.test_knowledge_eval": {
+        "passed": 5
+      },
+      "tests.test_knowledge_faiss_vector_index": {
+        "passed": 4
+      },
+      "tests.test_knowledge_ingestion": {
+        "passed": 6
+      },
+      "tests.test_knowledge_ingestion_real": {
+        "skipped": 1
+      },
+      "tests.test_knowledge_real_embedding": {
+        "skipped": 1
+      },
+      "tests.test_knowledge_retrieval_benchmark": {
+        "skipped": 1
+      },
+      "tests.test_knowledge_retriever": {
+        "passed": 1
+      },
+      "tests.test_knowledge_rrf": {
+        "passed": 4
+      },
+      "tests.test_knowledge_vector_index": {
+        "passed": 3
+      },
+      "tests.test_llm_agentization_runtime": {
+        "passed": 26
+      },
+      "tests.test_mcp_adapter": {
+        "passed": 2
+      },
+      "tests.test_mcp_real_runtime": {
+        "passed": 4
+      },
+      "tests.test_memory_aware_job_analysis": {
+        "passed": 3
+      },
+      "tests.test_natural_language_agent_loop": {
+        "passed": 10,
+        "skipped": 2
+      },
+      "tests.test_project_dossier": {
+        "passed": 3
+      },
+      "tests.test_real_career_data_evaluation": {
+        "passed": 7
+      },
+      "tests.test_real_model_end_to_end_validation": {
+        "passed": 1,
+        "skipped": 3
+      },
+      "tests.test_reliability_fault_injection": {
+        "passed": 17
+      },
+      "tests.test_requirement_evidence": {
+        "passed": 8
+      },
+      "tests.test_retrieved_evidence_mapping": {
+        "passed": 10
+      },
+      "tests.test_semantic_agents": {
+        "passed": 10
+      },
+      "tests.test_source_audit_regressions": {
+        "passed": 17
+      },
+      "tests.test_stateful_agent_evaluation": {
+        "passed": 6,
+        "skipped": 2
+      },
+      "tests.test_stateful_interview_copilot": {
+        "passed": 8
+      },
+      "tests.test_tool_use_v2": {
+        "passed": 7
+      },
+      "tests.test_ui_adaptive_interview": {
+        "passed": 5
+      },
+      "tests.test_ui_app_test.TestAppSmoke": {
+        "passed": 1
+      },
+      "tests.test_ui_app_test.TestMockInterviewAppTest": {
+        "passed": 2
+      },
+      "tests.test_ui_app_test.TestApplicationOpsAppTest": {
+        "passed": 1
+      },
+      "tests.test_ui_app_test.TestInformationArchitecture": {
+        "passed": 2
+      },
+      "tests.test_ui_evidence_v2": {
+        "passed": 3
+      },
+      "tests.test_ui_live_runtime": {
+        "passed": 5
+      },
+      "tests.test_ui_resume_loop": {
+        "passed": 6
+      },
+      "tests.test_unseen_career_holdout": {
+        "passed": 2
+      }
+    }
+  },
+  {
+    "run": "closeout-full-final",
+    "tests": 584,
+    "passed": 568,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 16,
+    "seconds": 33.778,
+    "issues": [],
+    "skip_reasons": {
+      "QWEN_EMBEDDING_MODEL_PATH is unavailable": 4,
+      "explicit DeepSeek durable-state acceptance opt-in required": 4,
+      "QWEN_EMBEDDING_MODEL_PATH is not set": 3,
+      "explicit DeepSeek agent eval opt-in and API_KEY are required": 1,
+      "explicit local model opt-in and QWEN2_5_MODEL_PATH are required": 1,
+      "JOB_AGENT_REAL_MODEL_PATH is unavailable": 1,
+      "explicit DeepSeek stateful eval opt-in and API_KEY are required": 1,
+      "explicit local stateful eval opt-in and model path are required": 1
+    },
+    "by_module": {
+      "tests.test_adaptive_interview_blueprint": {
+        "passed": 2
+      },
+      "tests.test_adaptive_interview_contracts": {
+        "passed": 4
+      },
+      "tests.test_adaptive_interview_controller": {
+        "passed": 3
+      },
+      "tests.test_adaptive_interview_debrief": {
+        "passed": 5
+      },
+      "tests.test_adaptive_interview_run_store": {
+        "passed": 3
+      },
+      "tests.test_adaptive_interview_tools": {
+        "passed": 3
+      },
+      "tests.test_agent_budgets": {
+        "passed": 6
+      },
+      "tests.test_agent_checkpoint": {
+        "passed": 4
+      },
+      "tests.test_agent_context": {
+        "passed": 11
+      },
+      "tests.test_agent_eval_harness": {
+        "passed": 5
+      },
+      "tests.test_agent_graph_runtime": {
+        "passed": 20
+      },
+      "tests.test_agent_interaction_contract": {
+        "passed": 14
+      },
+      "tests.test_agent_loop": {
+        "passed": 6
+      },
+      "tests.test_agent_ops": {
+        "passed": 27
+      },
+      "tests.test_agent_policy": {
+        "passed": 5
+      },
+      "tests.test_agent_tool_registry": {
+        "passed": 8
+      },
+      "tests.test_application_assistant_evaluation": {
+        "passed": 11
+      },
+      "tests.test_application_assistant_search": {
+        "passed": 1
+      },
+      "tests.test_atomic_evidence_v2": {
+        "passed": 14
+      },
+      "tests.test_atomic_io": {
+        "passed": 4
+      },
+      "tests.test_backend_service": {
+        "passed": 15
+      },
+      "tests.test_backend_service_persistence": {
+        "passed": 23
+      },
+      "tests.test_backend_service_reliability": {
+        "passed": 16
+      },
+      "tests.test_career_knowledge_mcp": {
+        "passed": 5,
+        "skipped": 1
+      },
+      "tests.test_career_store": {
+        "passed": 5
+      },
+      "tests.test_durable_career_knowledge": {
+        "passed": 13
+      },
+      "tests.test_durable_career_state": {
+        "passed": 6,
+        "skipped": 4
+      },
+      "tests.test_end_to_end_job_search_workflow": {
+        "passed": 3
+      },
+      "tests.test_evidence_artifact_repository": {
+        "passed": 4
+      },
+      "tests.test_evidence_eval_contracts": {
+        "passed": 4
+      },
+      "tests.test_evidence_eval_corpus_v2": {
+        "passed": 5
+      },
+      "tests.test_evidence_eval_corpus_v5": {
+        "passed": 2
+      },
+      "tests.test_evidence_eval_metrics": {
+        "passed": 3
+      },
+      "tests.test_evidence_fit_policy_v2": {
+        "passed": 4
+      },
+      "tests.test_evidence_level_policy": {
+        "passed": 2
+      },
+      "tests.test_evidence_live_eval": {
+        "passed": 14
+      },
+      "tests.test_evidence_mapping_v2": {
+        "passed": 3
+      },
+      "tests.test_evidence_projections": {
+        "passed": 4
+      },
+      "tests.test_evidence_requirement_analyzer": {
+        "passed": 7
+      },
+      "tests.test_evidence_source_store": {
+        "passed": 14
+      },
+      "tests.test_evidence_text_identity": {
+        "passed": 2
+      },
+      "tests.test_evidence_v2_contracts": {
+        "passed": 4
+      },
+      "tests.test_governed_application_lifecycle": {
+        "passed": 4
+      },
+      "tests.test_governed_application_tracking": {
+        "passed": 3
+      },
+      "tests.test_grounded_resume_tailoring": {
+        "passed": 10
+      },
+      "tests.test_interview_context_builder": {
+        "passed": 5
+      },
+      "tests.test_interview_question_bank": {
+        "passed": 3
+      },
+      "tests.test_jd_match_analysis": {
+        "passed": 1,
+        "skipped": 1
+      },
+      "tests.test_job_specific_interview_preparation": {
+        "passed": 3
+      },
+      "tests.test_job_workspace": {
+        "passed": 9
+      },
+      "tests.test_knowledge_bm25": {
+        "passed": 4
+      },
+      "tests.test_knowledge_candidate_evidence": {
+        "passed": 3
+      },
+      "tests.test_knowledge_career_benchmark": {
+        "passed": 3
+      },
+      "tests.test_knowledge_contracts": {
+        "passed": 17
+      },
+      "tests.test_knowledge_eval": {
+        "passed": 5
+      },
+      "tests.test_knowledge_faiss_vector_index": {
+        "passed": 4
+      },
+      "tests.test_knowledge_ingestion": {
+        "passed": 6
+      },
+      "tests.test_knowledge_ingestion_real": {
+        "skipped": 1
+      },
+      "tests.test_knowledge_real_embedding": {
+        "skipped": 1
+      },
+      "tests.test_knowledge_retrieval_benchmark": {
+        "skipped": 1
+      },
+      "tests.test_knowledge_retriever": {
+        "passed": 1
+      },
+      "tests.test_knowledge_rrf": {
+        "passed": 4
+      },
+      "tests.test_knowledge_vector_index": {
+        "passed": 3
+      },
+      "tests.test_llm_agentization_runtime": {
+        "passed": 26
+      },
+      "tests.test_mcp_adapter": {
+        "passed": 2
+      },
+      "tests.test_mcp_real_runtime": {
+        "passed": 4
+      },
+      "tests.test_memory_aware_job_analysis": {
+        "passed": 3
+      },
+      "tests.test_natural_language_agent_loop": {
+        "passed": 10,
+        "skipped": 2
+      },
+      "tests.test_project_dossier": {
+        "passed": 3
+      },
+      "tests.test_real_career_data_evaluation": {
+        "passed": 7
+      },
+      "tests.test_real_model_end_to_end_validation": {
+        "passed": 1,
+        "skipped": 3
+      },
+      "tests.test_reliability_fault_injection": {
+        "passed": 17
+      },
+      "tests.test_requirement_evidence": {
+        "passed": 8
+      },
+      "tests.test_retrieved_evidence_mapping": {
+        "passed": 10
+      },
+      "tests.test_semantic_agents": {
+        "passed": 10
+      },
+      "tests.test_source_audit_regressions": {
+        "passed": 17
+      },
+      "tests.test_stateful_agent_evaluation": {
+        "passed": 6,
+        "skipped": 2
+      },
+      "tests.test_stateful_interview_copilot": {
+        "passed": 8
+      },
+      "tests.test_tool_use_v2": {
+        "passed": 7
+      },
+      "tests.test_ui_adaptive_interview": {
+        "passed": 5
+      },
+      "tests.test_ui_app_test.TestAppSmoke": {
+        "passed": 1
+      },
+      "tests.test_ui_app_test.TestMockInterviewAppTest": {
+        "passed": 2
+      },
+      "tests.test_ui_app_test.TestApplicationOpsAppTest": {
+        "passed": 1
+      },
+      "tests.test_ui_app_test.TestInformationArchitecture": {
+        "passed": 2
+      },
+      "tests.test_ui_evidence_v2": {
+        "passed": 3
+      },
+      "tests.test_ui_live_runtime": {
+        "passed": 5
+      },
+      "tests.test_ui_resume_loop": {
+        "passed": 6
+      },
+      "tests.test_unseen_career_holdout": {
+        "passed": 2
+      }
+    }
+  }
+]

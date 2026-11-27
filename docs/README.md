@@ -1,5 +1,8 @@
 # 文档导航
 
+- [demo.md](demo.md)：从长期偏好、JD 分析、Evidence 到申请阶段与面试准备的面试现场 Demo。
+- [resume_notes.md](resume_notes.md)：基于当前实现与实验结果的中英文简历 bullet 和 60 秒项目介绍。
+- [interview_notes.md](interview_notes.md)：围绕 Runtime、MCP、Memory、RAG、Evidence、幂等与实验决策的常见追问。
 - [architecture.md](architecture.md)：CareerStore、Evidence v2、Adaptive Interview、Runtime 与 UI 的职责边界。
 - [evaluation.md](evaluation.md)：公开测试、故障注入、Evidence v5 与已知失败的正确口径。
 - [security-boundaries.md](security-boundaries.md)：live credential、迁移、Evidence 单向依赖、Tool 与失败边界。

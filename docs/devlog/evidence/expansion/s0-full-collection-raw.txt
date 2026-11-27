@@ -1,0 +1,29 @@
+
+==================================== ERRORS ====================================
+__________________ ERROR collecting tests/test_ui_app_test.py __________________
+ImportError while importing test module '/root/autodl-tmp/study/job-agent-v3/tests/test_ui_app_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_ui_app_test.py:15: in <module>
+    from streamlit.testing.v1 import AppTest
+E   ModuleNotFoundError: No module named 'streamlit'
+________________ ERROR collecting tests/test_ui_evidence_v2.py _________________
+ImportError while importing test module '/root/autodl-tmp/study/job-agent-v3/tests/test_ui_evidence_v2.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_ui_evidence_v2.py:4: in <module>
+    from job_agent.ui.views import evidence_v2_view
+src/job_agent/ui/views/evidence_v2_view.py:5: in <module>
+    import streamlit as st
+E   ModuleNotFoundError: No module named 'streamlit'
+=========================== short test summary info ============================
+ERROR tests/test_ui_app_test.py
+ERROR tests/test_ui_evidence_v2.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!
+2 errors in 5.59s

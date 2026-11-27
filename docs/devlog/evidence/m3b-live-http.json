@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-20T10:20:39.335489+00:00",
+  "url": "http://127.0.0.1:8015",
+  "scope": "standalone real HTTP of synthetic browser-created data; no real model, no additional pytest cases",
+  "checks": {
+    "health_ok": true,
+    "isolated_demo_no_model": true,
+    "browser_accept_exactly_two_versions": true,
+    "history_persisted": true,
+    "one_feedback_driven_revision": true,
+    "selection_actually_changed": true,
+    "trace_has_six_actual_handoffs": true,
+    "no_provider_call": true,
+    "version_and_hash_pinned": true,
+    "checkpoint_saved": true,
+    "owner_source_hash_span_and_complete_quote": true,
+    "summary_same_source_new_identity": true,
+    "other_sections_identical": true,
+    "latest_unconfirmed": true,
+    "human_decision_persisted": true,
+    "retry_same_version_no_duplicate": true,
+    "current_frontend_build_served": true
+  },
+  "resume_id": "res-7c7962e9705b4aa5a535a37b59b9d0ea",
+  "run_id": "collab-30abb59cef814e3faef7e54de40a0853",
+  "provider_calls": 0
+}

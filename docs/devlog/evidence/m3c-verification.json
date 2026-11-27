@@ -1,0 +1,235 @@
+{
+  "date": "2026-10-20",
+  "milestone": "M3C layered verification and bounded question-bank Evaluator/Interviewer product loop; PDF/long-term applications remain on product roadmap",
+  "environment": {
+    "python": "3.12.14",
+    "node": "v24.19.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "pytest": "9.1.1",
+      "fastapi": "0.115.14",
+      "pydantic": "2.14.0",
+      "httpx": "0.27.2",
+      "langgraph": "1.2.16"
+    }
+  },
+  "runs": [
+    {
+      "name": "m3c-before",
+      "counts": {
+        "tests": 257,
+        "passed": 257,
+        "failed": 0,
+        "errored_cases": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "m3c-new",
+      "counts": {
+        "tests": 69,
+        "passed": 69,
+        "failed": 0,
+        "errored_cases": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "m3c-related",
+      "counts": {
+        "tests": 290,
+        "passed": 290,
+        "failed": 0,
+        "errored_cases": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "m3c-final",
+      "counts": {
+        "tests": 291,
+        "passed": 291,
+        "failed": 0,
+        "errored_cases": 0,
+        "skipped": 0
+      }
+    }
+  ],
+  "new_backend_cases": 34,
+  "new_cases_breakdown": {
+    "verification": 4,
+    "workbench_interview": 30
+  },
+  "frontend": {
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0,
+    "build": "success"
+  },
+  "commands": {
+    "final": "python -m pytest -q tests/test_resume_import.py tests/test_resume_workspace.py tests/test_resume_pdf_autofill.py tests/test_resume_matching.py tests/test_resume_collaboration.py tests/test_workbench_interview.py tests/test_source_audit_regressions.py tests/test_career_store.py tests/test_application_assistant_evaluation.py tests/test_backend_service.py tests/test_evidence_source_store.py tests/test_evidence_mapping_v2.py tests/test_evidence_projections.py tests/test_evidence_requirement_analyzer.py tests/test_knowledge_ingestion.py tests/test_stateful_interview_copilot.py tests/test_interview_question_bank.py tests/test_adaptive_interview_controller.py --basetemp=../../work/m3c-final-temp --junitxml=../../work/m3c-final.xml",
+    "baseline": "python -m pytest -q tests/test_resume_import.py tests/test_resume_workspace.py tests/test_resume_pdf_autofill.py tests/test_resume_matching.py tests/test_resume_collaboration.py tests/test_source_audit_regressions.py tests/test_career_store.py tests/test_application_assistant_evaluation.py tests/test_backend_service.py tests/test_evidence_source_store.py tests/test_evidence_mapping_v2.py tests/test_evidence_projections.py tests/test_evidence_requirement_analyzer.py tests/test_knowledge_ingestion.py tests/test_stateful_interview_copilot.py tests/test_interview_question_bank.py tests/test_adaptive_interview_controller.py --basetemp=../../work/m3c-before-temp --junitxml=../../work/m3c-before.xml",
+    "baseline_note": "baseline has the pre-edit 42 collaboration cases; final has 46",
+    "frontend_test": "node --test src/model.test.js (cwd frontend)",
+    "final_build": "node frontend/node_modules/vite/bin/vite.js build frontend (cwd repo root)",
+    "demo": "python scripts/demo_resume_workbench.py --port 8016",
+    "http": [
+      "python scripts/verify_interview_demo.py --port 8016 --stage active",
+      "python scripts/verify_interview_demo.py --port 8016 --stage complete"
+    ],
+    "context": "existing audit venv, cached Node absolute path; TEMP/TMP work/tmp; permitted local API/socket tests"
+  },
+  "failures": [],
+  "live_http_phases": [
+    {
+      "date": "2026-10-20T10:50:16.562981+00:00",
+      "stage": "active",
+      "url": "http://127.0.0.1:8016",
+      "checks": {
+        "isolated_synthetic_no_model": true,
+        "exactly_two_versions_no_interview_writes": true,
+        "origin_match_is_separate": true,
+        "keyword_not_semantic_support": true,
+        "accepted_not_truth_verified": true,
+        "accepted_version_still_unconfirmed": true,
+        "job_handoff_and_version_snapshot": true,
+        "two_answers_and_four_handoffs": true,
+        "feedback_actually_caused_followup": true,
+        "followup_then_switch": true,
+        "public_projection_hides_rubric_and_evaluation": true,
+        "zero_model_calls": true,
+        "active_next_topic_not_another_followup": true,
+        "active_review_is_blocked": true
+      },
+      "session_id": "interview-d24c43e5316f4a878fa36f4dbea1d8b3",
+      "resume_id": "res-1c9945b4d29e443d8b22e7ca305e5bcb",
+      "scope": "real loopback HTTP against synthetic browser-created data; not additional pytest or real-model quality cases"
+    },
+    {
+      "date": "2026-10-20T10:51:33.991568+00:00",
+      "stage": "complete",
+      "url": "http://127.0.0.1:8016",
+      "checks": {
+        "isolated_synthetic_no_model": true,
+        "exactly_two_versions_no_interview_writes": true,
+        "origin_match_is_separate": true,
+        "keyword_not_semantic_support": true,
+        "accepted_not_truth_verified": true,
+        "accepted_version_still_unconfirmed": true,
+        "job_handoff_and_version_snapshot": true,
+        "two_answers_and_four_handoffs": true,
+        "feedback_actually_caused_followup": true,
+        "followup_then_switch": true,
+        "public_projection_hides_rubric_and_evaluation": true,
+        "zero_model_calls": true,
+        "complete_no_future_question": true,
+        "review_only_answered_turns": true,
+        "finish_retry_is_idempotent": true
+      },
+      "session_id": "interview-d24c43e5316f4a878fa36f4dbea1d8b3",
+      "resume_id": "res-1c9945b4d29e443d8b22e7ca305e5bcb",
+      "scope": "real loopback HTTP against synthetic browser-created data; not additional pytest or real-model quality cases"
+    }
+  ],
+  "http_count_note": "14 active and 15 complete assertions overlap; never sum to 29 independent cases or include in pytest counts",
+  "browser_manual_checks": [
+    "synthetic text parse/save v1",
+    "summary review/accept -> v2; layered truth remains C1/not_verified",
+    "saved JD/version analysis -> explicit prepare interview handoff",
+    "first answer -> missing receipt follow-up",
+    "second answer -> switch to Agent loop topic",
+    "active review blocked via HTTP",
+    "explicit finish -> two answered-turn reviews",
+    "page reload/sign-in -> same saved interview and review reopened"
+  ],
+  "browser_screenshots": [
+    "m3c-verification-layers.png",
+    "m3c-interview-followup.png",
+    "m3c-interview-review.png"
+  ],
+  "semantic_model_scope": "no real model called; synthetic fixture validates distinct roles, legal focus IDs, private projection, token accounting and max12 dispatches",
+  "not_run": [
+    "whole repository regression",
+    "real model semantic quality, latency and billing",
+    "equal-budget single-agent/sequential/collaborative quality experiment",
+    "production PG/Redis/Worker recovery or native LangGraph saver integration",
+    "PDF export/long-term application workflow integration",
+    "arbitrary-job full mock interview quality"
+  ],
+  "known_limits": [
+    "six legacy question anchors with three-topic ranking and rule aliases; not arbitrary semantic coverage",
+    "C1 self-attestation is never independent proof; heuristic risk is a request for material, not a claim of falsehood",
+    "application SQLite checkpoint/lease only; uncertain external calls stop, no exactly-once billing guarantee",
+    "experience text is not fully automatically redacted; online attempts require consent",
+    "synchronous API may outlive UI wait; retry keys do not re-dispatch"
+  ],
+  "documentation_validation": {
+    "passed": true,
+    "documents_checked": 20,
+    "anchors_checked": 133,
+    "links_checked": 164,
+    "errors": [],
+    "phase_sections": 10
+  },
+  "frozen_eval_files_checked": 25,
+  "frozen_eval_changes": [],
+  "unchanged_evidence_kernel_files": 21,
+  "unchanged_legacy_interview_files": 19,
+  "original_protocol_unchanged": true,
+  "git": {
+    "branch": "main",
+    "head": "067bfc7d63408e1e6b0ab6c227e863bd08a5857a",
+    "status_short": "M .gitignore\n M README.md\n M docs/architecture.md\n M docs/evaluation.md\n M docs/interview_notes.md\n M docs/resume_notes.md\n M pyproject.toml\n M src/job_agent/backend_service/application_assistant.py\n M src/job_agent/backend_service/application_evaluation.py\n M src/job_agent/evidence/level_policy.py\n M src/job_agent/evidence/mapping.py\n M src/job_agent/evidence/pipeline.py\n M src/job_agent/evidence/projections.py\n M src/job_agent/evidence/sources.py\n M src/job_agent/knowledge/qwen_embedding.py\n M tests/test_application_assistant_evaluation.py\n M tests/test_ui_app_test.py\n?? AGENTS.md\n?? GIT_LOG.txt\n?? GIT_STATUS.txt\n?? UNCOMMITTED_DIFF.txt\n?? docs/CONTINUE_DEVELOPMENT.md\n?? docs/INTERVIEW_SOURCE_GUIDE.md\n?? docs/PROJECT_AUDIT.md\n?? docs/audit/\n?? docs/devlog/\n?? docs/upgrade/\n?? frontend/\n?? hits[1].score\n?? scripts/demo_resume_versions.py\n?? scripts/demo_resume_workbench.py\n?? scripts/verify_collaboration_demo.py\n?? scripts/verify_interview_demo.py\n?? src/job_agent/resume_workspace/\n?? tests/test_resume_import.py\n?? tests/test_resume_workspace.py\n?? tests/test_source_audit_regressions.py",
+    "diff_stat": ".gitignore                                         |   5 +\n README.md                                          |  97 +++++++++++--\n docs/architecture.md                               |   5 +\n docs/evaluation.md                                 |   4 +\n docs/interview_notes.md                            |   5 +\n docs/resume_notes.md                               | 159 +++++++++++++++++++--\n pyproject.toml                                     |  12 +-\n .../backend_service/application_assistant.py       |   1 +\n .../backend_service/application_evaluation.py      |  25 ++--\n src/job_agent/evidence/level_policy.py             |   5 +\n src/job_agent/evidence/mapping.py                  |   2 +-\n src/job_agent/evidence/pipeline.py                 |   8 +-\n src/job_agent/evidence/projections.py              |   7 +\n src/job_agent/evidence/sources.py                  |   3 +-\n src/job_agent/knowledge/qwen_embedding.py          |  14 +-\n tests/test_application_assistant_evaluation.py     |  29 ++++\n tests/test_ui_app_test.py                          |   6 +-\n 17 files changed, 344 insertions(+), 43 deletions(-)",
+    "remote_actions": "none; no commits"
+  },
+  "base_m3b_sha256": "4f69e42269cde72277fc6a67927e85d4f045f5a3f7a4f460da985a23f3bf31ba",
+  "changed_public_code_files": [
+    "frontend/dist/assets/index-B9FzKP90.js",
+    "frontend/dist/assets/index-CKJ_PzdL.css",
+    "frontend/dist/index.html",
+    "frontend/src/CollaborationPanel.jsx",
+    "frontend/src/InterviewPanel.jsx",
+    "frontend/src/MatchingPanel.jsx",
+    "frontend/src/collaboration.js",
+    "frontend/src/main.jsx",
+    "frontend/src/model.test.js",
+    "frontend/src/style.css",
+    "scripts/verify_interview_demo.py",
+    "src/job_agent/resume_workspace/api.py",
+    "src/job_agent/resume_workspace/collaboration_contracts.py",
+    "src/job_agent/resume_workspace/collaboration_repository.py",
+    "src/job_agent/resume_workspace/interview_api.py",
+    "src/job_agent/resume_workspace/interview_collaboration.py",
+    "src/job_agent/resume_workspace/interview_contracts.py",
+    "src/job_agent/resume_workspace/interview_repository.py",
+    "tests/test_resume_collaboration.py",
+    "tests/test_workbench_interview.py"
+  ],
+  "removed_generated_assets": [
+    "frontend/dist/assets/index-8ShZRAQo.css",
+    "frontend/dist/assets/index-DnyNOG68.js"
+  ],
+  "source_sha256": {
+    "frontend/dist/assets/index-B9FzKP90.js": "8acb67e26e3d00b12bef95e93311928334b3797c0303ddfb05aaaf5c864d828e",
+    "frontend/dist/assets/index-CKJ_PzdL.css": "e310d76dc85835ff756bdd0a35516f7b05fcc5e36159e591cfc14de2b58ef90f",
+    "frontend/dist/index.html": "48a3d946cdfeacc952ec7dbb57e8699b159a2810a5094307eccc4fb372fa10c5",
+    "frontend/src/CollaborationPanel.jsx": "275030fe445710c0f7033986ffe4702bb6b481c2647c519262616e77caced44c",
+    "frontend/src/InterviewPanel.jsx": "6c8729ea272c9ad0f8d4f414496e91f624f26617aaa92a0265966cffe7d3c4bd",
+    "frontend/src/MatchingPanel.jsx": "f444272e6e102082216c71575185167fbb9710ad6acbf626074050b5302f1db5",
+    "frontend/src/collaboration.js": "9fee99956d16895c09aff3cb1c4f4f946725faf13ea1d26af00d49cf76147bb5",
+    "frontend/src/main.jsx": "95d4d0ca23b5f0fec0e5e3747981571e287c980361fea4afcc6f6aae157da467",
+    "frontend/src/model.test.js": "c49a98a7242386a5aea1bd3572934e395b783da6f37f46690f9313f5182f2331",
+    "frontend/src/style.css": "882c6cecf71a677f277dde7685c67377fec4672d8e0ab09acb27195081cf4638",
+    "scripts/verify_interview_demo.py": "b7e4705397ce7d2728e6aba292b579512d89afb6f563fa219f050d7722fece97",
+    "src/job_agent/resume_workspace/api.py": "97e780179da7d3e684e2384d041fdfa7ef451f69a4828d4f792db5c23cc79c0c",
+    "src/job_agent/resume_workspace/collaboration_contracts.py": "28d207f3e445ae37d5f9453a35c84cccb93ee98c4f5c67d499e45523bc38eb2a",
+    "src/job_agent/resume_workspace/collaboration_repository.py": "3c58e1cfc72cb93e39ba9aea14cff7b141fa8cc5ab692ad4e3dcc90618825b73",
+    "src/job_agent/resume_workspace/interview_api.py": "06544ab268f787aa355df452eb7173cc9c39f18243c406b83f2ee7f3fffd22ac",
+    "src/job_agent/resume_workspace/interview_collaboration.py": "9cbb2f9388e66a67706014913ddd839c275fb054f38e3bb508a590055665e76d",
+    "src/job_agent/resume_workspace/interview_contracts.py": "9920ea4534a1f21c2bd486302eb816e83c030b890769f422c912812c6dc9e9d4",
+    "src/job_agent/resume_workspace/interview_repository.py": "cfcef3c8c8696c1eb3148001df6fbe90b59781ac318605cab3c3723bfc3004c3",
+    "tests/test_resume_collaboration.py": "5b3e44aaed4e35abe983bd77f9de365929d5a1a60f4f395b7a6940c68a8953df",
+    "tests/test_workbench_interview.py": "206e59efaabd51b4eb10b244312a804413a20769b3927bdfa33d152003f8ca57"
+  }
+}

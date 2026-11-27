@@ -11,10 +11,10 @@ from job_agent.evidence.contracts import (
     EvidenceRunManifest,
     SourceInput,
 )
-from job_agent.evidence.mapping import EvidenceMappingService
+from job_agent.evidence.mapping import EvidenceMappingService, PROMPT_VERSION as MAPPING_PROMPT_VERSION
 from job_agent.evidence.projections import EvidenceProjectionService
 from job_agent.evidence.repository import EvidenceArtifactRepository
-from job_agent.evidence.requirements import RequirementAnalyzer
+from job_agent.evidence.requirements import RequirementAnalyzer, PROMPT_VERSION as REQUIREMENT_PROMPT_VERSION
 from job_agent.evidence.sources import EvidenceSourceStore, sha256_bytes
 
 
@@ -70,8 +70,8 @@ class EvidenceV2Pipeline:
             manifest=EvidenceRunManifest(
                 run_id=run_id,
                 created_at=datetime.now(UTC).isoformat(),
-                jd_parser_version="evidence-requirements-v2",
-                evidence_prompt_version="evidence-mapping-v2",
+                jd_parser_version=REQUIREMENT_PROMPT_VERSION,
+                evidence_prompt_version=MAPPING_PROMPT_VERSION,
                 fit_policy_version=config.version,
                 provider=str(getattr(provider, "provider_name", "unknown")),
                 model=str(getattr(provider, "model", "unknown")),

@@ -1,0 +1,20 @@
+{
+  "status": "frozen_before_new_test",
+  "weight": 2,
+  "selected_product_policy": {
+    "dense_rrf_weight": 1,
+    "relation_priority": "preserve_direct",
+    "default_embedding": "disabled"
+  },
+  "candidate_A_rounds": 1,
+  "candidate_B_rounds": 1,
+  "second_rounds": 0,
+  "new_test_formal_runs_allowed": 1,
+  "reason": "Weighted2 improves seen code15/16 vs14/16 but lowers seen design7/10 vs8/10; keep default weight1. Direct-priority restores14/16 vs legacy8/16 without design loss. No forced complex winner.",
+  "algorithm_identity": "4147b120f5b6df78526e53122cd59bef89ab0d9be9041351ce464e6083fef614",
+  "new_dataset_sha256": "eb619fcde94d8776e82435f369991040cebe2902a908b57be9667ddb55f5a46e",
+  "dev_result_sha256": "eddebc8ad3875688a4580abc4913a8998f71cbca62dbcb1db48c5e8fe2d362f8",
+  "human_reviewed": 0,
+  "paid_calls": 0,
+  "no_post_test_tuning": true
+}

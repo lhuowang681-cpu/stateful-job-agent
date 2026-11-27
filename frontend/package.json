@@ -1,0 +1,22 @@
+{
+  "name": "job-agent-workbench",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "test": "node --test src/model.test.js"
+  },
+  "dependencies": {
+    "pdfjs-dist": "6.4.299",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "vite": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

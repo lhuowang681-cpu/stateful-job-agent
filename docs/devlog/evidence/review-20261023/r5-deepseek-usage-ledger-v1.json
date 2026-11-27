@@ -1,0 +1,70 @@
+{
+  "actual_network_calls": 156,
+  "input_tokens": 173912,
+  "output_tokens": 20724,
+  "billing_amount": null,
+  "missing_price_reason": "No verified account charge; response usage only; shared first drafts counted once globally",
+  "data": "authorized synthetic inputs only",
+  "items": [
+    {
+      "artifact": "deepseek-rewrite-pilot-v1.json",
+      "actual_network_calls": 6,
+      "input_tokens": 5520,
+      "output_tokens": 554
+    },
+    {
+      "artifact": "deepseek-rewrite-pilot-v2.json",
+      "actual_network_calls": 6,
+      "input_tokens": 5682,
+      "output_tokens": 479
+    },
+    {
+      "artifact": "deepseek-rewrite-pilot-v3.json",
+      "actual_network_calls": 8,
+      "input_tokens": 7645,
+      "output_tokens": 821
+    },
+    {
+      "artifact": "deepseek-learning-pilot-v1.json",
+      "actual_network_calls": 2,
+      "input_tokens": 2601,
+      "output_tokens": 269
+    },
+    {
+      "artifact": "deepseek-learning-pilot-v2.json",
+      "actual_network_calls": 2,
+      "input_tokens": 2604,
+      "output_tokens": 238
+    },
+    {
+      "artifact": "deepseek-learning-pilot-v3.json",
+      "actual_network_calls": 12,
+      "input_tokens": 15737,
+      "output_tokens": 1572
+    },
+    {
+      "artifact": "deepseek-comparison-v2.json",
+      "actual_network_calls": 100,
+      "input_tokens": 108774,
+      "output_tokens": 14318
+    },
+    {
+      "artifact": "deepseek-final-rewrite-http-v1.json",
+      "actual_network_calls": 4,
+      "input_tokens": 4801,
+      "output_tokens": 514
+    },
+    {
+      "artifact": "r5-deepseek-launcher-learning-v1.json",
+      "actual_network_calls": 12,
+      "input_tokens": 15787,
+      "output_tokens": 1470
+    },
+    {
+      "artifact": "r5-deepseek-rewrite-http-v1.json",
+      "actual_network_calls": 4,
+      "input_tokens": 4761,
+      "output_tokens": 489
+    }
+  ]
+}

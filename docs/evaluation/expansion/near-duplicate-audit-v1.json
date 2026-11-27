@@ -1,0 +1,99 @@
+{
+  "dataset_sha256": "ff6ad1d6ce4e8b0fc2346d61d6e46a0cee35540d73f4776647274ffe7fdc8d66",
+  "status": "mechanical_only_human_semantic_review_pending",
+  "cross_split_pairs": 1296,
+  "top_text_pairs": [
+    {
+      "left": "dev-final-14",
+      "right": "test-final-09",
+      "text_similarity": 0.3333,
+      "left_query": "这份教学样例是否提供持久数据库或benchmark？",
+      "right_query": "从任一原文说明找到：这份租约教学样例没有实际数据库连接。"
+    },
+    {
+      "left": "dev-final-19",
+      "right": "test-final-14",
+      "text_similarity": 0.3333,
+      "left_query": "哪条测试明确断言关闭语义配置会采用keyword？",
+      "right_query": "哪段测试断言被删除记录对原owner也不可见？"
+    },
+    {
+      "left": "dev-final-19",
+      "right": "test-final-05",
+      "text_similarity": 0.3256,
+      "left_query": "哪条测试明确断言关闭语义配置会采用keyword？",
+      "right_query": "哪条断言专门检查旧token被拒绝？"
+    },
+    {
+      "left": "dev-final-21",
+      "right": "test-final-22",
+      "text_similarity": 0.3243,
+      "left_query": "这套回执实现的真实线上P95延迟是多少？",
+      "right_query": "部署这份样例的月度服务账单是多少？"
+    },
+    {
+      "left": "dev-final-02",
+      "right": "test-final-01",
+      "text_similarity": 0.3111,
+      "left_query": "handle 把请求交给哪个保存函数？",
+      "right_query": "can_publish 的定义同时涉及哪些输入参数？"
+    },
+    {
+      "left": "dev-final-33",
+      "right": "test-final-33",
+      "text_similarity": 0.2927,
+      "left_query": "旧版引用为什么不能重定向到同路径的最新文件？",
+      "right_query": "降为文本后为什么不能凭猜测补调用关系？"
+    },
+    {
+      "left": "dev-final-28",
+      "right": "test-final-27",
+      "text_similarity": 0.2917,
+      "left_query": "消费组的待确认消息为什么要与业务完成状态分开看？",
+      "right_query": "JSON字段类型正确为什么还不能当业务事实正确？"
+    },
+    {
+      "left": "dev-final-01",
+      "right": "test-final-02",
+      "text_similarity": 0.2909,
+      "left_query": "save_receipt 的函数定义在哪个原文范围？",
+      "right_query": "publish的租约校验与返回artifact顺序在哪里？"
+    },
+    {
+      "left": "dev-final-03",
+      "right": "test-final-01",
+      "text_similarity": 0.2909,
+      "left_query": "test_duplicate 的两个调用如何构造相同请求？",
+      "right_query": "can_publish 的定义同时涉及哪些输入参数？"
+    },
+    {
+      "left": "dev-final-25",
+      "right": "test-final-28",
+      "text_similarity": 0.2857,
+      "left_query": "内存Saver退出后，恢复能力还需要什么存储条件？",
+      "right_query": "接受模型材料前，权限与原文版本还需要做什么检查？"
+    },
+    {
+      "left": "dev-final-18",
+      "right": "test-final-10",
+      "text_similarity": 0.2812,
+      "left_query": "needs_rebuild怎样判定保存的身份不能复用？",
+      "right_query": "bounded_records是在截取limit之前还是之后筛选允许ID？"
+    },
+    {
+      "left": "dev-final-17",
+      "right": "test-final-19",
+      "text_similarity": 0.2807,
+      "left_query": "语义后端未配置时，choose_mode返回什么？",
+      "right_query": "append_event 对已经存在的event_id返回什么？"
+    }
+  ],
+  "known_pre_score_revision": {
+    "rejected_version": "candidates-v2.json",
+    "dev_case": "dev-final-28",
+    "test_case": "test-final-36",
+    "reason": "cross-system transaction question shared the same semantic fact; v3 dev question changed before any scoring"
+  },
+  "threshold_used_for_quality_gate": null,
+  "semantic_duplicate_clearance": null
+}

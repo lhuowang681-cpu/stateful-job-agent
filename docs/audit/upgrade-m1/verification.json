@@ -1,0 +1,77 @@
+{
+  "milestone": "M1 structured resume facts/version API, not complete product integration",
+  "date": "2026-10-20",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "pytest": "9.1.1",
+      "fastapi": "0.115.14",
+      "pydantic": "2.14.0",
+      "starlette": "0.46.2",
+      "httpx": "0.27.2",
+      "anyio": "4.15.1",
+      "uvicorn": "0.54.0"
+    }
+  },
+  "runs": [
+    {
+      "scope": "existing-before",
+      "counts": {
+        "tests": 33,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 33
+      },
+      "actual_command_from_task_root": ".\\work\\run_audit_tests.ps1 -Name upgrade-m1-existing-before -Files tests/test_source_audit_regressions.py,tests/test_career_store.py,tests/test_application_assistant_evaluation.py",
+      "equivalent_pytest_from_repo": "python -m pytest -vv --tb=short -o faulthandler_timeout=30 tests/test_source_audit_regressions.py tests/test_career_store.py tests/test_application_assistant_evaluation.py",
+      "xml": "upgrade-m1-existing-before.xml"
+    },
+    {
+      "scope": "new-tests",
+      "counts": {
+        "tests": 34,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 34
+      },
+      "actual_command_from_task_root": ".\\work\\run_audit_tests.ps1 -Name upgrade-m1-tests-network -Files tests/test_resume_workspace.py",
+      "equivalent_pytest_from_repo": "python -m pytest -vv --tb=short -o faulthandler_timeout=30 tests/test_resume_workspace.py",
+      "xml": "upgrade-m1-tests-network.xml"
+    },
+    {
+      "scope": "combined-regression",
+      "counts": {
+        "tests": 110,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 110
+      },
+      "actual_command_from_task_root": ".\\work\\run_audit_tests.ps1 -Name upgrade-m1-regression -Files tests/test_resume_workspace.py,tests/test_source_audit_regressions.py,tests/test_career_store.py,tests/test_application_assistant_evaluation.py,tests/test_backend_service.py,tests/test_evidence_source_store.py,tests/test_evidence_mapping_v2.py,tests/test_evidence_projections.py,tests/test_evidence_requirement_analyzer.py",
+      "equivalent_pytest_from_repo": "python -m pytest -vv --tb=short -o faulthandler_timeout=30 tests/test_resume_workspace.py tests/test_source_audit_regressions.py tests/test_career_store.py tests/test_application_assistant_evaluation.py tests/test_backend_service.py tests/test_evidence_source_store.py tests/test_evidence_mapping_v2.py tests/test_evidence_projections.py tests/test_evidence_requirement_analyzer.py",
+      "xml": "upgrade-m1-regression.xml"
+    }
+  ],
+  "initial_sandbox_run": "Interrupted during Windows asyncio socketpair creation; 27 cases completed before API tests. No completed suite result claimed.",
+  "warning": "Starlette TestClient uses deprecated anyio.abc.BlockingPortal alias; one warning in new/combined run, not suppressed.",
+  "synthetic_script_checks": 6,
+  "real_loopback_http_checks": 8,
+  "temporary_api_stopped": true,
+  "frozen_eval_files_compared_to_baseline_package": 25,
+  "frozen_eval_mismatches": [],
+  "not_run": [
+    "Full current repository suite with real PostgreSQL/Redis",
+    "Live LLM, embedding, OCR, Elasticsearch or new PDF generation",
+    "New frontend/browser E2E, production auth or PostgreSQL product migration"
+  ],
+  "new_source_hashes": {
+    "src/job_agent/resume_workspace/__init__.py": "93846f207277048151b87594c08f852e42da80a8e38d2383c04f55bc14f3669e",
+    "src/job_agent/resume_workspace/api.py": "9e483ffb0d0884b3a53303c028ad8cb5accb9f0d2c48019ebb81c18c58166fc3",
+    "src/job_agent/resume_workspace/contracts.py": "0b28df07fa50995d86751590d302e7656466809f310fcfe304386f93ed0facfa",
+    "src/job_agent/resume_workspace/main.py": "fdd211495d7283ba090c34d0295969053f36adfdc2c187c1ac006bdac1d7c4fc",
+    "src/job_agent/resume_workspace/repository.py": "7022137341fa12562af2aabc5605b246372e6d5424d9d707cffb8d2414dee296"
+  }
+}

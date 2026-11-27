@@ -1,0 +1,1979 @@
+{
+  "dataset_version": "expansion-final-candidates-2",
+  "corpus": {
+    "snapshot_id": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+    "documents": [
+      {
+        "document_id": "dev-code/README.md",
+        "kind": "project_documentation",
+        "split": "dev",
+        "text": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n",
+        "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+        "origin": "project_authored_synthetic",
+        "source_version": "expansion-fixture-1",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "dev-code/app/api.py",
+        "kind": "code",
+        "split": "dev",
+        "text": "from .storage import save_receipt\n\ndef handle(key, store):\n    return save_receipt(key, store)\n",
+        "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+        "origin": "project_authored_synthetic",
+        "source_version": "expansion-fixture-1",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "dev-code/app/storage.py",
+        "kind": "code",
+        "split": "dev",
+        "text": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n",
+        "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+        "origin": "project_authored_synthetic",
+        "source_version": "expansion-fixture-1",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "dev-code/docs/scope.md",
+        "kind": "project_documentation",
+        "split": "dev",
+        "text": "# Receipt teaching fixture\n## Sources\nOnly the fixed source revision is cited; a source reference is not a performance measurement.\n## Limits\nThere is no durable database and no benchmark in this teaching fixture.\n## Budget\nReturn at most five complete passages. Omit a whole passage when it does not fit the quote budget.\n## Verification\nA test file contains source assertions. This document does not report executing those tests.\n",
+        "content_hash": "86be5bd7a59b4b79cc2eb5a4ac4ddb935fdcdbed4d786117152f63d372bd97bd",
+        "origin": "project_authored_synthetic",
+        "source_version": "expansion-final-fixture-2",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "dev-code/rules.py",
+        "kind": "code",
+        "split": "dev",
+        "text": "def choose_mode(semantic_configured):\n    return \"hybrid\" if semantic_configured else \"keyword\"\n\ndef needs_rebuild(saved_identity, current_identity):\n    return saved_identity != current_identity\n",
+        "content_hash": "1b4a6dec8da27df457bdd52d383cb735bc5a91b8bbbacba34f2f395be4d81500",
+        "origin": "project_authored_synthetic",
+        "source_version": "expansion-final-fixture-2",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "dev-code/serialize.py",
+        "kind": "code",
+        "split": "dev",
+        "text": "import json\n\ndef canonical(value):\n    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(\",\", \":\"))\n\ndef payload_digest(value):\n    from hashlib import sha256\n    return sha256(canonical(value).encode(\"utf-8\")).hexdigest()\n",
+        "content_hash": "011771aa01f1882f51745bcdcf1527d6a089a37582bde68f32e40ce950d2fe20",
+        "origin": "project_authored_synthetic",
+        "source_version": "expansion-final-fixture-2",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "dev-code/tests/test_rules.py",
+        "kind": "code",
+        "split": "dev",
+        "text": "from rules import choose_mode, needs_rebuild\n\ndef test_disabled_semantics():\n    assert choose_mode(False) == \"keyword\"\n\ndef test_identity_change():\n    assert needs_rebuild(\"old\", \"new\")\n    assert not needs_rebuild(\"same\", \"same\")\n",
+        "content_hash": "9bf93c8ef6f26e5efb3e91b694354b582e822ff60972868d9a87675c956e2455",
+        "origin": "project_authored_synthetic",
+        "source_version": "expansion-final-fixture-2",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "dev-code/tests/test_storage.py",
+        "kind": "code",
+        "split": "dev",
+        "text": "from app.storage import save_receipt\n\ndef test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n",
+        "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+        "origin": "project_authored_synthetic",
+        "source_version": "expansion-fixture-1",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "doc-ast",
+        "kind": "public_knowledge",
+        "split": "dev",
+        "text": "AST符号与静态分析边界\nast.parse将Python文本解析为语法树，可提取函数、类、参数和行位置，不需要导入并执行代码。静态分析能解析部分导入与直接调用；对象动态绑定、反射或运行时修改不能只按名字猜。本项目把这些边标为静态可解析引用，不能据此声称函数实际执行过，测试文件存在也不代表测试通过。",
+        "content_hash": "8218b20f9efcc5aab11b9b814a7110d61e422f0bfaa57a3b46e1b3fcf57bf62d",
+        "origin": "https://docs.python.org/3.12/library/ast.html",
+        "source_version": "Python 3.12 documentation",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "doc-asyncio",
+        "kind": "public_knowledge",
+        "split": "test",
+        "text": "协作式并发与阻塞边界\n仅调用async函数会得到协程对象，不会自动执行；需要await或调度Task。协程适合可等待的IO任务。同步阻塞库直接运行在事件循环里会拖住其他任务，可考虑受限线程；CPU密集计算应根据运行环境另选进程等方案。取消请求也需要处理清理工作，不能把客户端超时理解为远端副作用已撤销。",
+        "content_hash": "32596041b1a021df0835b9f7c688472041d9488fabe08695c551697747751271",
+        "origin": "https://docs.python.org/3.12/library/asyncio-task.html",
+        "source_version": "Python 3.12 documentation",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "doc-checkpoint",
+        "kind": "public_knowledge",
+        "split": "dev",
+        "text": "Checkpoint与长期记忆\nCheckpoint保存一次线程运行的状态，便于继续对话、中断恢复和人工交互。Store保存跨线程使用的业务信息，例如用户偏好。内存Saver在进程退出后会丢失，持久化需要相应存储。本项目的业务版本、岗位档案与执行检查点是不同数据，不能把保存聊天记录说成实现了全部恢复机制。",
+        "content_hash": "9a0c2e3f5fb9010f26e921198447e01b0595cd872e9ea5340a37933445a1f4fa",
+        "origin": "https://docs.langchain.com/oss/python/langgraph/persistence",
+        "source_version": "LangGraph rolling docs; checked 2026-10-20",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "doc-citation",
+        "kind": "public_knowledge",
+        "split": "dev",
+        "text": "快照引用、哈希与版本\n内容哈希便于核对文本身份，但哈希一致不能证明真实经历或语义结论。本项目的代码引用绑定owner、项目、快照、commit、路径、行范围与原文；引用旧版时不能悄悄指向最新文件。索引重建可替换派生结构，历史源码快照保持不变；删除来源后，旧引用应不可解析，而非回退到相似资料。",
+        "content_hash": "9b88bda2ddea145d7aeb15a4ff8297bf8dbb854f128617276919d636db6ada7b",
+        "origin": "https://docs.python.org/3.12/library/hashlib.html",
+        "source_version": "Python 3.12 documentation",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "doc-idempotency",
+        "kind": "public_knowledge",
+        "split": "dev",
+        "text": "外部超时与幂等回执\n消费组的待确认消息需要与业务完成状态区分。本项目采用的可靠性原则是：相同逻辑操作使用稳定请求键，先查回执；外部请求超时不等于操作失败。数据库状态无法和任意外部服务形成一个本地事务，结果未知时应查询、核对或等待人工处理，不能盲目重发。该设计原则是本项目综合，不是Redis提供跨系统恰好一次保证。",
+        "content_hash": "200ca7998e9977c9e62085955c9b0bce3d0e1366f8659724b2594d1847835a48",
+        "origin": "https://redis.io/docs/latest/commands/xreadgroup/",
+        "source_version": "Redis rolling command reference; checked 2026-10-20",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "doc-provenance",
+        "kind": "public_knowledge",
+        "split": "dev",
+        "text": "检索相关性与事实支持\n检索用于在查询时提供相关外部上下文，减少一次性塞入全部材料的需求。相关片段本身不是事实支持判定。本项目把公共技术解释、私人源码和个人自述分域处理：公共资料不能证明用户有该技能，代码只能定位某版实现，自述仍需核实。缺证据应表达不确定或请求补充，不能推断用户没有能力。该事实分级是本项目约束。",
+        "content_hash": "502cfd6e404c797f6766da364ca8f406c133c242c7eb95f466eca20ae0863788",
+        "origin": "https://docs.langchain.com/oss/python/deepagents/retrieval",
+        "source_version": "Retrieval rolling documentation; checked 2026-10-20",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "doc-rrf",
+        "kind": "public_knowledge",
+        "split": "dev",
+        "text": "关键词、向量与RRF融合\n关键词召回适合准确术语，向量召回用于语义相近表达。不同检索器分数尺度通常不能直接相加，RRF按排名倒数贡献融合；参数和候选深度会影响结果。融合后仍要去重并验证引用。是否保留向量或重排，应在相同查询与标注下比较召回、成本和失败，不预设更复杂一定更好。本项目没有因此部署Elasticsearch。",
+        "content_hash": "292356a3e198ee39f012507cf63205c56351dad3fd5394ab19ebcf3bda407813",
+        "origin": "https://www.elastic.co/docs/reference/elasticsearch/rest-apis/reciprocal-rank-fusion",
+        "source_version": "Elasticsearch rolling reference; checked 2026-10-20",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "doc-schema",
+        "kind": "public_knowledge",
+        "split": "test",
+        "text": "结构化输出与业务校验\nPydantic模型约束请求字段、类型和取值，FastAPI据此解析请求体。字段结构正确不代表业务事实正确；还需验证owner、版本、引用原文和状态迁移。模型输出同样要做Schema与业务两层校验，修复与重试都应有限。简历中数字、职责和来源是否支持，需要额外审查，不能由JSON格式成功推出。",
+        "content_hash": "ba83829947d9dde079aff2e21c7fdd5ae1931126bebbef9da06b2d340a3793e0",
+        "origin": "https://fastapi.tiangolo.com/tutorial/body/",
+        "source_version": "FastAPI rolling tutorial; checked 2026-10-20",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "doc-transaction",
+        "kind": "public_knowledge",
+        "split": "test",
+        "text": "业务事务与消息投递\n事务把一组数据库修改作为整体提交或回滚。任务记录与待投递消息可以在同一数据库事务内落盘，再由发布者发送消息；这就是项目旧后端Outbox路径的设计。发布者中断或确认丢失仍可能造成重复投递，消费者必须依据持久任务状态和操作键去重。本地数据库事务不能直接保证外部消息系统与副作用恰好一次。",
+        "content_hash": "7b1097e11c298910a995b0b6ce4b90b3575a57b86192c6a7869483f0ae02d2db",
+        "origin": "https://www.postgresql.org/docs/14/tutorial-transactions.html",
+        "source_version": "PostgreSQL 14 tutorial",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "doc-tree-sitter",
+        "kind": "public_knowledge",
+        "split": "test",
+        "text": "JS/TS语法解析与降级\nTree-sitter的语言语法和解析器可构建语法树，定位JS、TS及TSX中的声明。解析成功不等于类型检查或程序运行成功。本项目提取函数、方法和导入引用，遇到语法错误或插件缺失会明确降级为文本，不构造猜测的关系。引用仍依赖快照、文件哈希与行原文校验。",
+        "content_hash": "d9855223f9e1db0e1d90c955a07e7657f02a8373f5e503fa3db83049765c77ec",
+        "origin": "https://tree-sitter.github.io/py-tree-sitter/",
+        "source_version": "py-tree-sitter 0.26 documentation",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "test-code/README.md",
+        "kind": "project_documentation",
+        "split": "test",
+        "text": "# Lease fixture\nThis fixture checks a token and an expiry time before returning an artifact.\nIt does not connect to a database or publish messages.\n",
+        "content_hash": "81ea4e8f6d9b417d4d0718d253f2dacbd027a5af1af985018bfc383e24289bce",
+        "origin": "project_authored_synthetic",
+        "source_version": "expansion-fixture-1",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "test-code/docs/visibility.md",
+        "kind": "project_documentation",
+        "split": "test",
+        "text": "# Visibility teaching fixture\n## Trust\nThe allowed IDs come from a trusted server session. User query text is not a permission filter.\n## Retention\nA deletion marker hides a record; it does not prove physical erasure of archived records.\n## Evidence\nThis fixture has no database connection and no execution logs.\n",
+        "content_hash": "d233fa634b7547b88f43f992c339171d82bbed3fbb901b0977e0e0bbd26174c9",
+        "origin": "project_authored_synthetic",
+        "source_version": "expansion-final-fixture-2",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "test-code/events.py",
+        "kind": "code",
+        "split": "test",
+        "text": "def append_event(events, event_id, payload):\n    if event_id in events:\n        return events[event_id]\n    events[event_id] = payload\n    return payload\n",
+        "content_hash": "87924a87d35a7772cf8f273df7fd2d288f0283341dff8bb7fb1687d09562cf04",
+        "origin": "project_authored_synthetic",
+        "source_version": "expansion-final-fixture-2",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "test-code/filters.py",
+        "kind": "code",
+        "split": "test",
+        "text": "def bounded_records(records, allowed_ids, limit):\n    allowed = [row for row in records if row[\"id\"] in allowed_ids]\n    return allowed[:limit]\n\ndef visible(row, owner):\n    return row[\"owner\"] == owner and not row.get(\"deleted\", False)\n",
+        "content_hash": "99b69137e0ac702b0899c84ba8d60a223080d97b95f6d71bdb1410dd32a164e3",
+        "origin": "project_authored_synthetic",
+        "source_version": "expansion-final-fixture-2",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "test-code/lease.py",
+        "kind": "code",
+        "split": "test",
+        "text": "def can_publish(current_token, attempt_token, lease_until, now):\n    return current_token == attempt_token and lease_until > now\n",
+        "content_hash": "1076ce2d2095cfd560ab96c11a592514340031ac9c931b6550a8e7eade8dc34a",
+        "origin": "project_authored_synthetic",
+        "source_version": "expansion-fixture-1",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "test-code/publish.py",
+        "kind": "code",
+        "split": "test",
+        "text": "from lease import can_publish\n\ndef publish(current, attempt, expires, now, artifact):\n    if not can_publish(current, attempt, expires, now):\n        raise ValueError(\"lease_lost\")\n    return artifact\n",
+        "content_hash": "53812a9e6e5bad29081274a83044c8ee8542e42df1e41734e73da64d46dd77cd",
+        "origin": "project_authored_synthetic",
+        "source_version": "expansion-fixture-1",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "test-code/tests/test_filters.py",
+        "kind": "code",
+        "split": "test",
+        "text": "from filters import bounded_records, visible\n\ndef test_filter_before_limit():\n    rows = [{\"id\": \"outside\"}, {\"id\": \"inside\"}]\n    assert bounded_records(rows, {\"inside\"}, 1) == [{\"id\": \"inside\"}]\n\ndef test_deleted_row():\n    assert not visible({\"owner\": \"alice\", \"deleted\": True}, \"alice\")\n",
+        "content_hash": "dd294afc08b33fda099ca90352860b2413303cbc4387bd7e778ea35407dae381",
+        "origin": "project_authored_synthetic",
+        "source_version": "expansion-final-fixture-2",
+        "license": "CC0-1.0"
+      },
+      {
+        "document_id": "test-code/tests/test_lease.py",
+        "kind": "code",
+        "split": "test",
+        "text": "from lease import can_publish\n\ndef test_old_token():\n    assert not can_publish(\"new\", \"old\", 100, 1)\n\ndef test_expired():\n    assert not can_publish(\"same\", \"same\", 1, 2)\n",
+        "content_hash": "cee767aa87580bf7f5b0c51304930ab881992935472f0dfb4df296fc2002b755",
+        "origin": "project_authored_synthetic",
+        "source_version": "expansion-fixture-1",
+        "license": "CC0-1.0"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "dev-final-01",
+      "family": "receipt-symbol",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "save_receipt 的函数定义在哪个原文范围？",
+      "category": "exact_symbol",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-02",
+      "family": "receipt-route",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "handle 把请求交给哪个保存函数？",
+      "category": "exact_symbol",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-03",
+      "family": "receipt-test",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "test_duplicate 的两个调用如何构造相同请求？",
+      "category": "exact_symbol",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-04",
+      "family": "receipt-mechanism",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "重复键已经有回执时，如何避开第二次赋值？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "    if key in store:\n        return store[key]\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-05",
+      "family": "receipt-mechanism",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "第一次请求写入什么值，返回哪份结果？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 5,
+          "end_line": 6,
+          "quote": "    store[key] = \"done\"\n    return store[key]\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-06",
+      "family": "receipt-callchain",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "入口函数到回执实现跨越哪些代码位置？",
+      "category": "multi_evidence",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        },
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-07",
+      "family": "receipt-verification",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "同时找到去重实现与重复请求断言，不把测试存在当执行结果。",
+      "category": "multi_evidence",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-08",
+      "family": "receipt-doc",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "项目README如何概括同一个键再次到达的行为？",
+      "category": "documentation",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 2,
+          "end_line": 3,
+          "quote": "Requests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-09",
+      "family": "serialization-order",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "字典插入顺序不同时，canonical用什么参数固定序列化键顺序？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/serialize.py",
+          "content_hash": "011771aa01f1882f51745bcdcf1527d6a089a37582bde68f32e40ce950d2fe20",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def canonical(value):\n    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(\",\", \":\"))\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-10",
+      "family": "serialization-hash",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "payload_digest 把什么内容编码后送给 SHA256？",
+      "category": "exact_symbol",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/serialize.py",
+          "content_hash": "011771aa01f1882f51745bcdcf1527d6a089a37582bde68f32e40ce950d2fe20",
+          "start_line": 6,
+          "end_line": 8,
+          "quote": "def payload_digest(value):\n    from hashlib import sha256\n    return sha256(canonical(value).encode(\"utf-8\")).hexdigest()\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-11",
+      "family": "serialization-chain",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "从规范JSON到摘要，需要连读哪两个函数？",
+      "category": "multi_evidence",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/serialize.py",
+          "content_hash": "011771aa01f1882f51745bcdcf1527d6a089a37582bde68f32e40ce950d2fe20",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def canonical(value):\n    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(\",\", \":\"))\n"
+        },
+        {
+          "document_id": "dev-code/serialize.py",
+          "content_hash": "011771aa01f1882f51745bcdcf1527d6a089a37582bde68f32e40ce950d2fe20",
+          "start_line": 6,
+          "end_line": 8,
+          "quote": "def payload_digest(value):\n    from hashlib import sha256\n    return sha256(canonical(value).encode(\"utf-8\")).hexdigest()\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-12",
+      "family": "serialization-unicode",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "序列化如何保留非ASCII字符，再怎样转换成摘要输入字节？",
+      "category": "multi_evidence",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/serialize.py",
+          "content_hash": "011771aa01f1882f51745bcdcf1527d6a089a37582bde68f32e40ce950d2fe20",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def canonical(value):\n    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(\",\", \":\"))\n"
+        },
+        {
+          "document_id": "dev-code/serialize.py",
+          "content_hash": "011771aa01f1882f51745bcdcf1527d6a089a37582bde68f32e40ce950d2fe20",
+          "start_line": 6,
+          "end_line": 8,
+          "quote": "def payload_digest(value):\n    from hashlib import sha256\n    return sha256(canonical(value).encode(\"utf-8\")).hexdigest()\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-13",
+      "family": "fixture-source-policy",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "设计文档允许引用哪一版源码，引用能否当性能测量？",
+      "category": "documentation",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/docs/scope.md",
+          "content_hash": "86be5bd7a59b4b79cc2eb5a4ac4ddb935fdcdbed4d786117152f63d372bd97bd",
+          "start_line": 2,
+          "end_line": 3,
+          "quote": "## Sources\nOnly the fixed source revision is cited; a source reference is not a performance measurement.\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-14",
+      "family": "fixture-limit-policy",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "这份教学样例是否提供持久数据库或benchmark？",
+      "category": "documentation",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/docs/scope.md",
+          "content_hash": "86be5bd7a59b4b79cc2eb5a4ac4ddb935fdcdbed4d786117152f63d372bd97bd",
+          "start_line": 4,
+          "end_line": 5,
+          "quote": "## Limits\nThere is no durable database and no benchmark in this teaching fixture.\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-15",
+      "family": "fixture-budget-policy",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "不足以容纳下一段原文时，预算约定如何处理该段？",
+      "category": "documentation",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/docs/scope.md",
+          "content_hash": "86be5bd7a59b4b79cc2eb5a4ac4ddb935fdcdbed4d786117152f63d372bd97bd",
+          "start_line": 6,
+          "end_line": 7,
+          "quote": "## Budget\nReturn at most five complete passages. Omit a whole passage when it does not fit the quote budget.\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-16",
+      "family": "fixture-verification-policy",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "测试源码和文档一起能否证明这些断言实际运行通过？",
+      "category": "multi_evidence",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        },
+        {
+          "document_id": "dev-code/docs/scope.md",
+          "content_hash": "86be5bd7a59b4b79cc2eb5a4ac4ddb935fdcdbed4d786117152f63d372bd97bd",
+          "start_line": 8,
+          "end_line": 9,
+          "quote": "## Verification\nA test file contains source assertions. This document does not report executing those tests.\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-17",
+      "family": "retrieval-selection",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "语义后端未配置时，choose_mode返回什么？",
+      "category": "exact_symbol",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/rules.py",
+          "content_hash": "1b4a6dec8da27df457bdd52d383cb735bc5a91b8bbbacba34f2f395be4d81500",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "def choose_mode(semantic_configured):\n    return \"hybrid\" if semantic_configured else \"keyword\"\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-18",
+      "family": "cache-invalidation",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "needs_rebuild怎样判定保存的身份不能复用？",
+      "category": "exact_symbol",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/rules.py",
+          "content_hash": "1b4a6dec8da27df457bdd52d383cb735bc5a91b8bbbacba34f2f395be4d81500",
+          "start_line": 4,
+          "end_line": 5,
+          "quote": "def needs_rebuild(saved_identity, current_identity):\n    return saved_identity != current_identity\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-19",
+      "family": "retrieval-selection",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "哪条测试明确断言关闭语义配置会采用keyword？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/tests/test_rules.py",
+          "content_hash": "9bf93c8ef6f26e5efb3e91b694354b582e822ff60972868d9a87675c956e2455",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def test_disabled_semantics():\n    assert choose_mode(False) == \"keyword\"\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-20",
+      "family": "cache-invalidation",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "身份变化与身份相同的两个分支，各由什么实现和断言支持？",
+      "category": "multi_evidence",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/rules.py",
+          "content_hash": "1b4a6dec8da27df457bdd52d383cb735bc5a91b8bbbacba34f2f395be4d81500",
+          "start_line": 4,
+          "end_line": 5,
+          "quote": "def needs_rebuild(saved_identity, current_identity):\n    return saved_identity != current_identity\n"
+        },
+        {
+          "document_id": "dev-code/tests/test_rules.py",
+          "content_hash": "9bf93c8ef6f26e5efb3e91b694354b582e822ff60972868d9a87675c956e2455",
+          "start_line": 6,
+          "end_line": 8,
+          "quote": "def test_identity_change():\n    assert needs_rebuild(\"old\", \"new\")\n    assert not needs_rebuild(\"same\", \"same\")\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-21",
+      "family": "receipt-production-unknown",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "这套回执实现的真实线上P95延迟是多少？",
+      "category": "unanswerable",
+      "answerable": false,
+      "gold": [],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": "The fixed corpus has no benchmark or production telemetry.",
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-22",
+      "family": "receipt-contribution-unknown",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "用户独立负责该回执模块的雇佣与贡献证明存在哪里？",
+      "category": "unanswerable",
+      "answerable": false,
+      "gold": [],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": "Source fixtures have no personal attribution or employment records.",
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-23",
+      "family": "checkpoint-state",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "一次线程的继续运行需要保留什么状态？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-checkpoint",
+          "content_hash": "9a0c2e3f5fb9010f26e921198447e01b0595cd872e9ea5340a37933445a1f4fa",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "Checkpoint与长期记忆\nCheckpoint保存一次线程运行的状态，便于继续对话、中断恢复和人工交互。Store保存跨线程使用的业务信息，例如用户偏好。内存Saver在进程退出后会丢失，持久化需要相应存储。本项目的业务版本、岗位档案与执行检查点是不同数据，不能把保存聊天记录说成实现了全部恢复机制。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "dev-final-24",
+      "family": "checkpoint-state",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "新任务还想使用用户偏好，和当前运行检查点应如何区分？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-checkpoint",
+          "content_hash": "9a0c2e3f5fb9010f26e921198447e01b0595cd872e9ea5340a37933445a1f4fa",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "Checkpoint与长期记忆\nCheckpoint保存一次线程运行的状态，便于继续对话、中断恢复和人工交互。Store保存跨线程使用的业务信息，例如用户偏好。内存Saver在进程退出后会丢失，持久化需要相应存储。本项目的业务版本、岗位档案与执行检查点是不同数据，不能把保存聊天记录说成实现了全部恢复机制。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "dev-final-25",
+      "family": "checkpoint-state",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "内存Saver退出后，恢复能力还需要什么存储条件？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-checkpoint",
+          "content_hash": "9a0c2e3f5fb9010f26e921198447e01b0595cd872e9ea5340a37933445a1f4fa",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "Checkpoint与长期记忆\nCheckpoint保存一次线程运行的状态，便于继续对话、中断恢复和人工交互。Store保存跨线程使用的业务信息，例如用户偏好。内存Saver在进程退出后会丢失，持久化需要相应存储。本项目的业务版本、岗位档案与执行检查点是不同数据，不能把保存聊天记录说成实现了全部恢复机制。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "dev-final-26",
+      "family": "unknown-side-effect",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "重复投递如何标识同一个逻辑操作？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-idempotency",
+          "content_hash": "200ca7998e9977c9e62085955c9b0bce3d0e1366f8659724b2594d1847835a48",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "外部超时与幂等回执\n消费组的待确认消息需要与业务完成状态区分。本项目采用的可靠性原则是：相同逻辑操作使用稳定请求键，先查回执；外部请求超时不等于操作失败。数据库状态无法和任意外部服务形成一个本地事务，结果未知时应查询、核对或等待人工处理，不能盲目重发。该设计原则是本项目综合，不是Redis提供跨系统恰好一次保证。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "dev-final-27",
+      "family": "unknown-side-effect",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "操作超时但结果未知，应先采取什么核对动作？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-idempotency",
+          "content_hash": "200ca7998e9977c9e62085955c9b0bce3d0e1366f8659724b2594d1847835a48",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "外部超时与幂等回执\n消费组的待确认消息需要与业务完成状态区分。本项目采用的可靠性原则是：相同逻辑操作使用稳定请求键，先查回执；外部请求超时不等于操作失败。数据库状态无法和任意外部服务形成一个本地事务，结果未知时应查询、核对或等待人工处理，不能盲目重发。该设计原则是本项目综合，不是Redis提供跨系统恰好一次保证。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "dev-final-28",
+      "family": "unknown-side-effect",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "本地数据库事务能否覆盖任意外部系统的操作结果？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-idempotency",
+          "content_hash": "200ca7998e9977c9e62085955c9b0bce3d0e1366f8659724b2594d1847835a48",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "外部超时与幂等回执\n消费组的待确认消息需要与业务完成状态区分。本项目采用的可靠性原则是：相同逻辑操作使用稳定请求键，先查回执；外部请求超时不等于操作失败。数据库状态无法和任意外部服务形成一个本地事务，结果未知时应查询、核对或等待人工处理，不能盲目重发。该设计原则是本项目综合，不是Redis提供跨系统恰好一次保证。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "dev-final-29",
+      "family": "fusion-rank",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "BM25与向量分值差很多时，融合依据为什么选排名？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-rrf",
+          "content_hash": "292356a3e198ee39f012507cf63205c56351dad3fd5394ab19ebcf3bda407813",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "关键词、向量与RRF融合\n关键词召回适合准确术语，向量召回用于语义相近表达。不同检索器分数尺度通常不能直接相加，RRF按排名倒数贡献融合；参数和候选深度会影响结果。融合后仍要去重并验证引用。是否保留向量或重排，应在相同查询与标注下比较召回、成本和失败，不预设更复杂一定更好。本项目没有因此部署Elasticsearch。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "dev-final-30",
+      "family": "fusion-rank",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "加入向量与重排后，选择是否保留需要比较哪些代价与结果？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-rrf",
+          "content_hash": "292356a3e198ee39f012507cf63205c56351dad3fd5394ab19ebcf3bda407813",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "关键词、向量与RRF融合\n关键词召回适合准确术语，向量召回用于语义相近表达。不同检索器分数尺度通常不能直接相加，RRF按排名倒数贡献融合；参数和候选深度会影响结果。融合后仍要去重并验证引用。是否保留向量或重排，应在相同查询与标注下比较召回、成本和失败，不预设更复杂一定更好。本项目没有因此部署Elasticsearch。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "dev-final-31",
+      "family": "static-analysis",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "提取函数、参数和行位置为什么无需运行陌生项目？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-ast",
+          "content_hash": "8218b20f9efcc5aab11b9b814a7110d61e422f0bfaa57a3b46e1b3fcf57bf62d",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "AST符号与静态分析边界\nast.parse将Python文本解析为语法树，可提取函数、类、参数和行位置，不需要导入并执行代码。静态分析能解析部分导入与直接调用；对象动态绑定、反射或运行时修改不能只按名字猜。本项目把这些边标为静态可解析引用，不能据此声称函数实际执行过，测试文件存在也不代表测试通过。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "dev-final-32",
+      "family": "static-analysis",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "动态绑定与反射无法静态解析时，能否按名字认定执行关系？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-ast",
+          "content_hash": "8218b20f9efcc5aab11b9b814a7110d61e422f0bfaa57a3b46e1b3fcf57bf62d",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "AST符号与静态分析边界\nast.parse将Python文本解析为语法树，可提取函数、类、参数和行位置，不需要导入并执行代码。静态分析能解析部分导入与直接调用；对象动态绑定、反射或运行时修改不能只按名字猜。本项目把这些边标为静态可解析引用，不能据此声称函数实际执行过，测试文件存在也不代表测试通过。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "dev-final-33",
+      "family": "citation-version",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "旧版引用为什么不能重定向到同路径的最新文件？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-citation",
+          "content_hash": "9b88bda2ddea145d7aeb15a4ff8297bf8dbb854f128617276919d636db6ada7b",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "快照引用、哈希与版本\n内容哈希便于核对文本身份，但哈希一致不能证明真实经历或语义结论。本项目的代码引用绑定owner、项目、快照、commit、路径、行范围与原文；引用旧版时不能悄悄指向最新文件。索引重建可替换派生结构，历史源码快照保持不变；删除来源后，旧引用应不可解析，而非回退到相似资料。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "dev-final-34",
+      "family": "citation-version",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "来源被删除后，能否用相似片段替代旧引用？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-citation",
+          "content_hash": "9b88bda2ddea145d7aeb15a4ff8297bf8dbb854f128617276919d636db6ada7b",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "快照引用、哈希与版本\n内容哈希便于核对文本身份，但哈希一致不能证明真实经历或语义结论。本项目的代码引用绑定owner、项目、快照、commit、路径、行范围与原文；引用旧版时不能悄悄指向最新文件。索引重建可替换派生结构，历史源码快照保持不变；删除来源后，旧引用应不可解析，而非回退到相似资料。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "dev-final-35",
+      "family": "fact-provenance",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "公共技术说明、私人源码与个人自述各能证明哪一层？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-provenance",
+          "content_hash": "502cfd6e404c797f6766da364ca8f406c133c242c7eb95f466eca20ae0863788",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "检索相关性与事实支持\n检索用于在查询时提供相关外部上下文，减少一次性塞入全部材料的需求。相关片段本身不是事实支持判定。本项目把公共技术解释、私人源码和个人自述分域处理：公共资料不能证明用户有该技能，代码只能定位某版实现，自述仍需核实。缺证据应表达不确定或请求补充，不能推断用户没有能力。该事实分级是本项目约束。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "dev-final-36",
+      "family": "fact-provenance",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "查不到候选人的经历材料，应怎样表达结论和下一步？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-provenance",
+          "content_hash": "502cfd6e404c797f6766da364ca8f406c133c242c7eb95f466eca20ae0863788",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "检索相关性与事实支持\n检索用于在查询时提供相关外部上下文，减少一次性塞入全部材料的需求。相关片段本身不是事实支持判定。本项目把公共技术解释、私人源码和个人自述分域处理：公共资料不能证明用户有该技能，代码只能定位某版实现，自述仍需核实。缺证据应表达不确定或请求补充，不能推断用户没有能力。该事实分级是本项目约束。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "test-final-01",
+      "family": "lease-definition",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "can_publish 的定义同时涉及哪些输入参数？",
+      "category": "exact_symbol",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/lease.py",
+          "content_hash": "1076ce2d2095cfd560ab96c11a592514340031ac9c931b6550a8e7eade8dc34a",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "def can_publish(current_token, attempt_token, lease_until, now):\n    return current_token == attempt_token and lease_until > now\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-02",
+      "family": "lease-publish-order",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "publish的租约校验与返回artifact顺序在哪里？",
+      "category": "exact_symbol",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/publish.py",
+          "content_hash": "53812a9e6e5bad29081274a83044c8ee8542e42df1e41734e73da64d46dd77cd",
+          "start_line": 3,
+          "end_line": 6,
+          "quote": "def publish(current, attempt, expires, now, artifact):\n    if not can_publish(current, attempt, expires, now):\n        raise ValueError(\"lease_lost\")\n    return artifact\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-03",
+      "family": "lease-token-check",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "任务token不同但时间仍有效时，为什么不能发布？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/lease.py",
+          "content_hash": "1076ce2d2095cfd560ab96c11a592514340031ac9c931b6550a8e7eade8dc34a",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "def can_publish(current_token, attempt_token, lease_until, now):\n    return current_token == attempt_token and lease_until > now\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-04",
+      "family": "lease-time-check",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "到期时间等于now时，租约判断是否仍允许提交？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/lease.py",
+          "content_hash": "1076ce2d2095cfd560ab96c11a592514340031ac9c931b6550a8e7eade8dc34a",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "def can_publish(current_token, attempt_token, lease_until, now):\n    return current_token == attempt_token and lease_until > now\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-05",
+      "family": "lease-rejection-tests",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "哪条断言专门检查旧token被拒绝？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/tests/test_lease.py",
+          "content_hash": "cee767aa87580bf7f5b0c51304930ab881992935472f0dfb4df296fc2002b755",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def test_old_token():\n    assert not can_publish(\"new\", \"old\", 100, 1)\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-06",
+      "family": "lease-rejection-tests",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "哪条断言专门检查已经过期的时间？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/tests/test_lease.py",
+          "content_hash": "cee767aa87580bf7f5b0c51304930ab881992935472f0dfb4df296fc2002b755",
+          "start_line": 6,
+          "end_line": 7,
+          "quote": "def test_expired():\n    assert not can_publish(\"same\", \"same\", 1, 2)\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-07",
+      "family": "lease-callchain",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "返回artifact的路径如何调用token与到期检查？",
+      "category": "multi_evidence",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/publish.py",
+          "content_hash": "53812a9e6e5bad29081274a83044c8ee8542e42df1e41734e73da64d46dd77cd",
+          "start_line": 3,
+          "end_line": 6,
+          "quote": "def publish(current, attempt, expires, now, artifact):\n    if not can_publish(current, attempt, expires, now):\n        raise ValueError(\"lease_lost\")\n    return artifact\n"
+        },
+        {
+          "document_id": "test-code/lease.py",
+          "content_hash": "1076ce2d2095cfd560ab96c11a592514340031ac9c931b6550a8e7eade8dc34a",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "def can_publish(current_token, attempt_token, lease_until, now):\n    return current_token == attempt_token and lease_until > now\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-08",
+      "family": "lease-implementation-tests",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "检查租约实现及两种拒绝断言，定位全部必要证据。",
+      "category": "multi_evidence",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/lease.py",
+          "content_hash": "1076ce2d2095cfd560ab96c11a592514340031ac9c931b6550a8e7eade8dc34a",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "def can_publish(current_token, attempt_token, lease_until, now):\n    return current_token == attempt_token and lease_until > now\n"
+        },
+        {
+          "document_id": "test-code/tests/test_lease.py",
+          "content_hash": "cee767aa87580bf7f5b0c51304930ab881992935472f0dfb4df296fc2002b755",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def test_old_token():\n    assert not can_publish(\"new\", \"old\", 100, 1)\n"
+        },
+        {
+          "document_id": "test-code/tests/test_lease.py",
+          "content_hash": "cee767aa87580bf7f5b0c51304930ab881992935472f0dfb4df296fc2002b755",
+          "start_line": 6,
+          "end_line": 7,
+          "quote": "def test_expired():\n    assert not can_publish(\"same\", \"same\", 1, 2)\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-09",
+      "family": "fixture-no-database",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "从任一原文说明找到：这份租约教学样例没有实际数据库连接。",
+      "category": "documentation",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/README.md",
+          "content_hash": "81ea4e8f6d9b417d4d0718d253f2dacbd027a5af1af985018bfc383e24289bce",
+          "start_line": 3,
+          "end_line": 3,
+          "quote": "It does not connect to a database or publish messages.\n"
+        },
+        {
+          "document_id": "test-code/docs/visibility.md",
+          "content_hash": "d233fa634b7547b88f43f992c339171d82bbed3fbb901b0977e0e0bbd26174c9",
+          "start_line": 6,
+          "end_line": 7,
+          "quote": "## Evidence\nThis fixture has no database connection and no execution logs.\n"
+        }
+      ],
+      "gold_requirement": "any",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-10",
+      "family": "scope-filter-order",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "bounded_records是在截取limit之前还是之后筛选允许ID？",
+      "category": "exact_symbol",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/filters.py",
+          "content_hash": "99b69137e0ac702b0899c84ba8d60a223080d97b95f6d71bdb1410dd32a164e3",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "def bounded_records(records, allowed_ids, limit):\n    allowed = [row for row in records if row[\"id\"] in allowed_ids]\n    return allowed[:limit]\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-11",
+      "family": "scope-filter-order",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "被允许的记录以什么原始顺序出现在有限结果中？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/filters.py",
+          "content_hash": "99b69137e0ac702b0899c84ba8d60a223080d97b95f6d71bdb1410dd32a164e3",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "def bounded_records(records, allowed_ids, limit):\n    allowed = [row for row in records if row[\"id\"] in allowed_ids]\n    return allowed[:limit]\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-12",
+      "family": "visibility-deletion",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "有deleted标记的记录如何从visible判断排除？",
+      "category": "exact_symbol",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/filters.py",
+          "content_hash": "99b69137e0ac702b0899c84ba8d60a223080d97b95f6d71bdb1410dd32a164e3",
+          "start_line": 5,
+          "end_line": 6,
+          "quote": "def visible(row, owner):\n    return row[\"owner\"] == owner and not row.get(\"deleted\", False)\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-13",
+      "family": "visibility-owner",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "记录owner与查询owner不同，即使未删除会怎样？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/filters.py",
+          "content_hash": "99b69137e0ac702b0899c84ba8d60a223080d97b95f6d71bdb1410dd32a164e3",
+          "start_line": 5,
+          "end_line": 6,
+          "quote": "def visible(row, owner):\n    return row[\"owner\"] == owner and not row.get(\"deleted\", False)\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-14",
+      "family": "visibility-tests",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "哪段测试断言被删除记录对原owner也不可见？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/tests/test_filters.py",
+          "content_hash": "dd294afc08b33fda099ca90352860b2413303cbc4387bd7e778ea35407dae381",
+          "start_line": 7,
+          "end_line": 8,
+          "quote": "def test_deleted_row():\n    assert not visible({\"owner\": \"alice\", \"deleted\": True}, \"alice\")\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-15",
+      "family": "scope-filter-verification",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "第一条记录不被允许时，如何用实现与断言验证不会占掉limit？",
+      "category": "multi_evidence",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/filters.py",
+          "content_hash": "99b69137e0ac702b0899c84ba8d60a223080d97b95f6d71bdb1410dd32a164e3",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "def bounded_records(records, allowed_ids, limit):\n    allowed = [row for row in records if row[\"id\"] in allowed_ids]\n    return allowed[:limit]\n"
+        },
+        {
+          "document_id": "test-code/tests/test_filters.py",
+          "content_hash": "dd294afc08b33fda099ca90352860b2413303cbc4387bd7e778ea35407dae381",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_filter_before_limit():\n    rows = [{\"id\": \"outside\"}, {\"id\": \"inside\"}]\n    assert bounded_records(rows, {\"inside\"}, 1) == [{\"id\": \"inside\"}]\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-16",
+      "family": "trusted-filter-policy",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "allowed IDs的可信来源是什么，用户查询文本可以代替吗？",
+      "category": "documentation",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/docs/visibility.md",
+          "content_hash": "d233fa634b7547b88f43f992c339171d82bbed3fbb901b0977e0e0bbd26174c9",
+          "start_line": 2,
+          "end_line": 3,
+          "quote": "## Trust\nThe allowed IDs come from a trusted server session. User query text is not a permission filter.\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-17",
+      "family": "retention-policy",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "设置删除标记能否证明归档也已物理擦除？",
+      "category": "documentation",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/docs/visibility.md",
+          "content_hash": "d233fa634b7547b88f43f992c339171d82bbed3fbb901b0977e0e0bbd26174c9",
+          "start_line": 4,
+          "end_line": 5,
+          "quote": "## Retention\nA deletion marker hides a record; it does not prove physical erasure of archived records.\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-18",
+      "family": "visibility-policy-implementation",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "同时定位删除标记的可见性实现和保留边界说明。",
+      "category": "multi_evidence",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/filters.py",
+          "content_hash": "99b69137e0ac702b0899c84ba8d60a223080d97b95f6d71bdb1410dd32a164e3",
+          "start_line": 5,
+          "end_line": 6,
+          "quote": "def visible(row, owner):\n    return row[\"owner\"] == owner and not row.get(\"deleted\", False)\n"
+        },
+        {
+          "document_id": "test-code/docs/visibility.md",
+          "content_hash": "d233fa634b7547b88f43f992c339171d82bbed3fbb901b0977e0e0bbd26174c9",
+          "start_line": 4,
+          "end_line": 5,
+          "quote": "## Retention\nA deletion marker hides a record; it does not prove physical erasure of archived records.\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-19",
+      "family": "event-id-deduplication",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "append_event 对已经存在的event_id返回什么？",
+      "category": "exact_symbol",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/events.py",
+          "content_hash": "87924a87d35a7772cf8f273df7fd2d288f0283341dff8bb7fb1687d09562cf04",
+          "start_line": 1,
+          "end_line": 5,
+          "quote": "def append_event(events, event_id, payload):\n    if event_id in events:\n        return events[event_id]\n    events[event_id] = payload\n    return payload\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-20",
+      "family": "event-id-deduplication",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "同一个event_id第二次带不同payload，会不会覆盖原值？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/events.py",
+          "content_hash": "87924a87d35a7772cf8f273df7fd2d288f0283341dff8bb7fb1687d09562cf04",
+          "start_line": 1,
+          "end_line": 5,
+          "quote": "def append_event(events, event_id, payload):\n    if event_id in events:\n        return events[event_id]\n    events[event_id] = payload\n    return payload\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-21",
+      "family": "lease-recovery-unknown",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "这份固定样例在真实Redis重启后恢复了多少条消息？",
+      "category": "unanswerable",
+      "answerable": false,
+      "gold": [],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": "The fixture has source and assertions but no database, Redis connection, or execution logs.",
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-22",
+      "family": "lease-cost-unknown",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "部署这份样例的月度服务账单是多少？",
+      "category": "unanswerable",
+      "answerable": false,
+      "gold": [],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": "No deployment, billing, or pricing record exists in the fixed corpus.",
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-23",
+      "family": "async-scheduling",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "只调用async函数会发生什么，怎样才开始调度？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-asyncio",
+          "content_hash": "32596041b1a021df0835b9f7c688472041d9488fabe08695c551697747751271",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "协作式并发与阻塞边界\n仅调用async函数会得到协程对象，不会自动执行；需要await或调度Task。协程适合可等待的IO任务。同步阻塞库直接运行在事件循环里会拖住其他任务，可考虑受限线程；CPU密集计算应根据运行环境另选进程等方案。取消请求也需要处理清理工作，不能把客户端超时理解为远端副作用已撤销。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "test-final-24",
+      "family": "async-scheduling",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "同步SDK阻塞事件循环时，对其他任务有什么影响？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-asyncio",
+          "content_hash": "32596041b1a021df0835b9f7c688472041d9488fabe08695c551697747751271",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "协作式并发与阻塞边界\n仅调用async函数会得到协程对象，不会自动执行；需要await或调度Task。协程适合可等待的IO任务。同步阻塞库直接运行在事件循环里会拖住其他任务，可考虑受限线程；CPU密集计算应根据运行环境另选进程等方案。取消请求也需要处理清理工作，不能把客户端超时理解为远端副作用已撤销。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "test-final-25",
+      "family": "async-scheduling",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "任务从等待IO变为大量CPU计算时，应重新考虑哪种执行方式？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-asyncio",
+          "content_hash": "32596041b1a021df0835b9f7c688472041d9488fabe08695c551697747751271",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "协作式并发与阻塞边界\n仅调用async函数会得到协程对象，不会自动执行；需要await或调度Task。协程适合可等待的IO任务。同步阻塞库直接运行在事件循环里会拖住其他任务，可考虑受限线程；CPU密集计算应根据运行环境另选进程等方案。取消请求也需要处理清理工作，不能把客户端超时理解为远端副作用已撤销。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "test-final-26",
+      "family": "async-scheduling",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "客户端取消请求为何不能证明远端副作用已撤销？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-asyncio",
+          "content_hash": "32596041b1a021df0835b9f7c688472041d9488fabe08695c551697747751271",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "协作式并发与阻塞边界\n仅调用async函数会得到协程对象，不会自动执行；需要await或调度Task。协程适合可等待的IO任务。同步阻塞库直接运行在事件循环里会拖住其他任务，可考虑受限线程；CPU密集计算应根据运行环境另选进程等方案。取消请求也需要处理清理工作，不能把客户端超时理解为远端副作用已撤销。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "test-final-27",
+      "family": "output-schema-validation",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "JSON字段类型正确为什么还不能当业务事实正确？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-schema",
+          "content_hash": "ba83829947d9dde079aff2e21c7fdd5ae1931126bebbef9da06b2d340a3793e0",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "结构化输出与业务校验\nPydantic模型约束请求字段、类型和取值，FastAPI据此解析请求体。字段结构正确不代表业务事实正确；还需验证owner、版本、引用原文和状态迁移。模型输出同样要做Schema与业务两层校验，修复与重试都应有限。简历中数字、职责和来源是否支持，需要额外审查，不能由JSON格式成功推出。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "test-final-28",
+      "family": "output-schema-validation",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "接受模型材料前，权限与原文版本还需要做什么检查？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-schema",
+          "content_hash": "ba83829947d9dde079aff2e21c7fdd5ae1931126bebbef9da06b2d340a3793e0",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "结构化输出与业务校验\nPydantic模型约束请求字段、类型和取值，FastAPI据此解析请求体。字段结构正确不代表业务事实正确；还需验证owner、版本、引用原文和状态迁移。模型输出同样要做Schema与业务两层校验，修复与重试都应有限。简历中数字、职责和来源是否支持，需要额外审查，不能由JSON格式成功推出。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "test-final-29",
+      "family": "output-schema-validation",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "模型连续修复仍失败时，重试策略应有什么边界？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-schema",
+          "content_hash": "ba83829947d9dde079aff2e21c7fdd5ae1931126bebbef9da06b2d340a3793e0",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "结构化输出与业务校验\nPydantic模型约束请求字段、类型和取值，FastAPI据此解析请求体。字段结构正确不代表业务事实正确；还需验证owner、版本、引用原文和状态迁移。模型输出同样要做Schema与业务两层校验，修复与重试都应有限。简历中数字、职责和来源是否支持，需要额外审查，不能由JSON格式成功推出。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "test-final-30",
+      "family": "output-schema-validation",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "简历数字和职责的支持关系能否由JSON格式成功推出？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-schema",
+          "content_hash": "ba83829947d9dde079aff2e21c7fdd5ae1931126bebbef9da06b2d340a3793e0",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "结构化输出与业务校验\nPydantic模型约束请求字段、类型和取值，FastAPI据此解析请求体。字段结构正确不代表业务事实正确；还需验证owner、版本、引用原文和状态迁移。模型输出同样要做Schema与业务两层校验，修复与重试都应有限。简历中数字、职责和来源是否支持，需要额外审查，不能由JSON格式成功推出。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "test-final-31",
+      "family": "js-parser-degradation",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "JS解析得到语法树，是否同时完成类型检查和运行验证？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-tree-sitter",
+          "content_hash": "d9855223f9e1db0e1d90c955a07e7657f02a8373f5e503fa3db83049765c77ec",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "JS/TS语法解析与降级\nTree-sitter的语言语法和解析器可构建语法树，定位JS、TS及TSX中的声明。解析成功不等于类型检查或程序运行成功。本项目提取函数、方法和导入引用，遇到语法错误或插件缺失会明确降级为文本，不构造猜测的关系。引用仍依赖快照、文件哈希与行原文校验。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "test-final-32",
+      "family": "js-parser-degradation",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "语法插件缺失时，能保留什么结果并应怎样标记？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-tree-sitter",
+          "content_hash": "d9855223f9e1db0e1d90c955a07e7657f02a8373f5e503fa3db83049765c77ec",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "JS/TS语法解析与降级\nTree-sitter的语言语法和解析器可构建语法树，定位JS、TS及TSX中的声明。解析成功不等于类型检查或程序运行成功。本项目提取函数、方法和导入引用，遇到语法错误或插件缺失会明确降级为文本，不构造猜测的关系。引用仍依赖快照、文件哈希与行原文校验。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "test-final-33",
+      "family": "js-parser-degradation",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "降为文本后为什么不能凭猜测补调用关系？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-tree-sitter",
+          "content_hash": "d9855223f9e1db0e1d90c955a07e7657f02a8373f5e503fa3db83049765c77ec",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "JS/TS语法解析与降级\nTree-sitter的语言语法和解析器可构建语法树，定位JS、TS及TSX中的声明。解析成功不等于类型检查或程序运行成功。本项目提取函数、方法和导入引用，遇到语法错误或插件缺失会明确降级为文本，不构造猜测的关系。引用仍依赖快照、文件哈希与行原文校验。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "test-final-34",
+      "family": "transaction-outbox",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "任务与待发送记录为什么应在同一数据库事务里保存？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-transaction",
+          "content_hash": "7b1097e11c298910a995b0b6ce4b90b3575a57b86192c6a7869483f0ae02d2db",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "业务事务与消息投递\n事务把一组数据库修改作为整体提交或回滚。任务记录与待投递消息可以在同一数据库事务内落盘，再由发布者发送消息；这就是项目旧后端Outbox路径的设计。发布者中断或确认丢失仍可能造成重复投递，消费者必须依据持久任务状态和操作键去重。本地数据库事务不能直接保证外部消息系统与副作用恰好一次。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "test-final-35",
+      "family": "transaction-outbox",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "发布成功但确认丢失为什么还会重复投递，消费者依据什么去重？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-transaction",
+          "content_hash": "7b1097e11c298910a995b0b6ce4b90b3575a57b86192c6a7869483f0ae02d2db",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "业务事务与消息投递\n事务把一组数据库修改作为整体提交或回滚。任务记录与待投递消息可以在同一数据库事务内落盘，再由发布者发送消息；这就是项目旧后端Outbox路径的设计。发布者中断或确认丢失仍可能造成重复投递，消费者必须依据持久任务状态和操作键去重。本地数据库事务不能直接保证外部消息系统与副作用恰好一次。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    },
+    {
+      "case_id": "test-final-36",
+      "family": "transaction-outbox",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "本地事务的原子性为什么不能直接保证外部副作用恰好一次？",
+      "category": "natural_language",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "doc-transaction",
+          "content_hash": "7b1097e11c298910a995b0b6ce4b90b3575a57b86192c6a7869483f0ae02d2db",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "业务事务与消息投递\n事务把一组数据库修改作为整体提交或回滚。任务记录与待投递消息可以在同一数据库事务内落盘，再由发布者发送消息；这就是项目旧后端Outbox路径的设计。发布者中断或确认丢失仍可能造成重复投递，消费者必须依据持久任务状态和操作键去重。本地数据库事务不能直接保证外部消息系统与副作用恰好一次。"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "public"
+    }
+  ],
+  "policy": "72 AI candidates. Known-scope controlled retrieval; not product routing or human quality. Exact spans; source/family split; holdout scored only after strategy freeze. Human semantic/duplicate review pending. Old v1 results remain separate."
+}

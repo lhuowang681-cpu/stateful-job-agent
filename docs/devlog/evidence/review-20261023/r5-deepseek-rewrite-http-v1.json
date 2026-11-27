@@ -1,0 +1,1935 @@
+{
+  "transport": "real_loopback_http",
+  "generation": "real_deepseek_api_production_provider",
+  "data": "authored_synthetic_C1_only",
+  "model": {
+    "provider": "deepseek",
+    "requested_model": "deepseek-flash",
+    "thinking": "disabled",
+    "revision": "provider_managed",
+    "endpoint": "https://api.deepseek.com/chat/completions",
+    "response_format": "json_object"
+  },
+  "human_quality": null,
+  "checks": [
+    "accepted_rewrite_is_new_C1_not_verified_truth",
+    "original_version_unchanged",
+    "real_evaluator_interviewer_changed_next_question",
+    "active_view_no_rubric_or_internal_state",
+    "second_owner_404",
+    "review_completion_gate"
+  ],
+  "original_version": {
+    "resume_id": "res-02eb15b3effd4ce18358a1865cd6457c",
+    "version_id": "ver-f4385a3e3c5d4ccd97a4d584dd8bfc31",
+    "sequence": 1,
+    "parent_version_id": null,
+    "restored_from_version_id": null,
+    "content_hash": "4487f4d548a6670446de13e10408a41c919d611ae3b35cdfd26fb3af672d4eac",
+    "document": {
+      "schema_version": 1,
+      "personal": {
+        "name": {
+          "fact_id": "f-cb0068adb2b1a8a3b4be",
+          "text": "合成同学",
+          "source": {
+            "source_id": "src-7efd35ccd84149479ca3b116f84c9710",
+            "content_hash": "f2a21df8ea10c8986fe5f4bda7df39ab278f3dad14ebc9d50f684c36e3af691f",
+            "start": 3,
+            "end": 7
+          }
+        },
+        "email": null,
+        "phone": null,
+        "location": null,
+        "links": []
+      },
+      "summary": [],
+      "education": [],
+      "experience": [],
+      "projects": [
+        {
+          "entry_id": "projects-0",
+          "name": {
+            "fact_id": "f-be6e823539e8129a3f93",
+            "text": "Agent 原型",
+            "source": {
+              "source_id": "src-7efd35ccd84149479ca3b116f84c9710",
+              "content_hash": "f2a21df8ea10c8986fe5f4bda7df39ab278f3dad14ebc9d50f684c36e3af691f",
+              "start": 13,
+              "end": 21
+            }
+          },
+          "role": {
+            "fact_id": "f-c3550195b530eb29d582",
+            "text": "开发",
+            "source": {
+              "source_id": "src-7efd35ccd84149479ca3b116f84c9710",
+              "content_hash": "f2a21df8ea10c8986fe5f4bda7df39ab278f3dad14ebc9d50f684c36e3af691f",
+              "start": 24,
+              "end": 26
+            }
+          },
+          "period": {
+            "fact_id": "f-f3a1c60aedbc0f0b311e",
+            "text": "2025",
+            "source": {
+              "source_id": "src-7efd35ccd84149479ca3b116f84c9710",
+              "content_hash": "f2a21df8ea10c8986fe5f4bda7df39ab278f3dad14ebc9d50f684c36e3af691f",
+              "start": 29,
+              "end": 33
+            }
+          },
+          "bullets": [
+            {
+              "fact_id": "f-ddf4b8ddcfd43d5a2009",
+              "text": "我使用 Python 开发本地原型接口。",
+              "source": {
+                "source_id": "src-7efd35ccd84149479ca3b116f84c9710",
+                "content_hash": "f2a21df8ea10c8986fe5f4bda7df39ab278f3dad14ebc9d50f684c36e3af691f",
+                "start": 36,
+                "end": 56
+              }
+            }
+          ]
+        }
+      ],
+      "skills": []
+    },
+    "note": "核对解析草稿",
+    "created_at": "2026-10-23T06:04:26.980808Z",
+    "confirmed_at": null,
+    "confirmation_scope": "user_attested_only"
+  },
+  "rewrite": {
+    "accepted_version_id": null,
+    "decision": null,
+    "drafts": [
+      {
+        "claim_audit": {
+          "acceptable": true,
+          "claims": [
+            {
+              "assessed_by": "model_semantic_unverified",
+              "change": "new_or_semantic_change",
+              "claim_id": "claim-e8df66bf1542ec3f7416d07e",
+              "end": 21,
+              "kinds": [
+                "technology",
+                "scope"
+              ],
+              "reason": "草稿仅增加时态助词“了”，技术（Python）、对象（本地原型接口）与范围（本地原型）均与原始条目一致，未新增主张。",
+              "source_id": "f-ddf4b8ddcfd43d5a2009",
+              "source_quote": "我使用 Python 开发本地原型接口。",
+              "start": 0,
+              "status": "supported",
+              "text": "我使用 Python 开发了本地原型接口。"
+            }
+          ],
+          "draft_hash": "6f7bd1e7d5623436e08752e38fcab3870504758b830baa64d9e276c10912cffd",
+          "hard_issues": [],
+          "semantic_truth": "not_independently_verified",
+          "source_hash": "a28d9f4f1aab1f6f93efbd444ed78c99fa77511b0a468178330de9a82a4b93bd",
+          "unresolved_ids": []
+        },
+        "draft": {
+          "claims": [
+            {
+              "reason": "原句直接陈述使用 Python 开发本地原型接口，改写仅补足时态助词，未改变范围或事实。",
+              "source_quote": "我使用 Python 开发本地原型接口。",
+              "status": "supported",
+              "text": "我使用 Python 开发了本地原型接口。"
+            }
+          ],
+          "reason": "仅对原句做轻微措辞调整，保留 Python、本地原型与接口范围，未新增事实。",
+          "text": "我使用 Python 开发了本地原型接口。"
+        },
+        "draft_hash": "9f31c55ae297b7bb92afa84a62a61b6b3e466936631f1f509ef43f05e2d169a7",
+        "review": {
+          "claims": [
+            {
+              "reason": "草稿仅增加时态助词“了”，技术（Python）、对象（本地原型接口）与范围（本地原型）均与原始条目一致，未新增主张。",
+              "source_quote": "我使用 Python 开发本地原型接口。",
+              "status": "supported",
+              "text": "我使用 Python 开发了本地原型接口。"
+            }
+          ],
+          "constraint": "草稿与原始条目一致，仅补充“了”字，未扩大范围或新增技术、指标；保留“本地原型”限定即可。",
+          "outcome": "accept"
+        },
+        "revision": 1
+      }
+    ],
+    "entry_context": {
+      "name": "Agent 原型",
+      "period": "2025",
+      "role": "开发"
+    },
+    "error_code": null,
+    "evidence_level": "C1",
+    "execution": {
+      "approval": null,
+      "artifact_hashes": [
+        "9f31c55ae297b7bb92afa84a62a61b6b3e466936631f1f509ef43f05e2d169a7"
+      ],
+      "attempt": 1,
+      "context_incomplete": false,
+      "event_seq": 5,
+      "events": [
+        {
+          "code": null,
+          "feedback_id": null,
+          "input_hash": "de2b5cb6326758563a7cf86eceb1076cc76c8981c3f7c3a64da65eee22cef186",
+          "metrics": {},
+          "output_hash": null,
+          "phase": "started",
+          "recorded_at": "2026-10-23T06:04:27.049163+00:00",
+          "revision": 1,
+          "role": "writer",
+          "seq": 1
+        },
+        {
+          "code": null,
+          "feedback_id": null,
+          "input_hash": null,
+          "metrics": {
+            "completion_truncated": false,
+            "error_code": null,
+            "fallback_used": false,
+            "finish_reason": "stop",
+            "input_tokens": 1066,
+            "latency_ms": 1166,
+            "model": "deepseek-flash",
+            "output_tokens": 105,
+            "prompt_version": "review-r3-rewrite-1",
+            "provider": "deepseek",
+            "schema_valid": true,
+            "skill_id": "v3-rewrite-writer",
+            "skill_version": "3"
+          },
+          "output_hash": "9f31c55ae297b7bb92afa84a62a61b6b3e466936631f1f509ef43f05e2d169a7",
+          "phase": "completed",
+          "recorded_at": "2026-10-23T06:04:28.221123+00:00",
+          "revision": 1,
+          "role": "writer",
+          "seq": 2
+        },
+        {
+          "code": null,
+          "feedback_id": null,
+          "input_hash": "b7ffe9aee6848a3df6e25e9a93bba27d1fa990aaa53cab0fd92108af27990933",
+          "metrics": {},
+          "output_hash": null,
+          "phase": "started",
+          "recorded_at": "2026-10-23T06:04:28.227980+00:00",
+          "revision": 1,
+          "role": "reviewer",
+          "seq": 3
+        },
+        {
+          "code": null,
+          "feedback_id": null,
+          "input_hash": null,
+          "metrics": {
+            "completion_truncated": false,
+            "error_code": null,
+            "fallback_used": false,
+            "finish_reason": "stop",
+            "input_tokens": 1112,
+            "latency_ms": 1696,
+            "model": "deepseek-flash",
+            "output_tokens": 116,
+            "prompt_version": "review-r3-rewrite-1",
+            "provider": "deepseek",
+            "schema_valid": true,
+            "skill_id": "v3-rewrite-reviewer",
+            "skill_version": "3"
+          },
+          "output_hash": "cb84e1fef47807674ac681ec31147322e74c9aa64745978062f1d84effe6d3a1",
+          "phase": "completed",
+          "recorded_at": "2026-10-23T06:04:29.928486+00:00",
+          "revision": 1,
+          "role": "reviewer",
+          "seq": 4
+        },
+        {
+          "code": "accept",
+          "feedback_id": "feedback-74fae8294ea1c5af6dc33f414bcb73020a93fc9ec76ae3cd76cf1d2baef85765",
+          "input_hash": null,
+          "metrics": {},
+          "output_hash": "ea04add4fb4b0d20b01939cb2c88574738a5d75de72b942324da912cdb2e4e70",
+          "phase": "gate",
+          "recorded_at": "2026-10-23T06:04:29.937983+00:00",
+          "revision": 1,
+          "role": "reviewer",
+          "seq": 5
+        }
+      ],
+      "evidence_pack_ids": [],
+      "execution_token": "bff119beaacb493788ad26192a1ace05",
+      "independent_truth": "not_verified",
+      "latest_feedback": {
+        "artifact_hash": "9f31c55ae297b7bb92afa84a62a61b6b3e466936631f1f509ef43f05e2d169a7",
+        "constraint": "草稿与原始条目一致，仅补充“了”字，未扩大范围或新增技术、指标；保留“本地原型”限定即可。",
+        "details": {
+          "unresolved_claim_ids": []
+        },
+        "feedback_id": "feedback-74fae8294ea1c5af6dc33f414bcb73020a93fc9ec76ae3cd76cf1d2baef85765",
+        "outcome": "accept",
+        "revision": 1,
+        "sender": "reviewer"
+      },
+      "lease_until": 1792735647.0370739,
+      "limits": {
+        "active_ms": 120000,
+        "drafts": 3,
+        "input_chars": 30000,
+        "role_calls": 6
+      },
+      "model_identity": {
+        "coordinator_policy": "s4-coordinator-2",
+        "model": "deepseek-flash",
+        "prompt": "review-r3-rewrite-1",
+        "provider": "deepseek"
+      },
+      "next_action": "approval",
+      "node": "reviewer",
+      "owner_id": "alice",
+      "recovery": "none",
+      "revision": 1,
+      "run_id": "rewrite-180aad0926864c9caed3df93b6314ef0",
+      "schema_version": "shared-run-1",
+      "source_identity": {
+        "jd_hash": "cfec82ecf640d294d6dd66d7b021f1a1a8bbd3ef56b0da5edb96c7f5ea499df1",
+        "resume_id": "res-02eb15b3effd4ce18358a1865cd6457c",
+        "source_fact_hash": "6271b6710f8cd41bc86278092bb23e7523ff9f37a4641c2287f165aa57ceabbd",
+        "source_path": "projects.0.bullets.0",
+        "version_hash": "4487f4d548a6670446de13e10408a41c919d611ae3b35cdfd26fb3af672d4eac",
+        "version_id": "ver-f4385a3e3c5d4ccd97a4d584dd8bfc31"
+      },
+      "status": "awaiting_approval",
+      "task": "rewrite",
+      "trace_id": "trace-rewrite-180aad0926864c9caed3df93b6314ef0",
+      "usage": {
+        "active_ms": 2902,
+        "cost": null,
+        "input_tokens": 2178,
+        "output_tokens": 221,
+        "provider_calls": 2,
+        "role_calls": 2
+      }
+    },
+    "independent_truth": "not_verified",
+    "jd_text": "Python Agent 实习；清晰表达已有工作，保留本地原型范围。",
+    "messages": [
+      {
+        "code": "local_edit_requested",
+        "receiver": "reviewer",
+        "revision": 1,
+        "sender": "writer",
+        "type": "review"
+      },
+      {
+        "code": "accept",
+        "receiver": "supervisor",
+        "revision": 1,
+        "sender": "reviewer",
+        "type": "handoff"
+      },
+      {
+        "code": "awaiting_approval",
+        "receiver": "user",
+        "revision": 1,
+        "sender": "supervisor",
+        "type": "await_user"
+      }
+    ],
+    "mode": "llm",
+    "model_inflight": false,
+    "resume_id": "res-02eb15b3effd4ce18358a1865cd6457c",
+    "run_id": "rewrite-180aad0926864c9caed3df93b6314ef0",
+    "source_fact": {
+      "fact_id": "f-ddf4b8ddcfd43d5a2009",
+      "source": {
+        "content_hash": "f2a21df8ea10c8986fe5f4bda7df39ab278f3dad14ebc9d50f684c36e3af691f",
+        "end": 56,
+        "source_id": "src-7efd35ccd84149479ca3b116f84c9710",
+        "start": 36
+      },
+      "text": "我使用 Python 开发本地原型接口。"
+    },
+    "source_path": "projects.0.bullets.0",
+    "status": "awaiting_approval",
+    "usage": {
+      "active_ms": 2902,
+      "cost": null,
+      "input_tokens": 2178,
+      "output_tokens": 221,
+      "provider_calls": 2,
+      "role_calls": 2
+    },
+    "version_hash": "4487f4d548a6670446de13e10408a41c919d611ae3b35cdfd26fb3af672d4eac",
+    "version_id": "ver-f4385a3e3c5d4ccd97a4d584dd8bfc31"
+  },
+  "approval": {
+    "rewrite": {
+      "accepted_version_id": "ver-954158170d934ebbba91795f076f9138",
+      "decision": {
+        "action": "accept",
+        "expected_parent_version_id": "ver-f4385a3e3c5d4ccd97a4d584dd8bfc31",
+        "expected_draft_hash": "9f31c55ae297b7bb92afa84a62a61b6b3e466936631f1f509ef43f05e2d169a7",
+        "user_reviewed": true
+      },
+      "drafts": [
+        {
+          "claim_audit": {
+            "acceptable": true,
+            "claims": [
+              {
+                "assessed_by": "model_semantic_unverified",
+                "change": "new_or_semantic_change",
+                "claim_id": "claim-e8df66bf1542ec3f7416d07e",
+                "end": 21,
+                "kinds": [
+                  "technology",
+                  "scope"
+                ],
+                "reason": "草稿仅增加时态助词“了”，技术（Python）、对象（本地原型接口）与范围（本地原型）均与原始条目一致，未新增主张。",
+                "source_id": "f-ddf4b8ddcfd43d5a2009",
+                "source_quote": "我使用 Python 开发本地原型接口。",
+                "start": 0,
+                "status": "supported",
+                "text": "我使用 Python 开发了本地原型接口。"
+              }
+            ],
+            "draft_hash": "6f7bd1e7d5623436e08752e38fcab3870504758b830baa64d9e276c10912cffd",
+            "hard_issues": [],
+            "semantic_truth": "not_independently_verified",
+            "source_hash": "a28d9f4f1aab1f6f93efbd444ed78c99fa77511b0a468178330de9a82a4b93bd",
+            "unresolved_ids": []
+          },
+          "draft": {
+            "claims": [
+              {
+                "reason": "原句直接陈述使用 Python 开发本地原型接口，改写仅补足时态助词，未改变范围或事实。",
+                "source_quote": "我使用 Python 开发本地原型接口。",
+                "status": "supported",
+                "text": "我使用 Python 开发了本地原型接口。"
+              }
+            ],
+            "reason": "仅对原句做轻微措辞调整，保留 Python、本地原型与接口范围，未新增事实。",
+            "text": "我使用 Python 开发了本地原型接口。"
+          },
+          "draft_hash": "9f31c55ae297b7bb92afa84a62a61b6b3e466936631f1f509ef43f05e2d169a7",
+          "review": {
+            "claims": [
+              {
+                "reason": "草稿仅增加时态助词“了”，技术（Python）、对象（本地原型接口）与范围（本地原型）均与原始条目一致，未新增主张。",
+                "source_quote": "我使用 Python 开发本地原型接口。",
+                "status": "supported",
+                "text": "我使用 Python 开发了本地原型接口。"
+              }
+            ],
+            "constraint": "草稿与原始条目一致，仅补充“了”字，未扩大范围或新增技术、指标；保留“本地原型”限定即可。",
+            "outcome": "accept"
+          },
+          "revision": 1
+        }
+      ],
+      "entry_context": {
+        "name": "Agent 原型",
+        "period": "2025",
+        "role": "开发"
+      },
+      "error_code": null,
+      "evidence_level": "C1",
+      "execution": {
+        "schema_version": "shared-run-1",
+        "run_id": "rewrite-180aad0926864c9caed3df93b6314ef0",
+        "trace_id": "trace-rewrite-180aad0926864c9caed3df93b6314ef0",
+        "owner_id": "alice",
+        "task": "rewrite",
+        "source_identity": {
+          "jd_hash": "cfec82ecf640d294d6dd66d7b021f1a1a8bbd3ef56b0da5edb96c7f5ea499df1",
+          "resume_id": "res-02eb15b3effd4ce18358a1865cd6457c",
+          "source_fact_hash": "6271b6710f8cd41bc86278092bb23e7523ff9f37a4641c2287f165aa57ceabbd",
+          "source_path": "projects.0.bullets.0",
+          "version_hash": "4487f4d548a6670446de13e10408a41c919d611ae3b35cdfd26fb3af672d4eac",
+          "version_id": "ver-f4385a3e3c5d4ccd97a4d584dd8bfc31"
+        },
+        "model_identity": {
+          "coordinator_policy": "s4-coordinator-2",
+          "model": "deepseek-flash",
+          "prompt": "review-r3-rewrite-1",
+          "provider": "deepseek"
+        },
+        "node": "user",
+        "revision": 1,
+        "status": "accepted",
+        "next_action": "done",
+        "latest_feedback": {
+          "sender": "reviewer",
+          "revision": 1,
+          "outcome": "accept",
+          "constraint": "草稿与原始条目一致，仅补充“了”字，未扩大范围或新增技术、指标；保留“本地原型”限定即可。",
+          "artifact_hash": "9f31c55ae297b7bb92afa84a62a61b6b3e466936631f1f509ef43f05e2d169a7",
+          "feedback_id": "feedback-74fae8294ea1c5af6dc33f414bcb73020a93fc9ec76ae3cd76cf1d2baef85765",
+          "details": {
+            "unresolved_claim_ids": []
+          }
+        },
+        "artifact_hashes": [
+          "9f31c55ae297b7bb92afa84a62a61b6b3e466936631f1f509ef43f05e2d169a7"
+        ],
+        "evidence_pack_ids": [],
+        "limits": {
+          "active_ms": 120000,
+          "drafts": 3,
+          "input_chars": 30000,
+          "role_calls": 6
+        },
+        "usage": {
+          "active_ms": 2902,
+          "cost": null,
+          "input_tokens": 2178,
+          "output_tokens": 221,
+          "provider_calls": 2,
+          "role_calls": 2
+        },
+        "context_incomplete": false,
+        "recovery": "none",
+        "attempt": 1,
+        "execution_token": "bff119beaacb493788ad26192a1ace05",
+        "lease_until": 1792735647.0370739,
+        "event_seq": 6,
+        "events": [
+          {
+            "seq": 1,
+            "role": "writer",
+            "phase": "started",
+            "revision": 1,
+            "input_hash": "de2b5cb6326758563a7cf86eceb1076cc76c8981c3f7c3a64da65eee22cef186",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T06:04:27.049163+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 2,
+            "role": "writer",
+            "phase": "completed",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "9f31c55ae297b7bb92afa84a62a61b6b3e466936631f1f509ef43f05e2d169a7",
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T06:04:28.221123+00:00",
+            "metrics": {
+              "completion_truncated": false,
+              "error_code": null,
+              "fallback_used": false,
+              "finish_reason": "stop",
+              "input_tokens": 1066,
+              "latency_ms": 1166,
+              "model": "deepseek-flash",
+              "output_tokens": 105,
+              "prompt_version": "review-r3-rewrite-1",
+              "provider": "deepseek",
+              "schema_valid": true,
+              "skill_id": "v3-rewrite-writer",
+              "skill_version": "3"
+            }
+          },
+          {
+            "seq": 3,
+            "role": "reviewer",
+            "phase": "started",
+            "revision": 1,
+            "input_hash": "b7ffe9aee6848a3df6e25e9a93bba27d1fa990aaa53cab0fd92108af27990933",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T06:04:28.227980+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 4,
+            "role": "reviewer",
+            "phase": "completed",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "cb84e1fef47807674ac681ec31147322e74c9aa64745978062f1d84effe6d3a1",
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T06:04:29.928486+00:00",
+            "metrics": {
+              "completion_truncated": false,
+              "error_code": null,
+              "fallback_used": false,
+              "finish_reason": "stop",
+              "input_tokens": 1112,
+              "latency_ms": 1696,
+              "model": "deepseek-flash",
+              "output_tokens": 116,
+              "prompt_version": "review-r3-rewrite-1",
+              "provider": "deepseek",
+              "schema_valid": true,
+              "skill_id": "v3-rewrite-reviewer",
+              "skill_version": "3"
+            }
+          },
+          {
+            "seq": 5,
+            "role": "reviewer",
+            "phase": "gate",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "ea04add4fb4b0d20b01939cb2c88574738a5d75de72b942324da912cdb2e4e70",
+            "feedback_id": "feedback-74fae8294ea1c5af6dc33f414bcb73020a93fc9ec76ae3cd76cf1d2baef85765",
+            "code": "accept",
+            "recorded_at": "2026-10-23T06:04:29.937983+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 6,
+            "role": "user",
+            "phase": "decision",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "90ded28b06832d5567ccefc5bc1fa14a5a27376c6b7c5f8cbbb627a74fd8f559",
+            "feedback_id": "feedback-74fae8294ea1c5af6dc33f414bcb73020a93fc9ec76ae3cd76cf1d2baef85765",
+            "code": "accepted",
+            "recorded_at": "2026-10-23T06:04:30.002749+00:00",
+            "metrics": {}
+          }
+        ],
+        "approval": {
+          "action": "accept",
+          "expected_parent_version_id": "ver-f4385a3e3c5d4ccd97a4d584dd8bfc31",
+          "expected_draft_hash": "9f31c55ae297b7bb92afa84a62a61b6b3e466936631f1f509ef43f05e2d169a7",
+          "user_reviewed": true,
+          "accepted_version_id": "ver-954158170d934ebbba91795f076f9138",
+          "evidence_level": "C1"
+        },
+        "independent_truth": "not_verified"
+      },
+      "independent_truth": "not_verified",
+      "jd_text": "Python Agent 实习；清晰表达已有工作，保留本地原型范围。",
+      "messages": [
+        {
+          "code": "local_edit_requested",
+          "receiver": "reviewer",
+          "revision": 1,
+          "sender": "writer",
+          "type": "review"
+        },
+        {
+          "code": "accept",
+          "receiver": "supervisor",
+          "revision": 1,
+          "sender": "reviewer",
+          "type": "handoff"
+        },
+        {
+          "code": "awaiting_approval",
+          "receiver": "user",
+          "revision": 1,
+          "sender": "supervisor",
+          "type": "await_user"
+        }
+      ],
+      "mode": "llm",
+      "model_inflight": false,
+      "resume_id": "res-02eb15b3effd4ce18358a1865cd6457c",
+      "run_id": "rewrite-180aad0926864c9caed3df93b6314ef0",
+      "source_fact": {
+        "fact_id": "f-ddf4b8ddcfd43d5a2009",
+        "source": {
+          "content_hash": "f2a21df8ea10c8986fe5f4bda7df39ab278f3dad14ebc9d50f684c36e3af691f",
+          "end": 56,
+          "source_id": "src-7efd35ccd84149479ca3b116f84c9710",
+          "start": 36
+        },
+        "text": "我使用 Python 开发本地原型接口。"
+      },
+      "source_path": "projects.0.bullets.0",
+      "status": "accepted",
+      "usage": {
+        "active_ms": 2902,
+        "cost": null,
+        "input_tokens": 2178,
+        "output_tokens": 221,
+        "provider_calls": 2,
+        "role_calls": 2
+      },
+      "version_hash": "4487f4d548a6670446de13e10408a41c919d611ae3b35cdfd26fb3af672d4eac",
+      "version_id": "ver-f4385a3e3c5d4ccd97a4d584dd8bfc31"
+    },
+    "version": {
+      "resume_id": "res-02eb15b3effd4ce18358a1865cd6457c",
+      "version_id": "ver-954158170d934ebbba91795f076f9138",
+      "sequence": 2,
+      "parent_version_id": "ver-f4385a3e3c5d4ccd97a4d584dd8bfc31",
+      "restored_from_version_id": null,
+      "content_hash": "baf0fac2cce7519b0e327622460d1bf168c8ef07361a36d37afe863b806b7fd8",
+      "document": {
+        "schema_version": 1,
+        "personal": {
+          "name": {
+            "fact_id": "f-cb0068adb2b1a8a3b4be",
+            "text": "合成同学",
+            "source": {
+              "source_id": "src-7efd35ccd84149479ca3b116f84c9710",
+              "content_hash": "f2a21df8ea10c8986fe5f4bda7df39ab278f3dad14ebc9d50f684c36e3af691f",
+              "start": 3,
+              "end": 7
+            }
+          },
+          "email": null,
+          "phone": null,
+          "location": null,
+          "links": []
+        },
+        "summary": [],
+        "education": [],
+        "experience": [],
+        "projects": [
+          {
+            "entry_id": "projects-0",
+            "name": {
+              "fact_id": "f-be6e823539e8129a3f93",
+              "text": "Agent 原型",
+              "source": {
+                "source_id": "src-7efd35ccd84149479ca3b116f84c9710",
+                "content_hash": "f2a21df8ea10c8986fe5f4bda7df39ab278f3dad14ebc9d50f684c36e3af691f",
+                "start": 13,
+                "end": 21
+              }
+            },
+            "role": {
+              "fact_id": "f-c3550195b530eb29d582",
+              "text": "开发",
+              "source": {
+                "source_id": "src-7efd35ccd84149479ca3b116f84c9710",
+                "content_hash": "f2a21df8ea10c8986fe5f4bda7df39ab278f3dad14ebc9d50f684c36e3af691f",
+                "start": 24,
+                "end": 26
+              }
+            },
+            "period": {
+              "fact_id": "f-f3a1c60aedbc0f0b311e",
+              "text": "2025",
+              "source": {
+                "source_id": "src-7efd35ccd84149479ca3b116f84c9710",
+                "content_hash": "f2a21df8ea10c8986fe5f4bda7df39ab278f3dad14ebc9d50f684c36e3af691f",
+                "start": 29,
+                "end": 33
+              }
+            },
+            "bullets": [
+              {
+                "fact_id": "f-8651c5964e754f5597ae",
+                "text": "我使用 Python 开发了本地原型接口。",
+                "source": {
+                  "source_id": "src-9085a28989364754b8a5d0a089eae692",
+                  "content_hash": "ca9d2c131395533ef7f8d46a1499562a5cf5c412c6744901b96739dfcc874e37",
+                  "start": 21,
+                  "end": 42
+                }
+              }
+            ]
+          }
+        ],
+        "skills": []
+      },
+      "note": "人工接受局部改写；原文及评审血缘单独保留",
+      "created_at": "2026-10-23T06:04:30.002155Z",
+      "confirmed_at": null,
+      "confirmation_scope": "user_attested_only"
+    }
+  },
+  "interview": {
+    "before": {
+      "question_id": "interview-f22989e261f54950b916812773e8cc53-q1",
+      "topic_id": "backend-idempotency",
+      "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+      "followup": false,
+      "references": []
+    },
+    "after": {
+      "session_id": "interview-f22989e261f54950b916812773e8cc53",
+      "resume_id": "res-02eb15b3effd4ce18358a1865cd6457c",
+      "version_id": "ver-f4385a3e3c5d4ccd97a4d584dd8bfc31",
+      "version_hash": "4487f4d548a6670446de13e10408a41c919d611ae3b35cdfd26fb3af672d4eac",
+      "jd_text": "Checkpoint 恢复和外部请求幂等。",
+      "match_id": null,
+      "mode": "llm",
+      "provider": "deepseek",
+      "model": "deepseek-flash",
+      "status": "active",
+      "revision": 1,
+      "max_turns": 4,
+      "created_at": "2026-10-23T06:04:30.065484Z",
+      "current": {
+        "question_id": "interview-f22989e261f54950b916812773e8cc53-q2",
+        "topic_id": "backend-idempotency",
+        "prompt": "若外部请求只返回超时，接下来怎样判断它是否已经完成？",
+        "followup": true,
+        "references": []
+      },
+      "turns": [
+        {
+          "question": {
+            "question_id": "interview-f22989e261f54950b916812773e8cc53-q1",
+            "topic_id": "backend-idempotency",
+            "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+            "followup": false,
+            "references": []
+          },
+          "answer": "我会用幂等键记录执行标识，目前还不清楚超时后如何核对外部操作。"
+        }
+      ],
+      "messages": [
+        {
+          "from": "evaluator",
+          "to": "interviewer",
+          "type": "decision_feedback",
+          "turn": 1,
+          "topic": "backend-idempotency",
+          "detail": "已提交后续行动建议；详细评价在结束后开放。"
+        },
+        {
+          "from": "interviewer",
+          "to": "coordinator",
+          "type": "routing_decision",
+          "turn": 1,
+          "action": "follow_up",
+          "detail": "根据评估建议和剩余轮次选择下一题。"
+        }
+      ],
+      "usage": {
+        "evaluator_calls": 1,
+        "interviewer_calls": 1,
+        "provider_calls": 2,
+        "input_tokens": 2583,
+        "output_tokens": 268,
+        "active_ms": 3129,
+        "cost": null
+      },
+      "answer_pending": false,
+      "resumable": false,
+      "model_inflight": false,
+      "error_code": null,
+      "version_is_current": false,
+      "warnings": [
+        "题库技术练习，不代表真实面试表现或录用概率；本地仅按词面线索评估。",
+        "绑定本次简历版本/JD，之后编辑不会改变本场；C1 自述未独立核实，缺少材料不等于没有能力。",
+        "进行中隐藏参考要点与详细评价，结束后复盘；本次不会写简历或投递。"
+      ],
+      "track": "job",
+      "use_retrieval": false,
+      "project_id": null,
+      "snapshot_id": null,
+      "tool_trace": [],
+      "tool_calls": 0
+    },
+    "internal_synthetic_state": {
+      "session_id": "interview-f22989e261f54950b916812773e8cc53",
+      "resume_id": "res-02eb15b3effd4ce18358a1865cd6457c",
+      "version_id": "ver-f4385a3e3c5d4ccd97a4d584dd8bfc31",
+      "version_hash": "4487f4d548a6670446de13e10408a41c919d611ae3b35cdfd26fb3af672d4eac",
+      "jd_text": "Checkpoint 恢复和外部请求幂等。",
+      "match_id": null,
+      "mode": "llm",
+      "provider": "deepseek",
+      "model": "deepseek-flash",
+      "created_at": "2026-10-23T06:04:30.065484Z",
+      "status": "active",
+      "revision": 1,
+      "max_turns": 4,
+      "plan": [
+        {
+          "anchor_id": "backend-idempotency",
+          "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+          "points": {
+            "p0": "persist execution identity",
+            "p1": "query provider receipt",
+            "p2": "do not blindly replay"
+          },
+          "aliases": {
+            "p0": [
+              "幂等",
+              "执行标识",
+              "request id"
+            ],
+            "p1": [
+              "回执",
+              "查询结果",
+              "查询状态"
+            ],
+            "p2": [
+              "不盲目",
+              "不要盲目",
+              "人工核对",
+              "人工对账"
+            ]
+          },
+          "followups": {
+            "p0": "怎样区分两次请求是在重试同一操作，还是发起新操作？",
+            "p1": "若外部请求只返回超时，接下来怎样判断它是否已经完成？",
+            "p2": "如果暂时无法确认上次结果，你会怎样决定下一步？"
+          },
+          "references": []
+        },
+        {
+          "anchor_id": "agent-loop-termination",
+          "prompt": "怎样让 Agent 工具循环在重复尝试或没有进展时停止？",
+          "points": {
+            "p0": "step and tool-call limits",
+            "p1": "same-action fingerprint",
+            "p2": "no-progress detection"
+          },
+          "aliases": {
+            "p0": [
+              "步数",
+              "调用上限",
+              "预算"
+            ],
+            "p1": [
+              "指纹",
+              "同一动作",
+              "fingerprint"
+            ],
+            "p2": [
+              "无进展",
+              "没有进展",
+              "重复失败"
+            ]
+          },
+          "followups": {
+            "p0": "怎样给一次执行设置边界？",
+            "p1": "如何判断这次调用是否和上次实际上相同？",
+            "p2": "如果动作不同但任务仍无进展，怎样判断是否继续？"
+          },
+          "references": []
+        },
+        {
+          "anchor_id": "agent-state-memory",
+          "prompt": "运行中的 Checkpoint 与跨会话长期记忆应该分别保存什么？",
+          "points": {
+            "p0": "pending actions and budgets",
+            "p1": "cross-run user facts",
+            "p2": "different lifecycle contracts"
+          },
+          "aliases": {
+            "p0": [
+              "待执行",
+              "预算",
+              "pending"
+            ],
+            "p1": [
+              "跨会话",
+              "长期偏好",
+              "用户事实"
+            ],
+            "p2": [
+              "生命周期",
+              "保留期限"
+            ]
+          },
+          "followups": {
+            "p0": "恢复时怎样知道还有哪些动作没有完成？",
+            "p1": "下次新任务开始时，哪些信息仍需要保留？",
+            "p2": "如果信息过期，你会怎样处理两类数据？"
+          },
+          "references": []
+        }
+      ],
+      "topic_index": 0,
+      "current": {
+        "question_id": "interview-f22989e261f54950b916812773e8cc53-q2",
+        "topic_id": "backend-idempotency",
+        "prompt": "若外部请求只返回超时，接下来怎样判断它是否已经完成？",
+        "followup": true,
+        "focus_id": "p1",
+        "references": []
+      },
+      "turns": [
+        {
+          "answered_at": "2026-10-23T06:04:33.254872Z",
+          "question": {
+            "question_id": "interview-f22989e261f54950b916812773e8cc53-q1",
+            "topic_id": "backend-idempotency",
+            "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+            "followup": false,
+            "focus_id": null,
+            "references": []
+          },
+          "answer": "我会用幂等键记录执行标识，目前还不清楚超时后如何核对外部操作。",
+          "evaluation": {
+            "covered_ids": [
+              "p0"
+            ],
+            "missing_ids": [
+              "p1",
+              "p2"
+            ],
+            "claim_needs_evidence": true,
+            "recommended_action": "follow_up",
+            "note": "回答提到用幂等键记录执行标识，覆盖持久化执行身份；但未说明查询外部回执，也未明确不盲目重放，且自述不清楚超时后如何核对，需追问。",
+            "point_assessments": [
+              {
+                "point_id": "p0",
+                "status": "correct",
+                "answer_quote": "我会用幂等键记录执行标识",
+                "reason": "明确用幂等键记录执行标识，符合持久化执行身份。",
+                "assessed_by": "model_semantic_unverified"
+              },
+              {
+                "point_id": "p1",
+                "status": "uncertain",
+                "answer_quote": "目前还不清楚超时后如何核对外部操作",
+                "reason": "仅说不知道如何核对外部操作，未提出查询外部回执。",
+                "assessed_by": "model_semantic_unverified"
+              },
+              {
+                "point_id": "p2",
+                "status": "uncertain",
+                "answer_quote": "",
+                "reason": "未明确说明不盲目重放，只提到记录标识。",
+                "assessed_by": "model_semantic_unverified"
+              }
+            ],
+            "assessment_mode": "model_semantic_unverified",
+            "method_version": "review-r1-answer-1"
+          },
+          "decision": {
+            "action": "follow_up",
+            "focus_id": "p1",
+            "retrieval_target": "none"
+          }
+        }
+      ],
+      "pending": null,
+      "next_node": "idle",
+      "model_inflight": false,
+      "error_code": null,
+      "usage": {
+        "evaluator_calls": 1,
+        "interviewer_calls": 1,
+        "provider_calls": 2,
+        "input_tokens": 2583,
+        "output_tokens": 268,
+        "active_ms": 3129,
+        "cost": null
+      },
+      "messages": [
+        {
+          "from": "evaluator",
+          "to": "interviewer",
+          "type": "decision_feedback",
+          "turn": 1,
+          "topic": "backend-idempotency",
+          "detail": "已提交后续行动建议；详细评价在结束后开放。"
+        },
+        {
+          "from": "interviewer",
+          "to": "coordinator",
+          "type": "routing_decision",
+          "turn": 1,
+          "action": "follow_up",
+          "detail": "根据评估建议和剩余轮次选择下一题。"
+        }
+      ],
+      "use_retrieval": false,
+      "track": "job",
+      "project_id": null,
+      "snapshot_id": null,
+      "prior_session_id": null,
+      "learning_observation_id": null,
+      "learning_allow_historical_version": false,
+      "learning_condition_hash": null,
+      "bound_owner": null,
+      "tool_trace": [],
+      "tool_fingerprints": [],
+      "tool_calls": 0,
+      "evidence_packs": [],
+      "execution": {
+        "schema_version": "shared-run-1",
+        "run_id": "interview-f22989e261f54950b916812773e8cc53",
+        "trace_id": "trace-interview-f22989e261f54950b916812773e8cc53",
+        "owner_id": "alice",
+        "task": "interview",
+        "source_identity": {
+          "resume_id": "res-02eb15b3effd4ce18358a1865cd6457c",
+          "version_id": "ver-f4385a3e3c5d4ccd97a4d584dd8bfc31",
+          "version_hash": "4487f4d548a6670446de13e10408a41c919d611ae3b35cdfd26fb3af672d4eac",
+          "jd_hash": "fd9fc6f5d47d5eb63bad0edf5903eaa1da86c71e586d1b81707a4d1859e7fd90",
+          "project_id": "",
+          "snapshot_id": ""
+        },
+        "model_identity": {
+          "provider": "deepseek",
+          "model": "deepseek-flash",
+          "prompt": "s4-interview-1"
+        },
+        "node": "coordinator",
+        "revision": 1,
+        "status": "active",
+        "next_action": "idle",
+        "latest_feedback": {
+          "sender": "evaluator",
+          "revision": 0,
+          "outcome": "follow_up",
+          "constraint": "错误/不确定要点需追问；词面线索与个人真实性分开判断。",
+          "artifact_hash": "318133f4f16a427676aabd3a4795c510c5cced5ed27038c3c27b1089caad6699",
+          "feedback_id": "feedback-4feb8bca2ace14ffdf8fa5c9a36d94051889821763a363da0f69bbf3b8758309",
+          "details": {
+            "covered_ids": [
+              "p0"
+            ],
+            "missing_ids": [
+              "p1",
+              "p2"
+            ],
+            "claim_needs_evidence": true,
+            "assessment_mode": "model_semantic_unverified",
+            "semantic_assessments_present": true,
+            "point_statuses": [
+              {
+                "point_id": "p0",
+                "status": "correct",
+                "answer_quote": "我会用幂等键记录执行标识"
+              },
+              {
+                "point_id": "p1",
+                "status": "uncertain",
+                "answer_quote": "目前还不清楚超时后如何核对外部操作"
+              },
+              {
+                "point_id": "p2",
+                "status": "uncertain",
+                "answer_quote": ""
+              }
+            ]
+          }
+        },
+        "artifact_hashes": [],
+        "evidence_pack_ids": [],
+        "limits": {
+          "role_calls": 8,
+          "tools": 18,
+          "input_chars": 30000,
+          "active_ms": 240000
+        },
+        "usage": {
+          "evaluator_calls": 1,
+          "interviewer_calls": 1,
+          "provider_calls": 2,
+          "input_tokens": 2583,
+          "output_tokens": 268,
+          "active_ms": 3129,
+          "cost": null,
+          "tool_calls": 0
+        },
+        "context_incomplete": false,
+        "recovery": "none",
+        "attempt": 1,
+        "execution_token": "2086b838288243fcac7eb9d2eede55eb",
+        "lease_until": 1792736070.124088,
+        "event_seq": 6,
+        "events": [
+          {
+            "seq": 1,
+            "role": "evaluator",
+            "phase": "started",
+            "revision": 0,
+            "input_hash": "cb7eb955e0019f0e49cf1f5c33f9482cc06e602daef70be5da5b897f43c96dda",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T06:04:30.136908+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 2,
+            "role": "evaluator",
+            "phase": "completed",
+            "revision": 0,
+            "input_hash": null,
+            "output_hash": "bb482737bc3fd971bca9ae5916f0f69650a000bc3f478f682e8cf5de5f695de4",
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T06:04:32.150680+00:00",
+            "metrics": {
+              "provider": "deepseek",
+              "model": "deepseek-flash",
+              "skill_id": "interview-evaluator",
+              "skill_version": "s4-v1",
+              "prompt_version": "s4-interview-1",
+              "latency_ms": 2008,
+              "input_tokens": 1247,
+              "output_tokens": 244,
+              "schema_valid": true,
+              "fallback_used": false,
+              "error_code": null,
+              "finish_reason": "stop",
+              "completion_truncated": false
+            }
+          },
+          {
+            "seq": 3,
+            "role": "evaluator",
+            "phase": "gate",
+            "revision": 0,
+            "input_hash": null,
+            "output_hash": "318133f4f16a427676aabd3a4795c510c5cced5ed27038c3c27b1089caad6699",
+            "feedback_id": "feedback-4feb8bca2ace14ffdf8fa5c9a36d94051889821763a363da0f69bbf3b8758309",
+            "code": null,
+            "recorded_at": "2026-10-23T06:04:32.152676+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 4,
+            "role": "interviewer",
+            "phase": "started",
+            "revision": 0,
+            "input_hash": "9d69e463e047b4ea58a43a16566d97856136a092b21113a6bda51cc2fc75c223",
+            "output_hash": null,
+            "feedback_id": "feedback-4feb8bca2ace14ffdf8fa5c9a36d94051889821763a363da0f69bbf3b8758309",
+            "code": null,
+            "recorded_at": "2026-10-23T06:04:32.157218+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 5,
+            "role": "interviewer",
+            "phase": "completed",
+            "revision": 0,
+            "input_hash": null,
+            "output_hash": "d18375b1062e223334c1775c0a9e6eef02cdcb7da6fd0b18ebef009cede9e44b",
+            "feedback_id": "feedback-4feb8bca2ace14ffdf8fa5c9a36d94051889821763a363da0f69bbf3b8758309",
+            "code": null,
+            "recorded_at": "2026-10-23T06:04:33.247521+00:00",
+            "metrics": {
+              "provider": "deepseek",
+              "model": "deepseek-flash",
+              "skill_id": "interview-interviewer",
+              "skill_version": "s4-v1",
+              "prompt_version": "s4-interview-1",
+              "latency_ms": 1085,
+              "input_tokens": 1336,
+              "output_tokens": 24,
+              "schema_valid": true,
+              "fallback_used": false,
+              "error_code": null,
+              "finish_reason": "stop",
+              "completion_truncated": false
+            }
+          },
+          {
+            "seq": 6,
+            "role": "coordinator",
+            "phase": "route",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": null,
+            "feedback_id": "feedback-4feb8bca2ace14ffdf8fa5c9a36d94051889821763a363da0f69bbf3b8758309",
+            "code": "active",
+            "recorded_at": "2026-10-23T06:04:33.254927+00:00",
+            "metrics": {}
+          }
+        ],
+        "approval": null,
+        "independent_truth": "not_verified"
+      }
+    }
+  },
+  "review": {
+    "session_id": "interview-f22989e261f54950b916812773e8cc53",
+    "scope": "模型参考，非真实性证明",
+    "practice_comparison": null,
+    "track": "job",
+    "source_boundary": "通用知识/源码实现/个人贡献分别判断；源码存在和测试文件不代表已运行或本人完成。",
+    "weaknesses": [
+      {
+        "topic_id": "backend-idempotency",
+        "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+        "missing": [
+          "p1",
+          "p2"
+        ]
+      }
+    ],
+    "code_references": [],
+    "turns": [
+      {
+        "question_id": "interview-f22989e261f54950b916812773e8cc53-q1",
+        "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+        "answer": "我会用幂等键记录执行标识，目前还不清楚超时后如何核对外部操作。",
+        "assessment_withdrawn": false,
+        "covered": [
+          "persist execution identity"
+        ],
+        "missing": [
+          "query provider receipt",
+          "do not blindly replay"
+        ],
+        "claim_needs_evidence": true,
+        "note": "回答提到用幂等键记录执行标识，覆盖持久化执行身份；但未说明查询外部回执，也未明确不盲目重放，且自述不清楚超时后如何核对，需追问。",
+        "decision": "follow_up"
+      }
+    ],
+    "assessment_details": [
+      {
+        "question_id": "interview-f22989e261f54950b916812773e8cc53-q1",
+        "mode": "model_semantic_unverified",
+        "method_version": "review-r1-answer-1",
+        "semantic_assessments_present": true,
+        "points": [
+          {
+            "point_id": "p0",
+            "status": "correct",
+            "answer_quote": "我会用幂等键记录执行标识",
+            "reason": "明确用幂等键记录执行标识，符合持久化执行身份。",
+            "assessed_by": "model_semantic_unverified"
+          },
+          {
+            "point_id": "p1",
+            "status": "uncertain",
+            "answer_quote": "目前还不清楚超时后如何核对外部操作",
+            "reason": "仅说不知道如何核对外部操作，未提出查询外部回执。",
+            "assessed_by": "model_semantic_unverified"
+          },
+          {
+            "point_id": "p2",
+            "status": "uncertain",
+            "answer_quote": "",
+            "reason": "未明确说明不盲目重放，只提到记录标识。",
+            "assessed_by": "model_semantic_unverified"
+          }
+        ]
+      }
+    ],
+    "warning": "未覆盖可能是表达或规则识别问题，不代表没有能力；个人经历需补充材料，当前未独立核实。",
+    "learning_comparison": null,
+    "learning_resources": [
+      {
+        "entry": {
+          "entry_id": "doc-idempotency",
+          "kind": "doc",
+          "title": "外部超时与幂等回执",
+          "tags": [
+            "幂等",
+            "idempotency",
+            "request_id",
+            "回执",
+            "超时"
+          ],
+          "source_url": "https://redis.io/docs/latest/commands/xreadgroup/",
+          "source_version": "Redis rolling command reference; checked 2026-10-20",
+          "license": "CC0-1.0",
+          "content_basis": "project_authored_summary_not_official_quote",
+          "updated_at": "2026-10-20",
+          "applicable_role": "AI Agent / Python后端实习",
+          "difficulty": "intermediate",
+          "version_id": "knowledge-98ecb016acfef596ca7c8d7d9f0737df8696ef3ff9af6ad9ce0f523ab64e0278",
+          "body": "消费组的待确认消息需要与业务完成状态区分。本项目采用的可靠性原则是：相同逻辑操作使用稳定请求键，先查回执；外部请求超时不等于操作失败。数据库状态无法和任意外部服务形成一个本地事务，结果未知时应查询、核对或等待人工处理，不能盲目重发。该设计原则是本项目综合，不是Redis提供跨系统恰好一次保证。"
+        },
+        "reference": {
+          "evidence_id": "public-eed6dc5170cbb675e7122b65363a",
+          "scope": "public_knowledge",
+          "owner_id": null,
+          "project_id": null,
+          "snapshot_id": "knowledge-98ecb016acfef596ca7c8d7d9f0737df8696ef3ff9af6ad9ce0f523ab64e0278",
+          "source_id": "doc-idempotency",
+          "content_hash": "200ca7998e9977c9e62085955c9b0bce3d0e1366f8659724b2594d1847835a48",
+          "path": "knowledge/doc-idempotency.md",
+          "start_line": 1,
+          "end_line": 2,
+          "commit": null,
+          "retrieval_method": "bm25",
+          "evidence_kind": "documentation",
+          "supports_claim": "needs_judgment",
+          "quote": "外部超时与幂等回执\n消费组的待确认消息需要与业务完成状态区分。本项目采用的可靠性原则是：相同逻辑操作使用稳定请求键，先查回执；外部请求超时不等于操作失败。数据库状态无法和任意外部服务形成一个本地事务，结果未知时应查询、核对或等待人工处理，不能盲目重发。该设计原则是本项目综合，不是Redis提供跨系统恰好一次保证。",
+          "independent_truth": "not_verified"
+        },
+        "score": 14.313219635425863
+      },
+      {
+        "entry": {
+          "entry_id": "doc-asyncio",
+          "kind": "doc",
+          "title": "协作式并发与阻塞边界",
+          "tags": [
+            "asyncio",
+            "Python",
+            "协程",
+            "并发",
+            "阻塞"
+          ],
+          "source_url": "https://docs.python.org/3.12/library/asyncio-task.html",
+          "source_version": "Python 3.12 documentation",
+          "license": "CC0-1.0",
+          "content_basis": "project_authored_summary_not_official_quote",
+          "updated_at": "2026-10-20",
+          "applicable_role": "AI Agent / Python后端实习",
+          "difficulty": "intermediate",
+          "version_id": "knowledge-a253bcbd641cf83ac83b2f6dccffb9ba7786644478328ad7e0bb43de83e35687",
+          "body": "仅调用async函数会得到协程对象，不会自动执行；需要await或调度Task。协程适合可等待的IO任务。同步阻塞库直接运行在事件循环里会拖住其他任务，可考虑受限线程；CPU密集计算应根据运行环境另选进程等方案。取消请求也需要处理清理工作，不能把客户端超时理解为远端副作用已撤销。"
+        },
+        "reference": {
+          "evidence_id": "public-c850b9fa310d3fca4b10443299ef",
+          "scope": "public_knowledge",
+          "owner_id": null,
+          "project_id": null,
+          "snapshot_id": "knowledge-a253bcbd641cf83ac83b2f6dccffb9ba7786644478328ad7e0bb43de83e35687",
+          "source_id": "doc-asyncio",
+          "content_hash": "32596041b1a021df0835b9f7c688472041d9488fabe08695c551697747751271",
+          "path": "knowledge/doc-asyncio.md",
+          "start_line": 1,
+          "end_line": 2,
+          "commit": null,
+          "retrieval_method": "bm25",
+          "evidence_kind": "documentation",
+          "supports_claim": "needs_judgment",
+          "quote": "协作式并发与阻塞边界\n仅调用async函数会得到协程对象，不会自动执行；需要await或调度Task。协程适合可等待的IO任务。同步阻塞库直接运行在事件循环里会拖住其他任务，可考虑受限线程；CPU密集计算应根据运行环境另选进程等方案。取消请求也需要处理清理工作，不能把客户端超时理解为远端副作用已撤销。",
+          "independent_truth": "not_verified"
+        },
+        "score": 12.98918063943436
+      }
+    ],
+    "learning_resource_pack": {
+      "pack_id": "pack-b3aa2f0f99734e8e8d639cb3b758db7d",
+      "plan_id": "plan-104a76d34de05b0290582077ab0610ae049cff1ded648efc731d5a55166d24cc",
+      "scope": "public_docs",
+      "answer_policy": "limited_source_only",
+      "missing": [],
+      "claim_statuses": [
+        {
+          "claim_id": "claim-0",
+          "status": "needs_judgment"
+        }
+      ],
+      "evidence_ids": [
+        "public-eed6dc5170cbb675e7122b65363a",
+        "public-c850b9fa310d3fca4b10443299ef"
+      ],
+      "source_data_is_untrusted": true,
+      "independent_truth": "not_verified"
+    },
+    "resource_execution": {
+      "execution_id": "post-review-6f7f69fa04ea4ab2ba0da3213dd1cab7",
+      "scope": "post_review",
+      "usage": {
+        "tool_calls": 1,
+        "search_rounds": 1,
+        "read_calls": 0,
+        "reserved_embedding_query_calls": 0,
+        "reserved_rerank_calls": 0,
+        "reserved_model_input_tokens_upper_bound": 0,
+        "quote_chars": 308,
+        "elapsed_ms": 15,
+        "budget_exhausted": false,
+        "stop_reason": "completed_bounded_collection"
+      },
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "coach",
+          "tool": "knowledge_search",
+          "status": "ok",
+          "duration_ms": 14,
+          "turn": 0,
+          "error_code": null
+        }
+      ]
+    },
+    "resources_status": "retrieved_reference_only"
+  },
+  "provider_history": [
+    {
+      "index": 1,
+      "dispatched": true,
+      "prompt_hash": "a8f44b618283db68bb45ad6a0ab8d248a93cb910a4a259efe5811e770277b3e0",
+      "input_chars": 3207,
+      "max_output_tokens": 1600,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 1066,
+        "completion_tokens": 105,
+        "total_tokens": 1171,
+        "prompt_tokens_details": {
+          "cached_tokens": 640
+        },
+        "prompt_cache_hit_tokens": 640,
+        "prompt_cache_miss_tokens": 426
+      },
+      "provider_response_id": "bb10bebb-770c-4a43-8530-58a9aedbb217",
+      "provider_created": 1792735467,
+      "raw_output": "{\"text\":\"我使用 Python 开发了本地原型接口。\",\"reason\":\"仅对原句做轻微措辞调整，保留 Python、本地原型与接口范围，未新增事实。\",\"claims\":[{\"text\":\"我使用 Python 开发了本地原型接口。\",\"source_quote\":\"我使用 Python 开发本地原型接口。\",\"status\":\"supported\",\"reason\":\"原句直接陈述使用 Python 开发本地原型接口，改写仅补足时态助词，未改变范围或事实。\"}]}",
+      "finish_reason": "stop",
+      "input_tokens": 1066,
+      "output_tokens": 105,
+      "latency_ms": 1166.43,
+      "trace_context": {
+        "session_id": "rewrite-180aad0926864c9caed3df93b6314ef0",
+        "run_id": "rewrite-180aad0926864c9caed3df93b6314ef0",
+        "node_id": "writer-1",
+        "skill_id": "v3-rewrite-writer",
+        "skill_version": "3",
+        "prompt_version": "review-r3-rewrite-1"
+      },
+      "output_schema": "EditDraft"
+    },
+    {
+      "index": 2,
+      "dispatched": true,
+      "prompt_hash": "16079141ac301b25ad9b1f266b4ad64ed4e52f77fb0251c23323c4632231b62f",
+      "input_chars": 3402,
+      "max_output_tokens": 1600,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 1112,
+        "completion_tokens": 116,
+        "total_tokens": 1228,
+        "prompt_tokens_details": {
+          "cached_tokens": 640
+        },
+        "prompt_cache_hit_tokens": 640,
+        "prompt_cache_miss_tokens": 472
+      },
+      "provider_response_id": "26c9b6dd-71cb-4cfd-90ed-191a027bbf2e",
+      "provider_created": 1792735468,
+      "raw_output": "{\"outcome\":\"accept\",\"constraint\":\"草稿与原始条目一致，仅补充“了”字，未扩大范围或新增技术、指标；保留“本地原型”限定即可。\",\"claims\":[{\"text\":\"我使用 Python 开发了本地原型接口。\",\"source_quote\":\"我使用 Python 开发本地原型接口。\",\"status\":\"supported\",\"reason\":\"草稿仅增加时态助词“了”，技术（Python）、对象（本地原型接口）与范围（本地原型）均与原始条目一致，未新增主张。\"}]}",
+      "finish_reason": "stop",
+      "input_tokens": 1112,
+      "output_tokens": 116,
+      "latency_ms": 1696.22,
+      "trace_context": {
+        "session_id": "rewrite-180aad0926864c9caed3df93b6314ef0",
+        "run_id": "rewrite-180aad0926864c9caed3df93b6314ef0",
+        "node_id": "reviewer-1",
+        "skill_id": "v3-rewrite-reviewer",
+        "skill_version": "3",
+        "prompt_version": "review-r3-rewrite-1"
+      },
+      "output_schema": "EditReview"
+    },
+    {
+      "index": 3,
+      "dispatched": true,
+      "prompt_hash": "430ea8df5422f114cf9cd1bedab189a72874c3a04e5712541f0a2b23e40e70cc",
+      "input_chars": 3756,
+      "max_output_tokens": 900,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 1247,
+        "completion_tokens": 244,
+        "total_tokens": 1491,
+        "prompt_tokens_details": {
+          "cached_tokens": 768
+        },
+        "prompt_cache_hit_tokens": 768,
+        "prompt_cache_miss_tokens": 479
+      },
+      "provider_response_id": "f637ee66-b088-4539-a3d6-b830b67ee115",
+      "provider_created": 1792735470,
+      "raw_output": "{\"covered_ids\":[\"p0\"],\"missing_ids\":[\"p1\",\"p2\"],\"claim_needs_evidence\":true,\"recommended_action\":\"follow_up\",\"note\":\"回答提到用幂等键记录执行标识，覆盖持久化执行身份；但未说明查询外部回执，也未明确不盲目重放，且自述不清楚超时后如何核对，需追问。\",\"point_assessments\":[{\"point_id\":\"p0\",\"status\":\"correct\",\"reason\":\"明确用幂等键记录执行标识，符合持久化执行身份。\",\"answer_quote\":\"我会用幂等键记录执行标识\",\"assessed_by\":\"model_semantic_unverified\"},{\"point_id\":\"p1\",\"status\":\"uncertain\",\"reason\":\"仅说不知道如何核对外部操作，未提出查询外部回执。\",\"answer_quote\":\"目前还不清楚超时后如何核对外部操作\",\"assessed_by\":\"model_semantic_unverified\"},{\"point_id\":\"p2\",\"status\":\"uncertain\",\"reason\":\"未明确说明不盲目重放，只提到记录标识。\",\"answer_quote\":\"\",\"assessed_by\":\"model_semantic_unverified\"}]}",
+      "finish_reason": "stop",
+      "input_tokens": 1247,
+      "output_tokens": 244,
+      "latency_ms": 2008.49,
+      "trace_context": {
+        "session_id": "interview-f22989e261f54950b916812773e8cc53",
+        "run_id": "interview-f22989e261f54950b916812773e8cc53",
+        "node_id": "evaluator-0",
+        "skill_id": "interview-evaluator",
+        "skill_version": "s4-v1",
+        "prompt_version": "s4-interview-1"
+      },
+      "output_schema": "Evaluation"
+    },
+    {
+      "index": 4,
+      "dispatched": true,
+      "prompt_hash": "70ae4aee9d48332a748b4034cd693729d57b634c719d5aefe11eecbf952326ee",
+      "input_chars": 3476,
+      "max_output_tokens": 900,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 1336,
+        "completion_tokens": 24,
+        "total_tokens": 1360,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 1080
+      },
+      "provider_response_id": "56d42994-b3a3-4648-8dc5-a0074804415f",
+      "provider_created": 1792735472,
+      "raw_output": "{\"action\": \"follow_up\", \"focus_id\": \"p1\", \"retrieval_target\": \"none\"}",
+      "finish_reason": "stop",
+      "input_tokens": 1336,
+      "output_tokens": 24,
+      "latency_ms": 1085.41,
+      "trace_context": {
+        "session_id": "interview-f22989e261f54950b916812773e8cc53",
+        "run_id": "interview-f22989e261f54950b916812773e8cc53",
+        "node_id": "interviewer-0",
+        "skill_id": "interview-interviewer",
+        "skill_version": "s4-v1",
+        "prompt_version": "s4-interview-1"
+      },
+      "output_schema": "InterviewDecision"
+    }
+  ],
+  "source_files_sha256": {
+    "src/job_agent/private_capture_cli.py": "945c213247b2a342492b6db3e58cdf68f3274a0f362aa08484e20c9cf564832d",
+    "src/job_agent/graph.py": "78f2884c262977554a51c2f3771901964000cffe8e7d3265e69de0bdca7c41a9",
+    "src/job_agent/__init__.py": "41362a5ea4931c546433d4c48290c5707bf02dbbea1c3aafa9f43d1225e47003",
+    "src/job_agent/atomic_io.py": "4dd7425627a2fab6de66c1132d57558ec97d363694351f52a06413621697ad43",
+    "src/job_agent/career_journey_cli.py": "db604d0b552f759e686ae2e81083c6b79d024be39a59edcb5b6bd7f1c154c0f2",
+    "src/job_agent/requirement_evidence.py": "95a026c9233f1e06116d5353569704c6c454ae55bd7b431fe0923b66a9f9184c",
+    "src/job_agent/outputs.py": "b9dbd16df27118e8140188207270f330f51c7f0d84d823414ab12fdce0bba85c",
+    "src/job_agent/text_identity.py": "a5397cf7a80d082b2959da4d1ace5bd4fdae52e041a972b24e6d808dbd20b066",
+    "src/job_agent/session_orchestrator.py": "be6389f7cfede9c61f1a28a4b1365480904ec0c775f0d0164663b4eaa4b5822d",
+    "src/job_agent/jd_match_analysis.py": "62a96844d441d8c37fc21edaeed786b6e05f3d20e20ccdb615caf88fcc59fd5a",
+    "src/job_agent/schemas.py": "4fa3a382237eec79ef9351a36467f497d2fd06e17ebb0cd58eb4cf718dffff41",
+    "src/job_agent/job_search_workflow.py": "2c36ad44a1fd90884f773561abe7daba82a255336289ab8e549022e5ee5c1d4b",
+    "src/job_agent/reports.py": "ee0c1b0c907e45bba53db65b792f5d3839073c92b5891dbe39efcd1c78ac2c07",
+    "src/job_agent/cli.py": "a2e725281dccd3bfc3e1ca027fa66e89c2788e226144f3e107f586b322e44418",
+    "src/job_agent/memory_aware_job_analysis.py": "a4eb4b6a8465389208c7adb6a46689989e29f8b592fee072a8702418ec6d1d05",
+    "src/job_agent/resume/evaluation.py": "e4f4bf17375a0da2410c9a34bea1a3b24ecadc09e9b0bde60eb361d0f48a8197",
+    "src/job_agent/resume/repository.py": "52c8c5c3bbf20bccd5a75179867ae785b5ca47cde7da7c0cfd40658099890c9c",
+    "src/job_agent/resume/__init__.py": "614f80c5ea6d81bd47ef4d04f858b0a9219e0570c60be5762ddbf88df838ce14",
+    "src/job_agent/resume/service.py": "a9209bf10da0c96eb9e435d2e184d969d96020a4f1d3c774d0c2fbba9812b4f6",
+    "src/job_agent/resume/contracts.py": "861d60964e6a86106590e15458d37c705e1a1e60063804e6f2d3877772be33c4",
+    "src/job_agent/resume/provider.py": "ea4dd33a5248dfa05531bb761ed033298f3dcee749a45d07b901cb1be0d9afe5",
+    "src/job_agent/resume/tools.py": "ec6018fa3f82432bded84ec81e624d1d1a59594372773cd3c4176aa3c3d81d30",
+    "src/job_agent/memory/artifact_memory.py": "9a6998dbb85df3bf021bd9e3d34b2aa7c1d67eea468eede03c2a919a98b0b672",
+    "src/job_agent/memory/__init__.py": "384c673676e3202d83458e2761f31f56ce71267d176fc2e6f59ceda8e0551ba8",
+    "src/job_agent/memory/user_state_store.py": "8d97b8c0380b9906dd2deba64c89cf5857d1c60ab6601cdf8b4df6e3a4be3542",
+    "src/job_agent/memory/contracts.py": "3c55067db78f29af34a73c0b5487bb2808d58282da4747e534f635482bcd9590",
+    "src/job_agent/memory/tools.py": "3fe7782666856f4c0826dc3e424df0b07b4e9325acda28c5f0135ad8ff5201ba",
+    "src/job_agent/memory/retriever.py": "a02d0841f9dc8c1766d9458464246df2a73bf8acc1fbfb569b3508be7d2412dd",
+    "src/job_agent/agent_runtime/failures.py": "f1193527a9b3d4e98ff490ffdfa16ef5400d97aadccc10cdbe2d99b748cf595a",
+    "src/job_agent/agent_runtime/checkpoint.py": "8e02d56b08519999258a15d5818d9839265003b4f6fe5abea236eb1313aa1fe9",
+    "src/job_agent/agent_runtime/semantic_live_eval.py": "c849e38fba8a1747fe802d2aa319ad59ca1275b2c79de98178f4fcc7202389d8",
+    "src/job_agent/agent_runtime/live_agent_model.py": "c35beeaf3ec008ebd9403be49c7fc886f30f47633eb6370fa8183962a9f97314",
+    "src/job_agent/agent_runtime/policy.py": "dbaedcd84eca4f1b7136329cab69f921856fa03214f78b675f451b8d6a228c54",
+    "src/job_agent/agent_runtime/evaluation.py": "f2b80d8a4d146ec74864d327adfb5a4b30488df14d00fac9067aa817cf1e0735",
+    "src/job_agent/agent_runtime/__init__.py": "603fb92ca181634b75a742b24ae491b1c601f9e22288074a8fbb4361f8228c4c",
+    "src/job_agent/agent_runtime/schema_diagnostics.py": "e22d908c73becc7677e94d3f6694f1479e5cb99bb14d41d222f0a14236713aa5",
+    "src/job_agent/agent_runtime/semantic_evaluation.py": "aff1b5ddaf45a1fe5343ebed093b59db649350428b5a35dfbe34e105aada03fb",
+    "src/job_agent/agent_runtime/mcp_bridge.py": "64234178cd05f1936894d1a88adff41cb3d1a4b08aaa1b2380e4cd1f4ee9943d",
+    "src/job_agent/agent_runtime/private_capture.py": "6e2be54ff1585b8fa4658a257b82698291c02f230f8ede5ad36cf7ab2bc57c9c",
+    "src/job_agent/agent_runtime/live_canary.py": "5cd63b345f77bcea2f0ee5b2312898cdb3c4d91a82f901e8cc6367e4a7890e64",
+    "src/job_agent/agent_runtime/loop.py": "bf0ef5b1c16a1c06aad7f5d0b82efe38a9ecdd7ced11bbfc016fe6d33a03bfaa",
+    "src/job_agent/agent_runtime/contracts.py": "6fea77a51ec074c6338e86cbe486ee8f874ca2dc4080eb7121b78e8c1f2dbff6",
+    "src/job_agent/agent_runtime/live_full_e2e.py": "bdf69002cefd9be5a246949eb62d3cd4eb1279b198426617777c207d2b85841e",
+    "src/job_agent/agent_runtime/natural_language_loop.py": "943f03af2600fa7bf7b6b826459b7011f9a84c55539dd8fce015e0271cf905ce",
+    "src/job_agent/agent_runtime/tool_executor.py": "dc7411849643e39b1103c00359d2585f18d5eb41aa7d8e583fce1408a03ae8da",
+    "src/job_agent/agent_runtime/tool_use_decision_model.py": "962da4ec7e3c3da37fc3ebc6856e3d5f4a6498eecb2722b3ab3aaa3f9ca86b8d",
+    "src/job_agent/agent_runtime/trajectory.py": "d596f32fd08251e581827bf5d7275b93274b8a3518fa7f863079ea858a169691",
+    "src/job_agent/agent_runtime/budgets.py": "9f95d875ab0ebb42be61279d90443c742d556a8e0e27a752953cf5e13e29e1af",
+    "src/job_agent/agent_runtime/stateful_evaluation.py": "ded7aa0a48dbe520a06ad17364f1f4327b55aba232fc91a1e14e94181907fd6e",
+    "src/job_agent/agent_runtime/interaction_context.py": "dee7a81fad6468de9e9d127ce68306c219fcea5a01ebf296b13e6b1f2459e0c3",
+    "src/job_agent/agent_runtime/decision_model.py": "be2aef6fb527f601ac973b94118072a22a6e539c1eb433ec8f136c449649bde7",
+    "src/job_agent/agent_runtime/events.py": "ff080cb310dc509b470303f2e1b53e82cb75fddf1de85dccc85dd02ebfb7dec9",
+    "src/job_agent/agent_runtime/mcp_adapter.py": "b16a12344c89d689834d8c20f181ec3df62dd961538f49663603127f094f2265",
+    "src/job_agent/agent_runtime/eval_cases.py": "8971a578e2c109086cf4036fb3fcd4c9127d918ec8f2a91e6b407e9fd8a44ace",
+    "src/job_agent/agent_runtime/e2e_harness.py": "33376a8cab762ec17d7d02c25c885dcbf9c1406cdb745961401e69fd3b17a9d6",
+    "src/job_agent/agent_runtime/tool_registry.py": "3e1418816c9a63beb87db896ee9a556ff9f650119c9806953beb65e143646c17",
+    "src/job_agent/ui/mock_interview_loop.py": "456fe52eaafb17d02d99e98e088361e49c1d18d9f397cc0ccc987644ffc0b24b",
+    "src/job_agent/ui/runner.py": "807043de8688617a91f2093fd3d67d49b101bc8a3a3ba36a2da6fb8fab9c935c",
+    "src/job_agent/ui/post_interview_review_loop.py": "8d08cd3cbdceca8987f1e79a69baeb1ddc56d56a281c034160b0d093d9052420",
+    "src/job_agent/ui/session_view.py": "02e9abe525654db87773349c8bbad099e99f33b7935756a7fc995719a4d9cb2c",
+    "src/job_agent/ui/resume_match.py": "dc9323c755c6475b2ccee076dd9a54fd11c2dd680892adf24218786c26393b66",
+    "src/job_agent/ui/latex_preview.py": "7b9c4dd89a0ca7b185344344b4ab77d5790d1a200a51d5cdf22a67a45840c6ae",
+    "src/job_agent/ui/application_ops_loop.py": "5fc4dc3cab63a45f27532f2c411819ce982f855faa2337df48219ebdabfb0bce",
+    "src/job_agent/ui/resume_loop.py": "93d1c1bf3bb77a1e8535df64f2c590f0025f85672ce2d235b24fa4434a6039d5",
+    "src/job_agent/ui/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/job_agent/ui/new_session_wizard.py": "57a8bb82a52ed617e8b46a3c33f9e2246a0d188c24b9fd4d328f0ee19ed2d4b2",
+    "src/job_agent/ui/mock_interview_evaluation_view.py": "caee4cb9a273c86bc08e2c08b415ff43a5be5b49c36dd3abf22c58ac4eaea3b0",
+    "src/job_agent/ui/real_interview_editor.py": "4fdcada38c172cbe8ed662c0ca0a6ab1c7ef83e4f78f2b49bdf1c09d845f6dd8",
+    "src/job_agent/ui/app.py": "8505be4439d5d6c843a4354b4d40d4298b7d51044501133755ca382ba020d666",
+    "src/job_agent/ui/local_config.py": "f8f1e4d65502b87a1751df6165075458717430bcbdf0012aa47a6b06fb58328f",
+    "src/job_agent/ui/interview_prep_view.py": "0146d3f1413f8143f6c6c7c61fec7653123fefb6fd0a3bd6724f9a1a724039f7",
+    "src/job_agent/ui/mock_interview_evaluation_loop.py": "7305206aa8f2de6d1d71aee23d1d58ff2387ac9a19830ae81c494e11200c692f",
+    "src/job_agent/ui/interview_prep_loop.py": "18e1574575595de430d8170c11fe66471a2708118cb38490e67bccf3c3e1cf6d",
+    "src/job_agent/ui/refill.py": "263fa0a1fb94d553938c866672603cf61bcec541e5789bb44455b8ce4164b221",
+    "src/job_agent/ui/jd_pool.py": "c2daa5fd330a6d355b05b29b0df59d92f97a5a3fdf32c92fab1ea90ac9489f6f",
+    "src/job_agent/ui/interview_review.py": "81a68ea39325779a1535b2b99ad3fa70478e4a2d9000b6288b30c6d407681fd7",
+    "src/job_agent/ui/resume_source.py": "71f18ec8b08862d7425122c2902a0ccc86ef43b322fd31f0f60c0ab5ff891c07",
+    "src/job_agent/ui/modes.py": "5b8062d4780f86c452d5ae42d61be5f330f712e3ae197830ad45aa0883cd22d1",
+    "src/job_agent/ui/run_diagnostics.py": "788dde8476e26c211d937e6cfc059330ffcff61d6aefbbfe6ab0cdc19f92bb13",
+    "src/job_agent/ui/research.py": "3c0195b0fe1ca2dd7d2728b40011e10768a5d5477b816f43f699e65b79cd6b11",
+    "src/job_agent/ui/adaptive_interview_loop.py": "d902738ea6c1a2879c733ef8079aff7a550b515ec991f5e157442b440ab62def",
+    "src/job_agent/ui/workbench.py": "7217186d7c14475b2f74012deae7d978394525e08c01c67e534bd0286b1cea66",
+    "src/job_agent/ui/post_interview_review_view.py": "f0ad4ab486baf95369256d3a7be82d3f341f2d299d4c43a81d6161cba07ceed7",
+    "src/job_agent/ui/real_interview_rounds.py": "8b7d36f9e5fbbad18ccda6390620fc79064524fd1c90b172eee1dde71921a633",
+    "src/job_agent/ui/application_status.py": "a44f5467fca0691949e6be76e4b78cfbd02ffcb23cc9b7f60a5a65c7180eb856",
+    "src/job_agent/ui/live_action.py": "d78035aba8bf20b13b97cffb73e98b809af65e5138727e8ce969b565b35a27d9",
+    "src/job_agent/ui/views/company_library_page.py": "26255bfba2a62e8ba25586e23d86809382dc797efebedf8585cae12614da92a7",
+    "src/job_agent/ui/views/adaptive_interview_page.py": "10e58abcd3e800e3261fb5ede42eee836b27ba974e284f25b482978c22b1fe68",
+    "src/job_agent/ui/views/__init__.py": "1d7554a90ca84ea4b878266de25f1bd16320f9bb075747db476f3b06016700ee",
+    "src/job_agent/ui/views/evidence_v2_view.py": "9b1462420a771ee0cc42f739becfac82823ba5c776d0200a101cac2763e90778",
+    "src/job_agent/ui/views/workbench_page.py": "43b05e24089a778b54fbe10ba8ec1b5a9d9c13b6b9d621ab78e370e79fe712ca",
+    "src/job_agent/ui/views/interview_log_page.py": "2437389e2aa58ad75268bd81077cf1ecf4f73ee104c63c5aef713ed7e21f8ec8",
+    "src/job_agent/interview/evaluation.py": "37d81da0b823d4e42aece85762c257ae773182c03d3fe047bea54c608e38f483",
+    "src/job_agent/interview/run_store.py": "13bf78657f27e213d1ba927b78b013eb779ed8e8ad8b146f2aa13bc07b603ef1",
+    "src/job_agent/interview/question_bank.py": "3cee997e373c47b0b5056e3edda30616261bc1500b30886a9f6c848e332b2376",
+    "src/job_agent/interview/__init__.py": "7b05c529aff343a0585fcf38ddc49206698fa3c915f657365776024fe1ed5aa4",
+    "src/job_agent/interview/paths.py": "c1909c675a07e8986bd8ecfe131fe6200ad2ea876db4ebfeb491ca48f400c8b7",
+    "src/job_agent/interview/copilot_repository.py": "008ec07a98f71e08af4e73e72679c406f3b449a5843ad45fd9f81259919bfd60",
+    "src/job_agent/interview/contracts.py": "7b73a493d808c80fdeaf8ab4116dab1495efaeb0aceb87fc38c4d93c34f3b0ee",
+    "src/job_agent/interview/copilot_tools.py": "bd830d2cef8a75d7aa7b68ef509c276b0d368b20929a34adb9699a8c965903cd",
+    "src/job_agent/interview/debrief.py": "d5de0a68f77f46276e4b8cd6432ecbaabc17679d0f60d715f5ed2d8d63cde286",
+    "src/job_agent/interview/copilot_contracts.py": "f300a73c2eb3f3b5aa04c645cc238dace6e6550c42883e511f8cf69c19c61583",
+    "src/job_agent/interview/dossier.py": "cba5727fbac61ce24fb188530df4c59fbd4d43b29a01bee01175f70800cd0456",
+    "src/job_agent/interview/controller.py": "2fad73aad4f48b711c03136a141c713bcf24cad958c179c1488197392d778238",
+    "src/job_agent/interview/context.py": "b3c6ca4eb028a47ce1e969646c015b3b149d8f62592b73cc4a99225765a87217",
+    "src/job_agent/interview/tools.py": "a2e55d35952520b977e514c9c1efdce13fd2e5a20b10aad704e03390d48f34df",
+    "src/job_agent/interview/copilot_service.py": "5b2f269e6c89d5e19454667ac5818e5303f941e751bd6c2f27fa76af2d283c10",
+    "src/job_agent/interview/preparation.py": "39ea8451eac6fdda8c257d3551c43c52e1c1a88afeda1ade212ffe6831c1c9f0",
+    "src/job_agent/nodes/verdict_route.py": "b577f9c528f9e86eb6d7c364b95b01677b648df644db7379fb019e66c4d163a3",
+    "src/job_agent/nodes/__init__.py": "4fadaef2f419cbec8f682ec0fac745431c6bcbf88c07ab66a423b708345ba8f0",
+    "src/job_agent/nodes/evidence_mapping.py": "79f3cfbf31d0397ea7a8ab7f52b52699542b649a383c4e30a12a6bc317b319a9",
+    "src/job_agent/nodes/job_funnel.py": "11ebfc3e9e05ffc9f1f154fe8397e34029df9fce76b0c16a5054d8420df7349e",
+    "src/job_agent/nodes/post_interview_review.py": "1137f3681acce0db60fb1e443d2863e0e17dbdd4da666877c5bd2aa511662c3b",
+    "src/job_agent/nodes/answer_cards.py": "1c7f84c68d2075a4271cecde5470c8a393b5f0a1b21cb80640db2d1aff546f12",
+    "src/job_agent/nodes/fit_verdict.py": "3a7c89588375666420375fc3f0c6c6ea51f7c2e3ab37a27847d1452a5156e688",
+    "src/job_agent/nodes/jd_structurer.py": "0496cadbe3218009cfd64765e833f270302cbfdddbe6ece2d8fc2012b51b4de9",
+    "src/job_agent/nodes/interview_prep.py": "98d5abd1372ecd6a47b2b7948448f48fd8e437230a4bd18ebf6af84fda09bd78",
+    "src/job_agent/nodes/mock_debrief.py": "56eff36fde4a3c68f1290003b210169141e30a0be47523ecdf1b15f0d7afb7c5",
+    "src/job_agent/nodes/mock_interview.py": "552fd1dc4ee3d80f841421b0e6d5696e8e24834b7845df331b5c289ab9fac5ed",
+    "src/job_agent/nodes/job_scout.py": "cb08f851b575ad10c9e6d70614327481a39664abdaad2185727768f16fdae504",
+    "src/job_agent/nodes/action_suggestion.py": "a5a6a318892d0ade47545bea01befe2c5518ef72ad6ef2d55745faa09917d816",
+    "src/job_agent/nodes/search_intent.py": "c75e68205711d5ffe4eeb2277009901c46e19caccf4f5417f38ea55c37158ecf",
+    "src/job_agent/nodes/mock_interview_evaluation.py": "83c38271265d577030d59285304dfaaae7ca9aeca43ede1d538018de5ec4d3b1",
+    "src/job_agent/nodes/resume_tailoring.py": "85e8b3b79c1c5d1318b2b585a0868d2155e38af2086c04ae6c9596e68e6ca214",
+    "src/job_agent/tools/__init__.py": "49bb129161488d0f06236892eafd29db51ceb695044636c12fc461b0431c5aa6",
+    "src/job_agent/tools/application_tracker.py": "6f0794221f194dbc448ee4d569e63fdd154bc36c256537477d7e4958494b9b8b",
+    "src/job_agent/tools/job_sources.py": "0561de9d4262ed760e63fa72d6baa1635f499a773c06ae3b3a0f381e15ee8e19",
+    "src/job_agent/tools/job_search.py": "2713e0fce5273b70e39736b7ba57c9481064c2b33bf71b6def830562ce8db507",
+    "src/job_agent/llm/prompt_assembler.py": "7824cea9a7a60f1555dd7bd44ef46fd953d12a3cf4693035b33fc28c789c80b0",
+    "src/job_agent/llm/__init__.py": "68bcdb408f4ddbc71746f5b2c377534c5527ff10075e56b9d4f67256d94fb049",
+    "src/job_agent/llm/harness.py": "a9408495f7886e6c4b4180af73d710030773fca2155a81e3fb11cda69b9ff5f6",
+    "src/job_agent/llm/provider.py": "1a03e93056ac5e8b348a50f2ad49bcbbbc3a8509a0158f333f8f44b17aaba63f",
+    "src/job_agent/llm/skill_registry.py": "6d8ab9bd38245eff3da88da71be95e51f0f8d59850ee8e116493218b8caf00f1",
+    "src/job_agent/llm/providers/local_text.py": "166fcc42d6b7328b02e13b9c61f2e7f64dd8dac01216e469094ee7b82c982ed0",
+    "src/job_agent/llm/providers/__init__.py": "126c4bb7ceec3c2300b68cab16619de5ef30442bf463687fb41e518c9a41d2ab",
+    "src/job_agent/llm/providers/deepseek_compatible.py": "ffdae4f9e49a116cf693b8f9b6e70c388e07aa3891550fb7502b75a8c2828d6c",
+    "src/job_agent/llm/providers/anthropic_compatible.py": "e92ee3c67443dc7440a0f4f8c3a4b9ad61d7351354a966722e640634da528f9d",
+    "src/job_agent/llm/providers/openai_compatible.py": "e5ce4bd853b0b0342dd46c5dcdd5dca8f98d5c6354c1e5001d84fd9309d08db9",
+    "src/job_agent/llm/providers/mock.py": "34189b392170a59b0e9379c3f1cf4fedfa569fb7d1c7ec85bb8149f3d3ce00f9",
+    "src/job_agent/llm/providers/transformers.py": "d96c82bca1dc1da8d3688fffdfc17c47760a114b5b1638965dd5222216805862",
+    "src/job_agent/career/models.py": "01362f7a8b040d4683a5b7e352f9f6302b4a17974ec8be27fa1884b0efbfc4a4",
+    "src/job_agent/career/__init__.py": "69064707fa8d30423a67d92f1d72b059c0f1539056d22e0200f96550498f218b",
+    "src/job_agent/career/workspace_api.py": "0be482882eca4fb258fad24b31024fbc49365f2f1f82c21181001c9572028bf0",
+    "src/job_agent/career/workspace_tools.py": "42e457b7a64e0645831d83ddfb4979b7b38f221527bf166f414f2ae5e5ac0f09",
+    "src/job_agent/career/migration.py": "9a6da581eb349843ca4e6d58373475bc9394c0b323f70360e90d97bda1abdcec",
+    "src/job_agent/career/runtime_tools.py": "7a382b16a867c85ed5517957d4ac3eaf8476484ba90b4e61c1623a4070d90394",
+    "src/job_agent/career/durable.py": "081812f3b7092c2261cf15f53b453be37cf71608b562b19d1a71906d1ef38152",
+    "src/job_agent/career/schema.py": "6004584baead3c22aa19cd09431f5a22c5c5a893075b25b5f21caa616d876de9",
+    "src/job_agent/career/store.py": "ce3abdfc1bfe71c01e90384fb477858efb60bb46d7c337e0a68fefe8a8d4bae9",
+    "src/job_agent/career/workspace.py": "b42b1d5709c720c94552c3eec9e8f9da417ad5de0b061cfde154f96768b8e240",
+    "src/job_agent/knowledge/career_service.py": "7e9653589d4c250954d3e7f878a42d6cc5ab4fe48e248494793b765f907890dc",
+    "src/job_agent/knowledge/requirement_evidence_benchmark.py": "25c5ff6ed840484876e46025a2d5b553c555ee1d9064f43c844541fd02420ff0",
+    "src/job_agent/knowledge/retrieval_policy.py": "44f7030d8e8df6385a52dd5f0cff580ece8dc07d4650b4a656f8ea136be04120",
+    "src/job_agent/knowledge/jd_match_demo.py": "8a30a47d90276471f17c4cf430243b76c62fdd33b8f82bd3c51ef335bdafbbc1",
+    "src/job_agent/knowledge/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/job_agent/knowledge/vector_index.py": "08f54ce154f8ecd3997a8bb0d4e152090d1c7d83c1c7ad22d52d3ed1540d09fd",
+    "src/job_agent/knowledge/cache_snapshot.py": "59b338d9cf48c88bd099caabe9ad297db78bc25a3915125c9de438a164f92c5a",
+    "src/job_agent/knowledge/career_candidate_evidence_compare.py": "98c181a947aa46da579d339a254545eaac60b98964d6e4e1b5eb1a499bd1f90e",
+    "src/job_agent/knowledge/career_mcp_server.py": "9a5597ae5ba2fd76ec97168d1b8b27121e2278a8657647b6c487b7d59410eb68",
+    "src/job_agent/knowledge/eval.py": "9ed4b259abc894c9857cd19de54d50dbd39b4c8b7d1e1662e46e716690c2801e",
+    "src/job_agent/knowledge/research_contract.py": "0a6eaafdf801282d823c113bcb6451135ad2637dbc3b4225311c360b3a7e423e",
+    "src/job_agent/knowledge/contracts.py": "9067591346ef07c8da546d96902cd43cb1611911da3ca0319220d78d4dcd8d1d",
+    "src/job_agent/knowledge/bm25_index.py": "10498444bc90a3a2fd76913a857b68cfa6f38edad2991f1ca6359ef519f555c1",
+    "src/job_agent/knowledge/index_manifest.py": "e396bd8d7f10b0034cab4a08f567af52e8024ad02ca4c80d84b0637e12bb906d",
+    "src/job_agent/knowledge/career_knowledge_eval.py": "a5d7a9099c132476b02bba5b3b37a32212fc387a83698ff97f7b79b145faf217",
+    "src/job_agent/knowledge/markdown_chunks.py": "7fe47289d9727d2c0ce0e48a2bae0ca138370e922ca1b0f4d2a76b3031d63870",
+    "src/job_agent/knowledge/reranker.py": "788594730a521e668b5a89277383d3f7f978c98ece9aa8dc9a16eda4c0bf08a7",
+    "src/job_agent/knowledge/candidate_evidence.py": "c2f889d45280eb6a7c5634472d8aa8642c884b3a852029f055f748fbc65b6a00",
+    "src/job_agent/knowledge/durable.py": "d6c05b6dd16271b9339fb5a45a7e2f41a715635e3b8a09ebdd7d6225bdd2b21e",
+    "src/job_agent/knowledge/ingestion.py": "ffa0724cdb63e7e1be59997cb96eb82af76fe018766f29887c1121a60091ede4",
+    "src/job_agent/knowledge/evaluation_contract.py": "3dec049b45b981fae2db86fa49965fb230508c00e60e6e036351ec7365974c24",
+    "src/job_agent/knowledge/hybrid_retriever.py": "5224ca4e7777642779b26c2699e1773f818d00f1a1263815c30a971a4a323f66",
+    "src/job_agent/knowledge/faiss_vector_index.py": "b1e353cb7ddae95cdb444bed052047646e30f757a2a4fc2e64fb9f8c997a089d",
+    "src/job_agent/knowledge/qwen_embedding.py": "44296ede2f9f97b4c688f5c82bb73fafafdd8f0832cb90e36a26619efaf85c01",
+    "src/job_agent/knowledge/career_benchmark.py": "6134eaa74045374b4c685a29c9c8ae50bb1f2bd4cc9132abab6f6dd827e7bd1b",
+    "src/job_agent/knowledge/rrf.py": "0621904d44d13f31c8e80bf905d8065092634fcf7d32a0c2a651c7424012e92f",
+    "src/job_agent/knowledge/source_loader.py": "fcac89cb9acf14af8afb58bc50ad7a3bc10e883c81e7eab776ca2063361d9479",
+    "src/job_agent/knowledge/retriever.py": "7b43483ef7ff7a8d2b35fa9e86e377755f148d1ca1acf162b6970f839a31e1ac",
+    "src/job_agent/knowledge/career_benchmark_compare.py": "9c42a46ec0ff4abc801e2f882fe9d6d4d1730c87b781543a987b5417254f11d9",
+    "src/job_agent/evidence/sources.py": "a9d20510cd11e387b85623722a3a547164f13b5569fda3eb39793dbfce65c319",
+    "src/job_agent/evidence/requirements.py": "0ad8b51057fac47ca8897111921021ecc11149c13a405b86571f872b5b38f3f2",
+    "src/job_agent/evidence/repository.py": "820183af6c635305e352c1b5884ab1893f324dbc24b4b6df4f716ef39c80b565",
+    "src/job_agent/evidence/__init__.py": "250bb206b98924e53a9fa9e59b13f135df9349080c3204c31a1f94abee8fd10e",
+    "src/job_agent/evidence/retrieved_mapping.py": "52ae398468e4aa41f1a45a93b88cc324a9e68ae6e9511da6b3c617560a437a20",
+    "src/job_agent/evidence/paths.py": "41302e30d4f52741ef96c4bc015fb2b056c557545e3a03608a621f67c44c7c87",
+    "src/job_agent/evidence/contracts.py": "3e750450d33f724e057c90f599b1dc4436a30a08f481ec44e82a79e3623d6964",
+    "src/job_agent/evidence/semantic_skill.py": "a6a8f60af10d0575102d5d7b7f38a2b50580d399c587a7d45299bdd21a45fbba",
+    "src/job_agent/evidence/mapping.py": "3e3f2e1717bcb5e79f8d424c5252af2d981d43f904cab4150ca93d90aee19b4b",
+    "src/job_agent/evidence/assessment.py": "6cb10336cb927890b74eef0402e714e70fc60862f84321d22e416e10bd6bc8fd",
+    "src/job_agent/evidence/projections.py": "42cff959dfd9e0adee94da7a31336b2c0f7e8f646ad04c6feb0d73d867e7eef3",
+    "src/job_agent/evidence/pipeline.py": "44ff4969872e2dd473026ee946e0977e0361924476286402c6f629c3dc81cfe5",
+    "src/job_agent/evidence/level_policy.py": "fb6a5ff11ab18a8ce1dcf868847067606c7443b35ac93751e2c55b11caea64ab",
+    "src/job_agent/evidence/evaluation/pipeline_live_runner.py": "9dedfd562f7a29709f9e2ba0bbec2e675909d4939c79376aa6561f31e5aac556",
+    "src/job_agent/evidence/evaluation/metrics.py": "22c302d4ed03f6b81675f5e0ccc6e5aa0b2fa185d39f3b3ec04e2367573b5a21",
+    "src/job_agent/evidence/evaluation/runner.py": "66034ee712d8bc95cbe316a60f0a38a9d86920c2fee2f9d489c78628688e90fa",
+    "src/job_agent/evidence/evaluation/__init__.py": "743e7d0090ee44b275a35c5a12010ec3250e1fa3b4dfb800264b33d042957bb8",
+    "src/job_agent/evidence/evaluation/contracts.py": "b37fc5725a1b728f073a8a523fe987688f5122f0ae21d73db67e2bdd75ae6789",
+    "src/job_agent/evidence/evaluation/mock_runner.py": "ddded5281a6579dfa344f719eec180936ce983196114ebcdbb2645b8a1f5d511",
+    "src/job_agent/evidence/evaluation/live_contracts.py": "8c568408be5139363a7b862fd2154bb3c2b0bd7fcbaf6fec087faa26f1befbce",
+    "src/job_agent/evidence/evaluation/live_runner.py": "bf71b522a0eba455758ac865d51c37640389c1bdd80bde36051f41fb0c6c960b",
+    "src/job_agent/prompts/__init__.py": "7523387f429b3163e510c5a8e3c0dbacfb03ffc0dcd73651534a687df81f4a21",
+    "src/job_agent/prompts/catalog.py": "36e26550c3f8447c6a7c42231e730f4a3d7893f68d95fce7659e1be59bb94f62",
+    "src/job_agent/resume_workspace/tasks.py": "7d673ac8f34f8ee8ce1bd545c01436f65c450fcb1d18f0f9621f7f0c1ee707b7",
+    "src/job_agent/resume_workspace/code_parser.py": "2513fab4d5e91354b68cd1e6705bf5c22475ee277344c2f48d5bfba324f8b301",
+    "src/job_agent/resume_workspace/interview_repository.py": "b3b84821bf8e1ed5622da615f8b2add335e8ba118387cbf3e869c07ce8bd3e27",
+    "src/job_agent/resume_workspace/public_knowledge.py": "37962ac796681cc42de808fe65685d0b340682dbe7c635953540aed649bb9789",
+    "src/job_agent/resume_workspace/project_storage.py": "141ab752ef1bc2aa3b44c1c5a02e31b085e1c7e7c6d618a720c18e8c22690045",
+    "src/job_agent/resume_workspace/repository.py": "e28d316a7129fdd4e444b13802035880c11bb3f7e3c9790c0c6399343777e2a4",
+    "src/job_agent/resume_workspace/learning_api.py": "1177d7372cc8536d62cf26cfeabbed3aa54756c038d0af6137484f86d85429a6",
+    "src/job_agent/resume_workspace/parsing.py": "48ccac9951623d18ef64d98c62505cbb56eedb6fb06e08e6698f00157ce0f293",
+    "src/job_agent/resume_workspace/__init__.py": "93846f207277048151b87594c08f852e42da80a8e38d2383c04f55bc14f3669e",
+    "src/job_agent/resume_workspace/long_term.py": "53ba15df5e7b94b02c2689f86e178465b9c2a50d91822cdec8cf2a6085b7af15",
+    "src/job_agent/resume_workspace/match_contracts.py": "7ac28ab78c25f7c3f5abdd04960477fe9de9ac46e7b3e8d9ca4128aa52031c2f",
+    "src/job_agent/resume_workspace/evidence_pack.py": "4f38cf2c5d1a335ed24bb700d4732e06af8e88b0256b030b61daf5f015ac8b3e",
+    "src/job_agent/resume_workspace/collaboration.py": "552e29b93fddf82266a92e0f8a5d192e514b7a0b6ec2c9854d8168f8d411e1fd",
+    "src/job_agent/resume_workspace/postgres_projects.py": "13c0de85e0f109cb73cabc2e4f6baf72bb7c12c9e9d2cf480037ad1b852eed99",
+    "src/job_agent/resume_workspace/api.py": "071f113c913dd3f9598d53388e858352833250f62086fc2b1bf7a2e672a41bd3",
+    "src/job_agent/resume_workspace/code_rag.py": "a85adfd182a19342510ac53fc5cbed4bec2a0ed3b1e40f520626c2ba581b4fbd",
+    "src/job_agent/resume_workspace/collaboration_contracts.py": "28d207f3e445ae37d5f9453a35c84cccb93ee98c4f5c67d499e45523bc38eb2a",
+    "src/job_agent/resume_workspace/index_dispatch.py": "3d9cc977fc9fd04de01b64398eeafe8145dfc8796e62e0adf0c8f269495cb797",
+    "src/job_agent/resume_workspace/retrieval_runtime.py": "2f520f6c99ac4481890cf73761953de79628434c5e64a4037776478e95d22dcb",
+    "src/job_agent/resume_workspace/contracts.py": "82dbef9d7e9da22aded0543de04948e27c60d975d1e7fa5784f5fa10eb669992",
+    "src/job_agent/resume_workspace/project_migration.py": "931341ac73dfb67f63037e1f043dd70a098f632302c0e8eef7fcf8d4be56481c",
+    "src/job_agent/resume_workspace/evidence_api.py": "84bb5a2582daa40ac0d2a20533768f09efed33817e84f82d4aacd766268c2a0f",
+    "src/job_agent/resume_workspace/interview_contracts.py": "4ca39ea2941945dc7fb68f08808ee4474abd1faf67f6bb66e773b382445ea4ca",
+    "src/job_agent/resume_workspace/main.py": "aea13e76f3fd239eaae12a87acf9759754ec8b188bce8c888da09a8a2044d142",
+    "src/job_agent/resume_workspace/interview_api.py": "617d4e59573e9af514b7e7a79c0acb170059a52f55c48d5c5b9ea38a1756e33a",
+    "src/job_agent/resume_workspace/interview_collaboration.py": "6d913b6f18d809bec2dc2a61e6ddef4c82ad29ceb97611182a4694f0d0e0fff7",
+    "src/job_agent/resume_workspace/evidence_reference.py": "764ea835fecd7bf0cc228793233673698c47264c76a47de3e04df72162c17b2c",
+    "src/job_agent/resume_workspace/collaboration_repository.py": "3c58e1cfc72cb93e39ba9aea14cff7b141fa8cc5ab692ad4e3dcc90618825b73",
+    "src/job_agent/resume_workspace/match_api.py": "77e233753529ea3196702e8508891bbc9b10abc34be62e47ff22c5cace7a0661",
+    "src/job_agent/resume_workspace/execution_state.py": "e9d3a20c92afa8cc46e7f5ae8fb9550b7dcb857f973ad55d6acfbeb1a4ec5940",
+    "src/job_agent/resume_workspace/public_seed.py": "a90275d1d344ad81a7568fff856f002c479b580a64eb48966ec818b17bc37350",
+    "src/job_agent/resume_workspace/fields.py": "02444ddf714021b93366b7c321de48a658c17b9b178ee6d3edee15383ceb817d",
+    "src/job_agent/resume_workspace/unified_trace.py": "714c9fef879a3cf93c5cce488e904e38f70ffc0e9a9d851a0cbd8cdf73f78b83",
+    "src/job_agent/resume_workspace/parsing_contracts.py": "77038eef6ca8e3c85fe85489ec87d23ba7cb246634465790f295f71ba732136d",
+    "src/job_agent/resume_workspace/pdf_export.py": "2dc729a7f678c3339766fef67aabfe10be0ccdb9a7332e13f527dc5d4759b3ae",
+    "src/job_agent/resume_workspace/local_extraction.py": "355d5653faa96f32f38970aaa5e41803bfd9d4ba9dc6ffbb5e217f8450fc996a",
+    "src/job_agent/resume_workspace/collaboration_api.py": "bd94a172462475d3573972b007c456903315ea1b4b95d184f6d954ae4cb87fd8",
+    "src/job_agent/resume_workspace/project_import.py": "1ffae0b025892cf4e9aebcf8ce692ab2d6293da76d332375511faabb097c14f0",
+    "src/job_agent/resume_workspace/ingestion.py": "3cba0f9f28612ace76fc3c69024d3c01107a4132cd0faaefd7edc94c703da020",
+    "src/job_agent/resume_workspace/learning.py": "1c7c7f68dc607e3a4270815e831278bc9591456ac91a31418c7bf85418425827",
+    "src/job_agent/resume_workspace/interview_tools.py": "ff1986ea86bde0b81ea0a7c05e692c1a615adcaf72cd2d69dbf32ee8090a2b60",
+    "src/job_agent/resume_workspace/match_repository.py": "401ae83cd38a830e970100ccbcd56ad3abb76f70b059c53be5befba01145e6f0",
+    "src/job_agent/resume_workspace/matching.py": "b6a739d4a54ce77e9ece91b486041a468fe7e66983963114b2038a6c50a6bdfe",
+    "src/job_agent/resume_workspace/retrieval_interview.py": "43feb2a181d01ffaf1fa15f1e2d0959266e35cf329dbe86074c72e698ae89fd6",
+    "src/job_agent/resume_workspace/index_streams.py": "4aeba0422f763d4c3d1bfa61431760ad993ebcfb580259eb39c073934b84e3ab",
+    "src/job_agent/resume_workspace/rewrite.py": "bf4bfb071bc96a5324509eae4f670170a09777a45bf6a5d29f79c0e4df716779",
+    "src/job_agent/resume_workspace/github_import.py": "3b51e6b2b3e57d45955b6406236f193b5998e3940d2e33f088d4552375cfe99f",
+    "src/job_agent/resume_workspace/sqlite_code_indexes.py": "a1e01c604f6b0bd56338e44030023908cd34ab45151eeafab14bcb4b140c1736",
+    "src/job_agent/resume_workspace/claim_audit.py": "3d3fe6d4d62955a23ee994dd819e6371b093ebfc5d7633c9697627ff1deb3187",
+    "src/job_agent/agent_ops/replay.py": "eaa26761e7e3c071e8be39b4cda3ece39a649ebdbd713814fb4ba53a27cbacb0",
+    "src/job_agent/agent_ops/evaluation.py": "4016b13e7e911ab038d7ce047d8fc91d380552315766bdbadce0db252359863e",
+    "src/job_agent/agent_ops/repository.py": "88c6aa9f595ff5318a1f92bb6e64a88826f4d4eb731e68db2410b91d058e0371",
+    "src/job_agent/agent_ops/recorder.py": "afb91073f1525eef3b6b7e0ef3500267a86b9b6c3961be84f5d8b19a07029c0d",
+    "src/job_agent/agent_ops/__init__.py": "70dc8ee889c668160b114f46c1332b5a52cd0b5c9826e12d6c5b48805500041d",
+    "src/job_agent/agent_ops/api.py": "09d784088009b0934b6049db89364f895967c83238b1a340f1b51cb50dd6ccbf",
+    "src/job_agent/agent_ops/privacy.py": "8295de0564e623d617343efc2bafccfef793dc8ade080825c90c01340d01ead7",
+    "src/job_agent/agent_ops/analysis.py": "4d2abb991bb891a079f63a611e6e038a9f9a92904653310a4a92515da4f86236",
+    "src/job_agent/agent_ops/contracts.py": "28016db3ff81cf2573e338b13dce3478f5f6fc4c27bc44fb21c0d2f3a07e8632",
+    "src/job_agent/agent_ops/debug_bundle.py": "520b3972f8293e0d592cc6629bc484f70dec9bb8bbe77cc3a9e94feb377a1bed",
+    "src/job_agent/domain_agents/application_lifecycle.py": "908067167bc1985404425db2363a3a05a058e62e6d9b048ef7b6c9d301ad9016",
+    "src/job_agent/domain_agents/__init__.py": "37e0b564ee01131ef66a4d688af43ea464389fffc9ede310d18bfcc9b0b979d5",
+    "src/job_agent/domain_agents/application_ops.py": "25e611845b980775a764ccb7699f9a4b76ffdb04e1b3d1d5b4c199143d20242c",
+    "src/job_agent/domain_agents/opportunity_research.py": "f9276aad97aa352ecac5498eadd9513976473fa2f25fe16ffa36302a13c081e4",
+    "src/job_agent/domain_agents/application_material.py": "9acd20e8a0ba7f28c1b48b32c16d6bad8ea1ce568e4786be5a28bca786bdf6ff",
+    "src/job_agent/domain_agents/application_tracking.py": "090945b22eb566c8acdb15d6f52e169577464a12ad267afd6c244ea66348acb5",
+    "src/job_agent/domain_agents/interview_coach.py": "c217189041ccdc2090cd8fd782729b7ec8199b0057eee1b7095db9343a317cc1",
+    "src/job_agent/runtime/concurrency.py": "17b58126f616675dabfeb43ece54b09d065d2320ddb29a24fff0a74d4ac65060",
+    "src/job_agent/runtime/__init__.py": "2f5a0fee24882a00fa0bc527b7953de0a91fa0b8bdfa0a0b1186c534863215ac",
+    "src/job_agent/runtime/graph_runtime.py": "57925cd5b5644ee7a92f29b2d1f7a18db04505983864185e53cf49fee584c046",
+    "src/job_agent/runtime/modes.py": "45335d4bf9314bb519803a41c5cd19cbbd9ce6ef1c6770175df7169b30056279",
+    "src/job_agent/runtime/context.py": "1ec7059bff2469dbe7a67867c3eed9313e9ecde4d5b0e97721260c71f5875da5",
+    "src/job_agent/runtime/semantic_checkpoint.py": "66dd9227aa3de59b7efd7763c8d90d035706e759a422ef5f5a9b37d63747be0e",
+    "src/job_agent/backend_service/failures.py": "dee661b96381a11c0d8a29859e0a25346bc47ef905cd0a7bc96f77be694398fe",
+    "src/job_agent/backend_service/metrics.py": "b97fd785afb330aeef6102b118242cbd40b2124247ed28569200b9f5ecc9401c",
+    "src/job_agent/backend_service/provider_admission.py": "cf0f3815b27f61c0931e2b56620b67b9e50b1ed4abb9bf2d9061ff365e299f74",
+    "src/job_agent/backend_service/application_assistant.py": "bee143d1344e246824ab7500b90ea41c516bf61ffb4b25682424df203de55278",
+    "src/job_agent/backend_service/career_snapshot.py": "6273da8e03666ad2f7dc6e837985cec41f85b10a5abf7f7a9dbe148d40435a15",
+    "src/job_agent/backend_service/worker.py": "ea3c7278db733f9f5b1d1a0cddb26b5b0444cc12e88ccb5e6efae9af557497ed",
+    "src/job_agent/backend_service/postgres_repository.py": "3602bb45218f2e5cab453c111505903ebe8cdfb4c5ebd037990c3b525d97930e",
+    "src/job_agent/backend_service/repository.py": "b2a38cb47fe548f1c106e9f879c03d71de7c0bb4c06cd6df2acf4c205ffd4a14",
+    "src/job_agent/backend_service/__init__.py": "81a3d3f923623d6a1b85773698a43b6a0b639391fb8e721e72afaf86fc5892e5",
+    "src/job_agent/backend_service/bootstrap.py": "c3101073ad4d5d057b53fc18ea173b7fe5907268cac0bd50548748257f258c08",
+    "src/job_agent/backend_service/checkpoint_adapter.py": "40958bf24eb4e7dd70931771ceda771b28cc14e0a108b5e5564c758e4be42788",
+    "src/job_agent/backend_service/api.py": "95977d19d6d854bc33e35c0b6776613dd8e1343f11cfd4ec3ee2fab09ee11498",
+    "src/job_agent/backend_service/reliable_worker.py": "9a4a7f7115942bf844d3fd9312c09e89632d7ce2b80b356585a87775d5c22875",
+    "src/job_agent/backend_service/service.py": "96ae2c5cc585bec419f1d553d8cbfb277610533530f59ccd16cd8f255ad5626f",
+    "src/job_agent/backend_service/outbox.py": "52a8c81c0d91cd775f56a7c525ec9a71f74aae44c854fe30fa0e9613fdc06509",
+    "src/job_agent/backend_service/execution.py": "b3762bdf230dba36349ece01c1a6b1c44e4b00626eb0457f02902db34b115317",
+    "src/job_agent/backend_service/contracts.py": "94db8a02e1b8d5ac443e45376eaa8e2a81b9af0cbf252a2ec58fe3b3b61654e3",
+    "src/job_agent/backend_service/settings.py": "076ee8bea8d2c9c4850fe3279fc378a514704876c4237c4b0f2d10827a275191",
+    "src/job_agent/backend_service/migration.py": "43c72c2891c5e5c67bc6c40627c916998bf736f9a45be35079af7b1b4c90da44",
+    "src/job_agent/backend_service/recovery.py": "aacba313069fe62419c83211f251ea389ecadb38ebb1192aa315836408f8cd06",
+    "src/job_agent/backend_service/main.py": "6e7e5618d4d2080fe7f794d81eb1dbd4ca95e09d47c012b39db6b56eaf01404b",
+    "src/job_agent/backend_service/redis_streams.py": "52762a110e3780415ba90ce11d3c12a992e042d962f84f4fd5d697ef4018b7f5",
+    "src/job_agent/backend_service/queueing.py": "dfc1791e58796fd4dc390fcda74b897971991cea2d29a86af299ea6e344ec26a",
+    "src/job_agent/backend_service/tool_operations.py": "62f3a2db86005502c4df4cfcd10cb65450f36f49e58776053498ed3a630bd646",
+    "src/job_agent/backend_service/persistent_bootstrap.py": "e2881259f529e9cb001027552e6444fd601a521beb6b9438738c632187914a8f",
+    "src/job_agent/backend_service/persistent_main.py": "562b489e8301779e7b4af5c672e0a6bd86d9cb662dc31b745efe8df3dbfddc09",
+    "src/job_agent/backend_service/execution_manifest.py": "3a7cf727f34f3c2ce5ef1c916f287833f17bad517ecd80a0ca0fe5df89b2c978",
+    "src/job_agent/backend_service/mcp_adapter.py": "9e640e36d25320c14598a419c18fa06c4f53478063322d371c3d037e91f4f951",
+    "src/job_agent/backend_service/worker_main.py": "dff4aa9d383d381bd902c5ef3267133c10eb218ea7a99c7c5120e5f36771738e",
+    "src/job_agent/backend_service/application_evaluation.py": "5cb19892a670568b897582e6640b5ee3495bb01473030d66fb2f57a2f2891cc6",
+    "src/job_agent/evaluation/evidence_grounding_runner.py": "f5b3098d2653c53844b4f3481eed522ebe9cf18e0745d6d62e0ec1bbf382bcfe",
+    "src/job_agent/evaluation/reliability_fault_injection.py": "0daa31a484748ffe7f667933cdb36f695cb93242b76a4e3b0622c47e81174730",
+    "src/job_agent/evaluation/evidence_grounding_atomic_runner.py": "ed48e9244a1f092e2dcfa68c0d1e38865753672c82a23c14344094c89a015b96",
+    "src/job_agent/evaluation/__init__.py": "e91543e15a8ab1a94147c635dff6d5cbb4acae472644b2a369bf3f709a252ce2",
+    "src/job_agent/evaluation/evidence_grounding_validators.py": "50e4b81fbee502ce5e8023daf489b172c62b25908f0103b0fd5bcc64a2b70880",
+    "src/job_agent/evaluation/real_atomic_evidence.py": "24fe6110559d90ff023d3224a22eb26abff1d2199318762c9f5241f4990648a8",
+    "src/job_agent/evaluation/evidence_grounding_contracts.py": "0db211f78816acd10035b3b20bd0e81dcce52879de02a4744c0efd93ac5558cc",
+    "src/job_agent/evaluation/evidence_grounding_review.py": "f77c673d32319260fd209646cc48c0188a431052d239c6abc07f7d22deec3ab9",
+    "src/job_agent/evaluation/evidence_grounding_source_diagnostics.py": "39be5e3d71d9d7658896c6d0dcb4bf9f6c8028538e764625c9881e09820264a8",
+    "src/job_agent/evaluation/evidence_grounding_dev_dataset.py": "1d5d60ec4889d4d56455e687f7223014db407812d5ca50ced9409d7f8d64d24a",
+    "src/job_agent/evaluation/evidence_grounding_direct_jd_dataset.py": "292a6cf87968a635fde460718883a1bb5222d58d60b85dd6867194392cbbf9c8",
+    "src/job_agent/evaluation/evidence_grounding_metrics.py": "c809279a46bd1821ea289b867b2cf6d12223a96650292faa138a543fbaa4a085",
+    "src/job_agent/evaluation/evidence_grounding_atomic.py": "bc6738ee6e50c3c31d66513b61cb718feed2bc82aead298e65afb88d8ed04bd2",
+    "src/job_agent/evaluation/unseen_career_holdout.py": "ff5fb137c3116b98b2d35a6e967b8fce9d25dc74f0de0bd08845ec68070dad40",
+    "src/job_agent/evaluation/evidence_grounding_raw_replay.py": "1256bb695d796290f999806ee5b6c90f99257abb49cfba39f58730b4906c2d03",
+    "src/job_agent/evaluation/real_career_data.py": "5d7935ee68137641b3d008c7af01878c8026ecf17d316b2d7af45e337e07a8ac",
+    "src/job_agent/evaluation/evidence_grounding_adjudication.py": "9c91e6a0e3d874c223062838cb918881e42cc14751dc67c58c31eacfd4fac73d",
+    "src/job_agent/evaluation/evidence_grounding_direct_jd_runner.py": "d3f8af831345e464bd8d42fdb9b77771edfdadf7b660b23daf3188df60cd0f67",
+    "src/job_agent/evaluation/real_evidence_semantics.py": "00716fc8114b860be34c7c384d403664055e559ec51eee7e95d78607c8454586",
+    "src/job_agent/evaluation/evidence_grounding_review_audit.py": "ede91cb42f66b150d3fcc07a57adf1768ed6e7613fdf2f593e4cdf89d3e6140c",
+    "src/job_agent/evaluation/real_career_runner.py": "cc335cb25eb516152bdeddf6e691ae5ace3bb3b74fb375dc97790d89059e7087",
+    "src/job_agent/evaluation/atomic_evidence_v2.py": "3862747cdee2861e8bd8e71c9e771d473aad1465fd94aa7524b079f85efd4989",
+    "src/job_agent/agents/__init__.py": "1c62c3d55d1930f73475e01b459534e414af4a2cdbdcff6d108a40eb1ff734fe",
+    "src/job_agent/agents/evidence_mapping.py": "4889b47f7dc9932dac53a812554c352737a299c1cbd0b3fcdd047e872fedbb33",
+    "src/job_agent/agents/post_interview_review.py": "69e7d5796ee5c4a2e18c6a4d6901e8d518d610e828b6e35be952b9a29af15111",
+    "src/job_agent/agents/answer_cards.py": "905420f9c62a660a51dcddc5a6ac4dd440ba9e7a196f533cf420b009eb373fa6",
+    "src/job_agent/agents/jd_structurer.py": "da0e0d0a8debd1f452ae8d49203cd1b0357b81c88de467b588efc461994b6473",
+    "src/job_agent/agents/interview_prep.py": "70c1b02049f7e0c216f54cee8ea2ea64748343dc0121060b9b68f01ac3dc3bd6",
+    "src/job_agent/agents/base.py": "b540086bd6c3e5ac826853e5d6325f05f43442d762c5e7c54e309be8ce898e1e",
+    "src/job_agent/agents/mock_interview_evaluation.py": "23f3734974b3365d8524f66fdd05b00d7242b8a558f69491ec07e859afcdb4cd",
+    "src/job_agent/agents/resume_tailoring.py": "1b1591dfac73dfc7befc0aa6b5126cfe70f400c22d30082eb5374ed85d8f47c2"
+  },
+  "source_identity_scope": "all current src Python bytes with as_posix paths"
+}

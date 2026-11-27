@@ -1,0 +1,9 @@
+{
+  "data": "authored CC0 synthetic only",
+  "scope": "single business HTTP probe, not final A-G evaluation index",
+  "files": {
+    "s5-http-qwen-pg-v1.dump": "c0b8f9d2d38302cd1a8d81bc2650988899b448dfda40089dd2075e197d766fcb",
+    "s5-http-qwen-state-v1.json": "0273ab06ed68541a9c5de8cffa68e15e5b234052e831821f96957dd40859c4ba",
+    "s5-http-qwen-resume-v1.sqlite": "30924615f1173ad5c389f259b40f18aba6680a49332c216eb0c61e15a879d60f"
+  }
+}

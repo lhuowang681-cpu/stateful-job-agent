@@ -1,0 +1,52 @@
+{
+  "actual_cli_exit": 0,
+  "output": {
+    "mode": "redis",
+    "authority": "authority-93e567e7c74b409a839e9bc1121824cc",
+    "outbox": {
+      "pending": 0,
+      "sent": 1,
+      "exhausted": 0
+    },
+    "tasks": [
+      {
+        "status": "FAILED",
+        "count": 1
+      }
+    ],
+    "dispatch_failures": [],
+    "archive": [
+      {
+        "stream_id": "1792678666865-0",
+        "event_id": "wake-ec1abe01aff74938b0a3357fe74f1e95",
+        "task_id": "task-109feab9e5164ace8e58f5b9785e8176",
+        "reason": "unknown_task",
+        "payload_digest": "252dbba95b29d9e861d69d3dc4296b66d74bd40dd03cd9630cecf5930ccb1f46",
+        "recorded_at": 1792678668.918932
+      },
+      {
+        "stream_id": "1792678666864-0",
+        "event_id": null,
+        "task_id": null,
+        "reason": "invalid_message",
+        "payload_digest": "0e47daf11c20cd6011cbf24da600c48c7668c66c3ad571f4e837d56be1867fc5",
+        "recorded_at": 1792678667.838002
+      },
+      {
+        "stream_id": "1792678665604-0",
+        "event_id": "wake-9039fe0ff38d48d19c663b940186de21",
+        "task_id": "task-948a5287830a4d1c9e5056a08084493a",
+        "reason": "FAILED",
+        "payload_digest": "7664314af263c57ef22d53d622535a56f47cd4689c3e9015912913c42fdb752c",
+        "recorded_at": 1792678666.707796
+      }
+    ],
+    "stream": {
+      "lag": 0,
+      "pending": 0,
+      "retained_entries": 3,
+      "configured_max_entries_approximate": 10000,
+      "reclaim_cursor": "0-0"
+    }
+  }
+}

@@ -1,0 +1,1161 @@
+{
+  "algorithm_identity": "f063370b6d6d86eef43d113261774388f9e2a6676cb20d7c806e81d10423759b",
+  "claim_support": null,
+  "corpus_snapshot": "corpus-73fa4f6fd1b85cf43e0deec96c9f76fb3869bdcc65779a81b554704970b34f80",
+  "cost": null,
+  "dataset_hash": "733e50139158514e0a694db0841a143b57a91ccc4b61f954de4c693523a92350",
+  "elapsed_ms": 109039.582,
+  "encoder_calls": {
+    "document_calls": 0,
+    "document_passages": 0,
+    "query_calls": 300
+  },
+  "ended_at_utc": "2026-10-23T05:16:01.903503+00:00",
+  "final_business_quality": null,
+  "heldout_scored": false,
+  "human_reviewed_count": 0,
+  "index_scopes": {
+    "dev": {
+      "chunk_ids": [
+        "chunk-01eef477520f6f36295d750b7dd0",
+        "chunk-034ab16f51253b9c2bf5b56a07b7",
+        "chunk-0388f20ecf21825f3f47904f8a3f",
+        "chunk-03cacbb99594e47bcd09d46a766d",
+        "chunk-05038a11fe250932352f0ee953ba",
+        "chunk-05b8727ed20aca6db580ede21787",
+        "chunk-07c8f2f86a26d010a7599b6cc40b",
+        "chunk-0948a04ad118e1120287f1bbc1e8",
+        "chunk-099a82b0e48c80d0757d3a1ab02e",
+        "chunk-0b50ae2b643b608de4def2b8607c",
+        "chunk-0dd1057e9d596db432ad6d67c396",
+        "chunk-0de7a29656800d2835bf40230c16",
+        "chunk-0f667950025cd32e1f34531695d7",
+        "chunk-10db5086b5ec034afcb052561fc5",
+        "chunk-10dc1cabccd4fd6b87a7774a03a0",
+        "chunk-119df8252b0f5f4153a2cd19564e",
+        "chunk-1244ff869ec2826eddf3ae37e6e1",
+        "chunk-1278b31f108cc42ad9464bffd5af",
+        "chunk-12a2364d6dd897de21cc12cd5942",
+        "chunk-13aa517615df104f952c5bb1d33d",
+        "chunk-1410fed3003bd4cbea1522476450",
+        "chunk-15088f2a8af6dbe6b48b7e815a96",
+        "chunk-17397ad3bf34c38374659836629f",
+        "chunk-17d7ddc57cabf2307373b0769cd4",
+        "chunk-181e17b481cb4605e95367d470c6",
+        "chunk-18a6f6ac092a5ffeb42a4e779520",
+        "chunk-18feb157447816bff3cab2b63197",
+        "chunk-190663c98cbf40ee78965b9cd433",
+        "chunk-1951c0dccf7186741bd948579163",
+        "chunk-1a89b35c29cfd157ff0eb0e4254b",
+        "chunk-1d090fec123b288b88ecdb127ca2",
+        "chunk-1e0d6cb972b82f68021654cc3181",
+        "chunk-1e30e53e8e55798e45a34e3fb75c",
+        "chunk-1f4d22339abaf9beb963685209b6",
+        "chunk-2001279317270634b488d8bcfd14",
+        "chunk-219dde35f8fde8cd9895067ca331",
+        "chunk-21f32b035824c9be5b25541a5002",
+        "chunk-2279c263d89618b0db83b9a93b17",
+        "chunk-228928648860137c212565d1d4ea",
+        "chunk-2415644081c2c3c54ee72ee42f6e",
+        "chunk-24855defd6d002492cd8bf4a5f81",
+        "chunk-2499a6248d0cab0fa5d32cba85d4",
+        "chunk-26162854638c48c6e1b3f99e37f8",
+        "chunk-262b10462fc35a0015777d827fdb",
+        "chunk-28b7472702772326647db8c61b8c",
+        "chunk-28be1514c784c62c9c2c9bd6ce33",
+        "chunk-29d35e0a363577a5b96705db3875",
+        "chunk-29e485604286f016a4ce5a105ee2",
+        "chunk-2b38b7f83dcff756e2d8e71758a5",
+        "chunk-2c76e7739a8fab662588bddac031",
+        "chunk-2d45ba82f2544333638f79f81a6b",
+        "chunk-2d6ef6fbd24d66ae094fe69616a4",
+        "chunk-2e17fb6c5c90f1aa9d07f6d08ce2",
+        "chunk-314e67d4a100d9738a38fa7d0677",
+        "chunk-315c4981f918d84f267143c13c8c",
+        "chunk-352a5189092045bb2f525042b12d",
+        "chunk-35de9696e5b537e4a84004e608d1",
+        "chunk-3678884388fe5ee30e208b242aca",
+        "chunk-380a1922a4dfc02516b26d990351",
+        "chunk-38631ca38359a26dc3665b0340f6",
+        "chunk-3896cfe49d11fe80fcdddd9fe178",
+        "chunk-39a714af51f4f44b04abd9ab4d65",
+        "chunk-3a9f75a745aae3da5cb37efef24c",
+        "chunk-3b0070749cae55450fbbf63dad77",
+        "chunk-3b2122a55b2de4da2a107ab3c75f",
+        "chunk-3c396f30cfa9d1063de4714ea9b8",
+        "chunk-3e7b120ee5eaa444936f1a87b7ed",
+        "chunk-3ec69a4ba11c23305ec6f011fe71",
+        "chunk-40b9e35f85a844d5b6c2658c8c49",
+        "chunk-4145e3b5f15f4cabb73085d3a29d",
+        "chunk-419c18208b781ff151b3a4789ebc",
+        "chunk-41ac1c461be31d22813610365ed1",
+        "chunk-443256fd9ed9ff8e3278b5b35170",
+        "chunk-44d3467f4ddbf94c79b7bbb2f810",
+        "chunk-46d273c560b1d8cbbb960f32469b",
+        "chunk-48e8d43561fa4006f5134207b5b3",
+        "chunk-4a25497ebc235aac8e51c48503db",
+        "chunk-4a6e7b1356f7cab4d68e504a69fd",
+        "chunk-4a83d895dbca2515ca82342e3d79",
+        "chunk-4ab7de982afedc98b35a765237e3",
+        "chunk-4db51fff5a62fd68c5c2019bee50",
+        "chunk-4e1a38d15db98a83f00c844be187",
+        "chunk-4e531a22b56a1d5de781bfae7165",
+        "chunk-4f23dcd1017e1ec908abf02e184b",
+        "chunk-4f2f37c8af12463ef502591151c1",
+        "chunk-4fd8597fc02af12918de727e4209",
+        "chunk-4ffd395638ebd2ea5816bf364060",
+        "chunk-50d9c8354ddf09f1692236086e1b",
+        "chunk-50e3c6898d4324bcd023825bedd7",
+        "chunk-52b5b4b00f7ea7df9d03f96bce2c",
+        "chunk-536a8f9eeda2c3ea19c81de20f8b",
+        "chunk-54912744c04beedb69f178f72e10",
+        "chunk-55edfff8ccb4b61e61b1c7a9e917",
+        "chunk-5696325e236f5879247d853ca862",
+        "chunk-56ab9f96fb193c136a44dd19982b",
+        "chunk-5791a9058fb151213d9a7cb738a8",
+        "chunk-579ba0e252c7050ae15cadec3be3",
+        "chunk-58e6e413529fca88c933ae522f47",
+        "chunk-5928186aa091f01abd36f985d082",
+        "chunk-5a0b0dc160b52095d3afcfd47c38",
+        "chunk-5a5c563e93cb1faf9ce6af137955",
+        "chunk-5a7a709b40f2f046a837499f69b6",
+        "chunk-5c7d01f7fb5597d1eeb0c0b13dbd",
+        "chunk-5d549f902ff484eb0d7da2e8d6e4",
+        "chunk-5d9fee468fb3673868ed1db13bec",
+        "chunk-5e01a658f779242d3693c05b20f0",
+        "chunk-609b97301735a6603badbffbc63a",
+        "chunk-61454d0b1bf4c37e02bd1c9afbb4",
+        "chunk-619c2212fd6937a8b8a9df6c34b6",
+        "chunk-6248bba61fb9ca82298ba2a1ef21",
+        "chunk-63c0f548323ce5d756458d14ee6d",
+        "chunk-67d40a7cefa4ad6273ca84b16b24",
+        "chunk-68734f9c419499707a269dfca0b9",
+        "chunk-68addf3d84d3fecdc2b357d5a035",
+        "chunk-6a5ead27a8d941cf321b20f77b5d",
+        "chunk-6bdf3e5933483805e850198ac6b4",
+        "chunk-6c7cfe2b85269a530c9d21dcbd6e",
+        "chunk-6cd26f7f0f24d50871ffc37f9ff1",
+        "chunk-6d631f50e46870e092d291400971",
+        "chunk-6ef728ff73d4049791ea0d6ca4d1",
+        "chunk-6efcba8aac09ab2b67770d4ba195",
+        "chunk-6f924ca25d3b2818ef8b9fc28f18",
+        "chunk-70f8e396552f26ef6b3f1b6ad92b",
+        "chunk-71dc03014e1e01bf64d9a5641c12",
+        "chunk-72482884330eb9f280c57c6072e6",
+        "chunk-72c3a82f48b33e5dec9473673de8",
+        "chunk-73e029c291a9078f0bff9eb7d849",
+        "chunk-75cb1b3e424ac5869ad2d0e502da",
+        "chunk-785d0794be3c8528787a506790d4",
+        "chunk-7a569412a1a3a53dc8d3962fe472",
+        "chunk-7b1529efafb7e5e9213b019a00bf",
+        "chunk-7b1ae5bffde6cba9198173aea296",
+        "chunk-7c02ca2bf11bf3d60fbe0a1551b8",
+        "chunk-7d913e2fa9b161628ee6c5930ea9",
+        "chunk-7ea7ca6632fb349cae014ef7922c",
+        "chunk-7faac561b24d5d79fa261ca03785",
+        "chunk-7fc464e292ff14a463de90b764e4",
+        "chunk-8027263690c42c427d121b011a24",
+        "chunk-80c2fb5e548a96f23f390127c84f",
+        "chunk-812df59091fb84a0a26f29813dc9",
+        "chunk-82af6df46a54bb29aa9168ce1c01",
+        "chunk-82b8c55a68b2650a2abf822eb85d",
+        "chunk-843a7b7bbc795f800addd867b154",
+        "chunk-84ae5da55df738cca6b2169146a8",
+        "chunk-88aef17fe6855ed6d219f0ccaba7",
+        "chunk-8a5ced62a78263a4e6f6a5c87b5e",
+        "chunk-8b47595f9a6a3d0def6f583dd49e",
+        "chunk-8b83bc6adbc70fda81427fa47780",
+        "chunk-8cc735cd7c46a84333df70a9e671",
+        "chunk-8d373286b5d9eeefb0299ad67bc1",
+        "chunk-8dc8a509074e1e657e0866a1668a",
+        "chunk-8e9c50da432abec0ce4de9ae1dd6",
+        "chunk-91a879bbdfd8ef14d870fad2dde8",
+        "chunk-960dcb832e7e11b8b16fd0ab86c4",
+        "chunk-96242c82b9f426416060343f9a43",
+        "chunk-9760d60d06979c58bb4259263ea1",
+        "chunk-9821257050dc27a621a1323c547d",
+        "chunk-98b4eab84c9efb453e2722661927",
+        "chunk-98caa5505488d5535c73e085adfd",
+        "chunk-9942ee69edc9dadeca9b2aae3283",
+        "chunk-99543bf9f0853b587d281f3205d1",
+        "chunk-9b0f423f7045492629983841e5ed",
+        "chunk-9c0a3dcd1cd1f28271957597b3cf",
+        "chunk-9cd326108a6ae90f8ddb81db7585",
+        "chunk-9ef0f26ac960257c21d964b875c2",
+        "chunk-9fccfa0a11c01b6b41989d2f28f5",
+        "chunk-a05c39c54ada2fe8963502775d46",
+        "chunk-a071d6d955991887188b77e859ce",
+        "chunk-a14b47286d0c68f1fbb7b09e14f5",
+        "chunk-a181b3c6268dd9693a4413aeed70",
+        "chunk-a1df6f1ba512afb6f6e964989f4f",
+        "chunk-a23acd3a295189b841889a1dc001",
+        "chunk-a43a7ce6a89d8b16eb71020e61d3",
+        "chunk-a458d66c491523f28885aab1d6c8",
+        "chunk-a562e09a6d5f0b4a11c1c8f713eb",
+        "chunk-a588d40adefdbc874f0fdd7c50d2",
+        "chunk-a726f55e174cd5e89ed7e999a849",
+        "chunk-a744c1ffae8d013a513eaa60cc78",
+        "chunk-a8c0ecd9dbcc91b6ca26e78ac3ab",
+        "chunk-a9170d959d67c8ad57ae59710d7c",
+        "chunk-aac2c0ff190f574a917e94b196c1",
+        "chunk-ae81ee6d45e0c6602ec834189cad",
+        "chunk-b1eac778ff95e32b0e7899407f3c",
+        "chunk-b2875517b77a04859702b0f17861",
+        "chunk-b3c8ab6789e881d86908b8d303d2",
+        "chunk-beb17533b5614f6ff33ab2b74f1e",
+        "chunk-becc0661d7cfe20b85d17b3540eb",
+        "chunk-c060bf497753436779006a348a3f",
+        "chunk-c06473ba0e995000bab3cbe01549",
+        "chunk-c09a2b2f65fa1f9d4982fb3a43bd",
+        "chunk-c10fae3142c19260bd8b99fc8678",
+        "chunk-c1e48d6d6d38f6668a2cb10dbdc2",
+        "chunk-c646e0ced448e436fab59acac5a3",
+        "chunk-c6cbd96b6af49c3f6430950fdd0f",
+        "chunk-c83c6430333ad4c37e9da272444f",
+        "chunk-c9f1638e274e7e33bc31f2d7bf12",
+        "chunk-ca2002111761ccc283759fa3bb9d",
+        "chunk-cbf67d2b93e2fe3d9e50e25c6d66",
+        "chunk-ce38294d1232b3a6ea9a9275c267",
+        "chunk-ce834a9b2f3465abba0a1b0e4c59",
+        "chunk-cefa50e1798849208b1c1a74352c",
+        "chunk-cf31ca1827a6023ce5044bde6177",
+        "chunk-cf7f2d7332303d9155e60e6994e3",
+        "chunk-d0908897a00376b1da61def79084",
+        "chunk-d1d6a5b0bb9d5b77830bcf73d6ab",
+        "chunk-d2440568e4532d2a71105fb1f9fa",
+        "chunk-d36e1f48e1d348c63056ecc8038b",
+        "chunk-d3938c7cec917c8980ff7be3b67f",
+        "chunk-d3d38792ad28cf7c8edbba299407",
+        "chunk-d3fd05816e6946e995942c159f3f",
+        "chunk-d4678fc125eec2d522f440a7179c",
+        "chunk-d6a14430273cadcb5966758060ec",
+        "chunk-d6fbe9d69f33343fa21f3718cff2",
+        "chunk-d7e83d370e947831273991132397",
+        "chunk-d812a4125a6076be8c5261e191c6",
+        "chunk-d909cf8f75d62eab2a4eb4aede03",
+        "chunk-dbf0e7238ac4dcdbb4b19706208d",
+        "chunk-dbf77b6f427efec5e5ef06c64a92",
+        "chunk-de91483b394c1e69828577b8ba8c",
+        "chunk-e02d72dc3a918ec622d28918b88c",
+        "chunk-e1243f623996feb9c1ab40a7bc92",
+        "chunk-e2ba094c3c31b1f01ac7fbf9f07d",
+        "chunk-e2dd4493194a8b6987f6dae86a62",
+        "chunk-e316b24de7c1ccf9ccf62a182dd1",
+        "chunk-e34193bc55cde9efdb4c258a1f28",
+        "chunk-e4146977993e4fcf76aae7d0408a",
+        "chunk-e5704f9c83e5063e82cb347f5847",
+        "chunk-e5afba6660779a29ff227c6df774",
+        "chunk-e5b276d6fd010de603b2b6910a00",
+        "chunk-e5f7e412d4a0a22bc88f967323f0",
+        "chunk-e755aa71d0ba074a30dbedbc6b69",
+        "chunk-e969feda95f3f69e5c7f9751f4c7",
+        "chunk-e9ce0992bfcafb97db24dbbacb21",
+        "chunk-eba8833dce4db1bf2765df86e6f8",
+        "chunk-ebae0fe243c0b1e4b63154f6b414",
+        "chunk-ec0736ea8255ff9e2e97416fa8fe",
+        "chunk-ec4438f3b05ad6866133840cfd00",
+        "chunk-ee01ce82d1aca1a3a4a0038d2ec5",
+        "chunk-eee527ea6fed3a8b702eddc421f1",
+        "chunk-efee4821a8c804bb6aeabe1fbc5c",
+        "chunk-f34c29f480e2c6c5feccda603e17",
+        "chunk-f4a416b95053af1d9f4dcc3ee45a",
+        "chunk-f4b4e61caf2d91dd48feec4d5ea4",
+        "chunk-f5f880a17cc6c588119fd3ed445f",
+        "chunk-f637fbf6faf8ccef394a264b8fb9",
+        "chunk-f813c839bc9df3ef8f7bc693c271",
+        "chunk-fb7fa9a2d8093638a6191865154b",
+        "chunk-fb948bc99a228ece5a218bb4559c",
+        "chunk-fc9b930fe0f069777222c4ce29cb"
+      ],
+      "edges_hash": "9e9d2d8ec9d6a980de4cc3b01227c5aed34437faff40911b64a9ab3992a5ef4e",
+      "index_identity": "index-f7ce3025ffcb297c19b6d655703624a7cd84014f85989266be6a624d82b444ef",
+      "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+      "public_versions": {},
+      "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631"
+    },
+    "test": {
+      "chunk_ids": [
+        "chunk-0043e2244450e9cd0b2d31747ddc",
+        "chunk-00fe058e6fbd633106069a2213e9",
+        "chunk-02641fa9165c884104868f93965a",
+        "chunk-03101ccbdb6a2e5ba9172c06a6a8",
+        "chunk-04c639f249d9f3a1646ee3df8fdd",
+        "chunk-067812840e52f939dac40eeb3e1f",
+        "chunk-0730683862cefcf1bb55e43104e9",
+        "chunk-09bb2b701a6f56e00bea76875276",
+        "chunk-0a1d1da4a23738d4b36a27dd2709",
+        "chunk-0a794c64df36a02d40a7f96ec8f2",
+        "chunk-0acb24a7b88b797173c7eda9bf14",
+        "chunk-0b77a039e48f901aca90fb690a4d",
+        "chunk-0bbc0d35112f33efb102e61171a2",
+        "chunk-0c2f66b1406b2a14bfedf70b795e",
+        "chunk-0c420cd05c719c86866ad0422b9b",
+        "chunk-0de95b7d4882797191854d9c05e5",
+        "chunk-0e4620fd154417abc8efe6f70b93",
+        "chunk-10895c67436ecf2067601502f019",
+        "chunk-127b6fb46106654edf707d599a45",
+        "chunk-12a0c80c778219123e03bc4af9b0",
+        "chunk-12b3b73c4158025a6cca249fc73a",
+        "chunk-1336200934712988cbc1ee4c4507",
+        "chunk-1364ff7b0fa2fde9ddfc6d2bbd0a",
+        "chunk-1492258301cda843eb396134b35a",
+        "chunk-156e30594fce98b75c23fe425767",
+        "chunk-15fc557294ea124ab737afaec4bc",
+        "chunk-18958686745a1135696e0c373553",
+        "chunk-1a247af7d2652e85d1778d709e9b",
+        "chunk-1af940ba9177e2b35ff18f36c8ea",
+        "chunk-1c36aa0a3ff2040821ed248bc057",
+        "chunk-1c76845e9075493d04a02b807908",
+        "chunk-1fa2eeaf105021d56b9a4e9deaae",
+        "chunk-1ff940f8fbffbdd69b3985e03587",
+        "chunk-21dd69648e96a0ab534dfe796c4b",
+        "chunk-2242dd1bf18a1fb012fab8d0162a",
+        "chunk-24f85787107ec35c25446f6f0d43",
+        "chunk-278f78bb540dcfab1b9b135728a7",
+        "chunk-298f67c35e8e592b0feeebcbd064",
+        "chunk-29aea1e53237fa39adccf984892d",
+        "chunk-29f97ff94eceeb59a2c5e941fcf9",
+        "chunk-2a6a3228bf7e18247308b8850576",
+        "chunk-2a755fef9faaf0304be4ded151e6",
+        "chunk-2b79a4102d87f31d7ad356159480",
+        "chunk-2c44974e58447607985ae6bd27f5",
+        "chunk-2d22659156f1b4082a9b3e28d2cd",
+        "chunk-2dc334bf6d2e1cce7a0088cfb4dc",
+        "chunk-2e5425d9e7a52e5e95ce1e779160",
+        "chunk-2e555c95b430a388efa9fc14e40d",
+        "chunk-2e877856ba7fa3e80bf6add082d4",
+        "chunk-2f91e7fa6a3372bc75ffeba73f73",
+        "chunk-2fb7491d03f934046b0276675020",
+        "chunk-3137b9cadfcabe1fdea10b174ec0",
+        "chunk-32329df6e522350b9b68d4c55f01",
+        "chunk-341090336762e47bb8e22ed2e382",
+        "chunk-34b12960dab5bfa712898a3238fb",
+        "chunk-362a43ff492d627770113d16fc16",
+        "chunk-36abda5605b111b48b393b4ec419",
+        "chunk-38db83f5160f849174ab0e8fb7af",
+        "chunk-38f6e903d20b9335a5a73c3b991b",
+        "chunk-3aa15cc1cc2b2eef36272e1272e4",
+        "chunk-3aa2af2eb7e0d013a1d6b7d1b7a1",
+        "chunk-3bf1053505fcd9c975b76ce586c5",
+        "chunk-3d16a3bb01b070fcf7bdd5826b83",
+        "chunk-3d1d5ea47f745c1a89e775e24612",
+        "chunk-3e3dc2c3816c308d252d60a1d7ff",
+        "chunk-3e498ff98b18f3a0b8efc9e90152",
+        "chunk-41ff972c67fa9e76446625195ad5",
+        "chunk-423dd00db4f08864b07d7e601f4d",
+        "chunk-42438b58caf7d58786b9533162f6",
+        "chunk-42f4e40baf4d2ecf383dca7137cb",
+        "chunk-4357612f851aa92726689ac6263c",
+        "chunk-436854a07cd2c0520fcf11aeb4a9",
+        "chunk-4389b116618137c81f47c95e93bd",
+        "chunk-454709ae6b3668950278ccb14bf7",
+        "chunk-457710c21e0b27db99e6a17e340a",
+        "chunk-4740ecf55d82c08e3d18cc9b7984",
+        "chunk-47aa27dec3381e581daa9c260c3c",
+        "chunk-48882d7651b9a00b930b48ecbbd2",
+        "chunk-48906dee51f5b65e4c09439d9566",
+        "chunk-49f3b0f30fc4f0fab42b40b42bd4",
+        "chunk-4da7ed11711b4de2e85f20506e14",
+        "chunk-4e488d550ed4256ac6ddc93947e6",
+        "chunk-4fc99ff3ab2e24c57daa87995c94",
+        "chunk-5014ff3a3fe5d58c2973ff977e60",
+        "chunk-5061acb9b3c62ebd81c34f578e20",
+        "chunk-510c7b050642bf30cd998b1a0b15",
+        "chunk-51a46bb5243fc8d6d5343f5fe40e",
+        "chunk-52296b731d3aba85a9ac8ba2002f",
+        "chunk-52b835e082e4feeba26ae1f75cb2",
+        "chunk-52c00adbe343c06b01b75028ec31",
+        "chunk-52c8f8039aa0101fbaff79de7752",
+        "chunk-535ad789ba3d3123fe61aca01d28",
+        "chunk-5554bce1b4070fbd2794e1c39930",
+        "chunk-562838da1df5770f8976029214ea",
+        "chunk-58ab401be2754eba1b733e659a2b",
+        "chunk-5b3d5f929d935f58b43b1fcbaab3",
+        "chunk-5bdb11805bfd06eb7d8d36545466",
+        "chunk-5e1d1444d3c336afb5ee928b7581",
+        "chunk-5e99fcc53e3107476dceadd8ac2b",
+        "chunk-5ffe6f02cb7b19f929a25cb445b0",
+        "chunk-618432efd0617e177dfac9d98a40",
+        "chunk-61847f44f168b1ca4be946bfcf9b",
+        "chunk-6359b29e6bbc8d6c950fe66ea246",
+        "chunk-6384ff9b72d6ff93a0e387dea81e",
+        "chunk-63b82a04a0efb60be9453fa938e2",
+        "chunk-6579d45013504ab9caf6229861aa",
+        "chunk-668a75c4b229b91c981458182100",
+        "chunk-66e7df101e3df7a2f03f5e6742f7",
+        "chunk-66f650c2c9e62c54307ad25bb775",
+        "chunk-675fd3d799d2ad806368c18cd349",
+        "chunk-6799bf8aae6085e7332faa3d1d83",
+        "chunk-67d34da686ed0f1e807b0d42e2de",
+        "chunk-68526ecfb54e65de2618d3cd7ecf",
+        "chunk-6a194c7d7510a27f09396c96804d",
+        "chunk-6ac065dc841ea64327f3b3ae7e2e",
+        "chunk-6bc01d9c038f2592730402762370",
+        "chunk-6cb73dc7af0d1637b3cd1a481334",
+        "chunk-6ddaad8ed9536c11d5df549557c5",
+        "chunk-6dfd32991b6ff1bb164f862ee36d",
+        "chunk-6e94cceb0aae84c09660ec6adad1",
+        "chunk-6f115c8fce56495a1ebfa391e418",
+        "chunk-6f73678e962bc94a21d99495cf75",
+        "chunk-70157a7ecbc578793ed636917534",
+        "chunk-7246e6d67504b6d7c11b9e237649",
+        "chunk-7378e2ce3253590e3b95b086d82d",
+        "chunk-73e1201af9dae1729905d2574ae7",
+        "chunk-767eca21cac79552f7512677b147",
+        "chunk-76838767e40f84a31b4bfcaf53bb",
+        "chunk-768f5591182a112885ea8a499a46",
+        "chunk-77164fd3db38fcaad4d6e5b242d1",
+        "chunk-7760355a1981687f647054e3b744",
+        "chunk-7787e42bb578568145d60699e15b",
+        "chunk-792a0fe9fc5a9bb97a161dced07e",
+        "chunk-79747e2e66d64a905bc422f31526",
+        "chunk-7ab61ed14cfce0bc10da8dedad40",
+        "chunk-7b0329fc95e31e34a42b832bd954",
+        "chunk-7b2bbbd30e527fbf90d8da73eadd",
+        "chunk-7b9ab6eadbe01f952ae8a1882c28",
+        "chunk-7bdb068bea7aead62aef3367d043",
+        "chunk-7c922a8de46d775170f08dc6085a",
+        "chunk-7d7d6449ca20ce7702ed821f12f9",
+        "chunk-7d9db39b6774c75bfee7f0bef301",
+        "chunk-7dd8e04ea15407d05dad24ed9111",
+        "chunk-7ef78686a3f4fb07836127b6cf10",
+        "chunk-7fe1c47bc7d6fc898bb0f8bb5421",
+        "chunk-81bcd7f010d43851d149ef63a971",
+        "chunk-8249c58d2f08ade5fdad010895d8",
+        "chunk-86fd89989654122427386bb3ef78",
+        "chunk-872c666fab0e121ecf2d13160da0",
+        "chunk-877015f9f260115efcf3c753adce",
+        "chunk-87c9e43dcbbc9cd3354d57de31ad",
+        "chunk-88191c85e6acf04a98262bcc503f",
+        "chunk-88a6f0eebf296e4fd4507a9b5310",
+        "chunk-8a9ddc433989374dd72e22fd9c2a",
+        "chunk-8b1755699efe1fa399e9f4a0f8f4",
+        "chunk-8b2902e480d5b406bf86405dcfc9",
+        "chunk-8c1c6d8d3ab60f9725a12df3f02b",
+        "chunk-8d1e5ffe098273dcae8ff42d0994",
+        "chunk-8d5c5482b7c866887a13e21f9bb9",
+        "chunk-8ef7c8149d0ce467474aaa2092ca",
+        "chunk-8efd9e812bbb461fb18eea4fee33",
+        "chunk-8f181613fa4a9a0be6e76e994ea7",
+        "chunk-928f13ebcee762d8455a4a929ef3",
+        "chunk-93726e778324f7413b031eaa0b55",
+        "chunk-9381a30c91161dd292e2c19f2b79",
+        "chunk-94b6e0552ef26acbd7b54d54581a",
+        "chunk-94bacb4b44b53a284f7b9eb43f6a",
+        "chunk-94fb2e7b0addc3ab25bfd4e122c7",
+        "chunk-96f2cdd016698bd22bcefbe57370",
+        "chunk-98b0e0b16dc833e805327deb00c1",
+        "chunk-98fafb6da3275911fab5679bc70d",
+        "chunk-998c74b8d1da7b7a0aa42ddc57f1",
+        "chunk-9a105e20d5399c5e4b558c9674aa",
+        "chunk-9a75f7aebbd784c3c40675822a4c",
+        "chunk-9a8c5b798d173f7924159536f884",
+        "chunk-9a97e89a1cc7c2b4a90068a16f10",
+        "chunk-9b02ba110b03fe2c8a472881663b",
+        "chunk-9b67c28db0958e32612fba03af48",
+        "chunk-9d0489280de15d4fc4fc20d69516",
+        "chunk-9e0b920066fd2fab1dc267798276",
+        "chunk-9e57f07fee7be99395e3592d808e",
+        "chunk-a0ec7d31e8785f66097a94e7c331",
+        "chunk-a1007bc2981b266179b502ddd925",
+        "chunk-a164bee26a433b14a34cbd3aa4d7",
+        "chunk-a1d35fce991c45d0ffeaab8ff6d0",
+        "chunk-a2be3f8e30b564a52e8b38c0c5fa",
+        "chunk-a41ee3f2524fc408cd7d4b306010",
+        "chunk-a43298ddd0f0132aa4c7a900117a",
+        "chunk-a532f9425510b7f51cf35f6158f2",
+        "chunk-a5713671bebcf0b98b6c7260660b",
+        "chunk-a5abdcae4f6bdebfbb80b84de6e3",
+        "chunk-a73a1891ca9e25bb850854d0f321",
+        "chunk-a8110f9c5b09c9124056406974a8",
+        "chunk-aadae0bda32bcd91cb3ad716f821",
+        "chunk-ab3d33acc1d71247fa95c16ea04a",
+        "chunk-ab618a681b8054a66653f19dc965",
+        "chunk-acb51d01f31c28c2c0dadbf5adf0",
+        "chunk-acec928d1cc215623d9f1a04d012",
+        "chunk-aec6f84c173012d7a23023d0e78f",
+        "chunk-af263e8dfb3ac316b38b1344e4db",
+        "chunk-af42f54eb36c3cb2c3dd80c2a403",
+        "chunk-b0bc5735c5c3e25f87695602b27b",
+        "chunk-b2eafe8c23c9994a7d796942ee9f",
+        "chunk-b4eb16beae7a4ca1ce7a6e6537ae",
+        "chunk-b618a6e47e46766f51b307655444",
+        "chunk-b659590ce8de06c2211d62f9159f",
+        "chunk-b66c8b8e245a8e0514dc9338359b",
+        "chunk-b6d6101c64e17bae2f57bf4bc50a",
+        "chunk-b8af6e37e1f0022fc84b7ce4fc99",
+        "chunk-ba0be289c16ab61c2509e662a7b3",
+        "chunk-bae5e6e089ba26e2046482693eda",
+        "chunk-bb10897860f6634432dbc62696b8",
+        "chunk-bb25eef0fa7a63799facc0047e34",
+        "chunk-c1bd9caa69e5ac578e163880ba53",
+        "chunk-c300652640c33741c1ccbfec12be",
+        "chunk-c4ec205788796ca285fac1d0a7e7",
+        "chunk-c5481be2b6eb6045f41d3f653324",
+        "chunk-c775496db12e4a42a9bd64ac8d41",
+        "chunk-c8519f75e78c32dae723593bb58e",
+        "chunk-c8ae3ff7cb1d74e9c7ff8bc311ab",
+        "chunk-c8e2f33874c9c50831c1b88d4992",
+        "chunk-c99d6597c158c348e24808b414f5",
+        "chunk-ca6ff7ce794847ac8353ce12224c",
+        "chunk-caae6e0296a983dc1d853d5db436",
+        "chunk-cabfcee87cf5062361ab8eb59126",
+        "chunk-cac7a05b5f17c854ee48e6fb10b4",
+        "chunk-cadcee853dfa3253c7f66e0119d2",
+        "chunk-cb1d96380c950eec193c33eda6d1",
+        "chunk-cc459d9a67e35a369711d08a36f9",
+        "chunk-ce47f16a74aa9d68b1f228ea8f11",
+        "chunk-cea676d3bb554ae73bf7d641f237",
+        "chunk-cf327bcbd9116f8350a835870d6a",
+        "chunk-d0228df4a7f3e73bdc9d8af8fc74",
+        "chunk-d0c946b3f7dd4468865607da8096",
+        "chunk-d178216e57b255fed2f218e3c729",
+        "chunk-d1db9bd853a1fdf2a9854c490bd7",
+        "chunk-d203145325cb2af66ecfc957f2bf",
+        "chunk-d3793ff3617256e59fec7670385b",
+        "chunk-d5b5dfda36ae865fb318dd9f8025",
+        "chunk-d60f8a97578af6ff756eee0ab4e3",
+        "chunk-d790922da9d980970d749d4624d1",
+        "chunk-d80af064fa08d69c74a66bb6c97d",
+        "chunk-d94e447dcd40a0a32e5d96b7e34b",
+        "chunk-d9978cc8f5c1829b2ce17b06d836",
+        "chunk-db28dd1d5797094e0fbd6fca6fcc",
+        "chunk-de3d0c382cca12403338313b7655",
+        "chunk-dea351b218076a3ee99c452b584a",
+        "chunk-df126a02e24d2aef60d7e66017c7",
+        "chunk-dfba2701acaff99c26bfe6f4c45e",
+        "chunk-e1c7b7b74725b4b4839dedd22c84",
+        "chunk-e1df7fc017ede31a71e5cedd2234",
+        "chunk-e2e9448f21f2486fe51b083c6394",
+        "chunk-e463f2bb250f6a9f8127c64c56a8",
+        "chunk-e4db471a6acc3081ed679bdaf1be",
+        "chunk-e6d4327c4a9fc76444d7b201f67f",
+        "chunk-e7e81bcc79c2898282e54f3cf6ef",
+        "chunk-e9e720db6bbadbc4fdb88479f564",
+        "chunk-ea0046ac7a31d43ec35f5b44a415",
+        "chunk-eac75ee48437fdf991a03f6eb96d",
+        "chunk-eb9425bec2fe20ddab5807a42287",
+        "chunk-ebb8ffedda5d43fdba14e0498bcf",
+        "chunk-ed051846e0811ee1da159f14a0d8",
+        "chunk-ed516df9e56b7551892e6856df26",
+        "chunk-edae7fad065a7cd626692b04e8f8",
+        "chunk-ee56579f2f30bd7dfb9ab81b91df",
+        "chunk-ef74c469bdc24472dc261b070b42",
+        "chunk-f0ce9a53d1b44b45569f0d8bf634",
+        "chunk-f30c225aecfe91a9c334b1a221b1",
+        "chunk-f30da17a3b9547066f67b87a64da",
+        "chunk-f3e71ff9f2a6b528ef1bc992e765",
+        "chunk-f4428a0d2525e67f8ca2e18e729a",
+        "chunk-f4c4e153b5fa847c11a0281998ed",
+        "chunk-f63072b66ad713a0352a97063426",
+        "chunk-f66bc5f9e6c71c5a385d34abe53f",
+        "chunk-f76aede18588991fe7bdb8c9a97e",
+        "chunk-f7e3f0fdf7ec505065865f877b45",
+        "chunk-f807b1343d88af795d797b0efe19",
+        "chunk-f8793c374ac9774ffefa4970b9a8",
+        "chunk-fa9fa3cc8348acd1c4bfba89f97e",
+        "chunk-fb7001fd7fa71cbe430c3d1b052e",
+        "chunk-fc30a4f326571554a9bbfe9b5214",
+        "chunk-fc46a68dd52b271c80adc676f8eb",
+        "chunk-fe45a06cb13fab65e59fa29df68e",
+        "chunk-ff5e94e9a9df7c85a0579692236c"
+      ],
+      "edges_hash": "3cce0c479439086fdd400b0ae516be1bcec6e5fefaa830c17dfc43247f5e1c68",
+      "index_identity": "index-3a1c85583d60aea919e12dc935269b37dcf18aa98c347248d39e6ca57858893d",
+      "project_id": "project-590650a7c8814b9bbda5f1dd9001cc38",
+      "public_versions": {},
+      "snapshot_id": "snapshot-05809528aae547e898b4b437c6a8746f"
+    }
+  },
+  "known_scope_experiment": true,
+  "limit": 5,
+  "manifest_sha256": "a7a4a58c4c287081422809ae93f4d96d04b03acd32c6b9aaafcb95ca27d13ede",
+  "prepare_ms": 8412.235,
+  "prepared_algorithm_identity": "f063370b6d6d86eef43d113261774388f9e2a6676cb20d7c806e81d10423759b",
+  "prepared_full_code_identity": "158b48684e9d3ba73a84d4c728691653774e557cfd879e391d11b0b0fadacf38",
+  "quality_trial": 0,
+  "raw_sha256": "84b5b3784f5c16502a92ee0fd9cb11dab3a3a6aff7708e422308d5bb3251761c",
+  "repeats": 3,
+  "run_id": "eval-077d5044b94d4bdbac045535acdab240",
+  "runtime": {
+    "embedding": {
+      "dimension": 1024,
+      "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+      "max_input_tokens": 1024,
+      "model": "Qwen3-Embedding-0.6B",
+      "normalization": "l2",
+      "provider": "sentence_transformers_local",
+      "query_template": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:{query}",
+      "revision": "47191d5687dbf14319ccb312680caa31a179ed5e16539b8c06aeddc53b63ef6c"
+    },
+    "reranker": {
+      "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+      "max_pair_tokens": 512,
+      "model": "mmarco-mMiniLMv2-L12-H384-v1",
+      "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+      "score_semantics": "raw_logit"
+    },
+    "settings": {
+      "context_char_budget": 24000,
+      "dense_candidates": 20,
+      "fusion_candidates": 30,
+      "max_output": 20,
+      "relation_candidates": 8,
+      "rerank_candidates": 30,
+      "rerank_input_chars": 6000,
+      "rrf_k": 60,
+      "sparse_candidates": 20,
+      "version": "retrieval-policy-1"
+    }
+  },
+  "runtime_loaded": true,
+  "schema_version": "eval-run-1",
+  "split": "dev",
+  "started_at_utc": "2026-10-23T05:14:12.886276+00:00",
+  "status": "completed",
+  "summary": {
+    "A_bm25": {
+      "answerable_cases": 16,
+      "attempts": 60,
+      "cases": 20,
+      "citation_count": 100,
+      "claim_support": null,
+      "failed_attempts": 0,
+      "final_business_quality": null,
+      "invalid_citations": 0,
+      "latency_ms": {
+        "n": 60,
+        "p50": 57.457,
+        "p95": 58.923
+      },
+      "metrics_at_k": {
+        "1": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.08333333333333333
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.125
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.125
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.0625
+          }
+        },
+        "3": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.10416666666666666
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.125
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.125
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.0625
+          }
+        },
+        "5": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.21875
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.25
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.153125
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.1875
+          }
+        }
+      },
+      "multi_evidence_sufficient": {
+        "cases": 6,
+        "mean": 0.16666666666666666
+      },
+      "unanswerable_context_cases": 4
+    },
+    "B_dense": {
+      "answerable_cases": 16,
+      "attempts": 60,
+      "cases": 20,
+      "citation_count": 100,
+      "claim_support": null,
+      "failed_attempts": 0,
+      "final_business_quality": null,
+      "invalid_citations": 0,
+      "latency_ms": {
+        "n": 60,
+        "p50": 324.30999999999995,
+        "p95": 329.557
+      },
+      "metrics_at_k": {
+        "1": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.40625
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.5625
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.5625
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.3125
+          }
+        },
+        "3": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.8645833333333334
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.9375
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.7291666666666666
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.8125
+          }
+        },
+        "5": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.8645833333333334
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.9375
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.7291666666666666
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.8125
+          }
+        }
+      },
+      "multi_evidence_sufficient": {
+        "cases": 6,
+        "mean": 0.6666666666666666
+      },
+      "unanswerable_context_cases": 4
+    },
+    "C_hybrid": {
+      "answerable_cases": 16,
+      "attempts": 60,
+      "cases": 20,
+      "citation_count": 100,
+      "claim_support": null,
+      "failed_attempts": 0,
+      "final_business_quality": null,
+      "invalid_citations": 0,
+      "latency_ms": {
+        "n": 60,
+        "p50": 325.69449999999995,
+        "p95": 330.388
+      },
+      "metrics_at_k": {
+        "1": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.1875
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.375
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.375
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.0625
+          }
+        },
+        "3": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.5416666666666666
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.625
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.4583333333333333
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.4375
+          }
+        },
+        "5": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.7916666666666666
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.8125
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.5052083333333334
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.75
+          }
+        }
+      },
+      "multi_evidence_sufficient": {
+        "cases": 6,
+        "mean": 0.6666666666666666
+      },
+      "unanswerable_context_cases": 4
+    },
+    "D_hybrid_rerank": {
+      "answerable_cases": 16,
+      "attempts": 60,
+      "cases": 20,
+      "citation_count": 100,
+      "claim_support": null,
+      "failed_attempts": 0,
+      "final_business_quality": null,
+      "invalid_citations": 0,
+      "latency_ms": {
+        "n": 60,
+        "p50": 397.48,
+        "p95": 407.365
+      },
+      "metrics_at_k": {
+        "1": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.3125
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.5
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.5
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.1875
+          }
+        },
+        "3": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.5416666666666666
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.6875
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.5729166666666666
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.375
+          }
+        },
+        "5": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.78125
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.875
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.6166666666666667
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.625
+          }
+        }
+      },
+      "multi_evidence_sufficient": {
+        "cases": 6,
+        "mean": 0.3333333333333333
+      },
+      "unanswerable_context_cases": 4
+    },
+    "E_code_aware_no_relations": {
+      "answerable_cases": 16,
+      "attempts": 60,
+      "cases": 20,
+      "citation_count": 100,
+      "claim_support": null,
+      "failed_attempts": 0,
+      "final_business_quality": null,
+      "invalid_citations": 0,
+      "latency_ms": {
+        "n": 60,
+        "p50": 325.6975,
+        "p95": 332.448
+      },
+      "metrics_at_k": {
+        "1": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.20833333333333331
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.4375
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.4375
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.0625
+          }
+        },
+        "3": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.65625
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.6875
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.5208333333333334
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.625
+          }
+        },
+        "5": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.875
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.875
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.5677083333333334
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.875
+          }
+        }
+      },
+      "multi_evidence_sufficient": {
+        "cases": 6,
+        "mean": 1.0
+      },
+      "unanswerable_context_cases": 4
+    },
+    "F_code_aware_relations": {
+      "answerable_cases": 16,
+      "attempts": 60,
+      "cases": 20,
+      "citation_count": 100,
+      "claim_support": null,
+      "failed_attempts": 0,
+      "final_business_quality": null,
+      "invalid_citations": 0,
+      "latency_ms": {
+        "n": 60,
+        "p50": 326.043,
+        "p95": 331.002
+      },
+      "metrics_at_k": {
+        "1": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.20833333333333331
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.4375
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.4375
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.0625
+          }
+        },
+        "3": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.4166666666666667
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.5625
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.5
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.3125
+          }
+        },
+        "5": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.625
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.75
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.54375
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.5
+          }
+        }
+      },
+      "multi_evidence_sufficient": {
+        "cases": 6,
+        "mean": 0.3333333333333333
+      },
+      "unanswerable_context_cases": 4
+    },
+    "G_flat_bm25": {
+      "answerable_cases": 16,
+      "attempts": 60,
+      "cases": 20,
+      "citation_count": 100,
+      "claim_support": null,
+      "failed_attempts": 0,
+      "final_business_quality": null,
+      "invalid_citations": 0,
+      "latency_ms": {
+        "n": 60,
+        "p50": 42.2625,
+        "p95": 43.508
+      },
+      "metrics_at_k": {
+        "1": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.0625
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.0625
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.0625
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.0625
+          }
+        },
+        "3": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.14583333333333334
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.1875
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.11458333333333333
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.125
+          }
+        },
+        "5": {
+          "gold_span_recall": {
+            "cases": 16,
+            "mean": 0.3958333333333333
+          },
+          "hit_any_gold": {
+            "cases": 16,
+            "mean": 0.4375
+          },
+          "reciprocal_rank": {
+            "cases": 16,
+            "mean": 0.16770833333333335
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 16,
+            "mean": 0.3125
+          }
+        }
+      },
+      "multi_evidence_sufficient": {
+        "cases": 6,
+        "mean": 0.3333333333333333
+      },
+      "unanswerable_context_cases": 4
+    }
+  },
+  "tokens": null,
+  "usage_missing_reason": "no generative call; embedding token usage and price not provided",
+  "variants": [
+    "A_bm25",
+    "B_dense",
+    "C_hybrid",
+    "D_hybrid_rerank",
+    "E_code_aware_no_relations",
+    "F_code_aware_relations",
+    "G_flat_bm25"
+  ]
+}

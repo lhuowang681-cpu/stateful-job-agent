@@ -1,0 +1,78 @@
+{
+  "reconstructed_at_utc": "2026-10-23T05:23:41.730390+00:00",
+  "historical_live_execution_proven": false,
+  "model_calls": 0,
+  "source": "checked-in deterministic public builders",
+  "items": [
+    {
+      "path": "data/eval/evidence_v2/cases_dev_v4.json",
+      "sha256": "c1a72185d7debea8eaf1624df2ebb15908e8fe35aa1a9373fe2b8d955f56451c",
+      "builder": "scripts/build_evidence_eval_corpus.py",
+      "builder_sha256": "7f1f7fac12a6494fc765f755f7382c9b42c37089e88a783c5e8d46121a5a5a71",
+      "action": "reconstructed_from_builder"
+    },
+    {
+      "path": "data/eval/evidence_v2/manifest_dev_v4.json",
+      "sha256": "e0d586415c160df93aa1aee472f344a647308412c1508765b74a713fa5199d58",
+      "builder": "scripts/build_evidence_eval_corpus.py",
+      "builder_sha256": "7f1f7fac12a6494fc765f755f7382c9b42c37089e88a783c5e8d46121a5a5a71",
+      "action": "reconstructed_from_builder"
+    },
+    {
+      "path": "data/eval/evidence_v2/cases_held_out_v4.json",
+      "sha256": "948d0e230e98bf66f887202342b3c908517823e98a067a5da02635190f89a13d",
+      "builder": "scripts/build_evidence_eval_corpus.py",
+      "builder_sha256": "7f1f7fac12a6494fc765f755f7382c9b42c37089e88a783c5e8d46121a5a5a71",
+      "action": "reconstructed_from_builder"
+    },
+    {
+      "path": "data/eval/evidence_v2/manifest_held_out_v4.json",
+      "sha256": "48b09ae42bd4e321cac6e3367f398e541c57480e5a980f26e1f1a5c64f0d8424",
+      "builder": "scripts/build_evidence_eval_corpus.py",
+      "builder_sha256": "7f1f7fac12a6494fc765f755f7382c9b42c37089e88a783c5e8d46121a5a5a71",
+      "action": "reconstructed_from_builder"
+    },
+    {
+      "path": "data/eval/evidence_v2/corpus_100_audit_v4.json",
+      "sha256": "dd239a136a3c15277f18f7bf97dd79360ff4735534eca29b3dec6663bc741638",
+      "builder": "scripts/build_evidence_eval_corpus.py",
+      "builder_sha256": "7f1f7fac12a6494fc765f755f7382c9b42c37089e88a783c5e8d46121a5a5a71",
+      "action": "reconstructed_from_builder"
+    },
+    {
+      "path": "data/eval/evidence_v2/cases_dev_v5.json",
+      "sha256": "15df2cf579e8415da89911bd83ff9d5c336bcd1a59844e062db60b1977efc6ff",
+      "builder": "scripts/build_evidence_eval_corpus_v5.py",
+      "builder_sha256": "a5e4111af91b0cfd37130b026fcddc66eb1faa05d2d8a824901c47462c4fbd27",
+      "action": "reconstructed_from_builder"
+    },
+    {
+      "path": "data/eval/evidence_v2/manifest_dev_v5.json",
+      "sha256": "904944bd8b26b141df6ebb703a13ed07a3374d10c630cf04807f62eab3cefaa8",
+      "builder": "scripts/build_evidence_eval_corpus_v5.py",
+      "builder_sha256": "a5e4111af91b0cfd37130b026fcddc66eb1faa05d2d8a824901c47462c4fbd27",
+      "action": "reconstructed_from_builder"
+    },
+    {
+      "path": "data/eval/evidence_v2/cases_held_out_v5.json",
+      "sha256": "81d6771e8cf3b85ea23fb2900dd6ed475bda2ef4f8e71cf86db9f426855f6ba7",
+      "builder": "scripts/build_evidence_eval_corpus_v5.py",
+      "builder_sha256": "a5e4111af91b0cfd37130b026fcddc66eb1faa05d2d8a824901c47462c4fbd27",
+      "action": "reconstructed_from_builder"
+    },
+    {
+      "path": "data/eval/evidence_v2/manifest_held_out_v5.json",
+      "sha256": "042f5643f6bd394eeb312b3eb7235f434d19c205d608b9ae0326edf97d295704",
+      "builder": "scripts/build_evidence_eval_corpus_v5.py",
+      "builder_sha256": "a5e4111af91b0cfd37130b026fcddc66eb1faa05d2d8a824901c47462c4fbd27",
+      "action": "reconstructed_from_builder"
+    },
+    {
+      "path": "data/eval/evidence_v2/corpus_100_audit_v5.json",
+      "sha256": "4ee37a3da8eb88fc6cdf9de6ef073cb57a304f284cb8f2a03c5bb4e920147df1",
+      "builder": "scripts/build_evidence_eval_corpus_v5.py",
+      "builder_sha256": "a5e4111af91b0cfd37130b026fcddc66eb1faa05d2d8a824901c47462c4fbd27",
+      "action": "reconstructed_from_builder"
+    }
+  ]
+}

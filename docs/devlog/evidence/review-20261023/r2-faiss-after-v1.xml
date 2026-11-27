@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="19" time="5.037" timestamp="2026-10-23T13:20:50.170443+08:00" hostname="DESKTOP-94NI4DV"><testcase classname="tests.test_review_r2_faiss_unicode" name="test_unicode_directory_roundtrip_preserves_rankings_and_dimension_guards" time="0.022" /><testcase classname="tests.test_review_r2_faiss_unicode" name="test_native_faiss_stream_format_remains_readable_in_unicode_location" time="0.006" /><testcase classname="tests.test_knowledge_faiss_vector_index" name="test_ranking_parity_between_inmemory_and_faiss" time="0.001" /><testcase classname="tests.test_knowledge_faiss_vector_index" name="test_top_k_parity_between_inmemory_and_faiss" time="0.001" /><testcase classname="tests.test_knowledge_faiss_vector_index" name="test_repeated_add_appends_for_both_indexes" time="0.001" /><testcase classname="tests.test_knowledge_faiss_vector_index" name="test_faiss_rejects_dimension_mismatch" time="0.001" /><testcase classname="tests.test_durable_career_knowledge" name="test_same_content_is_noop_and_version_update_is_durable" time="0.084" /><testcase classname="tests.test_durable_career_knowledge" name="test_chunk_identity_offsets_and_repository_reload" time="0.049" /><testcase classname="tests.test_durable_career_knowledge" name="test_persistent_faiss_reload_without_document_embedding" time="0.055" /><testcase classname="tests.test_durable_career_knowledge" name="test_manifest_rejects_embedding_and_index_incompatibility" time="0.067" /><testcase classname="tests.test_durable_career_knowledge" name="test_update_delete_preserve_historical_provenance" time="0.089" /><testcase classname="tests.test_durable_career_knowledge" name="test_failed_ingestion_is_not_active_and_can_retry" time="0.078" /><testcase classname="tests.test_durable_career_knowledge" name="test_rebuild_and_candidate_source_filtering" time="0.104" /><testcase classname="tests.test_durable_career_knowledge" name="test_directory_import_supports_markdown_and_text" time="0.139" /><testcase classname="tests.test_durable_career_knowledge" name="test_mcp_query_survives_server_process_restart" time="1.634"><failure message="RuntimeError: MCP bridge failed to start">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\1\Desktop\就业agent\job-agent-v3\src\job_agent\agent_runtime\mcp_bridge.py", line 49, in _thread_main
+  |     asyncio.run(self._run_session())
+  |   File "C:\Users\1\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py", line 195, in run
+  |     return runner.run(main)
+  |            ^^^^^^^^^^^^^^^^
+  |   File "C:\Users\1\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\runners.py", line 118, in run
+  |     return self._loop.run_until_complete(task)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\1\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\asyncio\base_events.py", line 691, in run_until_complete
+  |     return future.result()
+  |            ^^^^^^^^^^^^^^^
+  |   File "C:\Users\1\Desktop\就业agent\job-agent-v3\src\job_agent\agent_runtime\mcp_bridge.py", line 64, in _run_session
+  |     async with stdio_client(server_params) as (
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\1\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\contextlib.py", line 231, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\1\Desktop\就业agent\job-agent-v3\.venv-review\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\1\Desktop\就业agent\job-agent-v3\.venv-review\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\1\Desktop\就业agent\job-agent-v3\.venv-review\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\1\Desktop\就业agent\job-agent-v3\src\job_agent\agent_runtime\mcp_bridge.py", line 68, in _run_session
+    |     async with ClientSession(
+    |                ^^^^^^^^^^^^^^
+    |   File "C:\Users\1\Desktop\就业agent\job-agent-v3\.venv-review\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\1\Desktop\就业agent\job-agent-v3\.venv-review\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\1\Desktop\就业agent\job-agent-v3\src\job_agent\agent_runtime\mcp_bridge.py", line 72, in _run_session
+      |     await session.initialize()
+      |   File "C:\Users\1\Desktop\就业agent\job-agent-v3\.venv-review\Lib\site-packages\mcp\client\session.py", line 654, in initialize
+      |     result = await self.send_request(
+      |              ^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\1\Desktop\就业agent\job-agent-v3\.venv-review\Lib\site-packages\mcp\client\session.py", line 586, in send_request
+      |     raw = await self._dispatcher.send_raw_request(method, data.get("params"), opts)
+      |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\1\Desktop\就业agent\job-agent-v3\.venv-review\Lib\site-packages\mcp\shared\jsonrpc_dispatcher.py", line 461, in send_raw_request
+      |     raise MCPError(code=outcome.code, message=outcome.message, data=outcome.data)
+      | mcp.shared.exceptions.MCPError: Connection closed
+      +------------------------------------
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\1\Desktop\就业agent\job-agent-v3\tests\test_durable_career_knowledge.py", line 286, in test_mcp_query_survives_server_process_restart
+    bridge.start()
+  File "C:\Users\1\Desktop\就业agent\job-agent-v3\src\job_agent\agent_runtime\mcp_bridge.py", line 45, in start
+    raise RuntimeError("MCP bridge failed to start") from self._startup_error
+RuntimeError: MCP bridge failed to start
+
+The above exception was the direct cause of the following exception:
+
+tmp_path = WindowsPath('C:/Users/1/Desktop/就业agent/job-agent-v3/output/review-20261023/tmp/pytest-of-1/pytest-8/test_mcp_query_survives_server0')
+
+    def test_mcp_query_survives_server_process_restart(tmp_path: Path) -&gt; None:
+        lifecycle = _lifecycle(tmp_path)
+        _ingest_project(
+            lifecycle,
+            text="Integrated MCP tools with a governed Agent Runtime.",
+        )
+        server_env = {
+            "CAREER_KNOWLEDGE_DB_PATH": str(tmp_path / "knowledge.sqlite"),
+            "CAREER_KNOWLEDGE_INDEX_PATH": str(tmp_path / "career.faiss"),
+            "CAREER_KNOWLEDGE_MANIFEST_PATH": str(
+                tmp_path / "career-index-manifest.json"
+            ),
+        }
+    
+        results = []
+        for _ in range(2):
+            bridge = StdioMCPClientBridge(SERVER_SCRIPT, server_env=server_env)
+&gt;           bridge.start()
+
+tests\test_durable_career_knowledge.py:286: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;job_agent.agent_runtime.mcp_bridge.StdioMCPClientBridge object at 0x00000161216A8350&gt;
+
+    def start(self) -&gt; None:
+        self._thread = threading.Thread(
+            target=self._thread_main,
+            daemon=True,
+        )
+        self._thread.start()
+    
+        self._ready.wait(timeout=self.startup_timeout_s)
+    
+        if self._session is None:
+&gt;           raise RuntimeError("MCP bridge failed to start") from self._startup_error
+E           RuntimeError: MCP bridge failed to start
+
+src\job_agent\agent_runtime\mcp_bridge.py:45: RuntimeError</failure></testcase><testcase classname="tests.test_durable_career_knowledge" name="test_real_career_eval_v1_has_frozen_split_and_metrics" time="0.002"><failure message="FileNotFoundError: [Errno 2] No such file or directory: 'eval\\career_knowledge_v1\\documents.json'">tmp_path = WindowsPath('C:/Users/1/Desktop/就业agent/job-agent-v3/output/review-20261023/tmp/pytest-of-1/pytest-8/test_real_career_eval_v1_has_f0')
+
+    def test_real_career_eval_v1_has_frozen_split_and_metrics(tmp_path: Path) -&gt; None:
+&gt;       dataset = load_durable_career_eval(
+            "eval/career_knowledge_v1",
+            repository_root=".",
+        )
+
+tests\test_durable_career_knowledge.py:305: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\job_agent\knowledge\career_knowledge_eval.py:98: in load_durable_career_eval
+    document_records = _read_list(root / "documents.json")
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\job_agent\knowledge\career_knowledge_eval.py:274: in _read_list
+    payload = json.loads(path.read_text(encoding="utf-8"))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1027: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('eval/career_knowledge_v1/documents.json'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+&gt;       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'eval\\career_knowledge_v1\\documents.json'
+
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py:1013: FileNotFoundError</failure></testcase><testcase classname="tests.test_durable_career_knowledge" name="test_pdf_ingestion_preserves_extraction_page_provenance" time="0.619" /><testcase classname="tests.test_durable_career_knowledge" name="test_docx_ingestion_extracts_paragraphs_tables_and_sections" time="0.305" /><testcase classname="tests.test_durable_career_knowledge" name="test_private_career_sources_are_gitignored" time="0.069" /></testsuite></testsuites>

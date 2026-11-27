@@ -1,0 +1,15 @@
+{
+  "candidate_algorithm_identity": "4147b120f5b6df78526e53122cd59bef89ab0d9be9041351ce464e6083fef614",
+  "failed_metrics": [],
+  "floors": {
+    "gold_span_recall": 0.6764705882352942,
+    "hit_any_gold": 0.7058823529411765,
+    "reciprocal_rank": 0.642156862745098,
+    "sufficient_gold_retrieved": 0.6470588235294118
+  },
+  "semantic_quality_gated": false,
+  "status": "passed",
+  "ungated": {
+    "multi_evidence_sufficient": "measured baseline too low for a positive one-query-margin floor; observation only"
+  }
+}

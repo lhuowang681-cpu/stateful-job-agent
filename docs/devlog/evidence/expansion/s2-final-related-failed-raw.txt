@@ -1,0 +1,28 @@
+........................................................................ [ 23%]
+........................................................................ [ 47%]
+........................................................................ [ 70%]
+..........................F............................................. [ 94%]
+..................                                                       [100%]
+=================================== FAILURES ===================================
+______ test_scope_parser_splitter_and_actual_encoder_text_change_identity ______
+
+setup = (<job_agent.resume_workspace.repository.SqliteResumeRepository object at 0x7f2b9eabdd10>, {'contribution': '', 'descri...间使用', 'name': 'Synthetic fixture', ...}, <job_agent.resume_workspace.code_rag.CodeRAGService object at 0x7f2b9eabd910>)
+
+    def test_scope_parser_splitter_and_actual_encoder_text_change_identity(setup):
+        _,p,service=setup;_,_,chunks,_=service._load('alice',p['project_id'],p['current_snapshot'])
+        args=dict(corpus_kind='code',scope=('alice','p','s'),parser_version='p1',splitter_version='c1',
+                  embedding=EmbeddingIdentity('test_only','fixture','v1',2))
+        first=manifest_for(chunks,**args).key
+        for change in ({'scope':('bob','p','s')},{'parser_version':'p2'},{'splitter_version':'c2'},
+                       {'corpus_kind':'project_documentation'}):
+            assert manifest_for(chunks,**(args|change)).key!=first
+        changed=[chunks[0].model_copy(update={'text':chunks[0].text.replace('return','RETURN')}),*chunks[1:]]
+>       assert manifest_for(changed,**args).key!=first
+E       AssertionError: assert 'index-e64b360a82f55037245dd350274b538e36c1f5a036fa7b90460ed72fe223fb99' != 'index-e64b360a82f55037245dd350274b538e36c1f5a036fa7b90460ed72fe223fb99'
+E        +  where 'index-e64b360a82f55037245dd350274b538e36c1f5a036fa7b90460ed72fe223fb99' = IndexManifest(corpus_kind='code', scope=('alice', 'p', 's'), input_hash='e00142c13d92a8f280760ad601882a3066a4e6816a6b4...ry_template='{query}', max_input_tokens=1024, encoder_version='caller-managed'), schema_version='retrieval-manifest-1').key
+E        +    where IndexManifest(corpus_kind='code', scope=('alice', 'p', 's'), input_hash='e00142c13d92a8f280760ad601882a3066a4e6816a6b4...ry_template='{query}', max_input_tokens=1024, encoder_version='caller-managed'), schema_version='retrieval-manifest-1') = manifest_for([KnowledgeChunk(chunk_id='chunk-0108c9a5872a50d1b16d707d53e7', document_id='snapshot-60b14352b99a4093a1b21a9aaf5a131e:...ne, 'granularity': 'flat', 'parser_status': 'python_ast', 'snapshot_id': 'snapshot-60b14352b99a4093a1b21a9aaf5a131e'})], **{'corpus_kind': 'code', 'scope': ('alice', 'p', 's'), 'parser_version': 'p1', 'splitter_version': 'c1', ...})
+
+tests/test_v3_retrieval_identity.py:62: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_v3_retrieval_identity.py::test_scope_parser_splitter_and_actual_encoder_text_change_identity
+1 failed, 305 passed in 18.10s

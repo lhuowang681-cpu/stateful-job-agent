@@ -1,0 +1,72 @@
+{
+  "version": "comparison-latency-attribution-3",
+  "human_quality": null,
+  "semantic_accuracy": null,
+  "actual_network_calls": 100,
+  "paths": {
+    "writer_once": {
+      "attributed_provider_ms": {
+        "p50": 1344.71,
+        "p95": 1829.77
+      },
+      "input_tokens_attributed": 27906,
+      "output_tokens_attributed": 3860,
+      "deterministic_hard_issue_rows": 0,
+      "admitted_by_case_out_of_3": {
+        "cli-filter": 0,
+        "csv-preview": 3,
+        "flask-list": 0,
+        "known-eight": 0,
+        "no-docker": 0,
+        "no-monitoring": 0,
+        "no-users": 0,
+        "pytest-parse": 0,
+        "sqlite-notes": 0,
+        "typescript-form": 3
+      }
+    },
+    "self_revision": {
+      "attributed_provider_ms": {
+        "p50": 3182.6800000000003,
+        "p95": 4556.77
+      },
+      "input_tokens_attributed": 79064,
+      "output_tokens_attributed": 9583,
+      "deterministic_hard_issue_rows": 0,
+      "admitted_by_case_out_of_3": {
+        "cli-filter": 0,
+        "csv-preview": 3,
+        "flask-list": 1,
+        "known-eight": 2,
+        "no-docker": 0,
+        "no-monitoring": 0,
+        "no-users": 0,
+        "pytest-parse": 1,
+        "sqlite-notes": 1,
+        "typescript-form": 3
+      }
+    },
+    "writer_reviewer": {
+      "attributed_provider_ms": {
+        "p50": 2859.4249999999997,
+        "p95": 3510.58
+      },
+      "input_tokens_attributed": 57616,
+      "output_tokens_attributed": 8595,
+      "deterministic_hard_issue_rows": 0,
+      "admitted_by_case_out_of_3": {
+        "cli-filter": 3,
+        "csv-preview": 3,
+        "flask-list": 3,
+        "known-eight": 3,
+        "no-docker": 0,
+        "no-monitoring": 0,
+        "no-users": 0,
+        "pytest-parse": 3,
+        "sqlite-notes": 3,
+        "typescript-form": 3
+      }
+    }
+  },
+  "latency_definition": "sum of observed provider latencies attributed to each serial path, including shared first call once; excludes experiment file-writing overhead"
+}

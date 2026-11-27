@@ -1,0 +1,209 @@
+{
+  "payload": {
+    "algorithm_identity": "4cf3b197aee81c4e4295c4fd8aeb2baaedda5bf60e8bc99dc8ed88182d6f4b4b",
+    "algorithm_sources": {
+      "scripts/expansion_research.py": "c894d798f90e674f110c7b245840e68ad52daa2ecbeaf41cf79046f6c0ae8054",
+      "src/job_agent/knowledge/bm25_index.py": "10498444bc90a3a2fd76913a857b68cfa6f38edad2991f1ca6359ef519f555c1",
+      "src/job_agent/knowledge/cache_snapshot.py": "59b338d9cf48c88bd099caabe9ad297db78bc25a3915125c9de438a164f92c5a",
+      "src/job_agent/knowledge/contracts.py": "9067591346ef07c8da546d96902cd43cb1611911da3ca0319220d78d4dcd8d1d",
+      "src/job_agent/knowledge/evaluation_contract.py": "3dec049b45b981fae2db86fa49965fb230508c00e60e6e036351ec7365974c24",
+      "src/job_agent/knowledge/index_manifest.py": "e396bd8d7f10b0034cab4a08f567af52e8024ad02ca4c80d84b0637e12bb906d",
+      "src/job_agent/knowledge/markdown_chunks.py": "7fe47289d9727d2c0ce0e48a2bae0ca138370e922ca1b0f4d2a76b3031d63870",
+      "src/job_agent/knowledge/qwen_embedding.py": "44296ede2f9f97b4c688f5c82bb73fafafdd8f0832cb90e36a26619efaf85c01",
+      "src/job_agent/knowledge/reranker.py": "788594730a521e668b5a89277383d3f7f978c98ece9aa8dc9a16eda4c0bf08a7",
+      "src/job_agent/knowledge/research_contract.py": "395e639986aed6fd719ea56ce8440086d39eea5abbd7b3da2158d458942242db",
+      "src/job_agent/knowledge/retrieval_policy.py": "44f7030d8e8df6385a52dd5f0cff580ece8dc07d4650b4a656f8ea136be04120",
+      "src/job_agent/knowledge/rrf.py": "0621904d44d13f31c8e80bf905d8065092634fcf7d32a0c2a651c7424012e92f",
+      "src/job_agent/knowledge/vector_index.py": "08f54ce154f8ecd3997a8bb0d4e152090d1c7d83c1c7ad22d52d3ed1540d09fd",
+      "src/job_agent/resume_workspace/code_parser.py": "2513fab4d5e91354b68cd1e6705bf5c22475ee277344c2f48d5bfba324f8b301",
+      "src/job_agent/resume_workspace/code_rag.py": "a85adfd182a19342510ac53fc5cbed4bec2a0ed3b1e40f520626c2ba581b4fbd",
+      "src/job_agent/resume_workspace/evidence_reference.py": "764ea835fecd7bf0cc228793233673698c47264c76a47de3e04df72162c17b2c",
+      "src/job_agent/resume_workspace/long_term.py": "53ba15df5e7b94b02c2689f86e178465b9c2a50d91822cdec8cf2a6085b7af15",
+      "src/job_agent/resume_workspace/project_storage.py": "141ab752ef1bc2aa3b44c1c5a02e31b085e1c7e7c6d618a720c18e8c22690045",
+      "src/job_agent/resume_workspace/public_knowledge.py": "37962ac796681cc42de808fe65685d0b340682dbe7c635953540aed649bb9789",
+      "src/job_agent/resume_workspace/public_seed.py": "a90275d1d344ad81a7568fff856f002c479b580a64eb48966ec818b17bc37350",
+      "src/job_agent/resume_workspace/repository.py": "e28d316a7129fdd4e444b13802035880c11bb3f7e3c9790c0c6399343777e2a4",
+      "src/job_agent/resume_workspace/retrieval_runtime.py": "2f520f6c99ac4481890cf73761953de79628434c5e64a4037776478e95d22dcb",
+      "src/job_agent/resume_workspace/sqlite_code_indexes.py": "a1e01c604f6b0bd56338e44030023908cd34ab45151eeafab14bcb4b140c1736"
+    },
+    "annotation_status": "AI candidates; human deferred",
+    "artifacts": {
+      "dataset.json": "ff6ad1d6ce4e8b0fc2346d61d6e46a0cee35540d73f4776647274ffe7fdc8d66",
+      "dev-public-vectors.json": "571bf3590587973bb594f131d5d041b84ea9dde662956677e1f41955251c93fa",
+      "dev.sqlite": "e283181177c646c2e819eba3b517e7b7abbcb487f0c69fb13f2c2acf0a4cf8d9",
+      "test-public-vectors.json": "7896a3e2368bab2103cbdd5a9572bfcaaa953c4aafa7ae7df80732b83423a799",
+      "test.sqlite": "2516a6a88b7f5cc8837e1448ba59aa8114013d498aac04c7602f288cc75f7a13"
+    },
+    "corpus_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+    "cost": null,
+    "dataset_version": "expansion-final-candidates-3",
+    "full_code_identity": "4fd988cee4d7d311300eb9d9764e86d542ad75777c871e291208b0cd099d3744",
+    "index_version": "code-syntax-v3-1/chunks-3-markdown-1",
+    "limit": 5,
+    "missing_usage_reason": "local embedding counters only; no generative call or price ledger",
+    "prepare_encoder_calls": {
+      "document_calls": 4,
+      "document_passages": 39,
+      "query_calls": 2
+    },
+    "prepare_ms": 1272.702,
+    "prepared_at_utc": "2026-10-22T15:57:49.440102+00:00",
+    "repeats": 3,
+    "runtime": {
+      "embedding": {
+        "dimension": 1024,
+        "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+        "max_input_tokens": 1024,
+        "model": "Qwen3-Embedding-0.6B",
+        "normalization": "l2",
+        "provider": "sentence_transformers_local",
+        "query_template": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:{query}",
+        "revision": "47191d5687dbf14319ccb312680caa31a179ed5e16539b8c06aeddc53b63ef6c"
+      },
+      "reranker": {
+        "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+        "max_pair_tokens": 512,
+        "model": "mmarco-mMiniLMv2-L12-H384-v1",
+        "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+        "score_semantics": "raw_logit"
+      },
+      "settings": {
+        "context_char_budget": 24000,
+        "dense_candidates": 20,
+        "fusion_candidates": 30,
+        "max_output": 20,
+        "relation_candidates": 8,
+        "rerank_candidates": 30,
+        "rerank_input_chars": 6000,
+        "rrf_k": 60,
+        "sparse_candidates": 20,
+        "version": "retrieval-policy-1"
+      }
+    },
+    "schema_version": "research-index-1",
+    "scopes": {
+      "dev": {
+        "chunk_ids": [
+          "chunk-14b46966bbd52df46b6735e1552c",
+          "chunk-26a64ee902e71717dfea75fcbe06",
+          "chunk-2a0d6d20003f2210add1f047adef",
+          "chunk-3961a07c856aaafbad255c3ed798",
+          "chunk-40404086e3564115fbe9620873c1",
+          "chunk-5020c9e43425db225d5e02ec3d2c",
+          "chunk-5f6d708a72c1acb16320f8cac034",
+          "chunk-6351d6b9d2f96509d304a334bb1d",
+          "chunk-72383efae9eff1ed2d686bacd708",
+          "chunk-762458d7174b1718f0640f5b37de",
+          "chunk-768a34808dce04b753e3470d48c2",
+          "chunk-7930a6f4a7cce27686d37fc00e9d",
+          "chunk-917622061cf6cac6e60f6be169fc",
+          "chunk-92f2262038779caecda2171b380b",
+          "chunk-a1be1cb7f2425a4565bb6fb7f468",
+          "chunk-a873d9d36400e9aeaf256446a98a",
+          "chunk-b2c0be0d4e7ae0532da71b97db6a",
+          "chunk-b61ca83fd3bd7987f9c06639512a",
+          "chunk-c773fbe3e9e46ae0c71c9e5d07cf",
+          "chunk-da8c1ebe51593c51be67cf6a958f",
+          "chunk-e429131538efa3e286e936fd3568",
+          "chunk-e457e31f7c645efe0bfe79e7b686",
+          "chunk-ff3d8c1be1f8b80d5a3830466cc2"
+        ],
+        "edges_hash": "c1fc39b0c9ffe425f7db04820be0843498fb2effdeed623e5442567a44642557",
+        "index_identity": "index-b1f5a5dc1fab18ae2a15a9cc0febe4222beef24ac9be3ef1442098ab4732f268",
+        "project_id": "project-f551d2f195ed42fc8e52532e459b582d",
+        "public_versions": {
+          "doc-ast": "knowledge-125713161f37fa621f2b85a24b5ec75d410d5a33501c9f0bbb7e5bfbec077300",
+          "doc-checkpoint": "knowledge-981bfd3c18487ed070b4091db642cad6756971b60228073f946586b56e1fac3e",
+          "doc-citation": "knowledge-c3528ee033271edcd1a9637ad86deae27568f09a6f08c5ec22c1414a6c74fc1f",
+          "doc-idempotency": "knowledge-98ecb016acfef596ca7c8d7d9f0737df8696ef3ff9af6ad9ce0f523ab64e0278",
+          "doc-provenance": "knowledge-5a7d50cf2863660d959f4d317523b8e6ead83f588442d26261be7a54c10c2152",
+          "doc-rrf": "knowledge-f71edafd7d966bf815f2b96136b178973e8a0cf88495e621f867357964a21836"
+        },
+        "snapshot_id": "snapshot-e8d41f75111c4065ad9ddf32a17001e9"
+      },
+      "test": {
+        "chunk_ids": [
+          "chunk-03b8bcb63b6da73d0254ca36b420",
+          "chunk-206e1579cde7d3251b1f04dfdeaf",
+          "chunk-2e67b7c5831d670c30df6e58abf4",
+          "chunk-3a2536f37480bdbaba762a05f6d1",
+          "chunk-3e57f835f057283c2354773b79ca",
+          "chunk-45cbf419446132c07e98e5259fc0",
+          "chunk-48e47c1fe1498980377fa9a07915",
+          "chunk-5a46365fbc0ae124e836d7c75136",
+          "chunk-6a6c8b041f624993916639326abb",
+          "chunk-71ccdc720a98f2c0dfddacdf0270",
+          "chunk-7713baadf79fc7668a1f553b9077",
+          "chunk-7729764a2bb495c1c8739153c121",
+          "chunk-84795320e5126bb8da8d9b222953",
+          "chunk-96cc3d9c2fb15a412ee5da976d29",
+          "chunk-a08a88865a6133b4c99379bb9862",
+          "chunk-a6537fc5fa805436f1bb922d308b",
+          "chunk-b1f4f0a870a5d602db7b49c6eb6a",
+          "chunk-debfc05ef40c7aeae933816cd380",
+          "chunk-e0e2ebcbfce1ff67a7246bf673fe",
+          "chunk-e3fed2e75a4b1a5dfdcdc7297b6c",
+          "chunk-f5f9631d166e6df660988099f480",
+          "chunk-f6a9bf645d35f670a684b2cc6851"
+        ],
+        "edges_hash": "b52b2c5f1e2919efef2e12116827029f9de0c06edf27b0f92123fca11835cedc",
+        "index_identity": "index-4dac7634421315305092979b4c2ca52ba3c2948480835a3e49c87d1600d0424c",
+        "project_id": "project-deff56d30ebd4a8abf96f1af11aaa0b0",
+        "public_versions": {
+          "doc-asyncio": "knowledge-a253bcbd641cf83ac83b2f6dccffb9ba7786644478328ad7e0bb43de83e35687",
+          "doc-schema": "knowledge-0ca26e3a69d76e3ad44018cf31eaa7662e035e2a2934f7e0193f417a923b467b",
+          "doc-transaction": "knowledge-90e4ab55ba319ad62c0ab381f1c54f0ada352f66fb587e5d2b19492fa701e758",
+          "doc-tree-sitter": "knowledge-a79fedf0639d23bed4d9c86bfdd20419a01c397fe9e487f08874045014dac936"
+        },
+        "snapshot_id": "snapshot-bb67c8671f304921b9f099495b1a9b64"
+      }
+    },
+    "synthetic_only": true,
+    "tokens": null,
+    "variants": {
+      "A_bm25": [
+        "keyword",
+        "bm25",
+        false,
+        false
+      ],
+      "B_dense": [
+        "dense",
+        "dense",
+        false,
+        false
+      ],
+      "C_hybrid": [
+        "hybrid",
+        "hybrid",
+        false,
+        false
+      ],
+      "D_hybrid_rerank": [
+        "hybrid",
+        "hybrid",
+        true,
+        false
+      ],
+      "E_code_aware_no_relations": [
+        "code_aware",
+        null,
+        false,
+        false
+      ],
+      "F_code_aware_relations": [
+        "code_aware",
+        null,
+        false,
+        true
+      ],
+      "G_flat_bm25": [
+        "flat",
+        null,
+        false,
+        false
+      ]
+    }
+  },
+  "sha256": "f142057f642f2d25789f4a71f5e8c0cde1f75d4a5f904fe2263a22a95ecc0a1a"
+}

@@ -1,0 +1,42 @@
+{
+  "source_domain_identity": "95b6c48fa3407d226af7bc03ff5384a0c680407cc5138e5d0f22cfdd2b23222c",
+  "counts": {
+    "v3_projects": 2,
+    "v3_project_snapshots": 2,
+    "v3_project_files": 2,
+    "v3_code_indexes": 2,
+    "v3_code_symbols": 4,
+    "v3_code_chunks": 4,
+    "v3_code_edges": 0,
+    "v3_code_vectors": 0,
+    "v3_tasks": 1
+  },
+  "backup_sha256": "5f299f08189cb2e8829ec47ae107016c8f3f8bee8999b8f0aacfd1129e704259",
+  "backup_path": "/root/autodl-tmp/study/job-agent-v3/output/expansion/s5-migration-cli-apply-backup-v1.sqlite",
+  "stable_ids_preserved": true,
+  "active_source_writers_allowed": false,
+  "mode": "apply",
+  "production_migration_verified": false,
+  "source_preserved": true,
+  "source_writers_quiesced_asserted": true,
+  "import": {
+    "target_domain_identity": "95b6c48fa3407d226af7bc03ff5384a0c680407cc5138e5d0f22cfdd2b23222c",
+    "counts": {
+      "v3_projects": 2,
+      "v3_project_snapshots": 2,
+      "v3_project_files": 2,
+      "v3_code_indexes": 2,
+      "v3_code_symbols": 4,
+      "v3_code_chunks": 4,
+      "v3_code_edges": 0,
+      "v3_code_vectors": 0,
+      "v3_tasks": 1
+    },
+    "publication_map": {
+      "snapshot-1fac4eb901bf4815a5ea6d5c018b7c0f": "publication-migrated-f0661ea1583ecd3f9ec5581d0b06795b",
+      "snapshot-977370b868cf4878afae5b486fb07bd2": "publication-migrated-599dbc75b05d12d74e1374385a925afc"
+    },
+    "stable_ids_preserved": true,
+    "atomic_import_verified": true
+  }
+}

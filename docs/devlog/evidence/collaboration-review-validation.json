@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-20",
+  "scope": "design review documentation only",
+  "source_and_frozen_files_checked": 481,
+  "source_changes": [],
+  "anchors_checked": {
+    "src/job_agent/runtime/graph_runtime.py": "AgentGraphRuntime._build_langgraph_if_available",
+    "src/job_agent/interview/controller.py": "AdaptiveInterviewController.next_turn",
+    "src/job_agent/interview/copilot_service.py": "ApplicationCopilotService.submit_answer",
+    "tests/test_stateful_interview_copilot.py": "test_grounding_follow_up_completion_weakness_and_targeted_retry",
+    "tests/test_adaptive_interview_controller.py": "test_controller_rejects_live_score_leak"
+  },
+  "business_tests_rerun": false,
+  "collaboration_implemented": false,
+  "historical_test_counts_are_not_review_results": true
+}

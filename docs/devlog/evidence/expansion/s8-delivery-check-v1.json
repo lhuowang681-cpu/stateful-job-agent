@@ -1,0 +1,39 @@
+{
+  "status": "failed",
+  "archives": [
+    {
+      "file": "job-agent-expansion-source.zip",
+      "sha256": "6917a1276fe07c59a43316c83774c858af3f6e5e2e7180e6fea42ae65dfd8971",
+      "verified_files": 792
+    },
+    {
+      "file": "job-agent-expansion-learning.zip",
+      "sha256": "6f146dfdf33c48e3f5cd4805f983c920832a88a5bbe82765aa4e9f7b5157d8eb",
+      "verified_files": 47
+    },
+    {
+      "file": "job-agent-expansion-research.zip",
+      "sha256": "ba770b0b51a81b7c631343f039aeb5b921326ca6356fea20e4d6a3e9fa18509c",
+      "verified_files": 30
+    }
+  ],
+  "fresh_directory": "/root/autodl-tmp/study/job-agent-v3/output/expansion/unpacked-delivery-v1",
+  "fresh_dependency_install": false,
+  "checks": [
+    {
+      "name": "offline_gate",
+      "returncode": 0,
+      "stdout": "{\"status\": \"passed\", \"offline_retrieval_gate\": \"passed\", \"generative_calls\": 0, \"real_models_loaded\": false, \"real_services_lane\": \"not_this_command\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "http_startup",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "return create_resume_app(\n           ^^^^^^^^^^^^^^^^^^\n  File \"/root/autodl-tmp/study/job-agent-v3/output/expansion/unpacked-delivery-v1/source/src/job_agent/resume_workspace/api.py\", line 226, in create_resume_app\n    from job_agent.resume_workspace.interview_api import install_interview_routes\n  File \"/root/autodl-tmp/study/job-agent-v3/output/expansion/unpacked-delivery-v1/source/src/job_agent/resume_workspace/interview_api.py\", line 3, in <module>\n    from job_agent.resume_workspace.interview_repository import InterviewRepository\n  File \"/root/autodl-tmp/study/job-agent-v3/output/expansion/unpacked-delivery-v1/source/src/job_agent/resume_workspace/interview_repository.py\", line 10, in <module>\n    from job_agent.resume_workspace.interview_collaboration import build_plan, question_for\n  File \"/root/autodl-tmp/study/job-agent-v3/output/expansion/unpacked-delivery-v1/source/src/job_agent/resume_workspace/interview_collaboration.py\", line 14, in <module>\n    from job_agent.interview.copilot_service import evaluate_answer\n  File \"/root/autodl-tmp/study/job-agent-v3/output/expansion/unpacked-delivery-v1/source/src/job_agent/interview/copilot_service.py\", line 17, in <module>\n    from job_agent.tools.application_tracker import ApplicationTrackerStore\n  File \"/root/autodl-tmp/study/job-agent-v3/output/expansion/unpacked-delivery-v1/source/src/job_agent/tools/application_tracker.py\", line 7, in <module>\n    from job_agent.graph import JobAgentState\n  File \"/root/autodl-tmp/study/job-agent-v3/output/expansion/unpacked-delivery-v1/source/src/job_agent/graph.py\", line 9, in <module>\n    from job_agent.nodes.fit_verdict import FitVerdictBackend, RuleFitVerdictBackend\n  File \"/root/autodl-tmp/study/job-agent-v3/output/expansion/unpacked-delivery-v1/source/src/job_agent/nodes/fit_verdict.py\", line 8, in <module>\n    from fit_verdict_engine.prompt_contract import FIT_VERDICT_SYSTEM_PROMPT, build_fit_verdict_user_prompt\nModuleNotFoundError: No module named 'fit_verdict_engine'\n"
+    }
+  ],
+  "dependency_condition": "existing dedicated runtime; versions in delivered requirements-ci-observed.txt",
+  "source_and_research_manifest_hashes_verified": true,
+  "executed_user_actions": 0
+}

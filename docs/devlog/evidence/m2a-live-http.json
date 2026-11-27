@@ -1,0 +1,20 @@
+{
+  "url": "http://127.0.0.1:8013/",
+  "launcher": "python scripts/demo_resume_workbench.py --port 8013",
+  "data": "generated synthetic PDF only",
+  "checks": {
+    "health": true,
+    "isolated_demo_no_model": true,
+    "pdf_import_201": true,
+    "parse_201": true,
+    "all_25_field_citations": true,
+    "save_without_edits_201_unconfirmed": true,
+    "original_pdf_preserved": true,
+    "latest_frontend_build_served": true
+  },
+  "provider_calls": 0,
+  "http_client": "trust_env=False to connect directly to loopback; first environment-proxied probe returned non-JSON before mutations",
+  "resume_id": "res-0a4866881164470083c134dd4ae6e69a",
+  "source_id": "src-fab7af99f6ae43a6b3268c52b7f8c77a",
+  "counts_are": "8 standalone HTTP checks, not additional pytest cases"
+}

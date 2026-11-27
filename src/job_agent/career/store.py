@@ -36,13 +36,51 @@ class CareerStore:
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
         conn = self._connect()
         conn.executescript(DDL)
+        conn.execute(
+            """
+            INSERT OR IGNORE INTO job_workspace(
+                job_id, employment_type, seniority, job_family,
+                source_identifier, canonical_url, normalized_title,
+                normalized_location, first_seen_at, last_seen_at,
+                workspace_status, analysis_status, lineage,
+                raw_metadata_json, possible_duplicate_of,
+                status_updated_at, status_source
+            )
+            SELECT
+                job_id, job_type, '', 'OTHER', NULL, source_uri,
+                lower(trim(title)), lower(trim(location)), created_at, updated_at,
+                CASE WHEN EXISTS(
+                    SELECT 1 FROM analysis_snapshots a WHERE a.job_id=durable_jobs.job_id
+                ) THEN 'ANALYZED' ELSE 'NEW' END,
+                CASE
+                    WHEN NOT EXISTS(
+                        SELECT 1 FROM analysis_snapshots a WHERE a.job_id=durable_jobs.job_id
+                    ) THEN 'UNANALYZED'
+                    WHEN (
+                        SELECT jd_snapshot_id FROM analysis_snapshots a
+                        WHERE a.job_id=durable_jobs.job_id ORDER BY version DESC LIMIT 1
+                    ) = (
+                        SELECT snapshot_id FROM jd_snapshots j
+                        WHERE j.job_id=durable_jobs.job_id ORDER BY version DESC LIMIT 1
+                    ) THEN 'CURRENT'
+                    ELSE 'STALE'
+                END,
+                source_type, '{}', NULL, updated_at, 'schema-migration'
+            FROM durable_jobs
+            """
+        )
         if conn.execute("SELECT 1 FROM schema_migrations WHERE version=?", (SCHEMA_VERSION,)).fetchone() is None:
             conn.execute("INSERT INTO schema_migrations(version, applied_at) VALUES (?, ?)", (SCHEMA_VERSION, _now()))
         conn.commit()
 
     def _connect(self) -> sqlite3.Connection:
         if self._conn is None:
-            self._conn = sqlite3.connect(self.db_path, timeout=10, isolation_level=None)
+            self._conn = sqlite3.connect(
+                self.db_path,
+                timeout=10,
+                isolation_level=None,
+                check_same_thread=False,
+            )
             self._conn.row_factory = sqlite3.Row
             self._conn.execute("PRAGMA foreign_keys=ON")
             self._conn.execute("PRAGMA journal_mode=WAL")

@@ -1,0 +1,8 @@
+{
+  "redis_pid": 103501,
+  "redis_version": "7.2.16",
+  "socket": "/tmp/job-agent-v3-redis-s6-20261022.sock",
+  "port": "0",
+  "data_dir": "output/expansion/redis-s6",
+  "all_probe_model_HTTP_processes_observed_stopped": true
+}

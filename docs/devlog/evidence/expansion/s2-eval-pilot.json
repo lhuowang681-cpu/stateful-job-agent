@@ -1,0 +1,2793 @@
+{
+  "recorded_at_utc": "2026-10-22T10:23:40.899410+00:00",
+  "split": "dev",
+  "heldout_scored": false,
+  "dataset_hash": "1df2f93c96f780ff0b44ebfa7caa689de46e27988c8af1d9f27ac2fb150b1796",
+  "corpus_snapshot": "corpus-17312a2c02c8b367db21af4a8fd01156525306aa176c83949af0045b87defe57",
+  "config": {
+    "sparse_candidates": 20,
+    "dense_candidates": 20,
+    "fusion_candidates": 30,
+    "rerank_candidates": 30,
+    "max_output": 20,
+    "relation_candidates": 8,
+    "context_char_budget": 24000,
+    "rerank_input_chars": 6000,
+    "rrf_k": 60,
+    "version": "retrieval-policy-1"
+  },
+  "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+  "source_identity": "95d8d24aba725aa97e41b214eaeae9994b1ea5ecb68cc32aaae5708f031747cc",
+  "model": {
+    "provider": "sentence_transformers_local",
+    "model": "Qwen3-Embedding-0.6B",
+    "revision": "47191d5687dbf14319ccb312680caa31a179ed5e16539b8c06aeddc53b63ef6c",
+    "dimension": 1024,
+    "normalization": "l2",
+    "query_template": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:{query}",
+    "max_input_tokens": 1024,
+    "encoder_version": "5.7.0/4.57.6/2.5.1+cu121"
+  },
+  "reranker": {
+    "model": "mmarco-mMiniLMv2-L12-H384-v1",
+    "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+    "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+    "max_pair_tokens": 512,
+    "score_semantics": "raw_logit"
+  },
+  "annotation_status": "AI candidates; human semantic review pending",
+  "domain_selection": "gold-labeled controlled corpus; not product routing quality",
+  "quality_scope": "mechanical retrieval/citation only; no generated answer or human claim-support score",
+  "model_load_hash_ms": 10437.224,
+  "total_ms": 12195.471,
+  "summary": {
+    "A_bm25": {
+      "cases": 4,
+      "attempts": 4,
+      "failed_attempts": 0,
+      "metrics_first_trial": {
+        "hit_any_gold": {
+          "mean": 0.25,
+          "cases": 4
+        },
+        "gold_span_recall": {
+          "mean": 0.25,
+          "cases": 4
+        },
+        "sufficient_gold_retrieved": {
+          "mean": 0.25,
+          "cases": 4
+        },
+        "reciprocal_rank": {
+          "mean": 0.08333333333333333,
+          "cases": 4
+        },
+        "citation_valid_rate": {
+          "mean": 1.0,
+          "cases": 3
+        },
+        "retrieved_context_on_unanswerable": {
+          "mean": null,
+          "cases": 0
+        }
+      },
+      "latency_p50_ms": 3.4154999999999998,
+      "latency_max_ms": 7.013
+    },
+    "B_dense": {
+      "cases": 4,
+      "attempts": 4,
+      "failed_attempts": 0,
+      "metrics_first_trial": {
+        "hit_any_gold": {
+          "mean": 0.5,
+          "cases": 4
+        },
+        "gold_span_recall": {
+          "mean": 0.5,
+          "cases": 4
+        },
+        "sufficient_gold_retrieved": {
+          "mean": 0.5,
+          "cases": 4
+        },
+        "reciprocal_rank": {
+          "mean": 0.375,
+          "cases": 4
+        },
+        "citation_valid_rate": {
+          "mean": 1.0,
+          "cases": 4
+        },
+        "retrieved_context_on_unanswerable": {
+          "mean": null,
+          "cases": 0
+        }
+      },
+      "latency_p50_ms": 47.416,
+      "latency_max_ms": 47.681
+    },
+    "C_hybrid": {
+      "cases": 4,
+      "attempts": 4,
+      "failed_attempts": 0,
+      "metrics_first_trial": {
+        "hit_any_gold": {
+          "mean": 0.5,
+          "cases": 4
+        },
+        "gold_span_recall": {
+          "mean": 0.5,
+          "cases": 4
+        },
+        "sufficient_gold_retrieved": {
+          "mean": 0.5,
+          "cases": 4
+        },
+        "reciprocal_rank": {
+          "mean": 0.375,
+          "cases": 4
+        },
+        "citation_valid_rate": {
+          "mean": 1.0,
+          "cases": 4
+        },
+        "retrieved_context_on_unanswerable": {
+          "mean": null,
+          "cases": 0
+        }
+      },
+      "latency_p50_ms": 47.431,
+      "latency_max_ms": 50.933
+    },
+    "D_hybrid_rerank": {
+      "cases": 4,
+      "attempts": 4,
+      "failed_attempts": 0,
+      "metrics_first_trial": {
+        "hit_any_gold": {
+          "mean": 0.5,
+          "cases": 4
+        },
+        "gold_span_recall": {
+          "mean": 0.5,
+          "cases": 4
+        },
+        "sufficient_gold_retrieved": {
+          "mean": 0.5,
+          "cases": 4
+        },
+        "reciprocal_rank": {
+          "mean": 0.5,
+          "cases": 4
+        },
+        "citation_valid_rate": {
+          "mean": 1.0,
+          "cases": 4
+        },
+        "retrieved_context_on_unanswerable": {
+          "mean": null,
+          "cases": 0
+        }
+      },
+      "latency_p50_ms": 59.5415,
+      "latency_max_ms": 73.874
+    },
+    "E_code_aware_no_relations": {
+      "cases": 4,
+      "attempts": 4,
+      "failed_attempts": 0,
+      "metrics_first_trial": {
+        "hit_any_gold": {
+          "mean": 0.5,
+          "cases": 4
+        },
+        "gold_span_recall": {
+          "mean": 0.5,
+          "cases": 4
+        },
+        "sufficient_gold_retrieved": {
+          "mean": 0.5,
+          "cases": 4
+        },
+        "reciprocal_rank": {
+          "mean": 0.375,
+          "cases": 4
+        },
+        "citation_valid_rate": {
+          "mean": 1.0,
+          "cases": 4
+        },
+        "retrieved_context_on_unanswerable": {
+          "mean": null,
+          "cases": 0
+        }
+      },
+      "latency_p50_ms": 48.604,
+      "latency_max_ms": 51.153
+    },
+    "F_code_aware_relations": {
+      "cases": 4,
+      "attempts": 4,
+      "failed_attempts": 0,
+      "metrics_first_trial": {
+        "hit_any_gold": {
+          "mean": 0.5,
+          "cases": 4
+        },
+        "gold_span_recall": {
+          "mean": 0.5,
+          "cases": 4
+        },
+        "sufficient_gold_retrieved": {
+          "mean": 0.5,
+          "cases": 4
+        },
+        "reciprocal_rank": {
+          "mean": 0.3333333333333333,
+          "cases": 4
+        },
+        "citation_valid_rate": {
+          "mean": 1.0,
+          "cases": 4
+        },
+        "retrieved_context_on_unanswerable": {
+          "mean": null,
+          "cases": 0
+        }
+      },
+      "latency_p50_ms": 50.120000000000005,
+      "latency_max_ms": 54.871
+    }
+  },
+  "rows": [
+    {
+      "case_id": "dev-01",
+      "family": "receipt-symbol",
+      "category": "exact_symbol",
+      "scope": "code",
+      "variant": "A_bm25",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-01",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": true,
+        "gold_span_recall": 1.0,
+        "sufficient_gold_retrieved": true,
+        "reciprocal_rank": 0.3333333333333333,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        },
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        },
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        }
+      ],
+      "scores": [
+        0.7168172391717269,
+        0.5887432449152826,
+        0.419805005431641,
+        0.14068457823686537
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": null,
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f"
+        ],
+        "dense_ids": [],
+        "fused_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-0c3fa98544efdc6993c6f36c7b6e",
+          "ev-19375be92dde3e8c6c9819f1ad41",
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-571b2d29b74b766fc9fd2655a710"
+        ]
+      },
+      "method_used": "keyword",
+      "warnings": [],
+      "elapsed_ms": 7.013
+    },
+    {
+      "case_id": "dev-02",
+      "family": "receipt-route",
+      "category": "exact_symbol",
+      "scope": "code",
+      "variant": "A_bm25",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-02",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": false,
+        "gold_span_recall": 0.0,
+        "sufficient_gold_retrieved": false,
+        "reciprocal_rank": 0.0,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        }
+      ],
+      "scores": [
+        1.5341481717172594
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": null,
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 60,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "dense_ids": [],
+        "fused_ids": [
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-19375be92dde3e8c6c9819f1ad41"
+        ]
+      },
+      "method_used": "keyword",
+      "warnings": [],
+      "elapsed_ms": 2.961
+    },
+    {
+      "case_id": "dev-03",
+      "family": "receipt-test",
+      "category": "exact_symbol",
+      "scope": "code",
+      "variant": "A_bm25",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-03",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": false,
+        "gold_span_recall": 0.0,
+        "sufficient_gold_retrieved": false,
+        "reciprocal_rank": 0.0,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        },
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        }
+      ],
+      "scores": [
+        2.133680178600258,
+        0.5643322178010174
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": null,
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 284,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618"
+        ],
+        "dense_ids": [],
+        "fused_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-0c3fa98544efdc6993c6f36c7b6e",
+          "ev-28083ee6ca9f43a175c7d5d8428b"
+        ]
+      },
+      "method_used": "keyword",
+      "warnings": [],
+      "elapsed_ms": 3.87
+    },
+    {
+      "case_id": "dev-04",
+      "family": "receipt-mechanism",
+      "category": "natural_language",
+      "scope": "code",
+      "variant": "A_bm25",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-04",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": false,
+        "gold_span_recall": 0.0,
+        "sufficient_gold_retrieved": false,
+        "reciprocal_rank": 0.0,
+        "citation_valid_rate": null,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [],
+      "scores": [],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": null,
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 0,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [],
+        "dense_ids": [],
+        "fused_ids": [],
+        "candidate_depth": 20,
+        "final_evidence_ids": []
+      },
+      "method_used": "keyword",
+      "warnings": [],
+      "elapsed_ms": 1.738
+    },
+    {
+      "case_id": "dev-01",
+      "family": "receipt-symbol",
+      "category": "exact_symbol",
+      "scope": "code",
+      "variant": "B_dense",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-01",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": true,
+        "gold_span_recall": 1.0,
+        "sufficient_gold_retrieved": true,
+        "reciprocal_rank": 1.0,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        },
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        }
+      ],
+      "scores": [
+        0.5941857552569396,
+        0.547844806115014,
+        0.5303413413794931,
+        0.46861927357478506
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f"
+        ],
+        "dense_ids": [
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "fused_ids": [
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-19375be92dde3e8c6c9819f1ad41",
+          "ev-571b2d29b74b766fc9fd2655a710",
+          "ev-0c3fa98544efdc6993c6f36c7b6e"
+        ]
+      },
+      "method_used": "dense",
+      "warnings": [],
+      "elapsed_ms": 47.681
+    },
+    {
+      "case_id": "dev-02",
+      "family": "receipt-route",
+      "category": "exact_symbol",
+      "scope": "code",
+      "variant": "B_dense",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-02",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": false,
+        "gold_span_recall": 0.0,
+        "sufficient_gold_retrieved": false,
+        "reciprocal_rank": 0.0,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        },
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        }
+      ],
+      "scores": [
+        0.5733578805567638,
+        0.49386222066707114,
+        0.4655070775630024,
+        0.29851059171245736
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "dense_ids": [
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "fused_ids": [
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-19375be92dde3e8c6c9819f1ad41",
+          "ev-571b2d29b74b766fc9fd2655a710",
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-0c3fa98544efdc6993c6f36c7b6e"
+        ]
+      },
+      "method_used": "dense",
+      "warnings": [],
+      "elapsed_ms": 47.194
+    },
+    {
+      "case_id": "dev-03",
+      "family": "receipt-test",
+      "category": "exact_symbol",
+      "scope": "code",
+      "variant": "B_dense",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-03",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": false,
+        "gold_span_recall": 0.0,
+        "sufficient_gold_retrieved": false,
+        "reciprocal_rank": 0.0,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        },
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        },
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        }
+      ],
+      "scores": [
+        0.6145095386971189,
+        0.34141296662574755,
+        0.317027405241012,
+        0.19348443592040646
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618"
+        ],
+        "dense_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "fused_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-0c3fa98544efdc6993c6f36c7b6e",
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-571b2d29b74b766fc9fd2655a710",
+          "ev-19375be92dde3e8c6c9819f1ad41"
+        ]
+      },
+      "method_used": "dense",
+      "warnings": [],
+      "elapsed_ms": 47.383
+    },
+    {
+      "case_id": "dev-04",
+      "family": "receipt-mechanism",
+      "category": "natural_language",
+      "scope": "code",
+      "variant": "B_dense",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-04",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": true,
+        "gold_span_recall": 1.0,
+        "sufficient_gold_retrieved": true,
+        "reciprocal_rank": 0.5,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        },
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        },
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        }
+      ],
+      "scores": [
+        0.5016325809000755,
+        0.44297501118196014,
+        0.37233893819250763,
+        0.32511707000749934
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [],
+        "dense_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "fused_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-0c3fa98544efdc6993c6f36c7b6e",
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-571b2d29b74b766fc9fd2655a710",
+          "ev-19375be92dde3e8c6c9819f1ad41"
+        ]
+      },
+      "method_used": "dense",
+      "warnings": [],
+      "elapsed_ms": 47.449
+    },
+    {
+      "case_id": "dev-01",
+      "family": "receipt-symbol",
+      "category": "exact_symbol",
+      "scope": "code",
+      "variant": "C_hybrid",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-01",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": true,
+        "gold_span_recall": 1.0,
+        "sufficient_gold_retrieved": true,
+        "reciprocal_rank": 1.0,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        },
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        }
+      ],
+      "scores": [
+        0.032266458495966696,
+        0.03225806451612903,
+        0.032018442622950824,
+        0.03149801587301587
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-b5f5e004595585582d44255b138f"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f"
+        ],
+        "dense_ids": [
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "fused_ids": [
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-b5f5e004595585582d44255b138f"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-19375be92dde3e8c6c9819f1ad41",
+          "ev-0c3fa98544efdc6993c6f36c7b6e",
+          "ev-571b2d29b74b766fc9fd2655a710"
+        ]
+      },
+      "method_used": "hybrid",
+      "warnings": [],
+      "elapsed_ms": 50.933
+    },
+    {
+      "case_id": "dev-02",
+      "family": "receipt-route",
+      "category": "exact_symbol",
+      "scope": "code",
+      "variant": "C_hybrid",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-02",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": false,
+        "gold_span_recall": 0.0,
+        "sufficient_gold_retrieved": false,
+        "reciprocal_rank": 0.0,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        },
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        }
+      ],
+      "scores": [
+        0.03278688524590164,
+        0.016129032258064516,
+        0.015873015873015872,
+        0.015625
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "dense_ids": [
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "fused_ids": [
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-19375be92dde3e8c6c9819f1ad41",
+          "ev-571b2d29b74b766fc9fd2655a710",
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-0c3fa98544efdc6993c6f36c7b6e"
+        ]
+      },
+      "method_used": "hybrid",
+      "warnings": [],
+      "elapsed_ms": 47.572
+    },
+    {
+      "case_id": "dev-03",
+      "family": "receipt-test",
+      "category": "exact_symbol",
+      "scope": "code",
+      "variant": "C_hybrid",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-03",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": false,
+        "gold_span_recall": 0.0,
+        "sufficient_gold_retrieved": false,
+        "reciprocal_rank": 0.0,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        },
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        },
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        }
+      ],
+      "scores": [
+        0.03278688524590164,
+        0.03225806451612903,
+        0.015873015873015872,
+        0.015625
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618"
+        ],
+        "dense_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "fused_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-0c3fa98544efdc6993c6f36c7b6e",
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-571b2d29b74b766fc9fd2655a710",
+          "ev-19375be92dde3e8c6c9819f1ad41"
+        ]
+      },
+      "method_used": "hybrid",
+      "warnings": [],
+      "elapsed_ms": 47.29
+    },
+    {
+      "case_id": "dev-04",
+      "family": "receipt-mechanism",
+      "category": "natural_language",
+      "scope": "code",
+      "variant": "C_hybrid",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-04",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": true,
+        "gold_span_recall": 1.0,
+        "sufficient_gold_retrieved": true,
+        "reciprocal_rank": 0.5,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        },
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        },
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        }
+      ],
+      "scores": [
+        0.01639344262295082,
+        0.016129032258064516,
+        0.015873015873015872,
+        0.015625
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [],
+        "dense_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "fused_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-0c3fa98544efdc6993c6f36c7b6e",
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-571b2d29b74b766fc9fd2655a710",
+          "ev-19375be92dde3e8c6c9819f1ad41"
+        ]
+      },
+      "method_used": "hybrid",
+      "warnings": [],
+      "elapsed_ms": 47.109
+    },
+    {
+      "case_id": "dev-01",
+      "family": "receipt-symbol",
+      "category": "exact_symbol",
+      "scope": "code",
+      "variant": "D_hybrid_rerank",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-01",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": true,
+        "gold_span_recall": 1.0,
+        "sufficient_gold_retrieved": true,
+        "reciprocal_rank": 1.0,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        },
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        }
+      ],
+      "scores": [
+        -0.22837422788143158,
+        -2.675248146057129,
+        -3.9879567623138428,
+        -6.78876256942749
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": true,
+        "rerank_applied": true,
+        "rerank_input_ids": [
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-b5f5e004595585582d44255b138f"
+        ],
+        "reranked_ids": [
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-b5f5e004595585582d44255b138f"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 26.106,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f"
+        ],
+        "dense_ids": [
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "fused_ids": [
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-b5f5e004595585582d44255b138f"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-19375be92dde3e8c6c9819f1ad41",
+          "ev-0c3fa98544efdc6993c6f36c7b6e",
+          "ev-571b2d29b74b766fc9fd2655a710"
+        ]
+      },
+      "method_used": "hybrid_rerank",
+      "warnings": [],
+      "elapsed_ms": 73.874
+    },
+    {
+      "case_id": "dev-02",
+      "family": "receipt-route",
+      "category": "exact_symbol",
+      "scope": "code",
+      "variant": "D_hybrid_rerank",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-02",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": false,
+        "gold_span_recall": 0.0,
+        "sufficient_gold_retrieved": false,
+        "reciprocal_rank": 0.0,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        },
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        },
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        }
+      ],
+      "scores": [
+        0.33767426013946533,
+        -0.7285231947898865,
+        -1.550980567932129,
+        -3.366384983062744
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": true,
+        "rerank_applied": true,
+        "rerank_input_ids": [
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "reranked_ids": [
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 11.698,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "dense_ids": [
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "fused_ids": [
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-571b2d29b74b766fc9fd2655a710",
+          "ev-19375be92dde3e8c6c9819f1ad41",
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-0c3fa98544efdc6993c6f36c7b6e"
+        ]
+      },
+      "method_used": "hybrid_rerank",
+      "warnings": [],
+      "elapsed_ms": 59.243
+    },
+    {
+      "case_id": "dev-03",
+      "family": "receipt-test",
+      "category": "exact_symbol",
+      "scope": "code",
+      "variant": "D_hybrid_rerank",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-03",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": false,
+        "gold_span_recall": 0.0,
+        "sufficient_gold_retrieved": false,
+        "reciprocal_rank": 0.0,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        },
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        }
+      ],
+      "scores": [
+        0.24615749716758728,
+        -2.8023340702056885,
+        -4.20020866394043,
+        -5.8713603019714355
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": true,
+        "rerank_applied": true,
+        "rerank_input_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "reranked_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 12.339,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618"
+        ],
+        "dense_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "fused_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-0c3fa98544efdc6993c6f36c7b6e",
+          "ev-571b2d29b74b766fc9fd2655a710",
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-19375be92dde3e8c6c9819f1ad41"
+        ]
+      },
+      "method_used": "hybrid_rerank",
+      "warnings": [],
+      "elapsed_ms": 59.84
+    },
+    {
+      "case_id": "dev-04",
+      "family": "receipt-mechanism",
+      "category": "natural_language",
+      "scope": "code",
+      "variant": "D_hybrid_rerank",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-04",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": true,
+        "gold_span_recall": 1.0,
+        "sufficient_gold_retrieved": true,
+        "reciprocal_rank": 1.0,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        },
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        },
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        }
+      ],
+      "scores": [
+        -2.0883371829986572,
+        -2.132694721221924,
+        -6.253868579864502,
+        -6.845654487609863
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": true,
+        "rerank_applied": true,
+        "rerank_input_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "reranked_ids": [
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 11.07,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [],
+        "dense_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "fused_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-571b2d29b74b766fc9fd2655a710",
+          "ev-0c3fa98544efdc6993c6f36c7b6e",
+          "ev-19375be92dde3e8c6c9819f1ad41"
+        ]
+      },
+      "method_used": "hybrid_rerank",
+      "warnings": [],
+      "elapsed_ms": 58.519
+    },
+    {
+      "case_id": "dev-01",
+      "family": "receipt-symbol",
+      "category": "exact_symbol",
+      "scope": "code",
+      "variant": "E_code_aware_no_relations",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-01",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": true,
+        "gold_span_recall": 1.0,
+        "sufficient_gold_retrieved": true,
+        "reciprocal_rank": 1.0,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        },
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        }
+      ],
+      "scores": [
+        1.0,
+        0.03225806451612903,
+        0.032018442622950824,
+        0.03149801587301587
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-b5f5e004595585582d44255b138f"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f"
+        ],
+        "dense_ids": [
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "fused_ids": [
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-b5f5e004595585582d44255b138f"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-19375be92dde3e8c6c9819f1ad41",
+          "ev-0c3fa98544efdc6993c6f36c7b6e",
+          "ev-571b2d29b74b766fc9fd2655a710"
+        ]
+      },
+      "method_used": "code_aware",
+      "warnings": [],
+      "elapsed_ms": 50.169
+    },
+    {
+      "case_id": "dev-02",
+      "family": "receipt-route",
+      "category": "exact_symbol",
+      "scope": "code",
+      "variant": "E_code_aware_no_relations",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-02",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": false,
+        "gold_span_recall": 0.0,
+        "sufficient_gold_retrieved": false,
+        "reciprocal_rank": 0.0,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        },
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        }
+      ],
+      "scores": [
+        1.0,
+        0.016129032258064516,
+        0.015873015873015872,
+        0.015625
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "dense_ids": [
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "fused_ids": [
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-19375be92dde3e8c6c9819f1ad41",
+          "ev-571b2d29b74b766fc9fd2655a710",
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-0c3fa98544efdc6993c6f36c7b6e"
+        ]
+      },
+      "method_used": "code_aware",
+      "warnings": [],
+      "elapsed_ms": 46.847
+    },
+    {
+      "case_id": "dev-03",
+      "family": "receipt-test",
+      "category": "exact_symbol",
+      "scope": "code",
+      "variant": "E_code_aware_no_relations",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-03",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": false,
+        "gold_span_recall": 0.0,
+        "sufficient_gold_retrieved": false,
+        "reciprocal_rank": 0.0,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        },
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        },
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        }
+      ],
+      "scores": [
+        1.0,
+        0.03225806451612903,
+        0.015873015873015872,
+        0.015625
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618"
+        ],
+        "dense_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "fused_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-0c3fa98544efdc6993c6f36c7b6e",
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-571b2d29b74b766fc9fd2655a710",
+          "ev-19375be92dde3e8c6c9819f1ad41"
+        ]
+      },
+      "method_used": "code_aware",
+      "warnings": [],
+      "elapsed_ms": 51.153
+    },
+    {
+      "case_id": "dev-04",
+      "family": "receipt-mechanism",
+      "category": "natural_language",
+      "scope": "code",
+      "variant": "E_code_aware_no_relations",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-04",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": true,
+        "gold_span_recall": 1.0,
+        "sufficient_gold_retrieved": true,
+        "reciprocal_rank": 0.5,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        },
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        },
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        }
+      ],
+      "scores": [
+        0.01639344262295082,
+        0.016129032258064516,
+        0.015873015873015872,
+        0.015625
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [],
+        "dense_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "fused_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-0c3fa98544efdc6993c6f36c7b6e",
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-571b2d29b74b766fc9fd2655a710",
+          "ev-19375be92dde3e8c6c9819f1ad41"
+        ]
+      },
+      "method_used": "code_aware",
+      "warnings": [],
+      "elapsed_ms": 47.039
+    },
+    {
+      "case_id": "dev-01",
+      "family": "receipt-symbol",
+      "category": "exact_symbol",
+      "scope": "code",
+      "variant": "F_code_aware_relations",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-01",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": true,
+        "gold_span_recall": 1.0,
+        "sufficient_gold_retrieved": true,
+        "reciprocal_rank": 1.0,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        },
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        }
+      ],
+      "scores": [
+        1.0,
+        0.0,
+        0.03225806451612903,
+        0.03149801587301587
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-b5f5e004595585582d44255b138f"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f"
+        ],
+        "dense_ids": [
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "fused_ids": [
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-b5f5e004595585582d44255b138f"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-0c3fa98544efdc6993c6f36c7b6e",
+          "ev-19375be92dde3e8c6c9819f1ad41",
+          "ev-571b2d29b74b766fc9fd2655a710"
+        ]
+      },
+      "method_used": "code_aware",
+      "warnings": [],
+      "elapsed_ms": 53.222
+    },
+    {
+      "case_id": "dev-02",
+      "family": "receipt-route",
+      "category": "exact_symbol",
+      "scope": "code",
+      "variant": "F_code_aware_relations",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-02",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": false,
+        "gold_span_recall": 0.0,
+        "sufficient_gold_retrieved": false,
+        "reciprocal_rank": 0.0,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        },
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        }
+      ],
+      "scores": [
+        1.0,
+        0.0,
+        0.0,
+        0.016129032258064516
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "dense_ids": [
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "fused_ids": [
+          "chunk-229066a48e165df2bcb7cad68252",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-0556603b0561753aff642875d9f8"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-19375be92dde3e8c6c9819f1ad41",
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-0c3fa98544efdc6993c6f36c7b6e",
+          "ev-571b2d29b74b766fc9fd2655a710"
+        ]
+      },
+      "method_used": "code_aware",
+      "warnings": [],
+      "elapsed_ms": 54.871
+    },
+    {
+      "case_id": "dev-03",
+      "family": "receipt-test",
+      "category": "exact_symbol",
+      "scope": "code",
+      "variant": "F_code_aware_relations",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-03",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": false,
+        "gold_span_recall": 0.0,
+        "sufficient_gold_retrieved": false,
+        "reciprocal_rank": 0.0,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        },
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        },
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        }
+      ],
+      "scores": [
+        1.0,
+        0.0,
+        0.03225806451612903,
+        0.015873015873015872
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618"
+        ],
+        "dense_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "fused_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-0c3fa98544efdc6993c6f36c7b6e",
+          "ev-19375be92dde3e8c6c9819f1ad41",
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-571b2d29b74b766fc9fd2655a710"
+        ]
+      },
+      "method_used": "code_aware",
+      "warnings": [],
+      "elapsed_ms": 47.018
+    },
+    {
+      "case_id": "dev-04",
+      "family": "receipt-mechanism",
+      "category": "natural_language",
+      "scope": "code",
+      "variant": "F_code_aware_relations",
+      "repeat": 0,
+      "error": null,
+      "metrics": {
+        "case_id": "dev-04",
+        "annotation_status": "ai_candidate",
+        "hit_any_gold": true,
+        "gold_span_recall": 1.0,
+        "sufficient_gold_retrieved": true,
+        "reciprocal_rank": 0.3333333333333333,
+        "citation_valid_rate": 1.0,
+        "retrieved_context_on_unanswerable": null,
+        "claim_support": null,
+        "final_business_quality": null
+      },
+      "retrieved": [
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        },
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        },
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        },
+        {
+          "document_id": "dev-code/README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n"
+        }
+      ],
+      "scores": [
+        0.01639344262295082,
+        0.0,
+        0.016129032258064516,
+        0.015873015873015872
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-1f43259a8a30d8cd33b6a0ebf05848f9b162fd44d83afd09431ca53d44861bdb",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [],
+        "dense_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "fused_ids": [
+          "chunk-0556603b0561753aff642875d9f8",
+          "chunk-7651856e46026c54410005ba4618",
+          "chunk-b5f5e004595585582d44255b138f",
+          "chunk-229066a48e165df2bcb7cad68252"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-0c3fa98544efdc6993c6f36c7b6e",
+          "ev-19375be92dde3e8c6c9819f1ad41",
+          "ev-28083ee6ca9f43a175c7d5d8428b",
+          "ev-571b2d29b74b766fc9fd2655a710"
+        ]
+      },
+      "method_used": "code_aware",
+      "warnings": [],
+      "elapsed_ms": 46.835
+    }
+  ]
+}

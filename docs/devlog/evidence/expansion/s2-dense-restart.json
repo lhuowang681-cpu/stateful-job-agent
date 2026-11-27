@@ -1,0 +1,79 @@
+{
+  "transport": "two_fresh_python_processes",
+  "build": {
+    "pid": 90728,
+    "project_id": "project-911bd515a361471cbfdad0756955774d",
+    "snapshot_id": "snapshot-6a3d91c2ee4240ddad014a7c7d80f5b9",
+    "index_identity": "index-7a204996b3a178ab9c3fde99d3972d2b2dc4bd30971bc98db056986655a9a988",
+    "embedding_identity": {
+      "provider": "sentence_transformers_local",
+      "model": "Qwen3-Embedding-0.6B",
+      "revision": "47191d5687dbf14319ccb312680caa31a179ed5e16539b8c06aeddc53b63ef6c",
+      "dimension": 1024,
+      "normalization": "l2",
+      "query_template": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:{query}",
+      "max_input_tokens": 1024,
+      "encoder_version": "5.7.0/4.57.6/2.5.1+cu121"
+    },
+    "dimension": 1024,
+    "vector_count": 4,
+    "norm_min": 0.9999999695136352,
+    "norm_max": 1.000000049210829
+  },
+  "search": {
+    "pid": 90971,
+    "index_identity": "index-7a204996b3a178ab9c3fde99d3972d2b2dc4bd30971bc98db056986655a9a988",
+    "query_norm": 0.9999999998231512,
+    "document_reencoding_allowed": false,
+    "hits": 4,
+    "trace": {
+      "schema_version": "retrieval-trace-2",
+      "index_identity": "index-7a204996b3a178ab9c3fde99d3972d2b2dc4bd30971bc98db056986655a9a988",
+      "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+      "context_chars": 482,
+      "context_char_budget": 24000,
+      "budget_omitted_ids": [],
+      "rerank_requested": false,
+      "rerank_applied": false,
+      "rerank_input_ids": [],
+      "reranked_ids": [
+        "chunk-aa71dda9a755c055275c46f14d5b",
+        "chunk-e0ef45b01aea7ab014969d12dee6",
+        "chunk-9e38ac900f28332b51c0d5045ca3",
+        "chunk-e6fe7aebfa915142811971e704f6"
+      ],
+      "rerank_error": null,
+      "rerank_elapsed_ms": 0,
+      "reranker_identity": null,
+      "rerank_char_truncated_ids": [],
+      "rerank_token_truncated_ids": [],
+      "sparse_ids": [
+        "chunk-e6fe7aebfa915142811971e704f6",
+        "chunk-e0ef45b01aea7ab014969d12dee6",
+        "chunk-aa71dda9a755c055275c46f14d5b",
+        "chunk-9e38ac900f28332b51c0d5045ca3"
+      ],
+      "dense_ids": [
+        "chunk-aa71dda9a755c055275c46f14d5b",
+        "chunk-e0ef45b01aea7ab014969d12dee6",
+        "chunk-9e38ac900f28332b51c0d5045ca3",
+        "chunk-e6fe7aebfa915142811971e704f6"
+      ],
+      "fused_ids": [
+        "chunk-aa71dda9a755c055275c46f14d5b",
+        "chunk-e0ef45b01aea7ab014969d12dee6",
+        "chunk-9e38ac900f28332b51c0d5045ca3",
+        "chunk-e6fe7aebfa915142811971e704f6"
+      ],
+      "candidate_depth": 20,
+      "final_evidence_ids": [
+        "ev-b60d19201d821665505683c8b631",
+        "ev-f22357234013c75ba8e570a6d2aa",
+        "ev-0e579082c1c6638aa6803c27c9bf",
+        "ev-b22235c9a89d4869f72021c80ed0"
+      ]
+    }
+  },
+  "elapsed_ms": 21329.465,
+  "private_material": false
+}

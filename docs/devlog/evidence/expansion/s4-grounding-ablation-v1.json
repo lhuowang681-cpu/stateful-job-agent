@@ -1,0 +1,502 @@
+{
+  "data_hash": "59ca39cdcf2a59769428bb85860c6b828aae4ec84e0bbbbe7e5d2e2507618c41",
+  "selected_cases": [
+    "new-success",
+    "new-throughput",
+    "jd-technology"
+  ],
+  "scope": "offline_raw_writer_grounding_instruction_only",
+  "production_gates_disabled": false,
+  "model": {
+    "provider": "offline-transformers",
+    "model_name": "Qwen2.5-7B-Instruct",
+    "revision": "f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7",
+    "policy": {
+      "max_input_tokens": 8192,
+      "max_output_tokens": 512,
+      "generation_seconds": 25,
+      "torch": "2.5.1+cu121",
+      "transformers": "4.57.6",
+      "dtype": "bfloat16",
+      "attention": "sdpa"
+    },
+    "file_hashes": {
+      "config.json": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c",
+      "generation_config.json": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f",
+      "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "model-00001-of-00004.safetensors": "a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7",
+      "model-00002-of-00004.safetensors": "f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185",
+      "model-00003-of-00004.safetensors": "8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5",
+      "model-00004-of-00004.safetensors": "1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd",
+      "model.safetensors.index.json": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028",
+      "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "architecture": "Qwen2ForCausalLM",
+    "parameter_count": 7615616512,
+    "loaded_device": "cuda:1",
+    "loaded_dtype": "torch.bfloat16"
+  },
+  "human_semantic_quality": null,
+  "rows": [
+    {
+      "case_id": "new-success",
+      "grounding_instruction": false,
+      "schema_valid": true,
+      "error_code": null,
+      "input_tokens": 376,
+      "output_tokens": 95,
+      "raw_output": "{\n  \"text\": \"参与本地求职助手原型开发。\",\n  \"reason\": \"虽然参与了求职助手的开发，但未明确提到显著提升求职成功率。\",\n  \"claims\": [\n    {\n      \"text\": \"参与本地求职助手原型开发。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\",\n      \"status\": \"uncertain\",\n      \"reason\": \"未明确提到显著提升求职成功率。\"\n    }\n  ]\n}",
+      "draft": {
+        "text": "参与本地求职助手原型开发。",
+        "reason": "虽然参与了求职助手的开发，但未明确提到显著提升求职成功率。",
+        "claims": [
+          {
+            "text": "参与本地求职助手原型开发。",
+            "source_quote": "参与本地求职助手原型开发。",
+            "status": "uncertain",
+            "reason": "未明确提到显著提升求职成功率。"
+          }
+        ]
+      },
+      "audit": {
+        "source_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+        "draft_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+        "claims": [
+          {
+            "claim_id": "claim-89262cad83f4bfc6341ff99e",
+            "text": "参与本地求职助手原型开发。",
+            "start": 0,
+            "end": 13,
+            "kinds": [
+              "responsibility",
+              "scope"
+            ],
+            "change": "unchanged_or_controlled_paraphrase",
+            "status": "supported",
+            "assessed_by": "deterministic_alignment",
+            "source_id": "new-success",
+            "source_quote": "参与本地求职助手原型开发。",
+            "reason": "与C1分句相等或受限措辞转换；未独立核实。"
+          }
+        ],
+        "hard_issues": [],
+        "unresolved_ids": [],
+        "acceptable": true,
+        "semantic_truth": "not_independently_verified"
+      }
+    },
+    {
+      "case_id": "new-success",
+      "grounding_instruction": true,
+      "schema_valid": true,
+      "error_code": null,
+      "input_tokens": 411,
+      "output_tokens": 134,
+      "raw_output": "{\n  \"text\": \"参与本地求职助手原型开发。\",\n  \"reason\": \"虽然参与了求职助手的开发，但未明确提到显著提升求职成功率。\",\n  \"claims\": [\n    {\n      \"text\": \"参与本地求职助手原型开发。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\",\n      \"status\": \"supported\",\n      \"reason\": \"直接来源于提供的信息。\"\n    },\n    {\n      \"text\": \"显著提升求职成功率。\",\n      \"source_quote\": \"\",\n      \"status\": \"unsupported\",\n      \"reason\": \"原信息未提及求职成功率的提升情况。\"\n    }\n  ]\n}",
+      "draft": {
+        "text": "参与本地求职助手原型开发。",
+        "reason": "虽然参与了求职助手的开发，但未明确提到显著提升求职成功率。",
+        "claims": [
+          {
+            "text": "参与本地求职助手原型开发。",
+            "source_quote": "参与本地求职助手原型开发。",
+            "status": "supported",
+            "reason": "直接来源于提供的信息。"
+          },
+          {
+            "text": "显著提升求职成功率。",
+            "source_quote": "",
+            "status": "unsupported",
+            "reason": "原信息未提及求职成功率的提升情况。"
+          }
+        ]
+      },
+      "audit": {
+        "source_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+        "draft_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+        "claims": [
+          {
+            "claim_id": "claim-89262cad83f4bfc6341ff99e",
+            "text": "参与本地求职助手原型开发。",
+            "start": 0,
+            "end": 13,
+            "kinds": [
+              "responsibility",
+              "scope"
+            ],
+            "change": "unchanged_or_controlled_paraphrase",
+            "status": "supported",
+            "assessed_by": "deterministic_alignment",
+            "source_id": "new-success",
+            "source_quote": "参与本地求职助手原型开发。",
+            "reason": "与C1分句相等或受限措辞转换；未独立核实。"
+          }
+        ],
+        "hard_issues": [],
+        "unresolved_ids": [],
+        "acceptable": true,
+        "semantic_truth": "not_independently_verified"
+      }
+    },
+    {
+      "case_id": "new-throughput",
+      "grounding_instruction": false,
+      "schema_valid": true,
+      "error_code": null,
+      "input_tokens": 383,
+      "output_tokens": 129,
+      "raw_output": "{\n  \"text\": \"使用 Python 实现请求去重，重复请求复用既有回执。\",\n  \"reason\": \"虽然该描述展示了高效的请求处理能力，但并未提及QPS达到10000。\",\n  \"claims\": [\n    {\n      \"text\": \"实现请求去重和复用回执\",\n      \"source_quote\": \"使用 Python 实现请求去重，重复请求复用既有回执。\",\n      \"status\": \"supported\",\n      \"reason\": \"该描述直接说明了使用Python实现请求去重和复用回执的功能。\"\n    }\n  ]\n}",
+      "draft": {
+        "text": "使用 Python 实现请求去重，重复请求复用既有回执。",
+        "reason": "虽然该描述展示了高效的请求处理能力，但并未提及QPS达到10000。",
+        "claims": [
+          {
+            "text": "实现请求去重和复用回执",
+            "source_quote": "使用 Python 实现请求去重，重复请求复用既有回执。",
+            "status": "supported",
+            "reason": "该描述直接说明了使用Python实现请求去重和复用回执的功能。"
+          }
+        ]
+      },
+      "audit": {
+        "source_hash": "7c4ee8c367ac34a91fabc50d661740641b0d573bcd9620a2b4b5510cab068ab7",
+        "draft_hash": "7c4ee8c367ac34a91fabc50d661740641b0d573bcd9620a2b4b5510cab068ab7",
+        "claims": [
+          {
+            "claim_id": "claim-cd822356fdedd5eddbada1ce",
+            "text": "使用 Python 实现请求去重，",
+            "start": 0,
+            "end": 17,
+            "kinds": [
+              "technology"
+            ],
+            "change": "unchanged_or_controlled_paraphrase",
+            "status": "supported",
+            "assessed_by": "deterministic_alignment",
+            "source_id": "new-throughput",
+            "source_quote": "使用 Python 实现请求去重，",
+            "reason": "与C1分句相等或受限措辞转换；未独立核实。"
+          },
+          {
+            "claim_id": "claim-57fbc06155bb965cc25f56b9",
+            "text": "重复请求复用既有回执。",
+            "start": 17,
+            "end": 28,
+            "kinds": [
+              "statement"
+            ],
+            "change": "unchanged_or_controlled_paraphrase",
+            "status": "supported",
+            "assessed_by": "deterministic_alignment",
+            "source_id": "new-throughput",
+            "source_quote": "重复请求复用既有回执。",
+            "reason": "与C1分句相等或受限措辞转换；未独立核实。"
+          }
+        ],
+        "hard_issues": [],
+        "unresolved_ids": [],
+        "acceptable": true,
+        "semantic_truth": "not_independently_verified"
+      }
+    },
+    {
+      "case_id": "new-throughput",
+      "grounding_instruction": true,
+      "schema_valid": true,
+      "error_code": null,
+      "input_tokens": 418,
+      "output_tokens": 107,
+      "raw_output": "{\n  \"text\": \"使用 Python 实现请求去重，重复请求复用既有回执。\",\n  \"reason\": \"源信息未提及QPS相关指标。\",\n  \"claims\": [\n    {\n      \"text\": \"源信息未提及QPS相关指标。\",\n      \"source_quote\": \"使用 Python 实现请求去重，重复请求复用既有回执。\",\n      \"status\": \"unsupported\",\n      \"reason\": \"源信息未提及QPS相关指标。\"\n    }\n  ]\n}",
+      "draft": {
+        "text": "使用 Python 实现请求去重，重复请求复用既有回执。",
+        "reason": "源信息未提及QPS相关指标。",
+        "claims": [
+          {
+            "text": "源信息未提及QPS相关指标。",
+            "source_quote": "使用 Python 实现请求去重，重复请求复用既有回执。",
+            "status": "unsupported",
+            "reason": "源信息未提及QPS相关指标。"
+          }
+        ]
+      },
+      "audit": {
+        "source_hash": "7c4ee8c367ac34a91fabc50d661740641b0d573bcd9620a2b4b5510cab068ab7",
+        "draft_hash": "7c4ee8c367ac34a91fabc50d661740641b0d573bcd9620a2b4b5510cab068ab7",
+        "claims": [
+          {
+            "claim_id": "claim-cd822356fdedd5eddbada1ce",
+            "text": "使用 Python 实现请求去重，",
+            "start": 0,
+            "end": 17,
+            "kinds": [
+              "technology"
+            ],
+            "change": "unchanged_or_controlled_paraphrase",
+            "status": "supported",
+            "assessed_by": "deterministic_alignment",
+            "source_id": "new-throughput",
+            "source_quote": "使用 Python 实现请求去重，",
+            "reason": "与C1分句相等或受限措辞转换；未独立核实。"
+          },
+          {
+            "claim_id": "claim-57fbc06155bb965cc25f56b9",
+            "text": "重复请求复用既有回执。",
+            "start": 17,
+            "end": 28,
+            "kinds": [
+              "statement"
+            ],
+            "change": "unchanged_or_controlled_paraphrase",
+            "status": "supported",
+            "assessed_by": "deterministic_alignment",
+            "source_id": "new-throughput",
+            "source_quote": "重复请求复用既有回执。",
+            "reason": "与C1分句相等或受限措辞转换；未独立核实。"
+          }
+        ],
+        "hard_issues": [],
+        "unresolved_ids": [],
+        "acceptable": true,
+        "semantic_truth": "not_independently_verified"
+      }
+    },
+    {
+      "case_id": "jd-technology",
+      "grounding_instruction": false,
+      "schema_valid": true,
+      "error_code": null,
+      "input_tokens": 374,
+      "output_tokens": 146,
+      "raw_output": "{\n  \"text\": \"使用 Python 编写接口，参与课程原型。\",\n  \"reason\": \"简历中提到的技能与JD要求的技能不匹配。\",\n  \"claims\": [\n    {\n      \"text\": \"使用 Python 编写接口\",\n      \"source_quote\": \"使用 Python 编写接口\",\n      \"status\": \"unsupported\",\n      \"reason\": \"JD要求的是Go语言经验，而非Python。\"\n    },\n    {\n      \"text\": \"参与课程原型\",\n      \"source_quote\": \"参与课程原型\",\n      \"status\": \"unsupported\",\n      \"reason\": \"JD强调的是生产经验，简历中的描述与生产经验无关。\"\n    }\n  ]\n}",
+      "draft": {
+        "text": "使用 Python 编写接口，参与课程原型。",
+        "reason": "简历中提到的技能与JD要求的技能不匹配。",
+        "claims": [
+          {
+            "text": "使用 Python 编写接口",
+            "source_quote": "使用 Python 编写接口",
+            "status": "unsupported",
+            "reason": "JD要求的是Go语言经验，而非Python。"
+          },
+          {
+            "text": "参与课程原型",
+            "source_quote": "参与课程原型",
+            "status": "unsupported",
+            "reason": "JD强调的是生产经验，简历中的描述与生产经验无关。"
+          }
+        ]
+      },
+      "audit": {
+        "source_hash": "9c5363129b8d5c9deef4b1546633cff36ded3aeaccf3bd368dc3f304e3db4ba7",
+        "draft_hash": "9c5363129b8d5c9deef4b1546633cff36ded3aeaccf3bd368dc3f304e3db4ba7",
+        "claims": [
+          {
+            "claim_id": "claim-f3b1275f2e5f96196ed01182",
+            "text": "使用 Python 编写接口，",
+            "start": 0,
+            "end": 15,
+            "kinds": [
+              "technology"
+            ],
+            "change": "unchanged_or_controlled_paraphrase",
+            "status": "supported",
+            "assessed_by": "deterministic_alignment",
+            "source_id": "jd-technology",
+            "source_quote": "使用 Python 编写接口，",
+            "reason": "与C1分句相等或受限措辞转换；未独立核实。"
+          },
+          {
+            "claim_id": "claim-f899b6cd24d0cebbdef5d3f6",
+            "text": "参与课程原型。",
+            "start": 15,
+            "end": 22,
+            "kinds": [
+              "responsibility",
+              "scope"
+            ],
+            "change": "unchanged_or_controlled_paraphrase",
+            "status": "supported",
+            "assessed_by": "deterministic_alignment",
+            "source_id": "jd-technology",
+            "source_quote": "参与课程原型。",
+            "reason": "与C1分句相等或受限措辞转换；未独立核实。"
+          }
+        ],
+        "hard_issues": [],
+        "unresolved_ids": [],
+        "acceptable": true,
+        "semantic_truth": "not_independently_verified"
+      }
+    },
+    {
+      "case_id": "jd-technology",
+      "grounding_instruction": true,
+      "schema_valid": true,
+      "error_code": null,
+      "input_tokens": 409,
+      "output_tokens": 182,
+      "raw_output": "{\n  \"text\": \"参与课程原型，使用 Python 编写接口。\",\n  \"reason\": \"简历中提到使用 Python 编写接口，而职位JD要求Go、Redis、Kubernetes生产经验，两者不匹配。\",\n  \"claims\": [\n    {\n      \"text\": \"使用 Python 编写接口\",\n      \"source_quote\": \"使用 Python 编写接口，参与课程原型。\",\n      \"status\": \"supported\",\n      \"reason\": \"简历中明确提到使用Python编写接口\"\n    },\n    {\n      \"text\": \"不涉及Go、Redis、Kubernetes生产经验\",\n      \"source_quote\": \"要求 Go Redis Kubernetes 生产经验。\",\n      \"status\": \"contradicted\",\n      \"reason\": \"职位JD明确要求Go、Redis、Kubernetes生产经验，而简历中没有提及这些技术栈\"\n    }\n  ]\n}",
+      "draft": {
+        "text": "参与课程原型，使用 Python 编写接口。",
+        "reason": "简历中提到使用 Python 编写接口，而职位JD要求Go、Redis、Kubernetes生产经验，两者不匹配。",
+        "claims": [
+          {
+            "text": "使用 Python 编写接口",
+            "source_quote": "使用 Python 编写接口，参与课程原型。",
+            "status": "supported",
+            "reason": "简历中明确提到使用Python编写接口"
+          },
+          {
+            "text": "不涉及Go、Redis、Kubernetes生产经验",
+            "source_quote": "要求 Go Redis Kubernetes 生产经验。",
+            "status": "contradicted",
+            "reason": "职位JD明确要求Go、Redis、Kubernetes生产经验，而简历中没有提及这些技术栈"
+          }
+        ]
+      },
+      "audit": {
+        "source_hash": "9c5363129b8d5c9deef4b1546633cff36ded3aeaccf3bd368dc3f304e3db4ba7",
+        "draft_hash": "0ae163797903a66ba4032aea635df63a5d1621f6f4bc9bc06ce34c44e1e4b647",
+        "claims": [
+          {
+            "claim_id": "claim-4cb131cdbbd0f5967cafc17a",
+            "text": "参与课程原型，",
+            "start": 0,
+            "end": 7,
+            "kinds": [
+              "responsibility",
+              "scope"
+            ],
+            "change": "unchanged_or_controlled_paraphrase",
+            "status": "supported",
+            "assessed_by": "deterministic_alignment",
+            "source_id": "jd-technology",
+            "source_quote": "参与课程原型。",
+            "reason": "与C1分句相等或受限措辞转换；未独立核实。"
+          },
+          {
+            "claim_id": "claim-38a57d604befe29f5d5e2654",
+            "text": "使用 Python 编写接口。",
+            "start": 7,
+            "end": 22,
+            "kinds": [
+              "technology"
+            ],
+            "change": "unchanged_or_controlled_paraphrase",
+            "status": "supported",
+            "assessed_by": "deterministic_alignment",
+            "source_id": "jd-technology",
+            "source_quote": "使用 Python 编写接口，",
+            "reason": "与C1分句相等或受限措辞转换；未独立核实。"
+          }
+        ],
+        "hard_issues": [],
+        "unresolved_ids": [],
+        "acceptable": true,
+        "semantic_truth": "not_independently_verified"
+      }
+    }
+  ],
+  "provider_history": [
+    {
+      "dispatched": true,
+      "node_id": "writer",
+      "run_id": "s4-ablation-new-successFalse",
+      "input_tokens": 376,
+      "output_tokens": 95,
+      "status": "completed",
+      "cap": 512,
+      "seed": 42,
+      "temperature": 0.2,
+      "prompt_hash": "56c8be364b197334684d58b1571ba060b28fc3ddb1ea5e37f2396994aa74574e",
+      "latency_ms": 3038,
+      "finish_reason": "stop",
+      "output_hash": "21db1d54076b63096e213722a9bb148a5d22350f5e147ea202606a95fd6bc2a6",
+      "synthetic_raw_output": "{\n  \"text\": \"参与本地求职助手原型开发。\",\n  \"reason\": \"虽然参与了求职助手的开发，但未明确提到显著提升求职成功率。\",\n  \"claims\": [\n    {\n      \"text\": \"参与本地求职助手原型开发。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\",\n      \"status\": \"uncertain\",\n      \"reason\": \"未明确提到显著提升求职成功率。\"\n    }\n  ]\n}"
+    },
+    {
+      "dispatched": true,
+      "node_id": "writer",
+      "run_id": "s4-ablation-new-successTrue",
+      "input_tokens": 411,
+      "output_tokens": 134,
+      "status": "completed",
+      "cap": 512,
+      "seed": 42,
+      "temperature": 0.2,
+      "prompt_hash": "b562561faceffb7798083958a5e6d60c4370a17495b1d74960f09fef34bb31e5",
+      "latency_ms": 3096,
+      "finish_reason": "stop",
+      "output_hash": "4dfb62ad237bdfd1882faae12ac767ea23589b15c112bafd17e84eb143058042",
+      "synthetic_raw_output": "{\n  \"text\": \"参与本地求职助手原型开发。\",\n  \"reason\": \"虽然参与了求职助手的开发，但未明确提到显著提升求职成功率。\",\n  \"claims\": [\n    {\n      \"text\": \"参与本地求职助手原型开发。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\",\n      \"status\": \"supported\",\n      \"reason\": \"直接来源于提供的信息。\"\n    },\n    {\n      \"text\": \"显著提升求职成功率。\",\n      \"source_quote\": \"\",\n      \"status\": \"unsupported\",\n      \"reason\": \"原信息未提及求职成功率的提升情况。\"\n    }\n  ]\n}"
+    },
+    {
+      "dispatched": true,
+      "node_id": "writer",
+      "run_id": "s4-ablation-new-throughputFalse",
+      "input_tokens": 383,
+      "output_tokens": 129,
+      "status": "completed",
+      "cap": 512,
+      "seed": 42,
+      "temperature": 0.2,
+      "prompt_hash": "d35cfe09c1acbea67adbcddfebf49ee2205bfd728296846176515985428921e1",
+      "latency_ms": 2927,
+      "finish_reason": "stop",
+      "output_hash": "25c3f3a53421fea5db2ada08c7e74eff717de3b1a4102c45fe5a02f8eb0379f0",
+      "synthetic_raw_output": "{\n  \"text\": \"使用 Python 实现请求去重，重复请求复用既有回执。\",\n  \"reason\": \"虽然该描述展示了高效的请求处理能力，但并未提及QPS达到10000。\",\n  \"claims\": [\n    {\n      \"text\": \"实现请求去重和复用回执\",\n      \"source_quote\": \"使用 Python 实现请求去重，重复请求复用既有回执。\",\n      \"status\": \"supported\",\n      \"reason\": \"该描述直接说明了使用Python实现请求去重和复用回执的功能。\"\n    }\n  ]\n}"
+    },
+    {
+      "dispatched": true,
+      "node_id": "writer",
+      "run_id": "s4-ablation-new-throughputTrue",
+      "input_tokens": 418,
+      "output_tokens": 107,
+      "status": "completed",
+      "cap": 512,
+      "seed": 42,
+      "temperature": 0.2,
+      "prompt_hash": "283aadff454c719ea64f2499cd1119e63ca330181cc4195fda3233a2405f49f3",
+      "latency_ms": 2445,
+      "finish_reason": "stop",
+      "output_hash": "0875afe22a272f9fee084c5b943b8f72bf1e33beb04a019bd47dd7115f2fae97",
+      "synthetic_raw_output": "{\n  \"text\": \"使用 Python 实现请求去重，重复请求复用既有回执。\",\n  \"reason\": \"源信息未提及QPS相关指标。\",\n  \"claims\": [\n    {\n      \"text\": \"源信息未提及QPS相关指标。\",\n      \"source_quote\": \"使用 Python 实现请求去重，重复请求复用既有回执。\",\n      \"status\": \"unsupported\",\n      \"reason\": \"源信息未提及QPS相关指标。\"\n    }\n  ]\n}"
+    },
+    {
+      "dispatched": true,
+      "node_id": "writer",
+      "run_id": "s4-ablation-jd-technologyFalse",
+      "input_tokens": 374,
+      "output_tokens": 146,
+      "status": "completed",
+      "cap": 512,
+      "seed": 42,
+      "temperature": 0.2,
+      "prompt_hash": "65708b8bdda80b000806760cb65454bfcf716db531e376519363f1c5ae059f43",
+      "latency_ms": 3307,
+      "finish_reason": "stop",
+      "output_hash": "c5e9ae4097047b0ade517938c4b724b2ed6e1368cc6145273eb420196b231087",
+      "synthetic_raw_output": "{\n  \"text\": \"使用 Python 编写接口，参与课程原型。\",\n  \"reason\": \"简历中提到的技能与JD要求的技能不匹配。\",\n  \"claims\": [\n    {\n      \"text\": \"使用 Python 编写接口\",\n      \"source_quote\": \"使用 Python 编写接口\",\n      \"status\": \"unsupported\",\n      \"reason\": \"JD要求的是Go语言经验，而非Python。\"\n    },\n    {\n      \"text\": \"参与课程原型\",\n      \"source_quote\": \"参与课程原型\",\n      \"status\": \"unsupported\",\n      \"reason\": \"JD强调的是生产经验，简历中的描述与生产经验无关。\"\n    }\n  ]\n}"
+    },
+    {
+      "dispatched": true,
+      "node_id": "writer",
+      "run_id": "s4-ablation-jd-technologyTrue",
+      "input_tokens": 409,
+      "output_tokens": 182,
+      "status": "completed",
+      "cap": 512,
+      "seed": 42,
+      "temperature": 0.2,
+      "prompt_hash": "b5adb2b07e5bceb059ecb51eaa46180bf11d2ecc534cd41bcbe551ab07dde841",
+      "latency_ms": 4111,
+      "finish_reason": "stop",
+      "output_hash": "e276a98377f582fd469a7e0bf7bfffc1cb75938b694da11545cacf71dc4913c1",
+      "synthetic_raw_output": "{\n  \"text\": \"参与课程原型，使用 Python 编写接口。\",\n  \"reason\": \"简历中提到使用 Python 编写接口，而职位JD要求Go、Redis、Kubernetes生产经验，两者不匹配。\",\n  \"claims\": [\n    {\n      \"text\": \"使用 Python 编写接口\",\n      \"source_quote\": \"使用 Python 编写接口，参与课程原型。\",\n      \"status\": \"supported\",\n      \"reason\": \"简历中明确提到使用Python编写接口\"\n    },\n    {\n      \"text\": \"不涉及Go、Redis、Kubernetes生产经验\",\n      \"source_quote\": \"要求 Go Redis Kubernetes 生产经验。\",\n      \"status\": \"contradicted\",\n      \"reason\": \"职位JD明确要求Go、Redis、Kubernetes生产经验，而简历中没有提及这些技术栈\"\n    }\n  ]\n}"
+    }
+  ],
+  "total_ms": 48852.03,
+  "source_identity": "9d5b32c054309bccc65ea6ad99cc194f2c959be1298adf0abb75caa154ff9fef"
+}

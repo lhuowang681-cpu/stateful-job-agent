@@ -1,0 +1,10 @@
+{
+  "build_log": "s6-frontend-build-v1.log",
+  "files": {
+    "index.html": "13dabcf0f4921b1b3ede83a654b62ebae30fdd4532024b95189bdd02e5ffcb13",
+    "assets/index-AJdN3qc-.js": "c5d6d3c58d9b0c1074e2d3c632b45ed14c64695260018eae1b152ca3c6a412c3",
+    "assets/index-CMyl2gGW.css": "360e50e210bf5eade14b5e944848e6db429d3fc1bf80ddfa2976637b0c764643",
+    "assets/pdf.worker.min-CjEcRF4W.mjs": "9536359f1b8367850d485731ca1d5e45c159a7b7a0912325e539937aa21ceb18",
+    "assets/PDFPreview-DX-0N1ez.js": "7a62d7889197ee1a52753daede47a8f6793dd01c49014d28f9cea0beabd56133"
+  }
+}

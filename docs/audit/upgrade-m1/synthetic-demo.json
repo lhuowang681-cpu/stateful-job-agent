@@ -1,0 +1,29 @@
+{
+  "scope": "M1 structured resume/version demo; deterministic, synthetic; no LLM or product UI",
+  "resume_id": "res-28386885fd15445494ab962433b90367",
+  "versions": [
+    {
+      "sequence": 3,
+      "content_hash": "fb1e8356fb5d9afa128b3e955cf0e4fa33b49c8d6aca38313bddb22617d0fe24",
+      "confirmed": false
+    },
+    {
+      "sequence": 2,
+      "content_hash": "ac25ad5b62cae34c153d10c9f58891773c519646b8e0258fbfb631cabe139d60",
+      "confirmed": false
+    },
+    {
+      "sequence": 1,
+      "content_hash": "fb1e8356fb5d9afa128b3e955cf0e4fa33b49c8d6aca38313bddb22617d0fe24",
+      "confirmed": true
+    }
+  ],
+  "checks": {
+    "first_version_confirmed": true,
+    "edit_requires_new_confirmation": true,
+    "restore_requires_new_confirmation": true,
+    "restored_content_matches_original": true,
+    "restored_has_new_version_id": true,
+    "history_survives_repository_reopen": true
+  }
+}

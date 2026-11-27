@@ -1,0 +1,42 @@
+{
+  "status": "completed",
+  "purpose": "Existing default missing from formal11 methods; observed16 only, no fresh-test claim",
+  "formal_results_unchanged": true,
+  "parameter_adjustments": 0,
+  "cases": 16,
+  "paid_calls": 0,
+  "generative_calls": 0,
+  "embedding_calls": 0,
+  "algorithm_identity": "4147b120f5b6df78526e53122cd59bef89ab0d9be9041351ce464e6083fef614",
+  "summary": {
+    "observed_default_diagnostic": {
+      "L_default_lexical_code_aware": {
+        "cases": 16,
+        "answerable": 12,
+        "attempts": 16,
+        "errors": 0,
+        "metrics": {
+          "file_location_recall": 0.6666666666666666,
+          "symbol_range_location_recall": 0.4166666666666667,
+          "minimal_single_span_recall": 0.5416666666666666,
+          "minimal_union_sufficient": 0.5,
+          "minimal_union_span_recall": 0.5416666666666666,
+          "minimal_line_coverage": 0.5277777777777778,
+          "original_gold_union_sufficient": 0.5,
+          "legacy_single_gold_sufficient": 0.5
+        },
+        "unanswerable_with_context": 4,
+        "latency_ms": {
+          "p50": 27.567,
+          "p95": 41.73
+        },
+        "context_chars_max": 10191,
+        "rejected_citations": 0,
+        "generated_support": null,
+        "correct_refusal": null,
+        "human_reviewed": 0
+      }
+    }
+  },
+  "human_reviewed": 0
+}

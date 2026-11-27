@@ -1,0 +1,13 @@
+{
+  "dataset_sha256": "733e50139158514e0a694db0841a143b57a91ccc4b61f954de4c693523a92350",
+  "exact_old_query_duplicates": [],
+  "exact_cross_split_source_hash_duplicates": [],
+  "source_origin_overlap": [],
+  "max_old_query_lexical_similarity": [
+    0.3181818181818182,
+    "real-test-index_streams-2",
+    "dev-final-21"
+  ],
+  "semantic_duplicate_review": "not_independently_verified",
+  "human_reviewed": 0
+}

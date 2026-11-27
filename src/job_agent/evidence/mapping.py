@@ -27,7 +27,7 @@ from job_agent.llm.provider import AgentResult, TraceContext
 
 
 SKILL_ID = "evidence-contract"
-PROMPT_VERSION = "evidence-mapping-v2.2-support-level-separation"
+PROMPT_VERSION = "evidence-mapping-v2.3-explicit-candidate-assessment"
 _VERIFIED_LEVELS = {EvidenceLevel.C2, EvidenceLevel.C3}
 
 
@@ -76,15 +76,63 @@ class EvidenceMappingService:
             context: dict[str, object] = {
                 "requirements": analysis.model_dump(mode="json"),
                 "candidate_sources": [item.model_dump(mode="json") for item in candidate_documents],
+                "eligible_evidence_source_ids": [
+                    item.source_id for item in candidate_documents
+                ],
+                "forbidden_requirement_source_ids": [
+                    item.source_id
+                    for item in catalog.documents
+                    if item.kind == "raw_jd"
+                ],
                 "instruction": (
-                    "Map every atom exactly once. Cite links using source_id plus an exact quote and optional "
-                    "prefix/suffix anchors when text repeats; never emit hashes or numeric offsets. Preserve "
-                    "partial and contradictory evidence. Respect each candidate source artifact_type: original "
-                    "resume/unknown/code/README/task note max C1; experiment/comparison/bad-case/design record "
-                    "max C2; metric/production log/rollout/incident report max C3. Judge semantic coverage "
-                    "independently from evidence level: an explicit complete statement may be semantically "
-                    "supported at C1 while still remaining an unverified lead. Do not create links for unrelated "
-                    "source text; use an empty link list for a gap."
+                    "Return only one JSON object matching the supplied EvidenceMappingCandidate schema: no "
+                    "Markdown fences, explanations, omitted fields, or alternative key names. Map every atom "
+                    "exactly once and always include atom_id, links, and rationale. Before deciding the atom result, "
+                    "read candidate_source_texts and assess every candidate source against the atom. A link's "
+                    "source_id MUST come from eligible_evidence_source_ids. Never cite a requirement source_span "
+                    "or any forbidden_requirement_source_ids value: the JD states what is required and is not "
+                    "candidate evidence. A link's exact_quote MUST be copied verbatim from the text under that same "
+                    "source_id in candidate_source_texts; never copy the atom/JD wording into exact_quote unless it "
+                    "literally occurs in that candidate source. Prefer one short, unique, verbatim source sentence "
+                    "that demonstrates the implementation. Retrieved "
+                    "chunks are candidate evidence only: retrieval similarity, rank, or topical relatedness does "
+                    "not prove support. All candidate sources in this request are candidate-owned career materials; "
+                    "a real_project_material document describes work implemented in the candidate's project even "
+                    "when its sentences do not use first-person language. Do not demand that the source repeat the "
+                    "atom or add an explicit sentence saying that the candidate participated. Instead, treat an "
+                    "explicit technical description of the implemented capability as evidence. When a candidate "
+                    "source explicitly demonstrates the same capability or experience, create an "
+                    "EvidenceLinkCandidate; do not leave links empty merely "
+                    "because the source is C1. Every link must contain link_id, atom_id, source_locator with "
+                    "source_id and exact_quote, claim, support_status, level, confidence, and needs_confirmation. "
+                    "For C1 candidate-owned material, set needs_confirmation=true. Cite source_id plus an exact "
+                    "verbatim quote and optional prefix/suffix anchors "
+                    "when text repeats; never emit hashes or numeric offsets. Set support_status from semantic "
+                    "coverage: supported for an explicit complete statement, partial for incomplete coverage, "
+                    "contradictory for explicit conflict, and unsupported only for a cited statement that does not "
+                    "support the atom. Preserve partial and contradictory evidence. Respect each candidate source "
+                    "artifact_type: original resume/unknown/code/README/task note/real_project_material max C1; "
+                    "experiment/comparison/bad-case/design record max C2; metric/production log/rollout/incident "
+                    "report max C3. Judge semantic coverage independently from evidence level: an explicit complete "
+                    "statement may be supported at C1 and later materialize as an unverified lead. Use links=[] only "
+                    "when no candidate contains an explicit supporting, partial, or contradictory statement; the "
+                    "rationale must explicitly say that no candidate has such a statement and explain why candidates "
+                    "were rejected instead of repeating the atom. Before returning JSON, self-check that every "
+                    "explicit positive match has a link and every link's exact_quote occurs verbatim in its source. "
+                    "Concrete boundaries: for a RAG or semantic-retrieval atom, quote the candidate source sentence "
+                    "about QwenEmbeddingBackend, FAISSVectorIndex, or KnowledgeRetriever rather than quoting the JD. "
+                    "Dense retrieval, embeddings, FAISS, or semantic search can support that atom. Governed runtime "
+                    "and tool-calling text can support an Agent Runtime "
+                    "or Tool Calling atom; transactional outbox, workers, leases, retries, and recovery can support "
+                    "an asynchronous reliable-backend atom; CareerStore migration text can support a CareerStore "
+                    "migration atom. Hard negative boundaries override topical similarity: a Kubernetes production "
+                    "operations atom requires an eligible source quote that explicitly mentions Kubernetes or K8s "
+                    "and cluster/production operations; FastAPI control plane, PostgreSQL, Redis, workers, leases, "
+                    "or generic backend reliability are not Kubernetes evidence. A PDF/DOCX ingestion atom requires "
+                    "an eligible source quote that explicitly mentions PDF or DOCX parsing/ingestion; generic text "
+                    "ingestion, newline normalization, hashing, chunking, or KnowledgeDocument creation is not "
+                    "PDF/DOCX evidence. If the required explicit domain statement is absent, return links=[] for "
+                    "that atom even when retrieval ranked a topically adjacent source."
                 ),
             }
             if feedback:
@@ -137,7 +185,7 @@ class EvidenceMappingService:
                         level=link.level,
                         confidence=link.confidence,
                         independence_group=self.source_store.independence_group(span),
-                        needs_confirmation=link.needs_confirmation,
+                        needs_confirmation=link.needs_confirmation or link.level == EvidenceLevel.C1,
                     )
                 )
             results.append(

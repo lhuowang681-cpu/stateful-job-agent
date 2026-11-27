@@ -1,0 +1,18 @@
+{
+  "scope": "real localhost HTTP and two independent worker processes; public source only",
+  "archive_sha256": "792a950c58e4727b8e7afe728a4b68b4ddc24d91ac28441bac3c37b59caea881",
+  "queued": "QUEUED",
+  "after_crash": "RUNNING",
+  "crashed_worker_exit_code": 70,
+  "after_recovery": "SUCCEEDED",
+  "attempts": 2,
+  "duplicate_request_same_task": true,
+  "second_owner_status": 404,
+  "files_indexed": 104,
+  "symbols": 1693,
+  "elapsed_seconds": 7.899,
+  "model_calls": 0,
+  "pg_redis_used": false,
+  "public_source_tests_executed": false,
+  "fixture_directory": "output\\demo-tmp\\v3-recovery-ffc997cf18db4e57801fb670f785277d"
+}

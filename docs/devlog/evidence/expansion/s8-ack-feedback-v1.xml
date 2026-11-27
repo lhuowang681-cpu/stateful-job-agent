@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="5" time="2.927" timestamp="2026-10-23T00:06:26.019955+08:00" hostname="autodl-container-81de49abb0-0a662bf5"><testcase classname="tests.test_v3_ack_feedback" name="test_keyword_complete_ack_misconception_changes_followup_and_source_observation" time="0.742"><failure message="KeyError: 'evaluation'">setup = (&lt;job_agent.resume_workspace.repository.SqliteResumeRepository object at 0x7fb703fd6d50&gt;, VersionRecord(resume_id='res...atetime(2026, 10, 22, 16, 6, 27, 44513, tzinfo=TzInfo(0)), confirmed_at=None, confirmation_scope='user_attested_only'))
+
+    def test_keyword_complete_ack_misconception_changes_followup_and_source_observation(setup):
+        c,view=start(setup);before=view['current'];view=submit(c,view,FULL+'ACK保证业务只执行一次。')
+        assert view['current']['followup'] and view['current']['topic_id']==before['topic_id']
+        url=f"/api/v2/interviews/{view['session_id']}"
+        c.post(url+'/finish',headers=A,json={'expected_revision':view['revision']})
+&gt;       review=c.get(url+'/review',headers=A).json();evaluation=review['turns'][0]['evaluation']
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'evaluation'
+
+tests/test_v3_ack_feedback.py:14: KeyError</failure></testcase><testcase classname="tests.test_v3_ack_feedback" name="test_normal_negated_or_correct_statement_is_not_rejected_by_ack_counterexample[ACK\u4e0d\u4fdd\u8bc1\u4e1a\u52a1\u53ea\u6267\u884c\u4e00\u6b21\u3002]" time="0.256"><failure message="KeyError: 'evaluation'">setup = (&lt;job_agent.resume_workspace.repository.SqliteResumeRepository object at 0x7fb6ffd19490&gt;, VersionRecord(resume_id='res...tetime(2026, 10, 22, 16, 6, 27, 837418, tzinfo=TzInfo(0)), confirmed_at=None, confirmation_scope='user_attested_only'))
+statement = 'ACK不保证业务只执行一次。'
+
+    @pytest.mark.parametrize('statement',[
+        'ACK不保证业务只执行一次。','不能认为ACK保证业务只执行一次。',
+        '不要声称ACK保证业务只执行一次。','XACK仅确认消息，业务仍要查询回执和去重。'])
+    def test_normal_negated_or_correct_statement_is_not_rejected_by_ack_counterexample(setup,statement):
+        c,view=start(setup);view=submit(c,view,FULL+statement)
+        url=f"/api/v2/interviews/{view['session_id']}"
+        c.post(url+'/finish',headers=A,json={'expected_revision':view['revision']})
+        review=c.get(url+'/review',headers=A).json()
+&gt;       assert review['turns'][0]['evaluation']['assessment_mode']!='deterministic_counterexample'
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'evaluation'
+
+tests/test_v3_ack_feedback.py:35: KeyError</failure></testcase><testcase classname="tests.test_v3_ack_feedback" name="test_normal_negated_or_correct_statement_is_not_rejected_by_ack_counterexample[\u4e0d\u80fd\u8ba4\u4e3aACK\u4fdd\u8bc1\u4e1a\u52a1\u53ea\u6267\u884c\u4e00\u6b21\u3002]" time="0.320"><failure message="KeyError: 'evaluation'">setup = (&lt;job_agent.resume_workspace.repository.SqliteResumeRepository object at 0x7fb6fde46a50&gt;, VersionRecord(resume_id='res...tetime(2026, 10, 22, 16, 6, 28, 100075, tzinfo=TzInfo(0)), confirmed_at=None, confirmation_scope='user_attested_only'))
+statement = '不能认为ACK保证业务只执行一次。'
+
+    @pytest.mark.parametrize('statement',[
+        'ACK不保证业务只执行一次。','不能认为ACK保证业务只执行一次。',
+        '不要声称ACK保证业务只执行一次。','XACK仅确认消息，业务仍要查询回执和去重。'])
+    def test_normal_negated_or_correct_statement_is_not_rejected_by_ack_counterexample(setup,statement):
+        c,view=start(setup);view=submit(c,view,FULL+statement)
+        url=f"/api/v2/interviews/{view['session_id']}"
+        c.post(url+'/finish',headers=A,json={'expected_revision':view['revision']})
+        review=c.get(url+'/review',headers=A).json()
+&gt;       assert review['turns'][0]['evaluation']['assessment_mode']!='deterministic_counterexample'
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'evaluation'
+
+tests/test_v3_ack_feedback.py:35: KeyError</failure></testcase><testcase classname="tests.test_v3_ack_feedback" name="test_normal_negated_or_correct_statement_is_not_rejected_by_ack_counterexample[\u4e0d\u8981\u58f0\u79f0ACK\u4fdd\u8bc1\u4e1a\u52a1\u53ea\u6267\u884c\u4e00\u6b21\u3002]" time="0.270"><failure message="KeyError: 'evaluation'">setup = (&lt;job_agent.resume_workspace.repository.SqliteResumeRepository object at 0x7fb6fde44710&gt;, VersionRecord(resume_id='res...tetime(2026, 10, 22, 16, 6, 28, 425733, tzinfo=TzInfo(0)), confirmed_at=None, confirmation_scope='user_attested_only'))
+statement = '不要声称ACK保证业务只执行一次。'
+
+    @pytest.mark.parametrize('statement',[
+        'ACK不保证业务只执行一次。','不能认为ACK保证业务只执行一次。',
+        '不要声称ACK保证业务只执行一次。','XACK仅确认消息，业务仍要查询回执和去重。'])
+    def test_normal_negated_or_correct_statement_is_not_rejected_by_ack_counterexample(setup,statement):
+        c,view=start(setup);view=submit(c,view,FULL+statement)
+        url=f"/api/v2/interviews/{view['session_id']}"
+        c.post(url+'/finish',headers=A,json={'expected_revision':view['revision']})
+        review=c.get(url+'/review',headers=A).json()
+&gt;       assert review['turns'][0]['evaluation']['assessment_mode']!='deterministic_counterexample'
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'evaluation'
+
+tests/test_v3_ack_feedback.py:35: KeyError</failure></testcase><testcase classname="tests.test_v3_ack_feedback" name="test_normal_negated_or_correct_statement_is_not_rejected_by_ack_counterexample[XACK\u4ec5\u786e\u8ba4\u6d88\u606f\uff0c\u4e1a\u52a1\u4ecd\u8981\u67e5\u8be2\u56de\u6267\u548c\u53bb\u91cd\u3002]" time="0.252"><failure message="KeyError: 'evaluation'">setup = (&lt;job_agent.resume_workspace.repository.SqliteResumeRepository object at 0x7fb6ffdb18d0&gt;, VersionRecord(resume_id='res...tetime(2026, 10, 22, 16, 6, 28, 702580, tzinfo=TzInfo(0)), confirmed_at=None, confirmation_scope='user_attested_only'))
+statement = 'XACK仅确认消息，业务仍要查询回执和去重。'
+
+    @pytest.mark.parametrize('statement',[
+        'ACK不保证业务只执行一次。','不能认为ACK保证业务只执行一次。',
+        '不要声称ACK保证业务只执行一次。','XACK仅确认消息，业务仍要查询回执和去重。'])
+    def test_normal_negated_or_correct_statement_is_not_rejected_by_ack_counterexample(setup,statement):
+        c,view=start(setup);view=submit(c,view,FULL+statement)
+        url=f"/api/v2/interviews/{view['session_id']}"
+        c.post(url+'/finish',headers=A,json={'expected_revision':view['revision']})
+        review=c.get(url+'/review',headers=A).json()
+&gt;       assert review['turns'][0]['evaluation']['assessment_mode']!='deterministic_counterexample'
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'evaluation'
+
+tests/test_v3_ack_feedback.py:35: KeyError</failure></testcase></testsuite></testsuites>

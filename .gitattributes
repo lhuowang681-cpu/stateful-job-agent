@@ -1,1 +1,7 @@
-*.sh text eol=lf
+# Source and evidence identities hash literal bytes. Preserve committed snapshots
+# on every platform instead of silently converting line endings at checkout.
+* -text
+# Explicit artifact rules retained for clarity.
+tests/fixtures/expansion_research/** -text
+docs/evaluation/expansion/*.json -text
+data/eval/evidence_v2/*.json -text

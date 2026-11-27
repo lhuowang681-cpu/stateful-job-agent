@@ -1,0 +1,555 @@
+{
+  "schema_version": "expansion-requirement-audit-1",
+  "parent_plan_sha256": "61d3f22d5f8798d8d5a69e6387ff2cb19ffb662a9f2e52adacb1355df818e746",
+  "requirements": [
+    {
+      "id": "S0.1",
+      "requirement": "阅读AGENTS、CONTINUE、能力矩阵、CURRENT_SPEC及本计划，登记当前目录/分支/源码hash和已有变更。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S0.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S0.2",
+      "requirement": "还原真实入口→服务→状态→存储→任务图，明确SQLite与旧PG/Redis分支。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S0.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S0.3",
+      "requirement": "用合成简历、合成JD、一个公开或合成项目跑最小闭环；如依赖未齐，记录阻塞并先做可行离线部分。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S0.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S0.4",
+      "requirement": "检查Python/前端/解析器/本地模型/PG/Redis/容器条件；不从文档中的配置推断服务已启动。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S0.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S0.5",
+      "requirement": "建立当前回归结果，按合同、本地E2E、模型、外部服务分类，不删除环境失败来凑全通过。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S0.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S0.6",
+      "requirement": "写S0阶段Spec、报告、能力表；为后续定义配置/依赖注入入口。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S0.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S0.7",
+      "requirement": "确认Git是否可用及是否已有仓库。本计划不自动授权推送或重写历史；本地基线提交在获得相应执行授权后进行。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S0.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S1.1",
+      "requirement": "分三类语料：代码、项目说明/设计文档、公共技术知识；明确个人简历事实不由代码语料替代。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S1.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S1.2",
+      "requirement": "保留AST/符号块；Markdown按标题/段落组织，长块有预算；表格、代码段跨块失败作为样例。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S1.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S1.3",
+      "requirement": "建索引身份和失效规则：模型、维度、分块、parser或语料变化不能误复用旧向量。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S1.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S1.4",
+      "requirement": "写20条最小开发题先走通，再达到30～40条首批集，最终目标60～80条。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S1.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S1.5",
+      "requirement": "包含精确符号、自然语言机制、跨文件/多证据、无答案；安全/权限用例单独统计。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S1.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S1.6",
+      "requirement": "保留不参与调参的测试部分；按问题家族/语料来源检查近重复，不让同模板改名同时出现在开发和测试中。",
+      "status": "mechanical_verified_semantic_deferred",
+      "report": "docs/devlog/EXPAND-S1.md",
+      "limits": "Disjoint family/source, 1296 mechanical pairs; semantic review deferred; v2 duplicate fixed before scoring v3",
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S1.7",
+      "requirement": "人工核对gold定位和支持关系；AI可产候选题，但模型自评和规则生成标签不能当全部真值。",
+      "status": "human_deferred_by_user",
+      "report": "docs/devlog/EXPAND-S1.md",
+      "limits": "Direct user reply: later human review, continue engineering; eight original-source cases delivered, human count zero",
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S2.1",
+      "requirement": "应用启动能选择有效后端并注入两条知识检索路径，能力接口显示真实可用状态。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S2.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S2.2",
+      "requirement": "先核对现有Qwen适配与模型路径/设备条件；它存在不代表当前有GPU或模型文件。根据可用资源比较少量候选，固定实际模型/版本。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S2.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S2.3",
+      "requirement": "将向量构建从首次在线查询尽量移到索引任务或显式预热，避免查询期间隐藏全量编码。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S2.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S2.4",
+      "requirement": "校验维度、有限值、归一化/相似度语义、query模板、批次及模型身份；有变化则重建。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S2.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S2.5",
+      "requirement": "实现BM25与Dense候选、去重和RRF融合；代码精确符号路径继续保留。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S2.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S2.6",
+      "requirement": "增加可选本地CrossEncoder或已获授权的重排适配。真实后端不可用时保留清楚的降级与能力状态，不能用假分数替代。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S2.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S2.7",
+      "requirement": "统一候选、最终输出、关系扩展预算；记录rerank前后ID和排名。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S2.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S2.8",
+      "requirement": "明确dense失败、rerank失败、语料为空、索引过期、输出不完整的处理；配置的超时必须对应实际可执行限制。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S2.md",
+      "limits": "Application/tool deadlines reject late results; native CUDA inference is not forcibly preempted",
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S2.9",
+      "requirement": "依S1数据先跑小对照，找失败类型，再调整少量参数。测试集不参与反复调参。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S2.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S3.1",
+      "requirement": "将符号、BM25/Hybrid、read_code_range、find_references、公共知识工具接到受限计划。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S3.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S3.2",
+      "requirement": "对检索命中验证owner/project/snapshot/hash/原文范围；非法引用直接拒绝。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S3.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S3.3",
+      "requirement": "区分定位有效、内容相关、断言获支持三层；代码实现不升级为个人参与证据。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S3.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S3.4",
+      "requirement": "首次证据不足时允许最多一次查询改写/补检索；总体最多2轮检索，读取工具也纳入总预算。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S3.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S3.5",
+      "requirement": "设置单轮/会话工具、模型、候选、token和时间预算，沿用现有面试上限并核对嵌套调用不绕过计数。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S3.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S3.6",
+      "requirement": "补检索仍不足时输出缺失/需补充/有限回答；语料没答案与检索漏召分开记录。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S3.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S3.7",
+      "requirement": "将角色收到的证据视为不可信材料，文档中的操作指令不能改写工具权限。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S3.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S3.8",
+      "requirement": "首次结果与补检索结果分别保留，比较覆盖增益、错误扩大、额外延迟/成本。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S3.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S4.1",
+      "requirement": "梳理现有两个图及外围State，选择一个共享事件/状态合同，保持业务流程不重复。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S4.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S4.2",
+      "requirement": "增加角色输入输出合同、反馈字段、断言与依据映射。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S4.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S4.3",
+      "requirement": "对修订/采纳/追问/预算做程序校验，保留现有三稿六次等边界或经Spec明确调整。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S4.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S4.4",
+      "requirement": "持久化角色转换、证据和审批，不公开活动题目rubric/参考答案。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S4.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S4.5",
+      "requirement": "验证无进展修订、Reviewer拒绝、模型非法动作、失效版本、未知调用、并发推进与恢复。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S4.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S4.6",
+      "requirement": "将评价从单纯关键词命中扩到解释正确性抽样，模型Judge与本地演示分开显示。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S4.md",
+      "limits": "Real Qwen7B samples/negative results S4/S7; explicit ACK/timeout deterministic cases labeled separately, no universal judge claim",
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S4.7",
+      "requirement": "保留同题/同rubric/同模型等可比较条件，不把不同题的分数差叫用户提升。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S4.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S4.8",
+      "requirement": "统一上下文预算：保留当前原事实、范围/否定、最新反馈和必要证据，历史草稿/对话按明确规则裁剪；摘要是派生信息，不能替代原始依据。因预算丢失关键材料时标不足，不默认模型能补全。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S4.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S5.1",
+      "requirement": "完整ER图、数据字典、读写时序、索引/唯一约束与删除规则。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S5.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S5.2",
+      "requirement": "抽出项目/快照/索引/任务Repository接口，消除CodeRAG直接依赖SQLite连接细节的位置；不全面改所有业务Repository。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S5.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S5.3",
+      "requirement": "编写SQLite和PG合同一致性测试：owner、不可变快照、请求幂等、冲突、删除与索引发布。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S5.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S5.4",
+      "requirement": "将切片所需数据放入同一PG域；复用旧PostgresRunRepository的可用能力，不能强塞不兼容的旧Run类型。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S5.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S5.5",
+      "requirement": "迁移旧数据时使用稳定ID映射/数量/hash检查，先dry-run，再切换后端；保留原库备份和回滚步骤。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S5.md",
+      "limits": "Synthetic migration/rollback verified; no production migration",
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S5.6",
+      "requirement": "索引构建与事务发布分离；事务内校验有效attempt/lease、发布manifest、设置有效指针和完成状态。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S5.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S5.7",
+      "requirement": "评测/实验记录保存模型/语料/代码/配置身份，不能只保存分数。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S5.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S5.8",
+      "requirement": "核对权限、并发冲突、清理与重启保留；不让模型SQL自由写库。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S5.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S6.1",
+      "requirement": "扩展/适配旧队列和Outbox合同，将新索引任务接到真实Worker，不增加仅演示的Redis调用。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S6.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S6.2",
+      "requirement": "实现重投/重领、心跳、过期租约、旧attempt拒绝写入、重试上限和不可恢复失败状态。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S6.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S6.3",
+      "requirement": "对发布成功但Outbox未标记设计去重；对业务完成但ACK前崩溃允许重复唤醒但不重复有效发布。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S6.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S6.4",
+      "requirement": "消息损坏、未知任务、永久失败和重试耗尽有明确归档/人工处理入口，避免无限pending循环。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S6.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S6.5",
+      "requirement": "Stream保留长度、消费lag、pending和失败分开监控；ACK不等于删除消息。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S6.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S6.6",
+      "requirement": "一个部署模式只能有一个有效任务调度权威；防止SQLite内置Worker与Redis Worker同时抢相同任务。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S6.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S6.7",
+      "requirement": "优先证明两个Worker竞争和重启恢复；不需要在小项目中引入Kafka/Celery等第二套队列。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S6.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S6.8",
+      "requirement": "模型任务先保留未知结果保护，不默认照搬可重建索引的重放策略。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S6.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S7.1",
+      "requirement": "将已答复盘转为LearningObservation：知识点、题/rubric版本、回答、评价依据、模型/模式、时间和来源。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S7.md",
+      "limits": "Rules/HTTP/PG sources verified; full real Qwen learning loop safely failed and remains recorded",
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S7.2",
+      "requirement": "区分用户明确偏好、单次观察、多次一致观察和待复核；更新规则可解释。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S7.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S7.3",
+      "requirement": "用户可查看、纠正、暂停或删除学习记录；关联源删除后执行保留/失效规则。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S7.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S7.4",
+      "requirement": "以有限规则生成复习队列，至少区分新学、待复习、已复核；可调整，不伪装训练模型。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S7.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S7.5",
+      "requirement": "再次练习时选择相关薄弱点与证据；题目/条件不同只能说明本次表现，不硬算提升。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S7.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S7.6",
+      "requirement": "测跨owner隔离、重复写入、评价撤回、版本变化和旧观察过期。",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S7.md",
+      "limits": null,
+      "evidence_scope": "Actual stage report/code/tests/raw evidence, no inferred production or human quality"
+    },
+    {
+      "id": "S8.1",
+      "requirement": "Redacted readonly unified trace, owner isolation, unknown timestamps and no double usage",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S8.md",
+      "evidence": "s8-trace-contract-v2.xml"
+    },
+    {
+      "id": "S8.2",
+      "requirement": "Frozen data/config/model/index/code identity and per-query A-G metrics",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S8.md",
+      "evidence": "s8-eval-test-v1/run.json"
+    },
+    {
+      "id": "S8.3",
+      "requirement": "Measured positive development floors, corruption/drift/empty-gold checks, stable offline CI separate from real services/models",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S8.md",
+      "evidence": "s8-stable-ci-v1.xml"
+    },
+    {
+      "id": "S8.4",
+      "requirement": "Four demos, five cross-cut cases, new-process/directory fixed-index replay",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S8.md",
+      "evidence": "s8-demo-recovery-v2.json"
+    },
+    {
+      "id": "S8.5",
+      "requirement": "Current architecture/API dictionary/Specs/lessons/3-minute intro/10-minute deep dive",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S8.md",
+      "evidence": "docs/demo/EXPANSION_RUNBOOK.md"
+    },
+    {
+      "id": "S8.6",
+      "requirement": "Source/learning/research manifests and actual extracted startup/offline gate",
+      "status": "engineering_verified_with_reported_limits",
+      "report": "docs/devlog/EXPAND-S8.md",
+      "evidence": "s8-delivery-check-v2.json; final verification sidecar"
+    }
+  ],
+  "engineering_status": "verified_with_declared_limits",
+  "human_review_status": "deferred_by_user; not completed",
+  "remaining_core_engineering": [],
+  "limits": [
+    "No human semantic-gold or near-duplicate clearance",
+    "No generated-answer quality from retrieval metrics",
+    "Qwen7B complete learning loop safely failed, preserved",
+    "No production migration/SLA/HA claim",
+    "No Git history fabricated",
+    "Historical full-suite failures retained"
+  ],
+  "excluded_scope": [
+    "Sibling agent-eval-project",
+    "Concurrent handbook",
+    "MCP/new vector database/monitoring platform",
+    "Private egress/paid APIs/push"
+  ],
+  "delivery_preflight_verified": "s8-delivery-check-v2.json",
+  "final_release_attestation": "output/expansion/delivery-final/verification.json"
+}

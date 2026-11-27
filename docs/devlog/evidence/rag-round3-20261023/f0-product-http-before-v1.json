@@ -1,0 +1,1705 @@
+{
+  "version": "rag-f0-baseline-1",
+  "configuration": "default BM25; embedding/rerank/generation disabled",
+  "product": "explicit track/snapshot -> practice topics; not question-answer chat",
+  "paid_calls": 0,
+  "generative_calls": 0,
+  "rows": [
+    {
+      "case_id": "real-dev-code_rag-2",
+      "track": "job",
+      "topic": "read_code_range 与 validate_reference 分别怎样保证行范围和固定引用有效？ 引用字段边界由 EvidenceReference.boundaries 怎样补充约束？",
+      "http_status": 201,
+      "view": {
+        "session_id": "interview-ee9067172e384400ae297a57021ecbe2",
+        "resume_id": "res-ed3e5a7b12cf4799b2aec26ea2c37538",
+        "version_id": "ver-aef51639f6d249d3ad67aabd47ed15d3",
+        "version_hash": "354430baa7cd709b3f05a3acf86b1b0f6e65ed593a80eb3b63fb02d69a84cff6",
+        "jd_text": "read_code_range 与 validate_reference 分别怎样保证行范围和固定引用有效？ 引用字段边界由 EvidenceReference.boundaries 怎样补充约束？",
+        "match_id": null,
+        "mode": "local_demo",
+        "provider": "local-rules",
+        "model": "scoped-retrieval-rules-v3",
+        "status": "active",
+        "revision": 0,
+        "max_turns": 2,
+        "created_at": "2026-10-23T08:03:40.965737Z",
+        "current": {
+          "question_id": "interview-ee9067172e384400ae297a57021ecbe2-q1",
+          "topic_id": "question-ast",
+          "prompt": "怎样从项目源码建立可引用的符号索引？静态调用图有什么局限？",
+          "followup": false,
+          "references": [
+            {
+              "evidence_id": "public-10fb5238cb3ca403984e91be645b",
+              "scope": "public_knowledge",
+              "owner_id": null,
+              "project_id": null,
+              "snapshot_id": "knowledge-d2ff1fe3541a993e76ba16bc3593e5f66083d6299761b3d0d4079989b9a8b859",
+              "source_id": "question-ast",
+              "content_hash": "16b566caa25c6c16e5199f354cc03c6b5d38b5ca6a406f11034bbf35e3a54264",
+              "path": "knowledge/question-ast.md",
+              "start_line": 1,
+              "end_line": 2,
+              "commit": null,
+              "retrieval_method": "bm25",
+              "evidence_kind": "question",
+              "supports_claim": "needs_judgment",
+              "quote": "AST符号与静态分析边界 · 练习\n怎样从项目源码建立可引用的符号索引？静态调用图有什么局限？",
+              "independent_truth": "not_verified"
+            }
+          ]
+        },
+        "turns": [],
+        "messages": [
+          {
+            "from": "coordinator",
+            "to": "interviewer",
+            "type": "scoped_plan",
+            "turn": 0,
+            "detail": "已根据所选范围实际检索，固定本场来源；参考资料不能证明个人经历。"
+          }
+        ],
+        "usage": {
+          "evaluator_calls": 0,
+          "interviewer_calls": 0,
+          "provider_calls": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "active_ms": 0,
+          "cost": null
+        },
+        "answer_pending": false,
+        "resumable": false,
+        "model_inflight": false,
+        "error_code": null,
+        "version_is_current": true,
+        "warnings": [
+          "题库技术练习，不代表真实面试表现或录用概率；本地仅按词面线索评估。",
+          "绑定本次简历版本/JD，之后编辑不会改变本场；C1 自述未独立核实，缺少材料不等于没有能力。",
+          "进行中隐藏参考要点与详细评价，结束后复盘；本次不会写简历或投递。"
+        ],
+        "track": "job",
+        "use_retrieval": true,
+        "project_id": null,
+        "snapshot_id": null,
+        "tool_trace": [
+          {
+            "index": 1,
+            "role": "interviewer",
+            "tool": "question_search",
+            "status": "ok",
+            "duration_ms": 39,
+            "turn": 0,
+            "error_code": null
+          }
+        ],
+        "tool_calls": 1
+      },
+      "evidence_packs": [
+        {
+          "pack_id": "pack-ffca33cb39824ae6aab6487d827371a9",
+          "plan": {
+            "plan_id": "plan-43feb1aefdc33d4de434c07971f8fb2bc382e9b78b53cf9725d7c42a25b36e5c",
+            "query": "read_code_range 与 validate_reference 分别怎样保证行范围和固定引用有效？ 引用字段边界由 EvidenceReference.boundaries 怎样补充约束？",
+            "kind": "exact_symbol",
+            "scope": {
+              "kind": "public_questions",
+              "owner_id": null,
+              "project_id": null,
+              "snapshot_id": null,
+              "corpus_identity": "public-124c01ce2a820c812fcfbb9d892de9959fae3742b2bf824052092edd694e1cb7",
+              "public_versions": {
+                "question-ast": "knowledge-d2ff1fe3541a993e76ba16bc3593e5f66083d6299761b3d0d4079989b9a8b859",
+                "question-asyncio": "knowledge-5e53eb480f371efd89d2ce9c79c56077de9aa6f171b3632fba62c609f7efdcc0",
+                "question-checkpoint": "knowledge-baf1831bc04f01de3b8cbe28f547cab2562ad7b381968ba7b646c36bb47e3817",
+                "question-citation": "knowledge-f2f825acdbfdd2c72725ef8684b2cde912f342f421830945e5edf74a1b49cd15",
+                "question-idempotency": "knowledge-b5e11b098a7d5b055df151df5f26eb0f914ea3a99da40bbce2477de3e475017c",
+                "question-provenance": "knowledge-f068d34d2c61b1cb60d979e2450353baf85e02eeafeaed47a6e899d7674d72c8",
+                "question-rrf": "knowledge-efcc0db09a2d8e682e1e7c2e767c5e03c0a0512ea11e6576a4ec011b82e9c14c",
+                "question-schema": "knowledge-fa410b2553ed9ac9d1a9120e7f5cd008a4bef1d8a443e078eb5eda3fb0ca0080",
+                "question-transaction": "knowledge-f0e0c7b5fda8d6ad132ec1104ba51503fc3c3ff07c361192e2fb40ecf49ff417",
+                "question-tree-sitter": "knowledge-ba9f36b30345ea93cdb95951f29d3b42e69d14e43716b662b1ede00cd1aaff9c"
+              },
+              "known_limitations": []
+            },
+            "allowed_tools": [
+              "question_search"
+            ],
+            "budget": {
+              "search_rounds": 2,
+              "tools": 5,
+              "quote_chars": 8000,
+              "model_input_tokens_upper_bound": 32768,
+              "elapsed_ms": 20000
+            },
+            "required_paths": 1,
+            "needs_imports": false,
+            "needs_full_definition": false
+          },
+          "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+          "trace_id": "retrieval-21e6c330b7b9496ca544778bbba7f3f7",
+          "items": [
+            {
+              "reference": {
+                "evidence_id": "public-10fb5238cb3ca403984e91be645b",
+                "scope": "public_knowledge",
+                "owner_id": null,
+                "project_id": null,
+                "snapshot_id": "knowledge-d2ff1fe3541a993e76ba16bc3593e5f66083d6299761b3d0d4079989b9a8b859",
+                "source_id": "question-ast",
+                "content_hash": "16b566caa25c6c16e5199f354cc03c6b5d38b5ca6a406f11034bbf35e3a54264",
+                "path": "knowledge/question-ast.md",
+                "start_line": 1,
+                "end_line": 2,
+                "commit": null,
+                "retrieval_method": "bm25",
+                "evidence_kind": "question",
+                "supports_claim": "needs_judgment",
+                "quote": "AST符号与静态分析边界 · 练习\n怎样从项目源码建立可引用的符号索引？静态调用图有什么局限？",
+                "independent_truth": "not_verified"
+              },
+              "symbol": null,
+              "entry": {
+                "entry_id": "question-ast",
+                "kind": "question",
+                "title": "AST符号与静态分析边界 · 练习",
+                "tags": [
+                  "AST",
+                  "Python",
+                  "符号",
+                  "静态",
+                  "源码"
+                ],
+                "source_url": "https://docs.python.org/3.12/library/ast.html",
+                "source_version": "Python 3.12 documentation",
+                "license": "CC0-1.0",
+                "content_basis": "project_authored_summary_not_official_quote",
+                "updated_at": "2026-10-20",
+                "applicable_role": "AI Agent / Python后端实习",
+                "difficulty": "intermediate",
+                "version_id": "knowledge-d2ff1fe3541a993e76ba16bc3593e5f66083d6299761b3d0d4079989b9a8b859"
+              },
+              "score": 10.325700411920643,
+              "location_valid": true,
+              "relevance": "candidate_needs_semantic_review"
+            },
+            {
+              "reference": {
+                "evidence_id": "public-6e1456ae6ec077d87b7901450a81",
+                "scope": "public_knowledge",
+                "owner_id": null,
+                "project_id": null,
+                "snapshot_id": "knowledge-f2f825acdbfdd2c72725ef8684b2cde912f342f421830945e5edf74a1b49cd15",
+                "source_id": "question-citation",
+                "content_hash": "54c97396d309aa99184c4e84729a42ad1caca78a493974e377ccb945a274be40",
+                "path": "knowledge/question-citation.md",
+                "start_line": 1,
+                "end_line": 2,
+                "commit": null,
+                "retrieval_method": "bm25",
+                "evidence_kind": "question",
+                "supports_claim": "needs_judgment",
+                "quote": "快照引用、哈希与版本 · 练习\n文件更新或重建索引后，怎样保证历史代码引用没有悄悄变义？",
+                "independent_truth": "not_verified"
+              },
+              "symbol": null,
+              "entry": {
+                "entry_id": "question-citation",
+                "kind": "question",
+                "title": "快照引用、哈希与版本 · 练习",
+                "tags": [
+                  "SHA256",
+                  "引用",
+                  "commit",
+                  "快照",
+                  "hash"
+                ],
+                "source_url": "https://docs.python.org/3.12/library/hashlib.html",
+                "source_version": "Python 3.12 documentation",
+                "license": "CC0-1.0",
+                "content_basis": "project_authored_summary_not_official_quote",
+                "updated_at": "2026-10-20",
+                "applicable_role": "AI Agent / Python后端实习",
+                "difficulty": "intermediate",
+                "version_id": "knowledge-f2f825acdbfdd2c72725ef8684b2cde912f342f421830945e5edf74a1b49cd15"
+              },
+              "score": 10.29625202710265,
+              "location_valid": true,
+              "relevance": "candidate_needs_semantic_review"
+            },
+            {
+              "reference": {
+                "evidence_id": "public-30956ffb76e6469b84cef7842d8f",
+                "scope": "public_knowledge",
+                "owner_id": null,
+                "project_id": null,
+                "snapshot_id": "knowledge-baf1831bc04f01de3b8cbe28f547cab2562ad7b381968ba7b646c36bb47e3817",
+                "source_id": "question-checkpoint",
+                "content_hash": "c42b0edcdfb9c1dc515eeaf1910403c673deb7ddbeb43fb11d510e04ba5a7536",
+                "path": "knowledge/question-checkpoint.md",
+                "start_line": 1,
+                "end_line": 2,
+                "commit": null,
+                "retrieval_method": "bm25",
+                "evidence_kind": "question",
+                "supports_claim": "needs_judgment",
+                "quote": "Checkpoint与长期记忆 · 练习\nCheckpoint和跨会话长期记忆分别应该保存什么？",
+                "independent_truth": "not_verified"
+              },
+              "symbol": null,
+              "entry": {
+                "entry_id": "question-checkpoint",
+                "kind": "question",
+                "title": "Checkpoint与长期记忆 · 练习",
+                "tags": [
+                  "LangGraph",
+                  "checkpoint",
+                  "state",
+                  "memory",
+                  "状态",
+                  "恢复"
+                ],
+                "source_url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+                "source_version": "LangGraph rolling docs; checked 2026-10-20",
+                "license": "CC0-1.0",
+                "content_basis": "project_authored_summary_not_official_quote",
+                "updated_at": "2026-10-20",
+                "applicable_role": "AI Agent / Python后端实习",
+                "difficulty": "intermediate",
+                "version_id": "knowledge-baf1831bc04f01de3b8cbe28f547cab2562ad7b381968ba7b646c36bb47e3817"
+              },
+              "score": 6.086468764953395,
+              "location_valid": true,
+              "relevance": "candidate_needs_semantic_review"
+            }
+          ],
+          "rounds": [
+            {
+              "index": 1,
+              "query": "read_code_range 与 validate_reference 分别怎样保证行范围和固定引用有效？ 引用字段边界由 EvidenceReference.boundaries 怎样补充约束？",
+              "tool": "question_search",
+              "returned_evidence_ids": [
+                "public-10fb5238cb3ca403984e91be645b",
+                "public-6e1456ae6ec077d87b7901450a81",
+                "public-30956ffb76e6469b84cef7842d8f"
+              ],
+              "retained_evidence_ids": [
+                "public-10fb5238cb3ca403984e91be645b",
+                "public-6e1456ae6ec077d87b7901450a81",
+                "public-30956ffb76e6469b84cef7842d8f"
+              ],
+              "added_items": 3,
+              "distinct_paths_after": 3,
+              "elapsed_ms": 46,
+              "warnings": [],
+              "retrieval_trace": {
+                "schema_version": "retrieval-trace-2",
+                "index_identity": null,
+                "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+                "context_chars": 224,
+                "context_char_budget": 24000,
+                "budget_omitted_ids": [],
+                "rerank_requested": false,
+                "rerank_applied": false,
+                "rerank_input_ids": [],
+                "reranked_ids": [
+                  "knowledge-d2ff1fe3541a993e76ba16bc3593e5f66083d6299761b3d0d4079989b9a8b859",
+                  "knowledge-f2f825acdbfdd2c72725ef8684b2cde912f342f421830945e5edf74a1b49cd15",
+                  "knowledge-baf1831bc04f01de3b8cbe28f547cab2562ad7b381968ba7b646c36bb47e3817",
+                  "knowledge-5e53eb480f371efd89d2ce9c79c56077de9aa6f171b3632fba62c609f7efdcc0",
+                  "knowledge-f068d34d2c61b1cb60d979e2450353baf85e02eeafeaed47a6e899d7674d72c8",
+                  "knowledge-efcc0db09a2d8e682e1e7c2e767c5e03c0a0512ea11e6576a4ec011b82e9c14c",
+                  "knowledge-ba9f36b30345ea93cdb95951f29d3b42e69d14e43716b662b1ede00cd1aaff9c",
+                  "knowledge-fa410b2553ed9ac9d1a9120e7f5cd008a4bef1d8a443e078eb5eda3fb0ca0080",
+                  "knowledge-f0e0c7b5fda8d6ad132ec1104ba51503fc3c3ff07c361192e2fb40ecf49ff417",
+                  "knowledge-b5e11b098a7d5b055df151df5f26eb0f914ea3a99da40bbce2477de3e475017c"
+                ],
+                "rerank_error": null,
+                "rerank_elapsed_ms": 0,
+                "reranker_identity": null,
+                "rerank_char_truncated_ids": [],
+                "rerank_token_truncated_ids": [],
+                "sparse_ids": [
+                  "knowledge-d2ff1fe3541a993e76ba16bc3593e5f66083d6299761b3d0d4079989b9a8b859",
+                  "knowledge-f2f825acdbfdd2c72725ef8684b2cde912f342f421830945e5edf74a1b49cd15",
+                  "knowledge-baf1831bc04f01de3b8cbe28f547cab2562ad7b381968ba7b646c36bb47e3817",
+                  "knowledge-5e53eb480f371efd89d2ce9c79c56077de9aa6f171b3632fba62c609f7efdcc0",
+                  "knowledge-f068d34d2c61b1cb60d979e2450353baf85e02eeafeaed47a6e899d7674d72c8",
+                  "knowledge-efcc0db09a2d8e682e1e7c2e767c5e03c0a0512ea11e6576a4ec011b82e9c14c",
+                  "knowledge-ba9f36b30345ea93cdb95951f29d3b42e69d14e43716b662b1ede00cd1aaff9c",
+                  "knowledge-fa410b2553ed9ac9d1a9120e7f5cd008a4bef1d8a443e078eb5eda3fb0ca0080",
+                  "knowledge-f0e0c7b5fda8d6ad132ec1104ba51503fc3c3ff07c361192e2fb40ecf49ff417",
+                  "knowledge-b5e11b098a7d5b055df151df5f26eb0f914ea3a99da40bbce2477de3e475017c"
+                ],
+                "dense_ids": [],
+                "fused_ids": [
+                  "knowledge-d2ff1fe3541a993e76ba16bc3593e5f66083d6299761b3d0d4079989b9a8b859",
+                  "knowledge-f2f825acdbfdd2c72725ef8684b2cde912f342f421830945e5edf74a1b49cd15",
+                  "knowledge-baf1831bc04f01de3b8cbe28f547cab2562ad7b381968ba7b646c36bb47e3817",
+                  "knowledge-5e53eb480f371efd89d2ce9c79c56077de9aa6f171b3632fba62c609f7efdcc0",
+                  "knowledge-f068d34d2c61b1cb60d979e2450353baf85e02eeafeaed47a6e899d7674d72c8",
+                  "knowledge-efcc0db09a2d8e682e1e7c2e767c5e03c0a0512ea11e6576a4ec011b82e9c14c",
+                  "knowledge-ba9f36b30345ea93cdb95951f29d3b42e69d14e43716b662b1ede00cd1aaff9c",
+                  "knowledge-fa410b2553ed9ac9d1a9120e7f5cd008a4bef1d8a443e078eb5eda3fb0ca0080",
+                  "knowledge-f0e0c7b5fda8d6ad132ec1104ba51503fc3c3ff07c361192e2fb40ecf49ff417",
+                  "knowledge-b5e11b098a7d5b055df151df5f26eb0f914ea3a99da40bbce2477de3e475017c"
+                ],
+                "candidate_depth": 20,
+                "final_evidence_ids": [
+                  "public-10fb5238cb3ca403984e91be645b",
+                  "public-6e1456ae6ec077d87b7901450a81",
+                  "public-30956ffb76e6469b84cef7842d8f"
+                ]
+              }
+            }
+          ],
+          "reads": [],
+          "claim_assessments": [
+            {
+              "claim_id": "claim-0",
+              "statement": "read_code_range 与 validate_reference 分别怎样保证行范围和固定引用有效？ 引用字段边界由 EvidenceReference.boundaries 怎样补充约束？",
+              "target_kind": "requested_answer",
+              "status": "needs_judgment",
+              "evidence_ids": [
+                "public-10fb5238cb3ca403984e91be645b",
+                "public-6e1456ae6ec077d87b7901450a81",
+                "public-30956ffb76e6469b84cef7842d8f"
+              ],
+              "reason": "原文定位有效；相关性和断言支持仍需语义判断。",
+              "assessed_by": "pending_semantic_review"
+            }
+          ],
+          "missing": [],
+          "warnings": [],
+          "answer_policy": "limited_source_only",
+          "corpus_answerability": "unknown",
+          "usage": {
+            "tool_calls": 1,
+            "search_rounds": 1,
+            "read_calls": 0,
+            "reserved_embedding_query_calls": 0,
+            "reserved_rerank_calls": 0,
+            "reserved_model_input_tokens_upper_bound": 0,
+            "quote_chars": 139,
+            "elapsed_ms": 46,
+            "budget_exhausted": false,
+            "stop_reason": "completed_bounded_collection"
+          },
+          "visible_roles": [
+            "interviewer",
+            "evaluator",
+            "coach"
+          ],
+          "source_data_is_untrusted": true,
+          "independent_truth": "not_verified"
+        }
+      ],
+      "plan": [
+        {
+          "anchor_id": "question-ast",
+          "prompt": "怎样从项目源码建立可引用的符号索引？静态调用图有什么局限？",
+          "points": {
+            "p0": "解析而非执行",
+            "p1": "符号与原文位置",
+            "p2": "动态行为需要克制"
+          },
+          "aliases": {
+            "p0": [
+              "AST",
+              "解析",
+              "语法树"
+            ],
+            "p1": [
+              "符号",
+              "行号",
+              "位置",
+              "函数"
+            ],
+            "p2": [
+              "动态",
+              "反射",
+              "不能推断",
+              "不等于运行"
+            ]
+          },
+          "followups": {
+            "p0": "导入一个陌生项目模块来收集函数有什么风险？",
+            "p1": "回答引用怎样回到准确的文件范围？",
+            "p2": "如果对象的方法是在运行时决定的，该如何表示？"
+          },
+          "references": [
+            {
+              "evidence_id": "public-10fb5238cb3ca403984e91be645b",
+              "scope": "public_knowledge",
+              "owner_id": null,
+              "project_id": null,
+              "snapshot_id": "knowledge-d2ff1fe3541a993e76ba16bc3593e5f66083d6299761b3d0d4079989b9a8b859",
+              "source_id": "question-ast",
+              "content_hash": "16b566caa25c6c16e5199f354cc03c6b5d38b5ca6a406f11034bbf35e3a54264",
+              "path": "knowledge/question-ast.md",
+              "start_line": 1,
+              "end_line": 2,
+              "commit": null,
+              "retrieval_method": "bm25",
+              "evidence_kind": "question",
+              "supports_claim": "needs_judgment",
+              "quote": "AST符号与静态分析边界 · 练习\n怎样从项目源码建立可引用的符号索引？静态调用图有什么局限？",
+              "independent_truth": "not_verified"
+            }
+          ]
+        },
+        {
+          "anchor_id": "question-citation",
+          "prompt": "文件更新或重建索引后，怎样保证历史代码引用没有悄悄变义？",
+          "points": {
+            "p0": "固定不可变版本",
+            "p1": "核对哈希行号原文",
+            "p2": "删除失效不替换来源"
+          },
+          "aliases": {
+            "p0": [
+              "版本",
+              "commit",
+              "快照"
+            ],
+            "p1": [
+              "hash",
+              "哈希",
+              "原文",
+              "行号"
+            ],
+            "p2": [
+              "失效",
+              "删除",
+              "不能替换",
+              "不回退"
+            ]
+          },
+          "followups": {
+            "p0": "只保存文件路径会有什么问题？",
+            "p1": "检索结果展示之前，需要核对哪些位置与内容？",
+            "p2": "原始来源已经删除时，应该怎样处理旧答案？"
+          },
+          "references": [
+            {
+              "evidence_id": "public-6e1456ae6ec077d87b7901450a81",
+              "scope": "public_knowledge",
+              "owner_id": null,
+              "project_id": null,
+              "snapshot_id": "knowledge-f2f825acdbfdd2c72725ef8684b2cde912f342f421830945e5edf74a1b49cd15",
+              "source_id": "question-citation",
+              "content_hash": "54c97396d309aa99184c4e84729a42ad1caca78a493974e377ccb945a274be40",
+              "path": "knowledge/question-citation.md",
+              "start_line": 1,
+              "end_line": 2,
+              "commit": null,
+              "retrieval_method": "bm25",
+              "evidence_kind": "question",
+              "supports_claim": "needs_judgment",
+              "quote": "快照引用、哈希与版本 · 练习\n文件更新或重建索引后，怎样保证历史代码引用没有悄悄变义？",
+              "independent_truth": "not_verified"
+            }
+          ]
+        },
+        {
+          "anchor_id": "question-checkpoint",
+          "prompt": "Checkpoint和跨会话长期记忆分别应该保存什么？",
+          "points": {
+            "p0": "线程运行状态",
+            "p1": "跨会话业务信息",
+            "p2": "内存与持久化边界"
+          },
+          "aliases": {
+            "p0": [
+              "线程",
+              "thread",
+              "当前任务"
+            ],
+            "p1": [
+              "跨会话",
+              "偏好",
+              "长期记忆",
+              "store"
+            ],
+            "p2": [
+              "持久化",
+              "重启",
+              "内存"
+            ]
+          },
+          "followups": {
+            "p0": "请说明你会把待执行动作保存在什么范围。",
+            "p1": "下一次新任务开始时，哪些信息还需要使用？",
+            "p2": "服务重启后，两类数据分别会怎样？"
+          },
+          "references": [
+            {
+              "evidence_id": "public-30956ffb76e6469b84cef7842d8f",
+              "scope": "public_knowledge",
+              "owner_id": null,
+              "project_id": null,
+              "snapshot_id": "knowledge-baf1831bc04f01de3b8cbe28f547cab2562ad7b381968ba7b646c36bb47e3817",
+              "source_id": "question-checkpoint",
+              "content_hash": "c42b0edcdfb9c1dc515eeaf1910403c673deb7ddbeb43fb11d510e04ba5a7536",
+              "path": "knowledge/question-checkpoint.md",
+              "start_line": 1,
+              "end_line": 2,
+              "commit": null,
+              "retrieval_method": "bm25",
+              "evidence_kind": "question",
+              "supports_claim": "needs_judgment",
+              "quote": "Checkpoint与长期记忆 · 练习\nCheckpoint和跨会话长期记忆分别应该保存什么？",
+              "independent_truth": "not_verified"
+            }
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "from": "coordinator",
+          "to": "interviewer",
+          "type": "scoped_plan",
+          "turn": 0,
+          "detail": "已根据所选范围实际检索，固定本场来源；参考资料不能证明个人经历。"
+        }
+      ]
+    },
+    {
+      "case_id": "real-dev-code_rag-2",
+      "track": "project",
+      "topic": "read_code_range 与 validate_reference 分别怎样保证行范围和固定引用有效？ 引用字段边界由 EvidenceReference.boundaries 怎样补充约束？",
+      "http_status": 201,
+      "view": {
+        "session_id": "interview-15f6bf471d614ab1bec20ef5c7228e0c",
+        "resume_id": "res-ed3e5a7b12cf4799b2aec26ea2c37538",
+        "version_id": "ver-aef51639f6d249d3ad67aabd47ed15d3",
+        "version_hash": "354430baa7cd709b3f05a3acf86b1b0f6e65ed593a80eb3b63fb02d69a84cff6",
+        "jd_text": "read_code_range 与 validate_reference 分别怎样保证行范围和固定引用有效？ 引用字段边界由 EvidenceReference.boundaries 怎样补充约束？",
+        "match_id": null,
+        "mode": "local_demo",
+        "provider": "local-rules",
+        "model": "scoped-retrieval-rules-v3",
+        "status": "active",
+        "revision": 0,
+        "max_turns": 2,
+        "created_at": "2026-10-23T08:03:41.057285Z",
+        "current": {
+          "question_id": "interview-15f6bf471d614ab1bec20ef5c7228e0c-q1",
+          "topic_id": "code:sym-7851448075b20a0947196f58",
+          "prompt": "请结合 src/job_agent/resume_workspace/code_rag.py 中的 CodeRAGService.validate_reference 说明输入、主要行为和失败边界，并区分你的参与范围与源码能证明的内容。",
+          "followup": false,
+          "references": [
+            {
+              "evidence_id": "ev-7f5a5211258f2c0df7b597d2279d",
+              "scope": "private_project",
+              "owner_id": "synthetic-research-owner",
+              "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+              "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+              "source_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631:src/job_agent/resume_workspace/code_rag.py",
+              "content_hash": "ff6021efad0148df9f28db89e8ba35e33ce0a58eb7ce14dbfd6da6f7b5e4f11d",
+              "path": "src/job_agent/resume_workspace/code_rag.py",
+              "start_line": 175,
+              "end_line": 181,
+              "commit": null,
+              "retrieval_method": "exact_symbol",
+              "evidence_kind": "code",
+              "supports_claim": "needs_judgment",
+              "quote": "    def validate_reference(self,owner,reference:EvidenceReference,*,db=None):\n        if reference.scope!='private_project' or reference.owner_id!=owner or not reference.project_id:raise WorkspaceNotFound('reference_not_found')\n        actual=self.read_code_range(owner,reference.project_id,reference.snapshot_id,reference.path,reference.start_line,reference.end_line,method=reference.retrieval_method,db=db)\n        fields=('evidence_id','source_id','content_hash','commit','quote','evidence_kind')\n        if any(getattr(actual,k)!=getattr(reference,k) for k in fields):raise WorkspaceConflict('code_reference_invalid')\n        # Do not trust caller-supplied semantic support labels.\n        return actual\n",
+              "independent_truth": "not_verified"
+            }
+          ]
+        },
+        "turns": [],
+        "messages": [
+          {
+            "from": "coordinator",
+            "to": "interviewer",
+            "type": "scoped_plan",
+            "turn": 0,
+            "detail": "已根据所选范围实际检索，固定本场来源；参考资料不能证明个人经历。"
+          }
+        ],
+        "usage": {
+          "evaluator_calls": 0,
+          "interviewer_calls": 0,
+          "provider_calls": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "active_ms": 0,
+          "cost": null
+        },
+        "answer_pending": false,
+        "resumable": false,
+        "model_inflight": false,
+        "error_code": null,
+        "version_is_current": true,
+        "warnings": [
+          "题库技术练习，不代表真实面试表现或录用概率；本地仅按词面线索评估。",
+          "绑定本次简历版本/JD，之后编辑不会改变本场；C1 自述未独立核实，缺少材料不等于没有能力。",
+          "进行中隐藏参考要点与详细评价，结束后复盘；本次不会写简历或投递。"
+        ],
+        "track": "project",
+        "use_retrieval": true,
+        "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+        "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+        "tool_trace": [
+          {
+            "index": 1,
+            "role": "interviewer",
+            "tool": "code_search",
+            "status": "ok",
+            "duration_ms": 79,
+            "turn": 0,
+            "error_code": null
+          }
+        ],
+        "tool_calls": 1
+      },
+      "evidence_packs": [
+        {
+          "pack_id": "pack-ed546c5d89234ac2a952b6fb5f7faa7f",
+          "plan": {
+            "plan_id": "plan-50f396bb1950df2336a6a9751afd85846fe854949180e17406a382171b8e61c9",
+            "query": "read_code_range 与 validate_reference 分别怎样保证行范围和固定引用有效？ 引用字段边界由 EvidenceReference.boundaries 怎样补充约束？",
+            "kind": "exact_symbol",
+            "scope": {
+              "kind": "private_project",
+              "owner_id": "synthetic-research-owner",
+              "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+              "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+              "corpus_identity": "code-b1119c232b3e9c1e47accb96977af5589c94a8f87364c5a6bd201dfcf4a78251",
+              "public_versions": {},
+              "known_limitations": [
+                "index_static_references_unresolved"
+              ]
+            },
+            "allowed_tools": [
+              "code_search",
+              "get_symbol",
+              "find_references",
+              "read_code_range"
+            ],
+            "budget": {
+              "search_rounds": 2,
+              "tools": 5,
+              "quote_chars": 8000,
+              "model_input_tokens_upper_bound": 32768,
+              "elapsed_ms": 20000
+            },
+            "required_paths": 1,
+            "needs_imports": false,
+            "needs_full_definition": false
+          },
+          "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+          "trace_id": "retrieval-0a55dd0f257a4deba52a1665eeb4a97e",
+          "items": [
+            {
+              "reference": {
+                "evidence_id": "ev-7f5a5211258f2c0df7b597d2279d",
+                "scope": "private_project",
+                "owner_id": "synthetic-research-owner",
+                "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+                "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+                "source_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631:src/job_agent/resume_workspace/code_rag.py",
+                "content_hash": "ff6021efad0148df9f28db89e8ba35e33ce0a58eb7ce14dbfd6da6f7b5e4f11d",
+                "path": "src/job_agent/resume_workspace/code_rag.py",
+                "start_line": 175,
+                "end_line": 181,
+                "commit": null,
+                "retrieval_method": "exact_symbol",
+                "evidence_kind": "code",
+                "supports_claim": "needs_judgment",
+                "quote": "    def validate_reference(self,owner,reference:EvidenceReference,*,db=None):\n        if reference.scope!='private_project' or reference.owner_id!=owner or not reference.project_id:raise WorkspaceNotFound('reference_not_found')\n        actual=self.read_code_range(owner,reference.project_id,reference.snapshot_id,reference.path,reference.start_line,reference.end_line,method=reference.retrieval_method,db=db)\n        fields=('evidence_id','source_id','content_hash','commit','quote','evidence_kind')\n        if any(getattr(actual,k)!=getattr(reference,k) for k in fields):raise WorkspaceConflict('code_reference_invalid')\n        # Do not trust caller-supplied semantic support labels.\n        return actual\n",
+                "independent_truth": "not_verified"
+              },
+              "symbol": {
+                "docstring": "",
+                "end_line": 181,
+                "exported_as": [],
+                "kind": "function",
+                "language": "python",
+                "name": "validate_reference",
+                "path": "src/job_agent/resume_workspace/code_rag.py",
+                "qualified_name": "CodeRAGService.validate_reference",
+                "signature": "def validate_reference(self, owner, reference: EvidenceReference, *, db=None)",
+                "start_line": 175,
+                "symbol_id": "sym-7851448075b20a0947196f58"
+              },
+              "entry": null,
+              "score": 1.0,
+              "location_valid": true,
+              "relevance": "candidate_needs_semantic_review"
+            },
+            {
+              "reference": {
+                "evidence_id": "ev-45177c9df3ce4cf7793c485d4f1c",
+                "scope": "private_project",
+                "owner_id": "synthetic-research-owner",
+                "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+                "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+                "source_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631:src/job_agent/resume_workspace/code_parser.py",
+                "content_hash": "2513fab4d5e91354b68cd1e6705bf5c22475ee277344c2f48d5bfba324f8b301",
+                "path": "src/job_agent/resume_workspace/code_parser.py",
+                "start_line": 19,
+                "end_line": 20,
+                "commit": null,
+                "retrieval_method": "static_call",
+                "evidence_kind": "code",
+                "supports_claim": "needs_judgment",
+                "quote": "def is_test_path(path):\n    return bool(re.search(r'(^|/)(tests?|test_[^/]+)(/|\\.)|\\.(?:test|spec)\\.[jt]sx?$',path,re.I))\n",
+                "independent_truth": "not_verified"
+              },
+              "symbol": {
+                "docstring": "",
+                "end_line": 20,
+                "exported_as": [],
+                "kind": "function",
+                "language": "python",
+                "name": "is_test_path",
+                "path": "src/job_agent/resume_workspace/code_parser.py",
+                "qualified_name": "is_test_path",
+                "signature": "def is_test_path(path)",
+                "start_line": 19,
+                "symbol_id": "sym-0ea5f694b242b3a18c9693fa"
+              },
+              "entry": null,
+              "score": 0.0,
+              "location_valid": true,
+              "relevance": "candidate_needs_semantic_review"
+            },
+            {
+              "reference": {
+                "evidence_id": "ev-f3d45efc91057a9931f8dd61d82b",
+                "scope": "private_project",
+                "owner_id": "synthetic-research-owner",
+                "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+                "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+                "source_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631:src/job_agent/resume_workspace/repository.py",
+                "content_hash": "e28d316a7129fdd4e444b13802035880c11bb3f7e3c9790c0c6399343777e2a4",
+                "path": "src/job_agent/resume_workspace/repository.py",
+                "start_line": 22,
+                "end_line": 23,
+                "commit": null,
+                "retrieval_method": "static_call",
+                "evidence_kind": "code",
+                "supports_claim": "needs_judgment",
+                "quote": "class WorkspaceConflict(ValueError):\n    pass\n",
+                "independent_truth": "not_verified"
+              },
+              "symbol": {
+                "docstring": "",
+                "end_line": 23,
+                "exported_as": [],
+                "kind": "class",
+                "language": "python",
+                "name": "WorkspaceConflict",
+                "path": "src/job_agent/resume_workspace/repository.py",
+                "qualified_name": "WorkspaceConflict",
+                "signature": "class WorkspaceConflict",
+                "start_line": 22,
+                "symbol_id": "sym-c500dfa4138164f3e24a01a3"
+              },
+              "entry": null,
+              "score": 0.0,
+              "location_valid": true,
+              "relevance": "candidate_needs_semantic_review"
+            }
+          ],
+          "rounds": [
+            {
+              "index": 1,
+              "query": "read_code_range 与 validate_reference 分别怎样保证行范围和固定引用有效？ 引用字段边界由 EvidenceReference.boundaries 怎样补充约束？",
+              "tool": "code_search",
+              "returned_evidence_ids": [
+                "ev-7f5a5211258f2c0df7b597d2279d",
+                "ev-45177c9df3ce4cf7793c485d4f1c",
+                "ev-f3d45efc91057a9931f8dd61d82b"
+              ],
+              "retained_evidence_ids": [
+                "ev-7f5a5211258f2c0df7b597d2279d",
+                "ev-45177c9df3ce4cf7793c485d4f1c",
+                "ev-f3d45efc91057a9931f8dd61d82b"
+              ],
+              "added_items": 3,
+              "distinct_paths_after": 3,
+              "elapsed_ms": 77,
+              "warnings": [
+                "semantic_embedding_not_configured; no_dense_recall_claim"
+              ],
+              "retrieval_trace": {
+                "schema_version": "retrieval-trace-2",
+                "index_identity": null,
+                "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+                "context_chars": 876,
+                "context_char_budget": 24000,
+                "budget_omitted_ids": [],
+                "rerank_requested": false,
+                "rerank_applied": false,
+                "rerank_input_ids": [],
+                "reranked_ids": [
+                  "chunk-50d9c8354ddf09f1692236086e1b",
+                  "chunk-9821257050dc27a621a1323c547d",
+                  "chunk-63c0f548323ce5d756458d14ee6d",
+                  "chunk-a181b3c6268dd9693a4413aeed70",
+                  "chunk-e02d72dc3a918ec622d28918b88c",
+                  "chunk-262b10462fc35a0015777d827fdb",
+                  "chunk-35de9696e5b537e4a84004e608d1",
+                  "chunk-d7e83d370e947831273991132397",
+                  "chunk-e316b24de7c1ccf9ccf62a182dd1",
+                  "chunk-6a5ead27a8d941cf321b20f77b5d",
+                  "chunk-a05c39c54ada2fe8963502775d46",
+                  "chunk-75cb1b3e424ac5869ad2d0e502da",
+                  "chunk-a43a7ce6a89d8b16eb71020e61d3",
+                  "chunk-5d549f902ff484eb0d7da2e8d6e4",
+                  "chunk-9fccfa0a11c01b6b41989d2f28f5",
+                  "chunk-4db51fff5a62fd68c5c2019bee50",
+                  "chunk-785d0794be3c8528787a506790d4",
+                  "chunk-b1eac778ff95e32b0e7899407f3c",
+                  "chunk-3ec69a4ba11c23305ec6f011fe71",
+                  "chunk-4e1a38d15db98a83f00c844be187"
+                ],
+                "rerank_error": null,
+                "rerank_elapsed_ms": 0,
+                "reranker_identity": null,
+                "rerank_char_truncated_ids": [],
+                "rerank_token_truncated_ids": [],
+                "sparse_ids": [
+                  "chunk-50d9c8354ddf09f1692236086e1b",
+                  "chunk-9821257050dc27a621a1323c547d",
+                  "chunk-63c0f548323ce5d756458d14ee6d",
+                  "chunk-a181b3c6268dd9693a4413aeed70",
+                  "chunk-e02d72dc3a918ec622d28918b88c",
+                  "chunk-262b10462fc35a0015777d827fdb",
+                  "chunk-35de9696e5b537e4a84004e608d1",
+                  "chunk-d7e83d370e947831273991132397",
+                  "chunk-e316b24de7c1ccf9ccf62a182dd1",
+                  "chunk-6a5ead27a8d941cf321b20f77b5d",
+                  "chunk-a05c39c54ada2fe8963502775d46",
+                  "chunk-75cb1b3e424ac5869ad2d0e502da",
+                  "chunk-a43a7ce6a89d8b16eb71020e61d3",
+                  "chunk-5d549f902ff484eb0d7da2e8d6e4",
+                  "chunk-9fccfa0a11c01b6b41989d2f28f5",
+                  "chunk-4db51fff5a62fd68c5c2019bee50",
+                  "chunk-785d0794be3c8528787a506790d4",
+                  "chunk-b1eac778ff95e32b0e7899407f3c",
+                  "chunk-3ec69a4ba11c23305ec6f011fe71",
+                  "chunk-4e1a38d15db98a83f00c844be187"
+                ],
+                "dense_ids": [],
+                "fused_ids": [
+                  "chunk-50d9c8354ddf09f1692236086e1b",
+                  "chunk-9821257050dc27a621a1323c547d",
+                  "chunk-63c0f548323ce5d756458d14ee6d",
+                  "chunk-a181b3c6268dd9693a4413aeed70",
+                  "chunk-e02d72dc3a918ec622d28918b88c",
+                  "chunk-262b10462fc35a0015777d827fdb",
+                  "chunk-35de9696e5b537e4a84004e608d1",
+                  "chunk-d7e83d370e947831273991132397",
+                  "chunk-e316b24de7c1ccf9ccf62a182dd1",
+                  "chunk-6a5ead27a8d941cf321b20f77b5d",
+                  "chunk-a05c39c54ada2fe8963502775d46",
+                  "chunk-75cb1b3e424ac5869ad2d0e502da",
+                  "chunk-a43a7ce6a89d8b16eb71020e61d3",
+                  "chunk-5d549f902ff484eb0d7da2e8d6e4",
+                  "chunk-9fccfa0a11c01b6b41989d2f28f5",
+                  "chunk-4db51fff5a62fd68c5c2019bee50",
+                  "chunk-785d0794be3c8528787a506790d4",
+                  "chunk-b1eac778ff95e32b0e7899407f3c",
+                  "chunk-3ec69a4ba11c23305ec6f011fe71",
+                  "chunk-4e1a38d15db98a83f00c844be187"
+                ],
+                "candidate_depth": 20,
+                "final_evidence_ids": [
+                  "ev-7f5a5211258f2c0df7b597d2279d",
+                  "ev-45177c9df3ce4cf7793c485d4f1c",
+                  "ev-f3d45efc91057a9931f8dd61d82b"
+                ]
+              }
+            }
+          ],
+          "reads": [],
+          "claim_assessments": [
+            {
+              "claim_id": "claim-0",
+              "statement": "read_code_range 与 validate_reference 分别怎样保证行范围和固定引用有效？ 引用字段边界由 EvidenceReference.boundaries 怎样补充约束？",
+              "target_kind": "requested_answer",
+              "status": "needs_judgment",
+              "evidence_ids": [
+                "ev-7f5a5211258f2c0df7b597d2279d",
+                "ev-45177c9df3ce4cf7793c485d4f1c",
+                "ev-f3d45efc91057a9931f8dd61d82b"
+              ],
+              "reason": "原文定位有效；相关性和断言支持仍需语义判断。",
+              "assessed_by": "pending_semantic_review"
+            }
+          ],
+          "missing": [],
+          "warnings": [
+            "semantic_embedding_not_configured; no_dense_recall_claim",
+            "index_static_references_unresolved"
+          ],
+          "answer_policy": "limited_source_only",
+          "corpus_answerability": "unknown",
+          "usage": {
+            "tool_calls": 1,
+            "search_rounds": 1,
+            "read_calls": 0,
+            "reserved_embedding_query_calls": 0,
+            "reserved_rerank_calls": 0,
+            "reserved_model_input_tokens_upper_bound": 0,
+            "quote_chars": 876,
+            "elapsed_ms": 77,
+            "budget_exhausted": false,
+            "stop_reason": "completed_bounded_collection"
+          },
+          "visible_roles": [
+            "interviewer",
+            "evaluator",
+            "coach"
+          ],
+          "source_data_is_untrusted": true,
+          "independent_truth": "not_verified"
+        }
+      ],
+      "plan": [
+        {
+          "anchor_id": "code:sym-7851448075b20a0947196f58",
+          "prompt": "请结合 src/job_agent/resume_workspace/code_rag.py 中的 CodeRAGService.validate_reference 说明输入、主要行为和失败边界，并区分你的参与范围与源码能证明的内容。",
+          "points": {
+            "p0": "准确定位并解释引用实现（规则只检查词面，语义待判断）",
+            "p1": "说明失败或边界条件",
+            "p2": "区分静态源码、测试存在与实际执行/个人贡献"
+          },
+          "aliases": {
+            "p0": [
+              "validate_reference",
+              "src/job_agent/resume_workspace/code_rag.py"
+            ],
+            "p1": [
+              "异常",
+              "失败",
+              "边界",
+              "error",
+              "超时"
+            ],
+            "p2": [
+              "未运行",
+              "静态",
+              "贡献",
+              "参与范围",
+              "不能证明"
+            ]
+          },
+          "followups": {
+            "p0": "请回到引用函数，具体指出你描述的行为对应哪些语句。",
+            "p1": "如果输入不符合预期或依赖失败，这段实现如何处理？",
+            "p2": "这些源码能证明什么，哪些运行结果或个人贡献仍需其他材料？"
+          },
+          "references": [
+            {
+              "evidence_id": "ev-7f5a5211258f2c0df7b597d2279d",
+              "scope": "private_project",
+              "owner_id": "synthetic-research-owner",
+              "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+              "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+              "source_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631:src/job_agent/resume_workspace/code_rag.py",
+              "content_hash": "ff6021efad0148df9f28db89e8ba35e33ce0a58eb7ce14dbfd6da6f7b5e4f11d",
+              "path": "src/job_agent/resume_workspace/code_rag.py",
+              "start_line": 175,
+              "end_line": 181,
+              "commit": null,
+              "retrieval_method": "exact_symbol",
+              "evidence_kind": "code",
+              "supports_claim": "needs_judgment",
+              "quote": "    def validate_reference(self,owner,reference:EvidenceReference,*,db=None):\n        if reference.scope!='private_project' or reference.owner_id!=owner or not reference.project_id:raise WorkspaceNotFound('reference_not_found')\n        actual=self.read_code_range(owner,reference.project_id,reference.snapshot_id,reference.path,reference.start_line,reference.end_line,method=reference.retrieval_method,db=db)\n        fields=('evidence_id','source_id','content_hash','commit','quote','evidence_kind')\n        if any(getattr(actual,k)!=getattr(reference,k) for k in fields):raise WorkspaceConflict('code_reference_invalid')\n        # Do not trust caller-supplied semantic support labels.\n        return actual\n",
+              "independent_truth": "not_verified"
+            }
+          ]
+        },
+        {
+          "anchor_id": "code:sym-0ea5f694b242b3a18c9693fa",
+          "prompt": "请结合 src/job_agent/resume_workspace/code_parser.py 中的 is_test_path 说明输入、主要行为和失败边界，并区分你的参与范围与源码能证明的内容。",
+          "points": {
+            "p0": "准确定位并解释引用实现（规则只检查词面，语义待判断）",
+            "p1": "说明失败或边界条件",
+            "p2": "区分静态源码、测试存在与实际执行/个人贡献"
+          },
+          "aliases": {
+            "p0": [
+              "is_test_path",
+              "src/job_agent/resume_workspace/code_parser.py"
+            ],
+            "p1": [
+              "异常",
+              "失败",
+              "边界",
+              "error",
+              "超时"
+            ],
+            "p2": [
+              "未运行",
+              "静态",
+              "贡献",
+              "参与范围",
+              "不能证明"
+            ]
+          },
+          "followups": {
+            "p0": "请回到引用函数，具体指出你描述的行为对应哪些语句。",
+            "p1": "如果输入不符合预期或依赖失败，这段实现如何处理？",
+            "p2": "这些源码能证明什么，哪些运行结果或个人贡献仍需其他材料？"
+          },
+          "references": [
+            {
+              "evidence_id": "ev-45177c9df3ce4cf7793c485d4f1c",
+              "scope": "private_project",
+              "owner_id": "synthetic-research-owner",
+              "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+              "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+              "source_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631:src/job_agent/resume_workspace/code_parser.py",
+              "content_hash": "2513fab4d5e91354b68cd1e6705bf5c22475ee277344c2f48d5bfba324f8b301",
+              "path": "src/job_agent/resume_workspace/code_parser.py",
+              "start_line": 19,
+              "end_line": 20,
+              "commit": null,
+              "retrieval_method": "static_call",
+              "evidence_kind": "code",
+              "supports_claim": "needs_judgment",
+              "quote": "def is_test_path(path):\n    return bool(re.search(r'(^|/)(tests?|test_[^/]+)(/|\\.)|\\.(?:test|spec)\\.[jt]sx?$',path,re.I))\n",
+              "independent_truth": "not_verified"
+            }
+          ]
+        },
+        {
+          "anchor_id": "code:sym-c500dfa4138164f3e24a01a3",
+          "prompt": "请结合 src/job_agent/resume_workspace/repository.py 中的 WorkspaceConflict 说明输入、主要行为和失败边界，并区分你的参与范围与源码能证明的内容。",
+          "points": {
+            "p0": "准确定位并解释引用实现（规则只检查词面，语义待判断）",
+            "p1": "说明失败或边界条件",
+            "p2": "区分静态源码、测试存在与实际执行/个人贡献"
+          },
+          "aliases": {
+            "p0": [
+              "WorkspaceConflict",
+              "src/job_agent/resume_workspace/repository.py"
+            ],
+            "p1": [
+              "异常",
+              "失败",
+              "边界",
+              "error",
+              "超时"
+            ],
+            "p2": [
+              "未运行",
+              "静态",
+              "贡献",
+              "参与范围",
+              "不能证明"
+            ]
+          },
+          "followups": {
+            "p0": "请回到引用函数，具体指出你描述的行为对应哪些语句。",
+            "p1": "如果输入不符合预期或依赖失败，这段实现如何处理？",
+            "p2": "这些源码能证明什么，哪些运行结果或个人贡献仍需其他材料？"
+          },
+          "references": [
+            {
+              "evidence_id": "ev-f3d45efc91057a9931f8dd61d82b",
+              "scope": "private_project",
+              "owner_id": "synthetic-research-owner",
+              "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+              "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+              "source_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631:src/job_agent/resume_workspace/repository.py",
+              "content_hash": "e28d316a7129fdd4e444b13802035880c11bb3f7e3c9790c0c6399343777e2a4",
+              "path": "src/job_agent/resume_workspace/repository.py",
+              "start_line": 22,
+              "end_line": 23,
+              "commit": null,
+              "retrieval_method": "static_call",
+              "evidence_kind": "code",
+              "supports_claim": "needs_judgment",
+              "quote": "class WorkspaceConflict(ValueError):\n    pass\n",
+              "independent_truth": "not_verified"
+            }
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "from": "coordinator",
+          "to": "interviewer",
+          "type": "scoped_plan",
+          "turn": 0,
+          "detail": "已根据所选范围实际检索，固定本场来源；参考资料不能证明个人经历。"
+        }
+      ]
+    },
+    {
+      "case_id": "real-dev-rewrite-2",
+      "track": "project",
+      "topic": "局部改写已使真实用户录用率提高了多少？",
+      "http_status": 201,
+      "view": {
+        "session_id": "interview-328c9f07547841ddb4ffe56d2be5a640",
+        "resume_id": "res-ed3e5a7b12cf4799b2aec26ea2c37538",
+        "version_id": "ver-aef51639f6d249d3ad67aabd47ed15d3",
+        "version_hash": "354430baa7cd709b3f05a3acf86b1b0f6e65ed593a80eb3b63fb02d69a84cff6",
+        "jd_text": "局部改写已使真实用户录用率提高了多少？",
+        "match_id": null,
+        "mode": "local_demo",
+        "provider": "local-rules",
+        "model": "scoped-retrieval-rules-v3",
+        "status": "active",
+        "revision": 0,
+        "max_turns": 2,
+        "created_at": "2026-10-23T08:03:41.167144Z",
+        "current": {
+          "question_id": "interview-328c9f07547841ddb4ffe56d2be5a640-q1",
+          "topic_id": "code:sym-2e0779274539e00944f80135",
+          "prompt": "请结合 src/job_agent/resume_workspace/evidence_pack.py 中的 risk_flags 说明输入、主要行为和失败边界，并区分你的参与范围与源码能证明的内容。",
+          "followup": false,
+          "references": [
+            {
+              "evidence_id": "ev-b12bc65bf9c17e37697f26986008",
+              "scope": "private_project",
+              "owner_id": "synthetic-research-owner",
+              "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+              "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+              "source_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631:src/job_agent/resume_workspace/evidence_pack.py",
+              "content_hash": "4f38cf2c5d1a335ed24bb700d4732e06af8e88b0256b030b61daf5f015ac8b3e",
+              "path": "src/job_agent/resume_workspace/evidence_pack.py",
+              "start_line": 126,
+              "end_line": 134,
+              "commit": null,
+              "retrieval_method": "bm25",
+              "evidence_kind": "code",
+              "supports_claim": "needs_judgment",
+              "quote": "def risk_flags(query,claims):\n    text=' '.join([query,*claims])\n    flags=[]\n    if re.search(r'本人|我(?:独立|负责|主导|实现|参与)|用户(?:独立|负责|主导)|候选人(?:独立|负责|主导)|个人贡献',text):\n        flags.append('personal_contribution_unverified')\n    metrics=r'吞吐|QPS|准确率|成功率|覆盖率|性能提升|每秒|测试通过率'\n    if re.search(metrics,text,re.I) and (claims or re.search(r'多少|具体|是多少|达到|提升|显著|生产|线上|\\d',text)):\n        flags.append('runtime_measurements_unverified')\n    return flags\n",
+              "independent_truth": "not_verified"
+            }
+          ]
+        },
+        "turns": [],
+        "messages": [
+          {
+            "from": "coordinator",
+            "to": "interviewer",
+            "type": "scoped_plan",
+            "turn": 0,
+            "detail": "已根据所选范围实际检索，固定本场来源；参考资料不能证明个人经历。"
+          }
+        ],
+        "usage": {
+          "evaluator_calls": 0,
+          "interviewer_calls": 0,
+          "provider_calls": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "active_ms": 0,
+          "cost": null
+        },
+        "answer_pending": false,
+        "resumable": false,
+        "model_inflight": false,
+        "error_code": null,
+        "version_is_current": true,
+        "warnings": [
+          "题库技术练习，不代表真实面试表现或录用概率；本地仅按词面线索评估。",
+          "绑定本次简历版本/JD，之后编辑不会改变本场；C1 自述未独立核实，缺少材料不等于没有能力。",
+          "进行中隐藏参考要点与详细评价，结束后复盘；本次不会写简历或投递。"
+        ],
+        "track": "project",
+        "use_retrieval": true,
+        "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+        "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+        "tool_trace": [
+          {
+            "index": 1,
+            "role": "interviewer",
+            "tool": "code_search",
+            "status": "ok",
+            "duration_ms": 62,
+            "turn": 0,
+            "error_code": null
+          }
+        ],
+        "tool_calls": 1
+      },
+      "evidence_packs": [
+        {
+          "pack_id": "pack-5b5eee6913304f19bea0e73dd60b7a52",
+          "plan": {
+            "plan_id": "plan-ca0671743ff0abfa39b9bf4ee170d4f8314192d8e53a16d7517090cb2e69c908",
+            "query": "局部改写已使真实用户录用率提高了多少？",
+            "kind": "semantic",
+            "scope": {
+              "kind": "private_project",
+              "owner_id": "synthetic-research-owner",
+              "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+              "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+              "corpus_identity": "code-b1119c232b3e9c1e47accb96977af5589c94a8f87364c5a6bd201dfcf4a78251",
+              "public_versions": {},
+              "known_limitations": [
+                "index_static_references_unresolved"
+              ]
+            },
+            "allowed_tools": [
+              "code_search",
+              "get_symbol",
+              "find_references",
+              "read_code_range"
+            ],
+            "budget": {
+              "search_rounds": 2,
+              "tools": 5,
+              "quote_chars": 8000,
+              "model_input_tokens_upper_bound": 32768,
+              "elapsed_ms": 20000
+            },
+            "required_paths": 1,
+            "needs_imports": false,
+            "needs_full_definition": false
+          },
+          "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+          "trace_id": "retrieval-32c5796437b44753b1c98970597d18f2",
+          "items": [
+            {
+              "reference": {
+                "evidence_id": "ev-b12bc65bf9c17e37697f26986008",
+                "scope": "private_project",
+                "owner_id": "synthetic-research-owner",
+                "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+                "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+                "source_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631:src/job_agent/resume_workspace/evidence_pack.py",
+                "content_hash": "4f38cf2c5d1a335ed24bb700d4732e06af8e88b0256b030b61daf5f015ac8b3e",
+                "path": "src/job_agent/resume_workspace/evidence_pack.py",
+                "start_line": 126,
+                "end_line": 134,
+                "commit": null,
+                "retrieval_method": "bm25",
+                "evidence_kind": "code",
+                "supports_claim": "needs_judgment",
+                "quote": "def risk_flags(query,claims):\n    text=' '.join([query,*claims])\n    flags=[]\n    if re.search(r'本人|我(?:独立|负责|主导|实现|参与)|用户(?:独立|负责|主导)|候选人(?:独立|负责|主导)|个人贡献',text):\n        flags.append('personal_contribution_unverified')\n    metrics=r'吞吐|QPS|准确率|成功率|覆盖率|性能提升|每秒|测试通过率'\n    if re.search(metrics,text,re.I) and (claims or re.search(r'多少|具体|是多少|达到|提升|显著|生产|线上|\\d',text)):\n        flags.append('runtime_measurements_unverified')\n    return flags\n",
+                "independent_truth": "not_verified"
+              },
+              "symbol": {
+                "docstring": "",
+                "end_line": 134,
+                "exported_as": [],
+                "kind": "function",
+                "language": "python",
+                "name": "risk_flags",
+                "path": "src/job_agent/resume_workspace/evidence_pack.py",
+                "qualified_name": "risk_flags",
+                "signature": "def risk_flags(query, claims)",
+                "start_line": 126,
+                "symbol_id": "sym-2e0779274539e00944f80135"
+              },
+              "entry": null,
+              "score": 42.75882861615023,
+              "location_valid": true,
+              "relevance": "candidate_needs_semantic_review"
+            },
+            {
+              "reference": {
+                "evidence_id": "ev-116185728c30434604cd3cb07b11",
+                "scope": "private_project",
+                "owner_id": "synthetic-research-owner",
+                "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+                "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+                "source_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631:src/job_agent/resume_workspace/evidence_pack.py",
+                "content_hash": "4f38cf2c5d1a335ed24bb700d4732e06af8e88b0256b030b61daf5f015ac8b3e",
+                "path": "src/job_agent/resume_workspace/evidence_pack.py",
+                "start_line": 137,
+                "end_line": 146,
+                "commit": null,
+                "retrieval_method": "static_call",
+                "evidence_kind": "code",
+                "supports_claim": "needs_judgment",
+                "quote": "def make_plan(query,scope,budget,allowed_tools,*,claims=(),read_followup=False):\n    query=query.strip()\n    if not query or len(query)>600:raise WorkspaceConflict('evidence_query_invalid')\n    cross=scope.kind=='private_project' and any(t in query.casefold() for t in ('跨文件','调用','callers','references','测试','tests'))\n    exact=bool(re.search(r'`[A-Za-z_][\\w.]*`|\\b[A-Za-z_]\\w*[_\\.][A-Za-z_]\\w*',query))\n    kind='read_followup' if read_followup else 'runtime_evidence' if 'runtime_measurements_unverified' in risk_flags(query,claims) else 'cross_file' if cross else 'exact_symbol' if exact else 'semantic'\n    content={'query':query,'scope':scope.model_dump(),'budget':budget.model_dump(),'kind':kind,'allowed_tools':allowed_tools}\n    return RetrievalPlan(plan_id='plan-'+fingerprint(content),query=query,scope=scope,kind=kind,allowed_tools=list(allowed_tools),\n        budget=budget,required_paths=2 if cross else 1,needs_imports=scope.kind=='private_project' and any(t in query.casefold() for t in ('import','导入')),\n        needs_full_definition=scope.kind=='private_project' and any(t in query.casefold() for t in ('完整','whole definition','full definition')))\n",
+                "independent_truth": "not_verified"
+              },
+              "symbol": {
+                "docstring": "",
+                "end_line": 146,
+                "exported_as": [],
+                "kind": "function",
+                "language": "python",
+                "name": "make_plan",
+                "path": "src/job_agent/resume_workspace/evidence_pack.py",
+                "qualified_name": "make_plan",
+                "signature": "def make_plan(query, scope, budget, allowed_tools, *, claims=(), read_followup=False)",
+                "start_line": 137,
+                "symbol_id": "sym-676b04b78cb6dfdbb5c1fb66"
+              },
+              "entry": null,
+              "score": 0.0,
+              "location_valid": true,
+              "relevance": "candidate_needs_semantic_review"
+            },
+            {
+              "reference": {
+                "evidence_id": "ev-4c32b12ef97ccbcdca0b9a8be46e",
+                "scope": "private_project",
+                "owner_id": "synthetic-research-owner",
+                "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+                "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+                "source_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631:src/job_agent/resume_workspace/evidence_pack.py",
+                "content_hash": "4f38cf2c5d1a335ed24bb700d4732e06af8e88b0256b030b61daf5f015ac8b3e",
+                "path": "src/job_agent/resume_workspace/evidence_pack.py",
+                "start_line": 236,
+                "end_line": 277,
+                "commit": null,
+                "retrieval_method": "static_call",
+                "evidence_kind": "code",
+                "supports_claim": "needs_judgment",
+                "quote": "                if not items and self.scope.kind=='private_project':\n                    # Large code quotes were omitted by the tool projection. A new\n                    # counted read may fetch complete bounded lines, never a fake quote.\n                    omitted=next((loc for loc in getattr(self,'_last_omitted',[]) if loc.get('bounded_end_line')),None)\n                    if omitted:read('read_code_range',{'path':omitted['path'],'start':omitted['start_line'],'end':omitted['bounded_end_line']})\n                seed=next((i for i in items if i.symbol),None)\n                if needs_more() and seed and plan.kind=='cross_file':\n                    read('find_references',{'symbol_id':seed.symbol['symbol_id'],'tests_only':'测试' in query or 'tests' in query.casefold()})\n                if plan.needs_imports and needs_more() and seed:\n                    read('read_code_range',{'path':seed.reference.path,'start':1,'end':min(seed.symbol['end_line'],80)})\n                if plan.needs_full_definition and needs_more() and seed:read('get_symbol',{'name':seed.symbol['symbol_id']})\n                if needs_more() and self.material_count>0 and len(rounds)<budget.search_rounds:\n                    suffix=' runtime benchmark measurements report' if plan.kind=='runtime_evidence' else ' 调用 定义 测试 caller references' if plan.kind=='cross_file' else ' 机制 定义 implementation reference'\n                    modified=plan.query[:600-len(suffix)]+suffix\n                    search(modified)\n        except EvidenceBudgetExceeded as exc:\n            usage.budget_exhausted=True;usage.stop_reason=str(exc);missing.append('budget_exhausted')\n        usage.tool_calls=self.tool_count()-initial;usage.search_rounds=len(rounds);usage.read_calls=len(reads)\n        usage.elapsed_ms=int((self.clock()-started)*1000)\n        if not items:missing.append('no_material_in_scope' if self.material_count==0 else 'retrieval_empty_answerability_unknown')\n        if plan.required_paths>1 and len(paths())<plan.required_paths:missing.append('cross_file_coverage_incomplete')\n        if plan.needs_imports and not any(i.reference.start_line==1 and 'import ' in i.reference.quote for i in items):missing.append('import_context_not_located')\n        if plan.needs_full_definition and not any(i.symbol and i.reference.start_line<=i.symbol['start_line']\n            and i.reference.end_line>=i.symbol['end_line'] for i in items):missing.append('full_definition_not_located')\n        risks=risk_flags(plan.query,claims);missing.extend(risks)\n        if self.material_count==0:missing.append('no_material_in_scope')\n        ids=[i.reference.evidence_id for i in items];assessments=[]\n        required_missing=any(x in missing for x in ('cross_file_coverage_incomplete','import_context_not_located','full_definition_not_located'))\n        warnings.extend(self.scope.known_limitations)\n        if (not items or required_missing) and any('quote_budget_omitted_whole_span' in w for w in warnings) and not usage.budget_exhausted:\n            usage.budget_exhausted=True;usage.stop_reason='quote_budget'\n        for index,statement in enumerate(claims or [plan.query]):\n            insufficient=not items or required_missing or bool(risk_flags(statement,[statement] if claims else ()))\n            assessments.append(ClaimAssessment(claim_id=f'claim-{index}',statement=statement,\n                target_kind='supplied_claim' if claims else 'requested_answer',status='insufficient_evidence' if insufficient else 'needs_judgment',\n                evidence_ids=ids,reason='所需来源/范围不足，不能据此核实个人贡献、运行成果或完整断言。' if insufficient else '原文定位有效；相关性和断言支持仍需语义判断。',\n                assessed_by='deterministic_boundary' if insufficient else 'pending_semantic_review'))\n        return EvidencePack(pack_id='pack-'+uuid4().hex,trace_id='retrieval-'+uuid4().hex,plan=plan,\n            config_identity=self.config_identity,items=items,rounds=rounds,reads=reads,claim_assessments=assessments,\n            missing=list(dict.fromkeys(missing)),warnings=list(dict.fromkeys(warnings)),\n            answer_policy='needs_input' if not items or risks or required_missing else 'limited_source_only',usage=usage,\n            corpus_answerability='no_material_in_scope' if self.material_count==0 else 'unknown')\n",
+                "independent_truth": "not_verified"
+              },
+              "symbol": {
+                "docstring": "",
+                "end_line": 277,
+                "exported_as": [],
+                "kind": "function",
+                "language": "python",
+                "name": "retrieve",
+                "path": "src/job_agent/resume_workspace/evidence_pack.py",
+                "qualified_name": "BoundedEvidenceRetriever.retrieve",
+                "signature": "def retrieve(self, query, *, claims=(), budget=None, read_actions=None)",
+                "start_line": 156,
+                "symbol_id": "sym-d1f4e84beb691166ff4bd6fd"
+              },
+              "entry": null,
+              "score": 0.0,
+              "location_valid": true,
+              "relevance": "candidate_needs_semantic_review"
+            }
+          ],
+          "rounds": [
+            {
+              "index": 1,
+              "query": "局部改写已使真实用户录用率提高了多少？",
+              "tool": "code_search",
+              "returned_evidence_ids": [
+                "ev-b12bc65bf9c17e37697f26986008",
+                "ev-116185728c30434604cd3cb07b11",
+                "ev-4c32b12ef97ccbcdca0b9a8be46e"
+              ],
+              "retained_evidence_ids": [
+                "ev-b12bc65bf9c17e37697f26986008",
+                "ev-116185728c30434604cd3cb07b11",
+                "ev-4c32b12ef97ccbcdca0b9a8be46e"
+              ],
+              "added_items": 3,
+              "distinct_paths_after": 1,
+              "elapsed_ms": 63,
+              "warnings": [
+                "semantic_embedding_not_configured; no_dense_recall_claim"
+              ],
+              "retrieval_trace": {
+                "schema_version": "retrieval-trace-2",
+                "index_identity": null,
+                "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+                "context_chars": 5857,
+                "context_char_budget": 24000,
+                "budget_omitted_ids": [],
+                "rerank_requested": false,
+                "rerank_applied": false,
+                "rerank_input_ids": [],
+                "reranked_ids": [
+                  "chunk-3c396f30cfa9d1063de4714ea9b8",
+                  "chunk-50d9c8354ddf09f1692236086e1b",
+                  "chunk-785d0794be3c8528787a506790d4",
+                  "chunk-e02d72dc3a918ec622d28918b88c",
+                  "chunk-b1eac778ff95e32b0e7899407f3c",
+                  "chunk-9821257050dc27a621a1323c547d",
+                  "chunk-d7e83d370e947831273991132397",
+                  "chunk-4db51fff5a62fd68c5c2019bee50",
+                  "chunk-a43a7ce6a89d8b16eb71020e61d3",
+                  "chunk-fb7fa9a2d8093638a6191865154b",
+                  "chunk-3b0070749cae55450fbbf63dad77",
+                  "chunk-7fc464e292ff14a463de90b764e4",
+                  "chunk-48e8d43561fa4006f5134207b5b3",
+                  "chunk-4f2f37c8af12463ef502591151c1",
+                  "chunk-d2440568e4532d2a71105fb1f9fa",
+                  "chunk-63c0f548323ce5d756458d14ee6d",
+                  "chunk-a181b3c6268dd9693a4413aeed70"
+                ],
+                "rerank_error": null,
+                "rerank_elapsed_ms": 0,
+                "reranker_identity": null,
+                "rerank_char_truncated_ids": [],
+                "rerank_token_truncated_ids": [],
+                "sparse_ids": [
+                  "chunk-3c396f30cfa9d1063de4714ea9b8",
+                  "chunk-50d9c8354ddf09f1692236086e1b",
+                  "chunk-785d0794be3c8528787a506790d4",
+                  "chunk-e02d72dc3a918ec622d28918b88c",
+                  "chunk-b1eac778ff95e32b0e7899407f3c",
+                  "chunk-9821257050dc27a621a1323c547d",
+                  "chunk-d7e83d370e947831273991132397",
+                  "chunk-4db51fff5a62fd68c5c2019bee50",
+                  "chunk-a43a7ce6a89d8b16eb71020e61d3",
+                  "chunk-fb7fa9a2d8093638a6191865154b",
+                  "chunk-3b0070749cae55450fbbf63dad77",
+                  "chunk-7fc464e292ff14a463de90b764e4",
+                  "chunk-48e8d43561fa4006f5134207b5b3",
+                  "chunk-4f2f37c8af12463ef502591151c1",
+                  "chunk-d2440568e4532d2a71105fb1f9fa",
+                  "chunk-63c0f548323ce5d756458d14ee6d",
+                  "chunk-a181b3c6268dd9693a4413aeed70"
+                ],
+                "dense_ids": [],
+                "fused_ids": [
+                  "chunk-3c396f30cfa9d1063de4714ea9b8",
+                  "chunk-50d9c8354ddf09f1692236086e1b",
+                  "chunk-785d0794be3c8528787a506790d4",
+                  "chunk-e02d72dc3a918ec622d28918b88c",
+                  "chunk-b1eac778ff95e32b0e7899407f3c",
+                  "chunk-9821257050dc27a621a1323c547d",
+                  "chunk-d7e83d370e947831273991132397",
+                  "chunk-4db51fff5a62fd68c5c2019bee50",
+                  "chunk-a43a7ce6a89d8b16eb71020e61d3",
+                  "chunk-fb7fa9a2d8093638a6191865154b",
+                  "chunk-3b0070749cae55450fbbf63dad77",
+                  "chunk-7fc464e292ff14a463de90b764e4",
+                  "chunk-48e8d43561fa4006f5134207b5b3",
+                  "chunk-4f2f37c8af12463ef502591151c1",
+                  "chunk-d2440568e4532d2a71105fb1f9fa",
+                  "chunk-63c0f548323ce5d756458d14ee6d",
+                  "chunk-a181b3c6268dd9693a4413aeed70"
+                ],
+                "candidate_depth": 20,
+                "final_evidence_ids": [
+                  "ev-b12bc65bf9c17e37697f26986008",
+                  "ev-116185728c30434604cd3cb07b11",
+                  "ev-4c32b12ef97ccbcdca0b9a8be46e"
+                ]
+              }
+            }
+          ],
+          "reads": [],
+          "claim_assessments": [
+            {
+              "claim_id": "claim-0",
+              "statement": "局部改写已使真实用户录用率提高了多少？",
+              "target_kind": "requested_answer",
+              "status": "needs_judgment",
+              "evidence_ids": [
+                "ev-b12bc65bf9c17e37697f26986008",
+                "ev-116185728c30434604cd3cb07b11",
+                "ev-4c32b12ef97ccbcdca0b9a8be46e"
+              ],
+              "reason": "原文定位有效；相关性和断言支持仍需语义判断。",
+              "assessed_by": "pending_semantic_review"
+            }
+          ],
+          "missing": [],
+          "warnings": [
+            "semantic_embedding_not_configured; no_dense_recall_claim",
+            "index_static_references_unresolved"
+          ],
+          "answer_policy": "limited_source_only",
+          "corpus_answerability": "unknown",
+          "usage": {
+            "tool_calls": 1,
+            "search_rounds": 1,
+            "read_calls": 0,
+            "reserved_embedding_query_calls": 0,
+            "reserved_rerank_calls": 0,
+            "reserved_model_input_tokens_upper_bound": 0,
+            "quote_chars": 5857,
+            "elapsed_ms": 63,
+            "budget_exhausted": false,
+            "stop_reason": "completed_bounded_collection"
+          },
+          "visible_roles": [
+            "interviewer",
+            "evaluator",
+            "coach"
+          ],
+          "source_data_is_untrusted": true,
+          "independent_truth": "not_verified"
+        }
+      ],
+      "plan": [
+        {
+          "anchor_id": "code:sym-2e0779274539e00944f80135",
+          "prompt": "请结合 src/job_agent/resume_workspace/evidence_pack.py 中的 risk_flags 说明输入、主要行为和失败边界，并区分你的参与范围与源码能证明的内容。",
+          "points": {
+            "p0": "准确定位并解释引用实现（规则只检查词面，语义待判断）",
+            "p1": "说明失败或边界条件",
+            "p2": "区分静态源码、测试存在与实际执行/个人贡献"
+          },
+          "aliases": {
+            "p0": [
+              "risk_flags",
+              "src/job_agent/resume_workspace/evidence_pack.py"
+            ],
+            "p1": [
+              "异常",
+              "失败",
+              "边界",
+              "error",
+              "超时"
+            ],
+            "p2": [
+              "未运行",
+              "静态",
+              "贡献",
+              "参与范围",
+              "不能证明"
+            ]
+          },
+          "followups": {
+            "p0": "请回到引用函数，具体指出你描述的行为对应哪些语句。",
+            "p1": "如果输入不符合预期或依赖失败，这段实现如何处理？",
+            "p2": "这些源码能证明什么，哪些运行结果或个人贡献仍需其他材料？"
+          },
+          "references": [
+            {
+              "evidence_id": "ev-b12bc65bf9c17e37697f26986008",
+              "scope": "private_project",
+              "owner_id": "synthetic-research-owner",
+              "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+              "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+              "source_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631:src/job_agent/resume_workspace/evidence_pack.py",
+              "content_hash": "4f38cf2c5d1a335ed24bb700d4732e06af8e88b0256b030b61daf5f015ac8b3e",
+              "path": "src/job_agent/resume_workspace/evidence_pack.py",
+              "start_line": 126,
+              "end_line": 134,
+              "commit": null,
+              "retrieval_method": "bm25",
+              "evidence_kind": "code",
+              "supports_claim": "needs_judgment",
+              "quote": "def risk_flags(query,claims):\n    text=' '.join([query,*claims])\n    flags=[]\n    if re.search(r'本人|我(?:独立|负责|主导|实现|参与)|用户(?:独立|负责|主导)|候选人(?:独立|负责|主导)|个人贡献',text):\n        flags.append('personal_contribution_unverified')\n    metrics=r'吞吐|QPS|准确率|成功率|覆盖率|性能提升|每秒|测试通过率'\n    if re.search(metrics,text,re.I) and (claims or re.search(r'多少|具体|是多少|达到|提升|显著|生产|线上|\\d',text)):\n        flags.append('runtime_measurements_unverified')\n    return flags\n",
+              "independent_truth": "not_verified"
+            }
+          ]
+        },
+        {
+          "anchor_id": "code:sym-676b04b78cb6dfdbb5c1fb66",
+          "prompt": "请结合 src/job_agent/resume_workspace/evidence_pack.py 中的 make_plan 说明输入、主要行为和失败边界，并区分你的参与范围与源码能证明的内容。",
+          "points": {
+            "p0": "准确定位并解释引用实现（规则只检查词面，语义待判断）",
+            "p1": "说明失败或边界条件",
+            "p2": "区分静态源码、测试存在与实际执行/个人贡献"
+          },
+          "aliases": {
+            "p0": [
+              "make_plan",
+              "src/job_agent/resume_workspace/evidence_pack.py"
+            ],
+            "p1": [
+              "异常",
+              "失败",
+              "边界",
+              "error",
+              "超时"
+            ],
+            "p2": [
+              "未运行",
+              "静态",
+              "贡献",
+              "参与范围",
+              "不能证明"
+            ]
+          },
+          "followups": {
+            "p0": "请回到引用函数，具体指出你描述的行为对应哪些语句。",
+            "p1": "如果输入不符合预期或依赖失败，这段实现如何处理？",
+            "p2": "这些源码能证明什么，哪些运行结果或个人贡献仍需其他材料？"
+          },
+          "references": [
+            {
+              "evidence_id": "ev-116185728c30434604cd3cb07b11",
+              "scope": "private_project",
+              "owner_id": "synthetic-research-owner",
+              "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+              "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+              "source_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631:src/job_agent/resume_workspace/evidence_pack.py",
+              "content_hash": "4f38cf2c5d1a335ed24bb700d4732e06af8e88b0256b030b61daf5f015ac8b3e",
+              "path": "src/job_agent/resume_workspace/evidence_pack.py",
+              "start_line": 137,
+              "end_line": 146,
+              "commit": null,
+              "retrieval_method": "static_call",
+              "evidence_kind": "code",
+              "supports_claim": "needs_judgment",
+              "quote": "def make_plan(query,scope,budget,allowed_tools,*,claims=(),read_followup=False):\n    query=query.strip()\n    if not query or len(query)>600:raise WorkspaceConflict('evidence_query_invalid')\n    cross=scope.kind=='private_project' and any(t in query.casefold() for t in ('跨文件','调用','callers','references','测试','tests'))\n    exact=bool(re.search(r'`[A-Za-z_][\\w.]*`|\\b[A-Za-z_]\\w*[_\\.][A-Za-z_]\\w*',query))\n    kind='read_followup' if read_followup else 'runtime_evidence' if 'runtime_measurements_unverified' in risk_flags(query,claims) else 'cross_file' if cross else 'exact_symbol' if exact else 'semantic'\n    content={'query':query,'scope':scope.model_dump(),'budget':budget.model_dump(),'kind':kind,'allowed_tools':allowed_tools}\n    return RetrievalPlan(plan_id='plan-'+fingerprint(content),query=query,scope=scope,kind=kind,allowed_tools=list(allowed_tools),\n        budget=budget,required_paths=2 if cross else 1,needs_imports=scope.kind=='private_project' and any(t in query.casefold() for t in ('import','导入')),\n        needs_full_definition=scope.kind=='private_project' and any(t in query.casefold() for t in ('完整','whole definition','full definition')))\n",
+              "independent_truth": "not_verified"
+            }
+          ]
+        },
+        {
+          "anchor_id": "code:sym-d1f4e84beb691166ff4bd6fd",
+          "prompt": "请结合 src/job_agent/resume_workspace/evidence_pack.py 中的 BoundedEvidenceRetriever.retrieve 说明输入、主要行为和失败边界，并区分你的参与范围与源码能证明的内容。",
+          "points": {
+            "p0": "准确定位并解释引用实现（规则只检查词面，语义待判断）",
+            "p1": "说明失败或边界条件",
+            "p2": "区分静态源码、测试存在与实际执行/个人贡献"
+          },
+          "aliases": {
+            "p0": [
+              "retrieve",
+              "src/job_agent/resume_workspace/evidence_pack.py"
+            ],
+            "p1": [
+              "异常",
+              "失败",
+              "边界",
+              "error",
+              "超时"
+            ],
+            "p2": [
+              "未运行",
+              "静态",
+              "贡献",
+              "参与范围",
+              "不能证明"
+            ]
+          },
+          "followups": {
+            "p0": "请回到引用函数，具体指出你描述的行为对应哪些语句。",
+            "p1": "如果输入不符合预期或依赖失败，这段实现如何处理？",
+            "p2": "这些源码能证明什么，哪些运行结果或个人贡献仍需其他材料？"
+          },
+          "references": [
+            {
+              "evidence_id": "ev-4c32b12ef97ccbcdca0b9a8be46e",
+              "scope": "private_project",
+              "owner_id": "synthetic-research-owner",
+              "project_id": "project-ff4937a1c24349b0afc6c01abc5b52ef",
+              "snapshot_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631",
+              "source_id": "snapshot-0c98c53c9eb842468fc9445f87aeb631:src/job_agent/resume_workspace/evidence_pack.py",
+              "content_hash": "4f38cf2c5d1a335ed24bb700d4732e06af8e88b0256b030b61daf5f015ac8b3e",
+              "path": "src/job_agent/resume_workspace/evidence_pack.py",
+              "start_line": 236,
+              "end_line": 277,
+              "commit": null,
+              "retrieval_method": "static_call",
+              "evidence_kind": "code",
+              "supports_claim": "needs_judgment",
+              "quote": "                if not items and self.scope.kind=='private_project':\n                    # Large code quotes were omitted by the tool projection. A new\n                    # counted read may fetch complete bounded lines, never a fake quote.\n                    omitted=next((loc for loc in getattr(self,'_last_omitted',[]) if loc.get('bounded_end_line')),None)\n                    if omitted:read('read_code_range',{'path':omitted['path'],'start':omitted['start_line'],'end':omitted['bounded_end_line']})\n                seed=next((i for i in items if i.symbol),None)\n                if needs_more() and seed and plan.kind=='cross_file':\n                    read('find_references',{'symbol_id':seed.symbol['symbol_id'],'tests_only':'测试' in query or 'tests' in query.casefold()})\n                if plan.needs_imports and needs_more() and seed:\n                    read('read_code_range',{'path':seed.reference.path,'start':1,'end':min(seed.symbol['end_line'],80)})\n                if plan.needs_full_definition and needs_more() and seed:read('get_symbol',{'name':seed.symbol['symbol_id']})\n                if needs_more() and self.material_count>0 and len(rounds)<budget.search_rounds:\n                    suffix=' runtime benchmark measurements report' if plan.kind=='runtime_evidence' else ' 调用 定义 测试 caller references' if plan.kind=='cross_file' else ' 机制 定义 implementation reference'\n                    modified=plan.query[:600-len(suffix)]+suffix\n                    search(modified)\n        except EvidenceBudgetExceeded as exc:\n            usage.budget_exhausted=True;usage.stop_reason=str(exc);missing.append('budget_exhausted')\n        usage.tool_calls=self.tool_count()-initial;usage.search_rounds=len(rounds);usage.read_calls=len(reads)\n        usage.elapsed_ms=int((self.clock()-started)*1000)\n        if not items:missing.append('no_material_in_scope' if self.material_count==0 else 'retrieval_empty_answerability_unknown')\n        if plan.required_paths>1 and len(paths())<plan.required_paths:missing.append('cross_file_coverage_incomplete')\n        if plan.needs_imports and not any(i.reference.start_line==1 and 'import ' in i.reference.quote for i in items):missing.append('import_context_not_located')\n        if plan.needs_full_definition and not any(i.symbol and i.reference.start_line<=i.symbol['start_line']\n            and i.reference.end_line>=i.symbol['end_line'] for i in items):missing.append('full_definition_not_located')\n        risks=risk_flags(plan.query,claims);missing.extend(risks)\n        if self.material_count==0:missing.append('no_material_in_scope')\n        ids=[i.reference.evidence_id for i in items];assessments=[]\n        required_missing=any(x in missing for x in ('cross_file_coverage_incomplete','import_context_not_located','full_definition_not_located'))\n        warnings.extend(self.scope.known_limitations)\n        if (not items or required_missing) and any('quote_budget_omitted_whole_span' in w for w in warnings) and not usage.budget_exhausted:\n            usage.budget_exhausted=True;usage.stop_reason='quote_budget'\n        for index,statement in enumerate(claims or [plan.query]):\n            insufficient=not items or required_missing or bool(risk_flags(statement,[statement] if claims else ()))\n            assessments.append(ClaimAssessment(claim_id=f'claim-{index}',statement=statement,\n                target_kind='supplied_claim' if claims else 'requested_answer',status='insufficient_evidence' if insufficient else 'needs_judgment',\n                evidence_ids=ids,reason='所需来源/范围不足，不能据此核实个人贡献、运行成果或完整断言。' if insufficient else '原文定位有效；相关性和断言支持仍需语义判断。',\n                assessed_by='deterministic_boundary' if insufficient else 'pending_semantic_review'))\n        return EvidencePack(pack_id='pack-'+uuid4().hex,trace_id='retrieval-'+uuid4().hex,plan=plan,\n            config_identity=self.config_identity,items=items,rounds=rounds,reads=reads,claim_assessments=assessments,\n            missing=list(dict.fromkeys(missing)),warnings=list(dict.fromkeys(warnings)),\n            answer_policy='needs_input' if not items or risks or required_missing else 'limited_source_only',usage=usage,\n            corpus_answerability='no_material_in_scope' if self.material_count==0 else 'unknown')\n",
+              "independent_truth": "not_verified"
+            }
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "from": "coordinator",
+          "to": "interviewer",
+          "type": "scoped_plan",
+          "turn": 0,
+          "detail": "已根据所选范围实际检索，固定本场来源；参考资料不能证明个人经历。"
+        }
+      ]
+    }
+  ],
+  "human_reviewed": 0,
+  "status": "failed",
+  "error_type": "PermissionError"
+}

@@ -1,0 +1,1289 @@
+{
+  "version": "review-deepseek-pilot-1",
+  "data": "CC0 AI-authored synthetic only",
+  "mode": "rewrite",
+  "model": {
+    "provider": "deepseek",
+    "requested_model": "deepseek-flash",
+    "thinking": "disabled",
+    "revision": "provider_managed",
+    "endpoint": "https://api.deepseek.com/chat/completions",
+    "response_format": "json_object"
+  },
+  "call_cap": 24,
+  "output_token_cap_per_call": 1600,
+  "auto_retries": 0,
+  "human_quality": null,
+  "billing_amount": null,
+  "learning": [],
+  "rows": [
+    {
+      "case_id": "pilot-verbose-python",
+      "variant": "writer_reviewer",
+      "repeat": 0,
+      "status": "candidate_passed_gate",
+      "drafts": [
+        {
+          "revision": 1,
+          "draft": {
+            "text": "参与本地课程原型开发，使用 Python 开发接口。",
+            "reason": "删除重复的第一人称，合并为紧凑表达，保留本地、课程、原型、参与范围及 Python 接口开发事实。",
+            "claims": [
+              {
+                "text": "参与本地课程原型开发",
+                "source_quote": "我参与了本地课程原型开发。",
+                "status": "supported",
+                "reason": "原文明确说明参与本地课程原型开发，仅去掉第一人称。"
+              },
+              {
+                "text": "使用 Python 开发接口",
+                "source_quote": "我使用 Python 开发接口。",
+                "status": "supported",
+                "reason": "原文明确说明使用 Python 开发接口，仅去掉第一人称。"
+              }
+            ]
+          },
+          "draft_hash": "5a155f5b18809f0d0bd487a1b367945712b6a68f29094344035af7743bdb02d9",
+          "review": {
+            "outcome": "accept",
+            "constraint": "草稿仅合并原文两句并删除重复第一人称，未新增技术、范围或指标；保留“参与”与“本地课程原型”限定，可接受。"
+          },
+          "claim_audit": {
+            "source_hash": "b65ac5d58f6218a1efa03ddd439912928fbae1c63899651905ba1302179b03d6",
+            "draft_hash": "abaff6f92641c5a9bf0829b9f70af0b3b7a4d1c07c24cbfe6e2aec4ee6545c43",
+            "claims": [
+              {
+                "claim_id": "claim-365ad1d41b5db5a5236cd38c",
+                "text": "参与本地课程原型开发，",
+                "start": 0,
+                "end": 11,
+                "kinds": [
+                  "responsibility",
+                  "scope"
+                ],
+                "change": "unchanged_or_controlled_paraphrase",
+                "status": "supported",
+                "assessed_by": "deterministic_alignment",
+                "source_id": "pilot-verbose-python",
+                "source_quote": "我参与了本地课程原型开发。",
+                "reason": "与C1分句相等或受限措辞转换；未独立核实。"
+              },
+              {
+                "claim_id": "claim-d833f63307b2db4731fc684f",
+                "text": "使用 Python 开发接口。",
+                "start": 11,
+                "end": 26,
+                "kinds": [
+                  "technology"
+                ],
+                "change": "unchanged_or_controlled_paraphrase",
+                "status": "supported",
+                "assessed_by": "deterministic_alignment",
+                "source_id": "pilot-verbose-python",
+                "source_quote": "我使用 Python 开发接口。",
+                "reason": "与C1分句相等或受限措辞转换；未独立核实。"
+              }
+            ],
+            "hard_issues": [],
+            "unresolved_ids": [],
+            "acceptable": true,
+            "semantic_truth": "not_independently_verified"
+          }
+        }
+      ],
+      "model_inflight": false,
+      "source_hash": "b65ac5d58f6218a1efa03ddd439912928fbae1c63899651905ba1302179b03d6",
+      "jd_hash": "e67fb97d993d0c27d1869941d1d40a4b51fef8e26b422efce148c257ffca2041",
+      "actual_calls": 2,
+      "calls": [
+        {
+          "index": 1,
+          "dispatched": true,
+          "prompt_hash": "9305b32d79949d6f4a43594294ed8e77c2478e2ec3645c4dea4f71db71782b41",
+          "input_chars": 2937,
+          "max_output_tokens": 1600,
+          "requested_model": "deepseek-flash",
+          "status": "completed",
+          "returned_model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 937,
+            "completion_tokens": 131,
+            "total_tokens": 1068,
+            "prompt_tokens_details": {
+              "cached_tokens": 640
+            },
+            "prompt_cache_hit_tokens": 640,
+            "prompt_cache_miss_tokens": 297
+          },
+          "raw_output": "{\"text\":\"参与本地课程原型开发，使用 Python 开发接口。\",\"reason\":\"删除重复的第一人称，合并为紧凑表达，保留本地、课程、原型、参与范围及 Python 接口开发事实。\",\"claims\":[{\"text\":\"参与本地课程原型开发\",\"source_quote\":\"我参与了本地课程原型开发。\",\"status\":\"supported\",\"reason\":\"原文明确说明参与本地课程原型开发，仅去掉第一人称。\"},{\"text\":\"使用 Python 开发接口\",\"source_quote\":\"我使用 Python 开发接口。\",\"status\":\"supported\",\"reason\":\"原文明确说明使用 Python 开发接口，仅去掉第一人称。\"}]}",
+          "finish_reason": "stop",
+          "input_tokens": 937,
+          "output_tokens": 131,
+          "latency_ms": 1447.58
+        },
+        {
+          "index": 2,
+          "dispatched": true,
+          "prompt_hash": "f2ce70d7d0025846ac03583d6f55e0ff28da65d50ae6b33ad75298705788ff89",
+          "input_chars": 3145,
+          "max_output_tokens": 1600,
+          "requested_model": "deepseek-flash",
+          "status": "completed",
+          "returned_model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 988,
+            "completion_tokens": 158,
+            "total_tokens": 1146,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 476
+          },
+          "raw_output": "{\"outcome\":\"accept\",\"constraint\":\"草稿仅合并原文两句并删除重复第一人称，未新增技术、范围或指标；保留“参与”与“本地课程原型”限定，可接受。\",\"claims\":[{\"text\":\"参与本地课程原型开发，\",\"source_quote\":\"我参与了本地课程原型开发。\",\"status\":\"supported\",\"reason\":\"原文明确写有参与本地课程原型开发，草稿保留参与范围与本地、课程、原型限定，仅删去第一人称。\"},{\"text\":\"使用 Python 开发接口。\",\"source_quote\":\"我使用 Python 开发接口。\",\"status\":\"supported\",\"reason\":\"原文明确写有使用 Python 开发接口，草稿保留技术名与职责，仅删去第一人称。\"}]}",
+          "finish_reason": "stop",
+          "input_tokens": 988,
+          "output_tokens": 158,
+          "latency_ms": 1698.12
+        }
+      ],
+      "semantic_quality": null,
+      "human_reviewed": false,
+      "execution": {
+        "schema_version": "shared-run-1",
+        "run_id": "s4-pilot-verbose-python-writer_reviewer-0",
+        "trace_id": "trace-pilot-verbose-python-writer_reviewer-0",
+        "owner_id": "synthetic",
+        "task": "rewrite",
+        "source_identity": {
+          "case_id": "pilot-verbose-python",
+          "source_fact_hash": "b65ac5d58f6218a1efa03ddd439912928fbae1c63899651905ba1302179b03d6",
+          "jd_hash": "e67fb97d993d0c27d1869941d1d40a4b51fef8e26b422efce148c257ffca2041"
+        },
+        "model_identity": {
+          "provider": "deepseek",
+          "model": "deepseek-flash"
+        },
+        "node": "coordinator",
+        "revision": 1,
+        "status": "candidate_passed_gate",
+        "next_action": "",
+        "latest_feedback": {
+          "sender": "reviewer",
+          "revision": 1,
+          "outcome": "accept",
+          "constraint": "草稿仅合并原文两句并删除重复第一人称，未新增技术、范围或指标；保留“参与”与“本地课程原型”限定，可接受。",
+          "artifact_hash": "5a155f5b18809f0d0bd487a1b367945712b6a68f29094344035af7743bdb02d9",
+          "feedback_id": "feedback-5ed978ae132235d25441e8edf4caba2436ba43e309d9051ce55fa7725461801b",
+          "details": {}
+        },
+        "artifact_hashes": [],
+        "evidence_pack_ids": [],
+        "limits": {
+          "role_calls": 6
+        },
+        "usage": {
+          "provider_attempts": 2,
+          "dispatched_calls": 2,
+          "input_tokens": 1925,
+          "output_tokens": 289
+        },
+        "context_incomplete": false,
+        "recovery": "none",
+        "attempt": 1,
+        "execution_token": null,
+        "lease_until": 0.0,
+        "event_seq": 5,
+        "events": [
+          {
+            "seq": 1,
+            "role": "writer",
+            "phase": "started",
+            "revision": 1,
+            "input_hash": "3c2e6622d66f997d7330dbfb62bff4aa346ad01e949bb7dba2d82c2d6a0d47e4",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T04:33:35.257430+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 2,
+            "role": "writer",
+            "phase": "completed",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "5a155f5b18809f0d0bd487a1b367945712b6a68f29094344035af7743bdb02d9",
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T04:33:36.766057+00:00",
+            "metrics": {
+              "provider": "deepseek",
+              "model": "deepseek-flash",
+              "skill_id": "v3-rewrite-writer",
+              "skill_version": "3",
+              "prompt_version": "review-r3-rewrite-1",
+              "latency_ms": 1447,
+              "input_tokens": 937,
+              "output_tokens": 131,
+              "schema_valid": true,
+              "fallback_used": false,
+              "error_code": null,
+              "finish_reason": "stop",
+              "completion_truncated": false
+            }
+          },
+          {
+            "seq": 3,
+            "role": "reviewer",
+            "phase": "started",
+            "revision": 1,
+            "input_hash": "aa8541d136e582e2f0d6205f13b28c16e34501e6e0d5c034b8a41c7c0592cf2b",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T04:33:36.831154+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 4,
+            "role": "reviewer",
+            "phase": "completed",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "07ac52f502b9f643358b154f535d5f06d05076e1bb759709b3d02fad8fcad18e",
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T04:33:38.588658+00:00",
+            "metrics": {
+              "provider": "deepseek",
+              "model": "deepseek-flash",
+              "skill_id": "v3-rewrite-reviewer",
+              "skill_version": "3",
+              "prompt_version": "review-r3-rewrite-1",
+              "latency_ms": 1698,
+              "input_tokens": 988,
+              "output_tokens": 158,
+              "schema_valid": true,
+              "fallback_used": false,
+              "error_code": null,
+              "finish_reason": "stop",
+              "completion_truncated": false
+            }
+          },
+          {
+            "seq": 5,
+            "role": "coordinator",
+            "phase": "gate",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "ac991b6ac2a39ad7aea5be1a94eef8b5214f29555cb4c5fde94ea596957090d9",
+            "feedback_id": "feedback-5ed978ae132235d25441e8edf4caba2436ba43e309d9051ce55fa7725461801b",
+            "code": "accept",
+            "recorded_at": "2026-10-23T04:33:38.681000+00:00",
+            "metrics": {}
+          }
+        ],
+        "approval": null,
+        "independent_truth": "not_verified"
+      },
+      "elapsed_ms": 3481.34
+    },
+    {
+      "case_id": "pilot-verbose-receipt",
+      "variant": "writer_reviewer",
+      "repeat": 0,
+      "status": "candidate_passed_gate",
+      "drafts": [
+        {
+          "revision": 1,
+          "draft": {
+            "text": "我使用 Python 开发回执查询接口，并参与了本地原型测试。",
+            "reason": "合并重复主语“我”，保留 Python、回执查询接口、本地原型测试等全部范围，未新增事实。",
+            "claims": [
+              {
+                "text": "我使用 Python 开发回执查询接口，并参与了本地原型测试。",
+                "source_quote": "我参与了本地原型测试。我使用 Python 开发回执查询接口。",
+                "status": "supported",
+                "reason": "仅合并重复主语并调整语序，技术名称与范围均来自原文。"
+              }
+            ]
+          },
+          "draft_hash": "7b124373ae9d6f251310e1f7abe0bf0daaaa4061e1fb979ab440889762fe81fe",
+          "review": {
+            "outcome": "accept",
+            "constraint": "草稿仅合并重复主语并保留原范围，未新增技术、时间线或贡献；无需修改。"
+          },
+          "claim_audit": {
+            "source_hash": "a495776c5b935e7873b65506207b1cbfbcf97c4ec609124e9a031afdec6cfb1e",
+            "draft_hash": "18d73614742abd2510d0e6b382572666c482ac03268b3f6219305731528ca211",
+            "claims": [
+              {
+                "claim_id": "claim-077ff51a14aa30b6784cf1e6",
+                "text": "我使用 Python 开发回执查询接口，",
+                "start": 0,
+                "end": 20,
+                "kinds": [
+                  "technology"
+                ],
+                "change": "unchanged_or_controlled_paraphrase",
+                "status": "supported",
+                "assessed_by": "deterministic_alignment",
+                "source_id": "pilot-verbose-receipt",
+                "source_quote": "我使用 Python 开发回执查询接口。",
+                "reason": "与C1分句相等或受限措辞转换；未独立核实。"
+              },
+              {
+                "claim_id": "claim-d9dac0c2f967e3f96d20bae2",
+                "text": "并参与了本地原型测试。",
+                "start": 20,
+                "end": 31,
+                "kinds": [
+                  "responsibility",
+                  "scope"
+                ],
+                "change": "new_or_semantic_change",
+                "status": "supported",
+                "assessed_by": "model_semantic_unverified",
+                "source_id": "pilot-verbose-receipt",
+                "source_quote": "我参与了本地原型测试。",
+                "reason": "与原文完全一致，参与范围仍限于本地原型测试。"
+              }
+            ],
+            "hard_issues": [],
+            "unresolved_ids": [],
+            "acceptable": true,
+            "semantic_truth": "not_independently_verified"
+          }
+        }
+      ],
+      "model_inflight": false,
+      "source_hash": "a495776c5b935e7873b65506207b1cbfbcf97c4ec609124e9a031afdec6cfb1e",
+      "jd_hash": "e26d0097fe9c509d7b7b44e1df5c1109f94cd2090b08aad89ecabe54c3f1ce60",
+      "actual_calls": 2,
+      "calls": [
+        {
+          "index": 3,
+          "dispatched": true,
+          "prompt_hash": "aea92c44ed0e4f1dd4c15d7664a1ea5385d0698e9e6ebed2b1d142dd370dcbe3",
+          "input_chars": 2927,
+          "max_output_tokens": 1600,
+          "requested_model": "deepseek-flash",
+          "status": "completed",
+          "returned_model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 939,
+            "completion_tokens": 116,
+            "total_tokens": 1055,
+            "prompt_tokens_details": {
+              "cached_tokens": 640
+            },
+            "prompt_cache_hit_tokens": 640,
+            "prompt_cache_miss_tokens": 299
+          },
+          "raw_output": "{\"text\":\"我使用 Python 开发回执查询接口，并参与了本地原型测试。\",\"reason\":\"合并重复主语“我”，保留 Python、回执查询接口、本地原型测试等全部范围，未新增事实。\",\"claims\":[{\"text\":\"我使用 Python 开发回执查询接口，并参与了本地原型测试。\",\"source_quote\":\"我参与了本地原型测试。我使用 Python 开发回执查询接口。\",\"status\":\"supported\",\"reason\":\"仅合并重复主语并调整语序，技术名称与范围均来自原文。\"}]}",
+          "finish_reason": "stop",
+          "input_tokens": 939,
+          "output_tokens": 116,
+          "latency_ms": 2024.16
+        },
+        {
+          "index": 4,
+          "dispatched": true,
+          "prompt_hash": "7e9193135747dbda7ac480360409524b7f5fc4cbcd7d5c1eab6b8c8878cc50a5",
+          "input_chars": 3145,
+          "max_output_tokens": 1600,
+          "requested_model": "deepseek-flash",
+          "status": "completed",
+          "returned_model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 998,
+            "completion_tokens": 133,
+            "total_tokens": 1131,
+            "prompt_tokens_details": {
+              "cached_tokens": 512
+            },
+            "prompt_cache_hit_tokens": 512,
+            "prompt_cache_miss_tokens": 486
+          },
+          "raw_output": "{\"outcome\":\"accept\",\"constraint\":\"草稿仅合并重复主语并保留原范围，未新增技术、时间线或贡献；无需修改。\",\"claims\":[{\"text\":\"我使用 Python 开发回执查询接口，\",\"source_quote\":\"我使用 Python 开发回执查询接口。\",\"status\":\"supported\",\"reason\":\"与原文一致，仅将句号改为逗号以连接后句，技术与对象未变。\"},{\"text\":\"并参与了本地原型测试。\",\"source_quote\":\"我参与了本地原型测试。\",\"status\":\"supported\",\"reason\":\"与原文完全一致，参与范围仍限于本地原型测试。\"}]}",
+          "finish_reason": "stop",
+          "input_tokens": 998,
+          "output_tokens": 133,
+          "latency_ms": 1612.01
+        }
+      ],
+      "semantic_quality": null,
+      "human_reviewed": false,
+      "execution": {
+        "schema_version": "shared-run-1",
+        "run_id": "s4-pilot-verbose-receipt-writer_reviewer-0",
+        "trace_id": "trace-pilot-verbose-receipt-writer_reviewer-0",
+        "owner_id": "synthetic",
+        "task": "rewrite",
+        "source_identity": {
+          "case_id": "pilot-verbose-receipt",
+          "source_fact_hash": "a495776c5b935e7873b65506207b1cbfbcf97c4ec609124e9a031afdec6cfb1e",
+          "jd_hash": "e26d0097fe9c509d7b7b44e1df5c1109f94cd2090b08aad89ecabe54c3f1ce60"
+        },
+        "model_identity": {
+          "provider": "deepseek",
+          "model": "deepseek-flash"
+        },
+        "node": "coordinator",
+        "revision": 1,
+        "status": "candidate_passed_gate",
+        "next_action": "",
+        "latest_feedback": {
+          "sender": "reviewer",
+          "revision": 1,
+          "outcome": "accept",
+          "constraint": "草稿仅合并重复主语并保留原范围，未新增技术、时间线或贡献；无需修改。",
+          "artifact_hash": "7b124373ae9d6f251310e1f7abe0bf0daaaa4061e1fb979ab440889762fe81fe",
+          "feedback_id": "feedback-fd91ce6260f57432dac74843096328a6f1431d3a9cdee18cdce290a9f02178b9",
+          "details": {}
+        },
+        "artifact_hashes": [],
+        "evidence_pack_ids": [],
+        "limits": {
+          "role_calls": 6
+        },
+        "usage": {
+          "provider_attempts": 2,
+          "dispatched_calls": 2,
+          "input_tokens": 1937,
+          "output_tokens": 249
+        },
+        "context_incomplete": false,
+        "recovery": "none",
+        "attempt": 1,
+        "execution_token": null,
+        "lease_until": 0.0,
+        "event_seq": 5,
+        "events": [
+          {
+            "seq": 1,
+            "role": "writer",
+            "phase": "started",
+            "revision": 1,
+            "input_hash": "fae7d43200f79ffff55899283ab0b1ee16cf0a73b1317fc7585e7f25976ee203",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T04:33:38.798605+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 2,
+            "role": "writer",
+            "phase": "completed",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "7b124373ae9d6f251310e1f7abe0bf0daaaa4061e1fb979ab440889762fe81fe",
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T04:33:40.881905+00:00",
+            "metrics": {
+              "provider": "deepseek",
+              "model": "deepseek-flash",
+              "skill_id": "v3-rewrite-writer",
+              "skill_version": "3",
+              "prompt_version": "review-r3-rewrite-1",
+              "latency_ms": 2024,
+              "input_tokens": 939,
+              "output_tokens": 116,
+              "schema_valid": true,
+              "fallback_used": false,
+              "error_code": null,
+              "finish_reason": "stop",
+              "completion_truncated": false
+            }
+          },
+          {
+            "seq": 3,
+            "role": "reviewer",
+            "phase": "started",
+            "revision": 1,
+            "input_hash": "43f8dac6e5a0f6cd8fdd7a54f69d3cff277f7c8d4542022106958a325a1233c1",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T04:33:40.944444+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 4,
+            "role": "reviewer",
+            "phase": "completed",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "949caba6ca76eba703f2c7a1a714e7639e33f9a623858a98fc48ea38774ff766",
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T04:33:42.615990+00:00",
+            "metrics": {
+              "provider": "deepseek",
+              "model": "deepseek-flash",
+              "skill_id": "v3-rewrite-reviewer",
+              "skill_version": "3",
+              "prompt_version": "review-r3-rewrite-1",
+              "latency_ms": 1612,
+              "input_tokens": 998,
+              "output_tokens": 133,
+              "schema_valid": true,
+              "fallback_used": false,
+              "error_code": null,
+              "finish_reason": "stop",
+              "completion_truncated": false
+            }
+          },
+          {
+            "seq": 5,
+            "role": "coordinator",
+            "phase": "gate",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "24627024d1b4062b7bfc92508421927094a087b26247d8da26de6e97a200587d",
+            "feedback_id": "feedback-fd91ce6260f57432dac74843096328a6f1431d3a9cdee18cdce290a9f02178b9",
+            "code": "accept",
+            "recorded_at": "2026-10-23T04:33:42.678773+00:00",
+            "metrics": {}
+          }
+        ],
+        "approval": null,
+        "independent_truth": "not_verified"
+      },
+      "elapsed_ms": 3937.39
+    },
+    {
+      "case_id": "new-success",
+      "variant": "writer_reviewer",
+      "repeat": 0,
+      "status": "needs_input",
+      "drafts": [
+        {
+          "revision": 1,
+          "draft": {
+            "text": "参与本地求职助手原型开发。",
+            "reason": "原文已简洁清晰，且未提供可支撑更强表述的额外事实，故保持原句不变。",
+            "claims": []
+          },
+          "draft_hash": "16e69e7293dc4df3681c15e817fa82c8cb9d083d3a2846deb09b8654037c513c",
+          "review": {
+            "outcome": "needs_input",
+            "constraint": "草稿与原始表述逐字一致，未新增技术、指标或贡献范围，可接受。"
+          },
+          "claim_audit": {
+            "source_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+            "draft_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+            "claims": [
+              {
+                "claim_id": "claim-89262cad83f4bfc6341ff99e",
+                "text": "参与本地求职助手原型开发。",
+                "start": 0,
+                "end": 13,
+                "kinds": [
+                  "responsibility",
+                  "scope"
+                ],
+                "change": "unchanged_or_controlled_paraphrase",
+                "status": "supported",
+                "assessed_by": "deterministic_alignment",
+                "source_id": "new-success",
+                "source_quote": "参与本地求职助手原型开发。",
+                "reason": "与C1分句相等或受限措辞转换；未独立核实。"
+              }
+            ],
+            "hard_issues": [],
+            "unresolved_ids": [],
+            "acceptable": true,
+            "semantic_truth": "not_independently_verified"
+          }
+        }
+      ],
+      "model_inflight": false,
+      "source_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+      "jd_hash": "9756d7e35daebdb0ad29f53ada75b30b884a2f2b6cebf3d0dc39f14373cf2322",
+      "actual_calls": 2,
+      "calls": [
+        {
+          "index": 5,
+          "dispatched": true,
+          "prompt_hash": "646b9b77c3b7cd4417d23ce25688f2d8e30f813e1627e1403a7e0f7d895c13b4",
+          "input_chars": 2892,
+          "max_output_tokens": 1600,
+          "requested_model": "deepseek-flash",
+          "status": "completed",
+          "returned_model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 920,
+            "completion_tokens": 40,
+            "total_tokens": 960,
+            "prompt_tokens_details": {
+              "cached_tokens": 768
+            },
+            "prompt_cache_hit_tokens": 768,
+            "prompt_cache_miss_tokens": 152
+          },
+          "raw_output": "{\"text\":\"参与本地求职助手原型开发。\",\"reason\":\"原文已简洁清晰，且未提供可支撑更强表述的额外事实，故保持原句不变。\",\"claims\":[]}",
+          "finish_reason": "stop",
+          "input_tokens": 920,
+          "output_tokens": 40,
+          "latency_ms": 1661.83
+        },
+        {
+          "index": 6,
+          "dispatched": true,
+          "prompt_hash": "ef75e6d503f98004b6ce7bb07d2817b1f3130329e18061c59051c0bd4577e890",
+          "input_chars": 3071,
+          "max_output_tokens": 1600,
+          "requested_model": "deepseek-flash",
+          "status": "completed",
+          "returned_model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 960,
+            "completion_tokens": 79,
+            "total_tokens": 1039,
+            "prompt_tokens_details": {
+              "cached_tokens": 768
+            },
+            "prompt_cache_hit_tokens": 768,
+            "prompt_cache_miss_tokens": 192
+          },
+          "raw_output": "{\"outcome\":\"accept\",\"constraint\":\"草稿与原始表述逐字一致，未新增技术、指标或贡献范围，可接受。\",\"claims\":[{\"text\":\"参与本地求职助手原型开发。\",\"source_quote\":\"参与本地求职助手原型开发。\",\"status\":\"supported\",\"reason\":\"草稿与原始表述完全一致，未扩大范围或新增事实。\"}]}",
+          "finish_reason": "stop",
+          "input_tokens": 960,
+          "output_tokens": 79,
+          "latency_ms": 914.2
+        }
+      ],
+      "semantic_quality": null,
+      "human_reviewed": false,
+      "execution": {
+        "schema_version": "shared-run-1",
+        "run_id": "s4-new-success-writer_reviewer-0",
+        "trace_id": "trace-new-success-writer_reviewer-0",
+        "owner_id": "synthetic",
+        "task": "rewrite",
+        "source_identity": {
+          "case_id": "new-success",
+          "source_fact_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+          "jd_hash": "9756d7e35daebdb0ad29f53ada75b30b884a2f2b6cebf3d0dc39f14373cf2322"
+        },
+        "model_identity": {
+          "provider": "deepseek",
+          "model": "deepseek-flash"
+        },
+        "node": "coordinator",
+        "revision": 1,
+        "status": "needs_input",
+        "next_action": "",
+        "latest_feedback": {
+          "sender": "reviewer",
+          "revision": 1,
+          "outcome": "needs_input",
+          "constraint": "草稿与原始表述逐字一致，未新增技术、指标或贡献范围，可接受。",
+          "artifact_hash": "16e69e7293dc4df3681c15e817fa82c8cb9d083d3a2846deb09b8654037c513c",
+          "feedback_id": "feedback-b3b0eb0224b37bd7607a8defbcdac6761c39614da14a8005de245d022e4300aa",
+          "details": {}
+        },
+        "artifact_hashes": [],
+        "evidence_pack_ids": [],
+        "limits": {
+          "role_calls": 6
+        },
+        "usage": {
+          "provider_attempts": 2,
+          "dispatched_calls": 2,
+          "input_tokens": 1880,
+          "output_tokens": 119
+        },
+        "context_incomplete": false,
+        "recovery": "none",
+        "attempt": 1,
+        "execution_token": null,
+        "lease_until": 0.0,
+        "event_seq": 5,
+        "events": [
+          {
+            "seq": 1,
+            "role": "writer",
+            "phase": "started",
+            "revision": 1,
+            "input_hash": "5ab8ab076f6e477d7b7ef7f9a3426b4f888568c4dfa69f4fac6e4260acd3f414",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T04:33:42.792653+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 2,
+            "role": "writer",
+            "phase": "completed",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "16e69e7293dc4df3681c15e817fa82c8cb9d083d3a2846deb09b8654037c513c",
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T04:33:44.513783+00:00",
+            "metrics": {
+              "provider": "deepseek",
+              "model": "deepseek-flash",
+              "skill_id": "v3-rewrite-writer",
+              "skill_version": "3",
+              "prompt_version": "review-r3-rewrite-1",
+              "latency_ms": 1661,
+              "input_tokens": 920,
+              "output_tokens": 40,
+              "schema_valid": true,
+              "fallback_used": false,
+              "error_code": null,
+              "finish_reason": "stop",
+              "completion_truncated": false
+            }
+          },
+          {
+            "seq": 3,
+            "role": "reviewer",
+            "phase": "started",
+            "revision": 1,
+            "input_hash": "5cfa52734a8dae09b189b67ceeacbca752674700f54c5bcabb64454566ec3e6d",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T04:33:44.574963+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 4,
+            "role": "reviewer",
+            "phase": "completed",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "2213b969a3e128b3c91f2fb9a7eaf61ccd89ae0787f0257be67c841bc56878d1",
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T04:33:45.548768+00:00",
+            "metrics": {
+              "provider": "deepseek",
+              "model": "deepseek-flash",
+              "skill_id": "v3-rewrite-reviewer",
+              "skill_version": "3",
+              "prompt_version": "review-r3-rewrite-1",
+              "latency_ms": 914,
+              "input_tokens": 960,
+              "output_tokens": 79,
+              "schema_valid": true,
+              "fallback_used": false,
+              "error_code": null,
+              "finish_reason": "stop",
+              "completion_truncated": false
+            }
+          },
+          {
+            "seq": 5,
+            "role": "coordinator",
+            "phase": "gate",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "3e445b25deca4ae08f883cc21ca36f9f95c3e9bfce9577f365336de766fb3235",
+            "feedback_id": "feedback-b3b0eb0224b37bd7607a8defbcdac6761c39614da14a8005de245d022e4300aa",
+            "code": "needs_input",
+            "recorded_at": "2026-10-23T04:33:45.612359+00:00",
+            "metrics": {}
+          }
+        ],
+        "approval": null,
+        "independent_truth": "not_verified"
+      },
+      "elapsed_ms": 2879.69
+    },
+    {
+      "case_id": "negated-deployment",
+      "variant": "writer_reviewer",
+      "repeat": 0,
+      "status": "needs_input",
+      "drafts": [
+        {
+          "revision": 1,
+          "draft": {
+            "text": "未使用 Kubernetes 进行生产部署，仅参与本地原型测试。",
+            "reason": "原文已清晰且准确反映与 JD 的差距（无生产部署经验），保留否定与范围，不做改写。",
+            "claims": []
+          },
+          "draft_hash": "b1d05534a45b8ef15588d2f82c01bec54d1c6a405ab8e5a04f835c016b3ed4ac",
+          "review": {
+            "outcome": "needs_input",
+            "constraint": "草稿与原始表述逐字一致，保留否定与范围，无需修改。"
+          },
+          "claim_audit": {
+            "source_hash": "8812a79314cd1e17d14369552d9c159c62606c25f504c098536b7acdbbc42313",
+            "draft_hash": "8812a79314cd1e17d14369552d9c159c62606c25f504c098536b7acdbbc42313",
+            "claims": [
+              {
+                "claim_id": "claim-1237ce002a8c7d2c9be0a881",
+                "text": "未使用 Kubernetes 进行生产部署，",
+                "start": 0,
+                "end": 22,
+                "kinds": [
+                  "technology",
+                  "scope"
+                ],
+                "change": "unchanged_or_controlled_paraphrase",
+                "status": "supported",
+                "assessed_by": "deterministic_alignment",
+                "source_id": "negated-deployment",
+                "source_quote": "未使用 Kubernetes 进行生产部署，",
+                "reason": "与C1分句相等或受限措辞转换；未独立核实。"
+              },
+              {
+                "claim_id": "claim-688f58c2b62d56c9eaf39947",
+                "text": "仅参与本地原型测试。",
+                "start": 22,
+                "end": 32,
+                "kinds": [
+                  "responsibility",
+                  "scope"
+                ],
+                "change": "unchanged_or_controlled_paraphrase",
+                "status": "supported",
+                "assessed_by": "deterministic_alignment",
+                "source_id": "negated-deployment",
+                "source_quote": "仅参与本地原型测试。",
+                "reason": "与C1分句相等或受限措辞转换；未独立核实。"
+              }
+            ],
+            "hard_issues": [],
+            "unresolved_ids": [],
+            "acceptable": true,
+            "semantic_truth": "not_independently_verified"
+          }
+        }
+      ],
+      "model_inflight": false,
+      "source_hash": "8812a79314cd1e17d14369552d9c159c62606c25f504c098536b7acdbbc42313",
+      "jd_hash": "5cfcd064157d4721e038eadb83dccd4ba3b966e32b5392d1f1d8a4b80e4c2e46",
+      "actual_calls": 2,
+      "calls": [
+        {
+          "index": 7,
+          "dispatched": true,
+          "prompt_hash": "87fbdd8fbbf61ba83e8cc45892253ad6edb06aa5e4b9c35b26a5dbe2f420bafe",
+          "input_chars": 2917,
+          "max_output_tokens": 1600,
+          "requested_model": "deepseek-flash",
+          "status": "completed",
+          "returned_model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 924,
+            "completion_tokens": 50,
+            "total_tokens": 974,
+            "prompt_tokens_details": {
+              "cached_tokens": 768
+            },
+            "prompt_cache_hit_tokens": 768,
+            "prompt_cache_miss_tokens": 156
+          },
+          "raw_output": "{\"text\":\"未使用 Kubernetes 进行生产部署，仅参与本地原型测试。\",\"reason\":\"原文已清晰且准确反映与 JD 的差距（无生产部署经验），保留否定与范围，不做改写。\",\"claims\":[]}",
+          "finish_reason": "stop",
+          "input_tokens": 924,
+          "output_tokens": 50,
+          "latency_ms": 1155.32
+        },
+        {
+          "index": 8,
+          "dispatched": true,
+          "prompt_hash": "cdee152c4ad199e5075e34a63214ae754198c4d05669c7c17a9b14ac2e49b508",
+          "input_chars": 3137,
+          "max_output_tokens": 1600,
+          "requested_model": "deepseek-flash",
+          "status": "completed",
+          "returned_model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 979,
+            "completion_tokens": 114,
+            "total_tokens": 1093,
+            "prompt_tokens_details": {
+              "cached_tokens": 768
+            },
+            "prompt_cache_hit_tokens": 768,
+            "prompt_cache_miss_tokens": 211
+          },
+          "raw_output": "{\"outcome\":\"accept\",\"constraint\":\"草稿与原始表述逐字一致，保留否定与范围，无需修改。\",\"claims\":[{\"text\":\"未使用 Kubernetes 进行生产部署，\",\"source_quote\":\"未使用 Kubernetes 进行生产部署，\",\"status\":\"supported\",\"reason\":\"与原始表述逐字一致，否定与范围均保留。\"},{\"text\":\"仅参与本地原型测试。\",\"source_quote\":\"仅参与本地原型测试。\",\"status\":\"supported\",\"reason\":\"与原始表述逐字一致，未扩大参与范围。\"}]}",
+          "finish_reason": "stop",
+          "input_tokens": 979,
+          "output_tokens": 114,
+          "latency_ms": 1438.93
+        }
+      ],
+      "semantic_quality": null,
+      "human_reviewed": false,
+      "execution": {
+        "schema_version": "shared-run-1",
+        "run_id": "s4-negated-deployment-writer_reviewer-0",
+        "trace_id": "trace-negated-deployment-writer_reviewer-0",
+        "owner_id": "synthetic",
+        "task": "rewrite",
+        "source_identity": {
+          "case_id": "negated-deployment",
+          "source_fact_hash": "8812a79314cd1e17d14369552d9c159c62606c25f504c098536b7acdbbc42313",
+          "jd_hash": "5cfcd064157d4721e038eadb83dccd4ba3b966e32b5392d1f1d8a4b80e4c2e46"
+        },
+        "model_identity": {
+          "provider": "deepseek",
+          "model": "deepseek-flash"
+        },
+        "node": "coordinator",
+        "revision": 1,
+        "status": "needs_input",
+        "next_action": "",
+        "latest_feedback": {
+          "sender": "reviewer",
+          "revision": 1,
+          "outcome": "needs_input",
+          "constraint": "草稿与原始表述逐字一致，保留否定与范围，无需修改。",
+          "artifact_hash": "b1d05534a45b8ef15588d2f82c01bec54d1c6a405ab8e5a04f835c016b3ed4ac",
+          "feedback_id": "feedback-48042ce0a6482cd350dadfc8dd3779d72a39203165d3881f120e75df9d8d57ad",
+          "details": {}
+        },
+        "artifact_hashes": [],
+        "evidence_pack_ids": [],
+        "limits": {
+          "role_calls": 6
+        },
+        "usage": {
+          "provider_attempts": 2,
+          "dispatched_calls": 2,
+          "input_tokens": 1903,
+          "output_tokens": 164
+        },
+        "context_incomplete": false,
+        "recovery": "none",
+        "attempt": 1,
+        "execution_token": null,
+        "lease_until": 0.0,
+        "event_seq": 5,
+        "events": [
+          {
+            "seq": 1,
+            "role": "writer",
+            "phase": "started",
+            "revision": 1,
+            "input_hash": "0aefba79a40a02c7f438e9ad1d8e1f424513f9983a9979b4c0a0392cb8b1cb62",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T04:33:45.730082+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 2,
+            "role": "writer",
+            "phase": "completed",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "b1d05534a45b8ef15588d2f82c01bec54d1c6a405ab8e5a04f835c016b3ed4ac",
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T04:33:46.944753+00:00",
+            "metrics": {
+              "provider": "deepseek",
+              "model": "deepseek-flash",
+              "skill_id": "v3-rewrite-writer",
+              "skill_version": "3",
+              "prompt_version": "review-r3-rewrite-1",
+              "latency_ms": 1155,
+              "input_tokens": 924,
+              "output_tokens": 50,
+              "schema_valid": true,
+              "fallback_used": false,
+              "error_code": null,
+              "finish_reason": "stop",
+              "completion_truncated": false
+            }
+          },
+          {
+            "seq": 3,
+            "role": "reviewer",
+            "phase": "started",
+            "revision": 1,
+            "input_hash": "5b0bb04e07306c1526bec21395ff97b764b1facab4bdcebe6c84fd1860b6d80c",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T04:33:47.007093+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 4,
+            "role": "reviewer",
+            "phase": "completed",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "e61ea8068decce81df150a1a44b8a6990be29f419455078c586461156197c06d",
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-23T04:33:48.505990+00:00",
+            "metrics": {
+              "provider": "deepseek",
+              "model": "deepseek-flash",
+              "skill_id": "v3-rewrite-reviewer",
+              "skill_version": "3",
+              "prompt_version": "review-r3-rewrite-1",
+              "latency_ms": 1439,
+              "input_tokens": 979,
+              "output_tokens": 114,
+              "schema_valid": true,
+              "fallback_used": false,
+              "error_code": null,
+              "finish_reason": "stop",
+              "completion_truncated": false
+            }
+          },
+          {
+            "seq": 5,
+            "role": "coordinator",
+            "phase": "gate",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "96670c03752028beb50d57b3d24ebc24c854d3e5b836ca8ce21cdafd72b4e568",
+            "feedback_id": "feedback-48042ce0a6482cd350dadfc8dd3779d72a39203165d3881f120e75df9d8d57ad",
+            "code": "needs_input",
+            "recorded_at": "2026-10-23T04:33:48.571428+00:00",
+            "metrics": {}
+          }
+        ],
+        "approval": null,
+        "independent_truth": "not_verified"
+      },
+      "elapsed_ms": 2899.92
+    }
+  ],
+  "status": "completed",
+  "pilot_cases": [
+    {
+      "id": "pilot-verbose-python",
+      "source": "我参与了本地课程原型开发。我使用 Python 开发接口。",
+      "jd": "Python 实习；去掉重复的第一人称，使表达紧凑；保留本地、课程、原型、参与范围。"
+    },
+    {
+      "id": "pilot-verbose-receipt",
+      "source": "我参与了本地原型测试。我使用 Python 开发回执查询接口。",
+      "jd": "Python 实习；合并重复主语，表达简洁；保留所有范围。"
+    },
+    {
+      "id": "new-success",
+      "source": "参与本地求职助手原型开发。",
+      "jd": "AI 求职助手岗位，强调显著提升求职成功率。"
+    },
+    {
+      "id": "negated-deployment",
+      "source": "未使用 Kubernetes 进行生产部署，仅参与本地原型测试。",
+      "jd": "要求 Kubernetes 生产部署经验。"
+    }
+  ],
+  "calls": [
+    {
+      "index": 1,
+      "dispatched": true,
+      "prompt_hash": "9305b32d79949d6f4a43594294ed8e77c2478e2ec3645c4dea4f71db71782b41",
+      "input_chars": 2937,
+      "max_output_tokens": 1600,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 937,
+        "completion_tokens": 131,
+        "total_tokens": 1068,
+        "prompt_tokens_details": {
+          "cached_tokens": 640
+        },
+        "prompt_cache_hit_tokens": 640,
+        "prompt_cache_miss_tokens": 297
+      },
+      "raw_output": "{\"text\":\"参与本地课程原型开发，使用 Python 开发接口。\",\"reason\":\"删除重复的第一人称，合并为紧凑表达，保留本地、课程、原型、参与范围及 Python 接口开发事实。\",\"claims\":[{\"text\":\"参与本地课程原型开发\",\"source_quote\":\"我参与了本地课程原型开发。\",\"status\":\"supported\",\"reason\":\"原文明确说明参与本地课程原型开发，仅去掉第一人称。\"},{\"text\":\"使用 Python 开发接口\",\"source_quote\":\"我使用 Python 开发接口。\",\"status\":\"supported\",\"reason\":\"原文明确说明使用 Python 开发接口，仅去掉第一人称。\"}]}",
+      "finish_reason": "stop",
+      "input_tokens": 937,
+      "output_tokens": 131,
+      "latency_ms": 1447.58
+    },
+    {
+      "index": 2,
+      "dispatched": true,
+      "prompt_hash": "f2ce70d7d0025846ac03583d6f55e0ff28da65d50ae6b33ad75298705788ff89",
+      "input_chars": 3145,
+      "max_output_tokens": 1600,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 988,
+        "completion_tokens": 158,
+        "total_tokens": 1146,
+        "prompt_tokens_details": {
+          "cached_tokens": 512
+        },
+        "prompt_cache_hit_tokens": 512,
+        "prompt_cache_miss_tokens": 476
+      },
+      "raw_output": "{\"outcome\":\"accept\",\"constraint\":\"草稿仅合并原文两句并删除重复第一人称，未新增技术、范围或指标；保留“参与”与“本地课程原型”限定，可接受。\",\"claims\":[{\"text\":\"参与本地课程原型开发，\",\"source_quote\":\"我参与了本地课程原型开发。\",\"status\":\"supported\",\"reason\":\"原文明确写有参与本地课程原型开发，草稿保留参与范围与本地、课程、原型限定，仅删去第一人称。\"},{\"text\":\"使用 Python 开发接口。\",\"source_quote\":\"我使用 Python 开发接口。\",\"status\":\"supported\",\"reason\":\"原文明确写有使用 Python 开发接口，草稿保留技术名与职责，仅删去第一人称。\"}]}",
+      "finish_reason": "stop",
+      "input_tokens": 988,
+      "output_tokens": 158,
+      "latency_ms": 1698.12
+    },
+    {
+      "index": 3,
+      "dispatched": true,
+      "prompt_hash": "aea92c44ed0e4f1dd4c15d7664a1ea5385d0698e9e6ebed2b1d142dd370dcbe3",
+      "input_chars": 2927,
+      "max_output_tokens": 1600,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 939,
+        "completion_tokens": 116,
+        "total_tokens": 1055,
+        "prompt_tokens_details": {
+          "cached_tokens": 640
+        },
+        "prompt_cache_hit_tokens": 640,
+        "prompt_cache_miss_tokens": 299
+      },
+      "raw_output": "{\"text\":\"我使用 Python 开发回执查询接口，并参与了本地原型测试。\",\"reason\":\"合并重复主语“我”，保留 Python、回执查询接口、本地原型测试等全部范围，未新增事实。\",\"claims\":[{\"text\":\"我使用 Python 开发回执查询接口，并参与了本地原型测试。\",\"source_quote\":\"我参与了本地原型测试。我使用 Python 开发回执查询接口。\",\"status\":\"supported\",\"reason\":\"仅合并重复主语并调整语序，技术名称与范围均来自原文。\"}]}",
+      "finish_reason": "stop",
+      "input_tokens": 939,
+      "output_tokens": 116,
+      "latency_ms": 2024.16
+    },
+    {
+      "index": 4,
+      "dispatched": true,
+      "prompt_hash": "7e9193135747dbda7ac480360409524b7f5fc4cbcd7d5c1eab6b8c8878cc50a5",
+      "input_chars": 3145,
+      "max_output_tokens": 1600,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 998,
+        "completion_tokens": 133,
+        "total_tokens": 1131,
+        "prompt_tokens_details": {
+          "cached_tokens": 512
+        },
+        "prompt_cache_hit_tokens": 512,
+        "prompt_cache_miss_tokens": 486
+      },
+      "raw_output": "{\"outcome\":\"accept\",\"constraint\":\"草稿仅合并重复主语并保留原范围，未新增技术、时间线或贡献；无需修改。\",\"claims\":[{\"text\":\"我使用 Python 开发回执查询接口，\",\"source_quote\":\"我使用 Python 开发回执查询接口。\",\"status\":\"supported\",\"reason\":\"与原文一致，仅将句号改为逗号以连接后句，技术与对象未变。\"},{\"text\":\"并参与了本地原型测试。\",\"source_quote\":\"我参与了本地原型测试。\",\"status\":\"supported\",\"reason\":\"与原文完全一致，参与范围仍限于本地原型测试。\"}]}",
+      "finish_reason": "stop",
+      "input_tokens": 998,
+      "output_tokens": 133,
+      "latency_ms": 1612.01
+    },
+    {
+      "index": 5,
+      "dispatched": true,
+      "prompt_hash": "646b9b77c3b7cd4417d23ce25688f2d8e30f813e1627e1403a7e0f7d895c13b4",
+      "input_chars": 2892,
+      "max_output_tokens": 1600,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 920,
+        "completion_tokens": 40,
+        "total_tokens": 960,
+        "prompt_tokens_details": {
+          "cached_tokens": 768
+        },
+        "prompt_cache_hit_tokens": 768,
+        "prompt_cache_miss_tokens": 152
+      },
+      "raw_output": "{\"text\":\"参与本地求职助手原型开发。\",\"reason\":\"原文已简洁清晰，且未提供可支撑更强表述的额外事实，故保持原句不变。\",\"claims\":[]}",
+      "finish_reason": "stop",
+      "input_tokens": 920,
+      "output_tokens": 40,
+      "latency_ms": 1661.83
+    },
+    {
+      "index": 6,
+      "dispatched": true,
+      "prompt_hash": "ef75e6d503f98004b6ce7bb07d2817b1f3130329e18061c59051c0bd4577e890",
+      "input_chars": 3071,
+      "max_output_tokens": 1600,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 960,
+        "completion_tokens": 79,
+        "total_tokens": 1039,
+        "prompt_tokens_details": {
+          "cached_tokens": 768
+        },
+        "prompt_cache_hit_tokens": 768,
+        "prompt_cache_miss_tokens": 192
+      },
+      "raw_output": "{\"outcome\":\"accept\",\"constraint\":\"草稿与原始表述逐字一致，未新增技术、指标或贡献范围，可接受。\",\"claims\":[{\"text\":\"参与本地求职助手原型开发。\",\"source_quote\":\"参与本地求职助手原型开发。\",\"status\":\"supported\",\"reason\":\"草稿与原始表述完全一致，未扩大范围或新增事实。\"}]}",
+      "finish_reason": "stop",
+      "input_tokens": 960,
+      "output_tokens": 79,
+      "latency_ms": 914.2
+    },
+    {
+      "index": 7,
+      "dispatched": true,
+      "prompt_hash": "87fbdd8fbbf61ba83e8cc45892253ad6edb06aa5e4b9c35b26a5dbe2f420bafe",
+      "input_chars": 2917,
+      "max_output_tokens": 1600,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 924,
+        "completion_tokens": 50,
+        "total_tokens": 974,
+        "prompt_tokens_details": {
+          "cached_tokens": 768
+        },
+        "prompt_cache_hit_tokens": 768,
+        "prompt_cache_miss_tokens": 156
+      },
+      "raw_output": "{\"text\":\"未使用 Kubernetes 进行生产部署，仅参与本地原型测试。\",\"reason\":\"原文已清晰且准确反映与 JD 的差距（无生产部署经验），保留否定与范围，不做改写。\",\"claims\":[]}",
+      "finish_reason": "stop",
+      "input_tokens": 924,
+      "output_tokens": 50,
+      "latency_ms": 1155.32
+    },
+    {
+      "index": 8,
+      "dispatched": true,
+      "prompt_hash": "cdee152c4ad199e5075e34a63214ae754198c4d05669c7c17a9b14ac2e49b508",
+      "input_chars": 3137,
+      "max_output_tokens": 1600,
+      "requested_model": "deepseek-flash",
+      "status": "completed",
+      "returned_model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 979,
+        "completion_tokens": 114,
+        "total_tokens": 1093,
+        "prompt_tokens_details": {
+          "cached_tokens": 768
+        },
+        "prompt_cache_hit_tokens": 768,
+        "prompt_cache_miss_tokens": 211
+      },
+      "raw_output": "{\"outcome\":\"accept\",\"constraint\":\"草稿与原始表述逐字一致，保留否定与范围，无需修改。\",\"claims\":[{\"text\":\"未使用 Kubernetes 进行生产部署，\",\"source_quote\":\"未使用 Kubernetes 进行生产部署，\",\"status\":\"supported\",\"reason\":\"与原始表述逐字一致，否定与范围均保留。\"},{\"text\":\"仅参与本地原型测试。\",\"source_quote\":\"仅参与本地原型测试。\",\"status\":\"supported\",\"reason\":\"与原始表述逐字一致，未扩大参与范围。\"}]}",
+      "finish_reason": "stop",
+      "input_tokens": 979,
+      "output_tokens": 114,
+      "latency_ms": 1438.93
+    }
+  ],
+  "source_hash": "6e1ebfa28965fafaf0a8056bf3492e2c383141a57ec2b5c08cec73c89e40eb80"
+}

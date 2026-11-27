@@ -1,0 +1,617 @@
+{
+  "recorded_at_utc": "2026-10-22T10:21:28.681319+00:00",
+  "transport": "real_loopback_http",
+  "data": "CC0 authored synthetic only",
+  "input_hash": "ccc9984cdc21a4a6b107f27a95f52cd1b5d7379864ea54a98da7b551747726ce",
+  "model": {
+    "provider": "sentence_transformers_local",
+    "model": "Qwen3-Embedding-0.6B",
+    "revision": "47191d5687dbf14319ccb312680caa31a179ed5e16539b8c06aeddc53b63ef6c",
+    "dimension": 1024,
+    "normalization": "l2",
+    "query_template": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:{query}",
+    "max_input_tokens": 1024,
+    "encoder_version": "5.7.0/4.57.6/2.5.1+cu121"
+  },
+  "checks": [
+    "source_parse_review_version_local_jd",
+    "zip_snapshot_async_task_index_succeeded",
+    "both_product_interview_tool_paths",
+    "all_returned_references_revalidated",
+    "C1_not_upgraded",
+    "cross_owner_404",
+    "no_rubric_leak"
+  ],
+  "queries": [
+    {
+      "scope": "code",
+      "method": "keyword",
+      "elapsed_ms": 58.94,
+      "paths": [
+        "app/storage.py",
+        "tests/test_storage.py",
+        "app/api.py",
+        "README.md"
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": null,
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-937aaecdc2b031a1e3f8f67de201",
+          "chunk-fd70e928a0980a3b05ef328a5485",
+          "chunk-08c26c27c4739e917a364fbc831b",
+          "chunk-5712ca288538f1a54f2c5f3b12d6"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-937aaecdc2b031a1e3f8f67de201",
+          "chunk-fd70e928a0980a3b05ef328a5485",
+          "chunk-08c26c27c4739e917a364fbc831b",
+          "chunk-5712ca288538f1a54f2c5f3b12d6"
+        ],
+        "dense_ids": [],
+        "fused_ids": [
+          "chunk-937aaecdc2b031a1e3f8f67de201",
+          "chunk-fd70e928a0980a3b05ef328a5485",
+          "chunk-08c26c27c4739e917a364fbc831b",
+          "chunk-5712ca288538f1a54f2c5f3b12d6"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-a439a7f58c49ed79ed2a247b3364",
+          "ev-fd54114862a1d3fff499b881f14d",
+          "ev-02c830771dec1b3f633f68bd05a4",
+          "ev-5d6882f1c2a7ad02c04da81bb9d0"
+        ]
+      }
+    },
+    {
+      "scope": "code",
+      "method": "dense",
+      "elapsed_ms": 102.93,
+      "paths": [
+        "tests/test_storage.py",
+        "app/storage.py",
+        "README.md",
+        "app/api.py"
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-b1b8e5f4a4325bbca375b6c09eb60d7119a4044ce14dd8026021c93ed98972d2",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-fd70e928a0980a3b05ef328a5485",
+          "chunk-937aaecdc2b031a1e3f8f67de201",
+          "chunk-5712ca288538f1a54f2c5f3b12d6",
+          "chunk-08c26c27c4739e917a364fbc831b"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-937aaecdc2b031a1e3f8f67de201",
+          "chunk-fd70e928a0980a3b05ef328a5485",
+          "chunk-08c26c27c4739e917a364fbc831b",
+          "chunk-5712ca288538f1a54f2c5f3b12d6"
+        ],
+        "dense_ids": [
+          "chunk-fd70e928a0980a3b05ef328a5485",
+          "chunk-937aaecdc2b031a1e3f8f67de201",
+          "chunk-5712ca288538f1a54f2c5f3b12d6",
+          "chunk-08c26c27c4739e917a364fbc831b"
+        ],
+        "fused_ids": [
+          "chunk-fd70e928a0980a3b05ef328a5485",
+          "chunk-937aaecdc2b031a1e3f8f67de201",
+          "chunk-5712ca288538f1a54f2c5f3b12d6",
+          "chunk-08c26c27c4739e917a364fbc831b"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-fd54114862a1d3fff499b881f14d",
+          "ev-a439a7f58c49ed79ed2a247b3364",
+          "ev-5d6882f1c2a7ad02c04da81bb9d0",
+          "ev-02c830771dec1b3f633f68bd05a4"
+        ]
+      }
+    },
+    {
+      "scope": "code",
+      "method": "hybrid",
+      "elapsed_ms": 144.39,
+      "paths": [
+        "app/storage.py",
+        "tests/test_storage.py",
+        "app/api.py",
+        "README.md"
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-b1b8e5f4a4325bbca375b6c09eb60d7119a4044ce14dd8026021c93ed98972d2",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": true,
+        "rerank_applied": true,
+        "rerank_input_ids": [
+          "chunk-937aaecdc2b031a1e3f8f67de201",
+          "chunk-fd70e928a0980a3b05ef328a5485",
+          "chunk-08c26c27c4739e917a364fbc831b",
+          "chunk-5712ca288538f1a54f2c5f3b12d6"
+        ],
+        "reranked_ids": [
+          "chunk-937aaecdc2b031a1e3f8f67de201",
+          "chunk-fd70e928a0980a3b05ef328a5485",
+          "chunk-08c26c27c4739e917a364fbc831b",
+          "chunk-5712ca288538f1a54f2c5f3b12d6"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 35.768,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-937aaecdc2b031a1e3f8f67de201",
+          "chunk-fd70e928a0980a3b05ef328a5485",
+          "chunk-08c26c27c4739e917a364fbc831b",
+          "chunk-5712ca288538f1a54f2c5f3b12d6"
+        ],
+        "dense_ids": [
+          "chunk-fd70e928a0980a3b05ef328a5485",
+          "chunk-937aaecdc2b031a1e3f8f67de201",
+          "chunk-5712ca288538f1a54f2c5f3b12d6",
+          "chunk-08c26c27c4739e917a364fbc831b"
+        ],
+        "fused_ids": [
+          "chunk-937aaecdc2b031a1e3f8f67de201",
+          "chunk-fd70e928a0980a3b05ef328a5485",
+          "chunk-08c26c27c4739e917a364fbc831b",
+          "chunk-5712ca288538f1a54f2c5f3b12d6"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-a439a7f58c49ed79ed2a247b3364",
+          "ev-fd54114862a1d3fff499b881f14d",
+          "ev-02c830771dec1b3f633f68bd05a4",
+          "ev-5d6882f1c2a7ad02c04da81bb9d0"
+        ]
+      }
+    },
+    {
+      "scope": "code",
+      "method": "code_aware",
+      "elapsed_ms": 119.58,
+      "paths": [
+        "app/storage.py",
+        "app/api.py",
+        "tests/test_storage.py",
+        "README.md"
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-b1b8e5f4a4325bbca375b6c09eb60d7119a4044ce14dd8026021c93ed98972d2",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": true,
+        "rerank_applied": true,
+        "rerank_input_ids": [
+          "chunk-937aaecdc2b031a1e3f8f67de201",
+          "chunk-fd70e928a0980a3b05ef328a5485",
+          "chunk-08c26c27c4739e917a364fbc831b",
+          "chunk-5712ca288538f1a54f2c5f3b12d6"
+        ],
+        "reranked_ids": [
+          "chunk-937aaecdc2b031a1e3f8f67de201",
+          "chunk-fd70e928a0980a3b05ef328a5485",
+          "chunk-08c26c27c4739e917a364fbc831b",
+          "chunk-5712ca288538f1a54f2c5f3b12d6"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 11.531,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-937aaecdc2b031a1e3f8f67de201",
+          "chunk-fd70e928a0980a3b05ef328a5485",
+          "chunk-08c26c27c4739e917a364fbc831b",
+          "chunk-5712ca288538f1a54f2c5f3b12d6"
+        ],
+        "dense_ids": [
+          "chunk-fd70e928a0980a3b05ef328a5485",
+          "chunk-937aaecdc2b031a1e3f8f67de201",
+          "chunk-5712ca288538f1a54f2c5f3b12d6",
+          "chunk-08c26c27c4739e917a364fbc831b"
+        ],
+        "fused_ids": [
+          "chunk-937aaecdc2b031a1e3f8f67de201",
+          "chunk-fd70e928a0980a3b05ef328a5485",
+          "chunk-08c26c27c4739e917a364fbc831b",
+          "chunk-5712ca288538f1a54f2c5f3b12d6"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-a439a7f58c49ed79ed2a247b3364",
+          "ev-02c830771dec1b3f633f68bd05a4",
+          "ev-fd54114862a1d3fff499b881f14d",
+          "ev-5d6882f1c2a7ad02c04da81bb9d0"
+        ]
+      }
+    },
+    {
+      "scope": "public",
+      "method": "bm25",
+      "elapsed_ms": 75.94,
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": null,
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 889,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "knowledge-f71edafd7d966bf815f2b96136b178973e8a0cf88495e621f867357964a21836",
+          "knowledge-5a7d50cf2863660d959f4d317523b8e6ead83f588442d26261be7a54c10c2152",
+          "knowledge-c3528ee033271edcd1a9637ad86deae27568f09a6f08c5ec22c1414a6c74fc1f",
+          "knowledge-a253bcbd641cf83ac83b2f6dccffb9ba7786644478328ad7e0bb43de83e35687",
+          "knowledge-98ecb016acfef596ca7c8d7d9f0737df8696ef3ff9af6ad9ce0f523ab64e0278",
+          "knowledge-a79fedf0639d23bed4d9c86bfdd20419a01c397fe9e487f08874045014dac936",
+          "knowledge-981bfd3c18487ed070b4091db642cad6756971b60228073f946586b56e1fac3e"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "knowledge-f71edafd7d966bf815f2b96136b178973e8a0cf88495e621f867357964a21836",
+          "knowledge-5a7d50cf2863660d959f4d317523b8e6ead83f588442d26261be7a54c10c2152",
+          "knowledge-c3528ee033271edcd1a9637ad86deae27568f09a6f08c5ec22c1414a6c74fc1f",
+          "knowledge-a253bcbd641cf83ac83b2f6dccffb9ba7786644478328ad7e0bb43de83e35687",
+          "knowledge-98ecb016acfef596ca7c8d7d9f0737df8696ef3ff9af6ad9ce0f523ab64e0278",
+          "knowledge-a79fedf0639d23bed4d9c86bfdd20419a01c397fe9e487f08874045014dac936",
+          "knowledge-981bfd3c18487ed070b4091db642cad6756971b60228073f946586b56e1fac3e"
+        ],
+        "dense_ids": [],
+        "fused_ids": [
+          "knowledge-f71edafd7d966bf815f2b96136b178973e8a0cf88495e621f867357964a21836",
+          "knowledge-5a7d50cf2863660d959f4d317523b8e6ead83f588442d26261be7a54c10c2152",
+          "knowledge-c3528ee033271edcd1a9637ad86deae27568f09a6f08c5ec22c1414a6c74fc1f",
+          "knowledge-a253bcbd641cf83ac83b2f6dccffb9ba7786644478328ad7e0bb43de83e35687",
+          "knowledge-98ecb016acfef596ca7c8d7d9f0737df8696ef3ff9af6ad9ce0f523ab64e0278",
+          "knowledge-a79fedf0639d23bed4d9c86bfdd20419a01c397fe9e487f08874045014dac936",
+          "knowledge-981bfd3c18487ed070b4091db642cad6756971b60228073f946586b56e1fac3e"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "public-f9a9746671ecd61fc52e05ab7821",
+          "public-3ca6dd6b21abb9a5ea82297e965f",
+          "public-9f89e82071b67524670a227f71d9",
+          "public-c850b9fa310d3fca4b10443299ef",
+          "public-eed6dc5170cbb675e7122b65363a"
+        ]
+      }
+    },
+    {
+      "scope": "public",
+      "method": "dense",
+      "elapsed_ms": 117.87,
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-9fa0c2cf49cae5ba2a360782299f5f69b9d264d42c37accfbfa92c4c75209e51",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 907,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "knowledge-f71edafd7d966bf815f2b96136b178973e8a0cf88495e621f867357964a21836",
+          "knowledge-5a7d50cf2863660d959f4d317523b8e6ead83f588442d26261be7a54c10c2152",
+          "knowledge-981bfd3c18487ed070b4091db642cad6756971b60228073f946586b56e1fac3e",
+          "knowledge-c3528ee033271edcd1a9637ad86deae27568f09a6f08c5ec22c1414a6c74fc1f",
+          "knowledge-98ecb016acfef596ca7c8d7d9f0737df8696ef3ff9af6ad9ce0f523ab64e0278",
+          "knowledge-0ca26e3a69d76e3ad44018cf31eaa7662e035e2a2934f7e0193f417a923b467b",
+          "knowledge-a79fedf0639d23bed4d9c86bfdd20419a01c397fe9e487f08874045014dac936",
+          "knowledge-90e4ab55ba319ad62c0ab381f1c54f0ada352f66fb587e5d2b19492fa701e758",
+          "knowledge-125713161f37fa621f2b85a24b5ec75d410d5a33501c9f0bbb7e5bfbec077300",
+          "knowledge-a253bcbd641cf83ac83b2f6dccffb9ba7786644478328ad7e0bb43de83e35687"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "knowledge-f71edafd7d966bf815f2b96136b178973e8a0cf88495e621f867357964a21836",
+          "knowledge-5a7d50cf2863660d959f4d317523b8e6ead83f588442d26261be7a54c10c2152",
+          "knowledge-c3528ee033271edcd1a9637ad86deae27568f09a6f08c5ec22c1414a6c74fc1f",
+          "knowledge-a253bcbd641cf83ac83b2f6dccffb9ba7786644478328ad7e0bb43de83e35687",
+          "knowledge-98ecb016acfef596ca7c8d7d9f0737df8696ef3ff9af6ad9ce0f523ab64e0278",
+          "knowledge-a79fedf0639d23bed4d9c86bfdd20419a01c397fe9e487f08874045014dac936",
+          "knowledge-981bfd3c18487ed070b4091db642cad6756971b60228073f946586b56e1fac3e"
+        ],
+        "dense_ids": [
+          "knowledge-f71edafd7d966bf815f2b96136b178973e8a0cf88495e621f867357964a21836",
+          "knowledge-5a7d50cf2863660d959f4d317523b8e6ead83f588442d26261be7a54c10c2152",
+          "knowledge-981bfd3c18487ed070b4091db642cad6756971b60228073f946586b56e1fac3e",
+          "knowledge-c3528ee033271edcd1a9637ad86deae27568f09a6f08c5ec22c1414a6c74fc1f",
+          "knowledge-98ecb016acfef596ca7c8d7d9f0737df8696ef3ff9af6ad9ce0f523ab64e0278",
+          "knowledge-0ca26e3a69d76e3ad44018cf31eaa7662e035e2a2934f7e0193f417a923b467b",
+          "knowledge-a79fedf0639d23bed4d9c86bfdd20419a01c397fe9e487f08874045014dac936",
+          "knowledge-90e4ab55ba319ad62c0ab381f1c54f0ada352f66fb587e5d2b19492fa701e758",
+          "knowledge-125713161f37fa621f2b85a24b5ec75d410d5a33501c9f0bbb7e5bfbec077300",
+          "knowledge-a253bcbd641cf83ac83b2f6dccffb9ba7786644478328ad7e0bb43de83e35687"
+        ],
+        "fused_ids": [
+          "knowledge-f71edafd7d966bf815f2b96136b178973e8a0cf88495e621f867357964a21836",
+          "knowledge-5a7d50cf2863660d959f4d317523b8e6ead83f588442d26261be7a54c10c2152",
+          "knowledge-981bfd3c18487ed070b4091db642cad6756971b60228073f946586b56e1fac3e",
+          "knowledge-c3528ee033271edcd1a9637ad86deae27568f09a6f08c5ec22c1414a6c74fc1f",
+          "knowledge-98ecb016acfef596ca7c8d7d9f0737df8696ef3ff9af6ad9ce0f523ab64e0278",
+          "knowledge-0ca26e3a69d76e3ad44018cf31eaa7662e035e2a2934f7e0193f417a923b467b",
+          "knowledge-a79fedf0639d23bed4d9c86bfdd20419a01c397fe9e487f08874045014dac936",
+          "knowledge-90e4ab55ba319ad62c0ab381f1c54f0ada352f66fb587e5d2b19492fa701e758",
+          "knowledge-125713161f37fa621f2b85a24b5ec75d410d5a33501c9f0bbb7e5bfbec077300",
+          "knowledge-a253bcbd641cf83ac83b2f6dccffb9ba7786644478328ad7e0bb43de83e35687"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "public-f9a9746671ecd61fc52e05ab7821",
+          "public-3ca6dd6b21abb9a5ea82297e965f",
+          "public-5e9d6da170ba931a11d63ecaea3e",
+          "public-9f89e82071b67524670a227f71d9",
+          "public-eed6dc5170cbb675e7122b65363a"
+        ]
+      }
+    },
+    {
+      "scope": "public",
+      "method": "hybrid",
+      "elapsed_ms": 130.93,
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": "index-9fa0c2cf49cae5ba2a360782299f5f69b9d264d42c37accfbfa92c4c75209e51",
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 902,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": true,
+        "rerank_applied": true,
+        "rerank_input_ids": [
+          "knowledge-f71edafd7d966bf815f2b96136b178973e8a0cf88495e621f867357964a21836",
+          "knowledge-5a7d50cf2863660d959f4d317523b8e6ead83f588442d26261be7a54c10c2152",
+          "knowledge-c3528ee033271edcd1a9637ad86deae27568f09a6f08c5ec22c1414a6c74fc1f",
+          "knowledge-981bfd3c18487ed070b4091db642cad6756971b60228073f946586b56e1fac3e",
+          "knowledge-98ecb016acfef596ca7c8d7d9f0737df8696ef3ff9af6ad9ce0f523ab64e0278",
+          "knowledge-a79fedf0639d23bed4d9c86bfdd20419a01c397fe9e487f08874045014dac936",
+          "knowledge-a253bcbd641cf83ac83b2f6dccffb9ba7786644478328ad7e0bb43de83e35687",
+          "knowledge-0ca26e3a69d76e3ad44018cf31eaa7662e035e2a2934f7e0193f417a923b467b",
+          "knowledge-90e4ab55ba319ad62c0ab381f1c54f0ada352f66fb587e5d2b19492fa701e758",
+          "knowledge-125713161f37fa621f2b85a24b5ec75d410d5a33501c9f0bbb7e5bfbec077300"
+        ],
+        "reranked_ids": [
+          "knowledge-f71edafd7d966bf815f2b96136b178973e8a0cf88495e621f867357964a21836",
+          "knowledge-5a7d50cf2863660d959f4d317523b8e6ead83f588442d26261be7a54c10c2152",
+          "knowledge-98ecb016acfef596ca7c8d7d9f0737df8696ef3ff9af6ad9ce0f523ab64e0278",
+          "knowledge-90e4ab55ba319ad62c0ab381f1c54f0ada352f66fb587e5d2b19492fa701e758",
+          "knowledge-c3528ee033271edcd1a9637ad86deae27568f09a6f08c5ec22c1414a6c74fc1f",
+          "knowledge-981bfd3c18487ed070b4091db642cad6756971b60228073f946586b56e1fac3e",
+          "knowledge-a253bcbd641cf83ac83b2f6dccffb9ba7786644478328ad7e0bb43de83e35687",
+          "knowledge-0ca26e3a69d76e3ad44018cf31eaa7662e035e2a2934f7e0193f417a923b467b",
+          "knowledge-125713161f37fa621f2b85a24b5ec75d410d5a33501c9f0bbb7e5bfbec077300",
+          "knowledge-a79fedf0639d23bed4d9c86bfdd20419a01c397fe9e487f08874045014dac936"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 22.291,
+        "reranker_identity": {
+          "model": "mmarco-mMiniLMv2-L12-H384-v1",
+          "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+          "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+          "max_pair_tokens": 512,
+          "score_semantics": "raw_logit"
+        },
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "knowledge-f71edafd7d966bf815f2b96136b178973e8a0cf88495e621f867357964a21836",
+          "knowledge-5a7d50cf2863660d959f4d317523b8e6ead83f588442d26261be7a54c10c2152",
+          "knowledge-c3528ee033271edcd1a9637ad86deae27568f09a6f08c5ec22c1414a6c74fc1f",
+          "knowledge-a253bcbd641cf83ac83b2f6dccffb9ba7786644478328ad7e0bb43de83e35687",
+          "knowledge-98ecb016acfef596ca7c8d7d9f0737df8696ef3ff9af6ad9ce0f523ab64e0278",
+          "knowledge-a79fedf0639d23bed4d9c86bfdd20419a01c397fe9e487f08874045014dac936",
+          "knowledge-981bfd3c18487ed070b4091db642cad6756971b60228073f946586b56e1fac3e"
+        ],
+        "dense_ids": [
+          "knowledge-f71edafd7d966bf815f2b96136b178973e8a0cf88495e621f867357964a21836",
+          "knowledge-5a7d50cf2863660d959f4d317523b8e6ead83f588442d26261be7a54c10c2152",
+          "knowledge-981bfd3c18487ed070b4091db642cad6756971b60228073f946586b56e1fac3e",
+          "knowledge-c3528ee033271edcd1a9637ad86deae27568f09a6f08c5ec22c1414a6c74fc1f",
+          "knowledge-98ecb016acfef596ca7c8d7d9f0737df8696ef3ff9af6ad9ce0f523ab64e0278",
+          "knowledge-0ca26e3a69d76e3ad44018cf31eaa7662e035e2a2934f7e0193f417a923b467b",
+          "knowledge-a79fedf0639d23bed4d9c86bfdd20419a01c397fe9e487f08874045014dac936",
+          "knowledge-90e4ab55ba319ad62c0ab381f1c54f0ada352f66fb587e5d2b19492fa701e758",
+          "knowledge-125713161f37fa621f2b85a24b5ec75d410d5a33501c9f0bbb7e5bfbec077300",
+          "knowledge-a253bcbd641cf83ac83b2f6dccffb9ba7786644478328ad7e0bb43de83e35687"
+        ],
+        "fused_ids": [
+          "knowledge-f71edafd7d966bf815f2b96136b178973e8a0cf88495e621f867357964a21836",
+          "knowledge-5a7d50cf2863660d959f4d317523b8e6ead83f588442d26261be7a54c10c2152",
+          "knowledge-c3528ee033271edcd1a9637ad86deae27568f09a6f08c5ec22c1414a6c74fc1f",
+          "knowledge-981bfd3c18487ed070b4091db642cad6756971b60228073f946586b56e1fac3e",
+          "knowledge-98ecb016acfef596ca7c8d7d9f0737df8696ef3ff9af6ad9ce0f523ab64e0278",
+          "knowledge-a79fedf0639d23bed4d9c86bfdd20419a01c397fe9e487f08874045014dac936",
+          "knowledge-a253bcbd641cf83ac83b2f6dccffb9ba7786644478328ad7e0bb43de83e35687",
+          "knowledge-0ca26e3a69d76e3ad44018cf31eaa7662e035e2a2934f7e0193f417a923b467b",
+          "knowledge-90e4ab55ba319ad62c0ab381f1c54f0ada352f66fb587e5d2b19492fa701e758",
+          "knowledge-125713161f37fa621f2b85a24b5ec75d410d5a33501c9f0bbb7e5bfbec077300"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "public-f9a9746671ecd61fc52e05ab7821",
+          "public-3ca6dd6b21abb9a5ea82297e965f",
+          "public-eed6dc5170cbb675e7122b65363a",
+          "public-f14281e75acf30b2bf8487bf2fc0",
+          "public-9f89e82071b67524670a227f71d9"
+        ]
+      }
+    }
+  ],
+  "interviews": [
+    {
+      "track": "project",
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "interviewer",
+          "tool": "code_search",
+          "status": "ok",
+          "duration_ms": 58,
+          "turn": 0,
+          "error_code": null
+        }
+      ],
+      "retrieval_methods": [
+        "exact_symbol"
+      ]
+    },
+    {
+      "track": "job",
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "interviewer",
+          "tool": "question_search",
+          "status": "ok",
+          "duration_ms": 73,
+          "turn": 0,
+          "error_code": null
+        }
+      ],
+      "retrieval_methods": [
+        "hybrid_rerank"
+      ]
+    }
+  ],
+  "reranker": {
+    "model": "mmarco-mMiniLMv2-L12-H384-v1",
+    "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+    "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+    "max_pair_tokens": 512,
+    "score_semantics": "raw_logit"
+  },
+  "quality_claim": null,
+  "human_semantic_gold": false,
+  "capabilities": {
+    "local_rules": true,
+    "llm": false,
+    "max_upload_bytes": 5242880,
+    "ocr": false,
+    "increment": "resume-import-m2",
+    "demo_only": true,
+    "synthetic_persistent": false,
+    "retrieval": {
+      "dense_configured": true,
+      "dense_loaded": true,
+      "embedding_identity": {
+        "provider": "sentence_transformers_local",
+        "model": "Qwen3-Embedding-0.6B",
+        "revision": "47191d5687dbf14319ccb312680caa31a179ed5e16539b8c06aeddc53b63ef6c",
+        "dimension": 1024,
+        "normalization": "l2",
+        "query_template": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:{query}",
+        "max_input_tokens": 1024,
+        "encoder_version": "5.7.0/4.57.6/2.5.1+cu121"
+      },
+      "rerank_loaded": true,
+      "quality_verified": false,
+      "reranker_identity": {
+        "model": "mmarco-mMiniLMv2-L12-H384-v1",
+        "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+        "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+        "max_pair_tokens": 512,
+        "score_semantics": "raw_logit"
+      },
+      "retrieval_settings": {
+        "sparse_candidates": 20,
+        "dense_candidates": 20,
+        "fusion_candidates": 30,
+        "rerank_candidates": 30,
+        "max_output": 20,
+        "relation_candidates": 8,
+        "context_char_budget": 24000,
+        "rerank_input_chars": 6000,
+        "rrf_k": 60,
+        "version": "retrieval-policy-1"
+      },
+      "retrieval_config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+      "vector_build": "code_index_transaction/public_startup",
+      "default_code_method": "code_aware",
+      "default_public_method": "hybrid"
+    }
+  },
+  "model_load_and_hash_ms": 10758.0,
+  "total_ms": 15324.66
+}

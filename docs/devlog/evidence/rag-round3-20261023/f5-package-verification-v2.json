@@ -1,0 +1,99 @@
+{
+  "source_git_revision": "54b8dce470f6db96a019cb0cf0c79d12d391ff9c",
+  "platform": "Linux-5.15.0-88-generic-x86_64-with-glibc2.35",
+  "python": "3.11.15 (main, Jun 11 2026, 15:20:16) [GCC 14.3.0]",
+  "archives": [
+    {
+      "file": "job-agent-round3-source.zip",
+      "sha256": "52194680186dc155e57979be345188285564d654ee6edd6031e61c72564bc1ac",
+      "files_verified": 1060,
+      "crc_and_safe_extract": "passed"
+    },
+    {
+      "file": "job-agent-round3-learning.zip",
+      "sha256": "6668300d71a8aaf340d3150f49c8272d0eebbec6051ea2c8c5913a4e56ae0447",
+      "files_verified": 769,
+      "crc_and_safe_extract": "passed"
+    },
+    {
+      "file": "job-agent-round3-research.zip",
+      "sha256": "dc19fb6bf660834c53cebdeba26ba80651326b6d95ad8cbdea522f8734dc378e",
+      "files_verified": 93,
+      "crc_and_safe_extract": "passed"
+    }
+  ],
+  "steps": [
+    {
+      "name": "create-empty-env",
+      "exit_code": 0,
+      "seconds": 3.87,
+      "log": "verification-linux-v2/create-empty-env.log"
+    },
+    {
+      "name": "fresh-install",
+      "exit_code": 0,
+      "seconds": 16.89,
+      "log": "verification-linux-v2/fresh-install.log"
+    },
+    {
+      "name": "pip-check",
+      "exit_code": 0,
+      "seconds": 0.87,
+      "log": "verification-linux-v2/pip-check.log"
+    },
+    {
+      "name": "dependency-freeze",
+      "exit_code": 0,
+      "seconds": 0.52,
+      "log": "verification-linux-v2/dependency-freeze.log"
+    },
+    {
+      "name": "installed-main-http",
+      "exit_code": 0,
+      "seconds": 4.67,
+      "log": "verification-linux-v2/installed-main-http.log"
+    },
+    {
+      "name": "installed-cli",
+      "exit_code": 0,
+      "seconds": 0.47,
+      "log": "verification-linux-v2/installed-cli.log"
+    },
+    {
+      "name": "extracted-http-trace",
+      "exit_code": 0,
+      "seconds": 2.67,
+      "log": "verification-linux-v2/extracted-http-trace.log"
+    },
+    {
+      "name": "stable-offline-gate",
+      "exit_code": 0,
+      "seconds": 71.73,
+      "log": "verification-linux-v2/stable-offline-gate.log"
+    },
+    {
+      "name": "joint-pure-source-audit",
+      "exit_code": 0,
+      "seconds": 0.77,
+      "log": "verification-linux-v2/joint-pure-source-audit.log"
+    }
+  ],
+  "model_calls": 0,
+  "paid_calls": 0,
+  "human_reviewed": 0,
+  "status": "passed",
+  "installer": "uv",
+  "joint_product_source_identity": "3219cc178e7f207d352566aa71461f16e8fa76b1e5c353213b380035c500e775",
+  "fresh_dependency_install": true,
+  "original_verification": "verification-linux-v2/verification.json",
+  "original_verification_sha256": "7694acd3df60b9e81af6e4ff42ac4f9904888c543f82ae8828729bad894ec928",
+  "stable_contracts": {
+    "passed": 648,
+    "skipped": 35,
+    "failures": 0,
+    "junit": "verification-linux-v2/contracts.xml",
+    "condition": "Optional FAISS not installed: two Windows cases represented by one skipped Linux module."
+  },
+  "prior_failed_install": "verification-linux-v1-failed.json",
+  "product_source_unchanged_since_joint_run": true
+}

@@ -1,0 +1,17 @@
+{
+  "resource_only_not_product_integration": true,
+  "version": "7.2.16",
+  "pid": 102102,
+  "unix_socket": "/tmp/job-agent-v3-redis-s6-20261022.sock",
+  "tcp_port": 0,
+  "data_dir": "/root/autodl-tmp/study/job-agent-v3/output/expansion/redis-s6",
+  "checks": [
+    "PING",
+    "XGROUP/XADD/XREADGROUP",
+    "XAUTOCLAIM_A_to_B",
+    "ACK_keeps_retained_entry"
+  ],
+  "appendfsync": "everysec",
+  "zero_loss_claim": false,
+  "system_install": false
+}

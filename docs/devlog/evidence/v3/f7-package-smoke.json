@@ -1,0 +1,13 @@
+{
+  "candidate_archive_sha256": "603edb0eb07d86e90c57e7ed1ec597bfc955c92bf1a9a7e2f3c6e4b78f1bd09d",
+  "manifest_files_checked": 703,
+  "implementation_tree_sha256": "96dddbc3607b188775abaa474d6d671f46c7c40184ad7a25dceb930734985830",
+  "scope": "fresh extraction using only packaged application/build/assets and existing dependency runtime; does not prove clean dependency installation or Docker",
+  "isolated_package_import": true,
+  "frontend_served": true,
+  "seeded_primary_projects": 2,
+  "public_documents": 10,
+  "synthetic_pdf_import_parse_accept_confirm_export": true,
+  "embedded_font_works": true,
+  "model_calls": 0
+}

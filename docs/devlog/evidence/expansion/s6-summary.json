@@ -1,0 +1,148 @@
+{
+  "phase": "S6",
+  "verified_scope": "engineering_real_pg_redis_independent_index_process_faults_local_embedding",
+  "source_identity": "1be116abf36d714fdc7c05e3ad9967f8b17d9818c406cd0dc3ae9d212a259852",
+  "latest_related_tests": {
+    "passed": 487,
+    "failed": 0,
+    "skipped": 4,
+    "seconds": 37.24,
+    "artifact": "s6-related-v4.xml"
+  },
+  "skips": "PG-only cases at SQLite parameter branch; real PG cases ran",
+  "default_cap_contract": {
+    "passed": 17,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 4.53,
+    "artifact": "s6-default-cap-v3.xml"
+  },
+  "fault_matrix": {
+    "cases": 13,
+    "independent_subprocesses": 42,
+    "artifact": "s6-process-fault-matrix-v3.json",
+    "cases_passed": [
+      "request_idempotency_conflict",
+      "redis_unavailable_then_restore",
+      "publisher_exit_after_xadd",
+      "worker_exit_after_claim",
+      "old_worker_late_after_takeover",
+      "two_workers_compete",
+      "commit_before_ack_exit",
+      "transaction_exit_after_derived",
+      "source_deleted_during_build",
+      "recovery_exhausted",
+      "malformed_unknown_and_permanent_failure",
+      "queue_deleted_reconcile",
+      "owned_redis_restart"
+    ]
+  },
+  "http_model": {
+    "build": {
+      "pid": 105532,
+      "source_identity": "1be116abf36d714fdc7c05e3ad9967f8b17d9818c406cd0dc3ae9d212a259852",
+      "model": {
+        "provider": "sentence_transformers_local",
+        "model": "Qwen3-Embedding-0.6B",
+        "revision": "47191d5687dbf14319ccb312680caa31a179ed5e16539b8c06aeddc53b63ef6c",
+        "dimension": 1024,
+        "normalization": "l2",
+        "query_template": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:{query}",
+        "max_input_tokens": 1024,
+        "encoder_version": "5.7.0/4.57.6/2.5.1+cu121"
+      },
+      "dispatch_mode": "redis",
+      "dispatch_processes": [
+        {
+          "role": "publish",
+          "pid": 106003,
+          "exit_code": 0,
+          "output": "{\"role\": \"publish\", \"outcome\": 1}",
+          "stderr_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "role": "work",
+          "pid": 106016,
+          "exit_code": 0,
+          "output": "{\"role\": \"work\", \"outcome\": \"SUCCEEDED\"}",
+          "stderr_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "checks": [
+        "zip_snapshot_persistent_task_atomic_publication",
+        "project_interview_reads_selected_pg_code",
+        "queries_reuse_persisted_vectors_without_document_encoding",
+        "cross_owner_all_three_resources_404",
+        "no_sqlite_project_index_or_task_shadow_writes"
+      ],
+      "sqlite_shadow_counts": {
+        "v3_projects": 0,
+        "v3_project_snapshots": 0,
+        "v3_code_indexes": 0,
+        "v3_tasks": 0
+      },
+      "embedding_calls_after_startup": {
+        "documents": 2,
+        "queries": 2
+      },
+      "embedding_calls_total": {
+        "documents": 2,
+        "queries": 5
+      }
+    },
+    "reload": {
+      "pid": 107390,
+      "source_identity": "1be116abf36d714fdc7c05e3ad9967f8b17d9818c406cd0dc3ae9d212a259852",
+      "model": {
+        "provider": "sentence_transformers_local",
+        "model": "Qwen3-Embedding-0.6B",
+        "revision": "47191d5687dbf14319ccb312680caa31a179ed5e16539b8c06aeddc53b63ef6c",
+        "dimension": 1024,
+        "normalization": "l2",
+        "query_template": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:{query}",
+        "max_input_tokens": 1024,
+        "encoder_version": "5.7.0/4.57.6/2.5.1+cu121"
+      },
+      "dispatch_mode": "redis",
+      "dispatch_processes": null,
+      "checks": [
+        "new_process_task_and_cross_domain_interview_reference_survived",
+        "queries_reuse_persisted_vectors_without_document_encoding",
+        "new_process_same_ranked_chunks_and_exact_references",
+        "cross_owner_all_three_resources_404",
+        "no_sqlite_project_index_or_task_shadow_writes"
+      ],
+      "sqlite_shadow_counts": {
+        "v3_projects": 0,
+        "v3_project_snapshots": 0,
+        "v3_code_indexes": 0,
+        "v3_tasks": 0
+      },
+      "embedding_calls_after_startup": {
+        "documents": 2,
+        "queries": 2
+      },
+      "embedding_calls_total": {
+        "documents": 2,
+        "queries": 4
+      }
+    }
+  },
+  "frontend": {
+    "model_tests_passed": 13,
+    "build": "Vite 8.3.4 success",
+    "visual_browser_review": "not run this phase; S8",
+    "hashes": "checkpoint.json frontend_file_hashes"
+  },
+  "cli_manual_inspection": "s6-cli-inspect-v1.json",
+  "wrong_mode_process_rejected": "s6-wrong-mode-cli-v1.json",
+  "failure_preserved": "v1 matrix 12 passed/last readiness probe failed; confirmed same Redis process subsequently ready, fixed wait; original network and DNS logs retained",
+  "text_generation_tasks_auto_replayed": false,
+  "production_sla_verified": false,
+  "semantic_quality_gain_claim": null,
+  "future": [
+    "S7 source-linked learning",
+    "S1 final 60-80 candidates/human verification",
+    "S8 unified trace/eval/index replay/delivery"
+  ]
+}

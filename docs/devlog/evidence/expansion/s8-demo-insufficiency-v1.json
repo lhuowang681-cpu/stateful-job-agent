@@ -1,0 +1,112 @@
+{
+  "checks": [
+    "source_code_present_personal_contribution_still_unverified",
+    "no_resume_fact_invented",
+    "needs_input_instead_of_unsupported_result"
+  ],
+  "data": "CC0 synthetic only",
+  "demo": "insufficiency",
+  "human_quality": null,
+  "model": "disabled; rules only",
+  "pack_summary": {
+    "answer_policy": "needs_input",
+    "claim_assessments": [
+      {
+        "assessed_by": "deterministic_boundary",
+        "claim_id": "claim-0",
+        "evidence_ids": [
+          "ev-3cef1a9d33fbeb100a5e7a1e4c89",
+          "ev-f4ec44c567125783ff9482341da8"
+        ],
+        "reason": "所需来源/范围不足，不能据此核实个人贡献、运行成果或完整断言。",
+        "statement": "本人主导Redis架构并显著提升求职成功率。",
+        "status": "insufficient_evidence",
+        "target_kind": "supplied_claim"
+      }
+    ],
+    "missing": [
+      "personal_contribution_unverified",
+      "runtime_measurements_unverified"
+    ],
+    "usage": {
+      "budget_exhausted": false,
+      "elapsed_ms": 11,
+      "quote_chars": 240,
+      "read_calls": 0,
+      "reserved_embedding_query_calls": 0,
+      "reserved_model_input_tokens_upper_bound": 0,
+      "reserved_rerank_calls": 0,
+      "search_rounds": 2,
+      "stop_reason": "completed_bounded_collection",
+      "tool_calls": 2
+    }
+  },
+  "source_identity": "593c54ea751bf9d7a65cc7ff7592ec12a74a95184423349773c891bc50576bb2",
+  "status": "passed",
+  "traces": [
+    {
+      "events": [
+        {
+          "approval_hash": null,
+          "approval_status": "absent",
+          "attempt": 1,
+          "config_identity": null,
+          "correlation_id": null,
+          "cost": null,
+          "duration_ms": null,
+          "ended_at_utc": "2026-10-22T16:08:10.301455+00:00",
+          "error_code_id": null,
+          "evidence_ids": [],
+          "fallback_used": null,
+          "index_identity": null,
+          "input_hash": null,
+          "input_tokens": null,
+          "kind": "run",
+          "material_hash": "45f058504c734b73ed89dd4571181afe5a48d7c343071c4b53607cd4b1b3013a",
+          "model_identity_hash": null,
+          "output_hash": null,
+          "output_tokens": null,
+          "parent_span_id": null,
+          "phase": "snapshot",
+          "provider_calls": null,
+          "recorded_at_utc": null,
+          "revision": null,
+          "role_id": null,
+          "run_id": "id-c66d55e48ca4bcc6f090033a3d14f34d3edc504e8431a11c407e5fa79c7fc4ca",
+          "schema_version": "job-agent-trace-1",
+          "seq": 0,
+          "source_seq": 0,
+          "source_stream": "task_snapshot",
+          "span_id": "id-c66d55e48ca4bcc6f090033a3d14f34d3edc504e8431a11c407e5fa79c7fc4ca-root",
+          "started_at_utc": "2026-10-22T16:08:10.164332+00:00",
+          "status": "SUCCEEDED",
+          "time_quality": "recorded",
+          "tool_id": null,
+          "trace_id": "id-3b0a84697ce33f511bccf0c56eb4e6c25dc5001610f6c8ca5a81dbb892f3deb6",
+          "usage_missing_reason": "index_task_has_no_generation_usage",
+          "usage_scope": "not_applicable"
+        }
+      ],
+      "limitations": [
+        "snapshot_only_no_event_history"
+      ],
+      "ordering": "seq is export order; source_stream/source_seq preserve local order; cross-stream wall-clock order unknown",
+      "privacy": "IDs and hashes only; source text, answers, rubrics, prompts, credentials excluded",
+      "replay_policy": "read_only_inspection; no tools, provider calls, approvals or worker actions",
+      "schema_version": "job-agent-trace-export-1",
+      "task": "index",
+      "usage": {
+        "basis": "run_aggregate_only_children_excluded",
+        "child_input_tokens_observed": 0,
+        "child_output_tokens_observed": 0,
+        "child_usage_complete": false,
+        "cost": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "provider_calls": null,
+        "recorded_call_spans": 0
+      }
+    }
+  ],
+  "transport": "real_loopback_http"
+}

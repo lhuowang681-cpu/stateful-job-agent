@@ -18,49 +18,79 @@ from job_agent.schemas import (
 VALID_TRANSITIONS = {
     ApplicationStatus.TO_APPLY: {
         ApplicationStatus.APPLIED,
+        ApplicationStatus.WITHDRAWN,
         ApplicationStatus.ABANDONED,
         ApplicationStatus.CLOSED,
     },
     ApplicationStatus.APPLIED: {
         ApplicationStatus.RESUME_SCREEN,
+        ApplicationStatus.ONLINE_ASSESSMENT,
         ApplicationStatus.REJECTED,
+        ApplicationStatus.WITHDRAWN,
         ApplicationStatus.CLOSED,
     },
     ApplicationStatus.RESUME_SCREEN: {
+        ApplicationStatus.ONLINE_ASSESSMENT,
         ApplicationStatus.FIRST_INTERVIEW,
+        ApplicationStatus.HR_INTERVIEW,
         ApplicationStatus.REJECTED,
+        ApplicationStatus.WITHDRAWN,
+        ApplicationStatus.CLOSED,
+    },
+    ApplicationStatus.ONLINE_ASSESSMENT: {
+        ApplicationStatus.FIRST_INTERVIEW,
+        ApplicationStatus.HR_INTERVIEW,
+        ApplicationStatus.REJECTED,
+        ApplicationStatus.WITHDRAWN,
         ApplicationStatus.CLOSED,
     },
     ApplicationStatus.FIRST_INTERVIEW: {
         ApplicationStatus.SECOND_INTERVIEW,
-        ApplicationStatus.OFFER,
+        ApplicationStatus.FINAL_INTERVIEW,
+        ApplicationStatus.HR_INTERVIEW,
         ApplicationStatus.REJECTED,
+        ApplicationStatus.WITHDRAWN,
         ApplicationStatus.CLOSED,
     },
     ApplicationStatus.SECOND_INTERVIEW: {
         ApplicationStatus.OTHER_INTERVIEW,
-        ApplicationStatus.OFFER,
+        ApplicationStatus.FINAL_INTERVIEW,
+        ApplicationStatus.HR_INTERVIEW,
         ApplicationStatus.REJECTED,
+        ApplicationStatus.WITHDRAWN,
         ApplicationStatus.CLOSED,
     },
     ApplicationStatus.OTHER_INTERVIEW: {
-        ApplicationStatus.OFFER,
+        ApplicationStatus.FINAL_INTERVIEW,
+        ApplicationStatus.HR_INTERVIEW,
         ApplicationStatus.REJECTED,
+        ApplicationStatus.WITHDRAWN,
         ApplicationStatus.CLOSED,
     },
     ApplicationStatus.HR_INTERVIEW: {
+        ApplicationStatus.FINAL_INTERVIEW,
         ApplicationStatus.OFFER,
         ApplicationStatus.REJECTED,
+        ApplicationStatus.WITHDRAWN,
+        ApplicationStatus.CLOSED,
+    },
+    ApplicationStatus.FINAL_INTERVIEW: {
+        ApplicationStatus.HR_INTERVIEW,
+        ApplicationStatus.OFFER,
+        ApplicationStatus.REJECTED,
+        ApplicationStatus.WITHDRAWN,
         ApplicationStatus.CLOSED,
     },
     ApplicationStatus.OFFER: {
         ApplicationStatus.ACCEPTED,
         ApplicationStatus.REJECTED,
+        ApplicationStatus.WITHDRAWN,
         ApplicationStatus.ABANDONED,
         ApplicationStatus.CLOSED,
     },
     ApplicationStatus.ACCEPTED: set(),
     ApplicationStatus.REJECTED: set(),
+    ApplicationStatus.WITHDRAWN: set(),
     ApplicationStatus.ABANDONED: set(),
     ApplicationStatus.CLOSED: set(),
 }
@@ -143,10 +173,12 @@ def _recalculate_stats(applications: list[ApplicationRecord]) -> TrackerStats:
     submitted_states = {
         ApplicationStatus.APPLIED,
         ApplicationStatus.RESUME_SCREEN,
+        ApplicationStatus.ONLINE_ASSESSMENT,
         ApplicationStatus.FIRST_INTERVIEW,
         ApplicationStatus.SECOND_INTERVIEW,
         ApplicationStatus.OTHER_INTERVIEW,
         ApplicationStatus.HR_INTERVIEW,
+        ApplicationStatus.FINAL_INTERVIEW,
         ApplicationStatus.OFFER,
         ApplicationStatus.ACCEPTED,
         ApplicationStatus.REJECTED,
@@ -158,10 +190,12 @@ def _recalculate_stats(applications: list[ApplicationRecord]) -> TrackerStats:
     )
     response_states = {
         ApplicationStatus.RESUME_SCREEN,
+        ApplicationStatus.ONLINE_ASSESSMENT,
         ApplicationStatus.FIRST_INTERVIEW,
         ApplicationStatus.SECOND_INTERVIEW,
         ApplicationStatus.OTHER_INTERVIEW,
         ApplicationStatus.HR_INTERVIEW,
+        ApplicationStatus.FINAL_INTERVIEW,
         ApplicationStatus.OFFER,
         ApplicationStatus.ACCEPTED,
         ApplicationStatus.REJECTED,
@@ -171,6 +205,7 @@ def _recalculate_stats(applications: list[ApplicationRecord]) -> TrackerStats:
         ApplicationStatus.SECOND_INTERVIEW,
         ApplicationStatus.OTHER_INTERVIEW,
         ApplicationStatus.HR_INTERVIEW,
+        ApplicationStatus.FINAL_INTERVIEW,
         ApplicationStatus.OFFER,
         ApplicationStatus.ACCEPTED,
     }
@@ -375,6 +410,62 @@ class ApplicationTrackerStore:
         """Return the store clock as an ISO timestamp for coordinated mutations."""
         return self._now().isoformat()
 
+    def find_application(
+        self,
+        *,
+        user_id: str,
+        job_id: str | None,
+        company: str,
+        title: str,
+    ) -> ApplicationRecord | None:
+        tracker = self.load(user_id=user_id)
+        return _find_duplicate(tracker, job_id, company, title)
+
+    def record_application(
+        self,
+        *,
+        user_id: str,
+        job_id: str | None,
+        company: str,
+        title: str,
+        city: str,
+        source: str,
+        url: str,
+        initial_status: ApplicationStatus,
+        notes: str,
+        user_confirmed: bool,
+    ) -> ApplicationRecord:
+        if not user_confirmed:
+            raise ValueError("user confirmation is required before changing tracker")
+        company = company.strip()
+        title = title.strip()
+        if not company or not title:
+            raise ValueError("company and title are required")
+
+        tracker = self.load(user_id=user_id)
+        existing = _find_duplicate(tracker, job_id, company, title)
+        if existing is not None:
+            return existing
+
+        timestamp = self.current_timestamp()
+        record = ApplicationRecord(
+            id=_next_application_id(tracker),
+            job_id=job_id,
+            company=company,
+            title=title,
+            city=city,
+            url=url,
+            source=source,
+            current_state=initial_status,
+            notes=notes,
+            state_history=[_event(initial_status, timestamp, notes)],
+        )
+        return self.add_application(
+            user_id=user_id,
+            application=record,
+            user_confirmed=True,
+        )
+
     def add_application(
         self,
         *,
@@ -452,6 +543,7 @@ class ApplicationTrackerStore:
         notes: str,
         user_confirmed: bool,
         timestamp: str | None = None,
+        action_id: str | None = None,
     ) -> ApplicationRecord:
         if not user_confirmed:
             raise ValueError("user confirmation is required before changing tracker")
@@ -459,15 +551,75 @@ class ApplicationTrackerStore:
         for index, application in enumerate(tracker.applications):
             if application.id != application_id:
                 continue
+            marker = f"copilot-action:{action_id}" if action_id else None
+            if marker and marker in application.tags:
+                if application.current_state != new_status:
+                    raise ValueError("application stage action idempotency conflict")
+                return application
+            if new_status == application.current_state:
+                return application
             allowed = VALID_TRANSITIONS[application.current_state]
-            if new_status not in allowed and new_status != application.current_state:
+            if new_status not in allowed:
                 raise ValueError(f"invalid transition: {application.current_state.value} -> {new_status.value}")
             event = _event(new_status, timestamp or _now(), notes)
             updated = application.model_copy(
                 update={
                     "current_state": new_status,
+                    "submitted_at": (
+                        application.submitted_at
+                        or (event.timestamp if new_status == ApplicationStatus.APPLIED else None)
+                    ),
                     "notes": notes or application.notes,
+                    "tags": [*application.tags, marker] if marker else application.tags,
                     "state_history": [*application.state_history, event],
+                }
+            )
+            tracker.applications[index] = updated
+            self._persist(tracker)
+            return self._find_required(application_id, user_id=user_id)
+        raise ValueError(f"application not found: {application_id}")
+
+    def update_copilot_fields(
+        self,
+        *,
+        user_id: str,
+        application_id: str,
+        action_id: str,
+        resume_version_id: str | None = None,
+        next_action: str | None = None,
+        next_action_due_at: str | None = None,
+        contacts: list[str] | None = None,
+        notes: str | None = None,
+        outcome: str | None = None,
+        interview_round_id: str | None = None,
+    ) -> ApplicationRecord:
+        """Apply idempotent copilot metadata without bypassing stage validation."""
+        if not action_id.strip():
+            raise ValueError("action_id is required")
+        tracker = self.load(user_id=user_id)
+        marker = f"copilot-action:{action_id}"
+        for index, application in enumerate(tracker.applications):
+            if application.id != application_id:
+                continue
+            if marker in application.tags:
+                return application
+            round_ids = list(application.interview_round_ids)
+            if interview_round_id and interview_round_id not in round_ids:
+                round_ids.append(interview_round_id)
+            updated = application.model_copy(
+                update={
+                    "resume_version_id": resume_version_id or application.resume_version_id,
+                    "next_action": next_action if next_action is not None else application.next_action,
+                    "next_action_due_at": (
+                        next_action_due_at
+                        if next_action_due_at is not None
+                        else application.next_action_due_at
+                    ),
+                    "contacts": contacts if contacts is not None else application.contacts,
+                    "notes": notes if notes is not None else application.notes,
+                    "outcome": outcome if outcome is not None else application.outcome,
+                    "interview_round_ids": round_ids,
+                    "tags": [*application.tags, marker],
                 }
             )
             tracker.applications[index] = updated

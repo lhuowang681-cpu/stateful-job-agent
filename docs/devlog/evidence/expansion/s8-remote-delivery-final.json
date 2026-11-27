@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "validated_final_source_directory": "/root/autodl-tmp/study/job-agent-v3/output/expansion/unpacked-delivery-final/source",
+  "source_identity": "b919d6152743ce47b41f52e3a810db8f97b0adb4bb1244a91204d67809abbb0b",
+  "all_final_package_files_match": true,
+  "packaged_files": 823,
+  "original_directory_modified": false,
+  "original_difference_count": 46,
+  "original_python_differences": [
+    "scripts/expansion_checkpoint.py",
+    "scripts/expansion_delivery_smoke.py",
+    "scripts/package_expansion.py"
+  ],
+  "delivery_mode": "independent verified directory; original preserved after automatic review declined bulk overwrite",
+  "git_history_created": false,
+  "handbook_modified": false
+}

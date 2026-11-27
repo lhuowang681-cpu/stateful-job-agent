@@ -1,0 +1,22 @@
+{
+  "python": "3.11.15",
+  "platform": "Linux-5.15.0-88-generic-x86_64-with-glibc2.35",
+  "new_source_directory": "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source",
+  "original_files_overwritten": false,
+  "runtime_reused_for_R1_only": true,
+  "models_present": {
+    "Qwen2.5-7B-Instruct": true,
+    "Qwen3-Embedding-0.6B": true,
+    "mmarco-mMiniLMv2-L12-H384-v1": true
+  },
+  "packages": {
+    "pytest": "9.1.1",
+    "fastapi": "0.115.14",
+    "pydantic": "2.13.4",
+    "langgraph": "1.2.11",
+    "torch": "2.5.1+cu121",
+    "transformers": "4.57.6",
+    "sentence-transformers": "5.7.0",
+    "httpx": "0.28.1"
+  }
+}

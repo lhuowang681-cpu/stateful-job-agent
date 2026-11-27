@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="17" failures="0" skipped="0" tests="17" time="13.594" timestamp="2026-10-23T12:35:36.191099+08:00" hostname="DESKTOP-94NI4DV"><testcase classname="" name="tests.test_atomic_evidence_v2" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\1\Desktop\就业agent\job-agent-v3\tests\test_atomic_evidence_v2.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_atomic_evidence_v2.py:18: in &lt;module&gt;
+    from job_agent.evaluation.real_atomic_evidence import _fail_closed_invalid_quote
+src\job_agent\evaluation\real_atomic_evidence.py:22: in &lt;module&gt;
+    from job_agent.evaluation.real_career_runner import (
+src\job_agent\evaluation\real_career_runner.py:16: in &lt;module&gt;
+    from job_agent.agent_runtime.mcp_bridge import StdioMCPClientBridge
+src\job_agent\agent_runtime\mcp_bridge.py:8: in &lt;module&gt;
+    from mcp import ClientSession, StdioServerParameters
+E   ModuleNotFoundError: No module named 'mcp'</error></testcase><testcase classname="" name="tests.test_career_knowledge_mcp" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\1\Desktop\就业agent\job-agent-v3\tests\test_career_knowledge_mcp.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_career_knowledge_mcp.py:24: in &lt;module&gt;
+    from job_agent.agent_runtime.mcp_bridge import StdioMCPClientBridge
+src\job_agent\agent_runtime\mcp_bridge.py:8: in &lt;module&gt;
+    from mcp import ClientSession, StdioServerParameters
+E   ModuleNotFoundError: No module named 'mcp'</error></testcase><testcase classname="" name="tests.test_durable_career_knowledge" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\1\Desktop\就业agent\job-agent-v3\tests\test_durable_career_knowledge.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_durable_career_knowledge.py:9: in &lt;module&gt;
+    from job_agent.agent_runtime.mcp_bridge import StdioMCPClientBridge
+src\job_agent\agent_runtime\mcp_bridge.py:8: in &lt;module&gt;
+    from mcp import ClientSession, StdioServerParameters
+E   ModuleNotFoundError: No module named 'mcp'</error></testcase><testcase classname="" name="tests.test_durable_career_state" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\1\Desktop\就业agent\job-agent-v3\tests\test_durable_career_state.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_durable_career_state.py:47: in &lt;module&gt;
+    from job_agent.memory_aware_job_analysis import _preference_analysis
+src\job_agent\memory_aware_job_analysis.py:35: in &lt;module&gt;
+    from job_agent.knowledge.career_mcp_server import CAREER_QUERY_TOOL
+src\job_agent\knowledge\career_mcp_server.py:6: in &lt;module&gt;
+    from mcp.server.mcpserver import MCPServer
+E   ModuleNotFoundError: No module named 'mcp'</error></testcase><testcase classname="" name="tests.test_end_to_end_job_search_workflow" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\1\Desktop\就业agent\job-agent-v3\tests\test_end_to_end_job_search_workflow.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_end_to_end_job_search_workflow.py:14: in &lt;module&gt;
+    from job_agent.agent_runtime.mcp_bridge import StdioMCPClientBridge
+src\job_agent\agent_runtime\mcp_bridge.py:8: in &lt;module&gt;
+    from mcp import ClientSession, StdioServerParameters
+E   ModuleNotFoundError: No module named 'mcp'</error></testcase><testcase classname="" name="tests.test_job_specific_interview_preparation" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\1\Desktop\就业agent\job-agent-v3\tests\test_job_specific_interview_preparation.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_job_specific_interview_preparation.py:9: in &lt;module&gt;
+    from job_agent.agent_runtime.mcp_bridge import StdioMCPClientBridge
+src\job_agent\agent_runtime\mcp_bridge.py:8: in &lt;module&gt;
+    from mcp import ClientSession, StdioServerParameters
+E   ModuleNotFoundError: No module named 'mcp'</error></testcase><testcase classname="" name="tests.test_job_workspace" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\1\Desktop\就业agent\job-agent-v3\tests\test_job_workspace.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_job_workspace.py:42: in &lt;module&gt;
+    from job_agent.knowledge.durable import KnowledgeRepository
+src\job_agent\knowledge\durable.py:25: in &lt;module&gt;
+    from job_agent.knowledge.faiss_vector_index import FAISSVectorIndex
+src\job_agent\knowledge\faiss_vector_index.py:6: in &lt;module&gt;
+    import faiss
+E   ModuleNotFoundError: No module named 'faiss'</error></testcase><testcase classname="" name="tests.test_knowledge_faiss_vector_index" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\1\Desktop\就业agent\job-agent-v3\tests\test_knowledge_faiss_vector_index.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_knowledge_faiss_vector_index.py:4: in &lt;module&gt;
+    from job_agent.knowledge.faiss_vector_index import FAISSVectorIndex
+src\job_agent\knowledge\faiss_vector_index.py:6: in &lt;module&gt;
+    import faiss
+E   ModuleNotFoundError: No module named 'faiss'</error></testcase><testcase classname="" name="tests.test_knowledge_ingestion_real" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\1\Desktop\就业agent\job-agent-v3\tests\test_knowledge_ingestion_real.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_knowledge_ingestion_real.py:7: in &lt;module&gt;
+    from job_agent.knowledge.faiss_vector_index import FAISSVectorIndex
+src\job_agent\knowledge\faiss_vector_index.py:6: in &lt;module&gt;
+    import faiss
+E   ModuleNotFoundError: No module named 'faiss'</error></testcase><testcase classname="" name="tests.test_knowledge_real_embedding" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\1\Desktop\就业agent\job-agent-v3\tests\test_knowledge_real_embedding.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_knowledge_real_embedding.py:8: in &lt;module&gt;
+    from job_agent.knowledge.faiss_vector_index import FAISSVectorIndex
+src\job_agent\knowledge\faiss_vector_index.py:6: in &lt;module&gt;
+    import faiss
+E   ModuleNotFoundError: No module named 'faiss'</error></testcase><testcase classname="" name="tests.test_knowledge_retrieval_benchmark" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\1\Desktop\就业agent\job-agent-v3\tests\test_knowledge_retrieval_benchmark.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_knowledge_retrieval_benchmark.py:10: in &lt;module&gt;
+    from job_agent.knowledge.faiss_vector_index import FAISSVectorIndex
+src\job_agent\knowledge\faiss_vector_index.py:6: in &lt;module&gt;
+    import faiss
+E   ModuleNotFoundError: No module named 'faiss'</error></testcase><testcase classname="" name="tests.test_mcp_real_runtime" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\1\Desktop\就业agent\job-agent-v3\tests\test_mcp_real_runtime.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_mcp_real_runtime.py:7: in &lt;module&gt;
+    from job_agent.agent_runtime.mcp_bridge import StdioMCPClientBridge
+src\job_agent\agent_runtime\mcp_bridge.py:8: in &lt;module&gt;
+    from mcp import ClientSession, StdioServerParameters
+E   ModuleNotFoundError: No module named 'mcp'</error></testcase><testcase classname="" name="tests.test_memory_aware_job_analysis" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\1\Desktop\就业agent\job-agent-v3\tests\test_memory_aware_job_analysis.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_memory_aware_job_analysis.py:9: in &lt;module&gt;
+    from job_agent.agent_runtime.mcp_bridge import StdioMCPClientBridge
+src\job_agent\agent_runtime\mcp_bridge.py:8: in &lt;module&gt;
+    from mcp import ClientSession, StdioServerParameters
+E   ModuleNotFoundError: No module named 'mcp'</error></testcase><testcase classname="" name="tests.test_real_model_end_to_end_validation" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\1\Desktop\就业agent\job-agent-v3\tests\test_real_model_end_to_end_validation.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_real_model_end_to_end_validation.py:13: in &lt;module&gt;
+    from job_agent.agent_runtime.mcp_bridge import StdioMCPClientBridge
+src\job_agent\agent_runtime\mcp_bridge.py:8: in &lt;module&gt;
+    from mcp import ClientSession, StdioServerParameters
+E   ModuleNotFoundError: No module named 'mcp'</error></testcase><testcase classname="" name="tests.test_ui_app_test" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\1\Desktop\就业agent\job-agent-v3\tests\test_ui_app_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_ui_app_test.py:15: in &lt;module&gt;
+    from streamlit.testing.v1 import AppTest
+E   ModuleNotFoundError: No module named 'streamlit'</error></testcase><testcase classname="" name="tests.test_ui_evidence_v2" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\1\Desktop\就业agent\job-agent-v3\tests\test_ui_evidence_v2.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_ui_evidence_v2.py:4: in &lt;module&gt;
+    from job_agent.ui.views import evidence_v2_view
+src\job_agent\ui\views\evidence_v2_view.py:5: in &lt;module&gt;
+    import streamlit as st
+E   ModuleNotFoundError: No module named 'streamlit'</error></testcase><testcase classname="" name="tests.test_unseen_career_holdout" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\1\Desktop\就业agent\job-agent-v3\tests\test_unseen_career_holdout.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\..\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_unseen_career_holdout.py:8: in &lt;module&gt;
+    from job_agent.evaluation.unseen_career_holdout import _retrieval_metrics, verify_freeze
+src\job_agent\evaluation\unseen_career_holdout.py:12: in &lt;module&gt;
+    from job_agent.agent_runtime.mcp_bridge import StdioMCPClientBridge
+src\job_agent\agent_runtime\mcp_bridge.py:8: in &lt;module&gt;
+    from mcp import ClientSession, StdioServerParameters
+E   ModuleNotFoundError: No module named 'mcp'</error></testcase></testsuite></testsuites>

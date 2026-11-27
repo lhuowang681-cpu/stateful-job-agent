@@ -1,0 +1,40 @@
+{
+  "source_git_revision": "54b8dce470f6db96a019cb0cf0c79d12d391ff9c",
+  "platform": "Linux-5.15.0-88-generic-x86_64-with-glibc2.35",
+  "python": "3.11.15 (main, Jun 11 2026, 15:20:16) [GCC 14.3.0]",
+  "archives": [
+    {
+      "file": "job-agent-round3-source.zip",
+      "sha256": "52194680186dc155e57979be345188285564d654ee6edd6031e61c72564bc1ac",
+      "files_verified": 1060,
+      "crc_and_safe_extract": "passed"
+    },
+    {
+      "file": "job-agent-round3-learning.zip",
+      "sha256": "6668300d71a8aaf340d3150f49c8272d0eebbec6051ea2c8c5913a4e56ae0447",
+      "files_verified": 769,
+      "crc_and_safe_extract": "passed"
+    },
+    {
+      "file": "job-agent-round3-research.zip",
+      "sha256": "dc19fb6bf660834c53cebdeba26ba80651326b6d95ad8cbdea522f8734dc378e",
+      "files_verified": 93,
+      "crc_and_safe_extract": "passed"
+    }
+  ],
+  "steps": [
+    {
+      "name": "create-empty-env",
+      "exit_code": 0,
+      "seconds": 4.02,
+      "log": "create-empty-env.log"
+    }
+  ],
+  "model_calls": 0,
+  "paid_calls": 0,
+  "human_reviewed": 0,
+  "status": "failed",
+  "joint_product_source_identity": "3219cc178e7f207d352566aa71461f16e8fa76b1e5c353213b380035c500e775",
+  "error_type": "TimeoutExpired",
+  "detail": "Command '['/root/autodl-tmp/study/job-agent-v3/output/rag-round3-20261023/f5-verify-linux-v1/venv/bin/python', '-m', 'pip', 'install', '--index-url', 'https://pypi.org/simple', '--timeout', '25', '--retries', '1', '-c', '/root/autodl-tmp/study/job-agent-v3/output/rag-round3-20261023/f5-verify-linux-v1/source/docs/evaluation/expansion/requirements-ci-review-linux-20261023.txt', '.[dev,workbench]']' timed out after 359.99996849149466 seconds"
+}

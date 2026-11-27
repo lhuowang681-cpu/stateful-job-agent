@@ -1,11 +1,19 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import re
+from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable, Sequence
 
-from job_agent.memory.contracts import DEFAULT_USER_STATE_PATH, UserState
+from job_agent.memory.contracts import (
+    DEFAULT_USER_STATE_PATH,
+    MemoryRecord,
+    MemorySource,
+    PreferenceUpdateResult,
+    UserState,
+)
 
 
 class UserStateVersionError(ValueError):
@@ -24,8 +32,14 @@ _CREDENTIAL_PATTERN = re.compile(
 class UserStateStore:
     """Atomic, fresh-read JSON store with an explicit user namespace."""
 
-    def __init__(self, path: Path | str = DEFAULT_USER_STATE_PATH) -> None:
+    def __init__(
+        self,
+        path: Path | str = DEFAULT_USER_STATE_PATH,
+        *,
+        now: Callable[[], datetime] = lambda: datetime.now(UTC),
+    ) -> None:
         self.path = Path(path)
+        self._now = now
 
     def load(self, *, user_id: str) -> UserState:
         users = self._read_users()
@@ -68,6 +82,116 @@ class UserStateStore:
             return
         self._write_users(users)
 
+    def update_job_location_preference(
+        self,
+        *,
+        user_id: str,
+        add_acceptable_cities: Sequence[str] = (),
+        replace_preferred_city: str | None = None,
+        statement: str,
+        idempotency_key: str,
+    ) -> PreferenceUpdateResult:
+        statement = statement.strip()
+        idempotency_key = idempotency_key.strip()
+        if not statement or not idempotency_key:
+            raise ValueError("statement and idempotency_key are required")
+        current = self.load(user_id=user_id)
+        prior_attempt = next(
+            (
+                record
+                for record in current.memories
+                if record.idempotency_key == idempotency_key
+            ),
+            None,
+        )
+        if prior_attempt is not None:
+            return PreferenceUpdateResult(
+                state=current,
+                memory=prior_attempt,
+                superseded_memory_id=prior_attempt.supersedes_memory_id,
+                changed=False,
+            )
+
+        preferred = (
+            replace_preferred_city.strip()
+            if isinstance(replace_preferred_city, str)
+            else str(current.preferences.get("preferred_city", "")).strip()
+        )
+        acceptable = _normalized_cities(
+            current.preferences.get("acceptable_cities", []),
+            add_acceptable_cities,
+        )
+        acceptable = [city for city in acceptable if city != preferred]
+        if not preferred and not acceptable:
+            raise ValueError("location update must contain a preferred or acceptable city")
+
+        timestamp = self._now().isoformat()
+        active = [
+            record
+            for record in current.memories
+            if record.kind == "preference"
+            and record.key == "job_location"
+            and record.superseded_by_memory_id is None
+        ]
+        previous = active[-1] if active else None
+        digest = hashlib.sha256(
+            f"{user_id}\x1fjob_location\x1f{idempotency_key}".encode("utf-8")
+        ).hexdigest()[:24]
+        memory_id = f"memory-{digest}"
+        updated_memories = [
+            (
+                record.model_copy(
+                    update={
+                        "superseded_by_memory_id": memory_id,
+                        "superseded_at": timestamp,
+                        "updated_at": timestamp,
+                    }
+                )
+                if previous is not None and record.memory_id == previous.memory_id
+                else record
+            )
+            for record in current.memories
+        ]
+        record = MemoryRecord(
+            memory_id=memory_id,
+            user_id=user_id,
+            kind="preference",
+            key="job_location",
+            value={
+                "preferred_city": preferred or None,
+                "acceptable_cities": acceptable,
+            },
+            content=statement,
+            source=MemorySource.USER_STATED,
+            confidence=1.0,
+            created_at=timestamp,
+            updated_at=timestamp,
+            supersedes_memory_id=(previous.memory_id if previous is not None else None),
+            idempotency_key=idempotency_key,
+        )
+        preferences = dict(current.preferences)
+        if preferred:
+            preferences["preferred_city"] = preferred
+        preferences["acceptable_cities"] = acceptable
+        state = current.model_copy(
+            update={
+                "preferences": preferences,
+                "memories": [*updated_memories, record],
+                "meta": {**current.meta, "updated_at": timestamp},
+            }
+        )
+        saved = self.save(
+            user_id=user_id,
+            state=state,
+            expected_version=current.version,
+        )
+        return PreferenceUpdateResult(
+            state=saved,
+            memory=record,
+            superseded_memory_id=(previous.memory_id if previous is not None else None),
+            changed=True,
+        )
+
     def _read_users(self) -> dict[str, dict[str, Any]]:
         if not self.path.exists():
             return {}
@@ -97,3 +221,16 @@ class UserStateStore:
             if temp_path.exists():
                 temp_path.unlink()
         json.loads(self.path.read_text(encoding="utf-8"))
+
+
+def _normalized_cities(*values: Any) -> list[str]:
+    result: list[str] = []
+    for value in values:
+        items = value if isinstance(value, (list, tuple, set)) else [value]
+        for item in items:
+            if not isinstance(item, str):
+                continue
+            city = item.strip()
+            if city and city not in result:
+                result.append(city)
+    return result

@@ -1,0 +1,92 @@
+{
+  "status": "passed",
+  "source_files": 335,
+  "portable_source_hash": "8712337b5e852877dae6cd4ec68c8cceba8e5b2508687991e859050b61fdb0ba",
+  "all_current_src_bytes_match_both_real_model_runs": true,
+  "rewrite_business_status": "awaiting_approval",
+  "noncopy_text": true,
+  "claim_gate_acceptable": true,
+  "explicit_acceptance": true,
+  "learning_business_outcomes": [
+    "complete_http_learning_loop",
+    "source_observation_created",
+    "source_observation_created",
+    "source_observation_created",
+    "source_observation_created"
+  ],
+  "launcher_configuration": {
+    "timeout_s": 30,
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-flash",
+    "thinking": "disabled"
+  },
+  "human_quality": null,
+  "new_real_calls": 16,
+  "real_fixed_reference_learning": "r5-deepseek-fixed-reference-learning-v2.json",
+  "fixed_reference_source": "question-checkpoint",
+  "fixed_reference_outcomes": [
+    {
+      "input_category": "correct",
+      "actual_assessments": [
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "covered_ids": [
+        "p0",
+        "p1",
+        "p2"
+      ],
+      "claim_needs_evidence": false,
+      "business_outcome": "complete_http_learning_loop"
+    },
+    {
+      "input_category": "partial",
+      "actual_assessments": [
+        "correct",
+        "incorrect",
+        "incorrect"
+      ],
+      "covered_ids": [
+        "p0"
+      ],
+      "claim_needs_evidence": false,
+      "business_outcome": "source_observation_created"
+    },
+    {
+      "input_category": "incorrect",
+      "actual_assessments": [
+        "incorrect",
+        "incorrect",
+        "incorrect"
+      ],
+      "covered_ids": [],
+      "claim_needs_evidence": true,
+      "business_outcome": "source_observation_created"
+    },
+    {
+      "input_category": "dont_know",
+      "actual_assessments": [
+        "uncertain",
+        "uncertain",
+        "uncertain"
+      ],
+      "covered_ids": [],
+      "claim_needs_evidence": false,
+      "business_outcome": "source_observation_created"
+    },
+    {
+      "input_category": "insufficient_evidence",
+      "actual_assessments": [
+        "uncertain",
+        "uncertain",
+        "uncertain"
+      ],
+      "covered_ids": [],
+      "claim_needs_evidence": true,
+      "business_outcome": "source_observation_created"
+    }
+  ],
+  "all_current_src_bytes_match_real_model_runs": true,
+  "additional_real_calls": 24
+}

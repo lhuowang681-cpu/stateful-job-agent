@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/scripts/expansion_research.py", line 47, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/scripts/expansion_research.py", line 22, in main
+    runtime=RetrievalRuntime.from_env({'JOB_AGENT_WORKSPACE_EMBEDDING':'local_qwen',
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/retrieval_runtime.py", line 76, in from_env
+    revision = local_model_revision(path.resolve())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/retrieval_runtime.py", line 20, in local_model_revision
+    raise ValueError('local_embedding_model_incomplete')
+ValueError: local_embedding_model_incomplete

@@ -1,0 +1,288 @@
+{
+  "scope": "post-implementation exact-tag diagnostic; no human semantic labels",
+  "corpus_sha256": "a66e0b4bfad176f301e18419705ff4628408f91626f8dbd80cf472229917e8a4",
+  "queries": [
+    {
+      "id": "question-checkpoint-0",
+      "query": "LangGraph",
+      "gold_questions": [
+        "question-checkpoint"
+      ]
+    },
+    {
+      "id": "question-checkpoint-1",
+      "query": "checkpoint",
+      "gold_questions": [
+        "question-checkpoint"
+      ]
+    },
+    {
+      "id": "question-checkpoint-2",
+      "query": "state",
+      "gold_questions": [
+        "question-checkpoint"
+      ]
+    },
+    {
+      "id": "question-checkpoint-3",
+      "query": "memory",
+      "gold_questions": [
+        "question-checkpoint"
+      ]
+    },
+    {
+      "id": "question-idempotency-0",
+      "query": "幂等",
+      "gold_questions": [
+        "question-idempotency"
+      ]
+    },
+    {
+      "id": "question-idempotency-1",
+      "query": "idempotency",
+      "gold_questions": [
+        "question-idempotency"
+      ]
+    },
+    {
+      "id": "question-idempotency-2",
+      "query": "request_id",
+      "gold_questions": [
+        "question-idempotency"
+      ]
+    },
+    {
+      "id": "question-idempotency-3",
+      "query": "回执",
+      "gold_questions": [
+        "question-idempotency"
+      ]
+    },
+    {
+      "id": "question-asyncio-0",
+      "query": "asyncio",
+      "gold_questions": [
+        "question-asyncio"
+      ]
+    },
+    {
+      "id": "question-asyncio-1",
+      "query": "Python",
+      "gold_questions": [
+        "question-asyncio",
+        "question-ast"
+      ]
+    },
+    {
+      "id": "question-asyncio-2",
+      "query": "协程",
+      "gold_questions": [
+        "question-asyncio"
+      ]
+    },
+    {
+      "id": "question-asyncio-3",
+      "query": "并发",
+      "gold_questions": [
+        "question-asyncio"
+      ]
+    },
+    {
+      "id": "question-schema-0",
+      "query": "Pydantic",
+      "gold_questions": [
+        "question-schema"
+      ]
+    },
+    {
+      "id": "question-schema-1",
+      "query": "schema",
+      "gold_questions": [
+        "question-schema"
+      ]
+    },
+    {
+      "id": "question-schema-2",
+      "query": "JSON",
+      "gold_questions": [
+        "question-schema"
+      ]
+    },
+    {
+      "id": "question-schema-3",
+      "query": "校验",
+      "gold_questions": [
+        "question-schema"
+      ]
+    },
+    {
+      "id": "question-rrf-0",
+      "query": "BM25",
+      "gold_questions": [
+        "question-rrf"
+      ]
+    },
+    {
+      "id": "question-rrf-1",
+      "query": "RRF",
+      "gold_questions": [
+        "question-rrf"
+      ]
+    },
+    {
+      "id": "question-rrf-2",
+      "query": "hybrid",
+      "gold_questions": [
+        "question-rrf"
+      ]
+    },
+    {
+      "id": "question-rrf-3",
+      "query": "检索",
+      "gold_questions": [
+        "question-rrf"
+      ]
+    },
+    {
+      "id": "question-ast-0",
+      "query": "AST",
+      "gold_questions": [
+        "question-ast"
+      ]
+    },
+    {
+      "id": "question-ast-1",
+      "query": "Python",
+      "gold_questions": [
+        "question-asyncio",
+        "question-ast"
+      ]
+    },
+    {
+      "id": "question-ast-2",
+      "query": "符号",
+      "gold_questions": [
+        "question-ast"
+      ]
+    },
+    {
+      "id": "question-ast-3",
+      "query": "静态",
+      "gold_questions": [
+        "question-ast"
+      ]
+    },
+    {
+      "id": "question-tree-sitter-0",
+      "query": "Tree-sitter",
+      "gold_questions": [
+        "question-tree-sitter"
+      ]
+    },
+    {
+      "id": "question-tree-sitter-1",
+      "query": "TypeScript",
+      "gold_questions": [
+        "question-tree-sitter"
+      ]
+    },
+    {
+      "id": "question-tree-sitter-2",
+      "query": "JavaScript",
+      "gold_questions": [
+        "question-tree-sitter"
+      ]
+    },
+    {
+      "id": "question-tree-sitter-3",
+      "query": "TSX",
+      "gold_questions": [
+        "question-tree-sitter"
+      ]
+    },
+    {
+      "id": "question-transaction-0",
+      "query": "PostgreSQL",
+      "gold_questions": [
+        "question-transaction"
+      ]
+    },
+    {
+      "id": "question-transaction-1",
+      "query": "事务",
+      "gold_questions": [
+        "question-transaction"
+      ]
+    },
+    {
+      "id": "question-transaction-2",
+      "query": "Outbox",
+      "gold_questions": [
+        "question-transaction"
+      ]
+    },
+    {
+      "id": "question-transaction-3",
+      "query": "原子",
+      "gold_questions": [
+        "question-transaction"
+      ]
+    },
+    {
+      "id": "question-provenance-0",
+      "query": "RAG",
+      "gold_questions": [
+        "question-provenance"
+      ]
+    },
+    {
+      "id": "question-provenance-1",
+      "query": "证据",
+      "gold_questions": [
+        "question-provenance"
+      ]
+    },
+    {
+      "id": "question-provenance-2",
+      "query": "来源",
+      "gold_questions": [
+        "question-provenance"
+      ]
+    },
+    {
+      "id": "question-provenance-3",
+      "query": "支持",
+      "gold_questions": [
+        "question-provenance"
+      ]
+    },
+    {
+      "id": "question-citation-0",
+      "query": "SHA256",
+      "gold_questions": [
+        "question-citation"
+      ]
+    },
+    {
+      "id": "question-citation-1",
+      "query": "引用",
+      "gold_questions": [
+        "question-citation"
+      ]
+    },
+    {
+      "id": "question-citation-2",
+      "query": "commit",
+      "gold_questions": [
+        "question-citation"
+      ]
+    },
+    {
+      "id": "question-citation-3",
+      "query": "快照",
+      "gold_questions": [
+        "question-citation"
+      ]
+    }
+  ]
+}

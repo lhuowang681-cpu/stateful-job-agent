@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="14" time="7.136" timestamp="2026-10-22T23:53:44.460997+08:00" hostname="autodl-container-81de49abb0-0a662bf5"><testcase classname="tests.test_v3_research_replay" name="test_fixed_scope_new_directory_replay_uses_stored_vectors_and_full_ranked_citations" time="2.951" /><testcase classname="tests.test_v3_research_replay" name="test_offline_bm25_requires_no_encoder_and_preserves_corpus_scope" time="0.330" /><testcase classname="tests.test_v3_research_replay" name="test_heldout_requires_explicit_intent_and_cannot_be_silently_scored_twice" time="1.525" /><testcase classname="tests.test_v3_research_replay" name="test_changed_artifact_fails_before_replay[dataset.json]" time="0.150" /><testcase classname="tests.test_v3_research_replay" name="test_changed_artifact_fails_before_replay[dev.sqlite]" time="0.152" /><testcase classname="tests.test_v3_research_replay" name="test_changed_artifact_fails_before_replay[test-public-vectors.json]" time="0.158" /><testcase classname="tests.test_v3_research_replay" name="test_source_identity_drift_is_explicit_and_offline_candidate_can_be_compared" time="0.172" /><testcase classname="tests.test_v3_research_replay" name="test_artifact_paths_cannot_escape_bundle[../private.sqlite]" time="0.001" /><testcase classname="tests.test_v3_research_replay" name="test_artifact_paths_cannot_escape_bundle[/etc/passwd]" time="0.001" /><testcase classname="tests.test_v3_research_replay" name="test_artifact_paths_cannot_escape_bundle[C:\\private.sqlite]" time="0.001" /><testcase classname="tests.test_v3_research_replay" name="test_user_resume_data_is_rejected_even_when_research_db_hash_is_resealed" time="0.163" /><testcase classname="tests.test_v3_research_replay" name="test_missing_rows_and_failed_queries_cannot_improve_metrics_by_disappearing" time="0.166" /><testcase classname="tests.test_v3_research_replay" name="test_gate_is_measured_dev_only_positive_and_refuses_regression_and_empty_coverage" time="0.327"><failure message="ValueError: gate_positive_multi_baseline_required">bundle = PosixPath('/tmp/pytest-of-root/pytest-213/test_gate_is_measured_dev_only0/bundle')
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-213/test_gate_is_measured_dev_only0')
+
+    def test_gate_is_measured_dev_only_positive_and_refuses_regression_and_empty_coverage(bundle,tmp_path):
+        run=evaluate(ROOT,bundle,tmp_path/'baseline',variants=['A_bm25'],repeats=1)
+&gt;       gate=freeze_gate(run,tmp_path/'gate.json')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_v3_research_replay.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+run = {'schema_version': 'eval-run-1', 'run_id': 'eval-507f5010cbf4405984feabce5f6ee40a', 'split': 'dev', 'heldout_scored': False, ...}
+output = PosixPath('/tmp/pytest-of-root/pytest-213/test_gate_is_measured_dev_only0/gate.json')
+
+    def freeze_gate(run,output):
+        if run['split']!='dev' or run['status']!='completed' or run['variants']!=['A_bm25'] or run['heldout_scored']:
+            raise ValueError('gate_requires_successful_bm25_dev_baseline')
+        s=run['summary']['A_bm25'];floors={}
+        if s['cases']&lt;1 or s['answerable_cases']&lt;1 or s['citation_count']&lt;1 or s['invalid_citations'] or s['failed_attempts']:
+            raise ValueError('gate_baseline_coverage_invalid')
+        for name in METRICS:
+            value=s['metrics_at_k']['5'][name];n=value['cases'];avg=value['mean']
+            if not n or avg is None or avg&lt;=1/n:raise ValueError('gate_positive_baseline_required:'+name)
+            floors[name]=avg-1/n
+        multi=s['multi_evidence_sufficient']
+&gt;       if not multi['cases'] or multi['mean'] is None or multi['mean']&lt;=1/multi['cases']:raise ValueError('gate_positive_multi_baseline_required')
+                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       ValueError: gate_positive_multi_baseline_required
+
+src/job_agent/knowledge/research_contract.py:310: ValueError</failure></testcase><testcase classname="tests.test_v3_research_replay" name="test_replay_rejects_missing_reference_case_after_rehash" time="0.507" /></testsuite></testsuites>

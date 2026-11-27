@@ -1,0 +1,76 @@
+{
+  "checks": [],
+  "data": "CC0 synthetic only",
+  "demo": "project-interview",
+  "error_type": "AssertionError",
+  "human_quality": null,
+  "model": "disabled; rules only",
+  "source_identity": "593c54ea751bf9d7a65cc7ff7592ec12a74a95184423349773c891bc50576bb2",
+  "status": "failed",
+  "traces": [
+    {
+      "events": [
+        {
+          "approval_hash": null,
+          "approval_status": "absent",
+          "attempt": 1,
+          "config_identity": null,
+          "correlation_id": null,
+          "cost": null,
+          "duration_ms": null,
+          "ended_at_utc": "2026-10-22T16:08:07.368708+00:00",
+          "error_code_id": null,
+          "evidence_ids": [],
+          "fallback_used": null,
+          "index_identity": null,
+          "input_hash": null,
+          "input_tokens": null,
+          "kind": "run",
+          "material_hash": "5ae7173170e4e722acef3f04aafaa24226b3f2969fa6a9f8b3c1fc7aa0cefd48",
+          "model_identity_hash": null,
+          "output_hash": null,
+          "output_tokens": null,
+          "parent_span_id": null,
+          "phase": "snapshot",
+          "provider_calls": null,
+          "recorded_at_utc": null,
+          "revision": null,
+          "role_id": null,
+          "run_id": "id-454cf60e8d46a527ea8fca30612fe646ec42a2c0d3050d2c810d665d2e7bd2a9",
+          "schema_version": "job-agent-trace-1",
+          "seq": 0,
+          "source_seq": 0,
+          "source_stream": "task_snapshot",
+          "span_id": "id-454cf60e8d46a527ea8fca30612fe646ec42a2c0d3050d2c810d665d2e7bd2a9-root",
+          "started_at_utc": "2026-10-22T16:08:07.260504+00:00",
+          "status": "SUCCEEDED",
+          "time_quality": "recorded",
+          "tool_id": null,
+          "trace_id": "id-66871a6fdfeed672fbeb3374cd4a720b2efd917b0ba7b07afc0252f57fd3f70f",
+          "usage_missing_reason": "index_task_has_no_generation_usage",
+          "usage_scope": "not_applicable"
+        }
+      ],
+      "limitations": [
+        "snapshot_only_no_event_history"
+      ],
+      "ordering": "seq is export order; source_stream/source_seq preserve local order; cross-stream wall-clock order unknown",
+      "privacy": "IDs and hashes only; source text, answers, rubrics, prompts, credentials excluded",
+      "replay_policy": "read_only_inspection; no tools, provider calls, approvals or worker actions",
+      "schema_version": "job-agent-trace-export-1",
+      "task": "index",
+      "usage": {
+        "basis": "run_aggregate_only_children_excluded",
+        "child_input_tokens_observed": 0,
+        "child_output_tokens_observed": 0,
+        "child_usage_complete": false,
+        "cost": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "provider_calls": null,
+        "recorded_call_spans": 0
+      }
+    }
+  ],
+  "transport": "real_loopback_http"
+}

@@ -1,0 +1,159 @@
+{
+  "milestone": "M2 local import/parse/review/version editor, not full integrated job-search product",
+  "date": "2026-10-20",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "node": "v24.19.0",
+    "packages": {
+      "pytest": "9.1.1",
+      "fastapi": "0.115.14",
+      "pydantic": "2.14.0",
+      "pypdf": "6.10.0",
+      "python-docx": "1.2.0",
+      "httpx": "0.27.2",
+      "uvicorn": "0.54.0"
+    },
+    "frontend": {
+      "react": "19.3.1",
+      "react-dom": "19.3.1",
+      "vite": "8.3.4"
+    }
+  },
+  "backend_runs": [
+    {
+      "name": "upgrade-m2-before",
+      "counts": {
+        "tests": 40,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 40
+      }
+    },
+    {
+      "name": "upgrade-m2-tests",
+      "counts": {
+        "tests": 66,
+        "failures": 0,
+        "errors": 2,
+        "skipped": 0,
+        "passed": 64
+      },
+      "issue": "Windows PYTEST_CURRENT_TEST exceeded 32767 characters due to automatic bytes parameter ID; stable short IDs fixed it, same input and assertions.",
+      "raw_artifact_not_embedded": "Oversized synthetic parameter strings; original XML/log retained under work/."
+    },
+    {
+      "name": "upgrade-m2-tests-fixed",
+      "counts": {
+        "tests": 66,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 66
+      }
+    },
+    {
+      "name": "upgrade-m2-regression",
+      "counts": {
+        "tests": 153,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 153
+      }
+    },
+    {
+      "name": "upgrade-m2-final-demo",
+      "counts": {
+        "tests": 154,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 154
+      }
+    }
+  ],
+  "new_m2_backend_cases": 38,
+  "frontend_tests": {
+    "passed": 4,
+    "failed": 0
+  },
+  "build": "success; see frontend-build.log",
+  "npm_official_audit_vulnerabilities": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "npm_mirror_audit": "failed: mirror security audit API not implemented; official registry retried with unchanged lockfile",
+  "browser_manual_checks": [
+    "Synthetic pasted resume -> local draft, missing phone, provider calls 0",
+    "Manual addition -> save -> confirm v1 -> edit v2 -> restore v1 as unconfirmed v3",
+    "DOCX chooser upload -> missing name remains empty -> save rejected -> manual name -> save",
+    "Reload requires authentication and then persisted versions load",
+    "Source manager shows user-statement vs original and disables deletion of referenced sources",
+    "1280px desktop and 390px narrow view, no horizontal overflow; Unicode quote highlighted",
+    "Final delivered synthetic demo launcher repeated major version flow, model disabled and explicit temporary-data banner"
+  ],
+  "browser_log_check": {
+    "warn": 0,
+    "error": 0,
+    "scope": "captured logs in tested local tab; not a claim about every possible scenario"
+  },
+  "browser_viewport_restored": true,
+  "local_demo_readback": {
+    "delivered_demo_factory_running": true,
+    "demo_flag": true,
+    "model_disabled": true,
+    "three_versions_retained": true,
+    "first_version_confirmed": true,
+    "restore_is_new_unconfirmed_version": true,
+    "restore_content_matches_first": true
+  },
+  "demo_service_left_running": {
+    "url": "http://127.0.0.1:8012/",
+    "bind": "127.0.0.1",
+    "scope": "synthetic, temporary DB, no model; public demo access code in script"
+  },
+  "frozen_eval_files_compared": 25,
+  "frozen_eval_mismatches": [],
+  "not_run": [
+    "Live model/embedding/semantic benchmark",
+    "OCR/ES/reranker/new PDF generation",
+    "New product PostgreSQL/Redis Worker integration",
+    "Full repository suite with real external services",
+    "Production authentication/load/security isolation"
+  ],
+  "warning": "Existing Starlette/AnyIO deprecation warning retained.",
+  "tested_source_hashes": {
+    "frontend/package-lock.json": "12a36f36fd6053c52b73bf8ff20cc2fa9135bc03310738599b161e33fe149976",
+    "frontend/src/main.jsx": "e31602b9a1b3546266d3dbd0eecf60ef62d3713f0766d5e21addad411d1e6bae",
+    "frontend/src/model.js": "8ae51fc3b7b62e2cefb326c2364cc318612a7bedc5183dcf9d7b7a65e7e1334b",
+    "frontend/src/model.test.js": "cbf0d29dcca6a3ad6ee0aad21808ad343f87680d359fc65cff59dcc3387eb705",
+    "frontend/src/style.css": "25170ee6146f3416851f20880be578cdd0723d7aa22d7356ff4f76722f72af00",
+    "scripts/demo_resume_workbench.py": "c218a03eaa71d89e12a5380fe96f719dd17de7ac983031a6de76e1e079ab9925",
+    "src/job_agent/resume_workspace/__init__.py": "93846f207277048151b87594c08f852e42da80a8e38d2383c04f55bc14f3669e",
+    "src/job_agent/resume_workspace/api.py": "d7dd9daaa14106437e217fcea035fca62f97b8d030aaf7768ab275b81923475e",
+    "src/job_agent/resume_workspace/contracts.py": "82dbef9d7e9da22aded0543de04948e27c60d975d1e7fa5784f5fa10eb669992",
+    "src/job_agent/resume_workspace/fields.py": "02444ddf714021b93366b7c321de48a658c17b9b178ee6d3edee15383ceb817d",
+    "src/job_agent/resume_workspace/ingestion.py": "3cba0f9f28612ace76fc3c69024d3c01107a4132cd0faaefd7edc94c703da020",
+    "src/job_agent/resume_workspace/main.py": "18ee155ef675393d8385949a5986940bfb5d82b09c08a99858cb17df5f0e5666",
+    "src/job_agent/resume_workspace/parsing.py": "e2431e29c3f8fb6d2d6b3b2279f1edae5093dc80c563c5b2d7eb34a826a3c1f8",
+    "src/job_agent/resume_workspace/parsing_contracts.py": "77038eef6ca8e3c85fe85489ec87d23ba7cb246634465790f295f71ba732136d",
+    "src/job_agent/resume_workspace/repository.py": "e28d316a7129fdd4e444b13802035880c11bb3f7e3c9790c0c6399343777e2a4",
+    "tests/test_resume_import.py": "d0d3850bdc5ecf2ee5b7fe57e280cead03aa67de2e5273c67ee4df42238ecaa9"
+  },
+  "commands": {
+    "backend_from_task_root": ".\\work\\run_audit_tests.ps1 -Name upgrade-m2-final-demo -Files tests/test_resume_import.py,tests/test_resume_workspace.py,tests/test_source_audit_regressions.py,tests/test_career_store.py,tests/test_application_assistant_evaluation.py,tests/test_backend_service.py,tests/test_evidence_source_store.py,tests/test_evidence_mapping_v2.py,tests/test_evidence_projections.py,tests/test_evidence_requirement_analyzer.py,tests/test_knowledge_ingestion.py",
+    "frontend": [
+      "npm install --ignore-scripts --no-fund",
+      "npm test",
+      "npm run build",
+      "npm audit --json --registry=https://registry.npmjs.org"
+    ],
+    "delivered_demo": "python scripts/demo_resume_workbench.py"
+  }
+}

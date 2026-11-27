@@ -1,0 +1,91 @@
+{
+  "analysis": {
+    "evidence_backed_requirements": [
+      "候选人实现过 Agent Runtime 和 Tool Calling。",
+      "候选人实现过 RAG 或语义检索。",
+      "候选人做过可恢复的异步 Agent 后端。"
+    ],
+    "gaps": [
+      "候选人具备 Kubernetes 生产集群运维经验。"
+    ],
+    "preference_fit": {
+      "city": true,
+      "job_type": true,
+      "role": true
+    }
+  },
+  "application": {
+    "current_stage": "first_interview",
+    "history": [
+      "to_apply",
+      "applied",
+      "resume_screen",
+      "first_interview"
+    ]
+  },
+  "interview_prep": {
+    "evidence_backed_questions": [
+      "Agent Runtime / Tool Calling",
+      "MCP integration",
+      "RAG retrieval",
+      "Async backend / recovery"
+    ],
+    "risks": [
+      "候选人具备 Kubernetes 生产集群运维经验。"
+    ],
+    "technical_review": [
+      "Tool Calling / Runtime governance",
+      "RAG retrieval / evaluation",
+      "async backend reliability",
+      "Kubernetes fundamentals"
+    ]
+  },
+  "job": {
+    "company": "Example AI",
+    "job_id": "synthetic-hangzhou-agent-intern",
+    "source": "synthetic-jd",
+    "title": "SYNTHETIC JD — 杭州 Agent 实习岗位"
+  },
+  "provenance": {
+    "document_ids": [
+      "real-agent-runtime-governance",
+      "real-mcp-integration",
+      "real-dense-knowledge-retrieval",
+      "real-backend-reliability"
+    ],
+    "question_count": 4,
+    "source_spans_valid": true
+  },
+  "runtime": {
+    "analysis_mcp": {
+      "actions": 4,
+      "outcome": "ok",
+      "tool": "career.query_candidate_evidence"
+    },
+    "interview_prep_mcp": {
+      "actions": 3,
+      "outcome": "ok",
+      "tool": "career.query_candidate_evidence"
+    },
+    "lifecycle_read": {
+      "actions": 4,
+      "outcome": "ok",
+      "tool": "ops.read_tracker"
+    },
+    "lifecycle_write": {
+      "actions": 3,
+      "outcome": "ok",
+      "tool": "ops.apply_transition"
+    },
+    "tracking_write": {
+      "actions": 1,
+      "outcome": "ok",
+      "tool": "application.record"
+    }
+  },
+  "user_profile": {
+    "job_type": "internship",
+    "preferred_city": "杭州",
+    "target_role": "Agent / 大模型应用"
+  }
+}

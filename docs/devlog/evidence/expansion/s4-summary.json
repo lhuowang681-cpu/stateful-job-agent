@@ -1,0 +1,89 @@
+{
+  "phase": "S4",
+  "recorded_at_utc": "2026-10-22T12:42:01.415895+00:00",
+  "verified_scope": "engineering_contracts_and_real_local_model_candidate_diagnostics",
+  "latest_source_identity": "9d5b32c054309bccc65ea6ad99cc194f2c959be1298adf0abb75caa154ff9fef",
+  "formal_and_first_http_source_identity": "5869fa62ee11ef62f98839c18eefc9874affc6970ae0684063c785417c80f377",
+  "latest_related_tests": {
+    "passed": 435,
+    "failed": 0,
+    "skipped": 0,
+    "seconds_pytest_summary": 31.45,
+    "artifact": "s4-related-v6.xml"
+  },
+  "formal": {
+    "source_identity": "5869fa62ee11ef62f98839c18eefc9874affc6970ae0684063c785417c80f377",
+    "data_hash": "59ca39cdcf2a59769428bb85860c6b828aae4ec84e0bbbbe7e5d2e2507618c41",
+    "status": "completed",
+    "rows": 108,
+    "dispatched_calls": 239,
+    "total_ms": 686973.56,
+    "model_load_and_hash_ms": 29784.33,
+    "human_reviewed": false,
+    "semantic_quality": null,
+    "variants": {
+      "writer_once": {
+        "rows": 36,
+        "statuses": {
+          "needs_input": 36
+        },
+        "calls": 36,
+        "input_tokens": 31683,
+        "output_tokens": 4007,
+        "first_draft_original_retained": 15,
+        "first_draft_hard_violations": 21,
+        "p50_row_elapsed_ms": 2658.97
+      },
+      "self_revision": {
+        "rows": 36,
+        "statuses": {
+          "needs_input": 19,
+          "no_progress": 17
+        },
+        "calls": 103,
+        "input_tokens": 117789,
+        "output_tokens": 11461,
+        "first_draft_original_retained": 15,
+        "first_draft_hard_violations": 21,
+        "p50_row_elapsed_ms": 7353.04
+      },
+      "writer_reviewer": {
+        "rows": 36,
+        "statuses": {
+          "needs_input": 20,
+          "no_progress": 16
+        },
+        "calls": 100,
+        "input_tokens": 106926,
+        "output_tokens": 10667,
+        "first_draft_original_retained": 15,
+        "first_draft_hard_violations": 21,
+        "p50_row_elapsed_ms": 6302.52
+      }
+    },
+    "same_first_prompt_seed_output_groups": 36,
+    "groups": 36
+  },
+  "raw_ablation_calls": 6,
+  "raw_ablation_scope": "grounding natural-language instruction only; schema and product gates stay enabled",
+  "human_reviewed": false,
+  "generation_quality_gain": "not_observed",
+  "semantic_quality": null,
+  "default_decision": "retain bounded local rules and human approval; no unsupported switch to multi-role generation",
+  "next": "S5 project/snapshot/index/task repository contracts and single PostgreSQL authority; S1 final retrieval cases/human review and S6-S8 remain",
+  "artifact_hashes": {
+    "s4-collaboration-formal-v1.json": "0c0c7cb9bc373e38c5a1a9062bc224264d10e2d77e050a3e5ecc7c5ea4e27f2c",
+    "s4-collaboration-pilot-v1.json": "b63d2627b30bfb21ca52ac3b2e5cf1f960353663ce3711a291e987a32a46d989",
+    "s4-collaboration-pilot-v2.json": "d3fec9e9c03abc87cf68b3ba42d991865fadbe3b97c307582233e69ffd0d3eb5",
+    "s4-contract-v3.xml": "f1936cbbad3406a1f0e8fe0431f797e1baf0b02e20981ba721eeaf55db521c00",
+    "s4-coordinator-v5.xml": "1f61bdc035d20eaa77f3b24f582ae63c723d76661701c5b4c399353c8b117fce",
+    "s4-fair-summary.json": "e50615bc964e58a024916ada86b6ab5c4adbd65616a23175b8f593ca34f09853",
+    "s4-first-command-error.log": "3de47660dba0ba7b3d9c2b1313e7fa573a99afa560986c4c3f3a5ac1749a29a1",
+    "s4-grounding-ablation-v1.json": "bbef4f5137d72025b020db7dba6e4a9e50cb7b05e6ffd74b7c32c5264ee3b0e4",
+    "s4-http-positive-control-v1.json": "d8e9490813b7680389ce46aba8181733344830b12d26c1ed1999e825ccf59855",
+    "s4-http-real-v1.json": "641c54f9df3ae260cfeb4d0e196bfe78210a871a0b5c3e0d4cf8ac69afb46063",
+    "s4-related-v4.xml": "90b189fadeb92242492e31eb7c927908d555f2ee4e6e75221644a9f8d10b4a7c",
+    "s4-related-v6.xml": "ef98d53b6c39cbefbffc8a74860f5915af2522eae0032a8eb64284da37bcb5dd",
+    "s4-state-v2.xml": "02ead20e4101eb8d98a6500f544a3cb5489c91a4666a1107092d866abd0e8d60"
+  }
+}

@@ -1,0 +1,137 @@
+...............................................................FF....... [  6%]
+......................................................FF..........FFF... [ 12%]
+Timeout (0:01:00)!
+Thread 0x00014648 (most recent call first):
+  File "C:\Users\1\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\selectors.py", line 314 in _select
+  File "C:\Users\1\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\selectors.py", line 323 in select
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\psycopg\waiting.py", line 141 in wait_conn
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\psycopg\connection.py", line 109 in connect
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\tests\test_backend_service_persistence.py", line 105 in repository
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\fixtures.py", line 998 in call_fixture_func
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\fixtures.py", line 1328 in pytest_fixture_setup
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\fixtures.py", line 1232 in execute
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\fixtures.py", line 726 in _get_active_fixturedef
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\fixtures.py", line 630 in getfixturevalue
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\fixtures.py", line 806 in _fillfixtures
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\python.py", line 1710 in setup
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 536 in setup
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 170 in pytest_runtest_setup
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 250 in <lambda>
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 361 in from_call
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 249 in call_and_report
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 132 in runtestprotocol
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 118 in pytest_runtest_protocol
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\main.py", line 408 in pytest_runtestloop
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\main.py", line 384 in _main
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\main.py", line 330 in wrap_session
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\main.py", line 377 in pytest_cmdline_main
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\config\__init__.py", line 229 in _main
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\config\__init__.py", line 253 in _console_main
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pytest\__main__.py", line 9 in <module>
+  File "<frozen runpy>", line 88 in _run_code
+  File "<frozen runpy>", line 198 in _run_module_as_main
+Timeout (0:01:00)!
+Thread 0x00014648 (most recent call first):
+  File "C:\Users\1\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\selectors.py", line 314 in _select
+  File "C:\Users\1\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\selectors.py", line 323 in select
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\psycopg\waiting.py", line 141 in wait_conn
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\psycopg\connection.py", line 109 in connect
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\tests\test_backend_service_persistence.py", line 105 in repository
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\fixtures.py", line 998 in call_fixture_func
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\fixtures.py", line 1328 in pytest_fixture_setup
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\fixtures.py", line 1232 in execute
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\fixtures.py", line 726 in _get_active_fixturedef
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\fixtures.py", line 630 in getfixturevalue
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\fixtures.py", line 806 in _fillfixtures
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\python.py", line 1710 in setup
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 536 in setup
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 170 in pytest_runtest_setup
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 250 in <lambda>
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 361 in from_call
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 249 in call_and_report
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 132 in runtestprotocol
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 118 in pytest_runtest_protocol
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\main.py", line 408 in pytest_runtestloop
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\main.py", line 384 in _main
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\main.py", line 330 in wrap_session
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\main.py", line 377 in pytest_cmdline_main
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\config\__init__.py", line 229 in _main
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\config\__init__.py", line 253 in _console_main
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pytest\__main__.py", line 9 in <module>
+  File "<frozen runpy>", line 88 in _run_code
+  File "<frozen runpy>", line 198 in _run_module_as_main
+Timeout (0:01:00)!
+Thread 0x00014648 (most recent call first):
+  File "C:\Users\1\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\selectors.py", line 314 in _select
+  File "C:\Users\1\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\selectors.py", line 323 in select
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\psycopg\waiting.py", line 141 in wait_conn
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\psycopg\connection.py", line 109 in connect
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\tests\test_backend_service_persistence.py", line 105 in repository
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\fixtures.py", line 998 in call_fixture_func
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\fixtures.py", line 1328 in pytest_fixture_setup
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\fixtures.py", line 1232 in execute
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\fixtures.py", line 726 in _get_active_fixturedef
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\fixtures.py", line 630 in getfixturevalue
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\fixtures.py", line 806 in _fillfixtures
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\python.py", line 1710 in setup
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 536 in setup
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 170 in pytest_runtest_setup
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 250 in <lambda>
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 361 in from_call
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 249 in call_and_report
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 132 in runtestprotocol
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\runner.py", line 118 in pytest_runtest_protocol
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\main.py", line 408 in pytest_runtestloop
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\main.py", line 384 in _main
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\main.py", line 330 in wrap_session
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\main.py", line 377 in pytest_cmdline_main
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_execution.py", line 147 in _multicall
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_manager.py", line 183 in _hookexec
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pluggy\_caller.py", line 197 in __call__
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\config\__init__.py", line 229 in _main
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\_pytest\config\__init__.py", line 253 in _console_main
+  File "C:\Users\1\Desktop\\u5c31\u4e1aagent\job-agent-v3\.venv-review\Lib\site-packages\pytest\__main__.py", line 9 in <module>
+  File "<frozen runpy>", line 88 in _run_code
+  File "<frozen runpy>", line 198 in _run_module_as_main

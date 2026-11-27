@@ -1,0 +1,55 @@
+Looking in indexes: http://mirrors.aliyun.com/pypi/simple
+Collecting streamlit<2,>=1.37
+  Downloading http://mirrors.aliyun.com/pypi/packages/4a/eb/f12286b0b5c30e3fd8e45ca47f05a6cd14cb6e583d04ef4409974a17d371/streamlit-1.66.1-py3-none-any.whl (10.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.4/10.4 MB 140.4 kB/s eta 0:00:00
+Collecting altair!=5.4.0,!=5.4.1,<7,>=5.0.0 (from streamlit<2,>=1.37)
+  Downloading http://mirrors.aliyun.com/pypi/packages/ca/b9/10a8bb13a0462e0bc4e02c0b7b8237dc24ab590f5bb4be94bec5e8f1d532/altair-6.3.0-py3-none-any.whl (797 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 797.2/797.2 kB 137.7 kB/s eta 0:00:00
+Requirement already satisfied: click<9,>=7.0 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from streamlit<2,>=1.37) (8.4.2)
+Requirement already satisfied: numpy<3,>=1.25.0 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from streamlit<2,>=1.37) (2.4.6)
+Requirement already satisfied: packaging>=20 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from streamlit<2,>=1.37) (26.3)
+Collecting pandas<4,>=1.5.3 (from streamlit<2,>=1.37)
+  Downloading http://mirrors.aliyun.com/pypi/packages/63/be/dfb6cc9329d0bbe76dadda8a1113d026bb996ec76c509221368dc68349f4/pandas-3.0.6-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (11.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.1/11.1 MB 176.2 kB/s eta 0:00:00
+Requirement already satisfied: pillow<14,>=9.2.0 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from streamlit<2,>=1.37) (12.3.0)
+Collecting pydeck<1,>=0.8.0b4 (from streamlit<2,>=1.37)
+  Downloading http://mirrors.aliyun.com/pypi/packages/6f/34/3998411437aff304a9ed4fa37a6fe1ef3132bcd2b5eac59851b80c86123c/pydeck-0.9.3-py2.py3-none-any.whl (11.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.4/11.4 MB 175.1 kB/s eta 0:00:00
+Collecting protobuf<8,>=5.26.1 (from streamlit<2,>=1.37)
+  Downloading http://mirrors.aliyun.com/pypi/packages/db/f3/3996583dd2906297a637af12114deddf7658af6e683fedb83be061983fb5/protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 343.2/343.2 kB 181.3 kB/s eta 0:00:00
+Collecting pyarrow!=25.0.0,<27,>=10.0.1 (from streamlit<2,>=1.37)
+  Downloading http://mirrors.aliyun.com/pypi/packages/e1/81/8e685683897a6d3d5887c3e2fd24f3c14bc5d6d6bb3a2387484e665c580e/pyarrow-26.0.0-cp311-cp311-manylinux_2_28_x86_64.whl (53.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 53.9/53.9 MB 178.4 kB/s eta 0:00:00
+Requirement already satisfied: requests<3,>=2.27 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from streamlit<2,>=1.37) (2.34.2)
+Requirement already satisfied: typing-extensions<5,>=4.10.0 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from streamlit<2,>=1.37) (4.16.0)
+Requirement already satisfied: starlette<2,>=0.46.0 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from streamlit<2,>=1.37) (0.46.2)
+Requirement already satisfied: uvicorn<1,>=0.30.0 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from streamlit<2,>=1.37) (0.52.4)
+Requirement already satisfied: anyio<5,>=4.0.0 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from streamlit<2,>=1.37) (4.14.2)
+Requirement already satisfied: python-multipart<1,>=0.0.10 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from streamlit<2,>=1.37) (0.0.32)
+Requirement already satisfied: websockets<18,>=12.0.0 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from streamlit<2,>=1.37) (16.1.1)
+Collecting itsdangerous<3,>=2.1.2 (from streamlit<2,>=1.37)
+  Downloading http://mirrors.aliyun.com/pypi/packages/04/96/92447566d16df59b2a776c0fb82dbc4d9e07cd95062562af01e408583fc4/itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Collecting watchdog<7,>=2.1.5 (from streamlit<2,>=1.37)
+  Downloading http://mirrors.aliyun.com/pypi/packages/b5/e8/dbf020b4d98251a9860752a094d09a65e1b436ad181faf929983f697048f/watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl (79 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.1/79.1 kB 171.8 kB/s eta 0:00:00
+Requirement already satisfied: jinja2 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from altair!=5.4.0,!=5.4.1,<7,>=5.0.0->streamlit<2,>=1.37) (3.1.6)
+Requirement already satisfied: jsonschema>=3.0 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from altair!=5.4.0,!=5.4.1,<7,>=5.0.0->streamlit<2,>=1.37) (4.26.0)
+Requirement already satisfied: narwhals>=2.4.0 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from altair!=5.4.0,!=5.4.1,<7,>=5.0.0->streamlit<2,>=1.37) (2.25.0)
+Requirement already satisfied: idna>=2.8 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from anyio<5,>=4.0.0->streamlit<2,>=1.37) (3.19)
+Requirement already satisfied: python-dateutil>=2.8.2 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from pandas<4,>=1.5.3->streamlit<2,>=1.37) (2.9.0.post0)
+Requirement already satisfied: charset_normalizer<4,>=2 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from requests<3,>=2.27->streamlit<2,>=1.37) (3.5.1)
+Requirement already satisfied: urllib3<3,>=1.26 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from requests<3,>=2.27->streamlit<2,>=1.37) (2.7.0)
+Requirement already satisfied: certifi>=2023.5.7 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from requests<3,>=2.27->streamlit<2,>=1.37) (2026.7.22)
+Requirement already satisfied: h11>=0.8 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from uvicorn<1,>=0.30.0->streamlit<2,>=1.37) (0.16.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from jinja2->altair!=5.4.0,!=5.4.1,<7,>=5.0.0->streamlit<2,>=1.37) (3.0.3)
+Requirement already satisfied: attrs>=22.2.0 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from jsonschema>=3.0->altair!=5.4.0,!=5.4.1,<7,>=5.0.0->streamlit<2,>=1.37) (26.1.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from jsonschema>=3.0->altair!=5.4.0,!=5.4.1,<7,>=5.0.0->streamlit<2,>=1.37) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from jsonschema>=3.0->altair!=5.4.0,!=5.4.1,<7,>=5.0.0->streamlit<2,>=1.37) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from jsonschema>=3.0->altair!=5.4.0,!=5.4.1,<7,>=5.0.0->streamlit<2,>=1.37) (2026.6.3)
+Requirement already satisfied: six>=1.5 in /root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages (from python-dateutil>=2.8.2->pandas<4,>=1.5.3->streamlit<2,>=1.37) (1.17.0)
+Installing collected packages: watchdog, pyarrow, protobuf, itsdangerous, pydeck, pandas, altair, streamlit
+Successfully installed altair-6.3.0 itsdangerous-2.2.0 pandas-3.0.6 protobuf-7.36.2 pyarrow-26.0.0 pydeck-0.9.3 streamlit-1.66.1 watchdog-6.0.0
+
+[notice] A new release of pip is available: 24.0 -> 26.2.2
+[notice] To update, run: /root/autodl-tmp/study/job-agent-v3/.venv/bin/python -m pip install --upgrade pip

@@ -1,0 +1,18 @@
+[
+  {
+    "template": "classic",
+    "path": "synthetic-resume-classic.pdf",
+    "pages": 6,
+    "chinese_selectable": true,
+    "version_id": "ver-15c3d62a30334817ab0e866bca9a6481",
+    "content_hash": "b5372ad901577d4aa2bc56f419831e09399fa3f4203ebe2c080207abdfb42632"
+  },
+  {
+    "template": "compact",
+    "path": "synthetic-resume-compact.pdf",
+    "pages": 5,
+    "chinese_selectable": true,
+    "version_id": "ver-15c3d62a30334817ab0e866bca9a6481",
+    "content_hash": "b5372ad901577d4aa2bc56f419831e09399fa3f4203ebe2c080207abdfb42632"
+  }
+]

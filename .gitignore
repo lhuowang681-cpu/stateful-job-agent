@@ -7,6 +7,8 @@ __pycache__/
 .ruff_cache/
 build/
 dist/
+node_modules/
+frontend/.vite/
 
 # Local environments and editor state
 .venv/
@@ -43,11 +45,18 @@ docs/learning/*
 docs/interview_ready/
 docs/diagrams/
 scripts/run_*.py
+!scripts/run_unseen_holdout_stability.py
 
 # The release keeps a focused public Runtime test suite; source-repository
 # documentation/training tests are intentionally excluded with their targets.
 tests/*.py
+!tests/test_source_audit_regressions.py
+!tests/test_resume_workspace.py
+!tests/test_resume_import.py
 !tests/test_agent_loop.py
+!tests/test_agent_interaction_contract.py
+!tests/test_agent_context.py
+!tests/test_natural_language_agent_loop.py
 !tests/test_agent_policy.py
 !tests/test_agent_checkpoint.py
 !tests/test_agent_eval_harness.py
@@ -101,3 +110,72 @@ tests/*.py
 !tests/test_knowledge_retriever.py
 !tests/test_knowledge_retriever.py
 !tests/test_knowledge_real_embedding.py
+!tests/test_knowledge_retrieval_benchmark.py
+!tests/test_knowledge_eval.py
+!tests/test_knowledge_faiss_vector_index.py
+!tests/test_knowledge_contracts.py
+!tests/test_knowledge_ingestion.py
+!tests/test_knowledge_ingestion_real.py
+!tests/test_knowledge_career_benchmark.py
+!tests/test_knowledge_bm25.py
+!tests/test_knowledge_rrf.py
+!tests/test_knowledge_candidate_evidence.py
+!tests/test_requirement_evidence.py
+!tests/test_jd_match_analysis.py
+!tests/test_career_knowledge_mcp.py
+!tests/test_memory_aware_job_analysis.py
+!tests/test_governed_application_tracking.py
+!tests/test_governed_application_lifecycle.py
+!tests/test_job_specific_interview_preparation.py
+!tests/test_end_to_end_job_search_workflow.py
+!tests/test_real_model_end_to_end_validation.py
+!tests/test_durable_career_state.py
+!tests/test_stateful_agent_evaluation.py
+!tests/test_durable_career_knowledge.py
+!tests/test_real_career_data_evaluation.py
+!tests/test_retrieved_evidence_mapping.py
+!tests/test_atomic_evidence_v2.py
+!tests/test_unseen_career_holdout.py
+!tests/test_job_workspace.py
+!tests/test_grounded_resume_tailoring.py
+!tests/test_stateful_interview_copilot.py
+!tests/test_agent_ops.py
+
+# Local Agent Ops evaluation artifacts (SQLite/debug bundle/report)
+outputs/r16_agent_ops/
+
+# Private career/JD source material and local import manifests are never public.
+/data/private/
+/data/career_sources/manifest.json
+/data/career_sources/*.txt
+/data/career_sources/*.md
+/data/career_sources/*.pdf
+/data/career_sources/*.docx
+!/data/career_sources/README.md
+
+# V3 public implementation tests and authored learning material (no private notebooks).
+!tests/test_v3_*.py
+!tests/test_resume_pdf_autofill.py
+!tests/test_resume_matching.py
+!tests/test_workbench_*.py
+!docs/learning/00_READ_FIRST.md
+!docs/learning/01_END_TO_END.md
+!docs/learning/02_MULTI_AGENT.md
+!docs/learning/03_PUBLIC_RAG.md
+!docs/learning/04_CODE_AWARE_RAG.md
+!docs/learning/05_RELIABLE_RUNTIME.md
+!docs/learning/06_EVALUATION.md
+!docs/learning/INTERVIEW_QA.md
+
+# Approved review continuation: public regressions, never local runtimes/artifacts.
+!tests/test_review_*.py
+!tests/test_rag_*.py
+.venv-*/
+/work/
+/outputs/
+/deliverables/
+/delivery_evidence/
+/historical_reports/
+*.safetensors
+*.pt
+*.pth

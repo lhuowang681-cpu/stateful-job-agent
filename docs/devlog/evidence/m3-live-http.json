@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-20",
+  "url": "http://127.0.0.1:8014/",
+  "launcher": "python scripts/demo_resume_workbench.py --port 8014",
+  "scope": "standalone real loopback HTTP checks of synthetic browser-created data, not extra pytest or model-quality cases",
+  "checks": {
+    "health_ok": true,
+    "isolated_demo_no_model": true,
+    "browser_accept_created_exactly_two_versions": true,
+    "new_version_is_unconfirmed": true,
+    "related_project_moved_to_front": true,
+    "fact_inventory_and_source_spans_identical": true,
+    "analysis_history_persisted": true,
+    "analysis_bound_to_original_version": true,
+    "local_results_are_unverified": true,
+    "negative_kubernetes_visible": true,
+    "missing_postgresql_not_lack_of_ability": true,
+    "accepted_and_rejected_decisions_persisted": true,
+    "accept_retry_returns_same_version": true,
+    "jd_and_original_source_quotes_valid": true,
+    "latest_build_served": true
+  },
+  "quotes_verified": 5,
+  "resume_id": "res-72cffc12ce4c4cc0914960705c141973",
+  "match_id": "match-90e42798b1b44acb9c7e8b6061b8a191",
+  "provider_calls": 0
+}

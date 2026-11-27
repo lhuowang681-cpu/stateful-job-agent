@@ -1,0 +1,285 @@
+{
+  "phase": "reload",
+  "pid": 98619,
+  "transport": "real_loopback_http",
+  "project_backend": "postgresql",
+  "model": null,
+  "checks": [
+    "new_process_task_and_cross_domain_interview_reference_survived",
+    "queries_reuse_persisted_vectors_without_document_encoding",
+    "new_process_same_ranked_chunks_and_exact_references",
+    "cross_owner_all_three_resources_404",
+    "no_sqlite_project_index_or_task_shadow_writes"
+  ],
+  "queries": [
+    {
+      "method": "keyword",
+      "evidence_ids": [
+        "ev-9b738ac0b17efd3542e11bc9b649",
+        "ev-a656140eddb3d407f7d2057387b3",
+        "ev-b6849de5738ba79a5e7af0c58982",
+        "ev-89af2a86c6a5d9bb5ea8e713f78d"
+      ],
+      "references": [
+        {
+          "evidence_id": "ev-9b738ac0b17efd3542e11bc9b649",
+          "scope": "private_project",
+          "owner_id": "alice",
+          "project_id": "project-1e2c679ae0a9445f9028521e59a12979",
+          "snapshot_id": "snapshot-5f3b98c07ec340ff81055ee1e212cf9c",
+          "source_id": "snapshot-5f3b98c07ec340ff81055ee1e212cf9c:tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "path": "tests/test_storage.py",
+          "start_line": 3,
+          "end_line": 5,
+          "commit": null,
+          "retrieval_method": "bm25",
+          "evidence_kind": "test_code",
+          "supports_claim": "needs_judgment",
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n",
+          "independent_truth": "not_verified"
+        },
+        {
+          "evidence_id": "ev-a656140eddb3d407f7d2057387b3",
+          "scope": "private_project",
+          "owner_id": "alice",
+          "project_id": "project-1e2c679ae0a9445f9028521e59a12979",
+          "snapshot_id": "snapshot-5f3b98c07ec340ff81055ee1e212cf9c",
+          "source_id": "snapshot-5f3b98c07ec340ff81055ee1e212cf9c:app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "path": "app/api.py",
+          "start_line": 3,
+          "end_line": 4,
+          "commit": null,
+          "retrieval_method": "bm25",
+          "evidence_kind": "code",
+          "supports_claim": "needs_judgment",
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n",
+          "independent_truth": "not_verified"
+        },
+        {
+          "evidence_id": "ev-b6849de5738ba79a5e7af0c58982",
+          "scope": "private_project",
+          "owner_id": "alice",
+          "project_id": "project-1e2c679ae0a9445f9028521e59a12979",
+          "snapshot_id": "snapshot-5f3b98c07ec340ff81055ee1e212cf9c",
+          "source_id": "snapshot-5f3b98c07ec340ff81055ee1e212cf9c:app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "path": "app/storage.py",
+          "start_line": 1,
+          "end_line": 6,
+          "commit": null,
+          "retrieval_method": "bm25",
+          "evidence_kind": "code",
+          "supports_claim": "needs_judgment",
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n",
+          "independent_truth": "not_verified"
+        },
+        {
+          "evidence_id": "ev-89af2a86c6a5d9bb5ea8e713f78d",
+          "scope": "private_project",
+          "owner_id": "alice",
+          "project_id": "project-1e2c679ae0a9445f9028521e59a12979",
+          "snapshot_id": "snapshot-5f3b98c07ec340ff81055ee1e212cf9c",
+          "source_id": "snapshot-5f3b98c07ec340ff81055ee1e212cf9c:README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "path": "README.md",
+          "start_line": 1,
+          "end_line": 3,
+          "commit": null,
+          "retrieval_method": "bm25",
+          "evidence_kind": "documentation",
+          "supports_claim": "needs_judgment",
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n",
+          "independent_truth": "not_verified"
+        }
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": null,
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-d6c890762747ae22c9cdf5ff952c",
+          "chunk-3566dcb5c3c63869e062f7dfbad7",
+          "chunk-065feee3508a4e162516ff753d61",
+          "chunk-1e7e5ecb83bf067b39441e343fb2"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": null,
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-d6c890762747ae22c9cdf5ff952c",
+          "chunk-3566dcb5c3c63869e062f7dfbad7",
+          "chunk-065feee3508a4e162516ff753d61",
+          "chunk-1e7e5ecb83bf067b39441e343fb2"
+        ],
+        "dense_ids": [],
+        "fused_ids": [
+          "chunk-d6c890762747ae22c9cdf5ff952c",
+          "chunk-3566dcb5c3c63869e062f7dfbad7",
+          "chunk-065feee3508a4e162516ff753d61",
+          "chunk-1e7e5ecb83bf067b39441e343fb2"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-9b738ac0b17efd3542e11bc9b649",
+          "ev-a656140eddb3d407f7d2057387b3",
+          "ev-b6849de5738ba79a5e7af0c58982",
+          "ev-89af2a86c6a5d9bb5ea8e713f78d"
+        ]
+      }
+    },
+    {
+      "method": "code_aware",
+      "evidence_ids": [
+        "ev-b6849de5738ba79a5e7af0c58982",
+        "ev-a656140eddb3d407f7d2057387b3",
+        "ev-9b738ac0b17efd3542e11bc9b649",
+        "ev-89af2a86c6a5d9bb5ea8e713f78d"
+      ],
+      "references": [
+        {
+          "evidence_id": "ev-b6849de5738ba79a5e7af0c58982",
+          "scope": "private_project",
+          "owner_id": "alice",
+          "project_id": "project-1e2c679ae0a9445f9028521e59a12979",
+          "snapshot_id": "snapshot-5f3b98c07ec340ff81055ee1e212cf9c",
+          "source_id": "snapshot-5f3b98c07ec340ff81055ee1e212cf9c:app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "path": "app/storage.py",
+          "start_line": 1,
+          "end_line": 6,
+          "commit": null,
+          "retrieval_method": "exact_symbol",
+          "evidence_kind": "code",
+          "supports_claim": "needs_judgment",
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n",
+          "independent_truth": "not_verified"
+        },
+        {
+          "evidence_id": "ev-a656140eddb3d407f7d2057387b3",
+          "scope": "private_project",
+          "owner_id": "alice",
+          "project_id": "project-1e2c679ae0a9445f9028521e59a12979",
+          "snapshot_id": "snapshot-5f3b98c07ec340ff81055ee1e212cf9c",
+          "source_id": "snapshot-5f3b98c07ec340ff81055ee1e212cf9c:app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "path": "app/api.py",
+          "start_line": 3,
+          "end_line": 4,
+          "commit": null,
+          "retrieval_method": "static_call",
+          "evidence_kind": "code",
+          "supports_claim": "needs_judgment",
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n",
+          "independent_truth": "not_verified"
+        },
+        {
+          "evidence_id": "ev-9b738ac0b17efd3542e11bc9b649",
+          "scope": "private_project",
+          "owner_id": "alice",
+          "project_id": "project-1e2c679ae0a9445f9028521e59a12979",
+          "snapshot_id": "snapshot-5f3b98c07ec340ff81055ee1e212cf9c",
+          "source_id": "snapshot-5f3b98c07ec340ff81055ee1e212cf9c:tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "path": "tests/test_storage.py",
+          "start_line": 3,
+          "end_line": 5,
+          "commit": null,
+          "retrieval_method": "bm25",
+          "evidence_kind": "test_code",
+          "supports_claim": "needs_judgment",
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n",
+          "independent_truth": "not_verified"
+        },
+        {
+          "evidence_id": "ev-89af2a86c6a5d9bb5ea8e713f78d",
+          "scope": "private_project",
+          "owner_id": "alice",
+          "project_id": "project-1e2c679ae0a9445f9028521e59a12979",
+          "snapshot_id": "snapshot-5f3b98c07ec340ff81055ee1e212cf9c",
+          "source_id": "snapshot-5f3b98c07ec340ff81055ee1e212cf9c:README.md",
+          "content_hash": "9f9fa8dafe744832be1be9175c989864c97b21681abca3b29623eb92df2faf8a",
+          "path": "README.md",
+          "start_line": 1,
+          "end_line": 3,
+          "commit": null,
+          "retrieval_method": "bm25",
+          "evidence_kind": "documentation",
+          "supports_claim": "needs_judgment",
+          "quote": "# Synthetic receipt service\nRequests with the same key reuse the stored receipt.\nThe route calls storage. No runtime results are claimed.\n",
+          "independent_truth": "not_verified"
+        }
+      ],
+      "trace": {
+        "schema_version": "retrieval-trace-2",
+        "index_identity": null,
+        "config_identity": "policy-e2c0f29a4a43278169c0f4bdd4a8c37ed1bff067f3f109dd54b7a40f62f4c6bb",
+        "context_chars": 482,
+        "context_char_budget": 24000,
+        "budget_omitted_ids": [],
+        "rerank_requested": false,
+        "rerank_applied": false,
+        "rerank_input_ids": [],
+        "reranked_ids": [
+          "chunk-d6c890762747ae22c9cdf5ff952c",
+          "chunk-3566dcb5c3c63869e062f7dfbad7",
+          "chunk-065feee3508a4e162516ff753d61",
+          "chunk-1e7e5ecb83bf067b39441e343fb2"
+        ],
+        "rerank_error": null,
+        "rerank_elapsed_ms": 0,
+        "reranker_identity": null,
+        "rerank_char_truncated_ids": [],
+        "rerank_token_truncated_ids": [],
+        "sparse_ids": [
+          "chunk-d6c890762747ae22c9cdf5ff952c",
+          "chunk-3566dcb5c3c63869e062f7dfbad7",
+          "chunk-065feee3508a4e162516ff753d61",
+          "chunk-1e7e5ecb83bf067b39441e343fb2"
+        ],
+        "dense_ids": [],
+        "fused_ids": [
+          "chunk-d6c890762747ae22c9cdf5ff952c",
+          "chunk-3566dcb5c3c63869e062f7dfbad7",
+          "chunk-065feee3508a4e162516ff753d61",
+          "chunk-1e7e5ecb83bf067b39441e343fb2"
+        ],
+        "candidate_depth": 20,
+        "final_evidence_ids": [
+          "ev-b6849de5738ba79a5e7af0c58982",
+          "ev-a656140eddb3d407f7d2057387b3",
+          "ev-9b738ac0b17efd3542e11bc9b649",
+          "ev-89af2a86c6a5d9bb5ea8e713f78d"
+        ]
+      }
+    }
+  ],
+  "data": "authored CC0 synthetic only",
+  "human_quality_verified": false,
+  "source_identity": "50ec71900c3816a89a808f345b7bc10fe48d745fd2a1f1c6d85d08d0e38b3243",
+  "server_version": "14.24 (Ubuntu 14.24-0ubuntu0.22.04.1)",
+  "listen_addresses": "",
+  "embedding_calls_after_startup": {
+    "documents": 0,
+    "queries": 0
+  },
+  "sqlite_shadow_counts": {
+    "v3_projects": 0,
+    "v3_project_snapshots": 0,
+    "v3_code_indexes": 0,
+    "v3_tasks": 0
+  },
+  "embedding_calls_total": {
+    "documents": 0,
+    "queries": 0
+  }
+}

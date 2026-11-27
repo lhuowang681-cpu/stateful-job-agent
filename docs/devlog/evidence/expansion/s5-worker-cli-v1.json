@@ -1,0 +1,60 @@
+{
+  "standalone_process_observed": true,
+  "task": {
+    "task_id": "task-22944f9bc15b4e56b4b59b97512a0803",
+    "project_id": "project-5285892011074ed69ef653d467d483c9",
+    "snapshot_id": "snapshot-2814f41d7e474a578dae478bcbbe59c2",
+    "status": "SUCCEEDED",
+    "stage": "completed",
+    "attempts": 1,
+    "created_at": 1792674946.98077,
+    "updated_at": 1792674948.05768,
+    "error_code": null,
+    "generation": 1,
+    "config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+    "result": {
+      "chunks": 2,
+      "edges": 0,
+      "elapsed_ms": 1,
+      "embedding_model": null,
+      "file_manifest_hash": "074cc459e1c14b0c7a57e4a0e82fd62963b359bb2315dd82c566c6aed0cb5632",
+      "file_status": {
+        "receipt.py": "python_ast"
+      },
+      "files": 1,
+      "generation": 1,
+      "index_version": "code-syntax-v3-1/chunks-2",
+      "indexing_config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+      "oversized_lines_omitted": 0,
+      "publication_id": "publication-0a89fb8006b74140bc2a8603e606c8bc",
+      "runtime_executed": false,
+      "snapshot_id": "snapshot-2814f41d7e474a578dae478bcbbe59c2",
+      "storage_backend": "postgresql",
+      "symbols": 2,
+      "unresolved_references": 0,
+      "vector_index_identity": null,
+      "warnings": {}
+    },
+    "events": [
+      {
+        "seq": 1,
+        "kind": "submitted",
+        "attempt": 0,
+        "recorded_at": 1792674946.981596
+      },
+      {
+        "seq": 2,
+        "kind": "claimed",
+        "attempt": 1,
+        "recorded_at": 1792674948.051487
+      },
+      {
+        "seq": 3,
+        "kind": "publication_committed",
+        "attempt": 1,
+        "recorded_at": 1792674948.058133
+      }
+    ]
+  },
+  "atomic_publication": true
+}

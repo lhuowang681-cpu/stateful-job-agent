@@ -1,0 +1,55 @@
+{
+  "version": "design-addendum-freeze-1",
+  "new_questions": 10,
+  "total_unique_review_questions": 50,
+  "dataset_sha256": "be2afaa69b94fdca377e324320db79fdfa02e354e3e48f394b38e5105cc6ae02",
+  "source_revision": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+  "corpus_characters": 41919,
+  "selected_research_profile": "E_code_aware_no_relations",
+  "runtime": {
+    "embedding": {
+      "dimension": 1024,
+      "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+      "max_input_tokens": 1024,
+      "model": "Qwen3-Embedding-0.6B",
+      "normalization": "l2",
+      "provider": "sentence_transformers_local",
+      "query_template": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:{query}",
+      "revision": "47191d5687dbf14319ccb312680caa31a179ed5e16539b8c06aeddc53b63ef6c"
+    },
+    "reranker": {
+      "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+      "max_pair_tokens": 512,
+      "model": "mmarco-mMiniLMv2-L12-H384-v1",
+      "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+      "score_semantics": "raw_logit"
+    },
+    "settings": {
+      "context_char_budget": 24000,
+      "dense_candidates": 20,
+      "fusion_candidates": 30,
+      "max_output": 20,
+      "relation_candidates": 8,
+      "rerank_candidates": 30,
+      "rerank_input_chars": 6000,
+      "rrf_k": 60,
+      "sparse_candidates": 20,
+      "version": "retrieval-policy-1"
+    }
+  },
+  "test_variants": [
+    "A_bm25",
+    "B_dense",
+    "C_hybrid",
+    "D_hybrid_rerank",
+    "E_code_aware_no_relations",
+    "F_code_aware_relations",
+    "G_flat_bm25"
+  ],
+  "repeats": 3,
+  "limit": 5,
+  "tuning_rounds": 0,
+  "human_reviewed": 0,
+  "prior_primary_test_already_seen": true,
+  "metrics_must_be_reported_separately": true
+}

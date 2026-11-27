@@ -1,0 +1,576 @@
+{
+  "at_utc": "2026-10-23T07:11:45.962608+00:00",
+  "cases": 70,
+  "encoder_calls": {
+    "document_calls": 0,
+    "document_passages": 0,
+    "query_calls": 50
+  },
+  "manifest_sha256": "4ebca5ca3a24b724e9d7e56439f859089dd20dadef301e21be17eeab4cb90a90",
+  "reference_raw_sha256": "db7793757ebd920f76137fb6b9bc44ad3180fd94c62ada066dbd448c7d2dac2c",
+  "rows": [
+    {
+      "case_id": "design-addendum-S2-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "design-addendum-S2-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "design-addendum-S4-3",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "design-addendum-S4-4",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "design-addendum-S5-5",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "design-addendum-S5-6",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "design-addendum-S6-7",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "design-addendum-S6-8",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "design-addendum-S7-9",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "design-addendum-S7-10",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "design-addendum-S2-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "design-addendum-S2-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "design-addendum-S4-3",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "design-addendum-S4-4",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "design-addendum-S5-5",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "design-addendum-S5-6",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "design-addendum-S6-7",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "design-addendum-S6-8",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "design-addendum-S7-9",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "design-addendum-S7-10",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "design-addendum-S2-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "design-addendum-S2-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "design-addendum-S4-3",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "design-addendum-S4-4",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "design-addendum-S5-5",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "design-addendum-S5-6",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "design-addendum-S6-7",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "design-addendum-S6-8",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "design-addendum-S7-9",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "design-addendum-S7-10",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "design-addendum-S2-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "design-addendum-S2-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "design-addendum-S4-3",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "design-addendum-S4-4",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "design-addendum-S5-5",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "design-addendum-S5-6",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "design-addendum-S6-7",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "design-addendum-S6-8",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "design-addendum-S7-9",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "design-addendum-S7-10",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "design-addendum-S2-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "design-addendum-S2-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "design-addendum-S4-3",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "design-addendum-S4-4",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "design-addendum-S5-5",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "design-addendum-S5-6",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "design-addendum-S6-7",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "design-addendum-S6-8",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "design-addendum-S7-9",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "design-addendum-S7-10",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "design-addendum-S2-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "design-addendum-S2-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "design-addendum-S4-3",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "design-addendum-S4-4",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "design-addendum-S5-5",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "design-addendum-S5-6",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "design-addendum-S6-7",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "design-addendum-S6-8",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "design-addendum-S7-9",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "design-addendum-S7-10",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "design-addendum-S2-1",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "design-addendum-S2-2",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "design-addendum-S4-3",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "design-addendum-S4-4",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "design-addendum-S5-5",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "design-addendum-S5-6",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "design-addendum-S6-7",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "design-addendum-S6-8",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "design-addendum-S7-9",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "design-addendum-S7-10",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    }
+  ],
+  "same_scope": true,
+  "schema_version": "research-replay-1",
+  "status": "passed"
+}

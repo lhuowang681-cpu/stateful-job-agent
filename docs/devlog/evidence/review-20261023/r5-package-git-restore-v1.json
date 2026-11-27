@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "git_revision": "3443a4ff19d248c082c5244f23abf1408a39be75",
+  "archive_source_files_exact_in_restored_git_clone": 945,
+  "concurrent_working_AGENTS_not_archived": true,
+  "history_bundle": "job-agent-review-history.bundle",
+  "sha256": "8e398a39c446b3d82218dfb11bd08772eaf6d9d5407511a9b536d901fa9acee3",
+  "complete_history": true
+}

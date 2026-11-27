@@ -54,6 +54,9 @@ class OpenAICompatibleProvider:
         self._transport = transport
         self._clock = clock
 
+    def _extra_request_fields(self) -> dict:
+        return {}
+
     def generate_structured(
         self,
         *,
@@ -97,6 +100,7 @@ class OpenAICompatibleProvider:
                 }
                 for tool in tools
             ]
+        payload.update(self._extra_request_fields())
         headers = {"Content-Type": "application/json"}
         if self._api_key:
             headers["Authorization"] = f"Bearer {self._api_key}"
@@ -128,6 +132,7 @@ class OpenAICompatibleProvider:
         try:
             envelope = json.loads(response_bytes.decode("utf-8"))
             raw_output = envelope["choices"][0]["message"]["content"]
+            finish_reason = envelope["choices"][0].get("finish_reason")
             if not isinstance(raw_output, str):
                 raise TypeError("message content must be text")
         except (UnicodeDecodeError, json.JSONDecodeError, KeyError, IndexError, TypeError):
@@ -147,7 +152,7 @@ class OpenAICompatibleProvider:
                 error_code="invalid_response",
             )
         usage = envelope.get("usage", {})
-        return result_from_raw_output(
+        result = result_from_raw_output(
             provider=self.provider_name,
             model=self.model,
             raw_output=raw_output,
@@ -156,4 +161,12 @@ class OpenAICompatibleProvider:
             latency_ms=elapsed_ms,
             input_tokens=usage.get("prompt_tokens"),
             output_tokens=usage.get("completion_tokens"),
+        )
+        return result.model_copy(
+            update={
+                "finish_reason": (
+                    finish_reason if isinstance(finish_reason, str) else None
+                ),
+                "completion_truncated": finish_reason == "length",
+            }
         )

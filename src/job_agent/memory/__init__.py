@@ -6,12 +6,19 @@ from job_agent.memory.contracts import (
     MemoryHit,
     MemoryRecord,
     MemorySource,
+    PreferenceUpdateResult,
     RunState,
     UserState,
 )
 from job_agent.memory.retriever import MemoryRetriever
 from job_agent.memory.artifact_memory import ArtifactMemoryHit, ArtifactMemoryRetriever
 from job_agent.memory.user_state_store import MemoryPolicyError, UserStateStore, UserStateVersionError
+from job_agent.memory.tools import (
+    UPDATE_JOB_LOCATION_PREFERENCE_TOOL,
+    UpdateJobLocationPreferenceInput,
+    UpdateJobLocationPreferenceOutput,
+    build_memory_tool_registry,
+)
 from job_agent.tools.application_tracker import ApplicationTrackerStore
 
 __all__ = [
@@ -25,8 +32,13 @@ __all__ = [
     "MemoryRetriever",
     "MemoryPolicyError",
     "MemorySource",
+    "PreferenceUpdateResult",
     "RunState",
     "UserState",
     "UserStateStore",
     "UserStateVersionError",
+    "UPDATE_JOB_LOCATION_PREFERENCE_TOOL",
+    "UpdateJobLocationPreferenceInput",
+    "UpdateJobLocationPreferenceOutput",
+    "build_memory_tool_registry",
 ]

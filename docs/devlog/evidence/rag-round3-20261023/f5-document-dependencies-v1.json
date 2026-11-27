@@ -1,0 +1,715 @@
+{
+  "required_files": [
+    "AGENTS.md",
+    "docs/CONTINUE_DEVELOPMENT.md",
+    "docs/devlog/INDEX.md",
+    "docs/devlog/_PHASE_TEMPLATE.md",
+    "docs/tech-specs/INCREMENT_SPEC_TEMPLATE.md",
+    "docs/tech-specs/CURRENT_SPEC.md",
+    "docs/learning/RAG_ROUND3_ROUTE.md",
+    "docs/demo/RAG_ROUND3_RUNBOOK.md",
+    "docs/devlog/RAG-F0.md",
+    "docs/devlog/RAG-F1.md",
+    "docs/devlog/RAG-F2.md",
+    "docs/devlog/RAG-F3.md",
+    "docs/devlog/RAG-F4.md",
+    "docs/devlog/RAG-F5.md",
+    "docs/tech-specs/expansion/RAG-F0.md",
+    "docs/tech-specs/expansion/RAG-F1.md",
+    "docs/tech-specs/expansion/RAG-F2.md",
+    "docs/tech-specs/expansion/RAG-F3.md",
+    "docs/tech-specs/expansion/RAG-F4.md",
+    "docs/tech-specs/expansion/RAG-F5.md"
+  ],
+  "markdown_links": [
+    {
+      "from": "docs/CONTINUE_DEVELOPMENT.md",
+      "target": "docs/learning/EXISTING_CODE_SPEC.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/CONTINUE_DEVELOPMENT.md",
+      "target": "docs/learning/DETAILED_LEARNING_STAGES.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/CONTINUE_DEVELOPMENT.md",
+      "target": "docs/learning/CHAT_HANDOFF.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/CONTINUE_DEVELOPMENT.md",
+      "target": "docs/devlog/PROTOCOL_SOURCE.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/CONTINUE_DEVELOPMENT.md",
+      "target": "AGENTS.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/CONTINUE_DEVELOPMENT.md",
+      "target": "docs/devlog/INDEX.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/CONTINUE_DEVELOPMENT.md",
+      "target": "docs/devlog/PHASE-03C-verification-interview.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/CONTINUE_DEVELOPMENT.md",
+      "target": "docs/devlog/ARCHITECTURE_MAP.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/CONTINUE_DEVELOPMENT.md",
+      "target": "docs/devlog/DECISIONS.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/CONTINUE_DEVELOPMENT.md",
+      "target": "docs/devlog/evidence/m3c-verification.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/CONTINUE_DEVELOPMENT.md",
+      "target": "docs/PROJECT_AUDIT.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/CONTINUE_DEVELOPMENT.md",
+      "target": "docs/devlog/_PHASE_TEMPLATE.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/CONTINUE_DEVELOPMENT.md",
+      "target": "docs/upgrade/02_IMPORT_PARSE_EDITOR.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/CONTINUE_DEVELOPMENT.md",
+      "target": "docs/devlog/COLLABORATION_DESIGN_REVIEW.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/tech-specs/expansion/RAG-F0-F5.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/RAG-F0.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/RAG-F1.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/RAG-F2.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/RAG-F3.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/REVIEW-R5.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/tech-specs/CURRENT_SPEC.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/learning/REVIEW_30_MINUTE_ROUTE.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/demo/REVIEW_RUNBOOK.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/REVIEW-R0.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/REVIEW-R1.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/REVIEW-R2.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/REVIEW-R3.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/REVIEW-R4.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/tech-specs/expansion/REVIEW-R0-R5.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/EXPAND-S8.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/tech-specs/expansion/S8-observability-replay-delivery.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/evaluation/expansion/TRACE_CONSUMER.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/tech-specs/expansion/S8-observability-replay-delivery.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/tech-specs/expansion/S0-baseline.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/EXPAND-S0.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/tech-specs/expansion/S1-corpus-contract.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/EXPAND-S1.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/tech-specs/expansion/S2-retrieval.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/EXPAND-S2.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/tech-specs/expansion/S7-learning-loop.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/EXPAND-S7.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/tech-specs/expansion/S3-evidence-pack.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/EXPAND-S3.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/tech-specs/expansion/S4-collaboration.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/EXPAND-S4.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/tech-specs/expansion/S5-postgres-slice.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/EXPAND-S5.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/tech-specs/expansion/S6-outbox-streams.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/EXPAND-S6.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/learning/handbook/index.html",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/HANDBOOK-2026-10-22.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/learning/handbook/README.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/LEARNING-SPEC-2026-10-22.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/learning/EXISTING_CODE_SPEC.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/learning/DETAILED_LEARNING_STAGES.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/learning/EXISTING_CODE_LEARNING_PATH.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/learning/CHAT_HANDOFF.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/learning/OPTIMIZATION_JOURNEY.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "DELIVERY_README.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/DELIVERY_CONSOLIDATION_2026-10-22.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/FINAL-F0.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/FINAL-F1.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/FINAL-F2.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/FINAL-F3.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/FINAL-F4.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/FINAL-F5.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/FINAL-F6.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/FINAL-F7.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/roadmap/JOB_AGENT_V3_FINAL_SPEC.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/evidence/backfill-start.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/PHASE-01-structured-resume.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/PHASE-02-import-parse-editor.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/evidence/m2a-start.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/PHASE-02A-pdf-autofill.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/evidence/m2a-verification.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/evidence/m3-start.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/PHASE-03-match-and-rewrite.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/evidence/m3-verification.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/evidence/m3b-start.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/PHASE-03B-writer-reviewer.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/evidence/m3b-verification.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/audit/upgrade-m1/verification.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/PHASE-01-structured-resume.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/audit/upgrade-m2/verification.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/PHASE-02-import-parse-editor.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/evidence/m2a-verification.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/PHASE-02A-pdf-autofill.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/evidence/m3-verification.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/PHASE-03-match-and-rewrite.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/evidence/m3b-verification.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/PHASE-03B-writer-reviewer.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/evidence/m3c-verification.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/PHASE-03C-verification-interview.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/PROTOCOL_SOURCE.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/CONTINUE_DEVELOPMENT.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/upgrade/02_IMPORT_PARSE_EDITOR.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/evidence/backfill-validation.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/evidence/backfill-start.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/evidence/backfill-end.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/evidence/phase-snapshots.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/evidence/summary-reconciliation.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/ARCHITECTURE_MAP.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/DECISIONS.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/_PHASE_TEMPLATE.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/CODEX_TASK_PROMPT.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/PROTOCOL_SOURCE.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/COLLABORATION_DESIGN_REVIEW.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/evidence/m3c-start.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/PHASE-03C-verification-interview.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/evidence/m3c-verification.json",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/FINAL-F1.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/FINAL-F2.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/roadmap/JOB_AGENT_V3_FINAL_SPEC.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/devlog/FINAL-F0.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/devlog/INDEX.md",
+      "target": "docs/evaluation/BASELINES.md",
+      "exists_in_source": false
+    },
+    {
+      "from": "docs/tech-specs/CURRENT_SPEC.md",
+      "target": "docs/tech-specs/CURRENT_SPEC_R0_R5_HISTORY_2026-10-23.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/tech-specs/CURRENT_SPEC.md",
+      "target": "docs/tech-specs/CURRENT_SPEC_HISTORY_2026-10-23.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/tech-specs/CURRENT_SPEC.md",
+      "target": "docs/tech-specs/expansion/RAG-F0-F5.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/tech-specs/CURRENT_SPEC.md",
+      "target": "docs/devlog/RAG-F2.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/tech-specs/CURRENT_SPEC.md",
+      "target": "docs/devlog/RAG-F4.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/tech-specs/CURRENT_SPEC.md",
+      "target": "docs/devlog/RAG-F5.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/tech-specs/CURRENT_SPEC.md",
+      "target": "docs/learning/RAG_ROUND3_ROUTE.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/tech-specs/CURRENT_SPEC.md",
+      "target": "docs/demo/RAG_ROUND3_RUNBOOK.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/learning/RAG_ROUND3_ROUTE.md",
+      "target": "docs/tech-specs/CURRENT_SPEC.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/learning/RAG_ROUND3_ROUTE.md",
+      "target": "docs/devlog/RAG-F2.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/learning/RAG_ROUND3_ROUTE.md",
+      "target": "docs/devlog/RAG-F0.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/learning/RAG_ROUND3_ROUTE.md",
+      "target": "docs/devlog/RAG-F1.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/learning/RAG_ROUND3_ROUTE.md",
+      "target": "docs/devlog/RAG-F2.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/learning/RAG_ROUND3_ROUTE.md",
+      "target": "docs/devlog/RAG-F3.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/learning/RAG_ROUND3_ROUTE.md",
+      "target": "docs/devlog/RAG-F4.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/learning/RAG_ROUND3_ROUTE.md",
+      "target": "docs/devlog/RAG-F5.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/learning/RAG_ROUND3_ROUTE.md",
+      "target": "docs/demo/RAG_ROUND3_RUNBOOK.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/demo/RAG_ROUND3_RUNBOOK.md",
+      "target": "docs/tech-specs/CURRENT_SPEC.md",
+      "exists_in_source": true
+    },
+    {
+      "from": "docs/demo/RAG_ROUND3_RUNBOOK.md",
+      "target": "docs/devlog/RAG-F4.md",
+      "exists_in_source": true
+    }
+  ],
+  "historical_missing_narrative": [
+    {
+      "from": "AGENTS.md",
+      "missing_historical_reference": "docs/devlog/PROTOCOL_SOURCE.md"
+    },
+    {
+      "from": "AGENTS.md",
+      "missing_historical_reference": "docs/devlog/PHASE-03-match-and-rewrite.md"
+    },
+    {
+      "from": "AGENTS.md",
+      "missing_historical_reference": "docs/devlog/PHASE-03B-writer-reviewer.md"
+    },
+    {
+      "from": "docs/CONTINUE_DEVELOPMENT.md",
+      "missing_historical_reference": "docs/learning/OPTIMIZATION_JOURNEY.md"
+    }
+  ],
+  "policy": "Only current required graph is blocking; URLs, anchors and ::symbol are not filenames. Historical gaps remain explicit."
+}

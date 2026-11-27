@@ -1,0 +1,13 @@
+{
+  "scope": "Public aggregate arithmetic and public eval-file immutability only; no private payload or model rerun.",
+  "tp": 36,
+  "tn": 58,
+  "fp": 1,
+  "fn": 6,
+  "atomic_accuracy": 0.9306930693069307,
+  "supported_precision": 0.972972972972973,
+  "end_to_end_correct_parents": 26,
+  "end_to_end_parent_count": 51,
+  "public_eval_files_unchanged": 25,
+  "checks": "passed"
+}

@@ -501,24 +501,26 @@ def test_production_pipeline_maps_independent_c2_artifact_sources(monkeypatch):
         for index, source in enumerate(case.evidence_sources, start=3)
     }
     atom_results = []
-    for gold in case.gold_atoms:
+    for index, gold in enumerate(case.gold_atoms, start=1):
+        runtime_atom_id = f"atom_{index:03d}"
         links = []
         for link in (item for item in case.gold_links if item.atom_id == gold.atom_id):
             source_id, text = source_by_key[link.source_key]
             links.append(
                 {
                     "link_id": link.link_id,
-                    "atom_id": link.atom_id,
+                    "atom_id": runtime_atom_id,
                     "source_locator": locator(source_id, link.resume_quote),
                     "claim": link.resume_quote,
                     "support_status": link.support_status,
                     "level": link.level.value,
                     "confidence": 0.9,
+                    "needs_confirmation": False,
                 }
             )
         atom_results.append(
             {
-                "atom_id": gold.atom_id,
+                "atom_id": runtime_atom_id,
                 "links": links,
                 "rationale": "independent artifact fixture",
             }
@@ -539,7 +541,7 @@ def test_production_pipeline_maps_independent_c2_artifact_sources(monkeypatch):
         registry=Registry(),
     )
     assert len(provider.calls) == 2
-    assert report.rows[0].status == "passed"
+    assert report.rows[0].status == "passed", report.rows[0].error_code
     assert report.variants[0].metrics.requirement_extraction.f1 == 1.0
     assert report.variants[0].metrics.evidence_linking.f1 == 1.0
     assert {

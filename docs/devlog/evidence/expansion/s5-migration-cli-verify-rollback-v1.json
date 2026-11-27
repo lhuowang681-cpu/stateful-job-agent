@@ -1,0 +1,11 @@
+{
+  "data": "CC0 synthetic only",
+  "target_domain_identity": "95b6c48fa3407d226af7bc03ff5384a0c680407cc5138e5d0f22cfdd2b23222c",
+  "checks": [
+    "native_pg_reload_hash_counts_match",
+    "original_snapshot_reference_exact",
+    "original_task_id_survived",
+    "rollback_copy_sqlite_reference_and_search"
+  ],
+  "production_migration_verified": false
+}

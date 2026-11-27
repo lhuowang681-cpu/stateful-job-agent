@@ -76,13 +76,16 @@ class ApplicationStatus(str, Enum):
     TO_APPLY = "to_apply"
     APPLIED = "applied"
     RESUME_SCREEN = "resume_screen"
+    ONLINE_ASSESSMENT = "online_assessment"
     FIRST_INTERVIEW = "first_interview"
     SECOND_INTERVIEW = "second_interview"
     OTHER_INTERVIEW = "other_interview"
     HR_INTERVIEW = "hr_interview"
+    FINAL_INTERVIEW = "final_interview"
     OFFER = "offer"
     ACCEPTED = "accepted"
     REJECTED = "rejected"
+    WITHDRAWN = "withdrawn"
     ABANDONED = "abandoned"
     CLOSED = "closed"
 
@@ -513,6 +516,8 @@ class ApplicationRecord(StrictModel):
     city: str = "unknown"
     url: str = ""
     source: str = ""
+    resume_version_id: str | None = None
+    submitted_at: str | None = None
     current_state: ApplicationStatus
     verdict: Verdict | None = None
     fit_score: float | None = Field(default=None, ge=0.0, le=1.0)
@@ -520,8 +525,14 @@ class ApplicationRecord(StrictModel):
     artifact_paths: dict[str, str] = Field(default_factory=dict)
     tags: list[str] = Field(default_factory=list)
     notes: str = ""
+    contacts: list[str] = Field(default_factory=list)
+    outcome: str | None = None
+    next_action: str | None = None
+    next_action_due_at: str | None = None
+    interview_round_ids: list[str] = Field(default_factory=list)
     next_deadline: str | None = None
     state_history: list[TrackerEvent] = Field(default_factory=list)
+    created_by_trace_id: str | None = None
 
 
 class TrackerReminder(StrictModel):

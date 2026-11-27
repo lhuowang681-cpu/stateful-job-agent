@@ -1,0 +1,1127 @@
+{
+  "recorded_at_utc": "2026-10-22T11:56:53.503676+00:00",
+  "dataset_hash": "59ca39cdcf2a59769428bb85860c6b828aae4ec84e0bbbbe7e5d2e2507618c41",
+  "model": {
+    "provider": "offline-transformers",
+    "model_name": "Qwen2.5-7B-Instruct",
+    "revision": "f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7",
+    "policy": {
+      "max_input_tokens": 8192,
+      "max_output_tokens": 512,
+      "generation_seconds": 25,
+      "torch": "2.5.1+cu121",
+      "transformers": "4.57.6",
+      "dtype": "bfloat16",
+      "attention": "sdpa"
+    },
+    "file_hashes": {
+      "config.json": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c",
+      "generation_config.json": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f",
+      "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "model-00001-of-00004.safetensors": "a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7",
+      "model-00002-of-00004.safetensors": "f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185",
+      "model-00003-of-00004.safetensors": "8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5",
+      "model-00004-of-00004.safetensors": "1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd",
+      "model.safetensors.index.json": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028",
+      "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "architecture": "Qwen2ForCausalLM",
+    "parameter_count": 7615616512,
+    "loaded_device": "cuda:1",
+    "loaded_dtype": "torch.bfloat16"
+  },
+  "model_load_and_hash_ms": 29658.63,
+  "repeats": 1,
+  "selected_cases": 2,
+  "temperature": 0.2,
+  "calls_cap_per_path": {
+    "writer_once": 1,
+    "self_revision": 6,
+    "writer_reviewer": 6
+  },
+  "input_token_cap": 8192,
+  "output_token_cap": 512,
+  "paid_api_calls": 0,
+  "api_cost": 0,
+  "compute_cost": null,
+  "semantic_quality": null,
+  "human_reviewed": false,
+  "rows": [
+    {
+      "case_id": "normal-api",
+      "variant": "writer_once",
+      "repeat": 0,
+      "status": "failed",
+      "drafts": [],
+      "model_inflight": false,
+      "source_hash": "2691545d8bd5aa12ed60c37971fe8c5c6918813c57649c9197f0e9f9fc0be304",
+      "jd_hash": "b9ffbb8732db80a18e46dc441166c01f7574705591657d029b0e3dd7c34ca08f",
+      "actual_calls": 1,
+      "calls": [
+        {
+          "dispatched": true,
+          "node_id": "writer-1",
+          "run_id": "s4-normal-api-writer_once-0",
+          "input_tokens": 842,
+          "output_tokens": 114,
+          "status": "completed",
+          "cap": 512,
+          "seed": 0,
+          "temperature": 0.2,
+          "prompt_hash": "f26654d31f84af4d38fd8ff8a85a7ffeedec789115911b7e9c40b8a2d7156007",
+          "latency_ms": 3495,
+          "finish_reason": "stop",
+          "output_hash": "3feeb925a1539952228878c45a99a994747fb94391fd2006ee1f437cf3454af0",
+          "synthetic_raw_output": "{\n  \"text\": \"使用 Python 开发 FastAPI 接口，参与本地原型测试。\",\n  \"reason\": \"根据提供的信息，这是候选人的工作经历。\",\n  \"claims\": [\n    {\n      \"text\": \"使用 Python 开发 FastAPI 接口，参与本地原型测试。\",\n      \"status\": \"supported\",\n      \"reason\": \"直接来源于输入数据\",\n      \"source_quote\": \"使用 Python 开发 FastAPI 接口，参与本地原型测试。\",\n      \"revision\": 1\n    }\n  ]\n}"
+        }
+      ],
+      "semantic_quality": null,
+      "human_reviewed": false,
+      "execution": {
+        "schema_version": "shared-run-1",
+        "run_id": "s4-normal-api-writer_once-0",
+        "trace_id": "trace-normal-api-writer_once-0",
+        "owner_id": "synthetic",
+        "task": "rewrite",
+        "source_identity": {
+          "case_id": "normal-api",
+          "source_fact_hash": "2691545d8bd5aa12ed60c37971fe8c5c6918813c57649c9197f0e9f9fc0be304",
+          "jd_hash": "b9ffbb8732db80a18e46dc441166c01f7574705591657d029b0e3dd7c34ca08f"
+        },
+        "model_identity": {
+          "provider": "offline-transformers",
+          "model": "Qwen2.5-7B-Instruct@f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7:376207d37bc3ccd5"
+        },
+        "node": "coordinator",
+        "revision": 1,
+        "status": "failed",
+        "next_action": "",
+        "latest_feedback": null,
+        "artifact_hashes": [],
+        "evidence_pack_ids": [],
+        "limits": {
+          "role_calls": 1
+        },
+        "usage": {
+          "provider_attempts": 1,
+          "dispatched_calls": 1,
+          "input_tokens": 842,
+          "output_tokens": 114
+        },
+        "context_incomplete": false,
+        "recovery": "none",
+        "attempt": 1,
+        "execution_token": null,
+        "lease_until": 0.0,
+        "event_seq": 2,
+        "events": [
+          {
+            "seq": 1,
+            "role": "writer",
+            "phase": "started",
+            "revision": 1,
+            "input_hash": "e807bfc8a7e70016fe2e76377fe1e0ae1fbce2e261aa232470c3a24af61d71cb",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-22T11:56:53.504335+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 2,
+            "role": "coordinator",
+            "phase": "stopped",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": null,
+            "feedback_id": null,
+            "code": "failed",
+            "recorded_at": "2026-10-22T11:56:57.005343+00:00",
+            "metrics": {}
+          }
+        ],
+        "approval": null,
+        "independent_truth": "not_verified"
+      },
+      "elapsed_ms": 3501.45,
+      "error_code": "schema_error"
+    },
+    {
+      "case_id": "normal-api",
+      "variant": "self_revision",
+      "repeat": 0,
+      "status": "failed",
+      "drafts": [],
+      "model_inflight": false,
+      "source_hash": "2691545d8bd5aa12ed60c37971fe8c5c6918813c57649c9197f0e9f9fc0be304",
+      "jd_hash": "b9ffbb8732db80a18e46dc441166c01f7574705591657d029b0e3dd7c34ca08f",
+      "actual_calls": 1,
+      "calls": [
+        {
+          "dispatched": true,
+          "node_id": "writer-1",
+          "run_id": "s4-normal-api-self_revision-0",
+          "input_tokens": 842,
+          "output_tokens": 114,
+          "status": "completed",
+          "cap": 512,
+          "seed": 0,
+          "temperature": 0.2,
+          "prompt_hash": "f26654d31f84af4d38fd8ff8a85a7ffeedec789115911b7e9c40b8a2d7156007",
+          "latency_ms": 2611,
+          "finish_reason": "stop",
+          "output_hash": "3feeb925a1539952228878c45a99a994747fb94391fd2006ee1f437cf3454af0",
+          "synthetic_raw_output": "{\n  \"text\": \"使用 Python 开发 FastAPI 接口，参与本地原型测试。\",\n  \"reason\": \"根据提供的信息，这是候选人的工作经历。\",\n  \"claims\": [\n    {\n      \"text\": \"使用 Python 开发 FastAPI 接口，参与本地原型测试。\",\n      \"status\": \"supported\",\n      \"reason\": \"直接来源于输入数据\",\n      \"source_quote\": \"使用 Python 开发 FastAPI 接口，参与本地原型测试。\",\n      \"revision\": 1\n    }\n  ]\n}"
+        }
+      ],
+      "semantic_quality": null,
+      "human_reviewed": false,
+      "execution": {
+        "schema_version": "shared-run-1",
+        "run_id": "s4-normal-api-self_revision-0",
+        "trace_id": "trace-normal-api-self_revision-0",
+        "owner_id": "synthetic",
+        "task": "rewrite",
+        "source_identity": {
+          "case_id": "normal-api",
+          "source_fact_hash": "2691545d8bd5aa12ed60c37971fe8c5c6918813c57649c9197f0e9f9fc0be304",
+          "jd_hash": "b9ffbb8732db80a18e46dc441166c01f7574705591657d029b0e3dd7c34ca08f"
+        },
+        "model_identity": {
+          "provider": "offline-transformers",
+          "model": "Qwen2.5-7B-Instruct@f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7:376207d37bc3ccd5"
+        },
+        "node": "coordinator",
+        "revision": 1,
+        "status": "failed",
+        "next_action": "",
+        "latest_feedback": null,
+        "artifact_hashes": [],
+        "evidence_pack_ids": [],
+        "limits": {
+          "role_calls": 6
+        },
+        "usage": {
+          "provider_attempts": 1,
+          "dispatched_calls": 1,
+          "input_tokens": 842,
+          "output_tokens": 114
+        },
+        "context_incomplete": false,
+        "recovery": "none",
+        "attempt": 1,
+        "execution_token": null,
+        "lease_until": 0.0,
+        "event_seq": 2,
+        "events": [
+          {
+            "seq": 1,
+            "role": "writer",
+            "phase": "started",
+            "revision": 1,
+            "input_hash": "e807bfc8a7e70016fe2e76377fe1e0ae1fbce2e261aa232470c3a24af61d71cb",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-22T11:56:57.006147+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 2,
+            "role": "coordinator",
+            "phase": "stopped",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": null,
+            "feedback_id": null,
+            "code": "failed",
+            "recorded_at": "2026-10-22T11:56:59.619904+00:00",
+            "metrics": {}
+          }
+        ],
+        "approval": null,
+        "independent_truth": "not_verified"
+      },
+      "elapsed_ms": 2613.95,
+      "error_code": "schema_error"
+    },
+    {
+      "case_id": "normal-api",
+      "variant": "writer_reviewer",
+      "repeat": 0,
+      "status": "failed",
+      "drafts": [],
+      "model_inflight": false,
+      "source_hash": "2691545d8bd5aa12ed60c37971fe8c5c6918813c57649c9197f0e9f9fc0be304",
+      "jd_hash": "b9ffbb8732db80a18e46dc441166c01f7574705591657d029b0e3dd7c34ca08f",
+      "actual_calls": 1,
+      "calls": [
+        {
+          "dispatched": true,
+          "node_id": "writer-1",
+          "run_id": "s4-normal-api-writer_reviewer-0",
+          "input_tokens": 842,
+          "output_tokens": 114,
+          "status": "completed",
+          "cap": 512,
+          "seed": 0,
+          "temperature": 0.2,
+          "prompt_hash": "f26654d31f84af4d38fd8ff8a85a7ffeedec789115911b7e9c40b8a2d7156007",
+          "latency_ms": 2606,
+          "finish_reason": "stop",
+          "output_hash": "3feeb925a1539952228878c45a99a994747fb94391fd2006ee1f437cf3454af0",
+          "synthetic_raw_output": "{\n  \"text\": \"使用 Python 开发 FastAPI 接口，参与本地原型测试。\",\n  \"reason\": \"根据提供的信息，这是候选人的工作经历。\",\n  \"claims\": [\n    {\n      \"text\": \"使用 Python 开发 FastAPI 接口，参与本地原型测试。\",\n      \"status\": \"supported\",\n      \"reason\": \"直接来源于输入数据\",\n      \"source_quote\": \"使用 Python 开发 FastAPI 接口，参与本地原型测试。\",\n      \"revision\": 1\n    }\n  ]\n}"
+        }
+      ],
+      "semantic_quality": null,
+      "human_reviewed": false,
+      "execution": {
+        "schema_version": "shared-run-1",
+        "run_id": "s4-normal-api-writer_reviewer-0",
+        "trace_id": "trace-normal-api-writer_reviewer-0",
+        "owner_id": "synthetic",
+        "task": "rewrite",
+        "source_identity": {
+          "case_id": "normal-api",
+          "source_fact_hash": "2691545d8bd5aa12ed60c37971fe8c5c6918813c57649c9197f0e9f9fc0be304",
+          "jd_hash": "b9ffbb8732db80a18e46dc441166c01f7574705591657d029b0e3dd7c34ca08f"
+        },
+        "model_identity": {
+          "provider": "offline-transformers",
+          "model": "Qwen2.5-7B-Instruct@f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7:376207d37bc3ccd5"
+        },
+        "node": "coordinator",
+        "revision": 1,
+        "status": "failed",
+        "next_action": "",
+        "latest_feedback": null,
+        "artifact_hashes": [],
+        "evidence_pack_ids": [],
+        "limits": {
+          "role_calls": 6
+        },
+        "usage": {
+          "provider_attempts": 1,
+          "dispatched_calls": 1,
+          "input_tokens": 842,
+          "output_tokens": 114
+        },
+        "context_incomplete": false,
+        "recovery": "none",
+        "attempt": 1,
+        "execution_token": null,
+        "lease_until": 0.0,
+        "event_seq": 2,
+        "events": [
+          {
+            "seq": 1,
+            "role": "writer",
+            "phase": "started",
+            "revision": 1,
+            "input_hash": "e807bfc8a7e70016fe2e76377fe1e0ae1fbce2e261aa232470c3a24af61d71cb",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-22T11:56:59.620796+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 2,
+            "role": "coordinator",
+            "phase": "stopped",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": null,
+            "feedback_id": null,
+            "code": "failed",
+            "recorded_at": "2026-10-22T11:57:02.229652+00:00",
+            "metrics": {}
+          }
+        ],
+        "approval": null,
+        "independent_truth": "not_verified"
+      },
+      "elapsed_ms": 2609.05,
+      "error_code": "schema_error"
+    },
+    {
+      "case_id": "new-success",
+      "variant": "writer_once",
+      "repeat": 0,
+      "status": "needs_input",
+      "drafts": [
+        {
+          "revision": 1,
+          "draft": {
+            "text": "参与本地求职助手原型开发。",
+            "reason": "根据提供的信息，候选人在本地求职助手原型开发中有所参与。",
+            "claims": [
+              {
+                "text": "参与本地求职助手原型开发。",
+                "source_quote": "参与本地求职助手原型开发。",
+                "status": "supported",
+                "reason": "根据提供的信息，候选人在本地求职助手原型开发中有所参与。"
+              }
+            ]
+          },
+          "draft_hash": "3751d7492abbb01ade940f0c67001985257ebf2c3fdb18966ce7bf4ef7771797",
+          "review": {
+            "outcome": "needs_input",
+            "constraint": "单Writer来源映射，非独立审查。"
+          },
+          "claim_audit": {
+            "source_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+            "draft_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+            "claims": [
+              {
+                "claim_id": "claim-89262cad83f4bfc6341ff99e",
+                "text": "参与本地求职助手原型开发。",
+                "start": 0,
+                "end": 13,
+                "kinds": [
+                  "responsibility",
+                  "scope"
+                ],
+                "change": "unchanged_or_controlled_paraphrase",
+                "status": "supported",
+                "assessed_by": "deterministic_alignment",
+                "source_id": "new-success",
+                "source_quote": "参与本地求职助手原型开发。",
+                "reason": "与C1分句相等或受限措辞转换；未独立核实。"
+              }
+            ],
+            "hard_issues": [],
+            "unresolved_ids": [],
+            "acceptable": true,
+            "semantic_truth": "not_independently_verified"
+          }
+        }
+      ],
+      "model_inflight": false,
+      "source_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+      "jd_hash": "9756d7e35daebdb0ad29f53ada75b30b884a2f2b6cebf3d0dc39f14373cf2322",
+      "actual_calls": 1,
+      "calls": [
+        {
+          "dispatched": true,
+          "node_id": "writer-1",
+          "run_id": "s4-new-success-writer_once-0",
+          "input_tokens": 833,
+          "output_tokens": 125,
+          "status": "completed",
+          "cap": 512,
+          "seed": 10,
+          "temperature": 0.2,
+          "prompt_hash": "9909d730184938c425de3280e761ad53b03538b853ecf494c6e161ea92d8fff1",
+          "latency_ms": 2848,
+          "finish_reason": "stop",
+          "output_hash": "407d19c17a786bf000353dc03e21e1813d0b9ef3ccaac453e05d470562757d55",
+          "synthetic_raw_output": "{\n  \"text\": \"参与本地求职助手原型开发。\",\n  \"reason\": \"根据提供的信息，候选人在本地求职助手原型开发中有所参与。\",\n  \"claims\": [\n    {\n      \"text\": \"参与本地求职助手原型开发。\",\n      \"status\": \"supported\",\n      \"reason\": \"根据提供的信息，候选人在本地求职助手原型开发中有所参与。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\"\n    }\n  ]\n}"
+        }
+      ],
+      "semantic_quality": null,
+      "human_reviewed": false,
+      "execution": {
+        "schema_version": "shared-run-1",
+        "run_id": "s4-new-success-writer_once-0",
+        "trace_id": "trace-new-success-writer_once-0",
+        "owner_id": "synthetic",
+        "task": "rewrite",
+        "source_identity": {
+          "case_id": "new-success",
+          "source_fact_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+          "jd_hash": "9756d7e35daebdb0ad29f53ada75b30b884a2f2b6cebf3d0dc39f14373cf2322"
+        },
+        "model_identity": {
+          "provider": "offline-transformers",
+          "model": "Qwen2.5-7B-Instruct@f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7:376207d37bc3ccd5"
+        },
+        "node": "coordinator",
+        "revision": 1,
+        "status": "needs_input",
+        "next_action": "",
+        "latest_feedback": {
+          "sender": "reviewer",
+          "revision": 1,
+          "outcome": "needs_input",
+          "constraint": "单Writer来源映射，非独立审查。",
+          "artifact_hash": "3751d7492abbb01ade940f0c67001985257ebf2c3fdb18966ce7bf4ef7771797",
+          "feedback_id": "feedback-7304ef2d0b865234c38bedfc20142029b1f4500a458f4c8e752d3cfc06be22a8",
+          "details": {}
+        },
+        "artifact_hashes": [],
+        "evidence_pack_ids": [],
+        "limits": {
+          "role_calls": 1
+        },
+        "usage": {
+          "provider_attempts": 1,
+          "dispatched_calls": 1,
+          "input_tokens": 833,
+          "output_tokens": 125
+        },
+        "context_incomplete": false,
+        "recovery": "none",
+        "attempt": 1,
+        "execution_token": null,
+        "lease_until": 0.0,
+        "event_seq": 3,
+        "events": [
+          {
+            "seq": 1,
+            "role": "writer",
+            "phase": "started",
+            "revision": 1,
+            "input_hash": "5ab8ab076f6e477d7b7ef7f9a3426b4f888568c4dfa69f4fac6e4260acd3f414",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-22T11:57:02.230823+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 2,
+            "role": "writer",
+            "phase": "completed",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "3751d7492abbb01ade940f0c67001985257ebf2c3fdb18966ce7bf4ef7771797",
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-22T11:57:05.082221+00:00",
+            "metrics": {
+              "provider": "offline-transformers",
+              "model": "Qwen2.5-7B-Instruct@f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7:376207d37bc3ccd5",
+              "skill_id": "v3-rewrite-writer",
+              "skill_version": "2",
+              "prompt_version": "s4-rewrite-1",
+              "latency_ms": 2848,
+              "input_tokens": 833,
+              "output_tokens": 125,
+              "schema_valid": true,
+              "fallback_used": false,
+              "error_code": null,
+              "finish_reason": "stop",
+              "completion_truncated": false
+            }
+          },
+          {
+            "seq": 3,
+            "role": "coordinator",
+            "phase": "gate",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "3e445b25deca4ae08f883cc21ca36f9f95c3e9bfce9577f365336de766fb3235",
+            "feedback_id": "feedback-7304ef2d0b865234c38bedfc20142029b1f4500a458f4c8e752d3cfc06be22a8",
+            "code": "needs_input",
+            "recorded_at": "2026-10-22T11:57:05.088903+00:00",
+            "metrics": {}
+          }
+        ],
+        "approval": null,
+        "independent_truth": "not_verified"
+      },
+      "elapsed_ms": 2859.42
+    },
+    {
+      "case_id": "new-success",
+      "variant": "self_revision",
+      "repeat": 0,
+      "status": "needs_input",
+      "drafts": [
+        {
+          "revision": 1,
+          "draft": {
+            "text": "参与本地求职助手原型开发。",
+            "reason": "根据提供的信息，候选人在本地求职助手原型开发中有所参与。",
+            "claims": [
+              {
+                "text": "参与本地求职助手原型开发。",
+                "source_quote": "参与本地求职助手原型开发。",
+                "status": "supported",
+                "reason": "根据提供的信息，候选人在本地求职助手原型开发中有所参与。"
+              }
+            ]
+          },
+          "draft_hash": "3751d7492abbb01ade940f0c67001985257ebf2c3fdb18966ce7bf4ef7771797",
+          "review": {
+            "outcome": "needs_input",
+            "constraint": "确保每项声明都有明确的证据支持，避免模糊表述。"
+          },
+          "claim_audit": {
+            "source_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+            "draft_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+            "claims": [
+              {
+                "claim_id": "claim-89262cad83f4bfc6341ff99e",
+                "text": "参与本地求职助手原型开发。",
+                "start": 0,
+                "end": 13,
+                "kinds": [
+                  "responsibility",
+                  "scope"
+                ],
+                "change": "unchanged_or_controlled_paraphrase",
+                "status": "supported",
+                "assessed_by": "deterministic_alignment",
+                "source_id": "new-success",
+                "source_quote": "参与本地求职助手原型开发。",
+                "reason": "与C1分句相等或受限措辞转换；未独立核实。"
+              }
+            ],
+            "hard_issues": [],
+            "unresolved_ids": [],
+            "acceptable": true,
+            "semantic_truth": "not_independently_verified"
+          }
+        }
+      ],
+      "model_inflight": false,
+      "source_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+      "jd_hash": "9756d7e35daebdb0ad29f53ada75b30b884a2f2b6cebf3d0dc39f14373cf2322",
+      "actual_calls": 2,
+      "calls": [
+        {
+          "dispatched": true,
+          "node_id": "writer-1",
+          "run_id": "s4-new-success-self_revision-0",
+          "input_tokens": 833,
+          "output_tokens": 125,
+          "status": "completed",
+          "cap": 512,
+          "seed": 10,
+          "temperature": 0.2,
+          "prompt_hash": "9909d730184938c425de3280e761ad53b03538b853ecf494c6e161ea92d8fff1",
+          "latency_ms": 2856,
+          "finish_reason": "stop",
+          "output_hash": "407d19c17a786bf000353dc03e21e1813d0b9ef3ccaac453e05d470562757d55",
+          "synthetic_raw_output": "{\n  \"text\": \"参与本地求职助手原型开发。\",\n  \"reason\": \"根据提供的信息，候选人在本地求职助手原型开发中有所参与。\",\n  \"claims\": [\n    {\n      \"text\": \"参与本地求职助手原型开发。\",\n      \"status\": \"supported\",\n      \"reason\": \"根据提供的信息，候选人在本地求职助手原型开发中有所参与。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\"\n    }\n  ]\n}"
+        },
+        {
+          "dispatched": true,
+          "node_id": "reviewer-1",
+          "run_id": "s4-new-success-self_revision-0",
+          "input_tokens": 1051,
+          "output_tokens": 30,
+          "status": "completed",
+          "cap": 512,
+          "seed": 11,
+          "temperature": 0.2,
+          "prompt_hash": "e03104fad781c5b0326362ad9bd0c55fb4b5461d703952f91564a5dd10baf85f",
+          "latency_ms": 759,
+          "finish_reason": "stop",
+          "output_hash": "e3af93f8f452672873a8a12fa442f9339b86f419420acb9eb19dcfadaf560633",
+          "synthetic_raw_output": "{\n  \"outcome\": \"accept\",\n  \"constraint\": \"确保每项声明都有明确的证据支持，避免模糊表述。\"\n}"
+        }
+      ],
+      "semantic_quality": null,
+      "human_reviewed": false,
+      "execution": {
+        "schema_version": "shared-run-1",
+        "run_id": "s4-new-success-self_revision-0",
+        "trace_id": "trace-new-success-self_revision-0",
+        "owner_id": "synthetic",
+        "task": "rewrite",
+        "source_identity": {
+          "case_id": "new-success",
+          "source_fact_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+          "jd_hash": "9756d7e35daebdb0ad29f53ada75b30b884a2f2b6cebf3d0dc39f14373cf2322"
+        },
+        "model_identity": {
+          "provider": "offline-transformers",
+          "model": "Qwen2.5-7B-Instruct@f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7:376207d37bc3ccd5"
+        },
+        "node": "coordinator",
+        "revision": 1,
+        "status": "needs_input",
+        "next_action": "",
+        "latest_feedback": {
+          "sender": "self_critic",
+          "revision": 1,
+          "outcome": "needs_input",
+          "constraint": "确保每项声明都有明确的证据支持，避免模糊表述。",
+          "artifact_hash": "3751d7492abbb01ade940f0c67001985257ebf2c3fdb18966ce7bf4ef7771797",
+          "feedback_id": "feedback-2b6112e085b9d850eeefcf7ff3c4eaafd11bd1dc9a715edaf89b3f3c92f183d7",
+          "details": {}
+        },
+        "artifact_hashes": [],
+        "evidence_pack_ids": [],
+        "limits": {
+          "role_calls": 6
+        },
+        "usage": {
+          "provider_attempts": 2,
+          "dispatched_calls": 2,
+          "input_tokens": 1884,
+          "output_tokens": 155
+        },
+        "context_incomplete": false,
+        "recovery": "none",
+        "attempt": 1,
+        "execution_token": null,
+        "lease_until": 0.0,
+        "event_seq": 5,
+        "events": [
+          {
+            "seq": 1,
+            "role": "writer",
+            "phase": "started",
+            "revision": 1,
+            "input_hash": "5ab8ab076f6e477d7b7ef7f9a3426b4f888568c4dfa69f4fac6e4260acd3f414",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-22T11:57:05.091292+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 2,
+            "role": "writer",
+            "phase": "completed",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "3751d7492abbb01ade940f0c67001985257ebf2c3fdb18966ce7bf4ef7771797",
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-22T11:57:07.950679+00:00",
+            "metrics": {
+              "provider": "offline-transformers",
+              "model": "Qwen2.5-7B-Instruct@f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7:376207d37bc3ccd5",
+              "skill_id": "v3-rewrite-writer",
+              "skill_version": "2",
+              "prompt_version": "s4-rewrite-1",
+              "latency_ms": 2856,
+              "input_tokens": 833,
+              "output_tokens": 125,
+              "schema_valid": true,
+              "fallback_used": false,
+              "error_code": null,
+              "finish_reason": "stop",
+              "completion_truncated": false
+            }
+          },
+          {
+            "seq": 3,
+            "role": "reviewer",
+            "phase": "started",
+            "revision": 1,
+            "input_hash": "317830d1033179e2833eac4e856cb281f869404c5ea43448acfd42cb15433929",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-22T11:57:07.952270+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 4,
+            "role": "reviewer",
+            "phase": "completed",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "570e02560b6bcef27fdc44a51e34508d02ff9412c8e2fb0c13ac76c66c6aebd8",
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-22T11:57:08.715362+00:00",
+            "metrics": {
+              "provider": "offline-transformers",
+              "model": "Qwen2.5-7B-Instruct@f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7:376207d37bc3ccd5",
+              "skill_id": "v3-rewrite-reviewer",
+              "skill_version": "2",
+              "prompt_version": "s4-rewrite-1",
+              "latency_ms": 759,
+              "input_tokens": 1051,
+              "output_tokens": 30,
+              "schema_valid": true,
+              "fallback_used": false,
+              "error_code": null,
+              "finish_reason": "stop",
+              "completion_truncated": false
+            }
+          },
+          {
+            "seq": 5,
+            "role": "coordinator",
+            "phase": "gate",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "3e445b25deca4ae08f883cc21ca36f9f95c3e9bfce9577f365336de766fb3235",
+            "feedback_id": "feedback-2b6112e085b9d850eeefcf7ff3c4eaafd11bd1dc9a715edaf89b3f3c92f183d7",
+            "code": "needs_input",
+            "recorded_at": "2026-10-22T11:57:08.717245+00:00",
+            "metrics": {}
+          }
+        ],
+        "approval": null,
+        "independent_truth": "not_verified"
+      },
+      "elapsed_ms": 3627.66
+    },
+    {
+      "case_id": "new-success",
+      "variant": "writer_reviewer",
+      "repeat": 0,
+      "status": "needs_input",
+      "drafts": [
+        {
+          "revision": 1,
+          "draft": {
+            "text": "参与本地求职助手原型开发。",
+            "reason": "根据提供的信息，候选人在本地求职助手原型开发中有所参与。",
+            "claims": [
+              {
+                "text": "参与本地求职助手原型开发。",
+                "source_quote": "参与本地求职助手原型开发。",
+                "status": "supported",
+                "reason": "根据提供的信息，候选人在本地求职助手原型开发中有所参与。"
+              }
+            ]
+          },
+          "draft_hash": "3751d7492abbb01ade940f0c67001985257ebf2c3fdb18966ce7bf4ef7771797",
+          "review": {
+            "outcome": "needs_input",
+            "constraint": "确认参与本地求职助手原型开发的具体角色和贡献。"
+          },
+          "claim_audit": {
+            "source_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+            "draft_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+            "claims": [
+              {
+                "claim_id": "claim-89262cad83f4bfc6341ff99e",
+                "text": "参与本地求职助手原型开发。",
+                "start": 0,
+                "end": 13,
+                "kinds": [
+                  "responsibility",
+                  "scope"
+                ],
+                "change": "unchanged_or_controlled_paraphrase",
+                "status": "supported",
+                "assessed_by": "deterministic_alignment",
+                "source_id": "new-success",
+                "source_quote": "参与本地求职助手原型开发。",
+                "reason": "与C1分句相等或受限措辞转换；未独立核实。"
+              }
+            ],
+            "hard_issues": [],
+            "unresolved_ids": [],
+            "acceptable": true,
+            "semantic_truth": "not_independently_verified"
+          }
+        }
+      ],
+      "model_inflight": false,
+      "source_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+      "jd_hash": "9756d7e35daebdb0ad29f53ada75b30b884a2f2b6cebf3d0dc39f14373cf2322",
+      "actual_calls": 2,
+      "calls": [
+        {
+          "dispatched": true,
+          "node_id": "writer-1",
+          "run_id": "s4-new-success-writer_reviewer-0",
+          "input_tokens": 833,
+          "output_tokens": 125,
+          "status": "completed",
+          "cap": 512,
+          "seed": 10,
+          "temperature": 0.2,
+          "prompt_hash": "9909d730184938c425de3280e761ad53b03538b853ecf494c6e161ea92d8fff1",
+          "latency_ms": 2873,
+          "finish_reason": "stop",
+          "output_hash": "407d19c17a786bf000353dc03e21e1813d0b9ef3ccaac453e05d470562757d55",
+          "synthetic_raw_output": "{\n  \"text\": \"参与本地求职助手原型开发。\",\n  \"reason\": \"根据提供的信息，候选人在本地求职助手原型开发中有所参与。\",\n  \"claims\": [\n    {\n      \"text\": \"参与本地求职助手原型开发。\",\n      \"status\": \"supported\",\n      \"reason\": \"根据提供的信息，候选人在本地求职助手原型开发中有所参与。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\"\n    }\n  ]\n}"
+        },
+        {
+          "dispatched": true,
+          "node_id": "reviewer-1",
+          "run_id": "s4-new-success-writer_reviewer-0",
+          "input_tokens": 921,
+          "output_tokens": 88,
+          "status": "completed",
+          "cap": 512,
+          "seed": 11,
+          "temperature": 0.2,
+          "prompt_hash": "7837373ba0a1e433cfd00ceed7a14a5b3daeb8aceb9dcfd273ce413338bc8151",
+          "latency_ms": 2087,
+          "finish_reason": "stop",
+          "output_hash": "753fc0eeedc42cd41a4091142f44a7641b431593a3b1342de5449b53a9aeffb4",
+          "synthetic_raw_output": "{\n  \"outcome\": \"accept\",\n  \"constraint\": \"确认参与本地求职助手原型开发的具体角色和贡献。\",\n  \"claims\": [\n    {\n      \"text\": \"参与本地求职助手原型开发。\",\n      \"status\": \"supported\",\n      \"reason\": \"来源于C1自述，且与JD描述相符。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\"\n    }\n  ]\n}"
+        }
+      ],
+      "semantic_quality": null,
+      "human_reviewed": false,
+      "execution": {
+        "schema_version": "shared-run-1",
+        "run_id": "s4-new-success-writer_reviewer-0",
+        "trace_id": "trace-new-success-writer_reviewer-0",
+        "owner_id": "synthetic",
+        "task": "rewrite",
+        "source_identity": {
+          "case_id": "new-success",
+          "source_fact_hash": "50c8f4bd7d7a26285434dc9657dea451c21428d4da3b49d542d14096dc8ef1ee",
+          "jd_hash": "9756d7e35daebdb0ad29f53ada75b30b884a2f2b6cebf3d0dc39f14373cf2322"
+        },
+        "model_identity": {
+          "provider": "offline-transformers",
+          "model": "Qwen2.5-7B-Instruct@f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7:376207d37bc3ccd5"
+        },
+        "node": "coordinator",
+        "revision": 1,
+        "status": "needs_input",
+        "next_action": "",
+        "latest_feedback": {
+          "sender": "reviewer",
+          "revision": 1,
+          "outcome": "needs_input",
+          "constraint": "确认参与本地求职助手原型开发的具体角色和贡献。",
+          "artifact_hash": "3751d7492abbb01ade940f0c67001985257ebf2c3fdb18966ce7bf4ef7771797",
+          "feedback_id": "feedback-6ec6e95b9a10a612868bd1709ae997ae17b4beacbca0f6fedfbf51773683278c",
+          "details": {}
+        },
+        "artifact_hashes": [],
+        "evidence_pack_ids": [],
+        "limits": {
+          "role_calls": 6
+        },
+        "usage": {
+          "provider_attempts": 2,
+          "dispatched_calls": 2,
+          "input_tokens": 1754,
+          "output_tokens": 213
+        },
+        "context_incomplete": false,
+        "recovery": "none",
+        "attempt": 1,
+        "execution_token": null,
+        "lease_until": 0.0,
+        "event_seq": 5,
+        "events": [
+          {
+            "seq": 1,
+            "role": "writer",
+            "phase": "started",
+            "revision": 1,
+            "input_hash": "5ab8ab076f6e477d7b7ef7f9a3426b4f888568c4dfa69f4fac6e4260acd3f414",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-22T11:57:08.720403+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 2,
+            "role": "writer",
+            "phase": "completed",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "3751d7492abbb01ade940f0c67001985257ebf2c3fdb18966ce7bf4ef7771797",
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-22T11:57:11.596821+00:00",
+            "metrics": {
+              "provider": "offline-transformers",
+              "model": "Qwen2.5-7B-Instruct@f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7:376207d37bc3ccd5",
+              "skill_id": "v3-rewrite-writer",
+              "skill_version": "2",
+              "prompt_version": "s4-rewrite-1",
+              "latency_ms": 2873,
+              "input_tokens": 833,
+              "output_tokens": 125,
+              "schema_valid": true,
+              "fallback_used": false,
+              "error_code": null,
+              "finish_reason": "stop",
+              "completion_truncated": false
+            }
+          },
+          {
+            "seq": 3,
+            "role": "reviewer",
+            "phase": "started",
+            "revision": 1,
+            "input_hash": "317830d1033179e2833eac4e856cb281f869404c5ea43448acfd42cb15433929",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-22T11:57:11.598876+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 4,
+            "role": "reviewer",
+            "phase": "completed",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "e9860320e4964f9fda8b28415d49472b5ea688c93540f6c332e60019843cb99e",
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-22T11:57:13.689886+00:00",
+            "metrics": {
+              "provider": "offline-transformers",
+              "model": "Qwen2.5-7B-Instruct@f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7:376207d37bc3ccd5",
+              "skill_id": "v3-rewrite-reviewer",
+              "skill_version": "2",
+              "prompt_version": "s4-rewrite-1",
+              "latency_ms": 2087,
+              "input_tokens": 921,
+              "output_tokens": 88,
+              "schema_valid": true,
+              "fallback_used": false,
+              "error_code": null,
+              "finish_reason": "stop",
+              "completion_truncated": false
+            }
+          },
+          {
+            "seq": 5,
+            "role": "coordinator",
+            "phase": "gate",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": "3e445b25deca4ae08f883cc21ca36f9f95c3e9bfce9577f365336de766fb3235",
+            "feedback_id": "feedback-6ec6e95b9a10a612868bd1709ae997ae17b4beacbca0f6fedfbf51773683278c",
+            "code": "needs_input",
+            "recorded_at": "2026-10-22T11:57:13.693479+00:00",
+            "metrics": {}
+          }
+        ],
+        "approval": null,
+        "independent_truth": "not_verified"
+      },
+      "elapsed_ms": 4976.22
+    }
+  ],
+  "status": "completed",
+  "total_ms": 49854.18,
+  "provider_history": [
+    {
+      "dispatched": true,
+      "node_id": "writer-1",
+      "run_id": "s4-normal-api-writer_once-0",
+      "input_tokens": 842,
+      "output_tokens": 114,
+      "status": "completed",
+      "cap": 512,
+      "seed": 0,
+      "temperature": 0.2,
+      "prompt_hash": "f26654d31f84af4d38fd8ff8a85a7ffeedec789115911b7e9c40b8a2d7156007",
+      "latency_ms": 3495,
+      "finish_reason": "stop",
+      "output_hash": "3feeb925a1539952228878c45a99a994747fb94391fd2006ee1f437cf3454af0",
+      "synthetic_raw_output": "{\n  \"text\": \"使用 Python 开发 FastAPI 接口，参与本地原型测试。\",\n  \"reason\": \"根据提供的信息，这是候选人的工作经历。\",\n  \"claims\": [\n    {\n      \"text\": \"使用 Python 开发 FastAPI 接口，参与本地原型测试。\",\n      \"status\": \"supported\",\n      \"reason\": \"直接来源于输入数据\",\n      \"source_quote\": \"使用 Python 开发 FastAPI 接口，参与本地原型测试。\",\n      \"revision\": 1\n    }\n  ]\n}"
+    },
+    {
+      "dispatched": true,
+      "node_id": "writer-1",
+      "run_id": "s4-normal-api-self_revision-0",
+      "input_tokens": 842,
+      "output_tokens": 114,
+      "status": "completed",
+      "cap": 512,
+      "seed": 0,
+      "temperature": 0.2,
+      "prompt_hash": "f26654d31f84af4d38fd8ff8a85a7ffeedec789115911b7e9c40b8a2d7156007",
+      "latency_ms": 2611,
+      "finish_reason": "stop",
+      "output_hash": "3feeb925a1539952228878c45a99a994747fb94391fd2006ee1f437cf3454af0",
+      "synthetic_raw_output": "{\n  \"text\": \"使用 Python 开发 FastAPI 接口，参与本地原型测试。\",\n  \"reason\": \"根据提供的信息，这是候选人的工作经历。\",\n  \"claims\": [\n    {\n      \"text\": \"使用 Python 开发 FastAPI 接口，参与本地原型测试。\",\n      \"status\": \"supported\",\n      \"reason\": \"直接来源于输入数据\",\n      \"source_quote\": \"使用 Python 开发 FastAPI 接口，参与本地原型测试。\",\n      \"revision\": 1\n    }\n  ]\n}"
+    },
+    {
+      "dispatched": true,
+      "node_id": "writer-1",
+      "run_id": "s4-normal-api-writer_reviewer-0",
+      "input_tokens": 842,
+      "output_tokens": 114,
+      "status": "completed",
+      "cap": 512,
+      "seed": 0,
+      "temperature": 0.2,
+      "prompt_hash": "f26654d31f84af4d38fd8ff8a85a7ffeedec789115911b7e9c40b8a2d7156007",
+      "latency_ms": 2606,
+      "finish_reason": "stop",
+      "output_hash": "3feeb925a1539952228878c45a99a994747fb94391fd2006ee1f437cf3454af0",
+      "synthetic_raw_output": "{\n  \"text\": \"使用 Python 开发 FastAPI 接口，参与本地原型测试。\",\n  \"reason\": \"根据提供的信息，这是候选人的工作经历。\",\n  \"claims\": [\n    {\n      \"text\": \"使用 Python 开发 FastAPI 接口，参与本地原型测试。\",\n      \"status\": \"supported\",\n      \"reason\": \"直接来源于输入数据\",\n      \"source_quote\": \"使用 Python 开发 FastAPI 接口，参与本地原型测试。\",\n      \"revision\": 1\n    }\n  ]\n}"
+    },
+    {
+      "dispatched": true,
+      "node_id": "writer-1",
+      "run_id": "s4-new-success-writer_once-0",
+      "input_tokens": 833,
+      "output_tokens": 125,
+      "status": "completed",
+      "cap": 512,
+      "seed": 10,
+      "temperature": 0.2,
+      "prompt_hash": "9909d730184938c425de3280e761ad53b03538b853ecf494c6e161ea92d8fff1",
+      "latency_ms": 2848,
+      "finish_reason": "stop",
+      "output_hash": "407d19c17a786bf000353dc03e21e1813d0b9ef3ccaac453e05d470562757d55",
+      "synthetic_raw_output": "{\n  \"text\": \"参与本地求职助手原型开发。\",\n  \"reason\": \"根据提供的信息，候选人在本地求职助手原型开发中有所参与。\",\n  \"claims\": [\n    {\n      \"text\": \"参与本地求职助手原型开发。\",\n      \"status\": \"supported\",\n      \"reason\": \"根据提供的信息，候选人在本地求职助手原型开发中有所参与。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\"\n    }\n  ]\n}"
+    },
+    {
+      "dispatched": true,
+      "node_id": "writer-1",
+      "run_id": "s4-new-success-self_revision-0",
+      "input_tokens": 833,
+      "output_tokens": 125,
+      "status": "completed",
+      "cap": 512,
+      "seed": 10,
+      "temperature": 0.2,
+      "prompt_hash": "9909d730184938c425de3280e761ad53b03538b853ecf494c6e161ea92d8fff1",
+      "latency_ms": 2856,
+      "finish_reason": "stop",
+      "output_hash": "407d19c17a786bf000353dc03e21e1813d0b9ef3ccaac453e05d470562757d55",
+      "synthetic_raw_output": "{\n  \"text\": \"参与本地求职助手原型开发。\",\n  \"reason\": \"根据提供的信息，候选人在本地求职助手原型开发中有所参与。\",\n  \"claims\": [\n    {\n      \"text\": \"参与本地求职助手原型开发。\",\n      \"status\": \"supported\",\n      \"reason\": \"根据提供的信息，候选人在本地求职助手原型开发中有所参与。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\"\n    }\n  ]\n}"
+    },
+    {
+      "dispatched": true,
+      "node_id": "reviewer-1",
+      "run_id": "s4-new-success-self_revision-0",
+      "input_tokens": 1051,
+      "output_tokens": 30,
+      "status": "completed",
+      "cap": 512,
+      "seed": 11,
+      "temperature": 0.2,
+      "prompt_hash": "e03104fad781c5b0326362ad9bd0c55fb4b5461d703952f91564a5dd10baf85f",
+      "latency_ms": 759,
+      "finish_reason": "stop",
+      "output_hash": "e3af93f8f452672873a8a12fa442f9339b86f419420acb9eb19dcfadaf560633",
+      "synthetic_raw_output": "{\n  \"outcome\": \"accept\",\n  \"constraint\": \"确保每项声明都有明确的证据支持，避免模糊表述。\"\n}"
+    },
+    {
+      "dispatched": true,
+      "node_id": "writer-1",
+      "run_id": "s4-new-success-writer_reviewer-0",
+      "input_tokens": 833,
+      "output_tokens": 125,
+      "status": "completed",
+      "cap": 512,
+      "seed": 10,
+      "temperature": 0.2,
+      "prompt_hash": "9909d730184938c425de3280e761ad53b03538b853ecf494c6e161ea92d8fff1",
+      "latency_ms": 2873,
+      "finish_reason": "stop",
+      "output_hash": "407d19c17a786bf000353dc03e21e1813d0b9ef3ccaac453e05d470562757d55",
+      "synthetic_raw_output": "{\n  \"text\": \"参与本地求职助手原型开发。\",\n  \"reason\": \"根据提供的信息，候选人在本地求职助手原型开发中有所参与。\",\n  \"claims\": [\n    {\n      \"text\": \"参与本地求职助手原型开发。\",\n      \"status\": \"supported\",\n      \"reason\": \"根据提供的信息，候选人在本地求职助手原型开发中有所参与。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\"\n    }\n  ]\n}"
+    },
+    {
+      "dispatched": true,
+      "node_id": "reviewer-1",
+      "run_id": "s4-new-success-writer_reviewer-0",
+      "input_tokens": 921,
+      "output_tokens": 88,
+      "status": "completed",
+      "cap": 512,
+      "seed": 11,
+      "temperature": 0.2,
+      "prompt_hash": "7837373ba0a1e433cfd00ceed7a14a5b3daeb8aceb9dcfd273ce413338bc8151",
+      "latency_ms": 2087,
+      "finish_reason": "stop",
+      "output_hash": "753fc0eeedc42cd41a4091142f44a7641b431593a3b1342de5449b53a9aeffb4",
+      "synthetic_raw_output": "{\n  \"outcome\": \"accept\",\n  \"constraint\": \"确认参与本地求职助手原型开发的具体角色和贡献。\",\n  \"claims\": [\n    {\n      \"text\": \"参与本地求职助手原型开发。\",\n      \"status\": \"supported\",\n      \"reason\": \"来源于C1自述，且与JD描述相符。\",\n      \"source_quote\": \"参与本地求职助手原型开发。\"\n    }\n  ]\n}"
+    }
+  ]
+}

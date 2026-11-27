@@ -3,22 +3,30 @@ from __future__ import annotations
 import asyncio
 import sys
 import threading
-from typing import Any
+from typing import Any, Mapping
 
 from mcp import ClientSession, StdioServerParameters
-from mcp.client.stdio import stdio_client
+from mcp.client.stdio import get_default_environment, stdio_client
 
 
 class StdioMCPClientBridge:
     def __init__(
         self,
         server_script: str,
+        *,
+        startup_timeout_s: float = 10.0,
+        call_timeout_s: float = 30.0,
+        server_env: Mapping[str, str] | None = None,
     ) -> None:
         self.server_script = server_script
+        self.startup_timeout_s = startup_timeout_s
+        self.call_timeout_s = call_timeout_s
+        self.server_env = dict(server_env or {})
 
         self._loop = None
         self._session = None
         self._thread = None
+        self._startup_error: BaseException | None = None
 
         self._ready = threading.Event()
         
@@ -31,18 +39,26 @@ class StdioMCPClientBridge:
         )
         self._thread.start()
 
-        self._ready.wait(timeout=10)
+        self._ready.wait(timeout=self.startup_timeout_s)
 
         if self._session is None:
-            raise RuntimeError("MCP bridge failed to start")
+            raise RuntimeError("MCP bridge failed to start") from self._startup_error
 
     def _thread_main(self) -> None:
-        asyncio.run(self._run_session())
+        try:
+            asyncio.run(self._run_session())
+        except BaseException as exc:
+            self._startup_error = exc
+            self._ready.set()
 
     async def _run_session(self) -> None:
         server_params = StdioServerParameters(
             command=sys.executable,
             args=[self.server_script],
+            env={
+                **get_default_environment(),
+                **self.server_env,
+            },
         )
 
         async with stdio_client(server_params) as (
@@ -69,7 +85,7 @@ class StdioMCPClientBridge:
             self._loop,
         )
 
-        result = future.result(timeout=10)
+        result = future.result(timeout=self.call_timeout_s)
 
         tools = []
 
@@ -97,7 +113,7 @@ class StdioMCPClientBridge:
             self._loop,
         )
 
-        result = future.result(timeout=30)
+        result = future.result(timeout=self.call_timeout_s)
 
         if result.is_error:
             raise RuntimeError(f"MCP tool failed: {name}")

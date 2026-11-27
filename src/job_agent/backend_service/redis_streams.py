@@ -20,8 +20,9 @@ class RedisStreamDispatchQueue:
         *,
         stream_name: str = "job-agent:runs",
         group_name: str = "agent-workers",
+        client_parameters: dict | None = None,
     ) -> None:
-        self._redis = Redis.from_url(redis_url, decode_responses=True)
+        self._redis = Redis.from_url(redis_url, decode_responses=True, **(client_parameters or {}))
         self.stream_name = stream_name
         self.group_name = group_name
 

@@ -1,0 +1,1054 @@
+--- audit-baseline/.gitignore
++++ M1/.gitignore
+@@ -49,6 +49,7 @@
+ # documentation/training tests are intentionally excluded with their targets.
+ tests/*.py
+ !tests/test_source_audit_regressions.py
++!tests/test_resume_workspace.py
+ !tests/test_agent_loop.py
+ !tests/test_agent_interaction_contract.py
+ !tests/test_agent_context.py
+--- audit-baseline/scripts/demo_resume_versions.py
++++ M1/scripts/demo_resume_versions.py
+@@ -0,0 +1,70 @@
++"""Run the M1 data/version demo using synthetic facts; no models or credentials.
++
++Usage: python scripts/demo_resume_versions.py --output-dir output/demo-resume-m1
++"""
++from __future__ import annotations
++
++import argparse
++import json
++from pathlib import Path
++
++from job_agent.resume_workspace.contracts import (
++    PersonalInfo, ResumeCreate, ResumeDocument, ResumeFact, SourceCreate, SourceSpan, VersionCreate,
++)
++from job_agent.resume_workspace.repository import SqliteResumeRepository
++
++
++def run_demo(output_dir: Path) -> dict:
++    repository = SqliteResumeRepository(output_dir / "workspace.sqlite")
++    user = "synthetic-demo-user"
++    source = repository.add_source(user, SourceCreate(
++        kind="original_resume", label="合成示例：不是用户的真实经历",
++        text="演示同学\nPython\nFastAPI\n用 Python 编写接口回归脚本。",
++    ))
++
++    def fact(key: str, text: str) -> ResumeFact:
++        start = source.text.index(text)
++        return ResumeFact(fact_id=key, text=text, source=SourceSpan(
++            source_id=source.source_id, content_hash=source.content_hash,
++            start=start, end=start + len(text),
++        ))
++
++    document = ResumeDocument(personal=PersonalInfo(name=fact("name", "演示同学")),
++                              skills=[fact("python", "Python"), fact("fastapi", "FastAPI")])
++    first = repository.create_resume(user, ResumeCreate(title="合成演示简历", document=document))
++    confirmed = repository.confirm_version(user, first.resume_id, first.version_id,
++                                           expected_content_hash=first.content_hash)
++    reordered = ResumeDocument.model_validate(document.model_dump())
++    reordered.skills.reverse()
++    second = repository.save_version(user, first.resume_id, VersionCreate(
++        expected_parent_version_id=first.version_id, document=reordered, note="只调整技能顺序",
++    ))
++    restored = repository.restore_version(user, first.resume_id, first.version_id,
++                                          expected_parent_version_id=second.version_id,
++                                          note="恢复旧内容，保留修改历史")
++    reopened = SqliteResumeRepository(repository.path)
++    report = {
++        "scope": "M1 structured resume/version demo; deterministic, synthetic; no LLM or product UI",
++        "resume_id": first.resume_id,
++        "versions": [{"sequence": version.sequence, "content_hash": version.content_hash,
++                      "confirmed": version.confirmed_at is not None}
++                     for version in reopened.list_versions(user, first.resume_id)],
++        "checks": {
++            "first_version_confirmed": confirmed.confirmed_at is not None,
++            "edit_requires_new_confirmation": second.confirmed_at is None,
++            "restore_requires_new_confirmation": restored.confirmed_at is None,
++            "restored_content_matches_original": restored.content_hash == first.content_hash,
++            "restored_has_new_version_id": restored.version_id != first.version_id,
++            "history_survives_repository_reopen": len(reopened.list_versions(user, first.resume_id)) == 3,
++        },
++    }
++    output_dir.mkdir(parents=True, exist_ok=True)
++    (output_dir / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
++    return report
++
++
++if __name__ == "__main__":
++    parser = argparse.ArgumentParser()
++    parser.add_argument("--output-dir", type=Path, default=Path("output/demo-resume-m1"))
++    args = parser.parse_args()
++    print(json.dumps(run_demo(args.output_dir), ensure_ascii=False, indent=2))
+--- audit-baseline/src/job_agent/resume_workspace/__init__.py
++++ M1/src/job_agent/resume_workspace/__init__.py
+@@ -0,0 +1,5 @@
++"""Structured candidate facts and immutable resume versions for the product upgrade.
++
++This package is the first product increment. Existing evidence and runtime
++entry points keep their contracts until explicit adapters are implemented.
++"""
+--- audit-baseline/src/job_agent/resume_workspace/api.py
++++ M1/src/job_agent/resume_workspace/api.py
+@@ -0,0 +1,116 @@
++from __future__ import annotations
++
++from collections.abc import Callable
++
++from fastapi import Depends, FastAPI, HTTPException, Response
++from fastapi.exceptions import RequestValidationError
++from fastapi.responses import JSONResponse
++from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
++
++from job_agent.resume_workspace.contracts import (
++    ConfirmVersion, RestoreVersion, ResumeCreate, ResumeSummary, SourceCreate,
++    SourceRecord, VersionCreate, VersionRecord,
++)
++from job_agent.resume_workspace.repository import (
++    InvalidProvenance, SqliteResumeRepository, WorkspaceConflict, WorkspaceNotFound,
++)
++
++
++def create_resume_app(
++    repository: SqliteResumeRepository, *, resolve_identity: Callable[[str], str | None],
++) -> FastAPI:
++    """Authenticated product API increment, separate from the v1 task service.
++
++    Identity is resolved by trusted server configuration. Clients cannot choose
++    an owner with a user_id field/header. Full login/OIDC is a later increment.
++    """
++    app = FastAPI(title="求职助手 · 结构化简历与版本", version="0.2.0-m1")
++    bearer = HTTPBearer(auto_error=False)
++
++    def owner(credentials: HTTPAuthorizationCredentials | None = Depends(bearer)) -> str:
++        identity = resolve_identity(credentials.credentials) if credentials else None
++        if not identity:
++            raise HTTPException(401, "authentication_required", headers={"WWW-Authenticate": "Bearer"})
++        return identity
++
++    @app.exception_handler(WorkspaceNotFound)
++    async def not_found(_request, _exc):
++        return JSONResponse(status_code=404, content={"detail": "resource_not_found"})
++
++    @app.exception_handler(WorkspaceConflict)
++    async def conflict(_request, exc):
++        return JSONResponse(status_code=409, content={"detail": str(exc)})
++
++    @app.exception_handler(InvalidProvenance)
++    async def provenance(_request, exc):
++        return JSONResponse(status_code=422, content={"detail": str(exc)})
++
++    @app.exception_handler(RequestValidationError)
++    async def invalid_request(_request, exc):
++        # FastAPI's default validation response can echo private input values.
++        return JSONResponse(status_code=422, content={"detail": "invalid_request", "errors": [
++            {"location": list(item["loc"]), "type": item["type"]} for item in exc.errors()
++        ]})
++
++    @app.middleware("http")
++    async def private_response(request, call_next):
++        response = await call_next(request)
++        response.headers["Cache-Control"] = "no-store"
++        response.headers["X-Content-Type-Options"] = "nosniff"
++        return response
++
++    @app.get("/health/live")
++    def health():
++        return {"status": "ok", "increment": "structured-resume-m1"}
++
++    @app.post("/api/v2/sources", response_model=SourceRecord, status_code=201)
++    def add_source(request: SourceCreate, user: str = Depends(owner)):
++        return repository.add_source(user, request)
++
++    @app.get("/api/v2/sources/{source_id}", response_model=SourceRecord)
++    def get_source(source_id: str, user: str = Depends(owner)):
++        return repository.get_source(user, source_id)
++
++    @app.delete("/api/v2/sources/{source_id}", status_code=204)
++    def delete_source(source_id: str, user: str = Depends(owner)):
++        repository.delete_source(user, source_id)
++        return Response(status_code=204)
++
++    @app.post("/api/v2/resumes", response_model=VersionRecord, status_code=201)
++    def create_resume(request: ResumeCreate, user: str = Depends(owner)):
++        return repository.create_resume(user, request)
++
++    @app.get("/api/v2/resumes", response_model=list[ResumeSummary])
++    def list_resumes(user: str = Depends(owner)):
++        return repository.list_resumes(user)
++
++    @app.delete("/api/v2/resumes/{resume_id}", status_code=204)
++    def delete_resume(resume_id: str, user: str = Depends(owner)):
++        repository.delete_resume(user, resume_id)
++        return Response(status_code=204)
++
++    @app.get("/api/v2/resumes/{resume_id}/versions", response_model=list[VersionRecord])
++    def list_versions(resume_id: str, user: str = Depends(owner)):
++        return repository.list_versions(user, resume_id)
++
++    @app.get("/api/v2/resumes/{resume_id}/versions/{version_id}", response_model=VersionRecord)
++    def get_version(resume_id: str, version_id: str, user: str = Depends(owner)):
++        return repository.get_version(user, resume_id, version_id)
++
++    @app.post("/api/v2/resumes/{resume_id}/versions", response_model=VersionRecord, status_code=201)
++    def save_version(resume_id: str, request: VersionCreate, user: str = Depends(owner)):
++        return repository.save_version(user, resume_id, request)
++
++    @app.post("/api/v2/resumes/{resume_id}/versions/{version_id}/confirm", response_model=VersionRecord)
++    def confirm(resume_id: str, version_id: str, request: ConfirmVersion, user: str = Depends(owner)):
++        return repository.confirm_version(user, resume_id, version_id,
++                                          expected_content_hash=request.expected_content_hash)
++
++    @app.post("/api/v2/resumes/{resume_id}/versions/{version_id}/restore", response_model=VersionRecord,
++              status_code=201)
++    def restore(resume_id: str, version_id: str, request: RestoreVersion, user: str = Depends(owner)):
++        return repository.restore_version(user, resume_id, version_id,
++                                          expected_parent_version_id=request.expected_parent_version_id,
++                                          note=request.note)
++
++    return app
+--- audit-baseline/src/job_agent/resume_workspace/contracts.py
++++ M1/src/job_agent/resume_workspace/contracts.py
+@@ -0,0 +1,168 @@
++from __future__ import annotations
++
++from datetime import datetime
++from typing import Literal
++
++from pydantic import Field, field_validator, model_validator
++
++from job_agent.schemas import StrictModel
++from job_agent.text_identity import normalize_text
++
++
++SourceKind = Literal["original_resume", "user_statement", "job_description", "reference"]
++class SourceCreate(StrictModel):
++    kind: SourceKind
++    label: str = Field(min_length=1, max_length=120)
++    text: str = Field(min_length=1, max_length=100_000)
++
++    @field_validator("text")
++    @classmethod
++    def canonical_text(cls, value: str) -> str:
++        value = normalize_text(value)
++        if not value.strip():
++            raise ValueError("source_text_empty")
++        return value
++
++
++class SourceRecord(SourceCreate):
++    source_id: str
++    content_hash: str = Field(pattern=r"^[a-f0-9]{64}$")
++    created_at: datetime
++    offset_basis: Literal["canonical_unicode_characters"] = "canonical_unicode_characters"
++
++
++class SourceSpan(StrictModel):
++    source_id: str = Field(min_length=1, max_length=64)
++    content_hash: str = Field(pattern=r"^[a-f0-9]{64}$")
++    start: int = Field(ge=0)
++    end: int = Field(gt=0)
++
++    @model_validator(mode="after")
++    def ordered_span(self):
++        if self.end <= self.start:
++            raise ValueError("source_span_empty_or_reversed")
++        return self
++
++
++class ResumeFact(StrictModel):
++    """An extractive, self-attested fact, never a reference-derived qualification.
++
++    The repository checks text == source.text[start:end]. A citation proves
++    origin, not real-world truth or semantic entailment of a later rewrite.
++    """
++
++    fact_id: str = Field(pattern=r"^[a-zA-Z0-9_-]{1,64}$")
++    text: str = Field(min_length=1, max_length=5000)
++    source: SourceSpan
++
++
++class PersonalInfo(StrictModel):
++    name: ResumeFact
++    email: ResumeFact | None = None
++    phone: ResumeFact | None = None
++    location: ResumeFact | None = None
++    links: list[ResumeFact] = Field(default_factory=list, max_length=10)
++
++
++class Education(StrictModel):
++    entry_id: str = Field(pattern=r"^[a-zA-Z0-9_-]{1,64}$")
++    school: ResumeFact
++    degree: ResumeFact | None = None
++    major: ResumeFact | None = None
++    period: ResumeFact | None = None
++    highlights: list[ResumeFact] = Field(default_factory=list, max_length=20)
++
++
++class Experience(StrictModel):
++    entry_id: str = Field(pattern=r"^[a-zA-Z0-9_-]{1,64}$")
++    organization: ResumeFact
++    role: ResumeFact | None = None
++    period: ResumeFact | None = None
++    bullets: list[ResumeFact] = Field(default_factory=list, max_length=30)
++
++
++class Project(StrictModel):
++    entry_id: str = Field(pattern=r"^[a-zA-Z0-9_-]{1,64}$")
++    name: ResumeFact
++    role: ResumeFact | None = None
++    period: ResumeFact | None = None
++    bullets: list[ResumeFact] = Field(default_factory=list, max_length=30)
++
++
++class ResumeDocument(StrictModel):
++    schema_version: Literal[1] = 1
++    personal: PersonalInfo
++    summary: list[ResumeFact] = Field(default_factory=list, max_length=10)
++    education: list[Education] = Field(default_factory=list, max_length=10)
++    experience: list[Experience] = Field(default_factory=list, max_length=20)
++    projects: list[Project] = Field(default_factory=list, max_length=30)
++    skills: list[ResumeFact] = Field(default_factory=list, max_length=60)
++
++    def facts(self) -> list[ResumeFact]:
++        result: list[ResumeFact] = []
++
++        def visit(item):
++            if isinstance(item, ResumeFact):
++                result.append(item)
++            elif isinstance(item, StrictModel):
++                for name in type(item).model_fields:
++                    visit(getattr(item, name))
++            elif isinstance(item, list):
++                for child in item:
++                    visit(child)
++
++        visit(self)
++        return result
++
++    @model_validator(mode="after")
++    def unique_ids(self):
++        fact_ids = [fact.fact_id for fact in self.facts()]
++        entry_ids = [item.entry_id for item in [*self.education, *self.experience, *self.projects]]
++        if len(fact_ids) != len(set(fact_ids)):
++            raise ValueError("duplicate_fact_id")
++        if len(entry_ids) != len(set(entry_ids)):
++            raise ValueError("duplicate_entry_id")
++        return self
++
++
++class ResumeCreate(StrictModel):
++    title: str = Field(min_length=1, max_length=120)
++    document: ResumeDocument
++
++
++class VersionCreate(StrictModel):
++    expected_parent_version_id: str = Field(min_length=1, max_length=64)
++    document: ResumeDocument
++    note: str = Field(default="", max_length=500)
++
++
++class ConfirmVersion(StrictModel):
++    expected_content_hash: str = Field(pattern=r"^[a-f0-9]{64}$")
++
++
++class RestoreVersion(StrictModel):
++    expected_parent_version_id: str = Field(min_length=1, max_length=64)
++    note: str = Field(default="", max_length=500)
++
++
++class VersionRecord(StrictModel):
++    resume_id: str
++    version_id: str
++    sequence: int = Field(ge=1)
++    parent_version_id: str | None
++    restored_from_version_id: str | None = None
++    content_hash: str = Field(pattern=r"^[a-f0-9]{64}$")
++    document: ResumeDocument
++    note: str
++    created_at: datetime
++    confirmed_at: datetime | None = None
++    confirmation_scope: Literal["user_attested_only"] = "user_attested_only"
++
++
++class ResumeSummary(StrictModel):
++    resume_id: str
++    title: str
++    head_version_id: str
++    version_count: int
++    created_at: datetime
++    updated_at: datetime
+--- audit-baseline/src/job_agent/resume_workspace/main.py
++++ M1/src/job_agent/resume_workspace/main.py
+@@ -0,0 +1,23 @@
++"""Local API launcher. Configure a private bearer token outside source control."""
++from __future__ import annotations
++
++import os
++import secrets
++from pathlib import Path
++
++from job_agent.resume_workspace.api import create_resume_app
++from job_agent.resume_workspace.repository import SqliteResumeRepository
++
++
++def create_app():
++    token = os.environ.get("JOB_AGENT_WORKSPACE_API_TOKEN", "")
++    if len(token) < 32 or not token.isascii():
++        raise RuntimeError("Set JOB_AGENT_WORKSPACE_API_TOKEN to a private ASCII token of at least 32 characters")
++    db_path = Path(os.environ.get("JOB_AGENT_WORKSPACE_DB", "output/resume-workspace/workspace.sqlite"))
++    repository = SqliteResumeRepository(db_path)
++
++    def identity(candidate: str) -> str | None:
++        # compare_digest requires same-typed ASCII inputs; invalid bearer is a 401.
++        return "local-user" if candidate.isascii() and secrets.compare_digest(candidate, token) else None
++
++    return create_resume_app(repository, resolve_identity=identity)
+--- audit-baseline/src/job_agent/resume_workspace/repository.py
++++ M1/src/job_agent/resume_workspace/repository.py
+@@ -0,0 +1,278 @@
++from __future__ import annotations
++
++import hashlib
++import json
++import sqlite3
++from contextlib import contextmanager
++from datetime import UTC, datetime
++from pathlib import Path
++from typing import Iterator
++from uuid import uuid4
++
++from job_agent.resume_workspace.contracts import (
++    ResumeCreate, ResumeDocument, ResumeSummary, SourceCreate, SourceRecord,
++    VersionCreate, VersionRecord,
++)
++
++
++class WorkspaceNotFound(LookupError):
++    """Missing and foreign-owned resources intentionally share one error."""
++
++
++class WorkspaceConflict(ValueError):
++    pass
++
++
++class InvalidProvenance(ValueError):
++    pass
++
++
++_DDL = """
++CREATE TABLE IF NOT EXISTS rw_sources (
++    source_id TEXT PRIMARY KEY, owner_id TEXT NOT NULL, kind TEXT NOT NULL,
++    label TEXT NOT NULL, text TEXT NOT NULL, content_hash TEXT NOT NULL,
++    created_at TEXT NOT NULL
++);
++CREATE INDEX IF NOT EXISTS rw_sources_owner ON rw_sources(owner_id);
++CREATE TABLE IF NOT EXISTS rw_resumes (
++    resume_id TEXT PRIMARY KEY, owner_id TEXT NOT NULL, title TEXT NOT NULL,
++    head_version_id TEXT NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL
++);
++CREATE INDEX IF NOT EXISTS rw_resumes_owner ON rw_resumes(owner_id);
++CREATE TABLE IF NOT EXISTS rw_versions (
++    version_id TEXT PRIMARY KEY,
++    resume_id TEXT NOT NULL REFERENCES rw_resumes(resume_id) ON DELETE CASCADE,
++    sequence INTEGER NOT NULL, parent_version_id TEXT,
++    restored_from_version_id TEXT, content_hash TEXT NOT NULL,
++    document_json TEXT NOT NULL, note TEXT NOT NULL, created_at TEXT NOT NULL,
++    UNIQUE(resume_id, sequence)
++);
++CREATE TABLE IF NOT EXISTS rw_version_sources (
++    version_id TEXT NOT NULL REFERENCES rw_versions(version_id) ON DELETE CASCADE,
++    source_id TEXT NOT NULL REFERENCES rw_sources(source_id) ON DELETE RESTRICT,
++    PRIMARY KEY(version_id, source_id)
++);
++CREATE TABLE IF NOT EXISTS rw_confirmations (
++    version_id TEXT PRIMARY KEY REFERENCES rw_versions(version_id) ON DELETE CASCADE,
++    content_hash TEXT NOT NULL, confirmed_at TEXT NOT NULL
++);
++"""
++
++
++def _now() -> str:
++    return datetime.now(UTC).isoformat()
++
++
++def _encoded(document: ResumeDocument) -> str:
++    return json.dumps(document.model_dump(mode="json"), sort_keys=True,
++                      ensure_ascii=False, separators=(",", ":"))
++
++
++class SqliteResumeRepository:
++    """Single-machine product store; one connection per transaction.
++
++    No global connection crosses FastAPI threads. BEGIN IMMEDIATE serializes
++    check-and-append operations, and the expected head prevents lost edits.
++    This does not implement the existing PostgreSQL/Redis worker protocol.
++    """
++
++    def __init__(self, path: str | Path):
++        self.path = Path(path).resolve()
++        self.path.parent.mkdir(parents=True, exist_ok=True)
++        with self._connection() as db:
++            db.executescript(_DDL)
++
++    @contextmanager
++    def _connection(self, *, write: bool = False) -> Iterator[sqlite3.Connection]:
++        db = sqlite3.connect(self.path, timeout=10)
++        db.row_factory = sqlite3.Row
++        db.execute("PRAGMA foreign_keys = ON")
++        try:
++            db.execute("BEGIN IMMEDIATE" if write else "BEGIN")
++            yield db
++            db.commit()
++        except BaseException:
++            db.rollback()
++            raise
++        finally:
++            db.close()
++
++    def add_source(self, owner_id: str, request: SourceCreate) -> SourceRecord:
++        # Revalidation prevents callers from bypassing normalization via model_copy.
++        request = SourceCreate.model_validate(request.model_dump())
++        source = SourceRecord(
++            **request.model_dump(), source_id=f"src-{uuid4().hex}",
++            content_hash=hashlib.sha256(request.text.encode("utf-8")).hexdigest(),
++            created_at=datetime.now(UTC),
++        )
++        with self._connection(write=True) as db:
++            db.execute("INSERT INTO rw_sources VALUES (?, ?, ?, ?, ?, ?, ?)",
++                       (source.source_id, owner_id, source.kind, source.label, source.text,
++                        source.content_hash, source.created_at.isoformat()))
++        return source
++
++    @staticmethod
++    def _source(db, owner_id: str, source_id: str) -> SourceRecord:
++        row = db.execute("SELECT * FROM rw_sources WHERE source_id=? AND owner_id=?",
++                         (source_id, owner_id)).fetchone()
++        if row is None:
++            raise WorkspaceNotFound("source_not_found")
++        payload = dict(row)
++        payload.pop("owner_id")
++        source = SourceRecord.model_validate(payload)
++        if hashlib.sha256(source.text.encode("utf-8")).hexdigest() != source.content_hash:
++            raise InvalidProvenance("source_integrity_failed")
++        return source
++
++    def get_source(self, owner_id: str, source_id: str) -> SourceRecord:
++        with self._connection() as db:
++            return self._source(db, owner_id, source_id)
++
++    @staticmethod
++    def _resume(db, owner_id: str, resume_id: str):
++        row = db.execute("SELECT * FROM rw_resumes WHERE resume_id=? AND owner_id=?",
++                         (resume_id, owner_id)).fetchone()
++        if row is None:
++            raise WorkspaceNotFound("resume_not_found")
++        return row
++
++    def _validate_document(self, db, owner_id: str, document: ResumeDocument) -> ResumeDocument:
++        document = ResumeDocument.model_validate(document.model_dump())
++        sources = {}
++        for fact in document.facts():
++            span = fact.source
++            if span.source_id not in sources:
++                sources[span.source_id] = self._source(db, owner_id, span.source_id)
++            source = sources[span.source_id]
++            if source.kind not in {"original_resume", "user_statement"}:
++                raise InvalidProvenance("reference_or_jd_is_not_candidate_evidence")
++            if span.content_hash != source.content_hash:
++                raise InvalidProvenance("source_hash_mismatch")
++            if span.end > len(source.text) or source.text[span.start:span.end] != fact.text:
++                raise InvalidProvenance("fact_quote_mismatch")
++        return document
++
++    @staticmethod
++    def _version(db, resume_id: str, version_id: str) -> VersionRecord:
++        row = db.execute(
++            "SELECT v.*, c.confirmed_at FROM rw_versions v LEFT JOIN rw_confirmations c "
++            "ON v.version_id=c.version_id WHERE v.resume_id=? AND v.version_id=?",
++            (resume_id, version_id),
++        ).fetchone()
++        if row is None:
++            raise WorkspaceNotFound("version_not_found")
++        payload = dict(row)
++        encoded = payload.pop("document_json")
++        document = ResumeDocument.model_validate_json(encoded)
++        if hashlib.sha256(_encoded(document).encode("utf-8")).hexdigest() != payload["content_hash"]:
++            raise InvalidProvenance("version_integrity_failed")
++        return VersionRecord(**payload, document=document)
++
++    def _append(self, db, owner_id: str, resume_id: str, document: ResumeDocument, *,
++                sequence: int, parent: str | None, note: str, restored_from: str | None = None):
++        document = self._validate_document(db, owner_id, document)
++        encoded = _encoded(document)
++        version_id = f"ver-{uuid4().hex}"
++        now = _now()
++        db.execute("INSERT INTO rw_versions VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
++                   (version_id, resume_id, sequence, parent, restored_from,
++                    hashlib.sha256(encoded.encode("utf-8")).hexdigest(), encoded, note, now))
++        db.executemany("INSERT INTO rw_version_sources VALUES (?, ?)",
++                       [(version_id, source_id) for source_id in
++                        sorted({fact.source.source_id for fact in document.facts()})])
++        db.execute("UPDATE rw_resumes SET head_version_id=?, updated_at=? WHERE resume_id=?",
++                   (version_id, now, resume_id))
++        return self._version(db, resume_id, version_id)
++
++    def create_resume(self, owner_id: str, request: ResumeCreate) -> VersionRecord:
++        request = ResumeCreate.model_validate(request.model_dump())
++        resume_id = f"res-{uuid4().hex}"
++        with self._connection(write=True) as db:
++            now = _now()
++            db.execute("INSERT INTO rw_resumes VALUES (?, ?, ?, '', ?, ?)",
++                       (resume_id, owner_id, request.title, now, now))
++            return self._append(db, owner_id, resume_id, request.document,
++                                sequence=1, parent=None, note="initial")
++
++    def list_resumes(self, owner_id: str) -> list[ResumeSummary]:
++        with self._connection() as db:
++            rows = db.execute(
++                "SELECT r.*, (SELECT COUNT(*) FROM rw_versions v WHERE v.resume_id=r.resume_id) "
++                "AS version_count FROM rw_resumes r WHERE owner_id=? ORDER BY updated_at DESC, resume_id",
++                (owner_id,),
++            ).fetchall()
++            return [ResumeSummary.model_validate({k: row[k] for k in ResumeSummary.model_fields})
++                    for row in rows]
++
++    def get_version(self, owner_id: str, resume_id: str, version_id: str) -> VersionRecord:
++        with self._connection() as db:
++            self._resume(db, owner_id, resume_id)
++            version = self._version(db, resume_id, version_id)
++            self._validate_document(db, owner_id, version.document)
++            return version
++
++    def list_versions(self, owner_id: str, resume_id: str) -> list[VersionRecord]:
++        with self._connection() as db:
++            self._resume(db, owner_id, resume_id)
++            ids = db.execute("SELECT version_id FROM rw_versions WHERE resume_id=? ORDER BY sequence DESC",
++                             (resume_id,)).fetchall()
++            versions = [self._version(db, resume_id, row[0]) for row in ids]
++            for version in versions:
++                self._validate_document(db, owner_id, version.document)
++            return versions
++
++    def save_version(self, owner_id: str, resume_id: str, request: VersionCreate) -> VersionRecord:
++        request = VersionCreate.model_validate(request.model_dump())
++        with self._connection(write=True) as db:
++            resume = self._resume(db, owner_id, resume_id)
++            if resume["head_version_id"] != request.expected_parent_version_id:
++                raise WorkspaceConflict("resume_head_changed")
++            previous = self._version(db, resume_id, request.expected_parent_version_id)
++            return self._append(db, owner_id, resume_id, request.document,
++                                sequence=previous.sequence + 1, parent=previous.version_id, note=request.note)
++
++    def confirm_version(self, owner_id: str, resume_id: str, version_id: str, *,
++                        expected_content_hash: str) -> VersionRecord:
++        with self._connection(write=True) as db:
++            resume = self._resume(db, owner_id, resume_id)
++            version = self._version(db, resume_id, version_id)
++            if version.content_hash != expected_content_hash:
++                raise WorkspaceConflict("confirmation_content_changed")
++            self._validate_document(db, owner_id, version.document)
++            if version.confirmed_at is not None:
++                # A repeated confirmation remains idempotent after later edits.
++                return version
++            if resume["head_version_id"] != version_id:
++                raise WorkspaceConflict("only_current_version_can_be_confirmed")
++            db.execute("INSERT INTO rw_confirmations VALUES (?, ?, ?)",
++                       (version_id, version.content_hash, _now()))
++            return self._version(db, resume_id, version_id)
++
++    def restore_version(self, owner_id: str, resume_id: str, version_id: str, *,
++                        expected_parent_version_id: str, note: str = "") -> VersionRecord:
++        # Reuse the input contract even when called outside HTTP.
++        from job_agent.resume_workspace.contracts import RestoreVersion
++
++        request = RestoreVersion(expected_parent_version_id=expected_parent_version_id, note=note)
++        with self._connection(write=True) as db:
++            resume = self._resume(db, owner_id, resume_id)
++            if resume["head_version_id"] != request.expected_parent_version_id:
++                raise WorkspaceConflict("resume_head_changed")
++            previous = self._version(db, resume_id, resume["head_version_id"])
++            original = self._version(db, resume_id, version_id)
++            return self._append(db, owner_id, resume_id, original.document,
++                                sequence=previous.sequence + 1, parent=previous.version_id,
++                                note=request.note, restored_from=version_id)
++
++    def delete_resume(self, owner_id: str, resume_id: str) -> None:
++        with self._connection(write=True) as db:
++            self._resume(db, owner_id, resume_id)
++            db.execute("DELETE FROM rw_resumes WHERE resume_id=? AND owner_id=?", (resume_id, owner_id))
++
++    def delete_source(self, owner_id: str, source_id: str) -> None:
++        with self._connection(write=True) as db:
++            self._source(db, owner_id, source_id)
++            used = db.execute("SELECT 1 FROM rw_version_sources WHERE source_id=? LIMIT 1", (source_id,)).fetchone()
++            if used:
++                raise WorkspaceConflict("source_referenced_by_version")
++            db.execute("DELETE FROM rw_sources WHERE source_id=? AND owner_id=?", (source_id, owner_id))
+--- audit-baseline/tests/test_resume_workspace.py
++++ M1/tests/test_resume_workspace.py
+@@ -0,0 +1,363 @@
++from __future__ import annotations
++
++import json
++import sqlite3
++from concurrent.futures import ThreadPoolExecutor
++
++import pytest
++from fastapi.testclient import TestClient
++from pydantic import ValidationError
++
++from job_agent.resume_workspace.api import create_resume_app
++from job_agent.resume_workspace.contracts import (
++    PersonalInfo, Project, ResumeCreate, ResumeDocument, ResumeFact, SourceCreate,
++    SourceSpan, VersionCreate,
++)
++from job_agent.resume_workspace.repository import (
++    InvalidProvenance, SqliteResumeRepository, WorkspaceConflict, WorkspaceNotFound,
++)
++
++
++@pytest.fixture
++def repo(tmp_path):
++    return SqliteResumeRepository(tmp_path / "workspace.sqlite")
++
++
++def source(repo, *, owner="alice", kind="original_resume"):
++    return repo.add_source(owner, SourceCreate(kind=kind, label="合成材料", text="演示同学\nPython\nFastAPI"))
++
++
++def fact(record, key, text):
++    start = record.text.index(text)
++    return ResumeFact(fact_id=key, text=text, source=SourceSpan(
++        source_id=record.source_id, content_hash=record.content_hash, start=start, end=start + len(text)))
++
++
++def document(record):
++    return ResumeDocument(personal=PersonalInfo(name=fact(record, "name", "演示同学")),
++                          skills=[fact(record, "python", "Python"), fact(record, "fastapi", "FastAPI")])
++
++
++def create(repo, *, owner="alice"):
++    return repo.create_resume(owner, ResumeCreate(title="合成简历", document=document(source(repo, owner=owner))))
++
++
++def revise(repo, version, *, owner="alice"):
++    doc = ResumeDocument.model_validate(version.document.model_dump())
++    doc.skills.reverse()
++    return repo.save_version(owner, version.resume_id, VersionCreate(
++        expected_parent_version_id=version.version_id, document=doc, note="调整顺序"))
++
++
++@pytest.mark.parametrize("kind,allowed", [
++    ("original_resume", True), ("user_statement", True), ("job_description", False), ("reference", False),
++])
++def test_candidate_sources_are_separate_from_jd_and_references(repo, kind, allowed):
++    request = ResumeCreate(title="合成", document=document(source(repo, kind=kind)))
++    if allowed:
++        assert repo.create_resume("alice", request).confirmed_at is None
++    else:
++        with pytest.raises(InvalidProvenance, match="reference_or_jd"):
++            repo.create_resume("alice", request)
++        assert repo.list_resumes("alice") == []
++
++
++def test_offsets_are_canonical_unicode_characters(repo):
++    record = repo.add_source("alice", SourceCreate(kind="user_statement", label="合成", text="e\u0301\r\n演示同学😀"))
++    assert record.text == "é\n演示同学😀"
++    f = fact(record, "name", "演示同学😀")
++    assert f.source.start == 2
++    version = repo.create_resume("alice", ResumeCreate(
++        title="合成", document=ResumeDocument(personal=PersonalInfo(name=f))))
++    assert version.document.personal.name.text == "演示同学😀"
++
++
++@pytest.mark.parametrize("mutation,reason", [
++    ("hash", "source_hash_mismatch"), ("text", "fact_quote_mismatch"),
++    ("offset", "fact_quote_mismatch"), ("overflow", "fact_quote_mismatch"),
++])
++def test_forged_facts_fail_without_leaving_partial_resume(repo, mutation, reason):
++    doc = document(source(repo))
++    target = doc.skills[0]
++    if mutation == "hash":
++        target.source.content_hash = "0" * 64
++    elif mutation == "text":
++        target.text = "精通 Kubernetes，性能提升 80%"
++    elif mutation == "offset":
++        target.source.start += 1
++    else:
++        target.source.end += 100_000
++    with pytest.raises(InvalidProvenance, match=reason):
++        repo.create_resume("alice", ResumeCreate(title="合成", document=doc))
++    assert repo.list_resumes("alice") == []
++    with sqlite3.connect(repo.path) as db:
++        assert db.execute("SELECT COUNT(*) FROM rw_versions").fetchone()[0] == 0
++
++
++def test_foreign_source_cannot_be_cited(repo):
++    doc = document(source(repo, owner="bob"))
++    with pytest.raises(WorkspaceNotFound):
++        repo.create_resume("alice", ResumeCreate(title="合成", document=doc))
++
++
++@pytest.mark.parametrize("field", ["fact_id", "entry_id"])
++def test_duplicate_identifiers_are_rejected(repo, field):
++    record = source(repo)
++    doc = document(record).model_dump()
++    if field == "fact_id":
++        doc["skills"].append(doc["skills"][0])
++    else:
++        doc["projects"] = [
++            Project(entry_id="p", name=fact(record, "p1", "Python")).model_dump(),
++            Project(entry_id="p", name=fact(record, "p2", "FastAPI")).model_dump(),
++        ]
++    with pytest.raises(ValidationError, match=f"duplicate_{field}"):
++        ResumeDocument.model_validate(doc)
++
++
++@pytest.mark.parametrize("payload", [
++    {"kind": "generated_resume", "label": "合成", "text": "x"},
++    {"kind": "original_resume", "label": "合成", "text": "   "},
++    {"kind": "original_resume", "label": "合成", "text": "x", "evidence_level": "C3"},
++])
++def test_source_contract_does_not_accept_generated_material_or_level_override(payload):
++    with pytest.raises(ValidationError):
++        SourceCreate.model_validate(payload)
++
++
++def test_edit_is_immutable_and_new_confirmation_is_required(repo):
++    first = create(repo)
++    confirmed = repo.confirm_version("alice", first.resume_id, first.version_id,
++                                     expected_content_hash=first.content_hash)
++    second = revise(repo, first)
++    assert second.sequence == 2
++    assert second.parent_version_id == first.version_id
++    assert second.document.skills[0].text == "FastAPI"
++    assert second.confirmed_at is None
++    old = repo.get_version("alice", first.resume_id, first.version_id)
++    assert old.document.skills[0].text == "Python"
++    assert old.confirmed_at == confirmed.confirmed_at
++    assert old.confirmation_scope == "user_attested_only"
++
++
++def test_model_copy_cannot_skip_duplicate_validation_at_write_boundary(repo):
++    first = create(repo)
++    unsafe = first.document.model_copy(update={"skills": [first.document.skills[0], first.document.skills[0]]})
++    with pytest.raises(ValidationError, match="duplicate_fact_id"):
++        repo.save_version("alice", first.resume_id, VersionCreate(
++            expected_parent_version_id=first.version_id, document=unsafe))
++    assert len(repo.list_versions("alice", first.resume_id)) == 1
++
++
++def test_stale_edit_is_a_conflict(repo):
++    first = create(repo)
++    second = revise(repo, first)
++    with pytest.raises(WorkspaceConflict, match="resume_head_changed"):
++        revise(repo, first)
++    assert [v.version_id for v in repo.list_versions("alice", first.resume_id)] == [second.version_id, first.version_id]
++
++
++def test_simultaneous_edits_have_one_winner(repo):
++    first = create(repo)
++
++    def attempt(_):
++        try:
++            revise(repo, first)
++            return "saved"
++        except WorkspaceConflict:
++            return "conflict"
++
++    with ThreadPoolExecutor(max_workers=2) as pool:
++        assert sorted(pool.map(attempt, range(2))) == ["conflict", "saved"]
++    assert len(repo.list_versions("alice", first.resume_id)) == 2
++
++
++def test_confirmation_binds_hash_and_current_version(repo):
++    first = create(repo)
++    with pytest.raises(WorkspaceConflict, match="confirmation_content_changed"):
++        repo.confirm_version("alice", first.resume_id, first.version_id, expected_content_hash="0" * 64)
++    second = revise(repo, first)
++    with pytest.raises(WorkspaceConflict, match="only_current"):
++        repo.confirm_version("alice", first.resume_id, first.version_id,
++                             expected_content_hash=first.content_hash)
++    assert repo.get_version("alice", first.resume_id, second.version_id).confirmed_at is None
++
++
++def test_confirmation_retry_is_idempotent_even_after_edit(repo):
++    first = create(repo)
++    one = repo.confirm_version("alice", first.resume_id, first.version_id, expected_content_hash=first.content_hash)
++    revise(repo, first)
++    two = repo.confirm_version("alice", first.resume_id, first.version_id, expected_content_hash=first.content_hash)
++    assert one == two
++
++
++def test_restore_a_b_a_creates_new_draft_and_persists(repo):
++    first = create(repo)
++    repo.confirm_version("alice", first.resume_id, first.version_id, expected_content_hash=first.content_hash)
++    second = revise(repo, first)
++    third = repo.restore_version("alice", first.resume_id, first.version_id,
++                                 expected_parent_version_id=second.version_id, note="恢复")
++    assert third.content_hash == first.content_hash
++    assert third.version_id != first.version_id
++    assert third.sequence == 3
++    assert third.restored_from_version_id == first.version_id
++    assert third.parent_version_id == second.version_id
++    assert third.confirmed_at is None
++    reopened = SqliteResumeRepository(repo.path)
++    assert reopened.get_version("alice", first.resume_id, third.version_id) == third
++    assert reopened.list_resumes("alice")[0].head_version_id == third.version_id
++
++
++def test_restore_requires_current_head_and_same_resume(repo):
++    first = create(repo)
++    second = revise(repo, first)
++    foreign = create(repo)
++    with pytest.raises(WorkspaceConflict):
++        repo.restore_version("alice", first.resume_id, first.version_id,
++                             expected_parent_version_id=first.version_id)
++    with pytest.raises(WorkspaceNotFound):
++        repo.restore_version("alice", first.resume_id, foreign.version_id,
++                             expected_parent_version_id=second.version_id)
++
++
++def test_citations_prevent_source_deletion_until_all_referencing_resumes_removed(repo):
++    record = source(repo)
++    a = repo.create_resume("alice", ResumeCreate(title="A", document=document(record)))
++    b = repo.create_resume("alice", ResumeCreate(title="B", document=document(record)))
++    with pytest.raises(WorkspaceConflict, match="source_referenced"):
++        repo.delete_source("alice", record.source_id)
++    repo.delete_resume("alice", a.resume_id)
++    with pytest.raises(WorkspaceConflict):
++        repo.delete_source("alice", record.source_id)
++    repo.delete_resume("alice", b.resume_id)
++    repo.delete_source("alice", record.source_id)
++    with pytest.raises(WorkspaceNotFound):
++        repo.get_source("alice", record.source_id)
++    with sqlite3.connect(repo.path) as db:
++        for table in ["rw_resumes", "rw_versions", "rw_version_sources", "rw_confirmations", "rw_sources"]:
++            assert db.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0] == 0
++
++
++def test_foreign_resources_are_indistinguishable_from_missing_resources(repo):
++    first = create(repo)
++    assert repo.list_resumes("bob") == []
++    for operation in [
++        lambda: repo.get_source("bob", first.document.personal.name.source.source_id),
++        lambda: repo.get_version("bob", first.resume_id, first.version_id),
++        lambda: repo.list_versions("bob", first.resume_id),
++        lambda: repo.delete_resume("bob", first.resume_id),
++        lambda: repo.confirm_version("bob", first.resume_id, first.version_id, expected_content_hash=first.content_hash),
++        lambda: revise(repo, first, owner="bob"),
++    ]:
++        with pytest.raises(WorkspaceNotFound):
++            operation()
++
++
++@pytest.mark.parametrize("target", ["source", "version"])
++def test_stored_corruption_fails_closed_on_read(repo, target):
++    first = create(repo)
++    with sqlite3.connect(repo.path) as db:
++        if target == "source":
++            db.execute("UPDATE rw_sources SET text='篡改内容'")
++        else:
++            payload = first.document.model_dump(mode="json")
++            payload["skills"].reverse()
++            db.execute("UPDATE rw_versions SET document_json=?", (json.dumps(payload),))
++    with pytest.raises(InvalidProvenance, match="integrity_failed"):
++        repo.get_version("alice", first.resume_id, first.version_id)
++
++
++@pytest.fixture
++def client(repo):
++    return TestClient(create_resume_app(repo, resolve_identity={"test-alice": "alice", "test-bob": "bob"}.get))
++
++
++ALICE = {"Authorization": "Bearer test-alice"}
++BOB = {"Authorization": "Bearer test-bob"}
++
++
++def test_api_end_to_end_versions_confirmation_restore_and_delete(client):
++    created_source = client.post("/api/v2/sources", headers=ALICE, json={
++        "kind": "original_resume", "label": "合成", "text": "演示同学\nPython\nFastAPI"})
++    assert created_source.status_code == 201
++    from job_agent.resume_workspace.contracts import SourceRecord
++    stored = SourceRecord.model_validate(created_source.json())
++    payload = {"title": "合成简历", "document": document(stored).model_dump(mode="json")}
++    response = client.post("/api/v2/resumes", headers=ALICE, json=payload)
++    assert response.status_code == 201
++    first = response.json()
++    base = f"/api/v2/resumes/{first['resume_id']}"
++    v1 = f"{base}/versions/{first['version_id']}"
++    assert client.get("/api/v2/resumes", headers=ALICE).json()[0]["version_count"] == 1
++    assert client.get(v1, headers=ALICE).json() == first
++    confirm = client.post(v1 + "/confirm", headers=ALICE, json={"expected_content_hash": first["content_hash"]})
++    assert confirm.status_code == 200 and confirm.json()["confirmed_at"]
++    payload["document"]["skills"].reverse()
++    edit = {"expected_parent_version_id": first["version_id"], "document": payload["document"]}
++    second = client.post(base + "/versions", headers=ALICE, json=edit)
++    assert second.status_code == 201 and second.json()["confirmed_at"] is None
++    assert client.post(base + "/versions", headers=ALICE, json=edit).status_code == 409
++    restored = client.post(v1 + "/restore", headers=ALICE, json={
++        "expected_parent_version_id": second.json()["version_id"]})
++    assert restored.status_code == 201
++    assert restored.json()["content_hash"] == first["content_hash"]
++    assert len(client.get(base + "/versions", headers=ALICE).json()) == 3
++    source_url = f"/api/v2/sources/{stored.source_id}"
++    assert client.delete(source_url, headers=ALICE).status_code == 409
++    assert client.delete(base, headers=ALICE).status_code == 204
++    assert client.delete(source_url, headers=ALICE).status_code == 204
++    assert client.get(source_url, headers=ALICE).status_code == 404
++
++
++def test_api_does_not_trust_user_header_or_body(client, repo):
++    first = create(repo)
++    url = f"/api/v2/resumes/{first.resume_id}/versions/{first.version_id}"
++    assert client.get(url, headers={"X-User-Id": "alice"}).status_code == 401
++    assert client.get(url, headers={**BOB, "X-User-Id": "alice"}).status_code == 404
++    assert client.get(url, headers={"Authorization": "Bearer invalid"}).status_code == 401
++    assert client.get("/api/v2/resumes", headers=BOB).json() == []
++    assert client.post("/api/v2/sources", headers=ALICE, json={
++        "owner_id": "bob", "kind": "user_statement", "text": "private", "label": "合成"}).status_code == 422
++
++
++def test_validation_response_does_not_echo_private_values(client):
++    response = client.post("/api/v2/sources", headers=ALICE, json={
++        "kind": "private-test-email@example.invalid", "label": "合成", "text": "private phone"})
++    assert response.status_code == 422
++    assert "private-test-email" not in response.text
++    assert "private phone" not in response.text
++    assert response.headers["Cache-Control"] == "no-store"
++
++
++def test_api_rejects_reference_fact_with_sanitized_error(client, repo):
++    doc = document(source(repo, kind="reference"))
++    response = client.post("/api/v2/resumes", headers=ALICE, json={"title": "合成", "document": doc.model_dump()})
++    assert response.status_code == 422
++    assert response.json() == {"detail": "reference_or_jd_is_not_candidate_evidence"}
++
++
++def test_openapi_is_accessible_without_disclosing_private_records(client):
++    assert client.get("/health/live").json()["status"] == "ok"
++    schema = client.get("/openapi.json").json()
++    assert "/api/v2/resumes" in schema["paths"]
++    assert schema["paths"]["/api/v2/resumes"]["get"]["security"] == [{"HTTPBearer": []}]
++    assert client.get("/api/v2/resumes").status_code == 401
++
++
++def test_local_launcher_requires_configured_secret_and_handles_invalid_bearer(monkeypatch, tmp_path):
++    from job_agent.resume_workspace.main import create_app
++    monkeypatch.delenv("JOB_AGENT_WORKSPACE_API_TOKEN", raising=False)
++    with pytest.raises(RuntimeError, match="JOB_AGENT_WORKSPACE_API_TOKEN"):
++        create_app()
++    monkeypatch.setenv("JOB_AGENT_WORKSPACE_API_TOKEN", "synthetic-test-token-" * 3)
++    monkeypatch.setenv("JOB_AGENT_WORKSPACE_DB", str(tmp_path / "local.sqlite"))
++    local = TestClient(create_app())
++    assert local.get("/api/v2/resumes", headers={"Authorization": "Bearer wrong"}).status_code == 401
++    assert local.get("/api/v2/resumes", headers={"Authorization": "Bearer " + "synthetic-test-token-" * 3}).status_code == 200
++
++
++def test_synthetic_demo_runs_without_models_or_credentials(tmp_path):
++    from scripts.demo_resume_versions import run_demo
++    report = run_demo(tmp_path)
++    assert all(report["checks"].values())
++    assert (tmp_path / "report.json").exists()

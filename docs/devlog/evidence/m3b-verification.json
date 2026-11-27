@@ -1,0 +1,211 @@
+{
+  "date": "2026-10-20",
+  "milestone": "M3B bounded Writer/Reviewer exact-quote summary collaboration; not free rewrite or a live-model benchmark",
+  "environment": {
+    "python": "3.12.14",
+    "node": "v24.19.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "pytest": "9.1.1",
+      "fastapi": "0.115.14",
+      "pydantic": "2.14.0",
+      "httpx": "0.27.2",
+      "langgraph": "1.2.16"
+    }
+  },
+  "runs": [
+    {
+      "name": "m3b-before",
+      "counts": {
+        "tests": 201,
+        "passed": 201,
+        "failed": 0,
+        "errored_cases": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "m3b-unit",
+      "counts": {
+        "tests": 36,
+        "passed": 36,
+        "failed": 0,
+        "errored_cases": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "m3b-related",
+      "counts": {
+        "tests": 241,
+        "passed": 241,
+        "failed": 0,
+        "errored_cases": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "m3b-final",
+      "counts": {
+        "tests": 243,
+        "passed": 243,
+        "failed": 0,
+        "errored_cases": 0,
+        "skipped": 0
+      }
+    }
+  ],
+  "new_backend_cases": 42,
+  "frontend": {
+    "passed": 11,
+    "failed": 0,
+    "skipped": 0,
+    "build": "success"
+  },
+  "commands": {
+    "final": "python -m pytest -q tests/test_resume_import.py tests/test_resume_workspace.py tests/test_resume_pdf_autofill.py tests/test_resume_matching.py tests/test_resume_collaboration.py tests/test_source_audit_regressions.py tests/test_career_store.py tests/test_application_assistant_evaluation.py tests/test_backend_service.py tests/test_evidence_source_store.py tests/test_evidence_mapping_v2.py tests/test_evidence_projections.py tests/test_evidence_requirement_analyzer.py tests/test_knowledge_ingestion.py --basetemp=../../work/m3b-final-temp --junitxml=../../work/m3b-final.xml",
+    "baseline": "python -m pytest -q tests/test_resume_import.py tests/test_resume_workspace.py tests/test_resume_pdf_autofill.py tests/test_resume_matching.py tests/test_source_audit_regressions.py tests/test_career_store.py tests/test_application_assistant_evaluation.py tests/test_backend_service.py tests/test_evidence_source_store.py tests/test_evidence_mapping_v2.py tests/test_evidence_projections.py tests/test_evidence_requirement_analyzer.py tests/test_knowledge_ingestion.py --basetemp=../../work/m3b-before-temp --junitxml=../../work/m3b-before.xml",
+    "frontend": [
+      "node --test src/model.test.js",
+      "node node_modules/vite/bin/vite.js build"
+    ],
+    "demo": "python scripts/demo_resume_workbench.py --port 8015",
+    "http": "python scripts/verify_collaboration_demo.py --port 8015",
+    "context": "backend cwd repo root, frontend cwd frontend; existing audit venv; TEMP/TMP work/tmp; permitted local API environment"
+  },
+  "failures": [
+    {
+      "run": "initial new tests",
+      "passed": 35,
+      "failed": 1,
+      "reason": "distinct-text count missed actual summary capacity; changed to list length; failing test retained",
+      "evidence_limit": "observed in original tool output; first log and XML were overwritten by the successful 36-case rerun; no fabricated raw file"
+    },
+    {
+      "run": "browser initial integration",
+      "reason": "same sibling React key produced stale duplicate panel; fixed distinct component prefixes; final browser replay passed"
+    },
+    {
+      "run": "m3b-build-keyfix",
+      "reason": "invalid Vite --root option; reran build in frontend directory successfully",
+      "log": "m3b-build-keyfix.log"
+    }
+  ],
+  "live_http": {
+    "date": "2026-10-20T10:20:39.335489+00:00",
+    "url": "http://127.0.0.1:8015",
+    "scope": "standalone real HTTP of synthetic browser-created data; no real model, no additional pytest cases",
+    "checks": {
+      "health_ok": true,
+      "isolated_demo_no_model": true,
+      "browser_accept_exactly_two_versions": true,
+      "history_persisted": true,
+      "one_feedback_driven_revision": true,
+      "selection_actually_changed": true,
+      "trace_has_six_actual_handoffs": true,
+      "no_provider_call": true,
+      "version_and_hash_pinned": true,
+      "checkpoint_saved": true,
+      "owner_source_hash_span_and_complete_quote": true,
+      "summary_same_source_new_identity": true,
+      "other_sections_identical": true,
+      "latest_unconfirmed": true,
+      "human_decision_persisted": true,
+      "retry_same_version_no_duplicate": true,
+      "current_frontend_build_served": true
+    },
+    "resume_id": "res-7c7962e9705b4aa5a535a37b59b9d0ea",
+    "run_id": "collab-30abb59cef814e3faef7e54de40a0853",
+    "provider_calls": 0
+  },
+  "browser_manual_checks": [
+    "synthetic text import/parse/save v1",
+    "one matching panel and one collaboration panel",
+    "first unrelated quote reviewed and returned",
+    "feedback changes second quote, six actual business messages",
+    "source context opened before approval",
+    "explicit acceptance saves unconfirmed v2 and summary exact quote"
+  ],
+  "browser_screenshots": [
+    "m3b-browser-feedback.png",
+    "m3b-browser-accepted.png",
+    "m3b-browser-version.png"
+  ],
+  "semantic_model_scope": "synthetic FixtureProvider exercises distinct schemas, zero tools, call limits, errors, and token accounting; no real model called",
+  "not_run": [
+    "whole repository regression",
+    "real model quality/cost/latency",
+    "single-agent vs sequential vs collaborative equal-budget quality experiment",
+    "production PostgreSQL/Redis/Worker integration or fault test",
+    "native LangGraph saver integration",
+    "free paraphrase/new-claim semantic guarantees",
+    "C2/C3 product evidence import",
+    "OCR/PDF export/long-term application/interview collaboration integration"
+  ],
+  "known_limits": [
+    "local finite-vocabulary review is not semantic entailment",
+    "exact quotation proves origin, not truth or preserved context by itself",
+    "application SQLite checkpoints and lease fencing only; uncertain model calls stop, no exactly-once billing guarantee",
+    "synchronous API may outlive UI wait; same key only returns saved record",
+    "PII in experience text is not automatically fully redacted",
+    "dispatch reservations can exceed known completed provider calls after a crash; unknown cost/token fields remain null"
+  ],
+  "documentation_validation": {
+    "passed": true,
+    "documents_checked": 19,
+    "anchors_checked": 120,
+    "links_checked": 145,
+    "errors": [],
+    "phase_sections": 10
+  },
+  "frozen_eval_files_checked": 25,
+  "frozen_eval_changes": [],
+  "unchanged_evidence_kernel_files": 21,
+  "original_protocol_unchanged": true,
+  "git": {
+    "branch": "main",
+    "head": "067bfc7d63408e1e6b0ab6c227e863bd08a5857a",
+    "status_short": "M .gitignore\n M README.md\n M docs/architecture.md\n M docs/evaluation.md\n M docs/interview_notes.md\n M docs/resume_notes.md\n M pyproject.toml\n M src/job_agent/backend_service/application_assistant.py\n M src/job_agent/backend_service/application_evaluation.py\n M src/job_agent/evidence/level_policy.py\n M src/job_agent/evidence/mapping.py\n M src/job_agent/evidence/pipeline.py\n M src/job_agent/evidence/projections.py\n M src/job_agent/evidence/sources.py\n M src/job_agent/knowledge/qwen_embedding.py\n M tests/test_application_assistant_evaluation.py\n M tests/test_ui_app_test.py\n?? AGENTS.md\n?? GIT_LOG.txt\n?? GIT_STATUS.txt\n?? UNCOMMITTED_DIFF.txt\n?? docs/CONTINUE_DEVELOPMENT.md\n?? docs/INTERVIEW_SOURCE_GUIDE.md\n?? docs/PROJECT_AUDIT.md\n?? docs/audit/\n?? docs/devlog/\n?? docs/upgrade/\n?? frontend/\n?? hits[1].score\n?? scripts/demo_resume_versions.py\n?? scripts/demo_resume_workbench.py\n?? scripts/verify_collaboration_demo.py\n?? src/job_agent/resume_workspace/\n?? tests/test_resume_import.py\n?? tests/test_resume_workspace.py\n?? tests/test_source_audit_regressions.py",
+    "diff_stat": ".gitignore                                         |   5 +\n README.md                                          |  90 +++++++++++--\n docs/architecture.md                               |   5 +\n docs/evaluation.md                                 |   4 +\n docs/interview_notes.md                            |   5 +\n docs/resume_notes.md                               | 147 +++++++++++++++++++--\n pyproject.toml                                     |  12 +-\n .../backend_service/application_assistant.py       |   1 +\n .../backend_service/application_evaluation.py      |  25 ++--\n src/job_agent/evidence/level_policy.py             |   5 +\n src/job_agent/evidence/mapping.py                  |   2 +-\n src/job_agent/evidence/pipeline.py                 |   8 +-\n src/job_agent/evidence/projections.py              |   7 +\n src/job_agent/evidence/sources.py                  |   3 +-\n src/job_agent/knowledge/qwen_embedding.py          |  14 +-\n tests/test_application_assistant_evaluation.py     |  29 ++++\n tests/test_ui_app_test.py                          |   6 +-\n 17 files changed, 325 insertions(+), 43 deletions(-)",
+    "remote_actions": "none; no commits"
+  },
+  "base_m3_sha256": "2e7e704aff0de3ad31b68cb7151d51f4d4b5049082fe1fa6291ff40a037c3a91",
+  "changed_public_code_files": [
+    "frontend/dist/assets/index-8ShZRAQo.css",
+    "frontend/dist/assets/index-DnyNOG68.js",
+    "frontend/dist/index.html",
+    "frontend/src/CollaborationPanel.jsx",
+    "frontend/src/collaboration.js",
+    "frontend/src/main.jsx",
+    "frontend/src/model.test.js",
+    "frontend/src/style.css",
+    "scripts/verify_collaboration_demo.py",
+    "src/job_agent/resume_workspace/api.py",
+    "src/job_agent/resume_workspace/collaboration.py",
+    "src/job_agent/resume_workspace/collaboration_api.py",
+    "src/job_agent/resume_workspace/collaboration_contracts.py",
+    "src/job_agent/resume_workspace/collaboration_repository.py",
+    "tests/test_resume_collaboration.py"
+  ],
+  "removed_generated_assets": [
+    "frontend/dist/assets/index-DPPLrk8H.js",
+    "frontend/dist/assets/index-DhichCI2.css"
+  ],
+  "source_sha256": {
+    "frontend/dist/assets/index-8ShZRAQo.css": "718a4e67bb34f67a89c4ee7173dcba3efcd51d0ea1183e336c73b7001bf9d43a",
+    "frontend/dist/assets/index-DnyNOG68.js": "d9d1b4954ea5649a3591c64b90caea417dcefaacbdca7dcd137067b6436c7ee2",
+    "frontend/dist/index.html": "0f3abb975842f2fa37d9febfcf4bd67178033982385b01570ac1354efccc9517",
+    "frontend/src/CollaborationPanel.jsx": "2965d80a81bf2cf5ef91c7aa3e2797e8aff3704b6a0e372c889f8b0aa68847e5",
+    "frontend/src/collaboration.js": "da6b1fadbfeaab5b9a4dd43cf8f2a4ceaa31336c9918243e0114646c1cdef221",
+    "frontend/src/main.jsx": "fa5c1cac0bbc9f214268852bfd767f4ba6969003ae07495bbeebeab54e678308",
+    "frontend/src/model.test.js": "a2f6e7e6e99161efbfad4d657c9c637a7b1cf82aed3050923feab87d6ea5adf3",
+    "frontend/src/style.css": "f650c868b2147cc0b4f029088f65e607f9d09e811a521b78450067f40295fa52",
+    "scripts/verify_collaboration_demo.py": "cdaca7beefce502bd29b7c11421b89ca54b7afdad7f99849aa171bd4a5a1cc96",
+    "src/job_agent/resume_workspace/api.py": "12da4b9b1e8a3a2bb113f5d6b2ed495f1372d7fee84b926c883e7e44c298d3d6",
+    "src/job_agent/resume_workspace/collaboration.py": "552e29b93fddf82266a92e0f8a5d192e514b7a0b6ec2c9854d8168f8d411e1fd",
+    "src/job_agent/resume_workspace/collaboration_api.py": "bd94a172462475d3573972b007c456903315ea1b4b95d184f6d954ae4cb87fd8",
+    "src/job_agent/resume_workspace/collaboration_contracts.py": "4688ae6fcdfe01a3d07a3a435586d7c412a6c40a83bc1077479ba4b2056dbb22",
+    "src/job_agent/resume_workspace/collaboration_repository.py": "350e73b19e26540a4aa30c68be792582f44f0afe876fde993a9572cb2f69dd95",
+    "tests/test_resume_collaboration.py": "f637e8005ae742becbb03476103c97c272f2e37fde1acba552395087d610aa80"
+  }
+}

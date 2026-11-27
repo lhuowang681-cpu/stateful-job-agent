@@ -1,0 +1,98 @@
+[
+  {
+    "case_id": "rag-evidence",
+    "title": "SYNTHETIC JD — RAG Engineer",
+    "city": "杭州",
+    "role_direction": "Agent / 大模型应用",
+    "job_type": "internship",
+    "jd_text": "# SYNTHETIC JD — RAG Engineer\n城市：杭州\n类型：实习\n要求：候选人实现过 RAG 或语义检索。",
+    "expected_terms": [["RAG", "语义检索"]],
+    "expected_document_ids": ["real-dense-knowledge-retrieval"],
+    "gap_terms": [],
+    "expected_city_fit": true
+  },
+  {
+    "case_id": "agent-runtime-evidence",
+    "title": "SYNTHETIC JD — Agent Runtime Engineer",
+    "city": "杭州",
+    "role_direction": "Agent / 大模型应用",
+    "job_type": "internship",
+    "jd_text": "# SYNTHETIC JD — Agent Runtime Engineer\n城市：杭州\n类型：实习\n要求：候选人实现过 Agent Runtime、Tool Calling 权限治理和人工审批。",
+    "expected_terms": [["Agent Runtime", "Tool Calling"]],
+    "expected_document_ids": ["real-agent-runtime-governance"],
+    "gap_terms": [],
+    "expected_city_fit": true
+  },
+  {
+    "case_id": "async-backend-evidence",
+    "title": "SYNTHETIC JD — Async Backend Engineer",
+    "city": "杭州",
+    "role_direction": "Agent / 大模型应用",
+    "job_type": "internship",
+    "jd_text": "# SYNTHETIC JD — Async Backend Engineer\n城市：杭州\n类型：实习\n要求：候选人做过可恢复的异步 Agent 后端，包括 checkpoint 和故障恢复。",
+    "expected_terms": [["异步", "Agent 后端"]],
+    "expected_document_ids": ["real-backend-reliability"],
+    "gap_terms": [],
+    "expected_city_fit": true
+  },
+  {
+    "case_id": "career-store-migration-evidence",
+    "title": "SYNTHETIC JD — Career Data Engineer",
+    "city": "杭州",
+    "role_direction": "Agent / 大模型应用",
+    "job_type": "internship",
+    "jd_text": "# SYNTHETIC JD — Career Data Engineer\n城市：杭州\n类型：实习\n要求：候选人实现过 CareerStore，以及幂等且不破坏旧数据的迁移。",
+    "expected_terms": [["CareerStore", "迁移"]],
+    "expected_document_ids": ["real-career-store"],
+    "gap_terms": [],
+    "expected_city_fit": true
+  },
+  {
+    "case_id": "kubernetes-gap",
+    "title": "SYNTHETIC JD — Kubernetes Platform Engineer",
+    "city": "杭州",
+    "role_direction": "Agent / 大模型应用",
+    "job_type": "internship",
+    "jd_text": "# SYNTHETIC JD — Kubernetes Platform Engineer\n城市：杭州\n类型：实习\n要求：候选人具备 Kubernetes 生产集群运维经验。",
+    "expected_terms": [["Kubernetes"]],
+    "expected_document_ids": [],
+    "gap_terms": ["Kubernetes"],
+    "expected_city_fit": true
+  },
+  {
+    "case_id": "pdf-docx-gap",
+    "title": "SYNTHETIC JD — Document Ingestion Engineer",
+    "city": "杭州",
+    "role_direction": "Agent / 大模型应用",
+    "job_type": "internship",
+    "jd_text": "# SYNTHETIC JD — Document Ingestion Engineer\n城市：杭州\n类型：实习\n要求：候选人实现过 PDF 和 DOCX 知识摄取。",
+    "expected_terms": [["PDF", "DOCX"]],
+    "expected_document_ids": [],
+    "gap_terms": ["PDF", "DOCX"],
+    "expected_city_fit": true
+  },
+  {
+    "case_id": "preference-city-mismatch",
+    "title": "SYNTHETIC JD — Shanghai Agent Engineer",
+    "city": "上海",
+    "role_direction": "Agent / 大模型应用",
+    "job_type": "internship",
+    "jd_text": "# SYNTHETIC JD — Shanghai Agent Engineer\n城市：上海\n类型：实习\n要求：候选人实现过 RAG 或语义检索。",
+    "expected_terms": [["RAG", "语义检索"]],
+    "expected_document_ids": ["real-dense-knowledge-retrieval"],
+    "gap_terms": [],
+    "expected_city_fit": false
+  },
+  {
+    "case_id": "mixed-positive-and-gap",
+    "title": "SYNTHETIC JD — Agent Platform Engineer",
+    "city": "杭州",
+    "role_direction": "Agent / 大模型应用",
+    "job_type": "internship",
+    "jd_text": "# SYNTHETIC JD — Agent Platform Engineer\n城市：杭州\n类型：实习\n要求一：候选人实现过 RAG 或语义检索。\n要求二：候选人具备 Kubernetes 生产集群运维经验。",
+    "expected_terms": [["RAG", "语义检索"], ["Kubernetes"]],
+    "expected_document_ids": ["real-dense-knowledge-retrieval"],
+    "gap_terms": ["Kubernetes"],
+    "expected_city_fit": true
+  }
+]

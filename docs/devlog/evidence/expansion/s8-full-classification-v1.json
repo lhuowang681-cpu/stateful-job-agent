@@ -1,0 +1,229 @@
+{
+  "failures": [
+    {
+      "case": "tests.test_agent_graph_runtime::test_cli_agent_mock_mode_runs_five_calls_and_writes_sanitized_runtime_audit",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: Job fixture not found: data/fixtures/raw_jobs_posttraining.json"
+    },
+    {
+      "case": "tests.test_agent_graph_runtime::test_cli_agent_failure_writes_sanitized_failure_audit",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: Job fixture not found: data/fixtures/raw_jobs_posttraining.json"
+    },
+    {
+      "case": "tests.test_application_assistant_evaluation::test_application_assistant_eval_corpus_has_required_coverage",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/application_assistant_phase_c_cases.json'"
+    },
+    {
+      "case": "tests.test_application_assistant_evaluation::test_application_assistant_eval_runs_real_loop_approval_and_recovery",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/application_assistant_phase_c_cases.json'"
+    },
+    {
+      "case": "tests.test_atomic_evidence_v2::test_regression_benchmark_has_complete_atomic_lineage",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/real_career_evidence_v2/regression.json'"
+    },
+    {
+      "case": "tests.test_atomic_evidence_v2::test_compound_parent_maps_atoms_and_multiple_acceptable_sources",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/real_career_evidence_v2/regression.json'"
+    },
+    {
+      "case": "tests.test_atomic_evidence_v2::test_named_dev_review_cases_use_same_auditable_v2_schema",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/real_career_evidence_v2/dev_review.json'"
+    },
+    {
+      "case": "tests.test_atomic_evidence_v2::test_atomic_observation_preserves_exact_quote_and_provenance",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/real_career_evidence_v2/regression.json'"
+    },
+    {
+      "case": "tests.test_atomic_evidence_v2::test_changed_gold_requires_a_correction_log",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/real_career_evidence_v2/regression.json'"
+    },
+    {
+      "case": "tests.test_backend_service_reliability::test_provider_admission_enforces_fairness_cooldown_circuit_and_fail_closed",
+      "category": "legacy_redis_port_unavailable",
+      "message": "redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:63799. Connection refused."
+    },
+    {
+      "case": "tests.test_backend_service_reliability::test_provider_admission_is_call_scoped_and_local_errors_do_not_open_circuit",
+      "category": "legacy_redis_port_unavailable",
+      "message": "redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:63799. Connection refused."
+    },
+    {
+      "case": "tests.test_durable_career_knowledge::test_real_career_eval_v1_has_frozen_split_and_metrics",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'eval/career_knowledge_v1/documents.json'"
+    },
+    {
+      "case": "tests.test_durable_career_knowledge::test_private_career_sources_are_gitignored",
+      "category": "no_git_repository",
+      "message": "subprocess.CalledProcessError: Command '['git', 'check-ignore', 'data/private/resume.pdf', 'data/career_sources/resume.pdf', 'data/career_sources/manifest.json']' returned non-zero exit status 128."
+    },
+    {
+      "case": "tests.test_evidence_eval_contracts::test_development_manifest_registers_three_fair_variants",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_eval_contracts::test_manifest_rejects_variant_budget_drift",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_eval_contracts::test_manifest_has_no_evidence_v1_quality_variant",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_eval_corpus_v2::test_frozen_builder_is_reproducible",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/cases_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_eval_corpus_v2::test_100_cases_use_family_level_60_40_split_without_leakage",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_eval_corpus_v2::test_corpus_gold_spans_levels_and_edge_slices_are_auditable",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_eval_corpus_v2::test_no_network_mock_executes_all_300_variant_case_rows",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_eval_corpus_v2::test_audit_records_frozen_hashes_before_live_evaluation",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/corpus_100_audit_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_eval_corpus_v5::test_v5_corpus_is_new_family_disjoint_and_frozen",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/corpus_100_audit_v5.json'"
+    },
+    {
+      "case": "tests.test_evidence_eval_corpus_v5::test_v5_hashes_contracts_and_artifact_metadata_are_valid",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/corpus_100_audit_v5.json'"
+    },
+    {
+      "case": "tests.test_evidence_eval_metrics::test_deterministic_runner_writes_non_quality_report",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_live_eval::test_live_dry_run_executes_all_three_variants_with_same_cases",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_live_eval::test_live_budget_gate_blocks_calls_before_provider_use",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_live_eval::test_canary_preserves_schema_failure_row",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_live_eval::test_scorer_separates_invalid_span_from_semantics_and_rejects_unverified_claim",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_live_eval::test_unknown_claim_reference_is_scored_instead_of_rejecting_row",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_live_eval::test_requirement_concept_matches_unique_containing_span",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_live_eval::test_semantic_score_and_exact_span_are_separate_axes",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_live_eval::test_atom_semantics_match_when_pipeline_cites_shared_parent_span",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_live_eval::test_existing_rows_can_be_rescored_without_provider_calls",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_live_eval::test_checkpoint_resume_skips_completed_rows_without_duplicate_calls",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_live_eval::test_failed_checkpoint_row_requires_explicit_retry",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_live_eval::test_production_pipeline_live_runner_handles_sparse_case",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_live_eval::test_production_pipeline_checkpoint_resume_avoids_repeat_calls",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_evidence_live_eval::test_production_pipeline_maps_independent_c2_artifact_sources",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'"
+    },
+    {
+      "case": "tests.test_stateful_agent_evaluation::test_stateful_eval_datasets_are_structured_and_frozen",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/stateful_agent/dev/cases.json'"
+    },
+    {
+      "case": "tests.test_stateful_agent_evaluation::test_failure_attribution_reports_first_layer",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/stateful_agent/test/cases.json'"
+    },
+    {
+      "case": "tests.test_stateful_agent_evaluation::test_frozen_stateful_agent_deterministic_eval",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/stateful_agent/test/cases.json'"
+    },
+    {
+      "case": "tests.test_stateful_agent_evaluation::test_redundant_safe_read_degrades_efficiency_not_task_success",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/stateful_agent/test/cases.json'"
+    },
+    {
+      "case": "tests.test_stateful_agent_evaluation::test_optional_read_must_respect_ordering_constraint",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/stateful_agent/test/cases.json'"
+    },
+    {
+      "case": "tests.test_stateful_agent_evaluation::test_grounding_accepts_explicit_chinese_equivalents",
+      "category": "missing_historical_resource",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/stateful_agent/test/cases.json'"
+    }
+  ],
+  "categories": {
+    "missing_historical_resource": 41,
+    "legacy_redis_port_unavailable": 2,
+    "no_git_repository": 1
+  }
+}

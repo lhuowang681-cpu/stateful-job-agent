@@ -1,0 +1,173 @@
+{
+  "status": "passed",
+  "documents": [
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/code_rag.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/code_parser.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/repository.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/claim_audit.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/rewrite.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/execution_state.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/unified_trace.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/evidence_pack.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/evidence_reference.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/sqlite_code_indexes.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/learning.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/interview_repository.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/long_term.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/tasks.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/postgres_projects.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/index_streams.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/index_dispatch.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/project_storage.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/public_knowledge.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "src/job_agent/resume_workspace/retrieval_runtime.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "docs/tech-specs/CURRENT_SPEC.md",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-project-chinese-v3.json",
+      "origin": "docs/tech-specs/CURRENT_SPEC_HISTORY_2026-10-23.md",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-design-addendum-v1.json",
+      "origin": "src/job_agent/resume_workspace/code_rag.py",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-design-addendum-v1.json",
+      "origin": "docs/tech-specs/expansion/S2-retrieval.md",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-design-addendum-v1.json",
+      "origin": "docs/tech-specs/expansion/S4-collaboration.md",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-design-addendum-v1.json",
+      "origin": "docs/tech-specs/expansion/S5-postgres-slice.md",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-design-addendum-v1.json",
+      "origin": "docs/tech-specs/expansion/S6-outbox-streams.md",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    },
+    {
+      "dataset": "review-real-design-addendum-v1.json",
+      "origin": "docs/tech-specs/expansion/S7-learning-loop.md",
+      "git_anchor": "5d9e94b6efdb2aa5258f8fc52d1dc5231af90f25",
+      "text_matches_git_after_explicit_newline_normalization": true
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+services:
+  workbench:
+    build:
+      context: .
+      dockerfile: Dockerfile.workbench
+    ports:
+      - "127.0.0.1:8019:8019"
+    volumes:
+      - v3-demo-data:/app/output
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8019/health/live',timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+volumes:
+  v3-demo-data:

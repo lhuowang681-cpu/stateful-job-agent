@@ -1,0 +1,7 @@
+{
+  "date": "2026-10-20",
+  "branch": "main",
+  "head": "067bfc7d63408e1e6b0ab6c227e863bd08a5857a",
+  "status_short": "M .gitignore\n M README.md\n M docs/architecture.md\n M docs/evaluation.md\n M docs/interview_notes.md\n M docs/resume_notes.md\n M pyproject.toml\n M src/job_agent/backend_service/application_assistant.py\n M src/job_agent/backend_service/application_evaluation.py\n M src/job_agent/evidence/level_policy.py\n M src/job_agent/evidence/mapping.py\n M src/job_agent/evidence/pipeline.py\n M src/job_agent/evidence/projections.py\n M src/job_agent/evidence/sources.py\n M src/job_agent/knowledge/qwen_embedding.py\n M tests/test_application_assistant_evaluation.py\n M tests/test_ui_app_test.py\n?? AGENTS.md\n?? GIT_LOG.txt\n?? GIT_STATUS.txt\n?? UNCOMMITTED_DIFF.txt\n?? docs/CONTINUE_DEVELOPMENT.md\n?? docs/INTERVIEW_SOURCE_GUIDE.md\n?? docs/PROJECT_AUDIT.md\n?? docs/audit/\n?? docs/devlog/\n?? docs/upgrade/\n?? frontend/\n?? hits[1].score\n?? scripts/demo_resume_versions.py\n?? scripts/demo_resume_workbench.py\n?? scripts/verify_collaboration_demo.py\n?? src/job_agent/resume_workspace/\n?? tests/test_resume_import.py\n?? tests/test_resume_workspace.py\n?? tests/test_source_audit_regressions.py",
+  "base_m3b_sha256": "4f69e42269cde72277fc6a67927e85d4f045f5a3f7a4f460da985a23f3bf31ba"
+}

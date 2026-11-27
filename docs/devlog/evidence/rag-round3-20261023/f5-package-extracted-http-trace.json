@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "fresh_directory": "/root/autodl-tmp/study/job-agent-v3/output/rag-round3-20261023/f5-verify-linux-v2/source",
+  "imported_current_extracted_source": true,
+  "real_loopback_http": true,
+  "checks": [
+    "health_200",
+    "frontend_html_200",
+    "bundled_javascript_200",
+    "anonymous_401",
+    "synthetic_owner_empty_resumes_200",
+    "three_trace_routes_registered"
+  ],
+  "trace_examples_checked": 7,
+  "model_calls": 0,
+  "private_data_used": false,
+  "fresh_dependency_install": false,
+  "dependency_condition": "existing dedicated Python 3.12 runtime; observed versions delivered separately"
+}

@@ -1,0 +1,31 @@
+{
+  "source_git_revision": "54b8dce470f6db96a019cb0cf0c79d12d391ff9c",
+  "packages": [
+    {
+      "file": "job-agent-round3-source.zip",
+      "sha256": "52194680186dc155e57979be345188285564d654ee6edd6031e61c72564bc1ac",
+      "files": 1060,
+      "bytes": 22786596,
+      "crc_and_all_extracted_hashes": "passed",
+      "unpacked_directory": "unpacked-job-agent-round3-source"
+    },
+    {
+      "file": "job-agent-round3-learning.zip",
+      "sha256": "6668300d71a8aaf340d3150f49c8272d0eebbec6051ea2c8c5913a4e56ae0447",
+      "files": 769,
+      "bytes": 21067305,
+      "crc_and_all_extracted_hashes": "passed",
+      "unpacked_directory": "unpacked-job-agent-round3-learning"
+    },
+    {
+      "file": "job-agent-round3-research.zip",
+      "sha256": "dc19fb6bf660834c53cebdeba26ba80651326b6d95ad8cbdea522f8734dc378e",
+      "files": 93,
+      "bytes": 9139731,
+      "crc_and_all_extracted_hashes": "passed",
+      "unpacked_directory": "unpacked-job-agent-round3-research"
+    }
+  ],
+  "status": "hash_crc_all_files_and_unpack_passed_runtime_checks_separate",
+  "document_dependencies": "document-dependencies.json"
+}

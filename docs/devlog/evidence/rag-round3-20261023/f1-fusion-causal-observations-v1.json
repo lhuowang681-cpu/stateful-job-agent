@@ -1,0 +1,16 @@
+[
+  {
+    "case_id": "real-test-postgres_projects-1",
+    "dense_candidates_identical": true,
+    "dense_top5_support": true,
+    "hybrid_top5_support": false,
+    "context_omissions": []
+  },
+  {
+    "case_id": "real-test-retrieval_runtime-2",
+    "dense_candidates_identical": true,
+    "dense_top5_support": true,
+    "hybrid_top5_support": false,
+    "context_omissions": []
+  }
+]

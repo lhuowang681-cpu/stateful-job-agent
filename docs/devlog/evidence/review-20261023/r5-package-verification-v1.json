@@ -1,0 +1,141 @@
+{
+  "status": "passed",
+  "platform": "Linux-5.15.0-88-generic-x86_64-with-glibc2.35",
+  "base_python": "3.11.15 (main, Jun 11 2026, 15:20:16) [GCC 14.3.0]",
+  "steps": [
+    {
+      "name": "fresh-install",
+      "exit_code": 0,
+      "log": "fresh-install.log"
+    },
+    {
+      "name": "pip-check",
+      "exit_code": 0,
+      "log": "pip-check.log"
+    },
+    {
+      "name": "dependency-lock",
+      "exit_code": 0,
+      "log": "dependency-lock.log"
+    },
+    {
+      "name": "installed-main-http",
+      "exit_code": 0,
+      "log": "installed-main-http.log"
+    },
+    {
+      "name": "installed-cli-help",
+      "exit_code": 0,
+      "log": "installed-cli-help.log"
+    },
+    {
+      "name": "offline-gate-contracts",
+      "exit_code": 0,
+      "log": "offline-gate-contracts.log"
+    },
+    {
+      "name": "replay-real-dev",
+      "exit_code": 0,
+      "log": "replay-real-dev.log"
+    },
+    {
+      "name": "replay-real-test",
+      "exit_code": 0,
+      "log": "replay-real-test.log"
+    },
+    {
+      "name": "replay-design-test",
+      "exit_code": 0,
+      "log": "replay-design-test.log"
+    }
+  ],
+  "paid_model_calls": 0,
+  "human_reviewed_count": 0,
+  "historical_conditions": "16 missing original fixtures retained; not claimed all-green",
+  "source_git_revision": "3443a4ff19d248c082c5244f23abf1408a39be75",
+  "packages": [
+    {
+      "file": "job-agent-review-source.zip",
+      "sha256": "12b78ce140daf4be7e1a148e514dd284bdbfe38c63d7ce8336273b7fd88b16a7",
+      "files_verified": 945,
+      "status": "passed"
+    },
+    {
+      "file": "job-agent-review-learning.zip",
+      "sha256": "826a0c59d0ce2a5492d01b6ab160b1f7392868f92d38412586dcc054a627568b",
+      "files_verified": 24,
+      "status": "passed"
+    },
+    {
+      "file": "job-agent-review-real-research.zip",
+      "sha256": "0405ecf640f10e35951f9f2f24450f7b38e506f7c5fcada26d46fce9935ce04c",
+      "files_verified": 45,
+      "status": "passed"
+    }
+  ],
+  "venv_config": "home = /root/miniconda3/envs/job-agent-mcp/bin\ninclude-system-site-packages = false\nversion = 3.11.15\nexecutable = /root/miniconda3/envs/job-agent-mcp/bin/python3.11\ncommand = /root/autodl-tmp/study/job-agent-v3/.venv/bin/python -m venv --copies /root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/output/review-20261023/delivery-r5-v1-check-v2/fresh-venv\n",
+  "installed_main_http": {
+    "python": "3.11.15 (main, Jun 11 2026, 15:20:16) [GCC 14.3.0]",
+    "job_agent_location": "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/output/review-20261023/delivery-r5-v1-check-v2/fresh-venv/lib/python3.11/site-packages/job_agent/__init__.py",
+    "fit_verdict_location": "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/output/review-20261023/delivery-r5-v1-check-v2/fresh-venv/lib/python3.11/site-packages/fit_verdict_engine/__init__.py",
+    "isolated_mode": true,
+    "launcher": true,
+    "checks": [
+      "anonymous_401",
+      "real_http_source_parse_accept_list",
+      "all_bundled_frontend_assets_including_pdf_worker_200"
+    ],
+    "status": "passed",
+    "frontend_assets_checked": 5,
+    "server_stopped": true
+  },
+  "offline_gate": {
+    "candidate_algorithm_identity": "f063370b6d6d86eef43d113261774388f9e2a6676cb20d7c806e81d10423759b",
+    "failed_metrics": [],
+    "floors": {
+      "gold_span_recall": 0.6764705882352942,
+      "hit_any_gold": 0.7058823529411765,
+      "reciprocal_rank": 0.642156862745098,
+      "sufficient_gold_retrieved": 0.6470588235294118
+    },
+    "semantic_quality_gated": false,
+    "status": "passed",
+    "ungated": {
+      "multi_evidence_sufficient": "measured baseline too low for a positive one-query-margin floor; observation only"
+    }
+  },
+  "real_replay_runtime": "existing Python3.11.15 ML venv; local Qwen/CrossEncoder weights, not empty CPU installation",
+  "replays": [
+    {
+      "label": "real-dev",
+      "cases": 140,
+      "encoder_calls": {
+        "document_calls": 0,
+        "document_passages": 0,
+        "query_calls": 100
+      },
+      "status": "passed"
+    },
+    {
+      "label": "real-test",
+      "cases": 140,
+      "encoder_calls": {
+        "document_calls": 0,
+        "document_passages": 0,
+        "query_calls": 100
+      },
+      "status": "passed"
+    },
+    {
+      "label": "design-test",
+      "cases": 70,
+      "encoder_calls": {
+        "document_calls": 0,
+        "document_passages": 0,
+        "query_calls": 50
+      },
+      "status": "passed"
+    }
+  ],
+  "source_identity_matches_final_real_model_runs": "8712337b5e852877dae6cd4ec68c8cceba8e5b2508687991e859050b61fdb0ba"
+}

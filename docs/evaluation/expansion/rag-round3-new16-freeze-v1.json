@@ -1,0 +1,21 @@
+{
+  "status": "frozen_before_dev_scoring",
+  "test_cases": 16,
+  "answerable_test": 12,
+  "test_source_paths": [
+    "src/job_agent/resume_workspace/ingestion.py",
+    "src/job_agent/resume_workspace/project_import.py",
+    "src/job_agent/resume_workspace/github_import.py",
+    "src/job_agent/resume_workspace/pdf_export.py",
+    "src/job_agent/resume_workspace/match_repository.py",
+    "src/job_agent/resume_workspace/matching.py",
+    "src/job_agent/resume_workspace/parsing.py",
+    "docs/tech-specs/expansion/S1-corpus-contract.md",
+    "docs/tech-specs/expansion/S3-evidence-pack.md"
+  ],
+  "test_sources_disjoint_from_all_old40": true,
+  "source_git": "ce209af86addcb016c1b70538e1772b9abf260be",
+  "human_reviewed": 0,
+  "dataset_sha256": "eb619fcde94d8776e82435f369991040cebe2902a908b57be9667ddb55f5a46e",
+  "support_labels_sha256": "9f8131dcf3146afb77e8a6d4b124cf4ea83efdf477affed21251f337f8a17436"
+}

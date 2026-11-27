@@ -1,0 +1,12 @@
+{
+  "source_sha256": "960a8ec15e34ff40e57ff16837b26b33bd81f2da6d24497bb63de532a323a18e",
+  "download_evidence": "s6-redis-download-v3.json",
+  "make_exit_code": 0,
+  "make_jobs": 2,
+  "system_install": false,
+  "version": "Redis server v=7.2.16 sha=00000000:0 malloc=libc bits=64 build=b44f7de21a145a92",
+  "binaries": {
+    "redis-server": "09c51a40f49a62d2f999c1fd5a24e2971d8b48e11ceeda779fa5b0edbd61ac48",
+    "redis-cli": "ffd1b5a1ab01a5fbfa2e36a848467f76e40a2e504292d3576d14e369df595a1a"
+  }
+}

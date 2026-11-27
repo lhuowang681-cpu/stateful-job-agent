@@ -1,0 +1,225 @@
+{
+  "dataset_version": "expansion-final-candidates-3",
+  "dataset_sha256": "ff6ad1d6ce4e8b0fc2346d61d6e46a0cee35540d73f4776647274ffe7fdc8d66",
+  "status": "awaiting_human_review",
+  "human_reviewed_count": 0,
+  "cases": [
+    {
+      "case_id": "dev-final-06",
+      "family": "receipt-callchain",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "入口函数到回执实现跨越哪些代码位置？",
+      "category": "multi_evidence",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/app/api.py",
+          "content_hash": "d8a5646044b772b88b788b80c12facea922c8dde808c90cc638ed3b026b7319e",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def handle(key, store):\n    return save_receipt(key, store)\n"
+        },
+        {
+          "document_id": "dev-code/app/storage.py",
+          "content_hash": "623c500827623616039a3bf42f8ad3cbb4a21056ff551d817790570b473722e9",
+          "start_line": 1,
+          "end_line": 6,
+          "quote": "def save_receipt(key, store):\n    \"\"\"Reuse a stored receipt to avoid duplicate writes.\"\"\"\n    if key in store:\n        return store[key]\n    store[key] = \"done\"\n    return store[key]\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-11",
+      "family": "serialization-chain",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "从规范JSON到摘要，需要连读哪两个函数？",
+      "category": "multi_evidence",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/serialize.py",
+          "content_hash": "011771aa01f1882f51745bcdcf1527d6a089a37582bde68f32e40ce950d2fe20",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def canonical(value):\n    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(\",\", \":\"))\n"
+        },
+        {
+          "document_id": "dev-code/serialize.py",
+          "content_hash": "011771aa01f1882f51745bcdcf1527d6a089a37582bde68f32e40ce950d2fe20",
+          "start_line": 6,
+          "end_line": 8,
+          "quote": "def payload_digest(value):\n    from hashlib import sha256\n    return sha256(canonical(value).encode(\"utf-8\")).hexdigest()\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-16",
+      "family": "fixture-verification-policy",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "测试源码和文档一起能否证明这些断言实际运行通过？",
+      "category": "multi_evidence",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "dev-code/tests/test_storage.py",
+          "content_hash": "4c98e8a00538e9be302d2cf7088c8119f6652b48dd3a9d9f02cc70e3f73251a6",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_duplicate():\n    store = {}\n    assert save_receipt(\"x\", store) == save_receipt(\"x\", store)\n"
+        },
+        {
+          "document_id": "dev-code/docs/scope.md",
+          "content_hash": "86be5bd7a59b4b79cc2eb5a4ac4ddb935fdcdbed4d786117152f63d372bd97bd",
+          "start_line": 8,
+          "end_line": 9,
+          "quote": "## Verification\nA test file contains source assertions. This document does not report executing those tests.\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "dev-final-22",
+      "family": "receipt-contribution-unknown",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "用户独立负责该回执模块的雇佣与贡献证明存在哪里？",
+      "category": "unanswerable",
+      "answerable": false,
+      "gold": [],
+      "gold_requirement": "all",
+      "split": "dev",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": "Source fixtures have no personal attribution or employment records.",
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-08",
+      "family": "lease-implementation-tests",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "检查租约实现及两种拒绝断言，定位全部必要证据。",
+      "category": "multi_evidence",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/lease.py",
+          "content_hash": "1076ce2d2095cfd560ab96c11a592514340031ac9c931b6550a8e7eade8dc34a",
+          "start_line": 1,
+          "end_line": 2,
+          "quote": "def can_publish(current_token, attempt_token, lease_until, now):\n    return current_token == attempt_token and lease_until > now\n"
+        },
+        {
+          "document_id": "test-code/tests/test_lease.py",
+          "content_hash": "cee767aa87580bf7f5b0c51304930ab881992935472f0dfb4df296fc2002b755",
+          "start_line": 3,
+          "end_line": 4,
+          "quote": "def test_old_token():\n    assert not can_publish(\"new\", \"old\", 100, 1)\n"
+        },
+        {
+          "document_id": "test-code/tests/test_lease.py",
+          "content_hash": "cee767aa87580bf7f5b0c51304930ab881992935472f0dfb4df296fc2002b755",
+          "start_line": 6,
+          "end_line": 7,
+          "quote": "def test_expired():\n    assert not can_publish(\"same\", \"same\", 1, 2)\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-09",
+      "family": "fixture-no-database",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "从任一原文说明找到：这份租约教学样例没有实际数据库连接。",
+      "category": "documentation",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/README.md",
+          "content_hash": "81ea4e8f6d9b417d4d0718d253f2dacbd027a5af1af985018bfc383e24289bce",
+          "start_line": 3,
+          "end_line": 3,
+          "quote": "It does not connect to a database or publish messages.\n"
+        },
+        {
+          "document_id": "test-code/docs/visibility.md",
+          "content_hash": "d233fa634b7547b88f43f992c339171d82bbed3fbb901b0977e0e0bbd26174c9",
+          "start_line": 6,
+          "end_line": 7,
+          "quote": "## Evidence\nThis fixture has no database connection and no execution logs.\n"
+        }
+      ],
+      "gold_requirement": "any",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-15",
+      "family": "scope-filter-verification",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "第一条记录不被允许时，如何用实现与断言验证不会占掉limit？",
+      "category": "multi_evidence",
+      "answerable": true,
+      "gold": [
+        {
+          "document_id": "test-code/filters.py",
+          "content_hash": "99b69137e0ac702b0899c84ba8d60a223080d97b95f6d71bdb1410dd32a164e3",
+          "start_line": 1,
+          "end_line": 3,
+          "quote": "def bounded_records(records, allowed_ids, limit):\n    allowed = [row for row in records if row[\"id\"] in allowed_ids]\n    return allowed[:limit]\n"
+        },
+        {
+          "document_id": "test-code/tests/test_filters.py",
+          "content_hash": "dd294afc08b33fda099ca90352860b2413303cbc4387bd7e778ea35407dae381",
+          "start_line": 3,
+          "end_line": 5,
+          "quote": "def test_filter_before_limit():\n    rows = [{\"id\": \"outside\"}, {\"id\": \"inside\"}]\n    assert bounded_records(rows, {\"inside\"}, 1) == [{\"id\": \"inside\"}]\n"
+        }
+      ],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": null,
+      "retrieval_scope": "project"
+    },
+    {
+      "case_id": "test-final-22",
+      "family": "lease-cost-unknown",
+      "source_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+      "query": "部署这份样例的月度服务账单是多少？",
+      "category": "unanswerable",
+      "answerable": false,
+      "gold": [],
+      "gold_requirement": "all",
+      "split": "test",
+      "annotation_status": "ai_candidate",
+      "annotation_note": "AI authored candidate; exact spans checked mechanically. Human support and semantic duplicate review pending.",
+      "unanswerable_reason": "No deployment, billing, or pricing record exists in the fixed corpus.",
+      "retrieval_scope": "project"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "f0_related": {
+    "tests": 291,
+    "passed": 291,
+    "failed_or_errors": 0,
+    "skipped": 0,
+    "skip_reasons": {},
+    "failures": []
+  },
+  "first_full_diagnostic": {
+    "tests": 787,
+    "passed": 735,
+    "failed_or_errors": 2,
+    "skipped": 50,
+    "skip_reasons": {
+      "Phase 3 PostgreSQL is not running": 20,
+      "Phase 4 PostgreSQL is not running": 14,
+      "QWEN_EMBEDDING_MODEL_PATH is unavailable": 4,
+      "explicit DeepSeek durable-state acceptance opt-in required": 4,
+      "QWEN_EMBEDDING_MODEL_PATH is not set": 3,
+      "explicit DeepSeek agent eval opt-in and API_KEY are required": 1,
+      "explicit local model opt-in and QWEN2_5_MODEL_PATH are required": 1,
+      "JOB_AGENT_REAL_MODEL_PATH is unavailable": 1,
+      "explicit DeepSeek stateful eval opt-in and API_KEY are required": 1,
+      "explicit local stateful eval opt-in and model path are required": 1
+    },
+    "failures": [
+      {
+        "test": "tests.test_backend_service_reliability::test_provider_admission_enforces_fairness_cooldown_circuit_and_fail_closed",
+        "type": "failure",
+        "reason": "Redis 127.0.0.1:63799 refused connection"
+      },
+      {
+        "test": "tests.test_backend_service_reliability::test_provider_admission_is_call_scoped_and_local_errors_do_not_open_circuit",
+        "type": "failure",
+        "reason": "Redis 127.0.0.1:63799 refused connection"
+      }
+    ]
+  },
+  "first_full_note": "Original quiet attempt stopped after prolonged wait; diagnostic rerun includes 8 new F1 PDF cases. Of its 735 passed, 727 are pre-existing tests; do not report 735 as a pure F0 source run. PGCONNECT_TIMEOUT=2 limits dependency probing only; no Redis bypass.",
+  "frontend_baseline": {
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0,
+    "build": "PASS"
+  },
+  "f1_related": {
+    "tests": 155,
+    "passed": 155,
+    "failed_or_errors": 0,
+    "skipped": 0,
+    "skip_reasons": {},
+    "failures": []
+  },
+  "model_calls": "NOT_RUN",
+  "git_commits_created": false
+}

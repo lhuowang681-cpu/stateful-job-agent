@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-20T10:51:33.991568+00:00",
+  "stage": "complete",
+  "url": "http://127.0.0.1:8016",
+  "checks": {
+    "isolated_synthetic_no_model": true,
+    "exactly_two_versions_no_interview_writes": true,
+    "origin_match_is_separate": true,
+    "keyword_not_semantic_support": true,
+    "accepted_not_truth_verified": true,
+    "accepted_version_still_unconfirmed": true,
+    "job_handoff_and_version_snapshot": true,
+    "two_answers_and_four_handoffs": true,
+    "feedback_actually_caused_followup": true,
+    "followup_then_switch": true,
+    "public_projection_hides_rubric_and_evaluation": true,
+    "zero_model_calls": true,
+    "complete_no_future_question": true,
+    "review_only_answered_turns": true,
+    "finish_retry_is_idempotent": true
+  },
+  "session_id": "interview-d24c43e5316f4a878fa36f4dbea1d8b3",
+  "resume_id": "res-1c9945b4d29e443d8b22e7ca305e5bcb",
+  "scope": "real loopback HTTP against synthetic browser-created data; not additional pytest or real-model quality cases"
+}

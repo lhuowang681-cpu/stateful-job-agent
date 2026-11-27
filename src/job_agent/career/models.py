@@ -50,6 +50,7 @@ class Job:
     session_dir: str | None
     created_at: str
     updated_at: str
+    created_by_trace_id: str | None = None
 
 
 @dataclass(frozen=True)

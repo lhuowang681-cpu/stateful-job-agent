@@ -1,0 +1,192 @@
+{
+  "date": "2026-10-20",
+  "scope": "M2A local PDF extraction/structure autofill; related regression only, not whole repository or real-model quality",
+  "environment": {
+    "python": "3.12.14",
+    "node": "v24.19.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "pytest": "9.1.1",
+      "pypdf": "6.10.0",
+      "reportlab": "4.4.9",
+      "fastapi": "0.115.14",
+      "pydantic": "2.14.0",
+      "httpx": "0.27.2"
+    }
+  },
+  "runs": [
+    {
+      "name": "m2a-before",
+      "counts": {
+        "tests": 72,
+        "passed": 9,
+        "failed": 1,
+        "errored_cases": 62,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "m2a-baseline-permitted",
+      "counts": {
+        "tests": 72,
+        "passed": 72,
+        "failed": 0,
+        "errored_cases": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "m2a-new-permitted",
+      "counts": {
+        "tests": 17,
+        "passed": 14,
+        "failed": 3,
+        "errored_cases": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "m2a-core",
+      "counts": {
+        "tests": 89,
+        "passed": 89,
+        "failed": 0,
+        "errored_cases": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "m2a-related",
+      "counts": {
+        "tests": 172,
+        "passed": 172,
+        "failed": 0,
+        "errored_cases": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "m2a-final",
+      "counts": {
+        "tests": 174,
+        "passed": 174,
+        "failed": 0,
+        "errored_cases": 0,
+        "skipped": 0
+      }
+    }
+  ],
+  "new_backend_cases": 20,
+  "frontend": {
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "build": "success"
+  },
+  "commands": {
+    "baseline": "python -m pytest -q tests/test_resume_workspace.py tests/test_resume_import.py --basetemp=../m2a-baseline-permitted-temp --junitxml=../m2a-baseline-permitted.xml (cwd: isolated public M2 archive copy)",
+    "final": "python -m pytest -q tests/test_resume_import.py tests/test_resume_workspace.py tests/test_resume_pdf_autofill.py tests/test_source_audit_regressions.py tests/test_career_store.py tests/test_application_assistant_evaluation.py tests/test_backend_service.py tests/test_evidence_source_store.py tests/test_evidence_mapping_v2.py tests/test_evidence_projections.py tests/test_evidence_requirement_analyzer.py tests/test_knowledge_ingestion.py --basetemp=../../work/m2a-final-temp --junitxml=../../work/m2a-final.xml",
+    "frontend": [
+      "node --test src/model.test.js",
+      "node node_modules/vite/bin/vite.js build"
+    ],
+    "demo_cli": [
+      "python scripts/demo_resume_workbench.py --help",
+      "python scripts/demo_resume_workbench.py --port 0 (expected exit 2)"
+    ],
+    "temp_environment": "TEMP and TMP set to workspace work/tmp; permitted local communication test context"
+  },
+  "failures_and_interruptions": [
+    "Initial default sandbox temp directory could not be created: 9 passed, 1 failed, 62 errored cases; not a passing baseline.",
+    "Sandbox reruns m2a-baseline and m2a-new were interrupted after local communication blocked; no complete JUnit/counts. Later permitted context used identical tests.",
+    "New first permitted run: 14 passed, 3 failed; list marker regex truncated year prefixes. Regex corrected, assertions kept.",
+    "m2a-regression selected nonexistent test file names: exit 4, no tests collected; corrected to verified existing related test list."
+  ],
+  "browser_manual": {
+    "dataset": "synthetic_pdf() from tests/test_resume_pdf_autofill.py; no private material read",
+    "url": "http://127.0.0.1:8013/",
+    "checks": [
+      "File chooser selected synthetic PDF",
+      "Upload then parse displayed 25 fields, 1 education, 1 work/internship, 2 projects",
+      "No manual fields added",
+      "Project citation highlighted original text",
+      "Explicit review -> saved version 1, still unconfirmed"
+    ],
+    "screenshots": [
+      "m2a-autofill.png",
+      "m2a-projects.png",
+      "m2a-saved.png"
+    ],
+    "provider_calls": 0,
+    "scope_note": "browser upload/save completed before last two boundary-only tests; final tests validate those guards and CLI; no layout code changed afterward"
+  },
+  "synthetic_comparison": "m2a-synthetic-comparison.json; one example, 25 manually specified fields, 3 before/25 after; not a general accuracy benchmark",
+  "delivered_launcher_http": {
+    "url": "http://127.0.0.1:8013/",
+    "launcher": "python scripts/demo_resume_workbench.py --port 8013",
+    "data": "generated synthetic PDF only",
+    "checks": {
+      "health": true,
+      "isolated_demo_no_model": true,
+      "pdf_import_201": true,
+      "parse_201": true,
+      "all_25_field_citations": true,
+      "save_without_edits_201_unconfirmed": true,
+      "original_pdf_preserved": true,
+      "latest_frontend_build_served": true
+    },
+    "provider_calls": 0,
+    "http_client": "trust_env=False to connect directly to loopback; first environment-proxied probe returned non-JSON before mutations",
+    "resume_id": "res-0a4866881164470083c134dd4ae6e69a",
+    "source_id": "src-fab7af99f6ae43a6b3268c52b7f8c77a",
+    "counts_are": "8 standalone HTTP checks, not additional pytest cases"
+  },
+  "not_run": [
+    "whole repository regression",
+    "real private resumes or representative multi-layout dataset",
+    "real LLM quality/cost",
+    "OCR/vision/GPU",
+    "production PostgreSQL/Redis/Worker",
+    "new JD matching integration"
+  ],
+  "frozen_eval_files_checked": 25,
+  "frozen_eval_changes": [],
+  "documentation_validation": {
+    "passed": true,
+    "anchors_checked": 84,
+    "links_checked": 49,
+    "errors": [],
+    "phase_sections": 10
+  },
+  "git": {
+    "branch": "main",
+    "head": "067bfc7d63408e1e6b0ab6c227e863bd08a5857a",
+    "status_short": "M .gitignore\n M README.md\n M docs/architecture.md\n M docs/evaluation.md\n M docs/interview_notes.md\n M docs/resume_notes.md\n M pyproject.toml\n M src/job_agent/backend_service/application_assistant.py\n M src/job_agent/backend_service/application_evaluation.py\n M src/job_agent/evidence/level_policy.py\n M src/job_agent/evidence/mapping.py\n M src/job_agent/evidence/pipeline.py\n M src/job_agent/evidence/projections.py\n M src/job_agent/evidence/sources.py\n M src/job_agent/knowledge/qwen_embedding.py\n M tests/test_application_assistant_evaluation.py\n M tests/test_ui_app_test.py\n?? AGENTS.md\n?? GIT_LOG.txt\n?? GIT_STATUS.txt\n?? UNCOMMITTED_DIFF.txt\n?? docs/CONTINUE_DEVELOPMENT.md\n?? docs/INTERVIEW_SOURCE_GUIDE.md\n?? docs/PROJECT_AUDIT.md\n?? docs/audit/\n?? docs/devlog/\n?? docs/upgrade/\n?? frontend/\n?? hits[1].score\n?? scripts/demo_resume_versions.py\n?? scripts/demo_resume_workbench.py\n?? src/job_agent/resume_workspace/\n?? tests/test_resume_import.py\n?? tests/test_resume_workspace.py\n?? tests/test_source_audit_regressions.py",
+    "diff_stat": ".gitignore                                         |   5 +\n README.md                                          |  77 +++++++++++--\n docs/architecture.md                               |   5 +\n docs/evaluation.md                                 |   4 +\n docs/interview_notes.md                            |   5 +\n docs/resume_notes.md                               | 121 +++++++++++++++++++--\n pyproject.toml                                     |  12 +-\n .../backend_service/application_assistant.py       |   1 +\n .../backend_service/application_evaluation.py      |  25 +++--\n src/job_agent/evidence/level_policy.py             |   5 +\n src/job_agent/evidence/mapping.py                  |   2 +-\n src/job_agent/evidence/pipeline.py                 |   8 +-\n src/job_agent/evidence/projections.py              |   7 ++\n src/job_agent/evidence/sources.py                  |   3 +-\n src/job_agent/knowledge/qwen_embedding.py          |  14 ++-\n tests/test_application_assistant_evaluation.py     |  29 +++++\n tests/test_ui_app_test.py                          |   6 +-\n 17 files changed, 286 insertions(+), 43 deletions(-)",
+    "remote_actions": "none; no commits"
+  },
+  "published_m2_base_sha256": "08b168851d110c4fc3d4a8c121c41a0f7bbf8fa8115b083ce1aa9884d08de168",
+  "changed_public_code_files": [
+    "frontend/dist/index.html",
+    "frontend/src/main.jsx",
+    "frontend/src/model.js",
+    "frontend/src/model.test.js",
+    "scripts/demo_resume_workbench.py",
+    "src/job_agent/resume_workspace/local_extraction.py",
+    "src/job_agent/resume_workspace/parsing.py",
+    "tests/test_resume_pdf_autofill.py"
+  ],
+  "removed_generated_assets": [
+    "frontend/dist/assets/index-CvzACHSL.js"
+  ],
+  "source_sha256": {
+    "frontend/dist/index.html": "60cc6171d9e5c8c6c0532ca69477924c0636ef616b93f09f186d8447c9b03022",
+    "frontend/src/main.jsx": "ad51fb648d4575a9ca28b4ec14b12ba2b3e4f5e58ad6edf8840ce385e0603b90",
+    "frontend/src/model.js": "1757812d13dcd05537d9397f5cea92894127091aa4df1250e260835b7857d783",
+    "frontend/src/model.test.js": "01203090152fb9103ec5ec6638c7c18f3280a57a4c64ead8e5a362a68d42e409",
+    "scripts/demo_resume_workbench.py": "3ea16e3cb4d3825d6bdf27b798918f31112a5d0c79608e738cdc98508cf7ac4a",
+    "src/job_agent/resume_workspace/local_extraction.py": "355d5653faa96f32f38970aaa5e41803bfd9d4ba9dc6ffbb5e217f8450fc996a",
+    "src/job_agent/resume_workspace/parsing.py": "48ccac9951623d18ef64d98c62505cbb56eedb6fb06e08e6698f00157ce0f293",
+    "tests/test_resume_pdf_autofill.py": "9eaadb137d8fcc37dd5ad40ab7a4ec685fabaa013ddc96807aa5cda515e23715"
+  }
+}

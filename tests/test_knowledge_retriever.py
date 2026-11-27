@@ -5,6 +5,23 @@ from job_agent.knowledge.retriever import KnowledgeRetriever
 from job_agent.knowledge.vector_index import InMemoryVectorIndex
 
 
+_SYNTHETIC_DOCUMENT_HASH = "0" * 64
+
+
+def _chunk(chunk_id: str, text: str, chunk_index: int) -> KnowledgeChunk:
+    start_offset = chunk_index * 100
+    return KnowledgeChunk(
+        chunk_id=chunk_id,
+        document_id="synthetic-retriever-document",
+        document_version=1,
+        document_content_hash=_SYNTHETIC_DOCUMENT_HASH,
+        text=text,
+        chunk_index=chunk_index,
+        start_offset=start_offset,
+        end_offset=start_offset + len(text),
+    )
+
+
 class FakeEmbeddingBackend:
     def _embed(self, text: str) -> list[float]:
         lowered = text.casefold()
@@ -38,15 +55,15 @@ def test_knowledge_retriever_returns_relevant_chunk() -> None:
     vector_index = InMemoryVectorIndex()
 
     chunks = [
-        KnowledgeChunk(
-            chunk_id="agent-runtime",
-            text="Implemented an Agent Runtime and MCP integration.",
-            source="projects/job_agent.md",
+        _chunk(
+            "agent-runtime",
+            "Implemented an Agent Runtime and MCP integration.",
+            0,
         ),
-        KnowledgeChunk(
-            chunk_id="visual-grounding",
-            text="Built a visual grounding system for object localization.",
-            source="projects/scvib.md",
+        _chunk(
+            "visual-grounding",
+            "Built a visual grounding system for object localization.",
+            1,
         ),
     ]
 

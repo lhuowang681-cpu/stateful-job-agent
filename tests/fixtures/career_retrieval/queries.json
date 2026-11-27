@@ -1,0 +1,149 @@
+[
+  {
+    "case_id": "semantic-tool-governance",
+    "category": "semantic",
+    "query": "哪个项目体现了 Agent 工具调用的权限治理和人工审批？",
+    "expected_document_ids": ["real-agent-runtime-governance"],
+    "rationale": "Agent Runtime material explicitly covers allowlists, policy, approval, verification, and checkpoints."
+  },
+  {
+    "case_id": "exact-mcp-tool-adapter",
+    "category": "exact_term",
+    "query": "MCPToolAdapter 在哪里实现，它注册了什么类型的工具？",
+    "expected_document_ids": ["real-mcp-integration"],
+    "rationale": "The MCP integration material names MCPToolAdapter and its read-only ToolRegistry registration."
+  },
+  {
+    "case_id": "entity-stdio-mcp-bridge",
+    "category": "exact_entity",
+    "query": "StdioMCPClientBridge 如何维持异步 MCP session？",
+    "expected_document_ids": ["real-mcp-integration"],
+    "rationale": "The MCP bridge material names the class and describes its background event loop and persistent session."
+  },
+  {
+    "case_id": "requirement-async-backend",
+    "category": "requirement",
+    "query": "有什么经历能证明候选人做过可恢复的异步 Agent 后端？",
+    "expected_document_ids": ["real-backend-reliability"],
+    "rationale": "The backend material covers asynchronous runs, workers, leases, fencing, checkpoints, and recovery."
+  },
+  {
+    "case_id": "exact-outbox-redis",
+    "category": "exact_term",
+    "query": "transactional Outbox 和 Redis Streams 在系统里分别负责什么？",
+    "expected_document_ids": ["real-backend-reliability"],
+    "rationale": "The backend material distinguishes PostgreSQL authority and the rebuildable Redis wake-up layer."
+  },
+  {
+    "case_id": "semantic-evidence-provenance",
+    "category": "semantic",
+    "query": "系统如何保证简历证据的引用位置和哈希不是模型编造的？",
+    "expected_document_ids": ["real-evidence-provenance"],
+    "rationale": "Evidence v2 delegates quote resolution, offsets, hashes, and provenance caps to deterministic Python."
+  },
+  {
+    "case_id": "exact-quote-resolver",
+    "category": "exact_term",
+    "query": "exact quote resolver 和 provenance level cap 出现在哪个模块？",
+    "expected_document_ids": ["real-evidence-provenance"],
+    "rationale": "Both exact terms are documented in Evidence v2 material."
+  },
+  {
+    "case_id": "semantic-career-tracking",
+    "category": "semantic",
+    "query": "哪个组件管理公司、岗位、申请阶段事件和面试索引？",
+    "expected_document_ids": ["real-career-store"],
+    "rationale": "CareerStore owns companies, jobs, append-only stage events, artifact links, and interview indexes."
+  },
+  {
+    "case_id": "requirement-legacy-migration",
+    "category": "requirement",
+    "query": "候选人是否实现过幂等且不破坏旧数据的迁移？",
+    "expected_document_ids": ["real-career-store"],
+    "rationale": "CareerStore migration is source-hash idempotent and does not overwrite or delete legacy data."
+  },
+  {
+    "case_id": "semantic-adaptive-interviewer",
+    "category": "semantic",
+    "query": "面试系统怎样根据回答决定追问还是切换主题？",
+    "expected_document_ids": ["real-adaptive-interview"],
+    "rationale": "Adaptive Interview performs one action per turn and uses the answer as the next observation."
+  },
+  {
+    "case_id": "exact-project-dossier",
+    "category": "exact_entity",
+    "query": "ProjectDossier 在面试准备里提供什么上下文？",
+    "expected_document_ids": ["real-adaptive-interview"],
+    "rationale": "The interview material names ProjectDossier as a source of architecture, trade-off, metric, and failure-point context."
+  },
+  {
+    "case_id": "requirement-rag-experience",
+    "category": "requirement",
+    "query": "有什么项目证据表明候选人实现过 RAG 或语义检索？",
+    "expected_document_ids": ["real-dense-knowledge-retrieval"],
+    "rationale": "The dense retrieval material documents text ingestion, Qwen embeddings, FAISS, and retrieval evaluation."
+  },
+  {
+    "case_id": "exact-faiss-indexflatip",
+    "category": "exact_term",
+    "query": "IndexFlatIP 与 normalize_L2 如何实现 cosine ranking？",
+    "expected_document_ids": ["real-dense-knowledge-retrieval"],
+    "rationale": "The dense retrieval material explicitly names IndexFlatIP and L2 normalization."
+  },
+  {
+    "case_id": "ambiguous-deterministic-guards",
+    "category": "ambiguous",
+    "query": "哪些模块把开放式模型输出约束在确定性、fail-closed 的边界内？",
+    "expected_document_ids": [
+      "real-agent-runtime-governance",
+      "real-evidence-provenance",
+      "real-backend-reliability"
+    ],
+    "rationale": "Tool governance, Evidence materialization, and backend recovery all enforce deterministic or fail-closed boundaries."
+  },
+  {
+    "case_id": "requirement-synthetic-agent-jd",
+    "category": "requirement",
+    "query": "哪份岗位描述同时要求 Agent、RAG 和 tool calling？",
+    "expected_document_ids": ["synthetic-jd-agent-engineer"],
+    "rationale": "The explicitly synthetic JD lists all three requirements."
+  },
+  {
+    "case_id": "entity-career-context-adapter",
+    "category": "exact_entity",
+    "query": "CareerContextAdapter 的职责是什么？",
+    "expected_document_ids": ["real-backend-reliability"],
+    "rationale": "The backend material names CareerContextAdapter as the user-scoped read-only career snapshot boundary."
+  },
+  {
+    "case_id": "gap-kubernetes",
+    "category": "negative_gap",
+    "query": "候选人有哪些 Kubernetes 生产集群运维经验？",
+    "expected_document_ids": [],
+    "rationale": "The benchmark corpus contains no evidence of Kubernetes production operations."
+  },
+  {
+    "case_id": "gap-pdf-docx",
+    "category": "negative_gap",
+    "query": "系统已经实现了哪些 PDF 或 DOCX 知识摄取能力？",
+    "expected_document_ids": [],
+    "rationale": "The current ingestion slice is text-only and the corpus contains no implemented PDF or DOCX loader evidence."
+  },
+  {
+    "case_id": "ambiguous-approval-checkpoint",
+    "category": "ambiguous",
+    "query": "项目中 approval 与 checkpoint 如何共同控制 Agent 执行？",
+    "expected_document_ids": [
+      "real-agent-runtime-governance",
+      "real-backend-reliability"
+    ],
+    "rationale": "Runtime governance covers approval-bound actions while backend reliability persists approval and checkpoint state."
+  },
+  {
+    "case_id": "exact-uncertain-state",
+    "category": "exact_term",
+    "query": "UNCERTAIN 状态为什么不能普通 resume？",
+    "expected_document_ids": ["real-backend-reliability"],
+    "rationale": "The backend material explains that uncertain external side effects require manual verification."
+  }
+]

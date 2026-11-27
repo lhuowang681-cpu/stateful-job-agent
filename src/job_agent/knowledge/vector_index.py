@@ -68,16 +68,27 @@ class InMemoryVectorIndex:
         if limit <= 0:
             return []
 
-        hits: list[RetrievedChunk] = []
+        scored_chunks: list[tuple[KnowledgeChunk, float]] = []
 
         for chunk, vector in self._items:
             score = cosine_similarity(vector, query_vector)
 
-            hits.append(RetrievedChunk(chunk=chunk,score=score))
+            scored_chunks.append((chunk, score))
 
-        hits.sort(
-            key=lambda hit: hit.score,
+        scored_chunks.sort(
+            key=lambda item: item[1],
             reverse=True,
         )
 
-        return hits[:limit]
+        return [
+            RetrievedChunk(
+                chunk=chunk,
+                score=score,
+                rank=rank,
+                retrieval_method="dense",
+            )
+            for rank, (chunk, score) in enumerate(
+                scored_chunks[:limit],
+                start=1,
+            )
+        ]

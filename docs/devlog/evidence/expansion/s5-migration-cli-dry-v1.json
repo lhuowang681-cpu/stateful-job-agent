@@ -1,0 +1,22 @@
+{
+  "source_domain_identity": "95b6c48fa3407d226af7bc03ff5384a0c680407cc5138e5d0f22cfdd2b23222c",
+  "counts": {
+    "v3_projects": 2,
+    "v3_project_snapshots": 2,
+    "v3_project_files": 2,
+    "v3_code_indexes": 2,
+    "v3_code_symbols": 4,
+    "v3_code_chunks": 4,
+    "v3_code_edges": 0,
+    "v3_code_vectors": 0,
+    "v3_tasks": 1
+  },
+  "backup_sha256": "5f299f08189cb2e8829ec47ae107016c8f3f8bee8999b8f0aacfd1129e704259",
+  "backup_path": "/root/autodl-tmp/study/job-agent-v3/output/expansion/s5-migration-cli-dry-backup-v1.sqlite",
+  "stable_ids_preserved": true,
+  "active_source_writers_allowed": false,
+  "mode": "dry_run",
+  "production_migration_verified": false,
+  "source_preserved": true,
+  "source_writers_quiesced_asserted": false
+}

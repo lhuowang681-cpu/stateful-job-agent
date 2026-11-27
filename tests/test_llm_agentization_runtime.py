@@ -415,7 +415,12 @@ def test_openai_compatible_provider_uses_structured_request_without_network():
         captured["payload"] = json.loads(http_request.data.decode("utf-8"))
         return json.dumps(
             {
-                "choices": [{"message": {"content": '{"value":"api-ok"}'}}],
+                "choices": [
+                    {
+                        "message": {"content": '{"value":"api-ok"}'},
+                        "finish_reason": "stop",
+                    }
+                ],
                 "usage": {"prompt_tokens": 12, "completion_tokens": 5},
             }
         ).encode("utf-8")
@@ -443,6 +448,8 @@ def test_openai_compatible_provider_uses_structured_request_without_network():
     assert result.parsed_output == {"value": "api-ok"}
     assert result.input_tokens == 12
     assert result.output_tokens == 5
+    assert result.finish_reason == "stop"
+    assert result.completion_truncated is False
 
 
 def test_openai_compatible_provider_supports_json_object_mode_without_schema_claim():

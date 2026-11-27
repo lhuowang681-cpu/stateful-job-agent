@@ -1,0 +1,119 @@
+{
+  "status": "verified_with_explicit_historical_conditions_and_human_deferral",
+  "source_git_revision": "3443a4ff19d248c082c5244f23abf1408a39be75",
+  "items": [
+    {
+      "id": "R0",
+      "status": "verified",
+      "finding": "Genuine existing-code baseline 9dc50ef; scoped issue ledger, current 3443a4f; old material preserved",
+      "evidence": "r0-pre-git.json; r0-stage-review.json"
+    },
+    {
+      "id": "R1",
+      "status": "verified",
+      "finding": "Formal pre-fix red and complete positive/compatibility/no-replay/learning invalidation; real socket before and after",
+      "evidence": "r1-before.xml; r1-affected-v2.xml; r1-real-http-before-v1.json; r1-real-http-after-v1.json"
+    },
+    {
+      "id": "R2",
+      "status": "verified_with_explicit_conditions",
+      "finding": "Aligned deps, two supported fresh environments, install+HTTP+gate; original builders restore 10 files; 16 original fixture failures preserved",
+      "evidence": "r2-linux-offline-v2.xml; r2-public-fixture-reconstruction-v1.json; r5-remaining-legacy-conditions-v1.json"
+    },
+    {
+      "id": "R3a",
+      "status": "verified_narrow_candidate",
+      "finding": "Real noncopy legal rewrite and explicit approval at final src identity; no human usefulness claim",
+      "evidence": "r5-deepseek-rewrite-http-v1.json; r5-source-model-alignment-v2.json"
+    },
+    {
+      "id": "R3b",
+      "status": "verified_real_http",
+      "finding": "Real production provider/main, fixed question references, five answer categories, complete correction/scheduling/same-source fresh practice loop",
+      "evidence": "r5-deepseek-fixed-reference-learning-v2.json"
+    },
+    {
+      "id": "R3c",
+      "status": "executed_no_proven_post_first_draft_text_gain",
+      "finding": "10 new cases x3 repeats x3 paths; shared first draft/budget/source, 100 calls, usage/latency, no forced collaboration win",
+      "evidence": "deepseek-comparison-v2.json; deepseek-comparison-latency-analysis-v3.json"
+    },
+    {
+      "id": "R4",
+      "status": "executed_candidate_quality_only",
+      "finding": "50 new Chinese questions with real-source family split, frozen primary test and finite separately frozen design supplement; all variants/metrics/routing/no-answer limitations and replays",
+      "evidence": "r4-real-summary-v3.json; r4-design-test-v1.json; r4-real-route-http-v1.json; r4-real-unanswerable-http-v2.json; r4-frozen-source-git-audit-v1.json"
+    },
+    {
+      "id": "R5-regressions",
+      "status": "verified_with_explicit_conditions",
+      "finding": "Affected contracts, full Windows1051/16/84, dedicated Redis2, frontend13/build, final paid source identity335 aligned",
+      "evidence": "r5-full-v1.xml; r2-real-redis-admission-v1.xml; r5-source-model-alignment-v2.json"
+    },
+    {
+      "id": "R5-delivery",
+      "status": "verified",
+      "finding": "Three immutable packages passed local and remote CRC/hash/extraction; separate empty Linux installation, installed main/auth/5 assets/CLI,609 pass35 skip BM25 gate; packaged real350 combinations replayed with0 document encoding;945 source files exact in restored Git clone",
+      "evidence": "r5-package-verification-v1.json; r5-package-linux-contracts-v1.xml; r5-package-git-restore-v1.json; r5-package-frontend-v1.json"
+    },
+    {
+      "id": "learning",
+      "status": "delivered_not_personal_mastery",
+      "finding": "20-40min each R1-R5 plus30min route, state/data/alternatives/failures/5 questions; concurrent textbook/AGENTS progress untouched",
+      "evidence": "docs/devlog/REVIEW-R1.md through REVIEW-R5.md; docs/learning/REVIEW_30_MINUTE_ROUTE.md"
+    },
+    {
+      "id": "human-eight",
+      "status": "deferred",
+      "finding": "Explicit user deferral; 0, no AI signature substituted",
+      "evidence": "docs/evaluation/expansion/HUMAN_REVIEW_8.md"
+    }
+  ],
+  "no_remote_push": true,
+  "no_messages_to_other_chats": true,
+  "new_paid_calls_after_final_model_probe": 0,
+  "runtime_verified": true,
+  "stable_unpacked_linux": {
+    "passed": 609,
+    "skipped": 35,
+    "failed": 0
+  },
+  "paid_api_usage": {
+    "calls": 180,
+    "input_tokens": 216617,
+    "output_tokens": 23860,
+    "billing_amount": null
+  },
+  "temporary_services": {
+    "own_redis_shutdown_verified": true,
+    "own_tunnel_stopped": true,
+    "credentials_in_process_after_cleanup": false
+  },
+  "packages": [
+    {
+      "file": "job-agent-review-source.zip",
+      "sha256": "12b78ce140daf4be7e1a148e514dd284bdbfe38c63d7ce8336273b7fd88b16a7",
+      "files": 945,
+      "bytes": 19354653,
+      "crc_and_all_extracted_hashes": "passed",
+      "unpacked_directory": "unpacked-job-agent-review-source"
+    },
+    {
+      "file": "job-agent-review-learning.zip",
+      "sha256": "826a0c59d0ce2a5492d01b6ab160b1f7392868f92d38412586dcc054a627568b",
+      "files": 24,
+      "bytes": 107247,
+      "crc_and_all_extracted_hashes": "passed",
+      "unpacked_directory": "unpacked-job-agent-review-learning"
+    },
+    {
+      "file": "job-agent-review-real-research.zip",
+      "sha256": "0405ecf640f10e35951f9f2f24450f7b38e506f7c5fcada26d46fce9935ce04c",
+      "files": 45,
+      "bytes": 8648043,
+      "crc_and_all_extracted_hashes": "passed",
+      "unpacked_directory": "unpacked-job-agent-review-real-research"
+    }
+  ],
+  "artifact_identity_policy": "Packages capture source commit3443a4f; subsequent commit adds verification evidence/docs only. All335 src bytes remain exactly matched to final real-model runs."
+}

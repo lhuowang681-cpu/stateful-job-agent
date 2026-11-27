@@ -1,5 +1,10 @@
 # 架构与数据流
 
+范围说明（2026-10-18 审计）：本页下图主要描述桌面 Evidence v2 与面试工作台；
+独立 MCP/RAG 工作流和异步后端采用不同入口，尚未全部统一接通。
+各入口源码、真实保证与未解决项以 [INTERVIEW_SOURCE_GUIDE.md](INTERVIEW_SOURCE_GUIDE.md)
+及 [PROJECT_AUDIT.md](PROJECT_AUDIT.md) 为准。
+
 项目将 LLM 的开放语义职责与 Python 的确定性执行职责分开。模型可以理解、比较、提问；
 程序拥有 source of truth、权限、副作用、事务、派生字段、失败语义与验收权。
 

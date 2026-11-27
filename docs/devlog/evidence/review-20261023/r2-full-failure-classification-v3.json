@@ -1,0 +1,359 @@
+{
+  "original_result": "58 failed, 1002 passed, 84 skipped",
+  "categories": {
+    "missing_historical_fixture": 41,
+    "legacy_redis_service_unavailable": 2,
+    "faiss_windows_unicode_path": 11,
+    "legacy_provider_missing_point_assessments": 4
+  },
+  "items": [
+    {
+      "test": "tests.test_agent_graph_runtime::test_cli_agent_mock_mode_runs_five_calls_and_writes_sanitized_runtime_audit",
+      "message": "FileNotFoundError: Job fixture not found: data\\fixtures\\raw_jobs_posttraining.json",
+      "tail": "th)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsrc\\job_agent\\tools\\job_sources.py:21: in load\n    return load_fixture_jobs(source_path)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\npath = WindowsPath('data/fixtures/raw_jobs_posttraining.json')\n\n    def load_fixture_jobs(path: Path) -> list[RawJob]:\n        if not path.exists():\n>           raise FileNotFoundError(f\"Job fixture not found: {path}\")\nE           FileNotFoundError: Job fixture not found: data\\fixtures\\raw_jobs_posttraining.json\n\nsrc\\job_agent\\tools\\job_search.py:11: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_agent_graph_runtime::test_cli_agent_failure_writes_sanitized_failure_audit",
+      "message": "FileNotFoundError: Job fixture not found: data\\fixtures\\raw_jobs_posttraining.json",
+      "tail": "th)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsrc\\job_agent\\tools\\job_sources.py:21: in load\n    return load_fixture_jobs(source_path)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\npath = WindowsPath('data/fixtures/raw_jobs_posttraining.json')\n\n    def load_fixture_jobs(path: Path) -> list[RawJob]:\n        if not path.exists():\n>           raise FileNotFoundError(f\"Job fixture not found: {path}\")\nE           FileNotFoundError: Job fixture not found: data\\fixtures\\raw_jobs_posttraining.json\n\nsrc\\job_agent\\tools\\job_search.py:11: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_application_assistant_evaluation::test_application_assistant_eval_corpus_has_required_coverage",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\application_assistant_phase_c_cases.json'",
+      "tail": "None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\application_assistant_phase_c_cases.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_application_assistant_evaluation::test_application_assistant_eval_runs_real_loop_approval_and_recovery",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\application_assistant_phase_c_cases.json'",
+      "tail": "None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\application_assistant_phase_c_cases.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_atomic_evidence_v2::test_regression_benchmark_has_complete_atomic_lineage",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\real_career_evidence_v2\\\\regression.json'",
+      "tail": "wline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\real_career_evidence_v2\\\\regression.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_atomic_evidence_v2::test_compound_parent_maps_atoms_and_multiple_acceptable_sources",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\real_career_evidence_v2\\\\regression.json'",
+      "tail": "wline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\real_career_evidence_v2\\\\regression.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_atomic_evidence_v2::test_named_dev_review_cases_use_same_auditable_v2_schema",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\real_career_evidence_v2\\\\dev_review.json'",
+      "tail": "wline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\real_career_evidence_v2\\\\dev_review.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_atomic_evidence_v2::test_atomic_observation_preserves_exact_quote_and_provenance",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\real_career_evidence_v2\\\\regression.json'",
+      "tail": "wline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\real_career_evidence_v2\\\\regression.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_atomic_evidence_v2::test_changed_gold_requires_a_correction_log",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\real_career_evidence_v2\\\\regression.json'",
+      "tail": "wline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\real_career_evidence_v2\\\\regression.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_backend_service_reliability::test_provider_admission_enforces_fairness_cooldown_circuit_and_fail_closed",
+      "message": "redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:63799. 由于目标计算机积极拒绝，无法连接。.",
+      "tail": "b=14)>\n\n    def connect(self):\n        \"Connects to the Redis server if not already connected\"\n        if self._sock:\n            return\n        try:\n            sock = self.retry.call_with_retry(\n                lambda: self._connect(), lambda error: self.disconnect(error)\n            )\n        except socket.timeout:\n            raise TimeoutError(\"Timeout connecting to server\")\n        except OSError as e:\n>           raise ConnectionError(self._error_message(e))\nE           redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:63799. 由于目标计算机积极拒绝，无法连接。.\n\n.venv-review\\Lib\\site-packages\\redis\\connection.py:384: ConnectionError",
+      "category": "legacy_redis_service_unavailable"
+    },
+    {
+      "test": "tests.test_backend_service_reliability::test_provider_admission_is_call_scoped_and_local_errors_do_not_open_circuit",
+      "message": "redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:63799. 由于目标计算机积极拒绝，无法连接。.",
+      "tail": "b=14)>\n\n    def connect(self):\n        \"Connects to the Redis server if not already connected\"\n        if self._sock:\n            return\n        try:\n            sock = self.retry.call_with_retry(\n                lambda: self._connect(), lambda error: self.disconnect(error)\n            )\n        except socket.timeout:\n            raise TimeoutError(\"Timeout connecting to server\")\n        except OSError as e:\n>           raise ConnectionError(self._error_message(e))\nE           redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:63799. 由于目标计算机积极拒绝，无法连接。.\n\n.venv-review\\Lib\\site-packages\\redis\\connection.py:384: ConnectionError",
+      "category": "legacy_redis_service_unavailable"
+    },
+    {
+      "test": "tests.test_durable_career_knowledge::test_same_content_is_noop_and_version_update_is_durable",
+      "message": "RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_same_content_is_noop_and_0\\.career.faiss.3750b24f41f04a3c9101c03afb001a9c.tmp for writing: No such file or directory",
+      "tail": "\\test_same_content_is_noop_and_0\\\\.career.faiss.3750b24f41f04a3c9101c03afb001a9c.tmp')\n\n    def write_index(*args):\n>       return _swigfaiss.write_index(*args)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_same_content_is_noop_and_0\\.career.faiss.3750b24f41f04a3c9101c03afb001a9c.tmp for writing: No such file or directory\n\n.venv-review\\Lib\\site-packages\\faiss\\swigfaiss.py:13872: RuntimeError",
+      "category": "faiss_windows_unicode_path"
+    },
+    {
+      "test": "tests.test_durable_career_knowledge::test_chunk_identity_offsets_and_repository_reload",
+      "message": "RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_chunk_identity_offsets_an0\\.career.faiss.d2de93582d5a4b9e849aebbddc31933c.tmp for writing: No such file or directory",
+      "tail": "\\test_chunk_identity_offsets_an0\\\\.career.faiss.d2de93582d5a4b9e849aebbddc31933c.tmp')\n\n    def write_index(*args):\n>       return _swigfaiss.write_index(*args)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_chunk_identity_offsets_an0\\.career.faiss.d2de93582d5a4b9e849aebbddc31933c.tmp for writing: No such file or directory\n\n.venv-review\\Lib\\site-packages\\faiss\\swigfaiss.py:13872: RuntimeError",
+      "category": "faiss_windows_unicode_path"
+    },
+    {
+      "test": "tests.test_durable_career_knowledge::test_persistent_faiss_reload_without_document_embedding",
+      "message": "RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_persistent_faiss_reload_w0\\.career.faiss.01ae4f0212f743a9a2acd04df4ec0d7b.tmp for writing: No such file or directory",
+      "tail": "\\test_persistent_faiss_reload_w0\\\\.career.faiss.01ae4f0212f743a9a2acd04df4ec0d7b.tmp')\n\n    def write_index(*args):\n>       return _swigfaiss.write_index(*args)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_persistent_faiss_reload_w0\\.career.faiss.01ae4f0212f743a9a2acd04df4ec0d7b.tmp for writing: No such file or directory\n\n.venv-review\\Lib\\site-packages\\faiss\\swigfaiss.py:13872: RuntimeError",
+      "category": "faiss_windows_unicode_path"
+    },
+    {
+      "test": "tests.test_durable_career_knowledge::test_manifest_rejects_embedding_and_index_incompatibility",
+      "message": "RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_manifest_rejects_embeddin0\\.career.faiss.769eb3b736974e36ace34c5a212c48b2.tmp for writing: No such file or directory",
+      "tail": "\\test_manifest_rejects_embeddin0\\\\.career.faiss.769eb3b736974e36ace34c5a212c48b2.tmp')\n\n    def write_index(*args):\n>       return _swigfaiss.write_index(*args)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_manifest_rejects_embeddin0\\.career.faiss.769eb3b736974e36ace34c5a212c48b2.tmp for writing: No such file or directory\n\n.venv-review\\Lib\\site-packages\\faiss\\swigfaiss.py:13872: RuntimeError",
+      "category": "faiss_windows_unicode_path"
+    },
+    {
+      "test": "tests.test_durable_career_knowledge::test_update_delete_preserve_historical_provenance",
+      "message": "RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_update_delete_preserve_hi0\\.career.faiss.a8a3d32be984400aa4872a68e506247a.tmp for writing: No such file or directory",
+      "tail": "\\test_update_delete_preserve_hi0\\\\.career.faiss.a8a3d32be984400aa4872a68e506247a.tmp')\n\n    def write_index(*args):\n>       return _swigfaiss.write_index(*args)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_update_delete_preserve_hi0\\.career.faiss.a8a3d32be984400aa4872a68e506247a.tmp for writing: No such file or directory\n\n.venv-review\\Lib\\site-packages\\faiss\\swigfaiss.py:13872: RuntimeError",
+      "category": "faiss_windows_unicode_path"
+    },
+    {
+      "test": "tests.test_durable_career_knowledge::test_failed_ingestion_is_not_active_and_can_retry",
+      "message": "RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_failed_ingestion_is_not_a0\\.career.faiss.52662c3633e74e8098b0f8476bad6ac2.tmp for writing: No such file or directory",
+      "tail": "\\test_failed_ingestion_is_not_a0\\\\.career.faiss.52662c3633e74e8098b0f8476bad6ac2.tmp')\n\n    def write_index(*args):\n>       return _swigfaiss.write_index(*args)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_failed_ingestion_is_not_a0\\.career.faiss.52662c3633e74e8098b0f8476bad6ac2.tmp for writing: No such file or directory\n\n.venv-review\\Lib\\site-packages\\faiss\\swigfaiss.py:13872: RuntimeError",
+      "category": "faiss_windows_unicode_path"
+    },
+    {
+      "test": "tests.test_durable_career_knowledge::test_rebuild_and_candidate_source_filtering",
+      "message": "RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_rebuild_and_candidate_sou0\\.career.faiss.fb210d47a83040f8a9ee8fd6ec448f8e.tmp for writing: No such file or directory",
+      "tail": "\\test_rebuild_and_candidate_sou0\\\\.career.faiss.fb210d47a83040f8a9ee8fd6ec448f8e.tmp')\n\n    def write_index(*args):\n>       return _swigfaiss.write_index(*args)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_rebuild_and_candidate_sou0\\.career.faiss.fb210d47a83040f8a9ee8fd6ec448f8e.tmp for writing: No such file or directory\n\n.venv-review\\Lib\\site-packages\\faiss\\swigfaiss.py:13872: RuntimeError",
+      "category": "faiss_windows_unicode_path"
+    },
+    {
+      "test": "tests.test_durable_career_knowledge::test_directory_import_supports_markdown_and_text",
+      "message": "RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_directory_import_supports0\\state\\.career.faiss.81e2a60d460f44378dd56c553ed8c050.tmp for writing: No such file or directory",
+      "tail": "ry_import_supports0\\\\state\\\\.career.faiss.81e2a60d460f44378dd56c553ed8c050.tmp')\n\n    def write_index(*args):\n>       return _swigfaiss.write_index(*args)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_directory_import_supports0\\state\\.career.faiss.81e2a60d460f44378dd56c553ed8c050.tmp for writing: No such file or directory\n\n.venv-review\\Lib\\site-packages\\faiss\\swigfaiss.py:13872: RuntimeError",
+      "category": "faiss_windows_unicode_path"
+    },
+    {
+      "test": "tests.test_durable_career_knowledge::test_mcp_query_survives_server_process_restart",
+      "message": "RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_mcp_query_survives_server0\\.career.faiss.a51496be3bbc490f9dd4c9fdf54e1441.tmp for writing: No such file or directory",
+      "tail": "\\test_mcp_query_survives_server0\\\\.career.faiss.a51496be3bbc490f9dd4c9fdf54e1441.tmp')\n\n    def write_index(*args):\n>       return _swigfaiss.write_index(*args)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_mcp_query_survives_server0\\.career.faiss.a51496be3bbc490f9dd4c9fdf54e1441.tmp for writing: No such file or directory\n\n.venv-review\\Lib\\site-packages\\faiss\\swigfaiss.py:13872: RuntimeError",
+      "category": "faiss_windows_unicode_path"
+    },
+    {
+      "test": "tests.test_durable_career_knowledge::test_real_career_eval_v1_has_frozen_split_and_metrics",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'eval\\\\career_knowledge_v1\\\\documents.json'",
+      "tail": "ing=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'eval\\\\career_knowledge_v1\\\\documents.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_durable_career_knowledge::test_pdf_ingestion_preserves_extraction_page_provenance",
+      "message": "RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_pdf_ingestion_preserves_e0\\state\\.career.faiss.5f5780c73a264534b3ab9ec80874e878.tmp for writing: No such file or directory",
+      "tail": "estion_preserves_e0\\\\state\\\\.career.faiss.5f5780c73a264534b3ab9ec80874e878.tmp')\n\n    def write_index(*args):\n>       return _swigfaiss.write_index(*args)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_pdf_ingestion_preserves_e0\\state\\.career.faiss.5f5780c73a264534b3ab9ec80874e878.tmp for writing: No such file or directory\n\n.venv-review\\Lib\\site-packages\\faiss\\swigfaiss.py:13872: RuntimeError",
+      "category": "faiss_windows_unicode_path"
+    },
+    {
+      "test": "tests.test_durable_career_knowledge::test_docx_ingestion_extracts_paragraphs_tables_and_sections",
+      "message": "RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_docx_ingestion_extracts_p0\\state\\.career.faiss.41f8a767349a4675aaddb53b604f0881.tmp for writing: No such file or directory",
+      "tail": "gestion_extracts_p0\\\\state\\\\.career.faiss.41f8a767349a4675aaddb53b604f0881.tmp')\n\n    def write_index(*args):\n>       return _swigfaiss.write_index(*args)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       RuntimeError: Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\a\\faiss\\faiss\\faiss\\impl\\io.cpp:104: Error: 'f' failed: could not open C:\\Users\\1\\Desktop\\就业agent\\job-agent-v3\\output\\review-20261023\\tmp\\pytest-of-1\\pytest-4\\test_docx_ingestion_extracts_p0\\state\\.career.faiss.41f8a767349a4675aaddb53b604f0881.tmp for writing: No such file or directory\n\n.venv-review\\Lib\\site-packages\\faiss\\swigfaiss.py:13872: RuntimeError",
+      "category": "faiss_windows_unicode_path"
+    },
+    {
+      "test": "tests.test_evidence_eval_contracts::test_development_manifest_registers_three_fair_variants",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_eval_contracts::test_manifest_rejects_variant_budget_drift",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_eval_contracts::test_manifest_has_no_evidence_v1_quality_variant",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_eval_corpus_v2::test_frozen_builder_is_reproducible",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\cases_dev_v4.json'",
+      "tail": ", newline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\cases_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_eval_corpus_v2::test_100_cases_use_family_level_60_40_split_without_leakage",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_eval_corpus_v2::test_corpus_gold_spans_levels_and_edge_slices_are_auditable",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_eval_corpus_v2::test_no_network_mock_executes_all_300_variant_case_rows",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_eval_corpus_v2::test_audit_records_frozen_hashes_before_live_evaluation",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\corpus_100_audit_v4.json'",
+      "tail": "ne=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\corpus_100_audit_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_eval_corpus_v5::test_v5_corpus_is_new_family_disjoint_and_frozen",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\corpus_100_audit_v5.json'",
+      "tail": "ne=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\corpus_100_audit_v5.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_eval_corpus_v5::test_v5_hashes_contracts_and_artifact_metadata_are_valid",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\corpus_100_audit_v5.json'",
+      "tail": "ne=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\corpus_100_audit_v5.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_eval_metrics::test_deterministic_runner_writes_non_quality_report",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_live_eval::test_live_dry_run_executes_all_three_variants_with_same_cases",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_live_eval::test_live_budget_gate_blocks_calls_before_provider_use",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_live_eval::test_canary_preserves_schema_failure_row",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_live_eval::test_scorer_separates_invalid_span_from_semantics_and_rejects_unverified_claim",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_live_eval::test_unknown_claim_reference_is_scored_instead_of_rejecting_row",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_live_eval::test_requirement_concept_matches_unique_containing_span",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_live_eval::test_semantic_score_and_exact_span_are_separate_axes",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_live_eval::test_atom_semantics_match_when_pipeline_cites_shared_parent_span",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_live_eval::test_existing_rows_can_be_rescored_without_provider_calls",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_live_eval::test_checkpoint_resume_skips_completed_rows_without_duplicate_calls",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_live_eval::test_failed_checkpoint_row_requires_explicit_retry",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_live_eval::test_production_pipeline_live_runner_handles_sparse_case",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_live_eval::test_production_pipeline_checkpoint_resume_avoids_repeat_calls",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_evidence_live_eval::test_production_pipeline_maps_independent_c2_artifact_sources",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'",
+      "tail": "ewline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\data\\\\eval\\\\evidence_v2\\\\manifest_dev_v4.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_stateful_agent_evaluation::test_stateful_eval_datasets_are_structured_and_frozen",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\stateful_agent\\\\dev\\\\cases.json'",
+      "tail": "=None, newline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\stateful_agent\\\\dev\\\\cases.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_stateful_agent_evaluation::test_failure_attribution_reports_first_layer",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\stateful_agent\\\\test\\\\cases.json'",
+      "tail": "None, newline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\stateful_agent\\\\test\\\\cases.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_stateful_agent_evaluation::test_frozen_stateful_agent_deterministic_eval",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\stateful_agent\\\\test\\\\cases.json'",
+      "tail": "None, newline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\stateful_agent\\\\test\\\\cases.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_stateful_agent_evaluation::test_redundant_safe_read_degrades_efficiency_not_task_success",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\stateful_agent\\\\test\\\\cases.json'",
+      "tail": "None, newline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\stateful_agent\\\\test\\\\cases.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_stateful_agent_evaluation::test_optional_read_must_respect_ordering_constraint",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\stateful_agent\\\\test\\\\cases.json'",
+      "tail": "None, newline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\stateful_agent\\\\test\\\\cases.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_stateful_agent_evaluation::test_grounding_accepts_explicit_chinese_equivalents",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\stateful_agent\\\\test\\\\cases.json'",
+      "tail": "None, newline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\1\\\\Desktop\\\\就业agent\\\\job-agent-v3\\\\eval\\\\stateful_agent\\\\test\\\\cases.json'\n\n..\\..\\..\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\pathlib.py:1013: FileNotFoundError",
+      "category": "missing_historical_fixture"
+    },
+    {
+      "test": "tests.test_v3_evidence_pack::test_both_roles_receive_same_safe_pack_identity_without_interviewer_rubric",
+      "message": "AssertionError: {\"session_id\":\"interview-8baedf595e5a4e5fa68167807c6a5dab\",\"resume_id\":\"res-425c17ab428d4acd985ea9a9e37cea79\",\"version_id\":\"ver-22dda3df7822472f9c5cd48d58a84234\",\"version_hash\":\"c77e9d6b735ae25d189d2d393b489932be89e1bbe1a482adab80ca39ffe90c39\",\"jd_text\":\"can_publish callers\",\"match_id\":null,\"mode\":\"llm\",\"provider\":\"synthetic\",\"model\":\"schema-fixture-not-a-real-llm\",\"status\":\"failed\",\"revision\":0,\"max_turns\":4,\"created_at\":\"2026-10-23T05:13:26.007375Z\",\"current\":{\"question_id\":\"interview-8baedf595e5a4e5fa68167807c6a5dab-q1\",\"topic_id\":\"code:sym-ba6fa7edf7f8957881085845\",\"prompt\":\"请结合 guard.py 中的 can_publish 说明输入、主要行为和失败边界，并区分你的参与范围与源码能证明的内容。\",\"followup\":false,\"references\":[{\"evidence_id\":\"ev-28ba0cdfb9bd8f3dad4b9158eec7\",\"scope\":\"private_project\",\"owner_id\":\"alice\",\"project_id\":\"project-7bc281552fca43a6955fea22629d9921\",\"snapshot_id\":\"snapshot-0f31c6683dfc416587674ee0af46949f\",\"source_id\":\"snapshot-0f31c6683dfc416587674ee0af46949f:guard.py\",\"content_hash\":\"1929f6bb2ad0f70c731b7d7925cae346b44e2d0f959c36bb0523f880a14e0d3b\",\"path\":\"guard.py\",\"start_line\":1,\"end_line\":2,\"commit\":null,\"retrieval_method\":\"exact_symbol\",\"evidence_kind\":\"code\",\"supports_claim\":\"needs_judgment\",\"quote\":\"def can_publish(current, attempt):\\n    return current == attempt\\n\",\"independent_truth\":\"not_verified\"}]},\"turns\":[],\"messages\":[{\"from\":\"coordinator\",\"to\":\"interviewer\",\"type\":\"scoped_plan\",\"turn\":0,\"detail\":\"已根据所选范围实际检索，固定本场来源；参考资料不能证明个人经历。\"}],\"usage\":{\"evaluator_calls\":1,\"interviewer_calls\":0,\"provider_calls\":1,\"input_tokens\":10,\"output_tokens\":10,\"active_ms\":6,\"cost\":null},\"answer_pending\":true,\"resumable\":false,\"model_inflight\":false,\"error_code\":\"interview_incomplete_semantic_review\",\"version_is_current\":true,\"warnings\":[\"题库技术练习，不代表真实面试表现或录用概率；本地仅按词面线索评估。\",\"绑定本次简历版本/JD，之后编辑不会改变本场；C1 自述未独立核实，缺少材料不等于没有能力。\",\"进行中隐藏参考要点与详细评价，结束后复盘；本次不会写简历或投递。\"],\"track\":\"project\",\"use_retrieval\":true,\"project_id\":\"project-7bc281552fca43a6955fea22629d9921\",\"snapshot_id\":\"snapshot-0f31c6683dfc416587674ee0af46949f\",\"tool_trace\":[{\"index\":1,\"role\":\"interviewer\",\"tool\":\"code_search\",\"status\":\"ok\",\"duration_ms\":11,\"turn\":0,\"error_code\":null}],\"tool_calls\":1}\nassert (200 == 200 and 'failed' != 'failed')\n +  where 200 = <Response [200 OK]>.status_code",
+      "tail": "ncomplete_semantic_review\",\"version_is_current\":true,\"warnings\":[\"题库技术练习，不代表真实面试表现或录用概率；本地仅按词面线索评估。\",\"绑定本次简历版本/JD，之后编辑不会改变本场；C1 自述未独立核实，缺少材料不等于没有能力。\",\"进行中隐藏参考要点与详细评价，结束后复盘；本次不会写简历或投递。\"],\"track\":\"project\",\"use_retrieval\":true,\"project_id\":\"project-7bc281552fca43a6955fea22629d9921\",\"snapshot_id\":\"snapshot-0f31c6683dfc416587674ee0af46949f\",\"tool_trace\":[{\"index\":1,\"role\":\"interviewer\",\"tool\":\"code_search\",\"status\":\"ok\",\"duration_ms\":11,\"turn\":0,\"error_code\":null}],\"tool_calls\":1}\nE           assert (200 == 200 and 'failed' != 'failed')\nE            +  where 200 = <Response [200 OK]>.status_code\n\ntests\\test_v3_evidence_pack.py:250: AssertionError",
+      "category": "legacy_provider_missing_point_assessments"
+    },
+    {
+      "test": "tests.test_v3_interview_tools::test_structured_provider_decision_dispatches_different_real_read_tool[tests]",
+      "message": "assert (0 == 1)",
+      "tail": "70>, VersionRecord(resume_id=...0x0000016AA6FB9130>, <job_agent.resume_workspace.public_knowledge.PublicKnowledgeService object at 0x0000016AA70655B0>)\ntarget = 'tests'\n\n    @pytest.mark.parametrize('target',['tests','references','symbol'])\n    def test_structured_provider_decision_dispatches_different_real_read_tool(env,target):\n        p=RoutingProvider(target);c=client(env,p);v=start(c,env,mode='llm',allow_external_processing=True)\n        n=answer(c,v,allow_external_processing=True)\n>       assert n['revision']==1 and n['current']['followup'] and len(p.calls)==2\nE       assert (0 == 1)\n\ntests\\test_v3_interview_tools.py:152: AssertionError",
+      "category": "legacy_provider_missing_point_assessments"
+    },
+    {
+      "test": "tests.test_v3_interview_tools::test_structured_provider_decision_dispatches_different_real_read_tool[references]",
+      "message": "assert (0 == 1)",
+      "tail": "VersionRecord(resume_id=...0x0000016AA5307E60>, <job_agent.resume_workspace.public_knowledge.PublicKnowledgeService object at 0x0000016AA5B69EB0>)\ntarget = 'references'\n\n    @pytest.mark.parametrize('target',['tests','references','symbol'])\n    def test_structured_provider_decision_dispatches_different_real_read_tool(env,target):\n        p=RoutingProvider(target);c=client(env,p);v=start(c,env,mode='llm',allow_external_processing=True)\n        n=answer(c,v,allow_external_processing=True)\n>       assert n['revision']==1 and n['current']['followup'] and len(p.calls)==2\nE       assert (0 == 1)\n\ntests\\test_v3_interview_tools.py:152: AssertionError",
+      "category": "legacy_provider_missing_point_assessments"
+    },
+    {
+      "test": "tests.test_v3_interview_tools::test_structured_provider_decision_dispatches_different_real_read_tool[symbol]",
+      "message": "assert (0 == 1)",
+      "tail": "0>, VersionRecord(resume_id=...0x0000016AA579B7A0>, <job_agent.resume_workspace.public_knowledge.PublicKnowledgeService object at 0x0000016AA6F45CA0>)\ntarget = 'symbol'\n\n    @pytest.mark.parametrize('target',['tests','references','symbol'])\n    def test_structured_provider_decision_dispatches_different_real_read_tool(env,target):\n        p=RoutingProvider(target);c=client(env,p);v=start(c,env,mode='llm',allow_external_processing=True)\n        n=answer(c,v,allow_external_processing=True)\n>       assert n['revision']==1 and n['current']['followup'] and len(p.calls)==2\nE       assert (0 == 1)\n\ntests\\test_v3_interview_tools.py:152: AssertionError",
+      "category": "legacy_provider_missing_point_assessments"
+    }
+  ]
+}

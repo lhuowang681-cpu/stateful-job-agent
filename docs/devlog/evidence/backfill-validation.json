@@ -1,0 +1,373 @@
+{
+  "date": "2026-10-20",
+  "scope": "Static documentation/protocol/evidence checks; no business tests or real-model runs performed this turn",
+  "passed": true,
+  "documents_checked": 10,
+  "anchors_checked": 68,
+  "local_links_checked": 35,
+  "anchor_errors": [],
+  "link_errors": [],
+  "phase_template_errors": [],
+  "original_protocol_checks": {
+    "all_six_original_texts_preserved": true,
+    "agents_contains_verbatim_protocol": true,
+    "template_verbatim": true,
+    "task_prompt_verbatim": true,
+    "input_archive_not_changed": true
+  },
+  "historical_counts_checks": {
+    "m1_combined_110": true,
+    "m2_final_154": true,
+    "m2_frontend_4": true,
+    "summary_reconciled_65": true
+  },
+  "code_files_compared_to_published_m2": 465,
+  "code_changes": [],
+  "backfill_start_code_changes": [],
+  "frozen_eval_files_checked": 25,
+  "frozen_eval_changes": [],
+  "anchors": [
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "scripts/demo_resume_workbench.py::build_demo_app",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/resume_workspace/main.py::create_app",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/ui/runner.py::run_initial_v2_live",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/cli.py::main",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/job_search_workflow.py::JobSearchWorkflow.run",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/backend_service/persistent_bootstrap.py::create_persistent_api_stack",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "frontend/src/main.jsx::App.parse",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/resume_workspace/api.py::create_resume_app.import_file",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/resume_workspace/ingestion.py::extract_upload",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/knowledge/source_loader.py::load_source",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository.save_upload",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/resume_workspace/api.py::create_resume_app.parse_source",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/resume_workspace/parsing.py::ResumeParser.parse",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/resume_workspace/parsing.py::materialize",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository.save_draft",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository.accept_draft",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository._apply_edits",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository._append",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/ui/runner.py::run_initial_v2_live",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/evidence/pipeline.py::EvidenceV2Pipeline.run",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/resume_workspace/ingestion.py::extract_upload",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/resume_workspace/parsing.py::ResumeParser.parse",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository._validate_document",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository.confirm_version",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/evidence/pipeline.py::EvidenceV2Pipeline.run",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/job_search_workflow.py::JobSearchWorkflow.run",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/ARCHITECTURE_MAP.md",
+      "anchor": "src/job_agent/backend_service/persistent_bootstrap.py::create_persistent_api_stack",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/DECISIONS.md",
+      "anchor": "src/job_agent/resume_workspace/contracts.py::ResumeDocument",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/DECISIONS.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository._validate_document",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/DECISIONS.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository.save_version",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/DECISIONS.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository.restore_version",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/DECISIONS.md",
+      "anchor": "src/job_agent/resume_workspace/api.py::create_resume_app",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/DECISIONS.md",
+      "anchor": "src/job_agent/backend_service/persistent_bootstrap.py::create_persistent_api_stack",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/DECISIONS.md",
+      "anchor": "src/job_agent/resume_workspace/parsing.py::materialize",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/DECISIONS.md",
+      "anchor": "src/job_agent/resume_workspace/fields.py::checked_path",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/DECISIONS.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository.accept_draft",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/DECISIONS.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository._apply_edits",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/DECISIONS.md",
+      "anchor": "src/job_agent/resume_workspace/parsing.py::ResumeParser.parse",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/DECISIONS.md",
+      "anchor": "src/job_agent/resume_workspace/api.py::create_resume_app.parse_source",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/DECISIONS.md",
+      "anchor": "scripts/demo_resume_workbench.py::build_demo_app",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/DECISIONS.md",
+      "anchor": "src/job_agent/resume_workspace/main.py::create_app",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/INDEX.md",
+      "anchor": "src/job_agent/resume_workspace/contracts.py::ResumeDocument",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/INDEX.md",
+      "anchor": "frontend/src/main.jsx::App.parse",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/INDEX.md",
+      "anchor": "src/job_agent/resume_workspace/parsing.py::ResumeParser.parse",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/INDEX.md",
+      "anchor": "src/job_agent/resume_workspace/parsing.py::materialize",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/INDEX.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository.accept_draft",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-01-structured-resume.md",
+      "anchor": "src/job_agent/resume_workspace/contracts.py::ResumeFact",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-01-structured-resume.md",
+      "anchor": "src/job_agent/resume_workspace/contracts.py::ResumeDocument",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-01-structured-resume.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository._validate_document",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-01-structured-resume.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository.save_version",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-01-structured-resume.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository.confirm_version",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-01-structured-resume.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository.restore_version",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-01-structured-resume.md",
+      "anchor": "src/job_agent/resume_workspace/api.py::create_resume_app",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-01-structured-resume.md",
+      "anchor": "scripts/demo_resume_versions.py::run_demo",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-01-structured-resume.md",
+      "anchor": "tests/test_resume_workspace.py::test_simultaneous_edits_have_one_winner",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-02-import-parse-editor.md",
+      "anchor": "frontend/src/main.jsx::App.parse",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-02-import-parse-editor.md",
+      "anchor": "src/job_agent/resume_workspace/api.py::create_resume_app.import_file",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-02-import-parse-editor.md",
+      "anchor": "src/job_agent/resume_workspace/ingestion.py::extract_upload",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-02-import-parse-editor.md",
+      "anchor": "src/job_agent/resume_workspace/parsing.py::ResumeParser.parse",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-02-import-parse-editor.md",
+      "anchor": "src/job_agent/resume_workspace/parsing.py::materialize",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-02-import-parse-editor.md",
+      "anchor": "src/job_agent/resume_workspace/fields.py::checked_path",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-02-import-parse-editor.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository.accept_draft",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-02-import-parse-editor.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository._apply_edits",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-02-import-parse-editor.md",
+      "anchor": "src/job_agent/resume_workspace/repository.py::SqliteResumeRepository.edit_version",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-02-import-parse-editor.md",
+      "anchor": "tests/test_resume_import.py::test_model_transport_timeout_does_not_retry_potentially_billable_call",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-02-import-parse-editor.md",
+      "anchor": "frontend/src/model.js::changedFields",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-02-import-parse-editor.md",
+      "anchor": "scripts/demo_resume_workbench.py::build_demo_app",
+      "valid": true
+    },
+    {
+      "document": "docs/devlog/PHASE-02-import-parse-editor.md",
+      "anchor": "frontend/src/main.jsx::App",
+      "valid": true
+    }
+  ],
+  "business_tests_this_turn": "not run; docs-only change",
+  "environment_service_status": "not probed; prior Demo URL is historical context, not live evidence"
+}

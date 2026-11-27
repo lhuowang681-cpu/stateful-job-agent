@@ -1,0 +1,57 @@
+{
+  "phase": "S7",
+  "status": "engineering_rules_real_pg_source_browser_verified; full_real_llm_loop_failed_recorded",
+  "source_identity": "c603ae740483bdd56cbc4148c538858f7f7a07c66ea5086f043dd44349c9fc14",
+  "related_tests": {
+    "passed": 517,
+    "failed": 0,
+    "skipped": 4,
+    "junit_seconds": 50.353,
+    "artifact": "s7-related-v3.xml"
+  },
+  "new_tests_vs_s6": 30,
+  "real_http": {
+    "rules": {
+      "artifact": "s7-http-rules-v3.json",
+      "status": "passed",
+      "checks": 5,
+      "pid": 113809
+    },
+    "pg": {
+      "artifact": "s7-http-pg-v3.json",
+      "status": "passed",
+      "checks": 7,
+      "pid": 113814
+    }
+  },
+  "real_model": {
+    "artifact": "s7-http-qwen-v1.json",
+    "status": "failed",
+    "error": "interview_incomplete_semantic_review",
+    "source_identity": "7d30360eea381dd905a4913ce70dd37feddc85f8a315c65fa424cc177708da25",
+    "calls": 1,
+    "business_success": false,
+    "automatic_retry": false
+  },
+  "frontend": {
+    "existing_model_tests_passed": 13,
+    "existing_model_tests_failed": 0,
+    "component_unit_tests": "not added; actual browser controls separately verified",
+    "build": "Vite 8.3.4 success, 31 modules, 220ms observed; s7-frontend-build-final.log",
+    "files": {
+      "frontend/dist/index.html": "05ba8ae4fcefcb9c39da9f2affdc83b0825db0ccff614552875e40620b7e1fbd",
+      "frontend/dist/assets/index-Bn8LIz8N.js": "3c9435c93708b59f86c136057421a6d42bc00f1f9c5aeb7dfa2e2675222ac984",
+      "frontend/dist/assets/index-CMyl2gGW.css": "360e50e210bf5eade14b5e944848e6db429d3fc1bf80ddfa2976637b0c764643",
+      "frontend/dist/assets/pdf.worker.min-CjEcRF4W.mjs": "9536359f1b8367850d485731ca1d5e45c159a7b7a0912325e539937aa21ceb18",
+      "frontend/dist/assets/PDFPreview-DoKcX8Q7.js": "3bb6dbdaf89dd1a254f15aeaa14684d6ddb359ca533dbdc0f37c804d472455e1"
+    }
+  },
+  "browser": "s7-browser-summary-v1.json",
+  "mastery_claim": null,
+  "human_teaching_effect_verified": false,
+  "whole_goal_complete": false,
+  "remaining": [
+    "S1 final 60-80 candidate set and manual annotation status",
+    "S8 unified trace, evaluation/index replay and delivery"
+  ]
+}

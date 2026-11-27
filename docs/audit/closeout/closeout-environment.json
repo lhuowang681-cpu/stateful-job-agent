@@ -1,0 +1,25 @@
+{
+  "python": "3.11.15",
+  "platform": "Linux",
+  "packages": {
+    "pytest": "9.1.1",
+    "pydantic": "2.13.4",
+    "fastapi": "0.115.14",
+    "langgraph": "1.2.11",
+    "psycopg": "3.3.4",
+    "redis": "5.3.1",
+    "mcp": "2.0.0",
+    "faiss-cpu": "1.15.0",
+    "numpy": "2.4.6",
+    "streamlit": "1.66.0",
+    "torch": "2.5.1+cu121",
+    "sentence-transformers": "5.7.0"
+  },
+  "services": {
+    "postgresql": "PostgreSQL 14.24 (Ubuntu 14.24-0ubuntu0.22.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0, 64-bit",
+    "fsync": "on",
+    "synchronous_commit": "on",
+    "redis": "7.4.6"
+  },
+  "scope": "Isolated ephemeral loopback services; tests colocated; no real model calls."
+}

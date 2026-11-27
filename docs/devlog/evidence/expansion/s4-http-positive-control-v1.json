@@ -1,0 +1,1172 @@
+{
+  "transport": "real_loopback_http",
+  "generation": "real_offline_text_model",
+  "data": "authored_synthetic_C1_only",
+  "model": {
+    "provider": "offline-transformers",
+    "model_name": "Qwen2.5-7B-Instruct",
+    "revision": "f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7",
+    "policy": {
+      "max_input_tokens": 8192,
+      "max_output_tokens": 512,
+      "generation_seconds": 25,
+      "torch": "2.5.1+cu121",
+      "transformers": "4.57.6",
+      "dtype": "bfloat16",
+      "attention": "sdpa"
+    },
+    "file_hashes": {
+      "config.json": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c",
+      "generation_config.json": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f",
+      "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "model-00001-of-00004.safetensors": "a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7",
+      "model-00002-of-00004.safetensors": "f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185",
+      "model-00003-of-00004.safetensors": "8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5",
+      "model-00004-of-00004.safetensors": "1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd",
+      "model.safetensors.index.json": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028",
+      "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "architecture": "Qwen2ForCausalLM",
+    "parameter_count": 7615616512,
+    "loaded_device": "cuda:0",
+    "loaded_dtype": "torch.bfloat16"
+  },
+  "human_quality": null,
+  "checks": [
+    "nonapproved_rewrite_cannot_be_accepted",
+    "original_version_unchanged",
+    "real_evaluator_interviewer_changed_next_question",
+    "active_view_no_rubric_or_internal_state",
+    "second_owner_404",
+    "review_completion_gate"
+  ],
+  "original_version": {
+    "resume_id": "res-8c093e240a7a46228ccfb6c141d103c7",
+    "version_id": "ver-c089f4397f174421b355fa7eda507a9a",
+    "sequence": 1,
+    "parent_version_id": null,
+    "restored_from_version_id": null,
+    "content_hash": "2b9c52fd614ca4ca7e9ec693ddec45736984b1e8dacdf236f0d11cd79d1a8a38",
+    "document": {
+      "schema_version": 1,
+      "personal": {
+        "name": {
+          "fact_id": "f-831ea21e954cf7ffedbb",
+          "text": "合成同学",
+          "source": {
+            "source_id": "src-52233386623b4f44949578e240d642eb",
+            "content_hash": "c726007761bcc8b12824bb3cc7b005ee3ecc59237d0668a20b9935bbfd7674aa",
+            "start": 3,
+            "end": 7
+          }
+        },
+        "email": null,
+        "phone": null,
+        "location": null,
+        "links": []
+      },
+      "summary": [],
+      "education": [],
+      "experience": [],
+      "projects": [
+        {
+          "entry_id": "projects-0",
+          "name": {
+            "fact_id": "f-be03f9987bbe6bfd373a",
+            "text": "Agent 原型",
+            "source": {
+              "source_id": "src-52233386623b4f44949578e240d642eb",
+              "content_hash": "c726007761bcc8b12824bb3cc7b005ee3ecc59237d0668a20b9935bbfd7674aa",
+              "start": 13,
+              "end": 21
+            }
+          },
+          "role": {
+            "fact_id": "f-6e85ee3adbb7aa8c92b2",
+            "text": "开发",
+            "source": {
+              "source_id": "src-52233386623b4f44949578e240d642eb",
+              "content_hash": "c726007761bcc8b12824bb3cc7b005ee3ecc59237d0668a20b9935bbfd7674aa",
+              "start": 24,
+              "end": 26
+            }
+          },
+          "period": {
+            "fact_id": "f-7fa2f1b38c6aa22aec01",
+            "text": "2025",
+            "source": {
+              "source_id": "src-52233386623b4f44949578e240d642eb",
+              "content_hash": "c726007761bcc8b12824bb3cc7b005ee3ecc59237d0668a20b9935bbfd7674aa",
+              "start": 29,
+              "end": 33
+            }
+          },
+          "bullets": [
+            {
+              "fact_id": "f-30af66693c07d2d97bac",
+              "text": "我参与了本地原型开发。我使用 Python 开发接口。",
+              "source": {
+                "source_id": "src-52233386623b4f44949578e240d642eb",
+                "content_hash": "c726007761bcc8b12824bb3cc7b005ee3ecc59237d0668a20b9935bbfd7674aa",
+                "start": 36,
+                "end": 63
+              }
+            }
+          ]
+        }
+      ],
+      "skills": []
+    },
+    "note": "核对解析草稿",
+    "created_at": "2026-10-22T12:29:34.957347Z",
+    "confirmed_at": null,
+    "confirmation_scope": "user_attested_only"
+  },
+  "rewrite": {
+    "accepted_version_id": null,
+    "decision": null,
+    "drafts": [
+      {
+        "claim_audit": {
+          "acceptable": true,
+          "claims": [
+            {
+              "assessed_by": "deterministic_alignment",
+              "change": "unchanged_or_controlled_paraphrase",
+              "claim_id": "claim-2c0471681047c01f673119b4",
+              "end": 11,
+              "kinds": [
+                "responsibility",
+                "scope"
+              ],
+              "reason": "与C1分句相等或受限措辞转换；未独立核实。",
+              "source_id": "f-30af66693c07d2d97bac",
+              "source_quote": "我参与了本地原型开发。",
+              "start": 0,
+              "status": "supported",
+              "text": "我参与了本地原型开发。"
+            },
+            {
+              "assessed_by": "deterministic_alignment",
+              "change": "unchanged_or_controlled_paraphrase",
+              "claim_id": "claim-22c1fc63e698214cf9010d62",
+              "end": 27,
+              "kinds": [
+                "technology"
+              ],
+              "reason": "与C1分句相等或受限措辞转换；未独立核实。",
+              "source_id": "f-30af66693c07d2d97bac",
+              "source_quote": "我使用 Python 开发接口。",
+              "start": 11,
+              "status": "supported",
+              "text": "我使用 Python 开发接口。"
+            }
+          ],
+          "draft_hash": "750312d0b521e592fe0b94e3d7cfffd330ccd2a720e532c21134f8f46fda7c8c",
+          "hard_issues": [],
+          "semantic_truth": "not_independently_verified",
+          "source_hash": "750312d0b521e592fe0b94e3d7cfffd330ccd2a720e532c21134f8f46fda7c8c",
+          "unresolved_ids": []
+        },
+        "draft": {
+          "claims": [
+            {
+              "reason": "直接引用原文，描述准确。",
+              "source_quote": "我参与了本地原型开发。",
+              "status": "supported",
+              "text": "我参与了本地原型开发。"
+            },
+            {
+              "reason": "直接引用原文，描述准确。",
+              "source_quote": "我使用 Python 开发接口。",
+              "status": "supported",
+              "text": "我使用 Python 开发接口。"
+            }
+          ],
+          "reason": "保持原始描述的清晰度和简洁性。",
+          "text": "我参与了本地原型开发。我使用 Python 开发接口。"
+        },
+        "draft_hash": "a862142e480514c9720eb636a6e859876af9047acefbdebe249d332abb13d036",
+        "review": {
+          "claims": [],
+          "constraint": "没有产生可用的局部修改；保留原文或补充材料。",
+          "outcome": "needs_input"
+        },
+        "revision": 1
+      }
+    ],
+    "entry_context": {
+      "name": "Agent 原型",
+      "period": "2025",
+      "role": "开发"
+    },
+    "error_code": null,
+    "evidence_level": "C1",
+    "execution": {
+      "approval": null,
+      "artifact_hashes": [
+        "a862142e480514c9720eb636a6e859876af9047acefbdebe249d332abb13d036"
+      ],
+      "attempt": 1,
+      "context_incomplete": false,
+      "event_seq": 5,
+      "events": [
+        {
+          "code": null,
+          "feedback_id": null,
+          "input_hash": "1b20a6d5e36fafb646c2b8b950381d1e3cf45bbdb8b2533be3590a2575dd3061",
+          "metrics": {},
+          "output_hash": null,
+          "phase": "started",
+          "recorded_at": "2026-10-22T12:29:35.018531+00:00",
+          "revision": 1,
+          "role": "writer",
+          "seq": 1
+        },
+        {
+          "code": null,
+          "feedback_id": null,
+          "input_hash": null,
+          "metrics": {
+            "completion_truncated": false,
+            "error_code": null,
+            "fallback_used": false,
+            "finish_reason": "stop",
+            "input_tokens": 1066,
+            "latency_ms": 3930,
+            "model": "Qwen2.5-7B-Instruct@f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7:376207d37bc3ccd5",
+            "output_tokens": 142,
+            "prompt_version": "s4-rewrite-2",
+            "provider": "offline-transformers",
+            "schema_valid": true,
+            "skill_id": "v3-rewrite-writer",
+            "skill_version": "3"
+          },
+          "output_hash": "a862142e480514c9720eb636a6e859876af9047acefbdebe249d332abb13d036",
+          "phase": "completed",
+          "recorded_at": "2026-10-22T12:29:38.953637+00:00",
+          "revision": 1,
+          "role": "writer",
+          "seq": 2
+        },
+        {
+          "code": null,
+          "feedback_id": null,
+          "input_hash": "61266f8ae275b0193557d5bbab0b673b2b6d8b9aeac3ba1a490a5bc27bf7820a",
+          "metrics": {},
+          "output_hash": null,
+          "phase": "started",
+          "recorded_at": "2026-10-22T12:29:38.962433+00:00",
+          "revision": 1,
+          "role": "reviewer",
+          "seq": 3
+        },
+        {
+          "code": null,
+          "feedback_id": null,
+          "input_hash": null,
+          "metrics": {
+            "completion_truncated": false,
+            "error_code": null,
+            "fallback_used": false,
+            "finish_reason": "stop",
+            "input_tokens": 1169,
+            "latency_ms": 3173,
+            "model": "Qwen2.5-7B-Instruct@f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7:376207d37bc3ccd5",
+            "output_tokens": 140,
+            "prompt_version": "s4-rewrite-2",
+            "provider": "offline-transformers",
+            "schema_valid": true,
+            "skill_id": "v3-rewrite-reviewer",
+            "skill_version": "3"
+          },
+          "output_hash": "33e0864035ea8b14c1728f8cb3898b1fe0b557f2bcb535070a6f9c545fbe3343",
+          "phase": "completed",
+          "recorded_at": "2026-10-22T12:29:42.140553+00:00",
+          "revision": 1,
+          "role": "reviewer",
+          "seq": 4
+        },
+        {
+          "code": "needs_input",
+          "feedback_id": "feedback-31a23c314deef103145f3d6c0ca3c6d9137f4b2bb8239578112b7bb31b01e670",
+          "input_hash": null,
+          "metrics": {},
+          "output_hash": "e0811d2fe9f73d7d60a01180f256b6aeb6e2e2c5aa5bc00263a84e3c331a7eb8",
+          "phase": "gate",
+          "recorded_at": "2026-10-22T12:29:42.147843+00:00",
+          "revision": 1,
+          "role": "reviewer",
+          "seq": 5
+        }
+      ],
+      "evidence_pack_ids": [],
+      "execution_token": "59c8fc36a74443b482d52b999459ef53",
+      "independent_truth": "not_verified",
+      "latest_feedback": {
+        "artifact_hash": "a862142e480514c9720eb636a6e859876af9047acefbdebe249d332abb13d036",
+        "constraint": "没有产生可用的局部修改；保留原文或补充材料。",
+        "details": {
+          "unresolved_claim_ids": []
+        },
+        "feedback_id": "feedback-31a23c314deef103145f3d6c0ca3c6d9137f4b2bb8239578112b7bb31b01e670",
+        "outcome": "needs_input",
+        "revision": 1,
+        "sender": "reviewer"
+      },
+      "lease_until": 1792672355.008427,
+      "limits": {
+        "active_ms": 120000,
+        "drafts": 3,
+        "input_chars": 30000,
+        "role_calls": 6
+      },
+      "model_identity": {
+        "coordinator_policy": "s4-coordinator-2",
+        "model": "Qwen2.5-7B-Instruct@f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7:376207d37bc3ccd5",
+        "prompt": "s4-rewrite-2",
+        "provider": "offline-transformers"
+      },
+      "next_action": "user",
+      "node": "reviewer",
+      "owner_id": "alice",
+      "recovery": "none",
+      "revision": 1,
+      "run_id": "rewrite-7b3ca23daaf64f00b75867b8c54e3649",
+      "schema_version": "shared-run-1",
+      "source_identity": {
+        "jd_hash": "cfec82ecf640d294d6dd66d7b021f1a1a8bbd3ef56b0da5edb96c7f5ea499df1",
+        "resume_id": "res-8c093e240a7a46228ccfb6c141d103c7",
+        "source_fact_hash": "86c51fb2e93a4edc6ea00349edb54c6cf06a166aad60ca56b5f51eff58ba0493",
+        "source_path": "projects.0.bullets.0",
+        "version_hash": "2b9c52fd614ca4ca7e9ec693ddec45736984b1e8dacdf236f0d11cd79d1a8a38",
+        "version_id": "ver-c089f4397f174421b355fa7eda507a9a"
+      },
+      "status": "needs_input",
+      "task": "rewrite",
+      "trace_id": "trace-rewrite-7b3ca23daaf64f00b75867b8c54e3649",
+      "usage": {
+        "active_ms": 7141,
+        "cost": null,
+        "input_tokens": 2235,
+        "output_tokens": 282,
+        "provider_calls": 2,
+        "role_calls": 2
+      }
+    },
+    "independent_truth": "not_verified",
+    "jd_text": "Python Agent 实习；清晰表达已有工作，保留本地原型范围。",
+    "messages": [
+      {
+        "code": "local_edit_requested",
+        "receiver": "reviewer",
+        "revision": 1,
+        "sender": "writer",
+        "type": "review"
+      },
+      {
+        "code": "needs_input",
+        "receiver": "supervisor",
+        "revision": 1,
+        "sender": "reviewer",
+        "type": "handoff"
+      },
+      {
+        "code": "needs_input",
+        "receiver": "user",
+        "revision": 1,
+        "sender": "supervisor",
+        "type": "abstain"
+      }
+    ],
+    "mode": "llm",
+    "model_inflight": false,
+    "resume_id": "res-8c093e240a7a46228ccfb6c141d103c7",
+    "run_id": "rewrite-7b3ca23daaf64f00b75867b8c54e3649",
+    "source_fact": {
+      "fact_id": "f-30af66693c07d2d97bac",
+      "source": {
+        "content_hash": "c726007761bcc8b12824bb3cc7b005ee3ecc59237d0668a20b9935bbfd7674aa",
+        "end": 63,
+        "source_id": "src-52233386623b4f44949578e240d642eb",
+        "start": 36
+      },
+      "text": "我参与了本地原型开发。我使用 Python 开发接口。"
+    },
+    "source_path": "projects.0.bullets.0",
+    "status": "needs_input",
+    "usage": {
+      "active_ms": 7141,
+      "cost": null,
+      "input_tokens": 2235,
+      "output_tokens": 282,
+      "provider_calls": 2,
+      "role_calls": 2
+    },
+    "version_hash": "2b9c52fd614ca4ca7e9ec693ddec45736984b1e8dacdf236f0d11cd79d1a8a38",
+    "version_id": "ver-c089f4397f174421b355fa7eda507a9a"
+  },
+  "interview": {
+    "before": {
+      "question_id": "interview-7086327f57e44e88b81351d5eee8ca82-q1",
+      "topic_id": "backend-idempotency",
+      "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+      "followup": false,
+      "references": []
+    },
+    "after": {
+      "session_id": "interview-7086327f57e44e88b81351d5eee8ca82",
+      "resume_id": "res-8c093e240a7a46228ccfb6c141d103c7",
+      "version_id": "ver-c089f4397f174421b355fa7eda507a9a",
+      "version_hash": "2b9c52fd614ca4ca7e9ec693ddec45736984b1e8dacdf236f0d11cd79d1a8a38",
+      "jd_text": "Checkpoint 恢复和外部请求幂等。",
+      "match_id": null,
+      "mode": "llm",
+      "provider": "offline-transformers",
+      "model": "Qwen2.5-7B-Instruct@f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7:376207d37bc3ccd5",
+      "status": "active",
+      "revision": 1,
+      "max_turns": 4,
+      "created_at": "2026-10-22T12:29:42.266264Z",
+      "current": {
+        "question_id": "interview-7086327f57e44e88b81351d5eee8ca82-q2",
+        "topic_id": "backend-idempotency",
+        "prompt": "怎样区分两次请求是在重试同一操作，还是发起新操作？",
+        "followup": true,
+        "references": []
+      },
+      "turns": [
+        {
+          "question": {
+            "question_id": "interview-7086327f57e44e88b81351d5eee8ca82-q1",
+            "topic_id": "backend-idempotency",
+            "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+            "followup": false,
+            "references": []
+          },
+          "answer": "我会用幂等键记录执行标识，目前还不清楚超时后如何核对外部操作。"
+        }
+      ],
+      "messages": [
+        {
+          "from": "evaluator",
+          "to": "interviewer",
+          "type": "decision_feedback",
+          "turn": 1,
+          "topic": "backend-idempotency",
+          "detail": "已提交后续行动建议；详细评价在结束后开放。"
+        },
+        {
+          "from": "interviewer",
+          "to": "coordinator",
+          "type": "routing_decision",
+          "turn": 1,
+          "action": "follow_up",
+          "detail": "根据评估建议和剩余轮次选择下一题。"
+        }
+      ],
+      "usage": {
+        "evaluator_calls": 1,
+        "interviewer_calls": 1,
+        "provider_calls": 2,
+        "input_tokens": 2716,
+        "output_tokens": 322,
+        "active_ms": 7365,
+        "cost": null
+      },
+      "answer_pending": false,
+      "resumable": false,
+      "model_inflight": false,
+      "error_code": null,
+      "version_is_current": true,
+      "warnings": [
+        "题库技术练习，不代表真实面试表现或录用概率；本地仅按词面线索评估。",
+        "绑定本次简历版本/JD，之后编辑不会改变本场；C1 自述未独立核实，缺少材料不等于没有能力。",
+        "进行中隐藏参考要点与详细评价，结束后复盘；本次不会写简历或投递。"
+      ],
+      "track": "job",
+      "use_retrieval": false,
+      "project_id": null,
+      "snapshot_id": null,
+      "tool_trace": [],
+      "tool_calls": 0
+    },
+    "internal_synthetic_state": {
+      "session_id": "interview-7086327f57e44e88b81351d5eee8ca82",
+      "resume_id": "res-8c093e240a7a46228ccfb6c141d103c7",
+      "version_id": "ver-c089f4397f174421b355fa7eda507a9a",
+      "version_hash": "2b9c52fd614ca4ca7e9ec693ddec45736984b1e8dacdf236f0d11cd79d1a8a38",
+      "jd_text": "Checkpoint 恢复和外部请求幂等。",
+      "match_id": null,
+      "mode": "llm",
+      "provider": "offline-transformers",
+      "model": "Qwen2.5-7B-Instruct@f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7:376207d37bc3ccd5",
+      "created_at": "2026-10-22T12:29:42.266264Z",
+      "status": "active",
+      "revision": 1,
+      "max_turns": 4,
+      "plan": [
+        {
+          "anchor_id": "backend-idempotency",
+          "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+          "points": {
+            "p0": "persist execution identity",
+            "p1": "query provider receipt",
+            "p2": "do not blindly replay"
+          },
+          "aliases": {
+            "p0": [
+              "幂等",
+              "执行标识",
+              "request id"
+            ],
+            "p1": [
+              "回执",
+              "查询结果",
+              "查询状态"
+            ],
+            "p2": [
+              "不盲目",
+              "不要盲目",
+              "人工核对",
+              "人工对账"
+            ]
+          },
+          "followups": {
+            "p0": "怎样区分两次请求是在重试同一操作，还是发起新操作？",
+            "p1": "若外部请求只返回超时，接下来怎样判断它是否已经完成？",
+            "p2": "如果暂时无法确认上次结果，你会怎样决定下一步？"
+          },
+          "references": []
+        },
+        {
+          "anchor_id": "agent-loop-termination",
+          "prompt": "怎样让 Agent 工具循环在重复尝试或没有进展时停止？",
+          "points": {
+            "p0": "step and tool-call limits",
+            "p1": "same-action fingerprint",
+            "p2": "no-progress detection"
+          },
+          "aliases": {
+            "p0": [
+              "步数",
+              "调用上限",
+              "预算"
+            ],
+            "p1": [
+              "指纹",
+              "同一动作",
+              "fingerprint"
+            ],
+            "p2": [
+              "无进展",
+              "没有进展",
+              "重复失败"
+            ]
+          },
+          "followups": {
+            "p0": "怎样给一次执行设置边界？",
+            "p1": "如何判断这次调用是否和上次实际上相同？",
+            "p2": "如果动作不同但任务仍无进展，怎样判断是否继续？"
+          },
+          "references": []
+        },
+        {
+          "anchor_id": "agent-state-memory",
+          "prompt": "运行中的 Checkpoint 与跨会话长期记忆应该分别保存什么？",
+          "points": {
+            "p0": "pending actions and budgets",
+            "p1": "cross-run user facts",
+            "p2": "different lifecycle contracts"
+          },
+          "aliases": {
+            "p0": [
+              "待执行",
+              "预算",
+              "pending"
+            ],
+            "p1": [
+              "跨会话",
+              "长期偏好",
+              "用户事实"
+            ],
+            "p2": [
+              "生命周期",
+              "保留期限"
+            ]
+          },
+          "followups": {
+            "p0": "恢复时怎样知道还有哪些动作没有完成？",
+            "p1": "下次新任务开始时，哪些信息仍需要保留？",
+            "p2": "如果信息过期，你会怎样处理两类数据？"
+          },
+          "references": []
+        }
+      ],
+      "topic_index": 0,
+      "current": {
+        "question_id": "interview-7086327f57e44e88b81351d5eee8ca82-q2",
+        "topic_id": "backend-idempotency",
+        "prompt": "怎样区分两次请求是在重试同一操作，还是发起新操作？",
+        "followup": true,
+        "focus_id": "p0",
+        "references": []
+      },
+      "turns": [
+        {
+          "question": {
+            "question_id": "interview-7086327f57e44e88b81351d5eee8ca82-q1",
+            "topic_id": "backend-idempotency",
+            "prompt": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+            "followup": false,
+            "focus_id": null,
+            "references": []
+          },
+          "answer": "我会用幂等键记录执行标识，目前还不清楚超时后如何核对外部操作。",
+          "evaluation": {
+            "covered_ids": [
+              "p2"
+            ],
+            "missing_ids": [
+              "p0",
+              "p1"
+            ],
+            "claim_needs_evidence": true,
+            "recommended_action": "follow_up",
+            "note": "回答中提到了幂等键记录执行标识，但未明确说明如何核对外部操作，因此无法确定是否覆盖了所有要点。",
+            "point_assessments": [
+              {
+                "point_id": "p2",
+                "status": "correct",
+                "answer_quote": "我会用幂等键记录执行标识",
+                "reason": "回答中提到使用幂等键记录执行标识，符合do not blindly replay的要求。",
+                "assessed_by": "model_semantic_unverified"
+              },
+              {
+                "point_id": "p0",
+                "status": "uncertain",
+                "answer_quote": "",
+                "reason": "回答中未明确说明如何核对外部操作。",
+                "assessed_by": "model_semantic_unverified"
+              },
+              {
+                "point_id": "p1",
+                "status": "uncertain",
+                "answer_quote": "",
+                "reason": "回答中未提及查询提供商收据。",
+                "assessed_by": "model_semantic_unverified"
+              }
+            ],
+            "assessment_mode": "model_semantic_unverified",
+            "method_version": "s4-answer-1"
+          },
+          "decision": {
+            "action": "follow_up",
+            "focus_id": "p0",
+            "retrieval_target": "none"
+          }
+        }
+      ],
+      "pending": null,
+      "next_node": "idle",
+      "model_inflight": false,
+      "error_code": null,
+      "usage": {
+        "evaluator_calls": 1,
+        "interviewer_calls": 1,
+        "provider_calls": 2,
+        "input_tokens": 2716,
+        "output_tokens": 322,
+        "active_ms": 7365,
+        "cost": null
+      },
+      "messages": [
+        {
+          "from": "evaluator",
+          "to": "interviewer",
+          "type": "decision_feedback",
+          "turn": 1,
+          "topic": "backend-idempotency",
+          "detail": "已提交后续行动建议；详细评价在结束后开放。"
+        },
+        {
+          "from": "interviewer",
+          "to": "coordinator",
+          "type": "routing_decision",
+          "turn": 1,
+          "action": "follow_up",
+          "detail": "根据评估建议和剩余轮次选择下一题。"
+        }
+      ],
+      "use_retrieval": false,
+      "track": "job",
+      "project_id": null,
+      "snapshot_id": null,
+      "prior_session_id": null,
+      "bound_owner": null,
+      "tool_trace": [],
+      "tool_fingerprints": [],
+      "tool_calls": 0,
+      "evidence_packs": [],
+      "execution": {
+        "schema_version": "shared-run-1",
+        "run_id": "interview-7086327f57e44e88b81351d5eee8ca82",
+        "trace_id": "trace-interview-7086327f57e44e88b81351d5eee8ca82",
+        "owner_id": "alice",
+        "task": "interview",
+        "source_identity": {
+          "resume_id": "res-8c093e240a7a46228ccfb6c141d103c7",
+          "version_id": "ver-c089f4397f174421b355fa7eda507a9a",
+          "version_hash": "2b9c52fd614ca4ca7e9ec693ddec45736984b1e8dacdf236f0d11cd79d1a8a38",
+          "jd_hash": "fd9fc6f5d47d5eb63bad0edf5903eaa1da86c71e586d1b81707a4d1859e7fd90",
+          "project_id": "",
+          "snapshot_id": ""
+        },
+        "model_identity": {
+          "provider": "offline-transformers",
+          "model": "Qwen2.5-7B-Instruct@f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7:376207d37bc3ccd5",
+          "prompt": "s4-interview-1"
+        },
+        "node": "coordinator",
+        "revision": 1,
+        "status": "active",
+        "next_action": "idle",
+        "latest_feedback": {
+          "sender": "evaluator",
+          "revision": 0,
+          "outcome": "follow_up",
+          "constraint": "错误/不确定要点需追问；词面线索与个人真实性分开判断。",
+          "artifact_hash": "697e638067e497ae70a849e59d451371c229c22f5d01d3191288c753548cb9aa",
+          "feedback_id": "feedback-91ac5913411a6af7658e3a186d7366b8caf13ed0915bb3626718f4eb8ba90ac7",
+          "details": {
+            "covered_ids": [
+              "p2"
+            ],
+            "missing_ids": [
+              "p0",
+              "p1"
+            ],
+            "claim_needs_evidence": true,
+            "assessment_mode": "model_semantic_unverified",
+            "semantic_assessments_present": true,
+            "point_statuses": [
+              {
+                "point_id": "p2",
+                "status": "correct",
+                "answer_quote": "我会用幂等键记录执行标识"
+              },
+              {
+                "point_id": "p0",
+                "status": "uncertain",
+                "answer_quote": ""
+              },
+              {
+                "point_id": "p1",
+                "status": "uncertain",
+                "answer_quote": ""
+              }
+            ]
+          }
+        },
+        "artifact_hashes": [],
+        "evidence_pack_ids": [],
+        "limits": {
+          "role_calls": 8,
+          "tools": 18,
+          "input_chars": 30000,
+          "active_ms": 240000
+        },
+        "usage": {
+          "evaluator_calls": 1,
+          "interviewer_calls": 1,
+          "provider_calls": 2,
+          "input_tokens": 2716,
+          "output_tokens": 322,
+          "active_ms": 7365,
+          "cost": null,
+          "tool_calls": 0
+        },
+        "context_incomplete": false,
+        "recovery": "none",
+        "attempt": 1,
+        "execution_token": "21f7e8c385ee48aab67fe1e627a8d788",
+        "lease_until": 1792672782.326257,
+        "event_seq": 6,
+        "events": [
+          {
+            "seq": 1,
+            "role": "evaluator",
+            "phase": "started",
+            "revision": 0,
+            "input_hash": "877e191f9a479bdb70dc87c7831fc91bcf3e36c14ae89bda5b465ae075932ca6",
+            "output_hash": null,
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-22T12:29:42.340052+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 2,
+            "role": "evaluator",
+            "phase": "completed",
+            "revision": 0,
+            "input_hash": null,
+            "output_hash": "8e9587b1e514349a11350fb3d5bee9e8cc36930ae63436f22609fdbdf43fc99b",
+            "feedback_id": null,
+            "code": null,
+            "recorded_at": "2026-10-22T12:29:48.882096+00:00",
+            "metrics": {
+              "provider": "offline-transformers",
+              "model": "Qwen2.5-7B-Instruct@f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7:376207d37bc3ccd5",
+              "skill_id": "interview-evaluator",
+              "skill_version": "s4-v1",
+              "prompt_version": "s4-interview-1",
+              "latency_ms": 6537,
+              "input_tokens": 1285,
+              "output_tokens": 292,
+              "schema_valid": true,
+              "fallback_used": false,
+              "error_code": null,
+              "finish_reason": "stop",
+              "completion_truncated": false
+            }
+          },
+          {
+            "seq": 3,
+            "role": "evaluator",
+            "phase": "gate",
+            "revision": 0,
+            "input_hash": null,
+            "output_hash": "697e638067e497ae70a849e59d451371c229c22f5d01d3191288c753548cb9aa",
+            "feedback_id": "feedback-91ac5913411a6af7658e3a186d7366b8caf13ed0915bb3626718f4eb8ba90ac7",
+            "code": null,
+            "recorded_at": "2026-10-22T12:29:48.882976+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 4,
+            "role": "interviewer",
+            "phase": "started",
+            "revision": 0,
+            "input_hash": "cc554c64067db23084e83460d44e3818c71bbf10a3867436db6e1742cee4eb10",
+            "output_hash": null,
+            "feedback_id": "feedback-91ac5913411a6af7658e3a186d7366b8caf13ed0915bb3626718f4eb8ba90ac7",
+            "code": null,
+            "recorded_at": "2026-10-22T12:29:48.888218+00:00",
+            "metrics": {}
+          },
+          {
+            "seq": 5,
+            "role": "interviewer",
+            "phase": "completed",
+            "revision": 0,
+            "input_hash": null,
+            "output_hash": "cf2be5f9c1bafb2bb79945e68aed5bf1101ef0a7cc9aced54d92f5fb59caa91b",
+            "feedback_id": "feedback-91ac5913411a6af7658e3a186d7366b8caf13ed0915bb3626718f4eb8ba90ac7",
+            "code": null,
+            "recorded_at": "2026-10-22T12:29:49.688609+00:00",
+            "metrics": {
+              "provider": "offline-transformers",
+              "model": "Qwen2.5-7B-Instruct@f5d2f69828f4fcacd4a2712fdbe7d1798714fd3f072c309adf06d33eeabe16b7:376207d37bc3ccd5",
+              "skill_id": "interview-interviewer",
+              "skill_version": "s4-v1",
+              "prompt_version": "s4-interview-1",
+              "latency_ms": 796,
+              "input_tokens": 1431,
+              "output_tokens": 30,
+              "schema_valid": true,
+              "fallback_used": false,
+              "error_code": null,
+              "finish_reason": "stop",
+              "completion_truncated": false
+            }
+          },
+          {
+            "seq": 6,
+            "role": "coordinator",
+            "phase": "route",
+            "revision": 1,
+            "input_hash": null,
+            "output_hash": null,
+            "feedback_id": "feedback-91ac5913411a6af7658e3a186d7366b8caf13ed0915bb3626718f4eb8ba90ac7",
+            "code": "active",
+            "recorded_at": "2026-10-22T12:29:49.693090+00:00",
+            "metrics": {}
+          }
+        ],
+        "approval": null,
+        "independent_truth": "not_verified"
+      }
+    }
+  },
+  "review": {
+    "session_id": "interview-7086327f57e44e88b81351d5eee8ca82",
+    "scope": "模型参考，非真实性证明",
+    "practice_comparison": null,
+    "track": "job",
+    "source_boundary": "通用知识/源码实现/个人贡献分别判断；源码存在和测试文件不代表已运行或本人完成。",
+    "weaknesses": [
+      {
+        "topic_id": "backend-idempotency",
+        "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+        "missing": [
+          "p0",
+          "p1"
+        ]
+      }
+    ],
+    "code_references": [],
+    "turns": [
+      {
+        "question": "如果工作流恢复时外部请求可能已经成功，你会怎样处理重试？",
+        "answer": "我会用幂等键记录执行标识，目前还不清楚超时后如何核对外部操作。",
+        "covered": [
+          "do not blindly replay"
+        ],
+        "missing": [
+          "persist execution identity",
+          "query provider receipt"
+        ],
+        "claim_needs_evidence": true,
+        "note": "回答中提到了幂等键记录执行标识，但未明确说明如何核对外部操作，因此无法确定是否覆盖了所有要点。",
+        "decision": "follow_up"
+      }
+    ],
+    "assessment_details": [
+      {
+        "question_id": "interview-7086327f57e44e88b81351d5eee8ca82-q1",
+        "mode": "model_semantic_unverified",
+        "method_version": "s4-answer-1",
+        "semantic_assessments_present": true,
+        "points": [
+          {
+            "point_id": "p2",
+            "status": "correct",
+            "answer_quote": "我会用幂等键记录执行标识",
+            "reason": "回答中提到使用幂等键记录执行标识，符合do not blindly replay的要求。",
+            "assessed_by": "model_semantic_unverified"
+          },
+          {
+            "point_id": "p0",
+            "status": "uncertain",
+            "answer_quote": "",
+            "reason": "回答中未明确说明如何核对外部操作。",
+            "assessed_by": "model_semantic_unverified"
+          },
+          {
+            "point_id": "p1",
+            "status": "uncertain",
+            "answer_quote": "",
+            "reason": "回答中未提及查询提供商收据。",
+            "assessed_by": "model_semantic_unverified"
+          }
+        ]
+      }
+    ],
+    "warning": "未覆盖可能是表达或规则识别问题，不代表没有能力；个人经历需补充材料，当前未独立核实。",
+    "learning_resources": [
+      {
+        "entry": {
+          "entry_id": "doc-idempotency",
+          "kind": "doc",
+          "title": "外部超时与幂等回执",
+          "tags": [
+            "幂等",
+            "idempotency",
+            "request_id",
+            "回执",
+            "超时"
+          ],
+          "source_url": "https://redis.io/docs/latest/commands/xreadgroup/",
+          "source_version": "Redis rolling command reference; checked 2026-10-20",
+          "license": "CC0-1.0",
+          "content_basis": "project_authored_summary_not_official_quote",
+          "updated_at": "2026-10-20",
+          "applicable_role": "AI Agent / Python后端实习",
+          "difficulty": "intermediate",
+          "version_id": "knowledge-98ecb016acfef596ca7c8d7d9f0737df8696ef3ff9af6ad9ce0f523ab64e0278",
+          "body": "消费组的待确认消息需要与业务完成状态区分。本项目采用的可靠性原则是：相同逻辑操作使用稳定请求键，先查回执；外部请求超时不等于操作失败。数据库状态无法和任意外部服务形成一个本地事务，结果未知时应查询、核对或等待人工处理，不能盲目重发。该设计原则是本项目综合，不是Redis提供跨系统恰好一次保证。"
+        },
+        "reference": {
+          "evidence_id": "public-eed6dc5170cbb675e7122b65363a",
+          "scope": "public_knowledge",
+          "owner_id": null,
+          "project_id": null,
+          "snapshot_id": "knowledge-98ecb016acfef596ca7c8d7d9f0737df8696ef3ff9af6ad9ce0f523ab64e0278",
+          "source_id": "doc-idempotency",
+          "content_hash": "200ca7998e9977c9e62085955c9b0bce3d0e1366f8659724b2594d1847835a48",
+          "path": "knowledge/doc-idempotency.md",
+          "start_line": 1,
+          "end_line": 2,
+          "commit": null,
+          "retrieval_method": "bm25",
+          "evidence_kind": "documentation",
+          "supports_claim": "needs_judgment",
+          "quote": "外部超时与幂等回执\n消费组的待确认消息需要与业务完成状态区分。本项目采用的可靠性原则是：相同逻辑操作使用稳定请求键，先查回执；外部请求超时不等于操作失败。数据库状态无法和任意外部服务形成一个本地事务，结果未知时应查询、核对或等待人工处理，不能盲目重发。该设计原则是本项目综合，不是Redis提供跨系统恰好一次保证。",
+          "independent_truth": "not_verified"
+        },
+        "score": 14.313219635425863
+      },
+      {
+        "entry": {
+          "entry_id": "doc-asyncio",
+          "kind": "doc",
+          "title": "协作式并发与阻塞边界",
+          "tags": [
+            "asyncio",
+            "Python",
+            "协程",
+            "并发",
+            "阻塞"
+          ],
+          "source_url": "https://docs.python.org/3.12/library/asyncio-task.html",
+          "source_version": "Python 3.12 documentation",
+          "license": "CC0-1.0",
+          "content_basis": "project_authored_summary_not_official_quote",
+          "updated_at": "2026-10-20",
+          "applicable_role": "AI Agent / Python后端实习",
+          "difficulty": "intermediate",
+          "version_id": "knowledge-a253bcbd641cf83ac83b2f6dccffb9ba7786644478328ad7e0bb43de83e35687",
+          "body": "仅调用async函数会得到协程对象，不会自动执行；需要await或调度Task。协程适合可等待的IO任务。同步阻塞库直接运行在事件循环里会拖住其他任务，可考虑受限线程；CPU密集计算应根据运行环境另选进程等方案。取消请求也需要处理清理工作，不能把客户端超时理解为远端副作用已撤销。"
+        },
+        "reference": {
+          "evidence_id": "public-c850b9fa310d3fca4b10443299ef",
+          "scope": "public_knowledge",
+          "owner_id": null,
+          "project_id": null,
+          "snapshot_id": "knowledge-a253bcbd641cf83ac83b2f6dccffb9ba7786644478328ad7e0bb43de83e35687",
+          "source_id": "doc-asyncio",
+          "content_hash": "32596041b1a021df0835b9f7c688472041d9488fabe08695c551697747751271",
+          "path": "knowledge/doc-asyncio.md",
+          "start_line": 1,
+          "end_line": 2,
+          "commit": null,
+          "retrieval_method": "bm25",
+          "evidence_kind": "documentation",
+          "supports_claim": "needs_judgment",
+          "quote": "协作式并发与阻塞边界\n仅调用async函数会得到协程对象，不会自动执行；需要await或调度Task。协程适合可等待的IO任务。同步阻塞库直接运行在事件循环里会拖住其他任务，可考虑受限线程；CPU密集计算应根据运行环境另选进程等方案。取消请求也需要处理清理工作，不能把客户端超时理解为远端副作用已撤销。",
+          "independent_truth": "not_verified"
+        },
+        "score": 12.989180639434363
+      }
+    ],
+    "learning_resource_pack": {
+      "pack_id": "pack-d18501ae83c74a478f8dc00d1ca61984",
+      "plan_id": "plan-104a76d34de05b0290582077ab0610ae049cff1ded648efc731d5a55166d24cc",
+      "scope": "public_docs",
+      "answer_policy": "limited_source_only",
+      "missing": [],
+      "claim_statuses": [
+        {
+          "claim_id": "claim-0",
+          "status": "needs_judgment"
+        }
+      ],
+      "evidence_ids": [
+        "public-eed6dc5170cbb675e7122b65363a",
+        "public-c850b9fa310d3fca4b10443299ef"
+      ],
+      "source_data_is_untrusted": true,
+      "independent_truth": "not_verified"
+    },
+    "resource_execution": {
+      "execution_id": "post-review-c647546d8606465fbcd8db3a40526585",
+      "scope": "post_review",
+      "usage": {
+        "tool_calls": 1,
+        "search_rounds": 1,
+        "read_calls": 0,
+        "reserved_embedding_query_calls": 0,
+        "reserved_rerank_calls": 0,
+        "reserved_model_input_tokens_upper_bound": 0,
+        "quote_chars": 308,
+        "elapsed_ms": 15,
+        "budget_exhausted": false,
+        "stop_reason": "completed_bounded_collection"
+      },
+      "tool_trace": [
+        {
+          "index": 1,
+          "role": "coach",
+          "tool": "knowledge_search",
+          "status": "ok",
+          "duration_ms": 13,
+          "turn": 0,
+          "error_code": null
+        }
+      ]
+    },
+    "resources_status": "retrieved_reference_only"
+  },
+  "provider_history": [
+    {
+      "dispatched": true,
+      "node_id": "writer-1",
+      "run_id": "rewrite-7b3ca23daaf64f00b75867b8c54e3649",
+      "input_tokens": 1066,
+      "output_tokens": 142,
+      "status": "completed",
+      "cap": 512,
+      "seed": 0,
+      "temperature": 0.0,
+      "prompt_hash": "219a492f246cd47de05f0069a633da685636e5172c6aaec674521a57cdef0892",
+      "latency_ms": 3930,
+      "finish_reason": "stop",
+      "output_hash": "4628c28e437ab180bac15c0c411474a26b48247aa99f4b90a3373a7f546acd10",
+      "synthetic_raw_output": "{\n  \"text\": \"我参与了本地原型开发。我使用 Python 开发接口。\",\n  \"reason\": \"保持原始描述的清晰度和简洁性。\",\n  \"claims\": [\n    {\n      \"text\": \"我参与了本地原型开发。\",\n      \"source_quote\": \"我参与了本地原型开发。\",\n      \"status\": \"supported\",\n      \"reason\": \"直接引用原文，描述准确。\"\n    },\n    {\n      \"text\": \"我使用 Python 开发接口。\",\n      \"source_quote\": \"我使用 Python 开发接口。\",\n      \"status\": \"supported\",\n      \"reason\": \"直接引用原文，描述准确。\"\n    }\n  ]\n}"
+    },
+    {
+      "dispatched": true,
+      "node_id": "reviewer-1",
+      "run_id": "rewrite-7b3ca23daaf64f00b75867b8c54e3649",
+      "input_tokens": 1169,
+      "output_tokens": 140,
+      "status": "completed",
+      "cap": 512,
+      "seed": 0,
+      "temperature": 0.0,
+      "prompt_hash": "92a3956c7e6d16f9ddad72dd8f1a5075c55f9d44012be590d0788cd3edfee39d",
+      "latency_ms": 3173,
+      "finish_reason": "stop",
+      "output_hash": "d72df86897f1c5ce8876a87551eb0e282925af919efd12ffe28cbc6772f838f9",
+      "synthetic_raw_output": "{\n  \"outcome\": \"accept\",\n  \"constraint\": \"确认参与本地原型开发及使用 Python 开发接口的具体项目和时间。\",\n  \"claims\": [\n    {\n      \"text\": \"我参与了本地原型开发。\",\n      \"source_quote\": \"我参与了本地原型开发。\",\n      \"status\": \"supported\",\n      \"reason\": \"与JD和entry_context中的描述一致。\"\n    },\n    {\n      \"text\": \"我使用 Python 开发接口。\",\n      \"source_quote\": \"我使用 Python 开发接口。\",\n      \"status\": \"supported\",\n      \"reason\": \"与JD和entry_context中的描述一致。\"\n    }\n  ]\n}"
+    },
+    {
+      "dispatched": true,
+      "node_id": "evaluator-0",
+      "run_id": "interview-7086327f57e44e88b81351d5eee8ca82",
+      "input_tokens": 1285,
+      "output_tokens": 292,
+      "status": "completed",
+      "cap": 512,
+      "seed": 0,
+      "temperature": 0.0,
+      "prompt_hash": "4c31c447fae067931a811fee0ca2cdc2bb05fdcc14fbd3b96f692bfea4bd702d",
+      "latency_ms": 6537,
+      "finish_reason": "stop",
+      "output_hash": "6b9ece5ab75b55d5f4f550b41ac49172c10640895af0de93ac8b8946953bb58d",
+      "synthetic_raw_output": "{\n  \"assessment_mode\": \"model_semantic_unverified\",\n  \"claim_needs_evidence\": true,\n  \"covered_ids\": [\"p2\"],\n  \"method_version\": \"legacy-lexical\",\n  \"missing_ids\": [\"p0\", \"p1\"],\n  \"note\": \"回答中提到了幂等键记录执行标识，但未明确说明如何核对外部操作，因此无法确定是否覆盖了所有要点。\",\n  \"point_assessments\": [\n    {\n      \"point_id\": \"p2\",\n      \"status\": \"correct\",\n      \"reason\": \"回答中提到使用幂等键记录执行标识，符合do not blindly replay的要求。\",\n      \"answer_quote\": \"我会用幂等键记录执行标识\",\n      \"assessed_by\": \"model_semantic_unverified\"\n    },\n    {\n      \"point_id\": \"p0\",\n      \"status\": \"uncertain\",\n      \"reason\": \"回答中未明确说明如何核对外部操作。\",\n      \"answer_quote\": \"\",\n      \"assessed_by\": \"model_semantic_unverified\"\n    },\n    {\n      \"point_id\": \"p1\",\n      \"status\": \"uncertain\",\n      \"reason\": \"回答中未提及查询提供商收据。\",\n      \"answer_quote\": \"\",\n      \"assessed_by\": \"model_semantic_unverified\"\n    }\n  ],\n  \"recommended_action\": \"follow_up\"\n}"
+    },
+    {
+      "dispatched": true,
+      "node_id": "interviewer-0",
+      "run_id": "interview-7086327f57e44e88b81351d5eee8ca82",
+      "input_tokens": 1431,
+      "output_tokens": 30,
+      "status": "completed",
+      "cap": 512,
+      "seed": 0,
+      "temperature": 0.0,
+      "prompt_hash": "8e7cd1ece5df99de34e0eb70b1747cae31d633a1accb3c11667a893a450879a9",
+      "latency_ms": 796,
+      "finish_reason": "stop",
+      "output_hash": "ceb2e2b2b6c87812bd14319b1db26ad1e2cd759e5cdb37ebf9dae19c25bb7799",
+      "synthetic_raw_output": "{\n  \"action\": \"follow_up\",\n  \"focus_id\": \"p0\",\n  \"retrieval_target\": \"none\"\n}"
+    }
+  ],
+  "total_ms": 45649.34,
+  "posthoc_positive_control": true,
+  "source_identity": "9d5b32c054309bccc65ea6ad99cc194f2c959be1298adf0abb75caa154ff9fef"
+}

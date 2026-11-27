@@ -1,0 +1,9 @@
+{
+  "status": "interrupted_environment_download",
+  "original_report": "first-install-interrupted.json",
+  "original_report_status": "running (runner interrupted while child pip was cancelled)",
+  "log": "first-install-interrupted.log",
+  "reason": "Configured Aliyun index remained in isolated build dependency download; no product tests started. Own foreground verification stopped, original directory retained. Retry uses official index, finite network timeout/retry and a different empty venv.",
+  "retry_directory": "delivery-r5-v1-check-v2",
+  "product_failure_claimed": false
+}

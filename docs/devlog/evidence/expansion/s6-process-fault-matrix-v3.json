@@ -1,0 +1,1526 @@
+{
+  "data": "authored CC0 synthetic, imported code not executed",
+  "transport": "real_loopback_http",
+  "services": "real PostgreSQL + Redis",
+  "execution": "independent subprocesses with os._exit fault points",
+  "model": "disabled; index execution replay only, no text-model replay",
+  "cases": [
+    {
+      "case": "request_idempotency_conflict",
+      "schema": "s6_fault_e7a87b38a03f4d19a968553d1f31e074",
+      "status": "passed",
+      "processes": [
+        {
+          "pid": 106933,
+          "role": "publish",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_e7a87b38a03f4d19a968553d1f31e074/process-0.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 106940,
+          "role": "work",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_e7a87b38a03f4d19a968553d1f31e074/process-1.log",
+          "exit_code": 0
+        }
+      ],
+      "checks": [
+        "real_HTTP_concurrent_same_key_same_task",
+        "different_snapshot_same_key_409",
+        "one_outbox",
+        "exactly_one_effective_publication",
+        "original_HTTP_task_search_and_cross_owner_404"
+      ],
+      "project_id": "project-1d8055c3016f48babda96cc45f24ea6b",
+      "snapshot_id": "snapshot-c17ffbd120f343b39a0e90dedee490a4",
+      "authority": "authority-76ce7f65652a46f1abcda0ff8ec8032a",
+      "task_id": "task-685d890b98c445249708f199b9b27d08",
+      "task": {
+        "task_id": "task-685d890b98c445249708f199b9b27d08",
+        "project_id": "project-1d8055c3016f48babda96cc45f24ea6b",
+        "snapshot_id": "snapshot-c17ffbd120f343b39a0e90dedee490a4",
+        "status": "SUCCEEDED",
+        "stage": "completed",
+        "attempts": 1,
+        "created_at": 1792678610.204179,
+        "updated_at": 1792678612.530915,
+        "error_code": null,
+        "generation": 1,
+        "config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+        "result": {
+          "chunks": 8,
+          "edges": 6,
+          "elapsed_ms": 5,
+          "embedding_model": null,
+          "file_manifest_hash": "c4d536a8a526ca90f759ed4deb993caeb386c1fda3dfe4a76f300fb8b21dd089",
+          "file_status": {
+            "README.md": "document",
+            "app/api.py": "python_ast",
+            "app/storage.py": "python_ast",
+            "tests/test_storage.py": "python_ast"
+          },
+          "files": 4,
+          "generation": 1,
+          "index_version": "code-syntax-v3-1/chunks-2",
+          "indexing_config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+          "oversized_lines_omitted": 0,
+          "publication_id": "publication-d2304e9b9f0e41d8aaa2f628aa1d7c4d",
+          "runtime_executed": false,
+          "snapshot_id": "snapshot-c17ffbd120f343b39a0e90dedee490a4",
+          "storage_backend": "postgresql",
+          "symbols": 6,
+          "unresolved_references": 0,
+          "vector_index_identity": null,
+          "warnings": {}
+        },
+        "events": [
+          {
+            "seq": 1,
+            "kind": "submitted",
+            "attempt": 0,
+            "recorded_at": 1792678610.205301
+          },
+          {
+            "seq": 2,
+            "kind": "claimed",
+            "attempt": 1,
+            "recorded_at": 1792678612.513516
+          },
+          {
+            "seq": 3,
+            "kind": "publication_committed",
+            "attempt": 1,
+            "recorded_at": 1792678612.531586
+          }
+        ]
+      },
+      "stream": {
+        "lag": 0,
+        "pending": 0,
+        "retained_entries": 1,
+        "configured_max_entries_approximate": 10000,
+        "reclaim_cursor": "0-0"
+      },
+      "database": {
+        "mode": "redis",
+        "authority": "authority-76ce7f65652a46f1abcda0ff8ec8032a",
+        "outbox": {
+          "pending": 0,
+          "sent": 1,
+          "exhausted": 0
+        },
+        "tasks": [
+          {
+            "status": "SUCCEEDED",
+            "count": 1
+          }
+        ],
+        "dispatch_failures": [],
+        "archive": []
+      },
+      "publication_count": 1
+    },
+    {
+      "case": "redis_unavailable_then_restore",
+      "schema": "s6_fault_548f1c4d06d4444285a124ef9529697e",
+      "status": "passed",
+      "processes": [
+        {
+          "pid": 106956,
+          "role": "publish",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_548f1c4d06d4444285a124ef9529697e/process-0.log",
+          "exit_code": 1
+        },
+        {
+          "pid": 106963,
+          "role": "publish",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_548f1c4d06d4444285a124ef9529697e/process-1.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 106971,
+          "role": "work",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_548f1c4d06d4444285a124ef9529697e/process-2.log",
+          "exit_code": 0
+        }
+      ],
+      "checks": [
+        "PG_commit_survives_unreachable_real_transport",
+        "exactly_one_effective_publication",
+        "original_HTTP_task_search_and_cross_owner_404"
+      ],
+      "project_id": "project-f49bc5f6d62546a99272b74a79a8c5ac",
+      "snapshot_id": "snapshot-7fe0e51611984aabb1010dcf88523bfc",
+      "authority": "authority-61a90e4aeea94368a2c4ff15764afa42",
+      "task_id": "task-7e28e2254f0b4c25a1759f9aac7d8a17",
+      "task": {
+        "task_id": "task-7e28e2254f0b4c25a1759f9aac7d8a17",
+        "project_id": "project-f49bc5f6d62546a99272b74a79a8c5ac",
+        "snapshot_id": "snapshot-7fe0e51611984aabb1010dcf88523bfc",
+        "status": "SUCCEEDED",
+        "stage": "completed",
+        "attempts": 1,
+        "created_at": 1792678613.258309,
+        "updated_at": 1792678616.431112,
+        "error_code": null,
+        "generation": 1,
+        "config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+        "result": {
+          "chunks": 8,
+          "edges": 6,
+          "elapsed_ms": 4,
+          "embedding_model": null,
+          "file_manifest_hash": "c4d536a8a526ca90f759ed4deb993caeb386c1fda3dfe4a76f300fb8b21dd089",
+          "file_status": {
+            "README.md": "document",
+            "app/api.py": "python_ast",
+            "app/storage.py": "python_ast",
+            "tests/test_storage.py": "python_ast"
+          },
+          "files": 4,
+          "generation": 1,
+          "index_version": "code-syntax-v3-1/chunks-2",
+          "indexing_config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+          "oversized_lines_omitted": 0,
+          "publication_id": "publication-c302d5d90d1d4af4a556a94f4779a194",
+          "runtime_executed": false,
+          "snapshot_id": "snapshot-7fe0e51611984aabb1010dcf88523bfc",
+          "storage_backend": "postgresql",
+          "symbols": 6,
+          "unresolved_references": 0,
+          "vector_index_identity": null,
+          "warnings": {}
+        },
+        "events": [
+          {
+            "seq": 1,
+            "kind": "submitted",
+            "attempt": 0,
+            "recorded_at": 1792678613.259462
+          },
+          {
+            "seq": 2,
+            "kind": "claimed",
+            "attempt": 1,
+            "recorded_at": 1792678616.41919
+          },
+          {
+            "seq": 3,
+            "kind": "publication_committed",
+            "attempt": 1,
+            "recorded_at": 1792678616.431589
+          }
+        ]
+      },
+      "stream": {
+        "lag": 0,
+        "pending": 0,
+        "retained_entries": 1,
+        "configured_max_entries_approximate": 10000,
+        "reclaim_cursor": "0-0"
+      },
+      "database": {
+        "mode": "redis",
+        "authority": "authority-61a90e4aeea94368a2c4ff15764afa42",
+        "outbox": {
+          "pending": 0,
+          "sent": 1,
+          "exhausted": 0
+        },
+        "tasks": [
+          {
+            "status": "SUCCEEDED",
+            "count": 1
+          }
+        ],
+        "dispatch_failures": [],
+        "archive": []
+      },
+      "publication_count": 1
+    },
+    {
+      "case": "publisher_exit_after_xadd",
+      "schema": "s6_fault_760c9fa3175a435696375f2617b52b6b",
+      "status": "passed",
+      "processes": [
+        {
+          "pid": 106987,
+          "role": "publish",
+          "arguments": [
+            "--fault",
+            "after_xadd_before_outbox_mark"
+          ],
+          "log": "output/expansion/s6_fault_760c9fa3175a435696375f2617b52b6b/process-0.log",
+          "exit_code": 71
+        },
+        {
+          "pid": 106997,
+          "role": "publish",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_760c9fa3175a435696375f2617b52b6b/process-1.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 107004,
+          "role": "work",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_760c9fa3175a435696375f2617b52b6b/process-2.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 107013,
+          "role": "work",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_760c9fa3175a435696375f2617b52b6b/process-3.log",
+          "exit_code": 0
+        }
+      ],
+      "checks": [
+        "actual_publisher_exit_after_XADD_before_DB_mark",
+        "exactly_one_effective_publication",
+        "original_HTTP_task_search_and_cross_owner_404"
+      ],
+      "project_id": "project-b359608f43b340d396b4b6a4456760ca",
+      "snapshot_id": "snapshot-06f97bf5848146c7b20ae2373d38d70e",
+      "authority": "authority-c4f46cb166a94534992d8884ab1bcdef",
+      "task_id": "task-a9831505cdaf4be2972d5f9c016d51a1",
+      "task": {
+        "task_id": "task-a9831505cdaf4be2972d5f9c016d51a1",
+        "project_id": "project-b359608f43b340d396b4b6a4456760ca",
+        "snapshot_id": "snapshot-06f97bf5848146c7b20ae2373d38d70e",
+        "status": "SUCCEEDED",
+        "stage": "completed",
+        "attempts": 1,
+        "created_at": 1792678617.128755,
+        "updated_at": 1792678630.171449,
+        "error_code": null,
+        "generation": 1,
+        "config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+        "result": {
+          "chunks": 8,
+          "edges": 6,
+          "elapsed_ms": 3,
+          "embedding_model": null,
+          "file_manifest_hash": "c4d536a8a526ca90f759ed4deb993caeb386c1fda3dfe4a76f300fb8b21dd089",
+          "file_status": {
+            "README.md": "document",
+            "app/api.py": "python_ast",
+            "app/storage.py": "python_ast",
+            "tests/test_storage.py": "python_ast"
+          },
+          "files": 4,
+          "generation": 1,
+          "index_version": "code-syntax-v3-1/chunks-2",
+          "indexing_config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+          "oversized_lines_omitted": 0,
+          "publication_id": "publication-2d6f1a48770a43dfb9221cc8397dd0d7",
+          "runtime_executed": false,
+          "snapshot_id": "snapshot-06f97bf5848146c7b20ae2373d38d70e",
+          "storage_backend": "postgresql",
+          "symbols": 6,
+          "unresolved_references": 0,
+          "vector_index_identity": null,
+          "warnings": {}
+        },
+        "events": [
+          {
+            "seq": 1,
+            "kind": "submitted",
+            "attempt": 0,
+            "recorded_at": 1792678617.131004
+          },
+          {
+            "seq": 2,
+            "kind": "claimed",
+            "attempt": 1,
+            "recorded_at": 1792678630.160307
+          },
+          {
+            "seq": 3,
+            "kind": "publication_committed",
+            "attempt": 1,
+            "recorded_at": 1792678630.17194
+          }
+        ]
+      },
+      "stream": {
+        "lag": 0,
+        "pending": 0,
+        "retained_entries": 2,
+        "configured_max_entries_approximate": 10000,
+        "reclaim_cursor": "0-0"
+      },
+      "database": {
+        "mode": "redis",
+        "authority": "authority-c4f46cb166a94534992d8884ab1bcdef",
+        "outbox": {
+          "pending": 0,
+          "sent": 1,
+          "exhausted": 0
+        },
+        "tasks": [
+          {
+            "status": "SUCCEEDED",
+            "count": 1
+          }
+        ],
+        "dispatch_failures": [],
+        "archive": []
+      },
+      "publication_count": 1
+    },
+    {
+      "case": "worker_exit_after_claim",
+      "schema": "s6_fault_b205f8460d8d4fe5bc8a19bdbb99c3c7",
+      "status": "passed",
+      "processes": [
+        {
+          "pid": 107028,
+          "role": "publish",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_b205f8460d8d4fe5bc8a19bdbb99c3c7/process-0.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 107035,
+          "role": "work",
+          "arguments": [
+            "--fault",
+            "after_claim"
+          ],
+          "log": "output/expansion/s6_fault_b205f8460d8d4fe5bc8a19bdbb99c3c7/process-1.log",
+          "exit_code": 71
+        },
+        {
+          "pid": 107042,
+          "role": "work",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_b205f8460d8d4fe5bc8a19bdbb99c3c7/process-2.log",
+          "exit_code": 0
+        }
+      ],
+      "checks": [
+        "actual_process_exit_lease_expiry_recovery_no_partial_publication",
+        "exactly_one_effective_publication",
+        "original_HTTP_task_search_and_cross_owner_404"
+      ],
+      "project_id": "project-cffc5973701d446099f057311eed2b77",
+      "snapshot_id": "snapshot-4fbf8348fe634017ab887967a200a79d",
+      "authority": "authority-30f3e579c6754514b7e6360efda2f783",
+      "task_id": "task-85d8d1ca7d854b858bc5275a4f1e5678",
+      "task": {
+        "task_id": "task-85d8d1ca7d854b858bc5275a4f1e5678",
+        "project_id": "project-cffc5973701d446099f057311eed2b77",
+        "snapshot_id": "snapshot-4fbf8348fe634017ab887967a200a79d",
+        "status": "SUCCEEDED",
+        "stage": "completed",
+        "attempts": 2,
+        "created_at": 1792678632.022438,
+        "updated_at": 1792678635.40993,
+        "error_code": null,
+        "generation": 1,
+        "config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+        "result": {
+          "chunks": 8,
+          "edges": 6,
+          "elapsed_ms": 5,
+          "embedding_model": null,
+          "file_manifest_hash": "c4d536a8a526ca90f759ed4deb993caeb386c1fda3dfe4a76f300fb8b21dd089",
+          "file_status": {
+            "README.md": "document",
+            "app/api.py": "python_ast",
+            "app/storage.py": "python_ast",
+            "tests/test_storage.py": "python_ast"
+          },
+          "files": 4,
+          "generation": 1,
+          "index_version": "code-syntax-v3-1/chunks-2",
+          "indexing_config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+          "oversized_lines_omitted": 0,
+          "publication_id": "publication-47bc0a87ae8b4e8c86b60fdbdc1352cb",
+          "runtime_executed": false,
+          "snapshot_id": "snapshot-4fbf8348fe634017ab887967a200a79d",
+          "storage_backend": "postgresql",
+          "symbols": 6,
+          "unresolved_references": 0,
+          "vector_index_identity": null,
+          "warnings": {}
+        },
+        "events": [
+          {
+            "seq": 1,
+            "kind": "submitted",
+            "attempt": 0,
+            "recorded_at": 1792678632.023423
+          },
+          {
+            "seq": 2,
+            "kind": "claimed",
+            "attempt": 1,
+            "recorded_at": 1792678634.115506
+          },
+          {
+            "seq": 3,
+            "kind": "claimed",
+            "attempt": 2,
+            "recorded_at": 1792678635.397525
+          },
+          {
+            "seq": 4,
+            "kind": "publication_committed",
+            "attempt": 2,
+            "recorded_at": 1792678635.410549
+          }
+        ]
+      },
+      "stream": {
+        "lag": 0,
+        "pending": 0,
+        "retained_entries": 1,
+        "configured_max_entries_approximate": 10000,
+        "reclaim_cursor": "0-0"
+      },
+      "database": {
+        "mode": "redis",
+        "authority": "authority-30f3e579c6754514b7e6360efda2f783",
+        "outbox": {
+          "pending": 0,
+          "sent": 1,
+          "exhausted": 0
+        },
+        "tasks": [
+          {
+            "status": "SUCCEEDED",
+            "count": 1
+          }
+        ],
+        "dispatch_failures": [],
+        "archive": []
+      },
+      "publication_count": 1
+    },
+    {
+      "case": "old_worker_late_after_takeover",
+      "schema": "s6_fault_b426e27117eb447d9a4000bc146f0afa",
+      "status": "passed",
+      "processes": [
+        {
+          "pid": 107059,
+          "role": "publish",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_b426e27117eb447d9a4000bc146f0afa/process-0.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 107066,
+          "role": "work",
+          "arguments": [
+            "--hold-after-claim",
+            "2"
+          ],
+          "log": "output/expansion/s6_fault_b426e27117eb447d9a4000bc146f0afa/process-1.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 107073,
+          "role": "work",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_b426e27117eb447d9a4000bc146f0afa/process-2.log",
+          "exit_code": 0
+        }
+      ],
+      "checks": [
+        "two_observed_live_PIDs_and_DB_fencing",
+        "exactly_one_effective_publication",
+        "original_HTTP_task_search_and_cross_owner_404"
+      ],
+      "project_id": "project-c858e6e21f3246a39dc77b9990d96ed3",
+      "snapshot_id": "snapshot-fc5e51ad4ad44840befabb97a5b08104",
+      "authority": "authority-0ea3efd2d3504ebe905ff71e981d3587",
+      "task_id": "task-61af0d91edef41eea0cbbd47626da0ac",
+      "task": {
+        "task_id": "task-61af0d91edef41eea0cbbd47626da0ac",
+        "project_id": "project-c858e6e21f3246a39dc77b9990d96ed3",
+        "snapshot_id": "snapshot-fc5e51ad4ad44840befabb97a5b08104",
+        "status": "SUCCEEDED",
+        "stage": "completed",
+        "attempts": 2,
+        "created_at": 1792678636.201751,
+        "updated_at": 1792678639.586331,
+        "error_code": null,
+        "generation": 1,
+        "config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+        "result": {
+          "chunks": 8,
+          "edges": 6,
+          "elapsed_ms": 4,
+          "embedding_model": null,
+          "file_manifest_hash": "c4d536a8a526ca90f759ed4deb993caeb386c1fda3dfe4a76f300fb8b21dd089",
+          "file_status": {
+            "README.md": "document",
+            "app/api.py": "python_ast",
+            "app/storage.py": "python_ast",
+            "tests/test_storage.py": "python_ast"
+          },
+          "files": 4,
+          "generation": 1,
+          "index_version": "code-syntax-v3-1/chunks-2",
+          "indexing_config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+          "oversized_lines_omitted": 0,
+          "publication_id": "publication-8d7d2030f8f74bf48a62756ddba2d7ae",
+          "runtime_executed": false,
+          "snapshot_id": "snapshot-fc5e51ad4ad44840befabb97a5b08104",
+          "storage_backend": "postgresql",
+          "symbols": 6,
+          "unresolved_references": 0,
+          "vector_index_identity": null,
+          "warnings": {}
+        },
+        "events": [
+          {
+            "seq": 1,
+            "kind": "submitted",
+            "attempt": 0,
+            "recorded_at": 1792678636.203802
+          },
+          {
+            "seq": 2,
+            "kind": "claimed",
+            "attempt": 1,
+            "recorded_at": 1792678638.291181
+          },
+          {
+            "seq": 3,
+            "kind": "claimed",
+            "attempt": 2,
+            "recorded_at": 1792678639.576042
+          },
+          {
+            "seq": 4,
+            "kind": "publication_committed",
+            "attempt": 2,
+            "recorded_at": 1792678639.586786
+          }
+        ]
+      },
+      "stream": {
+        "lag": 0,
+        "pending": 0,
+        "retained_entries": 1,
+        "configured_max_entries_approximate": 10000,
+        "reclaim_cursor": "0-0"
+      },
+      "database": {
+        "mode": "redis",
+        "authority": "authority-0ea3efd2d3504ebe905ff71e981d3587",
+        "outbox": {
+          "pending": 0,
+          "sent": 1,
+          "exhausted": 0
+        },
+        "tasks": [
+          {
+            "status": "SUCCEEDED",
+            "count": 1
+          }
+        ],
+        "dispatch_failures": [],
+        "archive": []
+      },
+      "publication_count": 1
+    },
+    {
+      "case": "two_workers_compete",
+      "schema": "s6_fault_92780f187fa743a0857befbeb7e66c9c",
+      "status": "passed",
+      "processes": [
+        {
+          "pid": 107091,
+          "role": "publish",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_92780f187fa743a0857befbeb7e66c9c/process-0.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 107098,
+          "role": "work",
+          "arguments": [
+            "--hold-after-claim",
+            "2",
+            "--lease-seconds",
+            "3"
+          ],
+          "log": "output/expansion/s6_fault_92780f187fa743a0857befbeb7e66c9c/process-1.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 107105,
+          "role": "work",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_92780f187fa743a0857befbeb7e66c9c/process-2.log",
+          "exit_code": 0
+        }
+      ],
+      "checks": [
+        "two_observed_live_PIDs_and_DB_fencing",
+        "exactly_one_effective_publication",
+        "original_HTTP_task_search_and_cross_owner_404"
+      ],
+      "project_id": "project-ad50897214f44817817eeb08eed54ec8",
+      "snapshot_id": "snapshot-0c240cb6c4dc4e0da7e89a2f32380852",
+      "authority": "authority-895f00ba75764d80b8244cb75a109c3e",
+      "task_id": "task-2438b400ad8c42419b7961690f079054",
+      "task": {
+        "task_id": "task-2438b400ad8c42419b7961690f079054",
+        "project_id": "project-ad50897214f44817817eeb08eed54ec8",
+        "snapshot_id": "snapshot-0c240cb6c4dc4e0da7e89a2f32380852",
+        "status": "SUCCEEDED",
+        "stage": "completed",
+        "attempts": 1,
+        "created_at": 1792678641.192867,
+        "updated_at": 1792678645.294906,
+        "error_code": null,
+        "generation": 1,
+        "config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+        "result": {
+          "chunks": 8,
+          "edges": 6,
+          "elapsed_ms": 8,
+          "embedding_model": null,
+          "file_manifest_hash": "c4d536a8a526ca90f759ed4deb993caeb386c1fda3dfe4a76f300fb8b21dd089",
+          "file_status": {
+            "README.md": "document",
+            "app/api.py": "python_ast",
+            "app/storage.py": "python_ast",
+            "tests/test_storage.py": "python_ast"
+          },
+          "files": 4,
+          "generation": 1,
+          "index_version": "code-syntax-v3-1/chunks-2",
+          "indexing_config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+          "oversized_lines_omitted": 0,
+          "publication_id": "publication-f75e5ff6b3ad43f0983f5e9ac003aff0",
+          "runtime_executed": false,
+          "snapshot_id": "snapshot-0c240cb6c4dc4e0da7e89a2f32380852",
+          "storage_backend": "postgresql",
+          "symbols": 6,
+          "unresolved_references": 0,
+          "vector_index_identity": null,
+          "warnings": {}
+        },
+        "events": [
+          {
+            "seq": 1,
+            "kind": "submitted",
+            "attempt": 0,
+            "recorded_at": 1792678641.194431
+          },
+          {
+            "seq": 2,
+            "kind": "claimed",
+            "attempt": 1,
+            "recorded_at": 1792678643.279652
+          },
+          {
+            "seq": 3,
+            "kind": "publication_committed",
+            "attempt": 1,
+            "recorded_at": 1792678645.295345
+          }
+        ]
+      },
+      "stream": {
+        "lag": 0,
+        "pending": 0,
+        "retained_entries": 1,
+        "configured_max_entries_approximate": 10000,
+        "reclaim_cursor": "0-0"
+      },
+      "database": {
+        "mode": "redis",
+        "authority": "authority-895f00ba75764d80b8244cb75a109c3e",
+        "outbox": {
+          "pending": 0,
+          "sent": 1,
+          "exhausted": 0
+        },
+        "tasks": [
+          {
+            "status": "SUCCEEDED",
+            "count": 1
+          }
+        ],
+        "dispatch_failures": [],
+        "archive": []
+      },
+      "publication_count": 1
+    },
+    {
+      "case": "commit_before_ack_exit",
+      "schema": "s6_fault_4fc9d281b2ca4c9badb839e7d6070419",
+      "status": "passed",
+      "processes": [
+        {
+          "pid": 107122,
+          "role": "publish",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_4fc9d281b2ca4c9badb839e7d6070419/process-0.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 107129,
+          "role": "work",
+          "arguments": [
+            "--fault",
+            "after_commit_before_ack"
+          ],
+          "log": "output/expansion/s6_fault_4fc9d281b2ca4c9badb839e7d6070419/process-1.log",
+          "exit_code": 71
+        },
+        {
+          "pid": 107137,
+          "role": "work",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_4fc9d281b2ca4c9badb839e7d6070419/process-2.log",
+          "exit_code": 0
+        }
+      ],
+      "checks": [
+        "actual_commit_before_ACK_exit_redelivery_no_rebuild",
+        "exactly_one_effective_publication",
+        "original_HTTP_task_search_and_cross_owner_404"
+      ],
+      "project_id": "project-13dc8471f09a4c3d996946e6fc358edf",
+      "snapshot_id": "snapshot-2ad9619f5e1e4d2da7777be904d490bc",
+      "authority": "authority-24c209411187422b944e9c28ed7734ce",
+      "task_id": "task-bcf0478e9da048aba471dd37b528695c",
+      "task": {
+        "task_id": "task-bcf0478e9da048aba471dd37b528695c",
+        "project_id": "project-13dc8471f09a4c3d996946e6fc358edf",
+        "snapshot_id": "snapshot-2ad9619f5e1e4d2da7777be904d490bc",
+        "status": "SUCCEEDED",
+        "stage": "completed",
+        "attempts": 1,
+        "created_at": 1792678646.187391,
+        "updated_at": 1792678648.305778,
+        "error_code": null,
+        "generation": 1,
+        "config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+        "result": {
+          "chunks": 8,
+          "edges": 6,
+          "elapsed_ms": 2,
+          "embedding_model": null,
+          "file_manifest_hash": "c4d536a8a526ca90f759ed4deb993caeb386c1fda3dfe4a76f300fb8b21dd089",
+          "file_status": {
+            "README.md": "document",
+            "app/api.py": "python_ast",
+            "app/storage.py": "python_ast",
+            "tests/test_storage.py": "python_ast"
+          },
+          "files": 4,
+          "generation": 1,
+          "index_version": "code-syntax-v3-1/chunks-2",
+          "indexing_config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+          "oversized_lines_omitted": 0,
+          "publication_id": "publication-0261e144bef846a89f62c07dc7e07b4c",
+          "runtime_executed": false,
+          "snapshot_id": "snapshot-2ad9619f5e1e4d2da7777be904d490bc",
+          "storage_backend": "postgresql",
+          "symbols": 6,
+          "unresolved_references": 0,
+          "vector_index_identity": null,
+          "warnings": {}
+        },
+        "events": [
+          {
+            "seq": 1,
+            "kind": "submitted",
+            "attempt": 0,
+            "recorded_at": 1792678646.189626
+          },
+          {
+            "seq": 2,
+            "kind": "claimed",
+            "attempt": 1,
+            "recorded_at": 1792678648.296202
+          },
+          {
+            "seq": 3,
+            "kind": "publication_committed",
+            "attempt": 1,
+            "recorded_at": 1792678648.306321
+          }
+        ]
+      },
+      "stream": {
+        "lag": 0,
+        "pending": 0,
+        "retained_entries": 1,
+        "configured_max_entries_approximate": 10000,
+        "reclaim_cursor": "0-0"
+      },
+      "database": {
+        "mode": "redis",
+        "authority": "authority-24c209411187422b944e9c28ed7734ce",
+        "outbox": {
+          "pending": 0,
+          "sent": 1,
+          "exhausted": 0
+        },
+        "tasks": [
+          {
+            "status": "SUCCEEDED",
+            "count": 1
+          }
+        ],
+        "dispatch_failures": [],
+        "archive": []
+      },
+      "publication_count": 1
+    },
+    {
+      "case": "transaction_exit_after_derived",
+      "schema": "s6_fault_adba34f0c1e840299761f373fb3b5ba7",
+      "status": "passed",
+      "processes": [
+        {
+          "pid": 107153,
+          "role": "publish",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_adba34f0c1e840299761f373fb3b5ba7/process-0.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 107160,
+          "role": "work",
+          "arguments": [
+            "--fault",
+            "after_derived_before_pointer"
+          ],
+          "log": "output/expansion/s6_fault_adba34f0c1e840299761f373fb3b5ba7/process-1.log",
+          "exit_code": 71
+        },
+        {
+          "pid": 107168,
+          "role": "work",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_adba34f0c1e840299761f373fb3b5ba7/process-2.log",
+          "exit_code": 0
+        }
+      ],
+      "checks": [
+        "actual_process_exit_lease_expiry_recovery_no_partial_publication",
+        "exactly_one_effective_publication",
+        "original_HTTP_task_search_and_cross_owner_404"
+      ],
+      "project_id": "project-f7732e0138284c9da96b3dd735f15c8d",
+      "snapshot_id": "snapshot-f524980f06e446d1993f4508844c7cc6",
+      "authority": "authority-b291db1e6a0345779001ae76b448ba07",
+      "task_id": "task-41d1b51685e14730bcdbb0e996e16bf6",
+      "task": {
+        "task_id": "task-41d1b51685e14730bcdbb0e996e16bf6",
+        "project_id": "project-f7732e0138284c9da96b3dd735f15c8d",
+        "snapshot_id": "snapshot-f524980f06e446d1993f4508844c7cc6",
+        "status": "SUCCEEDED",
+        "stage": "completed",
+        "attempts": 2,
+        "created_at": 1792678650.073007,
+        "updated_at": 1792678653.458352,
+        "error_code": null,
+        "generation": 1,
+        "config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+        "result": {
+          "chunks": 8,
+          "edges": 6,
+          "elapsed_ms": 4,
+          "embedding_model": null,
+          "file_manifest_hash": "c4d536a8a526ca90f759ed4deb993caeb386c1fda3dfe4a76f300fb8b21dd089",
+          "file_status": {
+            "README.md": "document",
+            "app/api.py": "python_ast",
+            "app/storage.py": "python_ast",
+            "tests/test_storage.py": "python_ast"
+          },
+          "files": 4,
+          "generation": 1,
+          "index_version": "code-syntax-v3-1/chunks-2",
+          "indexing_config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+          "oversized_lines_omitted": 0,
+          "publication_id": "publication-f2637ca497584b45b16df80336f8aa64",
+          "runtime_executed": false,
+          "snapshot_id": "snapshot-f524980f06e446d1993f4508844c7cc6",
+          "storage_backend": "postgresql",
+          "symbols": 6,
+          "unresolved_references": 0,
+          "vector_index_identity": null,
+          "warnings": {}
+        },
+        "events": [
+          {
+            "seq": 1,
+            "kind": "submitted",
+            "attempt": 0,
+            "recorded_at": 1792678650.07413
+          },
+          {
+            "seq": 2,
+            "kind": "claimed",
+            "attempt": 1,
+            "recorded_at": 1792678652.158548
+          },
+          {
+            "seq": 3,
+            "kind": "claimed",
+            "attempt": 2,
+            "recorded_at": 1792678653.44747
+          },
+          {
+            "seq": 4,
+            "kind": "publication_committed",
+            "attempt": 2,
+            "recorded_at": 1792678653.458925
+          }
+        ]
+      },
+      "stream": {
+        "lag": 0,
+        "pending": 0,
+        "retained_entries": 1,
+        "configured_max_entries_approximate": 10000,
+        "reclaim_cursor": "0-0"
+      },
+      "database": {
+        "mode": "redis",
+        "authority": "authority-b291db1e6a0345779001ae76b448ba07",
+        "outbox": {
+          "pending": 0,
+          "sent": 1,
+          "exhausted": 0
+        },
+        "tasks": [
+          {
+            "status": "SUCCEEDED",
+            "count": 1
+          }
+        ],
+        "dispatch_failures": [],
+        "archive": []
+      },
+      "publication_count": 1
+    },
+    {
+      "case": "source_deleted_during_build",
+      "schema": "s6_fault_e37568806377484cb45d19b7fc8cde8b",
+      "status": "passed",
+      "processes": [
+        {
+          "pid": 107185,
+          "role": "publish",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_e37568806377484cb45d19b7fc8cde8b/process-0.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 107193,
+          "role": "work",
+          "arguments": [
+            "--hold-after-claim",
+            "1"
+          ],
+          "log": "output/expansion/s6_fault_e37568806377484cb45d19b7fc8cde8b/process-1.log",
+          "exit_code": 0
+        }
+      ],
+      "checks": [
+        "source_deleted_after_real_claim_no_zombie_rows"
+      ],
+      "project_id": "project-a049534b84f24a7692ed70ce6585096c",
+      "snapshot_id": "snapshot-0055d392675c4febb49cdeaf7d6d866e",
+      "authority": "authority-b4931accbcac4e948064e1924dbe9d4c",
+      "task_id": "task-bbbb2a82654d471fa711b0f72769c068",
+      "stream": {
+        "lag": 0,
+        "pending": 0,
+        "retained_entries": 1,
+        "configured_max_entries_approximate": 10000,
+        "reclaim_cursor": "0-0"
+      },
+      "database": {
+        "mode": "redis",
+        "authority": "authority-b4931accbcac4e948064e1924dbe9d4c",
+        "outbox": {
+          "pending": 0,
+          "sent": 0,
+          "exhausted": 0
+        },
+        "tasks": [],
+        "dispatch_failures": [],
+        "archive": [
+          {
+            "stream_id": "1792678655318-0",
+            "event_id": "wake-429a1503ac744bafb61327c115e26deb",
+            "task_id": "task-bbbb2a82654d471fa711b0f72769c068",
+            "reason": "task_deleted",
+            "payload_digest": "8d3135a0ef418da8c49550d510ef4770525553b356f4a56bce5e628b092acf25",
+            "recorded_at": 1792678657.421624
+          }
+        ]
+      },
+      "publication_count": 0
+    },
+    {
+      "case": "recovery_exhausted",
+      "schema": "s6_fault_8a43f94c6b384280b5b53721b3ad11ea",
+      "status": "passed",
+      "processes": [
+        {
+          "pid": 107209,
+          "role": "publish",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_8a43f94c6b384280b5b53721b3ad11ea/process-0.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 107216,
+          "role": "work",
+          "arguments": [
+            "--fault",
+            "after_claim"
+          ],
+          "log": "output/expansion/s6_fault_8a43f94c6b384280b5b53721b3ad11ea/process-1.log",
+          "exit_code": 71
+        },
+        {
+          "pid": 107224,
+          "role": "work",
+          "arguments": [
+            "--fault",
+            "after_claim"
+          ],
+          "log": "output/expansion/s6_fault_8a43f94c6b384280b5b53721b3ad11ea/process-2.log",
+          "exit_code": 71
+        },
+        {
+          "pid": 107231,
+          "role": "work",
+          "arguments": [
+            "--fault",
+            "after_claim"
+          ],
+          "log": "output/expansion/s6_fault_8a43f94c6b384280b5b53721b3ad11ea/process-3.log",
+          "exit_code": 71
+        },
+        {
+          "pid": 107238,
+          "role": "work",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_8a43f94c6b384280b5b53721b3ad11ea/process-4.log",
+          "exit_code": 0
+        }
+      ],
+      "checks": [
+        "three_real_process_crashes_bounded_terminal_archive"
+      ],
+      "project_id": "project-47bce6036e9843e1890253119d754197",
+      "snapshot_id": "snapshot-8704a3d2ba274414983f210715eb47a7",
+      "authority": "authority-47482cc6b3004a958cf8b6d8f35ad8d8",
+      "task_id": "task-5a399bde77c94048a70cfca384d64d43",
+      "stream": {
+        "lag": 0,
+        "pending": 0,
+        "retained_entries": 1,
+        "configured_max_entries_approximate": 10000,
+        "reclaim_cursor": "0-0"
+      },
+      "database": {
+        "mode": "redis",
+        "authority": "authority-47482cc6b3004a958cf8b6d8f35ad8d8",
+        "outbox": {
+          "pending": 0,
+          "sent": 1,
+          "exhausted": 0
+        },
+        "tasks": [
+          {
+            "status": "FAILED",
+            "count": 1
+          }
+        ],
+        "dispatch_failures": [],
+        "archive": [
+          {
+            "stream_id": "1792678658996-0",
+            "event_id": "wake-40de7af3026c40dbaeb3d4b7bcf883ec",
+            "task_id": "task-5a399bde77c94048a70cfca384d64d43",
+            "reason": "FAILED",
+            "payload_digest": "6c3e4a7564d05b1b47bb8028db0440cc14a4c74bb80ae52bc9f5a4ad2b713ae8",
+            "recorded_at": 1792678663.92646
+          }
+        ]
+      },
+      "publication_count": 0
+    },
+    {
+      "case": "malformed_unknown_and_permanent_failure",
+      "schema": "s6_fault_2dec27c0646c43a8987a60410827b8c6",
+      "status": "passed",
+      "processes": [
+        {
+          "pid": 107253,
+          "role": "publish",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_2dec27c0646c43a8987a60410827b8c6/process-0.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 107261,
+          "role": "work",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_2dec27c0646c43a8987a60410827b8c6/process-1.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 107269,
+          "role": "work",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_2dec27c0646c43a8987a60410827b8c6/process-2.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 107276,
+          "role": "work",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_2dec27c0646c43a8987a60410827b8c6/process-3.log",
+          "exit_code": 0
+        }
+      ],
+      "checks": [
+        "real_bad_unknown_and_integrity_failure_durable_safe_archive"
+      ],
+      "project_id": "project-f92b7a484fbf4fab89fd4d5b9d7437c2",
+      "snapshot_id": "snapshot-fe68e37daeaf41c7915eb7dd1f708f6a",
+      "authority": "authority-93e567e7c74b409a839e9bc1121824cc",
+      "task_id": "task-948a5287830a4d1c9e5056a08084493a",
+      "stream": {
+        "lag": 0,
+        "pending": 0,
+        "retained_entries": 3,
+        "configured_max_entries_approximate": 10000,
+        "reclaim_cursor": "0-0"
+      },
+      "database": {
+        "mode": "redis",
+        "authority": "authority-93e567e7c74b409a839e9bc1121824cc",
+        "outbox": {
+          "pending": 0,
+          "sent": 1,
+          "exhausted": 0
+        },
+        "tasks": [
+          {
+            "status": "FAILED",
+            "count": 1
+          }
+        ],
+        "dispatch_failures": [],
+        "archive": [
+          {
+            "stream_id": "1792678666865-0",
+            "event_id": "wake-ec1abe01aff74938b0a3357fe74f1e95",
+            "task_id": "task-109feab9e5164ace8e58f5b9785e8176",
+            "reason": "unknown_task",
+            "payload_digest": "252dbba95b29d9e861d69d3dc4296b66d74bd40dd03cd9630cecf5930ccb1f46",
+            "recorded_at": 1792678668.918932
+          },
+          {
+            "stream_id": "1792678666864-0",
+            "event_id": null,
+            "task_id": null,
+            "reason": "invalid_message",
+            "payload_digest": "0e47daf11c20cd6011cbf24da600c48c7668c66c3ad571f4e837d56be1867fc5",
+            "recorded_at": 1792678667.838002
+          },
+          {
+            "stream_id": "1792678665604-0",
+            "event_id": "wake-9039fe0ff38d48d19c663b940186de21",
+            "task_id": "task-948a5287830a4d1c9e5056a08084493a",
+            "reason": "FAILED",
+            "payload_digest": "7664314af263c57ef22d53d622535a56f47cd4689c3e9015912913c42fdb752c",
+            "recorded_at": 1792678666.707796
+          }
+        ]
+      },
+      "publication_count": 0
+    },
+    {
+      "case": "queue_deleted_reconcile",
+      "schema": "s6_fault_9254994ee33b40ba96e8f35469667f78",
+      "status": "passed",
+      "processes": [
+        {
+          "pid": 107291,
+          "role": "publish",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_9254994ee33b40ba96e8f35469667f78/process-0.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 107299,
+          "role": "reconcile",
+          "arguments": [
+            "--reconcile-age",
+            ".1"
+          ],
+          "log": "output/expansion/s6_fault_9254994ee33b40ba96e8f35469667f78/process-1.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 107306,
+          "role": "publish",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_9254994ee33b40ba96e8f35469667f78/process-2.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 107313,
+          "role": "work",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_9254994ee33b40ba96e8f35469667f78/process-3.log",
+          "exit_code": 0
+        }
+      ],
+      "checks": [
+        "own_stream_deleted_PG_explicit_reconciliation",
+        "exactly_one_effective_publication",
+        "original_HTTP_task_search_and_cross_owner_404"
+      ],
+      "project_id": "project-74a889e45e394722b44854ad9211e3bb",
+      "snapshot_id": "snapshot-ae3df4f06bde4a71953d820145422225",
+      "authority": "authority-ad7c57defbbd461e954a64e1e7373293",
+      "task_id": "task-ae66d1ef045149c7892d23b6c83e8c4e",
+      "task": {
+        "task_id": "task-ae66d1ef045149c7892d23b6c83e8c4e",
+        "project_id": "project-74a889e45e394722b44854ad9211e3bb",
+        "snapshot_id": "snapshot-ae3df4f06bde4a71953d820145422225",
+        "status": "SUCCEEDED",
+        "stage": "completed",
+        "attempts": 1,
+        "created_at": 1792678669.484416,
+        "updated_at": 1792678673.914603,
+        "error_code": null,
+        "generation": 1,
+        "config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+        "result": {
+          "chunks": 8,
+          "edges": 6,
+          "elapsed_ms": 3,
+          "embedding_model": null,
+          "file_manifest_hash": "c4d536a8a526ca90f759ed4deb993caeb386c1fda3dfe4a76f300fb8b21dd089",
+          "file_status": {
+            "README.md": "document",
+            "app/api.py": "python_ast",
+            "app/storage.py": "python_ast",
+            "tests/test_storage.py": "python_ast"
+          },
+          "files": 4,
+          "generation": 1,
+          "index_version": "code-syntax-v3-1/chunks-2",
+          "indexing_config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+          "oversized_lines_omitted": 0,
+          "publication_id": "publication-09e4eceba7c444778332d489b2920e14",
+          "runtime_executed": false,
+          "snapshot_id": "snapshot-ae3df4f06bde4a71953d820145422225",
+          "storage_backend": "postgresql",
+          "symbols": 6,
+          "unresolved_references": 0,
+          "vector_index_identity": null,
+          "warnings": {}
+        },
+        "events": [
+          {
+            "seq": 1,
+            "kind": "submitted",
+            "attempt": 0,
+            "recorded_at": 1792678669.486537
+          },
+          {
+            "seq": 2,
+            "kind": "dispatch_reconciled",
+            "attempt": 0,
+            "recorded_at": 1792678671.709615
+          },
+          {
+            "seq": 3,
+            "kind": "claimed",
+            "attempt": 1,
+            "recorded_at": 1792678673.903624
+          },
+          {
+            "seq": 4,
+            "kind": "publication_committed",
+            "attempt": 1,
+            "recorded_at": 1792678673.915194
+          }
+        ]
+      },
+      "stream": {
+        "lag": 0,
+        "pending": 0,
+        "retained_entries": 1,
+        "configured_max_entries_approximate": 10000,
+        "reclaim_cursor": "0-0"
+      },
+      "database": {
+        "mode": "redis",
+        "authority": "authority-ad7c57defbbd461e954a64e1e7373293",
+        "outbox": {
+          "pending": 0,
+          "sent": 1,
+          "exhausted": 0
+        },
+        "tasks": [
+          {
+            "status": "SUCCEEDED",
+            "count": 1
+          }
+        ],
+        "dispatch_failures": [],
+        "archive": []
+      },
+      "publication_count": 1
+    },
+    {
+      "case": "owned_redis_restart",
+      "schema": "s6_fault_3d502be25246481ca33c0e633a9ca10f",
+      "status": "passed",
+      "processes": [
+        {
+          "pid": 107329,
+          "role": "publish",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_3d502be25246481ca33c0e633a9ca10f/process-0.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 107342,
+          "role": "publish",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_3d502be25246481ca33c0e633a9ca10f/process-1.log",
+          "exit_code": 0
+        },
+        {
+          "pid": 107349,
+          "role": "work",
+          "arguments": [],
+          "log": "output/expansion/s6_fault_3d502be25246481ca33c0e633a9ca10f/process-2.log",
+          "exit_code": 0
+        }
+      ],
+      "checks": [
+        "real_owned_Redis_restart_AOF_group_and_message_survived",
+        "exactly_one_effective_publication",
+        "original_HTTP_task_search_and_cross_owner_404"
+      ],
+      "project_id": "project-a289579af409493f857e8b835f67b078",
+      "snapshot_id": "snapshot-b0f491e57cf145d799c9c983db499810",
+      "authority": "authority-01441a147ab04b7a985f1afc1e62dcc3",
+      "task_id": "task-fbe48c70b6474ac3988c61002039d7b2",
+      "redis_restart": {
+        "old_pid": 103501,
+        "new_pid": 107338,
+        "only_owned_unix_socket": true
+      },
+      "task": {
+        "task_id": "task-fbe48c70b6474ac3988c61002039d7b2",
+        "project_id": "project-a289579af409493f857e8b835f67b078",
+        "snapshot_id": "snapshot-b0f491e57cf145d799c9c983db499810",
+        "status": "SUCCEEDED",
+        "stage": "completed",
+        "attempts": 1,
+        "created_at": 1792678674.675993,
+        "updated_at": 1792678677.893037,
+        "error_code": null,
+        "generation": 1,
+        "config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+        "result": {
+          "chunks": 8,
+          "edges": 6,
+          "elapsed_ms": 4,
+          "embedding_model": null,
+          "file_manifest_hash": "c4d536a8a526ca90f759ed4deb993caeb386c1fda3dfe4a76f300fb8b21dd089",
+          "file_status": {
+            "README.md": "document",
+            "app/api.py": "python_ast",
+            "app/storage.py": "python_ast",
+            "tests/test_storage.py": "python_ast"
+          },
+          "files": 4,
+          "generation": 1,
+          "index_version": "code-syntax-v3-1/chunks-2",
+          "indexing_config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+          "oversized_lines_omitted": 0,
+          "publication_id": "publication-b3f953cdae7a432994d00fb2b23bf70a",
+          "runtime_executed": false,
+          "snapshot_id": "snapshot-b0f491e57cf145d799c9c983db499810",
+          "storage_backend": "postgresql",
+          "symbols": 6,
+          "unresolved_references": 0,
+          "vector_index_identity": null,
+          "warnings": {}
+        },
+        "events": [
+          {
+            "seq": 1,
+            "kind": "submitted",
+            "attempt": 0,
+            "recorded_at": 1792678674.678257
+          },
+          {
+            "seq": 2,
+            "kind": "claimed",
+            "attempt": 1,
+            "recorded_at": 1792678677.882502
+          },
+          {
+            "seq": 3,
+            "kind": "publication_committed",
+            "attempt": 1,
+            "recorded_at": 1792678677.893468
+          }
+        ]
+      },
+      "stream": {
+        "lag": 0,
+        "pending": 0,
+        "retained_entries": 1,
+        "configured_max_entries_approximate": 10000,
+        "reclaim_cursor": "0-0"
+      },
+      "database": {
+        "mode": "redis",
+        "authority": "authority-01441a147ab04b7a985f1afc1e62dcc3",
+        "outbox": {
+          "pending": 0,
+          "sent": 1,
+          "exhausted": 0
+        },
+        "tasks": [
+          {
+            "status": "SUCCEEDED",
+            "count": 1
+          }
+        ],
+        "dispatch_failures": [],
+        "archive": []
+      },
+      "publication_count": 1
+    }
+  ],
+  "status": "passed",
+  "source_identity": "1be116abf36d714fdc7c05e3ad9967f8b17d9818c406cd0dc3ae9d212a259852"
+}

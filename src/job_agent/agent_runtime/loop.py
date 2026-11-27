@@ -10,6 +10,7 @@ from job_agent.agent_runtime.contracts import (
     AgentAction,
     AgentFinish,
     AgentInputRequest,
+    AgentLoopConfig,
     AgentModelContext,
     AgentModelResponse,
     AgentRunResult,
@@ -99,6 +100,7 @@ class AgentLoop:
         prompt_version: str = "unknown",
         max_same_verifier_reason: int | None = None,
         executor: ToolExecutor | None = None,
+        config: AgentLoopConfig | None = None,
     ) -> None:
         if max_same_verifier_reason is not None and max_same_verifier_reason <= 0:
             raise ValueError("max_same_verifier_reason must be positive")
@@ -116,6 +118,7 @@ class AgentLoop:
         self.skill_version = skill_version
         self.prompt_version = prompt_version
         self.max_same_verifier_reason = max_same_verifier_reason
+        self.config = config or AgentLoopConfig()
 
     def run(
         self,
@@ -268,6 +271,13 @@ class AgentLoop:
 
         while True:
             if pending_action is None:
+                if state.step_index >= self.config.max_steps:
+                    return self._finish_run(
+                        state=state,
+                        status=AgentRunStatus.BUDGET_EXCEEDED,
+                        error_code="step_budget_exhausted",
+                        preserve_checkpoint=True,
+                    )
                 try:
                     self.budget.ensure_available()
                 except BudgetExceededError as exc:
@@ -317,6 +327,9 @@ class AgentLoop:
                         model=response.model,
                         input_tokens=response.input_tokens,
                         output_tokens=response.output_tokens,
+                        cached_tokens=response.cached_tokens,
+                        reasoning_tokens=response.reasoning_tokens,
+                        cost=response.cost,
                     )
                 )
 

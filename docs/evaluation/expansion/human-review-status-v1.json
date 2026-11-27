@@ -1,0 +1,9 @@
+{
+  "dataset_version": "expansion-final-candidates-3",
+  "packet": "human-review-packet-v1.json",
+  "status": "deferred_by_user_continue_engineering",
+  "human_reviewed_count": 0,
+  "source": "direct_user_reply_2026-10-22",
+  "quality_claim": null,
+  "note": "User explicitly chose later human review and continuing engineering. No candidate labels were promoted."
+}

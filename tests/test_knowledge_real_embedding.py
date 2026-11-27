@@ -5,10 +5,25 @@ import pytest
 from job_agent.knowledge.contracts import KnowledgeChunk
 from job_agent.knowledge.qwen_embedding import QwenEmbeddingBackend
 from job_agent.knowledge.retriever import KnowledgeRetriever
-from job_agent.knowledge.vector_index import InMemoryVectorIndex
+from job_agent.knowledge.faiss_vector_index import FAISSVectorIndex
 
 
 MODEL_PATH = os.environ.get("QWEN_EMBEDDING_MODEL_PATH")
+_SYNTHETIC_DOCUMENT_HASH = "0" * 64
+
+
+def _chunk(chunk_id: str, text: str, chunk_index: int) -> KnowledgeChunk:
+    start_offset = chunk_index * 1000
+    return KnowledgeChunk(
+        chunk_id=chunk_id,
+        document_id="synthetic-real-embedding-document",
+        document_version=1,
+        document_content_hash=_SYNTHETIC_DOCUMENT_HASH,
+        text=text,
+        chunk_index=chunk_index,
+        start_offset=start_offset,
+        end_offset=start_offset + len(text),
+    )
 
 
 @pytest.mark.skipif(
@@ -21,29 +36,29 @@ def test_real_embedding_retrieves_semantic_match() -> None:
     )
 
     chunks = [
-        KnowledgeChunk(
-            chunk_id="agent-runtime",
-            text=(
+        _chunk(
+            "agent-runtime",
+            (
                 "Implemented an Agent Runtime with tool execution, "
                 "policy enforcement, checkpoints, and MCP integration."
             ),
-            source="projects/job_agent.md",
+            0,
         ),
-        KnowledgeChunk(
-            chunk_id="visual-grounding",
-            text=(
+        _chunk(
+            "visual-grounding",
+            (
                 "Built a visual grounding system for object "
                 "localization across images."
             ),
-            source="projects/scvib.md",
+            1,
         ),
-        KnowledgeChunk(
-            chunk_id="materials",
-            text=(
+        _chunk(
+            "materials",
+            (
                 "Studied material properties and metallurgical "
                 "engineering."
             ),
-            source="education.md",
+            2,
         ),
     ]
 
@@ -51,7 +66,7 @@ def test_real_embedding_retrieves_semantic_match() -> None:
         [chunk.text for chunk in chunks]
     )
 
-    index = InMemoryVectorIndex()
+    index = FAISSVectorIndex()
     index.add(
         chunks=chunks,
         vectors=vectors,

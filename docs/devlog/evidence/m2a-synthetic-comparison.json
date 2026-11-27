@@ -1,0 +1,613 @@
+{
+  "scope": "one synthetic plain-text resume with 25 manually specified expected fields; no real-resume/model accuracy conclusion",
+  "expected": {
+    "personal.name": "张晓明",
+    "personal.phone": "13800000000",
+    "personal.email": "demo@example.invalid",
+    "education.0.school": "示例大学",
+    "education.0.major": "计算机科学与技术",
+    "education.0.degree": "本科",
+    "education.0.period": "2022.09—2026.06",
+    "projects.0.name": "求职资料管理平台",
+    "projects.0.role": "后端开发",
+    "projects.0.period": "2025.03—2025.06",
+    "projects.0.bullets.0": "项目描述：为合成求职资料提供管理界面。",
+    "projects.0.bullets.1": "负责 Python 接口与数据校验。",
+    "projects.0.bullets.2": "使用 SQLite 保存版本，未进行生产部署。",
+    "projects.1.name": "课程检索工具",
+    "projects.1.role": "项目负责人",
+    "projects.1.period": "2024.09—2024.12",
+    "projects.1.bullets.0": "基于课程样例实现关键词检索。",
+    "experience.0.organization": "示例科技有限公司",
+    "experience.0.role": "后端开发实习生",
+    "experience.0.period": "2025.07—2025.09",
+    "experience.0.bullets.0": "参与内部接口回归测试。",
+    "skills.0": "Python",
+    "skills.1": "SQL",
+    "skills.2": "Git",
+    "skills.3": "了解 Redis，不熟悉 Kubernetes。"
+  },
+  "runs": {
+    "before": {
+      "matching_fields": 3,
+      "target_fields": 25,
+      "matched_paths": [
+        "skills.0",
+        "skills.1",
+        "skills.2"
+      ],
+      "document": {
+        "schema_version": 1,
+        "personal": {
+          "name": null,
+          "email": null,
+          "phone": null,
+          "location": null,
+          "links": []
+        },
+        "summary": [],
+        "education": [
+          {
+            "entry_id": "education-0",
+            "school": {
+              "fact_id": "f-08411ff067bdb20dc39e",
+              "text": "2022.09—2026.06  示例大学  计算机科学与技术  本科",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 43,
+                "end": 78
+              }
+            },
+            "degree": null,
+            "major": null,
+            "period": null,
+            "highlights": []
+          },
+          {
+            "entry_id": "education-1",
+            "school": {
+              "fact_id": "f-daf2246a7832d70cb57c",
+              "text": "项目经验",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 79,
+                "end": 83
+              }
+            },
+            "degree": null,
+            "major": null,
+            "period": null,
+            "highlights": []
+          },
+          {
+            "entry_id": "education-2",
+            "school": {
+              "fact_id": "f-11d376bb7a785d8fe320",
+              "text": "求职资料管理平台  后端开发  2025.03—2025.06",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 84,
+                "end": 115
+              }
+            },
+            "degree": null,
+            "major": null,
+            "period": null,
+            "highlights": []
+          },
+          {
+            "entry_id": "education-3",
+            "school": {
+              "fact_id": "f-9e202e6b868004c29052",
+              "text": "项目描述：为合成求职资料提供管理界面。",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 116,
+                "end": 135
+              }
+            },
+            "degree": null,
+            "major": null,
+            "period": null,
+            "highlights": []
+          },
+          {
+            "entry_id": "education-4",
+            "school": {
+              "fact_id": "f-11124c184fd8e0013a2c",
+              "text": "负责 Python 接口与数据校验。",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 136,
+                "end": 154
+              }
+            },
+            "degree": null,
+            "major": null,
+            "period": null,
+            "highlights": []
+          },
+          {
+            "entry_id": "education-5",
+            "school": {
+              "fact_id": "f-a9e4670e67115341268e",
+              "text": "使用 SQLite 保存版本，未进行生产部署。",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 155,
+                "end": 178
+              }
+            },
+            "degree": null,
+            "major": null,
+            "period": null,
+            "highlights": []
+          },
+          {
+            "entry_id": "education-6",
+            "school": {
+              "fact_id": "f-ce16c869fb73db164731",
+              "text": "课程检索工具  项目负责人  2024.09—2024.12",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 180,
+                "end": 210
+              }
+            },
+            "degree": null,
+            "major": null,
+            "period": null,
+            "highlights": []
+          },
+          {
+            "entry_id": "education-7",
+            "school": {
+              "fact_id": "f-0eb554134b153e17ece4",
+              "text": "基于课程样例实现关键词检索。",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 211,
+                "end": 225
+              }
+            },
+            "degree": null,
+            "major": null,
+            "period": null,
+            "highlights": []
+          }
+        ],
+        "experience": [
+          {
+            "entry_id": "experience-0",
+            "organization": {
+              "fact_id": "f-d9fcab0c9d3cd9f856c6",
+              "text": "示例科技有限公司  后端开发实习生  2025.07—2025.09",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 231,
+                "end": 265
+              }
+            },
+            "role": null,
+            "period": null,
+            "bullets": []
+          },
+          {
+            "entry_id": "experience-1",
+            "organization": {
+              "fact_id": "f-f88230b96af042204b20",
+              "text": "参与内部接口回归测试。",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 266,
+                "end": 277
+              }
+            },
+            "role": null,
+            "period": null,
+            "bullets": []
+          }
+        ],
+        "projects": [],
+        "skills": [
+          {
+            "fact_id": "f-009a375042c96ccbe345",
+            "text": "Python",
+            "source": {
+              "source_id": "synthetic-only",
+              "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+              "start": 283,
+              "end": 289
+            }
+          },
+          {
+            "fact_id": "f-5c85263a7e1c129b2f59",
+            "text": "SQL",
+            "source": {
+              "source_id": "synthetic-only",
+              "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+              "start": 290,
+              "end": 293
+            }
+          },
+          {
+            "fact_id": "f-7a3a5944f6b90afcec4c",
+            "text": "Git",
+            "source": {
+              "source_id": "synthetic-only",
+              "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+              "start": 294,
+              "end": 297
+            }
+          },
+          {
+            "fact_id": "f-0a85cc63f2a1ff703c3a",
+            "text": "了解 Redis",
+            "source": {
+              "source_id": "synthetic-only",
+              "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+              "start": 298,
+              "end": 306
+            }
+          },
+          {
+            "fact_id": "f-72d87924518f926a97a5",
+            "text": "不熟悉 Kubernetes。",
+            "source": {
+              "source_id": "synthetic-only",
+              "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+              "start": 307,
+              "end": 322
+            }
+          },
+          {
+            "fact_id": "f-9c154ce5776d9c550dd9",
+            "text": "荣誉奖项",
+            "source": {
+              "source_id": "synthetic-only",
+              "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+              "start": 323,
+              "end": 327
+            }
+          },
+          {
+            "fact_id": "f-2a2984de040d24c0c164",
+            "text": "合成竞赛一等奖",
+            "source": {
+              "source_id": "synthetic-only",
+              "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+              "start": 328,
+              "end": 335
+            }
+          }
+        ]
+      }
+    },
+    "after": {
+      "matching_fields": 25,
+      "target_fields": 25,
+      "matched_paths": [
+        "personal.name",
+        "personal.phone",
+        "personal.email",
+        "education.0.school",
+        "education.0.major",
+        "education.0.degree",
+        "education.0.period",
+        "projects.0.name",
+        "projects.0.role",
+        "projects.0.period",
+        "projects.0.bullets.0",
+        "projects.0.bullets.1",
+        "projects.0.bullets.2",
+        "projects.1.name",
+        "projects.1.role",
+        "projects.1.period",
+        "projects.1.bullets.0",
+        "experience.0.organization",
+        "experience.0.role",
+        "experience.0.period",
+        "experience.0.bullets.0",
+        "skills.0",
+        "skills.1",
+        "skills.2",
+        "skills.3"
+      ],
+      "document": {
+        "schema_version": 1,
+        "personal": {
+          "name": {
+            "fact_id": "f-af0c531426cf3a05d6a4",
+            "text": "张晓明",
+            "source": {
+              "source_id": "synthetic-only",
+              "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+              "start": 0,
+              "end": 3
+            }
+          },
+          "email": {
+            "fact_id": "f-85747b0e07dbc5239fe6",
+            "text": "demo@example.invalid",
+            "source": {
+              "source_id": "synthetic-only",
+              "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+              "start": 17,
+              "end": 37
+            }
+          },
+          "phone": {
+            "fact_id": "f-3d5e3a3e6d8910dd257c",
+            "text": "13800000000",
+            "source": {
+              "source_id": "synthetic-only",
+              "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+              "start": 4,
+              "end": 15
+            }
+          },
+          "location": null,
+          "links": []
+        },
+        "summary": [],
+        "education": [
+          {
+            "entry_id": "education-0",
+            "school": {
+              "fact_id": "f-08411ff067bdb20dc39e",
+              "text": "示例大学",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 60,
+                "end": 64
+              }
+            },
+            "degree": {
+              "fact_id": "f-104e2d6088241cfd7df2",
+              "text": "本科",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 76,
+                "end": 78
+              }
+            },
+            "major": {
+              "fact_id": "f-e52174bf35ee75361475",
+              "text": "计算机科学与技术",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 66,
+                "end": 74
+              }
+            },
+            "period": {
+              "fact_id": "f-e2dc183fcd81e05a57af",
+              "text": "2022.09—2026.06",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 43,
+                "end": 58
+              }
+            },
+            "highlights": []
+          }
+        ],
+        "experience": [
+          {
+            "entry_id": "experience-0",
+            "organization": {
+              "fact_id": "f-d9fcab0c9d3cd9f856c6",
+              "text": "示例科技有限公司",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 231,
+                "end": 239
+              }
+            },
+            "role": {
+              "fact_id": "f-95ca02e0e7f59332be8c",
+              "text": "后端开发实习生",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 241,
+                "end": 248
+              }
+            },
+            "period": {
+              "fact_id": "f-9b1b46e8ba3bd9c00649",
+              "text": "2025.07—2025.09",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 250,
+                "end": 265
+              }
+            },
+            "bullets": [
+              {
+                "fact_id": "f-6eab88e8e71311f8c7b2",
+                "text": "参与内部接口回归测试。",
+                "source": {
+                  "source_id": "synthetic-only",
+                  "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                  "start": 266,
+                  "end": 277
+                }
+              }
+            ]
+          }
+        ],
+        "projects": [
+          {
+            "entry_id": "projects-0",
+            "name": {
+              "fact_id": "f-c6cfc4717fe73af31003",
+              "text": "求职资料管理平台",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 84,
+                "end": 92
+              }
+            },
+            "role": {
+              "fact_id": "f-075a68a8a6cf1dfef9f5",
+              "text": "后端开发",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 94,
+                "end": 98
+              }
+            },
+            "period": {
+              "fact_id": "f-2116ac3657a065c871e9",
+              "text": "2025.03—2025.06",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 100,
+                "end": 115
+              }
+            },
+            "bullets": [
+              {
+                "fact_id": "f-ba46b77e1720a9404047",
+                "text": "项目描述：为合成求职资料提供管理界面。",
+                "source": {
+                  "source_id": "synthetic-only",
+                  "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                  "start": 116,
+                  "end": 135
+                }
+              },
+              {
+                "fact_id": "f-6e1ec257874e974694c7",
+                "text": "负责 Python 接口与数据校验。",
+                "source": {
+                  "source_id": "synthetic-only",
+                  "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                  "start": 136,
+                  "end": 154
+                }
+              },
+              {
+                "fact_id": "f-67637b865b2f6f3cb5ee",
+                "text": "使用 SQLite 保存版本，未进行生产部署。",
+                "source": {
+                  "source_id": "synthetic-only",
+                  "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                  "start": 155,
+                  "end": 178
+                }
+              }
+            ]
+          },
+          {
+            "entry_id": "projects-1",
+            "name": {
+              "fact_id": "f-908da59ad81832b8e866",
+              "text": "课程检索工具",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 180,
+                "end": 186
+              }
+            },
+            "role": {
+              "fact_id": "f-56a839c034f183bca442",
+              "text": "项目负责人",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 188,
+                "end": 193
+              }
+            },
+            "period": {
+              "fact_id": "f-bdd81ca44ed9178564ac",
+              "text": "2024.09—2024.12",
+              "source": {
+                "source_id": "synthetic-only",
+                "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                "start": 195,
+                "end": 210
+              }
+            },
+            "bullets": [
+              {
+                "fact_id": "f-57e59f5287234dc119ea",
+                "text": "基于课程样例实现关键词检索。",
+                "source": {
+                  "source_id": "synthetic-only",
+                  "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+                  "start": 211,
+                  "end": 225
+                }
+              }
+            ]
+          }
+        ],
+        "skills": [
+          {
+            "fact_id": "f-009a375042c96ccbe345",
+            "text": "Python",
+            "source": {
+              "source_id": "synthetic-only",
+              "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+              "start": 283,
+              "end": 289
+            }
+          },
+          {
+            "fact_id": "f-5c85263a7e1c129b2f59",
+            "text": "SQL",
+            "source": {
+              "source_id": "synthetic-only",
+              "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+              "start": 290,
+              "end": 293
+            }
+          },
+          {
+            "fact_id": "f-7a3a5944f6b90afcec4c",
+            "text": "Git",
+            "source": {
+              "source_id": "synthetic-only",
+              "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+              "start": 294,
+              "end": 297
+            }
+          },
+          {
+            "fact_id": "f-0a85cc63f2a1ff703c3a",
+            "text": "了解 Redis，不熟悉 Kubernetes。",
+            "source": {
+              "source_id": "synthetic-only",
+              "content_hash": "3d288539b876715d85468b8e2c1da076cf8aaf72eaf69302efb0ddc42d1e331f",
+              "start": 298,
+              "end": 322
+            }
+          }
+        ]
+      }
+    }
+  }
+}

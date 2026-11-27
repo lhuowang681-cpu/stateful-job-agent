@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/scripts/expansion_research.py", line 47, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/scripts/expansion_research.py", line 34, in main
+    result=replay(ROOT,a.bundle,a.reference,a.output,split=a.split,runtime=runtime)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/knowledge/research_contract.py", line 302, in replay
+    code,public,backend=open_services(bundle,m,data,split,runtime);cases={c.case_id:c for c in data.cases if c.split==split}
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/knowledge/research_contract.py", line 192, in open_services
+    if runtime is not None and runtime_identity(runtime)!=m['runtime']:raise ValueError('research_runtime_changed')
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: research_runtime_changed

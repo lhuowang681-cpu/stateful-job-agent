@@ -1,0 +1,15 @@
+{
+  "python": "3.11.15 (main, Jun 11 2026, 15:20:16) [GCC 14.3.0]",
+  "job_agent_location": "/root/autodl-tmp/study/job-agent-v3/output/rag-round3-20261023/f5-verify-linux-v2/venv/lib/python3.11/site-packages/job_agent/__init__.py",
+  "fit_verdict_location": "/root/autodl-tmp/study/job-agent-v3/output/rag-round3-20261023/f5-verify-linux-v2/venv/lib/python3.11/site-packages/fit_verdict_engine/__init__.py",
+  "isolated_mode": true,
+  "launcher": true,
+  "checks": [
+    "anonymous_401",
+    "real_http_source_parse_accept_list",
+    "all_bundled_frontend_assets_including_pdf_worker_200"
+  ],
+  "status": "passed",
+  "frontend_assets_checked": 5,
+  "server_stopped": true
+}

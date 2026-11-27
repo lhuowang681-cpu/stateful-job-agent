@@ -1,0 +1,31 @@
+{
+  "recorded_at_utc": "2026-10-22T09:43:04.693646+00:00",
+  "platform": "Linux-5.15.0-88-generic-x86_64-with-glibc2.35",
+  "python": "3.11.15",
+  "packages": {
+    "pytest": "9.1.1",
+    "fastapi": "0.115.14",
+    "pydantic": "2.13.4",
+    "langgraph": "1.2.11",
+    "uvicorn": "0.52.4",
+    "tree-sitter": "0.26.0",
+    "tree-sitter-javascript": "0.25.0",
+    "tree-sitter-typescript": "0.23.2",
+    "torch": "2.5.1+cu121",
+    "sentence-transformers": "5.7.0",
+    "transformers": "4.57.6",
+    "psycopg": "3.3.4",
+    "redis": "5.3.1",
+    "pypdf": "6.19.0",
+    "reportlab": "4.5.1"
+  },
+  "loopback_ports": {
+    "5432": false,
+    "54329": false,
+    "6379": false,
+    "63799": false
+  },
+  "source_root": "/root/autodl-tmp/study/job-agent-v3",
+  "isolation": "venv with existing job-agent-mcp system packages, added parser wheels only",
+  "upstream_repo_untouched": true
+}

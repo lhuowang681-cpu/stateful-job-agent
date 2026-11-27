@@ -1,0 +1,12 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "job_agent_location": "C:\\Users\\1\\Desktop\\\u5c31\u4e1aagent\\job-agent-v3\\.venv-review-r2\\Lib\\site-packages\\job_agent\\__init__.py",
+  "fit_verdict_location": "C:\\Users\\1\\Desktop\\\u5c31\u4e1aagent\\job-agent-v3\\.venv-review-r2\\Lib\\site-packages\\fit_verdict_engine\\__init__.py",
+  "isolated_mode": true,
+  "checks": [
+    "anonymous_401",
+    "real_http_source_parse_accept_list"
+  ],
+  "status": "passed",
+  "server_stopped": true
+}

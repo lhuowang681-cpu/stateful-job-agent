@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-20",
+  "scope": "documentation backfill end; not a new business phase commit",
+  "branch": "main",
+  "head": "067bfc7d63408e1e6b0ab6c227e863bd08a5857a",
+  "status_short": "M .gitignore\n M README.md\n M docs/architecture.md\n M docs/evaluation.md\n M docs/interview_notes.md\n M docs/resume_notes.md\n M pyproject.toml\n M src/job_agent/backend_service/application_assistant.py\n M src/job_agent/backend_service/application_evaluation.py\n M src/job_agent/evidence/level_policy.py\n M src/job_agent/evidence/mapping.py\n M src/job_agent/evidence/pipeline.py\n M src/job_agent/evidence/projections.py\n M src/job_agent/evidence/sources.py\n M src/job_agent/knowledge/qwen_embedding.py\n M tests/test_application_assistant_evaluation.py\n M tests/test_ui_app_test.py\n?? AGENTS.md\n?? GIT_LOG.txt\n?? GIT_STATUS.txt\n?? UNCOMMITTED_DIFF.txt\n?? docs/CONTINUE_DEVELOPMENT.md\n?? docs/INTERVIEW_SOURCE_GUIDE.md\n?? docs/PROJECT_AUDIT.md\n?? docs/audit/\n?? docs/devlog/\n?? docs/upgrade/\n?? frontend/\n?? hits[1].score\n?? scripts/demo_resume_versions.py\n?? scripts/demo_resume_workbench.py\n?? src/job_agent/resume_workspace/\n?? tests/test_resume_import.py\n?? tests/test_resume_workspace.py\n?? tests/test_source_audit_regressions.py",
+  "diff_stat": ".gitignore                                         |   5 +\n README.md                                          |  76 ++++++++++++--\n docs/architecture.md                               |   5 +\n docs/evaluation.md                                 |   4 +\n docs/interview_notes.md                            |   5 +\n docs/resume_notes.md                               | 112 ++++++++++++++++++---\n pyproject.toml                                     |  12 ++-\n .../backend_service/application_assistant.py       |   1 +\n .../backend_service/application_evaluation.py      |  25 +++--\n src/job_agent/evidence/level_policy.py             |   5 +\n src/job_agent/evidence/mapping.py                  |   2 +-\n src/job_agent/evidence/pipeline.py                 |   8 +-\n src/job_agent/evidence/projections.py              |   7 ++\n src/job_agent/evidence/sources.py                  |   3 +-\n src/job_agent/knowledge/qwen_embedding.py          |  14 ++-\n tests/test_application_assistant_evaluation.py     |  29 ++++++\n tests/test_ui_app_test.py                          |   6 +-\n 17 files changed, 276 insertions(+), 43 deletions(-)",
+  "note": "Git diff stat excludes untracked new documents/code; phase snapshots give historical file changes.",
+  "runtime_source_changes_since_backfill_start": [],
+  "published_m2_code_files_checked": 465,
+  "published_m2_code_changes": [],
+  "commits_or_remote_mutations": "none"
+}

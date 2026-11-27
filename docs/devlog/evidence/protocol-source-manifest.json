@@ -1,0 +1,13 @@
+{
+  "archive_sha256": "daa15c949e73f769e6a110632005f4d644825195f29d2c9b47e6b8248caa210d",
+  "original_files": {
+    "AGENTS.md": "92cc7bb7748a92697a85642ad9683050406c293940c8e6a214bfe99dfdd48e02",
+    "docs/devlog/INDEX.md": "60658eeb141e3de01c542d3d6cf67d31e54eae4f03576aaebac3bda18477450f",
+    "docs/devlog/CODEX_TASK_PROMPT.md": "f8b7c39cf11ffe10694427ed0434a82830fe6ab8f32a52350a29055f69a18aab",
+    "docs/devlog/ARCHITECTURE_MAP.md": "11ce9d3f505e09d858b6dd2f0862bb38475a28f31a85ce24711798c35417fb69",
+    "docs/devlog/_PHASE_TEMPLATE.md": "95d7ea3e90a5db77703527825728c31ef64e0c2e41e9dfbb6917ee170986d2db",
+    "docs/devlog/DECISIONS.md": "db73f868c3342e0f130b9d508adeca8951dd9602dda9d1ca9f412abf091f7f10"
+  },
+  "root_agents": "verbatim original followed by project continuation links",
+  "template_and_task_prompt": "verbatim originals; task placeholder is not a queued task"
+}

@@ -1,0 +1,3062 @@
+{
+  "dataset_sha256": "255bf47b9ca165efb96eb97fdab551059f2e9591ede6f734b849a974543d9486",
+  "corpus_sha256": "a66e0b4bfad176f301e18419705ff4628408f91626f8dbd80cf472229917e8a4",
+  "scope": "post-implementation exact-tag diagnostic; no human semantic labels",
+  "unique_query_strings": 39,
+  "questions_in_corpus": 10,
+  "limitations": [
+    "Gold is exact tag membership, not semantic relevance.",
+    "Repeated query strings are reported, not independent human judgments.",
+    "Tag baseline and labels share metadata: diagnostic checks routing, not generalization.",
+    "Hybrid is explicit BM25 fallback; dense and reranker NOT_RUN."
+  ],
+  "model_calls": 0,
+  "summary": [
+    {
+      "method": "none",
+      "queries": 40,
+      "recall_at_5_macro": 0.0,
+      "mrr": 0,
+      "returned_references": 0,
+      "citation_accuracy": null,
+      "duplicate_results": 0
+    },
+    {
+      "method": "tag",
+      "queries": 40,
+      "recall_at_5_macro": 1.0,
+      "mrr": 1.0,
+      "returned_references": 42,
+      "citation_accuracy": 1.0,
+      "duplicate_results": 0
+    },
+    {
+      "method": "bm25",
+      "queries": 40,
+      "recall_at_5_macro": 0.5,
+      "mrr": 0.525,
+      "returned_references": 35,
+      "citation_accuracy": 1.0,
+      "duplicate_results": 0
+    },
+    {
+      "method": "hybrid",
+      "queries": 40,
+      "recall_at_5_macro": 0.5,
+      "mrr": 0.525,
+      "returned_references": 35,
+      "citation_accuracy": 1.0,
+      "duplicate_results": 0
+    }
+  ],
+  "rows": [
+    {
+      "method": "none",
+      "query_id": "question-checkpoint-0",
+      "query": "LangGraph",
+      "gold": [
+        "question-checkpoint"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.009
+    },
+    {
+      "method": "none",
+      "query_id": "question-checkpoint-1",
+      "query": "checkpoint",
+      "gold": [
+        "question-checkpoint"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.005
+    },
+    {
+      "method": "none",
+      "query_id": "question-checkpoint-2",
+      "query": "state",
+      "gold": [
+        "question-checkpoint"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.002
+    },
+    {
+      "method": "none",
+      "query_id": "question-checkpoint-3",
+      "query": "memory",
+      "gold": [
+        "question-checkpoint"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.002
+    },
+    {
+      "method": "none",
+      "query_id": "question-idempotency-0",
+      "query": "幂等",
+      "gold": [
+        "question-idempotency"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-idempotency-1",
+      "query": "idempotency",
+      "gold": [
+        "question-idempotency"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-idempotency-2",
+      "query": "request_id",
+      "gold": [
+        "question-idempotency"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-idempotency-3",
+      "query": "回执",
+      "gold": [
+        "question-idempotency"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-asyncio-0",
+      "query": "asyncio",
+      "gold": [
+        "question-asyncio"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-asyncio-1",
+      "query": "Python",
+      "gold": [
+        "question-asyncio",
+        "question-ast"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-asyncio-2",
+      "query": "协程",
+      "gold": [
+        "question-asyncio"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.002
+    },
+    {
+      "method": "none",
+      "query_id": "question-asyncio-3",
+      "query": "并发",
+      "gold": [
+        "question-asyncio"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-schema-0",
+      "query": "Pydantic",
+      "gold": [
+        "question-schema"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-schema-1",
+      "query": "schema",
+      "gold": [
+        "question-schema"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.003
+    },
+    {
+      "method": "none",
+      "query_id": "question-schema-2",
+      "query": "JSON",
+      "gold": [
+        "question-schema"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-schema-3",
+      "query": "校验",
+      "gold": [
+        "question-schema"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-rrf-0",
+      "query": "BM25",
+      "gold": [
+        "question-rrf"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-rrf-1",
+      "query": "RRF",
+      "gold": [
+        "question-rrf"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-rrf-2",
+      "query": "hybrid",
+      "gold": [
+        "question-rrf"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-rrf-3",
+      "query": "检索",
+      "gold": [
+        "question-rrf"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-ast-0",
+      "query": "AST",
+      "gold": [
+        "question-ast"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-ast-1",
+      "query": "Python",
+      "gold": [
+        "question-asyncio",
+        "question-ast"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-ast-2",
+      "query": "符号",
+      "gold": [
+        "question-ast"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-ast-3",
+      "query": "静态",
+      "gold": [
+        "question-ast"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-tree-sitter-0",
+      "query": "Tree-sitter",
+      "gold": [
+        "question-tree-sitter"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-tree-sitter-1",
+      "query": "TypeScript",
+      "gold": [
+        "question-tree-sitter"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-tree-sitter-2",
+      "query": "JavaScript",
+      "gold": [
+        "question-tree-sitter"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-tree-sitter-3",
+      "query": "TSX",
+      "gold": [
+        "question-tree-sitter"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-transaction-0",
+      "query": "PostgreSQL",
+      "gold": [
+        "question-transaction"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-transaction-1",
+      "query": "事务",
+      "gold": [
+        "question-transaction"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-transaction-2",
+      "query": "Outbox",
+      "gold": [
+        "question-transaction"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-transaction-3",
+      "query": "原子",
+      "gold": [
+        "question-transaction"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-provenance-0",
+      "query": "RAG",
+      "gold": [
+        "question-provenance"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-provenance-1",
+      "query": "证据",
+      "gold": [
+        "question-provenance"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-provenance-2",
+      "query": "来源",
+      "gold": [
+        "question-provenance"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-provenance-3",
+      "query": "支持",
+      "gold": [
+        "question-provenance"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-citation-0",
+      "query": "SHA256",
+      "gold": [
+        "question-citation"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-citation-1",
+      "query": "引用",
+      "gold": [
+        "question-citation"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-citation-2",
+      "query": "commit",
+      "gold": [
+        "question-citation"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.001
+    },
+    {
+      "method": "none",
+      "query_id": "question-citation-3",
+      "query": "快照",
+      "gold": [
+        "question-citation"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "no_retrieval",
+      "warnings": [],
+      "elapsed_ms": 0.003
+    },
+    {
+      "method": "tag",
+      "query_id": "question-checkpoint-0",
+      "query": "LangGraph",
+      "gold": [
+        "question-checkpoint"
+      ],
+      "returned": [
+        "question-checkpoint"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 16.118
+    },
+    {
+      "method": "tag",
+      "query_id": "question-checkpoint-1",
+      "query": "checkpoint",
+      "gold": [
+        "question-checkpoint"
+      ],
+      "returned": [
+        "question-checkpoint"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 13.02
+    },
+    {
+      "method": "tag",
+      "query_id": "question-checkpoint-2",
+      "query": "state",
+      "gold": [
+        "question-checkpoint"
+      ],
+      "returned": [
+        "question-checkpoint"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 13.626
+    },
+    {
+      "method": "tag",
+      "query_id": "question-checkpoint-3",
+      "query": "memory",
+      "gold": [
+        "question-checkpoint"
+      ],
+      "returned": [
+        "question-checkpoint"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 13.835
+    },
+    {
+      "method": "tag",
+      "query_id": "question-idempotency-0",
+      "query": "幂等",
+      "gold": [
+        "question-idempotency"
+      ],
+      "returned": [
+        "question-idempotency"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 13.464
+    },
+    {
+      "method": "tag",
+      "query_id": "question-idempotency-1",
+      "query": "idempotency",
+      "gold": [
+        "question-idempotency"
+      ],
+      "returned": [
+        "question-idempotency"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 12.798
+    },
+    {
+      "method": "tag",
+      "query_id": "question-idempotency-2",
+      "query": "request_id",
+      "gold": [
+        "question-idempotency"
+      ],
+      "returned": [
+        "question-idempotency"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 12.407
+    },
+    {
+      "method": "tag",
+      "query_id": "question-idempotency-3",
+      "query": "回执",
+      "gold": [
+        "question-idempotency"
+      ],
+      "returned": [
+        "question-idempotency"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 14.155
+    },
+    {
+      "method": "tag",
+      "query_id": "question-asyncio-0",
+      "query": "asyncio",
+      "gold": [
+        "question-asyncio"
+      ],
+      "returned": [
+        "question-asyncio"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 13.856
+    },
+    {
+      "method": "tag",
+      "query_id": "question-asyncio-1",
+      "query": "Python",
+      "gold": [
+        "question-asyncio",
+        "question-ast"
+      ],
+      "returned": [
+        "question-asyncio",
+        "question-ast"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 2,
+      "returned_references": 2,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 14.643
+    },
+    {
+      "method": "tag",
+      "query_id": "question-asyncio-2",
+      "query": "协程",
+      "gold": [
+        "question-asyncio"
+      ],
+      "returned": [
+        "question-asyncio"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 13.822
+    },
+    {
+      "method": "tag",
+      "query_id": "question-asyncio-3",
+      "query": "并发",
+      "gold": [
+        "question-asyncio"
+      ],
+      "returned": [
+        "question-asyncio"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 15.947
+    },
+    {
+      "method": "tag",
+      "query_id": "question-schema-0",
+      "query": "Pydantic",
+      "gold": [
+        "question-schema"
+      ],
+      "returned": [
+        "question-schema"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 15.371
+    },
+    {
+      "method": "tag",
+      "query_id": "question-schema-1",
+      "query": "schema",
+      "gold": [
+        "question-schema"
+      ],
+      "returned": [
+        "question-schema"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 16.03
+    },
+    {
+      "method": "tag",
+      "query_id": "question-schema-2",
+      "query": "JSON",
+      "gold": [
+        "question-schema"
+      ],
+      "returned": [
+        "question-schema"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 14.161
+    },
+    {
+      "method": "tag",
+      "query_id": "question-schema-3",
+      "query": "校验",
+      "gold": [
+        "question-schema"
+      ],
+      "returned": [
+        "question-schema"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 14.458
+    },
+    {
+      "method": "tag",
+      "query_id": "question-rrf-0",
+      "query": "BM25",
+      "gold": [
+        "question-rrf"
+      ],
+      "returned": [
+        "question-rrf"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 14.607
+    },
+    {
+      "method": "tag",
+      "query_id": "question-rrf-1",
+      "query": "RRF",
+      "gold": [
+        "question-rrf"
+      ],
+      "returned": [
+        "question-rrf"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 14.094
+    },
+    {
+      "method": "tag",
+      "query_id": "question-rrf-2",
+      "query": "hybrid",
+      "gold": [
+        "question-rrf"
+      ],
+      "returned": [
+        "question-rrf"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 12.834
+    },
+    {
+      "method": "tag",
+      "query_id": "question-rrf-3",
+      "query": "检索",
+      "gold": [
+        "question-rrf"
+      ],
+      "returned": [
+        "question-rrf"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 13.713
+    },
+    {
+      "method": "tag",
+      "query_id": "question-ast-0",
+      "query": "AST",
+      "gold": [
+        "question-ast"
+      ],
+      "returned": [
+        "question-ast"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 13.335
+    },
+    {
+      "method": "tag",
+      "query_id": "question-ast-1",
+      "query": "Python",
+      "gold": [
+        "question-asyncio",
+        "question-ast"
+      ],
+      "returned": [
+        "question-asyncio",
+        "question-ast"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 2,
+      "returned_references": 2,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 14.998
+    },
+    {
+      "method": "tag",
+      "query_id": "question-ast-2",
+      "query": "符号",
+      "gold": [
+        "question-ast"
+      ],
+      "returned": [
+        "question-ast"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 14.039
+    },
+    {
+      "method": "tag",
+      "query_id": "question-ast-3",
+      "query": "静态",
+      "gold": [
+        "question-ast"
+      ],
+      "returned": [
+        "question-ast"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 13.414
+    },
+    {
+      "method": "tag",
+      "query_id": "question-tree-sitter-0",
+      "query": "Tree-sitter",
+      "gold": [
+        "question-tree-sitter"
+      ],
+      "returned": [
+        "question-tree-sitter"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 15.381
+    },
+    {
+      "method": "tag",
+      "query_id": "question-tree-sitter-1",
+      "query": "TypeScript",
+      "gold": [
+        "question-tree-sitter"
+      ],
+      "returned": [
+        "question-tree-sitter"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 13.398
+    },
+    {
+      "method": "tag",
+      "query_id": "question-tree-sitter-2",
+      "query": "JavaScript",
+      "gold": [
+        "question-tree-sitter"
+      ],
+      "returned": [
+        "question-tree-sitter"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 14.847
+    },
+    {
+      "method": "tag",
+      "query_id": "question-tree-sitter-3",
+      "query": "TSX",
+      "gold": [
+        "question-tree-sitter"
+      ],
+      "returned": [
+        "question-tree-sitter"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 13.884
+    },
+    {
+      "method": "tag",
+      "query_id": "question-transaction-0",
+      "query": "PostgreSQL",
+      "gold": [
+        "question-transaction"
+      ],
+      "returned": [
+        "question-transaction"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 13.387
+    },
+    {
+      "method": "tag",
+      "query_id": "question-transaction-1",
+      "query": "事务",
+      "gold": [
+        "question-transaction"
+      ],
+      "returned": [
+        "question-transaction"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 14.27
+    },
+    {
+      "method": "tag",
+      "query_id": "question-transaction-2",
+      "query": "Outbox",
+      "gold": [
+        "question-transaction"
+      ],
+      "returned": [
+        "question-transaction"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 14.618
+    },
+    {
+      "method": "tag",
+      "query_id": "question-transaction-3",
+      "query": "原子",
+      "gold": [
+        "question-transaction"
+      ],
+      "returned": [
+        "question-transaction"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 13.942
+    },
+    {
+      "method": "tag",
+      "query_id": "question-provenance-0",
+      "query": "RAG",
+      "gold": [
+        "question-provenance"
+      ],
+      "returned": [
+        "question-provenance"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 13.368
+    },
+    {
+      "method": "tag",
+      "query_id": "question-provenance-1",
+      "query": "证据",
+      "gold": [
+        "question-provenance"
+      ],
+      "returned": [
+        "question-provenance"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 12.931
+    },
+    {
+      "method": "tag",
+      "query_id": "question-provenance-2",
+      "query": "来源",
+      "gold": [
+        "question-provenance"
+      ],
+      "returned": [
+        "question-provenance"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 13.069
+    },
+    {
+      "method": "tag",
+      "query_id": "question-provenance-3",
+      "query": "支持",
+      "gold": [
+        "question-provenance"
+      ],
+      "returned": [
+        "question-provenance"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 13.244
+    },
+    {
+      "method": "tag",
+      "query_id": "question-citation-0",
+      "query": "SHA256",
+      "gold": [
+        "question-citation"
+      ],
+      "returned": [
+        "question-citation"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 13.739
+    },
+    {
+      "method": "tag",
+      "query_id": "question-citation-1",
+      "query": "引用",
+      "gold": [
+        "question-citation"
+      ],
+      "returned": [
+        "question-citation"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 14.632
+    },
+    {
+      "method": "tag",
+      "query_id": "question-citation-2",
+      "query": "commit",
+      "gold": [
+        "question-citation"
+      ],
+      "returned": [
+        "question-citation"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 14.237
+    },
+    {
+      "method": "tag",
+      "query_id": "question-citation-3",
+      "query": "快照",
+      "gold": [
+        "question-citation"
+      ],
+      "returned": [
+        "question-citation"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "tag",
+      "warnings": [],
+      "elapsed_ms": 12.985
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-checkpoint-0",
+      "query": "LangGraph",
+      "gold": [
+        "question-checkpoint"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 12.645
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-checkpoint-1",
+      "query": "checkpoint",
+      "gold": [
+        "question-checkpoint"
+      ],
+      "returned": [
+        "question-checkpoint"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 12.976
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-checkpoint-2",
+      "query": "state",
+      "gold": [
+        "question-checkpoint"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 12.984
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-checkpoint-3",
+      "query": "memory",
+      "gold": [
+        "question-checkpoint"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 11.914
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-idempotency-0",
+      "query": "幂等",
+      "gold": [
+        "question-idempotency"
+      ],
+      "returned": [
+        "question-idempotency"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 13.741
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-idempotency-1",
+      "query": "idempotency",
+      "gold": [
+        "question-idempotency"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 12.144
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-idempotency-2",
+      "query": "request_id",
+      "gold": [
+        "question-idempotency"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 12.82
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-idempotency-3",
+      "query": "回执",
+      "gold": [
+        "question-idempotency"
+      ],
+      "returned": [
+        "question-idempotency",
+        "question-schema"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 2,
+      "returned_references": 2,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 14.072
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-asyncio-0",
+      "query": "asyncio",
+      "gold": [
+        "question-asyncio"
+      ],
+      "returned": [
+        "question-asyncio"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 14.17
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-asyncio-1",
+      "query": "Python",
+      "gold": [
+        "question-asyncio",
+        "question-ast"
+      ],
+      "returned": [
+        "question-asyncio"
+      ],
+      "recall_at_5": 0.5,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 13.914
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-asyncio-2",
+      "query": "协程",
+      "gold": [
+        "question-asyncio"
+      ],
+      "returned": [
+        "question-asyncio"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 14.167
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-asyncio-3",
+      "query": "并发",
+      "gold": [
+        "question-asyncio"
+      ],
+      "returned": [
+        "question-asyncio"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 14.38
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-schema-0",
+      "query": "Pydantic",
+      "gold": [
+        "question-schema"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 14.531
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-schema-1",
+      "query": "schema",
+      "gold": [
+        "question-schema"
+      ],
+      "returned": [
+        "question-schema"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 13.871
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-schema-2",
+      "query": "JSON",
+      "gold": [
+        "question-schema"
+      ],
+      "returned": [
+        "question-schema"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 13.546
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-schema-3",
+      "query": "校验",
+      "gold": [
+        "question-schema"
+      ],
+      "returned": [
+        "question-schema"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 14.256
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-rrf-0",
+      "query": "BM25",
+      "gold": [
+        "question-rrf"
+      ],
+      "returned": [
+        "question-rrf"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 14.029
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-rrf-1",
+      "query": "RRF",
+      "gold": [
+        "question-rrf"
+      ],
+      "returned": [
+        "question-rrf"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 13.574
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-rrf-2",
+      "query": "hybrid",
+      "gold": [
+        "question-rrf"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 11.767
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-rrf-3",
+      "query": "检索",
+      "gold": [
+        "question-rrf"
+      ],
+      "returned": [
+        "question-provenance",
+        "question-citation",
+        "question-ast"
+      ],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 3,
+      "returned_references": 3,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 14.054
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-ast-0",
+      "query": "AST",
+      "gold": [
+        "question-ast"
+      ],
+      "returned": [
+        "question-ast"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 13.846
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-ast-1",
+      "query": "Python",
+      "gold": [
+        "question-asyncio",
+        "question-ast"
+      ],
+      "returned": [
+        "question-asyncio"
+      ],
+      "recall_at_5": 0.5,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 13.587
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-ast-2",
+      "query": "符号",
+      "gold": [
+        "question-ast"
+      ],
+      "returned": [
+        "question-ast",
+        "question-schema"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 2,
+      "returned_references": 2,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 14.548
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-ast-3",
+      "query": "静态",
+      "gold": [
+        "question-ast"
+      ],
+      "returned": [
+        "question-ast"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 12.937
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-tree-sitter-0",
+      "query": "Tree-sitter",
+      "gold": [
+        "question-tree-sitter"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 13.089
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-tree-sitter-1",
+      "query": "TypeScript",
+      "gold": [
+        "question-tree-sitter"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 13.505
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-tree-sitter-2",
+      "query": "JavaScript",
+      "gold": [
+        "question-tree-sitter"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 12.089
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-tree-sitter-3",
+      "query": "TSX",
+      "gold": [
+        "question-tree-sitter"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 12.187
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-transaction-0",
+      "query": "PostgreSQL",
+      "gold": [
+        "question-transaction"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 11.571
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-transaction-1",
+      "query": "事务",
+      "gold": [
+        "question-transaction"
+      ],
+      "returned": [
+        "question-transaction",
+        "question-provenance",
+        "question-asyncio",
+        "question-idempotency",
+        "question-schema"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 5,
+      "returned_references": 5,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 17.154
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-transaction-2",
+      "query": "Outbox",
+      "gold": [
+        "question-transaction"
+      ],
+      "returned": [
+        "question-transaction"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 14.077
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-transaction-3",
+      "query": "原子",
+      "gold": [
+        "question-transaction"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 13.573
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-provenance-0",
+      "query": "RAG",
+      "gold": [
+        "question-provenance"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 14.022
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-provenance-1",
+      "query": "证据",
+      "gold": [
+        "question-provenance"
+      ],
+      "returned": [
+        "question-citation"
+      ],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 13.526
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-provenance-2",
+      "query": "来源",
+      "gold": [
+        "question-provenance"
+      ],
+      "returned": [
+        "question-ast"
+      ],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 14.589
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-provenance-3",
+      "query": "支持",
+      "gold": [
+        "question-provenance"
+      ],
+      "returned": [
+        "question-provenance"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 13.652
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-citation-0",
+      "query": "SHA256",
+      "gold": [
+        "question-citation"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 13.297
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-citation-1",
+      "query": "引用",
+      "gold": [
+        "question-citation"
+      ],
+      "returned": [
+        "question-citation",
+        "question-ast",
+        "question-schema",
+        "question-provenance"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 4,
+      "returned_references": 4,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 17.284
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-citation-2",
+      "query": "commit",
+      "gold": [
+        "question-citation"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 15.441
+    },
+    {
+      "method": "bm25",
+      "query_id": "question-citation-3",
+      "query": "快照",
+      "gold": [
+        "question-citation"
+      ],
+      "returned": [
+        "question-citation"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25",
+      "warnings": [],
+      "elapsed_ms": 14.993
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-checkpoint-0",
+      "query": "LangGraph",
+      "gold": [
+        "question-checkpoint"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 14.516
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-checkpoint-1",
+      "query": "checkpoint",
+      "gold": [
+        "question-checkpoint"
+      ],
+      "returned": [
+        "question-checkpoint"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 16.134
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-checkpoint-2",
+      "query": "state",
+      "gold": [
+        "question-checkpoint"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 14.645
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-checkpoint-3",
+      "query": "memory",
+      "gold": [
+        "question-checkpoint"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 14.488
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-idempotency-0",
+      "query": "幂等",
+      "gold": [
+        "question-idempotency"
+      ],
+      "returned": [
+        "question-idempotency"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 15.588
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-idempotency-1",
+      "query": "idempotency",
+      "gold": [
+        "question-idempotency"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 14.468
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-idempotency-2",
+      "query": "request_id",
+      "gold": [
+        "question-idempotency"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 12.737
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-idempotency-3",
+      "query": "回执",
+      "gold": [
+        "question-idempotency"
+      ],
+      "returned": [
+        "question-idempotency",
+        "question-schema"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 2,
+      "returned_references": 2,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 18.975
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-asyncio-0",
+      "query": "asyncio",
+      "gold": [
+        "question-asyncio"
+      ],
+      "returned": [
+        "question-asyncio"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 20.319
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-asyncio-1",
+      "query": "Python",
+      "gold": [
+        "question-asyncio",
+        "question-ast"
+      ],
+      "returned": [
+        "question-asyncio"
+      ],
+      "recall_at_5": 0.5,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 16.873
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-asyncio-2",
+      "query": "协程",
+      "gold": [
+        "question-asyncio"
+      ],
+      "returned": [
+        "question-asyncio"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 18.741
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-asyncio-3",
+      "query": "并发",
+      "gold": [
+        "question-asyncio"
+      ],
+      "returned": [
+        "question-asyncio"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 17.102
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-schema-0",
+      "query": "Pydantic",
+      "gold": [
+        "question-schema"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 15.134
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-schema-1",
+      "query": "schema",
+      "gold": [
+        "question-schema"
+      ],
+      "returned": [
+        "question-schema"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 16.145
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-schema-2",
+      "query": "JSON",
+      "gold": [
+        "question-schema"
+      ],
+      "returned": [
+        "question-schema"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 16.937
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-schema-3",
+      "query": "校验",
+      "gold": [
+        "question-schema"
+      ],
+      "returned": [
+        "question-schema"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 16.068
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-rrf-0",
+      "query": "BM25",
+      "gold": [
+        "question-rrf"
+      ],
+      "returned": [
+        "question-rrf"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 16.767
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-rrf-1",
+      "query": "RRF",
+      "gold": [
+        "question-rrf"
+      ],
+      "returned": [
+        "question-rrf"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 17.578
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-rrf-2",
+      "query": "hybrid",
+      "gold": [
+        "question-rrf"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 13.88
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-rrf-3",
+      "query": "检索",
+      "gold": [
+        "question-rrf"
+      ],
+      "returned": [
+        "question-provenance",
+        "question-citation",
+        "question-ast"
+      ],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 3,
+      "returned_references": 3,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 17.598
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-ast-0",
+      "query": "AST",
+      "gold": [
+        "question-ast"
+      ],
+      "returned": [
+        "question-ast"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 15.753
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-ast-1",
+      "query": "Python",
+      "gold": [
+        "question-asyncio",
+        "question-ast"
+      ],
+      "returned": [
+        "question-asyncio"
+      ],
+      "recall_at_5": 0.5,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 16.805
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-ast-2",
+      "query": "符号",
+      "gold": [
+        "question-ast"
+      ],
+      "returned": [
+        "question-ast",
+        "question-schema"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 2,
+      "returned_references": 2,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 17.088
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-ast-3",
+      "query": "静态",
+      "gold": [
+        "question-ast"
+      ],
+      "returned": [
+        "question-ast"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 15.572
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-tree-sitter-0",
+      "query": "Tree-sitter",
+      "gold": [
+        "question-tree-sitter"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 14.694
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-tree-sitter-1",
+      "query": "TypeScript",
+      "gold": [
+        "question-tree-sitter"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 14.656
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-tree-sitter-2",
+      "query": "JavaScript",
+      "gold": [
+        "question-tree-sitter"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 13.304
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-tree-sitter-3",
+      "query": "TSX",
+      "gold": [
+        "question-tree-sitter"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 13.545
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-transaction-0",
+      "query": "PostgreSQL",
+      "gold": [
+        "question-transaction"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 13.689
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-transaction-1",
+      "query": "事务",
+      "gold": [
+        "question-transaction"
+      ],
+      "returned": [
+        "question-transaction",
+        "question-provenance",
+        "question-asyncio",
+        "question-idempotency",
+        "question-schema"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 5,
+      "returned_references": 5,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 17.508
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-transaction-2",
+      "query": "Outbox",
+      "gold": [
+        "question-transaction"
+      ],
+      "returned": [
+        "question-transaction"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 15.137
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-transaction-3",
+      "query": "原子",
+      "gold": [
+        "question-transaction"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 12.905
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-provenance-0",
+      "query": "RAG",
+      "gold": [
+        "question-provenance"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 13.371
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-provenance-1",
+      "query": "证据",
+      "gold": [
+        "question-provenance"
+      ],
+      "returned": [
+        "question-citation"
+      ],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 13.657
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-provenance-2",
+      "query": "来源",
+      "gold": [
+        "question-provenance"
+      ],
+      "returned": [
+        "question-ast"
+      ],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 15.217
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-provenance-3",
+      "query": "支持",
+      "gold": [
+        "question-provenance"
+      ],
+      "returned": [
+        "question-provenance"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 14.443
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-citation-0",
+      "query": "SHA256",
+      "gold": [
+        "question-citation"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 12.936
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-citation-1",
+      "query": "引用",
+      "gold": [
+        "question-citation"
+      ],
+      "returned": [
+        "question-citation",
+        "question-ast",
+        "question-schema",
+        "question-provenance"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 4,
+      "returned_references": 4,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 15.598
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-citation-2",
+      "query": "commit",
+      "gold": [
+        "question-citation"
+      ],
+      "returned": [],
+      "recall_at_5": 0.0,
+      "reciprocal_rank": 0,
+      "duplicate_results": 0,
+      "valid_references": 0,
+      "returned_references": 0,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 13.499
+    },
+    {
+      "method": "hybrid",
+      "query_id": "question-citation-3",
+      "query": "快照",
+      "gold": [
+        "question-citation"
+      ],
+      "returned": [
+        "question-citation"
+      ],
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0,
+      "duplicate_results": 0,
+      "valid_references": 1,
+      "returned_references": 1,
+      "method_used": "bm25_fallback",
+      "warnings": [
+        "semantic_embedding_not_configured"
+      ],
+      "elapsed_ms": 15.739
+    }
+  ]
+}

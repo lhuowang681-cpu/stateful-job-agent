@@ -1,0 +1,66 @@
+{
+  "schema_version": "review-issues-1",
+  "items": [
+    {
+      "id": "R1-empty-assessment",
+      "status": "verified_contracts",
+      "description": "LLM missing/empty point assessments bypass mandatory completeness; explicit not-knowing answer can be committed as fully covered",
+      "evidence": "r1-affected-v2.xml; r2-fresh-focused-v2.xml"
+    },
+    {
+      "id": "R1-compatibility",
+      "status": "verified_contracts",
+      "description": "Preserve lexical/history compatibility and no-unknown-replay; existing context-budget fixture depends on missing assessment",
+      "evidence": "r1-affected-v2.xml; r2-fresh-focused-v2.xml"
+    },
+    {
+      "id": "R2-dependencies",
+      "status": "verified_windows_linux_fresh_install",
+      "description": "pyproject httpx<0.28 conflicts with observed 0.28.1; fresh environment install required",
+      "evidence": "r2-linux-installed-http-v1.json; r5-installed-main-http-v1.json"
+    },
+    {
+      "id": "R2-current-spec",
+      "status": "verified_current_and_history_separated",
+      "description": "Current Spec mixes completed and planned historical state",
+      "evidence": "docs/tech-specs/CURRENT_SPEC.md"
+    },
+    {
+      "id": "R2-ci-fixture",
+      "status": "verified_materialization_and_gate",
+      "description": "No SQLite files committed; provide auditable synthetic fixture materialization for fresh clones",
+      "evidence": "r2-linux-offline-v2-gate.json"
+    },
+    {
+      "id": "R2-historical-failures",
+      "status": "classified_conditions_16_unavailable_original_fixtures",
+      "description": "Classify/rebuild public fixtures where possible; explicit unavailable services/conditions, no test deletion",
+      "evidence": "r5-remaining-legacy-conditions-v1.json"
+    },
+    {
+      "id": "R3-business-quality",
+      "status": "verified_narrow_real_business_human_quality_unverified",
+      "description": "Previous real rewrite experiment had zero usable edits; complete real learning flow failed",
+      "evidence": "r5-source-model-alignment-v2.json; r5-deepseek-usage-ledger-v2.json",
+      "limitation": "human usefulness/semantic accuracy null; all admitted final drafts equal shared first draft"
+    },
+    {
+      "id": "R4-real-corpus",
+      "status": "executed_50_candidates_real_models_frozen_test_negative_results_retained",
+      "description": "New real-source Chinese candidate corpus/split/routing experiments needed; old test already seen",
+      "evidence": "r4-real-summary-v3.json; r4-design-test-v1.json; r4-real-route-http-v1.json"
+    },
+    {
+      "id": "R5-delivery",
+      "status": "verified",
+      "description": "Final source-matched regressions/model evidence/commits/new bundles required",
+      "evidence": "r5-package-verification-v1.json; r5-requirement-audit-v1.json",
+      "limitation": "16 original historical fixtures unavailable; human0 explicitly deferred"
+    },
+    {
+      "id": "human-eight",
+      "status": "deferred",
+      "description": "Explicit user deferral; human reviewed count remains zero"
+    }
+  ]
+}

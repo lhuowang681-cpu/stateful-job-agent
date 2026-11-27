@@ -1,0 +1,1208 @@
+{
+  "phase": "S8",
+  "status": "engineering_verified_human_review_deferred",
+  "human_review": "deferred_by_user_continue_engineering",
+  "human_reviewed_count": 0,
+  "related": {
+    "passed": 612,
+    "failed": 0,
+    "skipped": 4,
+    "seconds": 71.605,
+    "artifact": "s8-related-v3.xml"
+  },
+  "offline_ci": {
+    "passed": 583,
+    "failed": 0,
+    "skipped": 33,
+    "seconds": 66.2,
+    "artifact": "s8-stable-ci-v1.xml"
+  },
+  "full_diagnostic": {
+    "passed": 1024,
+    "failed": 44,
+    "skipped": 54,
+    "seconds": 98.063,
+    "artifact": "s8-full-diagnostic-v1.xml"
+  },
+  "baseline_coverage": "All 521 unique S7 cases included in 616 unique final related cases; no duplicate node IDs",
+  "datasets": {
+    "version": "expansion-final-candidates-3",
+    "documents": 26,
+    "cases": 72,
+    "dev": 36,
+    "test": 36,
+    "answerable_per_split": 34,
+    "human_gold": 0
+  },
+  "model_runtime_artifact": "s8-model-runtime-v1.json",
+  "experiments": {
+    "dev": {
+      "status": "completed",
+      "attempts": 630,
+      "failures": 0,
+      "encoder_calls": {
+        "document_calls": 0,
+        "document_passages": 0,
+        "query_calls": 456
+      },
+      "algorithm_identity": "4cf3b197aee81c4e4295c4fd8aeb2baaedda5bf60e8bc99dc8ed88182d6f4b4b",
+      "dataset_hash": "ff6ad1d6ce4e8b0fc2346d61d6e46a0cee35540d73f4776647274ffe7fdc8d66",
+      "summary": {
+        "A_bm25": {
+          "answerable_cases": 34,
+          "attempts": 108,
+          "cases": 36,
+          "citation_count": 93,
+          "claim_support": null,
+          "failed_attempts": 0,
+          "final_business_quality": null,
+          "invalid_citations": 0,
+          "latency_ms": {
+            "n": 108,
+            "p50": 4.1995000000000005,
+            "p95": 7.278
+          },
+          "metrics_at_k": {
+            "1": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.5882352941176471
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 0.6176470588235294
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.6176470588235294
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.5588235294117647
+              }
+            },
+            "3": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.7058823529411765
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 0.7352941176470589
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.6715686274509803
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.6764705882352942
+              }
+            },
+            "5": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.7058823529411765
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 0.7352941176470589
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.6715686274509803
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.6764705882352942
+              }
+            }
+          },
+          "multi_evidence_sufficient": {
+            "cases": 6,
+            "mean": 0.0
+          },
+          "unanswerable_context_cases": 0
+        },
+        "B_dense": {
+          "answerable_cases": 34,
+          "attempts": 108,
+          "cases": 36,
+          "citation_count": 180,
+          "claim_support": null,
+          "failed_attempts": 0,
+          "final_business_quality": null,
+          "invalid_citations": 0,
+          "latency_ms": {
+            "n": 108,
+            "p50": 59.936,
+            "p95": 63.268
+          },
+          "metrics_at_k": {
+            "1": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.7647058823529411
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 0.8235294117647058
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.8235294117647058
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.7058823529411765
+              }
+            },
+            "3": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.9264705882352942
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 0.9705882352941176
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.8970588235294118
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.8823529411764706
+              }
+            },
+            "5": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.9705882352941176
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 1.0
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.9044117647058824
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.9411764705882353
+              }
+            }
+          },
+          "multi_evidence_sufficient": {
+            "cases": 6,
+            "mean": 0.6666666666666666
+          },
+          "unanswerable_context_cases": 2
+        },
+        "C_hybrid": {
+          "answerable_cases": 34,
+          "attempts": 108,
+          "cases": 36,
+          "citation_count": 180,
+          "claim_support": null,
+          "failed_attempts": 0,
+          "final_business_quality": null,
+          "invalid_citations": 0,
+          "latency_ms": {
+            "n": 108,
+            "p50": 60.207,
+            "p95": 61.783
+          },
+          "metrics_at_k": {
+            "1": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.8088235294117647
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 0.8823529411764706
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.8823529411764706
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.7352941176470589
+              }
+            },
+            "3": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.9264705882352942
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 0.9705882352941176
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.9264705882352942
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.8823529411764706
+              }
+            },
+            "5": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.9705882352941176
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 1.0
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.9338235294117647
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.9411764705882353
+              }
+            }
+          },
+          "multi_evidence_sufficient": {
+            "cases": 6,
+            "mean": 0.6666666666666666
+          },
+          "unanswerable_context_cases": 2
+        },
+        "D_hybrid_rerank": {
+          "answerable_cases": 34,
+          "attempts": 108,
+          "cases": 36,
+          "citation_count": 180,
+          "claim_support": null,
+          "failed_attempts": 0,
+          "final_business_quality": null,
+          "invalid_citations": 0,
+          "latency_ms": {
+            "n": 108,
+            "p50": 79.47749999999999,
+            "p95": 85.463
+          },
+          "metrics_at_k": {
+            "1": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.7794117647058824
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 0.8235294117647058
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.8235294117647058
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.7352941176470589
+              }
+            },
+            "3": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.9411764705882353
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 1.0
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.9019607843137255
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.8823529411764706
+              }
+            },
+            "5": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.9705882352941176
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 1.0
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.9019607843137255
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.9411764705882353
+              }
+            }
+          },
+          "multi_evidence_sufficient": {
+            "cases": 6,
+            "mean": 0.6666666666666666
+          },
+          "unanswerable_context_cases": 2
+        },
+        "E_code_aware_no_relations": {
+          "answerable_cases": 20,
+          "attempts": 66,
+          "cases": 22,
+          "citation_count": 110,
+          "claim_support": null,
+          "failed_attempts": 0,
+          "final_business_quality": null,
+          "invalid_citations": 0,
+          "latency_ms": {
+            "n": 66,
+            "p50": 60.8825,
+            "p95": 62.581
+          },
+          "metrics_at_k": {
+            "1": {
+              "gold_span_recall": {
+                "cases": 20,
+                "mean": 0.675
+              },
+              "hit_any_gold": {
+                "cases": 20,
+                "mean": 0.8
+              },
+              "reciprocal_rank": {
+                "cases": 20,
+                "mean": 0.8
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 20,
+                "mean": 0.55
+              }
+            },
+            "3": {
+              "gold_span_recall": {
+                "cases": 20,
+                "mean": 0.875
+              },
+              "hit_any_gold": {
+                "cases": 20,
+                "mean": 0.95
+              },
+              "reciprocal_rank": {
+                "cases": 20,
+                "mean": 0.875
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 20,
+                "mean": 0.8
+              }
+            },
+            "5": {
+              "gold_span_recall": {
+                "cases": 20,
+                "mean": 0.95
+              },
+              "hit_any_gold": {
+                "cases": 20,
+                "mean": 1.0
+              },
+              "reciprocal_rank": {
+                "cases": 20,
+                "mean": 0.8875
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 20,
+                "mean": 0.9
+              }
+            }
+          },
+          "multi_evidence_sufficient": {
+            "cases": 6,
+            "mean": 0.6666666666666666
+          },
+          "unanswerable_context_cases": 2
+        },
+        "F_code_aware_relations": {
+          "answerable_cases": 20,
+          "attempts": 66,
+          "cases": 22,
+          "citation_count": 110,
+          "claim_support": null,
+          "failed_attempts": 0,
+          "final_business_quality": null,
+          "invalid_citations": 0,
+          "latency_ms": {
+            "n": 66,
+            "p50": 60.713499999999996,
+            "p95": 63.004
+          },
+          "metrics_at_k": {
+            "1": {
+              "gold_span_recall": {
+                "cases": 20,
+                "mean": 0.675
+              },
+              "hit_any_gold": {
+                "cases": 20,
+                "mean": 0.8
+              },
+              "reciprocal_rank": {
+                "cases": 20,
+                "mean": 0.8
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 20,
+                "mean": 0.55
+              }
+            },
+            "3": {
+              "gold_span_recall": {
+                "cases": 20,
+                "mean": 0.825
+              },
+              "hit_any_gold": {
+                "cases": 20,
+                "mean": 0.85
+              },
+              "reciprocal_rank": {
+                "cases": 20,
+                "mean": 0.8166666666666667
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 20,
+                "mean": 0.8
+              }
+            },
+            "5": {
+              "gold_span_recall": {
+                "cases": 20,
+                "mean": 1.0
+              },
+              "hit_any_gold": {
+                "cases": 20,
+                "mean": 1.0
+              },
+              "reciprocal_rank": {
+                "cases": 20,
+                "mean": 0.8541666666666666
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 20,
+                "mean": 1.0
+              }
+            }
+          },
+          "multi_evidence_sufficient": {
+            "cases": 6,
+            "mean": 1.0
+          },
+          "unanswerable_context_cases": 2
+        },
+        "G_flat_bm25": {
+          "answerable_cases": 20,
+          "attempts": 66,
+          "cases": 22,
+          "citation_count": 21,
+          "claim_support": null,
+          "failed_attempts": 0,
+          "final_business_quality": null,
+          "invalid_citations": 0,
+          "latency_ms": {
+            "n": 66,
+            "p50": 2.5105,
+            "p95": 6.455
+          },
+          "metrics_at_k": {
+            "1": {
+              "gold_span_recall": {
+                "cases": 20,
+                "mean": 0.35
+              },
+              "hit_any_gold": {
+                "cases": 20,
+                "mean": 0.35
+              },
+              "reciprocal_rank": {
+                "cases": 20,
+                "mean": 0.35
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 20,
+                "mean": 0.35
+              }
+            },
+            "3": {
+              "gold_span_recall": {
+                "cases": 20,
+                "mean": 0.55
+              },
+              "hit_any_gold": {
+                "cases": 20,
+                "mean": 0.55
+              },
+              "reciprocal_rank": {
+                "cases": 20,
+                "mean": 0.44166666666666665
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 20,
+                "mean": 0.55
+              }
+            },
+            "5": {
+              "gold_span_recall": {
+                "cases": 20,
+                "mean": 0.55
+              },
+              "hit_any_gold": {
+                "cases": 20,
+                "mean": 0.55
+              },
+              "reciprocal_rank": {
+                "cases": 20,
+                "mean": 0.44166666666666665
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 20,
+                "mean": 0.55
+              }
+            }
+          },
+          "multi_evidence_sufficient": {
+            "cases": 6,
+            "mean": 0.3333333333333333
+          },
+          "unanswerable_context_cases": 0
+        }
+      }
+    },
+    "test": {
+      "status": "completed",
+      "attempts": 630,
+      "failures": 0,
+      "encoder_calls": {
+        "document_calls": 0,
+        "document_passages": 0,
+        "query_calls": 456
+      },
+      "algorithm_identity": "4cf3b197aee81c4e4295c4fd8aeb2baaedda5bf60e8bc99dc8ed88182d6f4b4b",
+      "dataset_hash": "ff6ad1d6ce4e8b0fc2346d61d6e46a0cee35540d73f4776647274ffe7fdc8d66",
+      "summary": {
+        "A_bm25": {
+          "answerable_cases": 34,
+          "attempts": 108,
+          "cases": 36,
+          "citation_count": 98,
+          "claim_support": null,
+          "failed_attempts": 0,
+          "final_business_quality": null,
+          "invalid_citations": 0,
+          "latency_ms": {
+            "n": 108,
+            "p50": 4.6129999999999995,
+            "p95": 7.259
+          },
+          "metrics_at_k": {
+            "1": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.6617647058823529
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 0.6764705882352942
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.6764705882352942
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.6470588235294118
+              }
+            },
+            "3": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.7941176470588235
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 0.7941176470588235
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.7352941176470589
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.7941176470588235
+              }
+            },
+            "5": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.8235294117647058
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 0.8235294117647058
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.7426470588235294
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.8235294117647058
+              }
+            }
+          },
+          "multi_evidence_sufficient": {
+            "cases": 5,
+            "mean": 0.4
+          },
+          "unanswerable_context_cases": 0
+        },
+        "B_dense": {
+          "answerable_cases": 34,
+          "attempts": 108,
+          "cases": 36,
+          "citation_count": 166,
+          "claim_support": null,
+          "failed_attempts": 0,
+          "final_business_quality": null,
+          "invalid_citations": 0,
+          "latency_ms": {
+            "n": 108,
+            "p50": 59.853,
+            "p95": 63.714
+          },
+          "metrics_at_k": {
+            "1": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.8382352941176471
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 0.8823529411764706
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.8823529411764706
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.8235294117647058
+              }
+            },
+            "3": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.9656862745098039
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 1.0
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.9313725490196079
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.9411764705882353
+              }
+            },
+            "5": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.9901960784313726
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 1.0
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.9313725490196079
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.9705882352941176
+              }
+            }
+          },
+          "multi_evidence_sufficient": {
+            "cases": 5,
+            "mean": 0.8
+          },
+          "unanswerable_context_cases": 2
+        },
+        "C_hybrid": {
+          "answerable_cases": 34,
+          "attempts": 108,
+          "cases": 36,
+          "citation_count": 166,
+          "claim_support": null,
+          "failed_attempts": 0,
+          "final_business_quality": null,
+          "invalid_citations": 0,
+          "latency_ms": {
+            "n": 108,
+            "p50": 60.146,
+            "p95": 61.793
+          },
+          "metrics_at_k": {
+            "1": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.8382352941176471
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 0.8823529411764706
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.8823529411764706
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.8235294117647058
+              }
+            },
+            "3": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.9656862745098039
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 1.0
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.9411764705882353
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.9411764705882353
+              }
+            },
+            "5": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.9901960784313726
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 1.0
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.9411764705882353
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.9705882352941176
+              }
+            }
+          },
+          "multi_evidence_sufficient": {
+            "cases": 5,
+            "mean": 0.8
+          },
+          "unanswerable_context_cases": 2
+        },
+        "D_hybrid_rerank": {
+          "answerable_cases": 34,
+          "attempts": 108,
+          "cases": 36,
+          "citation_count": 166,
+          "claim_support": null,
+          "failed_attempts": 0,
+          "final_business_quality": null,
+          "invalid_citations": 0,
+          "latency_ms": {
+            "n": 108,
+            "p50": 79.38,
+            "p95": 85.45
+          },
+          "metrics_at_k": {
+            "1": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.7058823529411765
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 0.7352941176470589
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.7352941176470589
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.7058823529411765
+              }
+            },
+            "3": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.9068627450980392
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 0.9411764705882353
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.8186274509803921
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.8823529411764706
+              }
+            },
+            "5": {
+              "gold_span_recall": {
+                "cases": 34,
+                "mean": 0.9705882352941176
+              },
+              "hit_any_gold": {
+                "cases": 34,
+                "mean": 0.9705882352941176
+              },
+              "reciprocal_rank": {
+                "cases": 34,
+                "mean": 0.8245098039215686
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 34,
+                "mean": 0.9705882352941176
+              }
+            }
+          },
+          "multi_evidence_sufficient": {
+            "cases": 5,
+            "mean": 1.0
+          },
+          "unanswerable_context_cases": 2
+        },
+        "E_code_aware_no_relations": {
+          "answerable_cases": 20,
+          "attempts": 66,
+          "cases": 22,
+          "citation_count": 110,
+          "claim_support": null,
+          "failed_attempts": 0,
+          "final_business_quality": null,
+          "invalid_citations": 0,
+          "latency_ms": {
+            "n": 66,
+            "p50": 60.2255,
+            "p95": 62.723
+          },
+          "metrics_at_k": {
+            "1": {
+              "gold_span_recall": {
+                "cases": 20,
+                "mean": 0.775
+              },
+              "hit_any_gold": {
+                "cases": 20,
+                "mean": 0.85
+              },
+              "reciprocal_rank": {
+                "cases": 20,
+                "mean": 0.85
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 20,
+                "mean": 0.75
+              }
+            },
+            "3": {
+              "gold_span_recall": {
+                "cases": 20,
+                "mean": 0.9416666666666667
+              },
+              "hit_any_gold": {
+                "cases": 20,
+                "mean": 1.0
+              },
+              "reciprocal_rank": {
+                "cases": 20,
+                "mean": 0.925
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 20,
+                "mean": 0.9
+              }
+            },
+            "5": {
+              "gold_span_recall": {
+                "cases": 20,
+                "mean": 0.9833333333333333
+              },
+              "hit_any_gold": {
+                "cases": 20,
+                "mean": 1.0
+              },
+              "reciprocal_rank": {
+                "cases": 20,
+                "mean": 0.925
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 20,
+                "mean": 0.95
+              }
+            }
+          },
+          "multi_evidence_sufficient": {
+            "cases": 5,
+            "mean": 0.8
+          },
+          "unanswerable_context_cases": 2
+        },
+        "F_code_aware_relations": {
+          "answerable_cases": 20,
+          "attempts": 66,
+          "cases": 22,
+          "citation_count": 110,
+          "claim_support": null,
+          "failed_attempts": 0,
+          "final_business_quality": null,
+          "invalid_citations": 0,
+          "latency_ms": {
+            "n": 66,
+            "p50": 60.2755,
+            "p95": 62.08
+          },
+          "metrics_at_k": {
+            "1": {
+              "gold_span_recall": {
+                "cases": 20,
+                "mean": 0.775
+              },
+              "hit_any_gold": {
+                "cases": 20,
+                "mean": 0.85
+              },
+              "reciprocal_rank": {
+                "cases": 20,
+                "mean": 0.85
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 20,
+                "mean": 0.75
+              }
+            },
+            "3": {
+              "gold_span_recall": {
+                "cases": 20,
+                "mean": 0.9333333333333333
+              },
+              "hit_any_gold": {
+                "cases": 20,
+                "mean": 0.95
+              },
+              "reciprocal_rank": {
+                "cases": 20,
+                "mean": 0.8916666666666667
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 20,
+                "mean": 0.9
+              }
+            },
+            "5": {
+              "gold_span_recall": {
+                "cases": 20,
+                "mean": 1.0
+              },
+              "hit_any_gold": {
+                "cases": 20,
+                "mean": 1.0
+              },
+              "reciprocal_rank": {
+                "cases": 20,
+                "mean": 0.9041666666666667
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 20,
+                "mean": 1.0
+              }
+            }
+          },
+          "multi_evidence_sufficient": {
+            "cases": 5,
+            "mean": 1.0
+          },
+          "unanswerable_context_cases": 2
+        },
+        "G_flat_bm25": {
+          "answerable_cases": 20,
+          "attempts": 66,
+          "cases": 22,
+          "citation_count": 40,
+          "claim_support": null,
+          "failed_attempts": 0,
+          "final_business_quality": null,
+          "invalid_citations": 0,
+          "latency_ms": {
+            "n": 66,
+            "p50": 4.199,
+            "p95": 6.444
+          },
+          "metrics_at_k": {
+            "1": {
+              "gold_span_recall": {
+                "cases": 20,
+                "mean": 0.375
+              },
+              "hit_any_gold": {
+                "cases": 20,
+                "mean": 0.4
+              },
+              "reciprocal_rank": {
+                "cases": 20,
+                "mean": 0.4
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 20,
+                "mean": 0.35
+              }
+            },
+            "3": {
+              "gold_span_recall": {
+                "cases": 20,
+                "mean": 0.7
+              },
+              "hit_any_gold": {
+                "cases": 20,
+                "mean": 0.7
+              },
+              "reciprocal_rank": {
+                "cases": 20,
+                "mean": 0.5333333333333333
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 20,
+                "mean": 0.7
+              }
+            },
+            "5": {
+              "gold_span_recall": {
+                "cases": 20,
+                "mean": 0.7
+              },
+              "hit_any_gold": {
+                "cases": 20,
+                "mean": 0.7
+              },
+              "reciprocal_rank": {
+                "cases": 20,
+                "mean": 0.5333333333333333
+              },
+              "sufficient_gold_retrieved": {
+                "cases": 20,
+                "mean": 0.7
+              }
+            }
+          },
+          "multi_evidence_sufficient": {
+            "cases": 5,
+            "mean": 0.4
+          },
+          "unanswerable_context_cases": 0
+        }
+      }
+    }
+  },
+  "replays": {
+    "dev": {
+      "status": "passed",
+      "cases": 210,
+      "encoder_calls": {
+        "document_calls": 0,
+        "document_passages": 0,
+        "query_calls": 152
+      },
+      "manifest_sha256": "ae82369316a23a4fade728ed6b25015b4cd784f98363edcdc1276c5da6bee5f1"
+    },
+    "test": {
+      "status": "passed",
+      "cases": 210,
+      "encoder_calls": {
+        "document_calls": 0,
+        "document_passages": 0,
+        "query_calls": 152
+      },
+      "manifest_sha256": "ae82369316a23a4fade728ed6b25015b4cd784f98363edcdc1276c5da6bee5f1"
+    }
+  },
+  "trace_contract": "docs/evaluation/expansion/TRACE_CONSUMER.md",
+  "trace_examples": 7,
+  "demos": {
+    "rewrite": {
+      "status": "passed",
+      "checks": 3,
+      "artifact": "s8-demo-rewrite-v1.json"
+    },
+    "project_interview": {
+      "status": "passed",
+      "checks": 3,
+      "artifact": "s8-demo-interview-v2.json"
+    },
+    "insufficiency": {
+      "status": "passed",
+      "checks": 3,
+      "artifact": "s8-demo-insufficiency-v1.json"
+    },
+    "recovery": {
+      "status": "passed",
+      "cases": 12,
+      "child_processes": 39,
+      "artifact": "s8-demo-recovery-v2.json",
+      "model": "disabled"
+    }
+  },
+  "quality_scope": "known-scope mechanical retrieval and exact citations; generated answer/human semantic quality not scored",
+  "first_useful_output_latency_ms": null,
+  "first_output_missing_reason": "No streaming business-output instrument; retrieval P50/P95/n separately recorded",
+  "production_migration_or_SLA_verified": false,
+  "git_present": false,
+  "git_history_created": false,
+  "full_failure_categories": {
+    "missing_historical_resource": 41,
+    "legacy_redis_port_unavailable": 2,
+    "no_git_repository": 1
+  },
+  "source_identity": "b919d6152743ce47b41f52e3a810db8f97b0adb4bb1244a91204d67809abbb0b",
+  "source_identity_scope": "Python src/tests/scripts; frontend and synthetic derived research artifact hashes separately recorded",
+  "source_artifact_integrity": "packaged per-file SHA256; code checkpoint independent from stage test selection",
+  "delivery_preflight_failure": "v1 missing legacy fit_verdict_engine; hash and gate passed, actual HTTP startup failed; producer fixed and actual recheck required",
+  "delivery_preflight": {
+    "artifact": "s8-delivery-check-v2.json",
+    "status": "passed",
+    "source_files": 820,
+    "learning_files": 47,
+    "research_files": 30,
+    "fresh_dependency_install": false,
+    "startup_checks": 6,
+    "trace_examples_checked": 7
+  },
+  "final_delivery_directory": "output/expansion/delivery-final",
+  "final_delivery_attestation": "verification.json sidecar",
+  "resource_cleanup": "s8-resource-cleanup-v1.json"
+}

@@ -1,0 +1,15 @@
+{
+  "target_database": "s5_replay_v1",
+  "checks": [
+    "pg_dump_restore_into_distinct_database",
+    "same_project_snapshot_task_ids",
+    "all_saved_query_references_revalidated",
+    "sparse_search",
+    "persisted_vector_payload_hash"
+  ],
+  "model_reloaded_during_restore_probe": false,
+  "vector_dimension": 1024,
+  "vector_payload_hash": "e0c68aae550cb2bc4d57b039ad87d83bfa251e6800cbfb6bcdcae8b9e95a6b8e",
+  "task_id": "task-b5c8571dfedd463cbfbd009248fc04ed",
+  "scope": "single synthetic business fixture, not final evaluation index"
+}

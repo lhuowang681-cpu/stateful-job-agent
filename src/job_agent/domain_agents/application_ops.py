@@ -205,7 +205,10 @@ def build_application_ops_registry(
 
     registry.register(
         name=READ_TRACKER_TOOL,
-        description="Read one application from the approved local tracker.",
+        description=(
+            "Read one application and its authoritative current stage/revision from "
+            "the approved local tracker before preparing a stage mutation."
+        ),
         input_model=ReadTrackerInput,
         output_model=ReadTrackerOutput,
         handler=read_tracker,
@@ -221,7 +224,13 @@ def build_application_ops_registry(
     )
     registry.register(
         name=APPLY_TRANSITION_TOOL,
-        description="Apply one approved local tracker transition with stale-revision protection.",
+        description=(
+            "Apply one approved adjacent tracker transition with stale-revision "
+            "protection. Common interview path: to_apply -> applied -> "
+            "resume_screen -> first_interview -> second_interview; never skip an "
+            "intermediate state, and use the latest returned tracker_revision for "
+            "the next transition."
+        ),
         input_model=ApplyTransitionInput,
         output_model=ApplyTransitionOutput,
         handler=apply_transition,

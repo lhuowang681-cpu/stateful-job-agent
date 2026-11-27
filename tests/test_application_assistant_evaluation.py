@@ -3,9 +3,16 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import pytest
+
 from job_agent.backend_service.application_evaluation import (
     load_application_assistant_eval_cases,
     run_application_assistant_evaluation,
+    _tool_selection_scores,
+)
+from job_agent.backend_service.application_assistant import (
+    READ_SNAPSHOT_TOOL as READ, WRITE_SANDBOX_DRAFT_TOOL as WRITE,
+    SEARCH_SNAPSHOT_TEXT_TOOL as SEARCH,
 )
 
 
@@ -29,6 +36,7 @@ def test_application_assistant_eval_runs_real_loop_approval_and_recovery(
     cases = load_application_assistant_eval_cases(CASES)
     report = run_application_assistant_evaluation(cases, output_root=tmp_path)
 
+    assert report.evaluator_version == "application-assistant-evaluator-v2"
     assert report.case_count == 24
     assert report.passed_case_count == 24
     assert report.task_success_rate == 1.0
@@ -46,4 +54,25 @@ def test_application_assistant_eval_runs_real_loop_approval_and_recovery(
     assert report.total_tool_calls > 0
     assert report.latency_p50_ms <= report.latency_p95_ms <= report.latency_p99_ms
     assert "resume_text" not in json.dumps(report.model_dump(mode="json"))
+
+
+@pytest.mark.parametrize('used,precision,recall', [
+    ([READ, WRITE], 1.0, 1.0),
+    ([READ, SEARCH, WRITE], 1.0, 1.0),
+    ([READ, SEARCH], 1.0, 0.5),
+    ([SEARCH, WRITE], 1.0, 0.5),
+    ([SEARCH], 1.0, 0.0),
+    ([READ, READ], 1.0, 0.5),
+    ([READ, WRITE, 'unregistered-tool'], 2 / 3, 1.0),
+    ([], 0.0, 0.0),
+])
+def test_task_tool_recall_requires_read_and_write_but_not_optional_search(used, precision, recall):
+    assert _tool_selection_scores(used) == (precision, recall)
+
+
+def test_adding_an_allowed_tool_cannot_change_task_recall(monkeypatch):
+    from job_agent.backend_service import application_evaluation as evaluation
+    monkeypatch.setattr(evaluation, 'APPLICATION_ASSISTANT_TOOLS',
+                        (*evaluation.APPLICATION_ASSISTANT_TOOLS, 'future-optional-tool'))
+    assert _tool_selection_scores([READ, WRITE]) == (1.0, 1.0)
 

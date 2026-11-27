@@ -1,0 +1,1696 @@
+{
+  "at_utc": "2026-10-22T16:03:07.463577+00:00",
+  "cases": 210,
+  "encoder_calls": {
+    "document_calls": 0,
+    "document_passages": 0,
+    "query_calls": 152
+  },
+  "manifest_sha256": "ae82369316a23a4fade728ed6b25015b4cd784f98363edcdc1276c5da6bee5f1",
+  "reference_raw_sha256": "5bcc2cd997bdd69f2f62e388374d92297d56cc205a77a105ed3f53ac4f62de66",
+  "rows": [
+    {
+      "case_id": "dev-final-01",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-02",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-03",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-04",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-05",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-06",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-07",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-08",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-09",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-10",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-11",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-12",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-13",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-14",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-15",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-16",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-17",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-18",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-19",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-20",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-21",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-22",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-23",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-24",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-25",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-26",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-27",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-28",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-29",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-30",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-31",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-32",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-33",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-34",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-35",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-36",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "A_bm25"
+    },
+    {
+      "case_id": "dev-final-01",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-02",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-03",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-04",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-05",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-06",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-07",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-08",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-09",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-10",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-11",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-12",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-13",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-14",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-15",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-16",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-17",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-18",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-19",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-20",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-21",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-22",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-23",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-24",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-25",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-26",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-27",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-28",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-29",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-30",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-31",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-32",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-33",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-34",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-35",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-36",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "B_dense"
+    },
+    {
+      "case_id": "dev-final-01",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-02",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-03",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-04",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-05",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-06",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-07",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-08",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-09",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-10",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-11",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-12",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-13",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-14",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-15",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-16",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-17",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-18",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-19",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-20",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-21",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-22",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-23",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-24",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-25",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-26",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-27",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-28",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-29",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-30",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-31",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-32",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-33",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-34",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-35",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-36",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "C_hybrid"
+    },
+    {
+      "case_id": "dev-final-01",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-02",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-03",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-04",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-05",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-06",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-07",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-08",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-09",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-10",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-11",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-12",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-13",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-14",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-15",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-16",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-17",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-18",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-19",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-20",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-21",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-22",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-23",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-24",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-25",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-26",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-27",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-28",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-29",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-30",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-31",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-32",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-33",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-34",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-35",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-36",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "D_hybrid_rerank"
+    },
+    {
+      "case_id": "dev-final-01",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-02",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-03",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-04",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-05",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-06",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-07",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-08",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-09",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-10",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-11",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-12",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-13",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-14",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-15",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-16",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-17",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-18",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-19",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-20",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-21",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-22",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "E_code_aware_no_relations"
+    },
+    {
+      "case_id": "dev-final-01",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-02",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-03",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-04",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-05",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-06",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-07",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-08",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-09",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-10",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-11",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-12",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-13",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-14",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-15",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-16",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-17",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-18",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-19",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-20",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-21",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-22",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "F_code_aware_relations"
+    },
+    {
+      "case_id": "dev-final-01",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-02",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-03",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-04",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-05",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-06",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-07",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-08",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-09",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-10",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-11",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-12",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-13",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-14",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-15",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-16",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-17",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-18",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-19",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-20",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-21",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    },
+    {
+      "case_id": "dev-final-22",
+      "same_dense_ids": true,
+      "same_fused_ids": true,
+      "same_references": true,
+      "same_sparse_ids": true,
+      "variant": "G_flat_bm25"
+    }
+  ],
+  "same_scope": true,
+  "schema_version": "research-replay-1",
+  "status": "passed"
+}

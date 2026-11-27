@@ -1,0 +1,37 @@
+{
+  "driver": "agent through real browser UI, synthetic account; not a human learning study",
+  "url": "http://127.0.0.1:8119/",
+  "backend_final_pid": 112423,
+  "previous_own_pid_stopped": 109328,
+  "source_identity_after_restart": "c603ae740483bdd56cbc4148c538858f7f7a07c66ea5086f043dd44349c9fc14",
+  "frontend": "index-Bn8LIz8N.js",
+  "screenshots": [
+    "s7-browser-correction-v2.png",
+    "s7-browser-final-v1.png",
+    "s7-browser-final-v2.png"
+  ],
+  "dom": "s7-browser-final-dom-v2.txt",
+  "console_errors_observed": [],
+  "checks": [
+    "answer and finish first source",
+    "save 3 source observations",
+    "confirm one observation",
+    "reuse original question and sources in new session with empty history",
+    "active view contains neither old answer area nor new rubric",
+    "second full answer automatically completes",
+    "same-recorded-conditions comparison is reference only",
+    "save 3 new observations, total 6",
+    "refresh retains sessions and observations",
+    "mark one reviewed",
+    "user correction preserves original evaluation and stops direct comparison",
+    "pause disables new practice, resume restores control",
+    "withdraw original question removes its 3 observations from queue",
+    "explicit preference cadence 7 days and daily limit 2",
+    "restart own server and observe reviewed_today 1, remaining_today 1"
+  ],
+  "scope_note": "Initial full loop on prior increment; final build reloaded, final backend process restarted against same own synthetic DB and verified persisted state and corrected daily accounting. No UI deletion performed. Final Chinese error-copy build reloaded and same persisted queue verified again.",
+  "failures": [
+    "AX summary looked like button but DOM role was generic; used observed summary text",
+    "Full second answer automatically completed, so scripted finish button no longer existed; observed completion, did not repeat answer"
+  ]
+}

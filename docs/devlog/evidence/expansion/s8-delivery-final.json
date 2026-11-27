@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "archives": [
+    {
+      "file": "job-agent-expansion-source.zip",
+      "sha256": "546554dc86b807b430755bc703a92969b194b28821604c193e123ee3aa5fc676",
+      "verified_files": 823
+    },
+    {
+      "file": "job-agent-expansion-learning.zip",
+      "sha256": "1e7b1df10c4b089736f8501dfb96e3e00a8ad0db42fe0d3114bb15982a2edf01",
+      "verified_files": 47
+    },
+    {
+      "file": "job-agent-expansion-research.zip",
+      "sha256": "116c0df5692e25e6918f04ba4ca052dfb782793d41c795fae856e8719d86c46e",
+      "verified_files": 30
+    }
+  ],
+  "fresh_directory": "/root/autodl-tmp/study/job-agent-v3/output/expansion/unpacked-delivery-final",
+  "fresh_dependency_install": false,
+  "checks": [
+    {
+      "name": "offline_gate",
+      "returncode": 0,
+      "stdout": "{\"status\": \"passed\", \"offline_retrieval_gate\": \"passed\", \"generative_calls\": 0, \"real_models_loaded\": false, \"real_services_lane\": \"not_this_command\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "http_startup",
+      "returncode": 0,
+      "stdout": "{\"status\": \"passed\", \"checks\": 6}\n",
+      "stderr": ""
+    }
+  ],
+  "dependency_condition": "existing dedicated runtime; versions in delivered requirements-ci-observed.txt",
+  "source_and_research_manifest_hashes_verified": true,
+  "executed_user_actions": 0
+}

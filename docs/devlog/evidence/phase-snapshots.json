@@ -1,0 +1,113 @@
+{
+  "scope": "Retrospective snapshots; original phase-start Git state was not recorded.",
+  "snapshots": [
+    {
+      "stage": "audit-baseline",
+      "archive": "job-agent-final-source.zip",
+      "sha256": "b139faf64655ff021751de653b10c437e7a16d5c29400f69c84f7b235b271c1d"
+    },
+    {
+      "stage": "M1",
+      "archive": "job-agent-upgrade-m1-source.zip",
+      "sha256": "2ce96565216e6a2938ff2a9b974d921bb431f95c10d6042b9512c77dffcd9eee"
+    },
+    {
+      "stage": "M2",
+      "archive": "job-agent-upgrade-m2-source.zip",
+      "sha256": "e0a9019dd0d5c7033bf4fdb7952f2b71ca7581deb26c93dea7f3683238c72caf"
+    }
+  ],
+  "changes": [
+    {
+      "phase": 1,
+      "before_archive": "job-agent-final-source.zip",
+      "after_archive": "job-agent-upgrade-m1-source.zip",
+      "added": [
+        "docs/audit/upgrade-m1/http-smoke.json",
+        "docs/audit/upgrade-m1/synthetic-demo.json",
+        "docs/audit/upgrade-m1/upgrade-m1-existing-before.log",
+        "docs/audit/upgrade-m1/upgrade-m1-existing-before.xml",
+        "docs/audit/upgrade-m1/upgrade-m1-regression.log",
+        "docs/audit/upgrade-m1/upgrade-m1-regression.xml",
+        "docs/audit/upgrade-m1/upgrade-m1-tests-network.log",
+        "docs/audit/upgrade-m1/upgrade-m1-tests-network.xml",
+        "docs/audit/upgrade-m1/verification.json",
+        "docs/upgrade/01_STRUCTURED_RESUME.md",
+        "docs/upgrade/ROADMAP.md",
+        "scripts/demo_resume_versions.py",
+        "src/job_agent/resume_workspace/__init__.py",
+        "src/job_agent/resume_workspace/api.py",
+        "src/job_agent/resume_workspace/contracts.py",
+        "src/job_agent/resume_workspace/main.py",
+        "src/job_agent/resume_workspace/repository.py",
+        "tests/test_resume_workspace.py"
+      ],
+      "modified": [
+        ".gitignore",
+        "README.md",
+        "docs/INTERVIEW_SOURCE_GUIDE.md",
+        "docs/PROJECT_AUDIT.md",
+        "docs/resume_notes.md"
+      ],
+      "removed": [],
+      "note": "Manifest/snapshot content comparison, not a Git commit or historical git status."
+    },
+    {
+      "phase": 2,
+      "before_archive": "job-agent-upgrade-m1-source.zip",
+      "after_archive": "job-agent-upgrade-m2-source.zip",
+      "added": [
+        "docs/audit/upgrade-m2/frontend-build.log",
+        "docs/audit/upgrade-m2/frontend-tests.log",
+        "docs/audit/upgrade-m2/npm-audit-mirror-error.json",
+        "docs/audit/upgrade-m2/npm-audit-official.json",
+        "docs/audit/upgrade-m2/upgrade-m2-before.log",
+        "docs/audit/upgrade-m2/upgrade-m2-before.xml",
+        "docs/audit/upgrade-m2/upgrade-m2-final-demo.log",
+        "docs/audit/upgrade-m2/upgrade-m2-final-demo.xml",
+        "docs/audit/upgrade-m2/upgrade-m2-regression.log",
+        "docs/audit/upgrade-m2/upgrade-m2-regression.xml",
+        "docs/audit/upgrade-m2/upgrade-m2-tests-fixed.log",
+        "docs/audit/upgrade-m2/upgrade-m2-tests-fixed.xml",
+        "docs/audit/upgrade-m2/verification.json",
+        "docs/audit/upgrade-m2/workbench-desktop.png",
+        "docs/audit/upgrade-m2/workbench-mobile.png",
+        "docs/upgrade/02_IMPORT_PARSE_EDITOR.md",
+        "frontend/dist/assets/index-Cm4LbAs9.css",
+        "frontend/dist/assets/index-CvzACHSL.js",
+        "frontend/dist/index.html",
+        "frontend/index.html",
+        "frontend/package-lock.json",
+        "frontend/package.json",
+        "frontend/src/main.jsx",
+        "frontend/src/model.js",
+        "frontend/src/model.test.js",
+        "frontend/src/style.css",
+        "frontend/vite.config.js",
+        "scripts/demo_resume_workbench.py",
+        "src/job_agent/resume_workspace/fields.py",
+        "src/job_agent/resume_workspace/ingestion.py",
+        "src/job_agent/resume_workspace/parsing.py",
+        "src/job_agent/resume_workspace/parsing_contracts.py",
+        "tests/test_resume_import.py"
+      ],
+      "modified": [
+        ".gitignore",
+        "README.md",
+        "docs/INTERVIEW_SOURCE_GUIDE.md",
+        "docs/PROJECT_AUDIT.md",
+        "docs/audit/SOURCE_PACKAGE_README.md",
+        "docs/resume_notes.md",
+        "docs/upgrade/01_STRUCTURED_RESUME.md",
+        "docs/upgrade/ROADMAP.md",
+        "pyproject.toml",
+        "src/job_agent/resume_workspace/api.py",
+        "src/job_agent/resume_workspace/contracts.py",
+        "src/job_agent/resume_workspace/main.py",
+        "src/job_agent/resume_workspace/repository.py"
+      ],
+      "removed": [],
+      "note": "Manifest/snapshot content comparison, not a Git commit or historical git status."
+    }
+  ]
+}

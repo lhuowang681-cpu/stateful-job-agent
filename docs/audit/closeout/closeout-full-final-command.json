@@ -1,0 +1,12 @@
+[
+  "/tmp/job-agent-closeout-dmoJ7Z/venv/bin/python",
+  "-u",
+  "-m",
+  "pytest",
+  "-vv",
+  "--tb=short",
+  "-o",
+  "faulthandler_timeout=30",
+  "--basetemp=/tmp/job-agent-closeout-dmoJ7Z/test-closeout-full-final",
+  "--junitxml=/tmp/job-agent-closeout-dmoJ7Z/closeout-full-final.xml"
+]

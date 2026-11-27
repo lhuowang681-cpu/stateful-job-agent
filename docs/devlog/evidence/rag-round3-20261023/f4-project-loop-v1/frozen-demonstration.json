@@ -1,0 +1,9 @@
+{
+  "continued_case": "T2",
+  "formal_run_sha256": "0579915b9a071878f80f1cbdc7e66ba15ce6669d9929f72bba12955f8449744c",
+  "formal_results_unchanged": true,
+  "maximum_new_generations": 2,
+  "synthetic_actions_only": true,
+  "history_probe_query": "当前 历史 计划 实现 部署 CURRENT_SPEC",
+  "human_reviewed": 0
+}

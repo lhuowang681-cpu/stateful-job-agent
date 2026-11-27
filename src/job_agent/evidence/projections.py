@@ -27,11 +27,18 @@ class EvidenceProjectionService:
     def for_resume(self, bundle: EvidenceBundle) -> ResumeEvidenceView:
         claims: list[ResumeEvidenceClaim] = []
         for result in bundle.mapping.atom_results:
+            # Keep conflicting material in interview/review views, never silently
+            # turn an unresolved positive/negative pair into a new resume fact.
+            if result.has_contradiction or any(
+                link.support_status == "contradictory" for link in result.links
+            ):
+                continue
             eligible = [
                 link
                 for link in result.links
                 if link.level in {EvidenceLevel.C2, EvidenceLevel.C3}
                 and link.support_status in {"supported", "partial"}
+                and not link.needs_confirmation
             ]
             if not eligible:
                 continue

@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "source_git_revision": "3443a4ff19d248c082c5244f23abf1408a39be75",
+  "node": "v24.19.0",
+  "npm": "11.17.0",
+  "fresh_npm_ci_ignore_scripts": true,
+  "tests": {
+    "passed": 13,
+    "failed": 0
+  },
+  "production_build": "passed",
+  "all_built_dist_assets_match_archive_bytes": 5,
+  "logs": {
+    "frontend-fresh-install.log": "c863c03f5c1c95d06cfbe2e2d73d650837743d974031e8967211469fe82b9b4e",
+    "frontend-tests.log": "7981c86585b09e744bd4339bb7ee3b24dcaa55a9577ce934ed28e26e33f0d20f",
+    "frontend-build.log": "72be3b0a2c423e1525f6021a16d5ded51f00d849112829487382cd5d0130cad9"
+  }
+}

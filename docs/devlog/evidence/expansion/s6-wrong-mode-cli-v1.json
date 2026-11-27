@@ -1,0 +1,6 @@
+{
+  "expected_nonzero_exit": 1,
+  "reason": "index_dispatch_mode_conflict",
+  "actual_independent_process": true,
+  "result": "polling startup rejected in persisted Redis domain"
+}

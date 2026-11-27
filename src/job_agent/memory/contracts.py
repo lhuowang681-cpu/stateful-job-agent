@@ -32,6 +32,13 @@ class MemoryRecord(StrictModel):
     updated_at: str
     expires_at: str | None = None
     artifact_refs: list[str] = Field(default_factory=list)
+    key: str | None = None
+    value: Any = None
+    supersedes_memory_id: str | None = None
+    superseded_by_memory_id: str | None = None
+    superseded_at: str | None = None
+    idempotency_key: str | None = None
+    created_by_trace_id: str | None = None
 
 
 class MemoryHit(StrictModel):
@@ -51,6 +58,13 @@ class UserState(StrictModel):
     stats: dict[str, Any] = Field(default_factory=dict)
     memories: list[MemoryRecord] = Field(default_factory=list)
     meta: dict[str, Any] = Field(default_factory=dict)
+
+
+class PreferenceUpdateResult(StrictModel):
+    state: UserState
+    memory: MemoryRecord
+    superseded_memory_id: str | None = None
+    changed: bool
 
 
 class RunState(StrictModel):

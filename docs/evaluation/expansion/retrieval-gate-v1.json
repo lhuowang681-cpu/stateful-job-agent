@@ -1,0 +1,131 @@
+{
+  "payload": {
+    "answerable_cases": 34,
+    "baseline": {
+      "answerable_cases": 34,
+      "attempts": 36,
+      "cases": 36,
+      "citation_count": 93,
+      "claim_support": null,
+      "failed_attempts": 0,
+      "final_business_quality": null,
+      "invalid_citations": 0,
+      "latency_ms": {
+        "n": 36,
+        "p50": 4.07,
+        "p95": 8.878
+      },
+      "metrics_at_k": {
+        "1": {
+          "gold_span_recall": {
+            "cases": 34,
+            "mean": 0.5882352941176471
+          },
+          "hit_any_gold": {
+            "cases": 34,
+            "mean": 0.6176470588235294
+          },
+          "reciprocal_rank": {
+            "cases": 34,
+            "mean": 0.6176470588235294
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 34,
+            "mean": 0.5588235294117647
+          }
+        },
+        "3": {
+          "gold_span_recall": {
+            "cases": 34,
+            "mean": 0.7058823529411765
+          },
+          "hit_any_gold": {
+            "cases": 34,
+            "mean": 0.7352941176470589
+          },
+          "reciprocal_rank": {
+            "cases": 34,
+            "mean": 0.6715686274509803
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 34,
+            "mean": 0.6764705882352942
+          }
+        },
+        "5": {
+          "gold_span_recall": {
+            "cases": 34,
+            "mean": 0.7058823529411765
+          },
+          "hit_any_gold": {
+            "cases": 34,
+            "mean": 0.7352941176470589
+          },
+          "reciprocal_rank": {
+            "cases": 34,
+            "mean": 0.6715686274509803
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 34,
+            "mean": 0.6764705882352942
+          }
+        }
+      },
+      "multi_evidence_sufficient": {
+        "cases": 6,
+        "mean": 0.0
+      },
+      "unanswerable_context_cases": 0
+    },
+    "baseline_raw_sha256": "1a7986afbf0200bd2ffe3865eeb5fc7c0dd4f619a3629536e7fe2eac47b02935",
+    "cases": 36,
+    "corpus_snapshot": "corpus-0af1742c1693446188c2dd9215130a73377c4622eeb3afabf467f470b3284bb0",
+    "dataset_hash": "ff6ad1d6ce4e8b0fc2346d61d6e46a0cee35540d73f4776647274ffe7fdc8d66",
+    "floors": {
+      "gold_span_recall": 0.6764705882352942,
+      "hit_any_gold": 0.7058823529411765,
+      "reciprocal_rank": 0.642156862745098,
+      "sufficient_gold_retrieved": 0.6470588235294118
+    },
+    "human_reviewed_count": 0,
+    "manifest_sha256": "ae82369316a23a4fade728ed6b25015b4cd784f98363edcdc1276c5da6bee5f1",
+    "policy": "observed dev baseline minus one query equivalent; positive metrics only; citation validity 1, errors 0",
+    "runtime": {
+      "embedding": {
+        "dimension": 1024,
+        "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+        "max_input_tokens": 1024,
+        "model": "Qwen3-Embedding-0.6B",
+        "normalization": "l2",
+        "provider": "sentence_transformers_local",
+        "query_template": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:{query}",
+        "revision": "47191d5687dbf14319ccb312680caa31a179ed5e16539b8c06aeddc53b63ef6c"
+      },
+      "reranker": {
+        "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+        "max_pair_tokens": 512,
+        "model": "mmarco-mMiniLMv2-L12-H384-v1",
+        "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+        "score_semantics": "raw_logit"
+      },
+      "settings": {
+        "context_char_budget": 24000,
+        "dense_candidates": 20,
+        "fusion_candidates": 30,
+        "max_output": 20,
+        "relation_candidates": 8,
+        "rerank_candidates": 30,
+        "rerank_input_chars": 6000,
+        "rrf_k": 60,
+        "sparse_candidates": 20,
+        "version": "retrieval-policy-1"
+      }
+    },
+    "schema_version": "retrieval-gate-1",
+    "semantic_quality_gated": false,
+    "ungated": {
+      "multi_evidence_sufficient": "measured baseline too low for a positive one-query-margin floor; observation only"
+    }
+  },
+  "sha256": "872fb7c4fbbfa341f87765449d9e66bfe09cbd7a7ab71143d3dee31e21c2233e"
+}

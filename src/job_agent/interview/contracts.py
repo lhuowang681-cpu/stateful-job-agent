@@ -4,7 +4,7 @@ from typing import Literal
 
 from pydantic import Field, model_validator
 
-from job_agent.schemas import StrictModel
+from job_agent.schemas import ApplicationStatus, StrictModel
 
 
 ProjectFactKind = Literal["implementation", "ownership", "metric", "interpretation", "boundary"]
@@ -27,6 +27,66 @@ QuestionOrigin = Literal[
     "bank_adapted",
     "closing",
 ]
+
+
+class InterviewPrepProvenance(StrictModel):
+    requirement_atom_id: str = Field(min_length=1)
+    requirement_text: str = Field(min_length=1)
+    document_id: str = Field(min_length=1)
+    document_version: int = Field(ge=1)
+    document_content_hash: str = Field(min_length=64, max_length=64)
+    chunk_id: str = Field(min_length=1)
+    start_offset: int = Field(ge=0)
+    end_offset: int = Field(gt=0)
+    exact_quote: str = Field(min_length=1)
+    retrieval_rank: int = Field(ge=1)
+    retrieval_method: str = Field(min_length=1)
+
+    @model_validator(mode="after")
+    def validate_source_span(self) -> "InterviewPrepProvenance":
+        if self.end_offset <= self.start_offset:
+            raise ValueError("interview prep source span end must follow start")
+        return self
+
+
+class EvidenceBackedInterviewQuestion(StrictModel):
+    question_id: str = Field(min_length=1)
+    topic: str = Field(min_length=1)
+    question: str = Field(min_length=1)
+    evidence_claim: str = Field(min_length=1)
+    honesty_boundary: str = Field(min_length=1)
+    provenance: InterviewPrepProvenance
+
+
+class InterviewGapRisk(StrictModel):
+    requirement_atom_id: str = Field(min_length=1)
+    requirement_text: str = Field(min_length=1)
+    risk: str = Field(min_length=1)
+    candidate_experience_claimed: Literal[False] = False
+
+
+class InterviewTechnicalReviewTopic(StrictModel):
+    topic: str = Field(min_length=1)
+    requirement_atom_id: str = Field(min_length=1)
+    requirement_text: str = Field(min_length=1)
+    classification: Literal["prep_topic"] = "prep_topic"
+
+
+class JobSpecificInterviewPreparation(StrictModel):
+    application_id: str = Field(min_length=1)
+    job_id: str = Field(min_length=1)
+    company: str = Field(min_length=1)
+    role: str = Field(min_length=1)
+    stage: ApplicationStatus
+    jd_source_id: str = Field(min_length=1)
+    generated_at: str = Field(min_length=1)
+    evidence_backed_questions: list[EvidenceBackedInterviewQuestion] = Field(
+        min_length=1
+    )
+    gap_risks: list[InterviewGapRisk] = Field(default_factory=list)
+    technical_review_topics: list[InterviewTechnicalReviewTopic] = Field(
+        min_length=1
+    )
 
 
 class ProjectFact(StrictModel):

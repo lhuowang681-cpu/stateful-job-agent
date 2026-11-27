@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="2" failures="0" skipped="0" tests="2" time="5.593" timestamp="2026-10-22T17:43:45.699602+08:00" hostname="autodl-container-81de49abb0-0a662bf5"><testcase classname="" name="tests.test_ui_app_test" time="0.000"><error message="collection failure">ImportError while importing test module '/root/autodl-tmp/study/job-agent-v3/tests/test_ui_app_test.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_ui_app_test.py:15: in &lt;module&gt;
+    from streamlit.testing.v1 import AppTest
+E   ModuleNotFoundError: No module named 'streamlit'</error></testcase><testcase classname="" name="tests.test_ui_evidence_v2" time="0.000"><error message="collection failure">ImportError while importing test module '/root/autodl-tmp/study/job-agent-v3/tests/test_ui_evidence_v2.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_ui_evidence_v2.py:4: in &lt;module&gt;
+    from job_agent.ui.views import evidence_v2_view
+src/job_agent/ui/views/evidence_v2_view.py:5: in &lt;module&gt;
+    import streamlit as st
+E   ModuleNotFoundError: No module named 'streamlit'</error></testcase></testsuite></testsuites>

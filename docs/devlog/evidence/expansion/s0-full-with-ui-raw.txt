@@ -1,0 +1,1939 @@
+...............................................................FF....... [  7%]
+......................................................FF..........FFF... [ 15%]
+...F..F....................ssssssss.ssssssssssss..sssssssssFFsssss.....s [ 23%]
+..............F..F......ssss.......FFF.FFFFFFF..F......FFFFFFFFFFFFFF... [ 30%]
+.........................................................s.............. [ 38%]
+........................................sss............................. [ 46%]
+........................ss...........sss................................ [ 53%]
+........................................................................ [ 61%]
+........................................................................ [ 69%]
+.................................................F.FFFFFFss............. [ 77%]
+........................................................................ [ 84%]
+........................................................................ [ 92%]
+......................................................................   [100%]
+=================================== FAILURES ===================================
+_ test_cli_agent_mock_mode_runs_five_calls_and_writes_sanitized_runtime_audit __
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-183/test_cli_agent_mock_mode_runs_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f06bbd812d0>
+capsys = <_pytest.capture.CaptureFixture object at 0x7f06bbd831d0>
+
+    def test_cli_agent_mock_mode_runs_five_calls_and_writes_sanitized_runtime_audit(
+        tmp_path,
+        monkeypatch,
+        capsys,
+    ):
+        import json
+        import sys
+    
+        from job_agent.cli import main
+    
+        skill_root = tmp_path / "skill"
+        references = skill_root / "skill-references"
+        references.mkdir(parents=True)
+        (skill_root / "release-manifest.txt").write_text(
+            "# version: fixture-v1\nSKILL.md\nrelease-manifest.txt\nskill-references/\n",
+            encoding="utf-8",
+        )
+        (skill_root / "SKILL.md").write_text("Never fabricate evidence.\n", encoding="utf-8")
+        for name in (
+            "jd-analysis.md",
+            "materials-audit.md",
+            "truth-boundary.md",
+            "evidence-contract.md",
+            "resume-tailoring.md",
+            "interview-grilling.md",
+            "answer-cards.md",
+        ):
+            (references / name).write_text(f"Instructions for {name}.\n", encoding="utf-8")
+        output_dir = tmp_path / "agent-output"
+        monkeypatch.setattr(
+            sys,
+            "argv",
+            [
+                "job-agent",
+                "--mode",
+                "agent_api",
+                "--agent-provider",
+                "mock",
+                "--skill-root",
+                str(skill_root),
+                "--selected-job-id",
+                "job_001",
+                "--output-dir",
+                str(output_dir),
+            ],
+        )
+    
+>       main()
+
+tests/test_agent_graph_runtime.py:656: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/job_agent/cli.py:288: in main
+    result = run_fixture_flow(
+src/job_agent/graph.py:139: in run_fixture_flow
+    job_scout = scout_jobs(
+src/job_agent/nodes/job_scout.py:21: in scout_jobs
+    jobs = source_adapter.load(intent=intent, source_path=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/tools/job_sources.py:21: in load
+    return load_fixture_jobs(source_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('data/fixtures/raw_jobs_posttraining.json')
+
+    def load_fixture_jobs(path: Path) -> list[RawJob]:
+        if not path.exists():
+>           raise FileNotFoundError(f"Job fixture not found: {path}")
+E           FileNotFoundError: Job fixture not found: data/fixtures/raw_jobs_posttraining.json
+
+src/job_agent/tools/job_search.py:11: FileNotFoundError
+----------------------------- Captured stdout call -----------------------------
+Runtime Profile: local_dev
+Runtime Mode: agent_api
+____________ test_cli_agent_failure_writes_sanitized_failure_audit _____________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-183/test_cli_agent_failure_writes_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f06babaa850>
+capsys = <_pytest.capture.CaptureFixture object at 0x7f06babaa890>
+
+    def test_cli_agent_failure_writes_sanitized_failure_audit(tmp_path, monkeypatch, capsys):
+        import json
+        import sys
+    
+        import job_agent.cli as cli_module
+        from job_agent.llm.providers.mock import MockLLMProvider as RealMockLLMProvider
+    
+        skill_root = tmp_path / "skill"
+        references = skill_root / "skill-references"
+        references.mkdir(parents=True)
+        (skill_root / "release-manifest.txt").write_text(
+            "# version: fixture-v1\nSKILL.md\nrelease-manifest.txt\nskill-references/\n",
+            encoding="utf-8",
+        )
+        (skill_root / "SKILL.md").write_text("Never fabricate evidence.\n", encoding="utf-8")
+        for name in (
+            "jd-analysis.md",
+            "materials-audit.md",
+            "truth-boundary.md",
+            "evidence-contract.md",
+            "resume-tailoring.md",
+            "interview-grilling.md",
+            "answer-cards.md",
+        ):
+            (references / name).write_text(f"Instructions for {name}.\n", encoding="utf-8")
+        output_dir = tmp_path / "failed-agent-output"
+        monkeypatch.setattr(
+            cli_module,
+            "MockLLMProvider",
+            lambda responses, model: RealMockLLMProvider(
+                [{"unexpected": "shape"}, {"unexpected": "shape"}],
+                model=model,
+            ),
+        )
+        monkeypatch.setattr(
+            sys,
+            "argv",
+            [
+                "job-agent",
+                "--mode",
+                "agent_api",
+                "--agent-provider",
+                "mock",
+                "--skill-root",
+                str(skill_root),
+                "--selected-job-id",
+                "job_001",
+                "--output-dir",
+                str(output_dir),
+            ],
+        )
+    
+        with pytest.raises(SystemExit) as exc_info:
+>           cli_module.main()
+
+tests/test_agent_graph_runtime.py:726: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/job_agent/cli.py:288: in main
+    result = run_fixture_flow(
+src/job_agent/graph.py:139: in run_fixture_flow
+    job_scout = scout_jobs(
+src/job_agent/nodes/job_scout.py:21: in scout_jobs
+    jobs = source_adapter.load(intent=intent, source_path=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/tools/job_sources.py:21: in load
+    return load_fixture_jobs(source_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('data/fixtures/raw_jobs_posttraining.json')
+
+    def load_fixture_jobs(path: Path) -> list[RawJob]:
+        if not path.exists():
+>           raise FileNotFoundError(f"Job fixture not found: {path}")
+E           FileNotFoundError: Job fixture not found: data/fixtures/raw_jobs_posttraining.json
+
+src/job_agent/tools/job_search.py:11: FileNotFoundError
+----------------------------- Captured stdout call -----------------------------
+Runtime Profile: local_dev
+Runtime Mode: agent_api
+_________ test_application_assistant_eval_corpus_has_required_coverage _________
+
+    def test_application_assistant_eval_corpus_has_required_coverage() -> None:
+>       cases = load_application_assistant_eval_cases(CASES)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_application_assistant_evaluation.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/job_agent/backend_service/application_evaluation.py:123: in load_application_assistant_eval_cases
+    json.loads(Path(path).read_text(encoding="utf-8"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/application_assistant_phase_c_cases.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/application_assistant_phase_c_cases.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_____ test_application_assistant_eval_runs_real_loop_approval_and_recovery _____
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-183/test_application_assistant_eva0')
+
+    def test_application_assistant_eval_runs_real_loop_approval_and_recovery(
+        tmp_path,
+    ) -> None:
+>       cases = load_application_assistant_eval_cases(CASES)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_application_assistant_evaluation.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/job_agent/backend_service/application_evaluation.py:123: in load_application_assistant_eval_cases
+    json.loads(Path(path).read_text(encoding="utf-8"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/application_assistant_phase_c_cases.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/application_assistant_phase_c_cases.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+____________ test_regression_benchmark_has_complete_atomic_lineage _____________
+
+    def test_regression_benchmark_has_complete_atomic_lineage() -> None:
+>       benchmark = load_evidence_benchmark_v2(BENCHMARK)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_atomic_evidence_v2.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/job_agent/evaluation/atomic_evidence_v2.py:239: in load_evidence_benchmark_v2
+    Path(path).read_text(encoding="utf-8")
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/eval/real_career_evidence_v2/regression.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/real_career_evidence_v2/regression.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_______ test_compound_parent_maps_atoms_and_multiple_acceptable_sources ________
+
+    def test_compound_parent_maps_atoms_and_multiple_acceptable_sources() -> None:
+>       benchmark = load_evidence_benchmark_v2(BENCHMARK)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_atomic_evidence_v2.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/job_agent/evaluation/atomic_evidence_v2.py:239: in load_evidence_benchmark_v2
+    Path(path).read_text(encoding="utf-8")
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/eval/real_career_evidence_v2/regression.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/real_career_evidence_v2/regression.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+___________ test_named_dev_review_cases_use_same_auditable_v2_schema ___________
+
+    def test_named_dev_review_cases_use_same_auditable_v2_schema() -> None:
+>       benchmark = load_evidence_benchmark_v2(DEV_REVIEW)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_atomic_evidence_v2.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/job_agent/evaluation/atomic_evidence_v2.py:239: in load_evidence_benchmark_v2
+    Path(path).read_text(encoding="utf-8")
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/eval/real_career_evidence_v2/dev_review.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/real_career_evidence_v2/dev_review.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_________ test_atomic_observation_preserves_exact_quote_and_provenance _________
+
+    def test_atomic_observation_preserves_exact_quote_and_provenance() -> None:
+        document = create_knowledge_document(
+            document_id="project-runtime",
+            source_type="project",
+            text="The runtime persists checkpoints for durable recovery.",
+            version=1,
+        )
+        chunk = chunk_knowledge_document(document, max_chars=200)[0]
+        hit = RetrievedChunk(
+            chunk=chunk,
+            score=0.9,
+            rank=1,
+            retrieval_method="dense",
+        )
+>       benchmark = load_evidence_benchmark_v2(BENCHMARK)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_atomic_evidence_v2.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/job_agent/evaluation/atomic_evidence_v2.py:239: in load_evidence_benchmark_v2
+    Path(path).read_text(encoding="utf-8")
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/eval/real_career_evidence_v2/regression.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/real_career_evidence_v2/regression.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_________________ test_changed_gold_requires_a_correction_log __________________
+
+    def test_changed_gold_requires_a_correction_log() -> None:
+>       benchmark = load_evidence_benchmark_v2(BENCHMARK)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_atomic_evidence_v2.py:216: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/job_agent/evaluation/atomic_evidence_v2.py:239: in load_evidence_benchmark_v2
+    Path(path).read_text(encoding="utf-8")
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/eval/real_career_evidence_v2/regression.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/real_career_evidence_v2/regression.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+__ test_provider_admission_enforces_fairness_cooldown_circuit_and_fail_closed __
+
+self = <redis.connection.Connection(host=127.0.0.1,port=63799,db=14)>
+
+    def connect(self):
+        "Connects to the Redis server if not already connected"
+        if self._sock:
+            return
+        try:
+>           sock = self.retry.call_with_retry(
+                lambda: self._connect(), lambda error: self.disconnect(error)
+            )
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/connection.py:378: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/retry.py:62: in call_with_retry
+    return do()
+           ^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/connection.py:379: in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/connection.py:764: in _connect
+    raise err
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <redis.connection.Connection(host=127.0.0.1,port=63799,db=14)>
+
+    def _connect(self):
+        "Create a TCP socket connection"
+        # we want to mimic what socket.create_connection does to support
+        # ipv4/ipv6, but we want to set options prior to calling
+        # socket.connect()
+        err = None
+        for res in socket.getaddrinfo(
+            self.host, self.port, self.socket_type, socket.SOCK_STREAM
+        ):
+            family, socktype, proto, canonname, socket_address = res
+            sock = None
+            try:
+                sock = socket.socket(family, socktype, proto)
+                # TCP_NODELAY
+                sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
+    
+                # TCP_KEEPALIVE
+                if self.socket_keepalive:
+                    sock.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
+                    for k, v in self.socket_keepalive_options.items():
+                        sock.setsockopt(socket.IPPROTO_TCP, k, v)
+    
+                # set the socket_connect_timeout before we connect
+                sock.settimeout(self.socket_connect_timeout)
+    
+                # connect
+>               sock.connect(socket_address)
+E               ConnectionRefusedError: [Errno 111] Connection refused
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/connection.py:752: ConnectionRefusedError
+
+During handling of the above exception, another exception occurred:
+
+    def test_provider_admission_enforces_fairness_cooldown_circuit_and_fail_closed():
+        raw = Redis.from_url(REDIS_URL, decode_responses=True)
+>       raw.flushdb()
+
+tests/test_backend_service_reliability.py:595: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/commands/core.py:941: in flushdb
+    return self.execute_command("FLUSHDB", *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/client.py:605: in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/client.py:611: in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/utils.py:183: in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/connection.py:1483: in get_connection
+    connection.connect()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <redis.connection.Connection(host=127.0.0.1,port=63799,db=14)>
+
+    def connect(self):
+        "Connects to the Redis server if not already connected"
+        if self._sock:
+            return
+        try:
+            sock = self.retry.call_with_retry(
+                lambda: self._connect(), lambda error: self.disconnect(error)
+            )
+        except socket.timeout:
+            raise TimeoutError("Timeout connecting to server")
+        except OSError as e:
+>           raise ConnectionError(self._error_message(e))
+E           redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:63799. Connection refused.
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/connection.py:384: ConnectionError
+_ test_provider_admission_is_call_scoped_and_local_errors_do_not_open_circuit __
+
+self = <redis.connection.Connection(host=127.0.0.1,port=63799,db=14)>
+
+    def connect(self):
+        "Connects to the Redis server if not already connected"
+        if self._sock:
+            return
+        try:
+>           sock = self.retry.call_with_retry(
+                lambda: self._connect(), lambda error: self.disconnect(error)
+            )
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/connection.py:378: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/retry.py:62: in call_with_retry
+    return do()
+           ^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/connection.py:379: in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/connection.py:764: in _connect
+    raise err
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <redis.connection.Connection(host=127.0.0.1,port=63799,db=14)>
+
+    def _connect(self):
+        "Create a TCP socket connection"
+        # we want to mimic what socket.create_connection does to support
+        # ipv4/ipv6, but we want to set options prior to calling
+        # socket.connect()
+        err = None
+        for res in socket.getaddrinfo(
+            self.host, self.port, self.socket_type, socket.SOCK_STREAM
+        ):
+            family, socktype, proto, canonname, socket_address = res
+            sock = None
+            try:
+                sock = socket.socket(family, socktype, proto)
+                # TCP_NODELAY
+                sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
+    
+                # TCP_KEEPALIVE
+                if self.socket_keepalive:
+                    sock.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
+                    for k, v in self.socket_keepalive_options.items():
+                        sock.setsockopt(socket.IPPROTO_TCP, k, v)
+    
+                # set the socket_connect_timeout before we connect
+                sock.settimeout(self.socket_connect_timeout)
+    
+                # connect
+>               sock.connect(socket_address)
+E               ConnectionRefusedError: [Errno 111] Connection refused
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/connection.py:752: ConnectionRefusedError
+
+During handling of the above exception, another exception occurred:
+
+    def test_provider_admission_is_call_scoped_and_local_errors_do_not_open_circuit():
+        raw = Redis.from_url(REDIS_URL, decode_responses=True)
+>       raw.flushdb()
+
+tests/test_backend_service_reliability.py:656: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/commands/core.py:941: in flushdb
+    return self.execute_command("FLUSHDB", *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/client.py:605: in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/client.py:611: in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/utils.py:183: in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/connection.py:1483: in get_connection
+    connection.connect()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <redis.connection.Connection(host=127.0.0.1,port=63799,db=14)>
+
+    def connect(self):
+        "Connects to the Redis server if not already connected"
+        if self._sock:
+            return
+        try:
+            sock = self.retry.call_with_retry(
+                lambda: self._connect(), lambda error: self.disconnect(error)
+            )
+        except socket.timeout:
+            raise TimeoutError("Timeout connecting to server")
+        except OSError as e:
+>           raise ConnectionError(self._error_message(e))
+E           redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:63799. Connection refused.
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/redis/connection.py:384: ConnectionError
+____________ test_real_career_eval_v1_has_frozen_split_and_metrics _____________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-183/test_real_career_eval_v1_has_f0')
+
+    def test_real_career_eval_v1_has_frozen_split_and_metrics(tmp_path: Path) -> None:
+>       dataset = load_durable_career_eval(
+            "eval/career_knowledge_v1",
+            repository_root=".",
+        )
+
+tests/test_durable_career_knowledge.py:305: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/job_agent/knowledge/career_knowledge_eval.py:98: in load_durable_career_eval
+    document_records = _read_list(root / "documents.json")
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/knowledge/career_knowledge_eval.py:274: in _read_list
+    payload = json.loads(path.read_text(encoding="utf-8"))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('eval/career_knowledge_v1/documents.json'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'eval/career_knowledge_v1/documents.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+__________________ test_private_career_sources_are_gitignored __________________
+
+    def test_private_career_sources_are_gitignored() -> None:
+>       result = subprocess.run(
+            [
+                "git",
+                "check-ignore",
+                "data/private/resume.pdf",
+                "data/career_sources/resume.pdf",
+                "data/career_sources/manifest.json",
+            ],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+
+tests/test_durable_career_knowledge.py:389: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = True, timeout = None, check = True
+popenargs = (['git', 'check-ignore', 'data/private/resume.pdf', 'data/career_sources/resume.pdf', 'data/career_sources/manifest.json'],)
+kwargs = {'text': True, 'stdout': -1, 'stderr': -1}
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout is given, and the process takes too long, a TimeoutExpired
+        exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['git', 'check-ignore', 'data/private/resume.pdf', 'data/career_sources/resume.pdf', 'data/career_sources/manifest.json']' returned non-zero exit status 128.
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/subprocess.py:571: CalledProcessError
+___________ test_development_manifest_registers_three_fair_variants ____________
+
+    def test_development_manifest_registers_three_fair_variants():
+>       manifest = load_manifest(default_manifest_path())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_evidence_eval_contracts.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/job_agent/evidence/evaluation/runner.py:23: in load_manifest
+    return EvidenceEvalManifest.model_validate_json(path.read_text(encoding="utf-8"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+__________________ test_manifest_rejects_variant_budget_drift __________________
+
+    def test_manifest_rejects_variant_budget_drift():
+>       payload = json.loads(default_manifest_path().read_text(encoding="utf-8"))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_evidence_eval_contracts.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_______________ test_manifest_has_no_evidence_v1_quality_variant _______________
+
+    def test_manifest_has_no_evidence_v1_quality_variant():
+>       payload = default_manifest_path().read_text(encoding="utf-8")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_evidence_eval_contracts.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_____________________ test_frozen_builder_is_reproducible ______________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-183/test_frozen_builder_is_reprodu0')
+
+    def test_frozen_builder_is_reproducible(tmp_path):
+        import subprocess
+        import sys
+    
+        subprocess.run(
+            [sys.executable, str(ROOT / "scripts" / "build_evidence_eval_corpus.py"), "--output-dir", str(tmp_path)],
+            check=True,
+        )
+        for name in (
+            "cases_dev_v4.json",
+            "manifest_dev_v4.json",
+            "cases_held_out_v4.json",
+            "manifest_held_out_v4.json",
+            "corpus_100_audit_v4.json",
+        ):
+>           assert (tmp_path / name).read_bytes() == (DATA / name).read_bytes()
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_evidence_eval_corpus_v2.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1050: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/cases_dev_v4.json')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/cases_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_________ test_100_cases_use_family_level_60_40_split_without_leakage __________
+
+    def test_100_cases_use_family_level_60_40_split_without_leakage():
+>       dev_manifest, dev = _load("dev")
+                            ^^^^^^^^^^^^
+
+tests/test_evidence_eval_corpus_v2.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_evidence_eval_corpus_v2.py:14: in _load
+    manifest = load_manifest(DATA / f"manifest_{short}_v4.json")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/evidence/evaluation/runner.py:23: in load_manifest
+    return EvidenceEvalManifest.model_validate_json(path.read_text(encoding="utf-8"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_________ test_corpus_gold_spans_levels_and_edge_slices_are_auditable __________
+
+    def test_corpus_gold_spans_levels_and_edge_slices_are_auditable():
+>       cases = [*_load("dev")[1].cases, *_load("held_out")[1].cases]
+                  ^^^^^^^^^^^^
+
+tests/test_evidence_eval_corpus_v2.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_evidence_eval_corpus_v2.py:14: in _load
+    manifest = load_manifest(DATA / f"manifest_{short}_v4.json")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/evidence/evaluation/runner.py:23: in load_manifest
+    return EvidenceEvalManifest.model_validate_json(path.read_text(encoding="utf-8"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+___________ test_no_network_mock_executes_all_300_variant_case_rows ____________
+
+    def test_no_network_mock_executes_all_300_variant_case_rows():
+>       reports = [
+            run_mock_suite(
+                manifest_path=DATA / f"manifest_{short}_v4.json",
+                corpus_path=DATA / f"cases_{short}_v4.json",
+            )
+            for short in ("dev", "held_out")
+        ]
+
+tests/test_evidence_eval_corpus_v2.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_evidence_eval_corpus_v2.py:109: in <listcomp>
+    run_mock_suite(
+src/job_agent/evidence/evaluation/mock_runner.py:70: in run_mock_suite
+    manifest = load_manifest(manifest_path)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/evidence/evaluation/runner.py:23: in load_manifest
+    return EvidenceEvalManifest.model_validate_json(path.read_text(encoding="utf-8"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+___________ test_audit_records_frozen_hashes_before_live_evaluation ____________
+
+    def test_audit_records_frozen_hashes_before_live_evaluation():
+>       audit = json.loads((DATA / "corpus_100_audit_v4.json").read_text(encoding="utf-8"))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_evidence_eval_corpus_v2.py:128: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/corpus_100_audit_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/corpus_100_audit_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_______________ test_v5_corpus_is_new_family_disjoint_and_frozen _______________
+
+    def test_v5_corpus_is_new_family_disjoint_and_frozen():
+>       audit = json.loads((DATA / "corpus_100_audit_v5.json").read_text(encoding="utf-8"))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_evidence_eval_corpus_v5.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/corpus_100_audit_v5.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/corpus_100_audit_v5.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+___________ test_v5_hashes_contracts_and_artifact_metadata_are_valid ___________
+
+    def test_v5_hashes_contracts_and_artifact_metadata_are_valid():
+>       audit = json.loads((DATA / "corpus_100_audit_v5.json").read_text(encoding="utf-8"))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_evidence_eval_corpus_v5.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/corpus_100_audit_v5.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/corpus_100_audit_v5.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_____________ test_deterministic_runner_writes_non_quality_report ______________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-183/test_deterministic_runner_writ0')
+
+    def test_deterministic_runner_writes_non_quality_report(tmp_path):
+        report_path = tmp_path / "report.json"
+>       assert main(["--suite", "deterministic", "--report", str(report_path)]) == 0
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_evidence_eval_metrics.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/job_agent/evidence/evaluation/runner.py:103: in main
+    manifest = load_manifest(args.manifest)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/evidence/evaluation/runner.py:23: in load_manifest
+    return EvidenceEvalManifest.model_validate_json(path.read_text(encoding="utf-8"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+________ test_live_dry_run_executes_all_three_variants_with_same_cases _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f06b96be250>
+
+    def test_live_dry_run_executes_all_three_variants_with_same_cases(monkeypatch):
+        monkeypatch.setenv("JOB_AGENT_LIVE_API_KEY", "test-key")
+>       manifest, corpus = _fixture()
+                           ^^^^^^^^^^
+
+tests/test_evidence_live_eval.py:93: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_evidence_live_eval.py:76: in _fixture
+    manifest = load_manifest(default_manifest_path())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/evidence/evaluation/runner.py:23: in load_manifest
+    return EvidenceEvalManifest.model_validate_json(path.read_text(encoding="utf-8"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+____________ test_live_budget_gate_blocks_calls_before_provider_use ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f06baba9450>
+
+    def test_live_budget_gate_blocks_calls_before_provider_use(monkeypatch):
+        monkeypatch.setenv("JOB_AGENT_LIVE_API_KEY", "test-key")
+>       manifest, corpus = _fixture()
+                           ^^^^^^^^^^
+
+tests/test_evidence_live_eval.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_evidence_live_eval.py:76: in _fixture
+    manifest = load_manifest(default_manifest_path())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/evidence/evaluation/runner.py:23: in load_manifest
+    return EvidenceEvalManifest.model_validate_json(path.read_text(encoding="utf-8"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+___________________ test_canary_preserves_schema_failure_row ___________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f06b973afd0>
+
+    def test_canary_preserves_schema_failure_row(monkeypatch):
+        monkeypatch.setenv("JOB_AGENT_LIVE_API_KEY", "test-key")
+>       manifest, corpus = _fixture()
+                           ^^^^^^^^^^
+
+tests/test_evidence_live_eval.py:137: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_evidence_live_eval.py:76: in _fixture
+    manifest = load_manifest(default_manifest_path())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/evidence/evaluation/runner.py:23: in load_manifest
+    return EvidenceEvalManifest.model_validate_json(path.read_text(encoding="utf-8"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_ test_scorer_separates_invalid_span_from_semantics_and_rejects_unverified_claim _
+
+    def test_scorer_separates_invalid_span_from_semantics_and_rejects_unverified_claim():
+>       _, corpus = _fixture()
+                    ^^^^^^^^^^
+
+tests/test_evidence_live_eval.py:154: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_evidence_live_eval.py:76: in _fixture
+    manifest = load_manifest(default_manifest_path())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/evidence/evaluation/runner.py:23: in load_manifest
+    return EvidenceEvalManifest.model_validate_json(path.read_text(encoding="utf-8"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_______ test_unknown_claim_reference_is_scored_instead_of_rejecting_row ________
+
+    def test_unknown_claim_reference_is_scored_instead_of_rejecting_row():
+>       _, corpus = _fixture()
+                    ^^^^^^^^^^
+
+tests/test_evidence_live_eval.py:175: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_evidence_live_eval.py:76: in _fixture
+    manifest = load_manifest(default_manifest_path())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/evidence/evaluation/runner.py:23: in load_manifest
+    return EvidenceEvalManifest.model_validate_json(path.read_text(encoding="utf-8"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+___________ test_requirement_concept_matches_unique_containing_span ____________
+
+    def test_requirement_concept_matches_unique_containing_span():
+>       _, corpus = _fixture()
+                    ^^^^^^^^^^
+
+tests/test_evidence_live_eval.py:192: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_evidence_live_eval.py:76: in _fixture
+    manifest = load_manifest(default_manifest_path())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/evidence/evaluation/runner.py:23: in load_manifest
+    return EvidenceEvalManifest.model_validate_json(path.read_text(encoding="utf-8"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_____________ test_semantic_score_and_exact_span_are_separate_axes _____________
+
+    def test_semantic_score_and_exact_span_are_separate_axes():
+>       _, corpus = _fixture()
+                    ^^^^^^^^^^
+
+tests/test_evidence_live_eval.py:204: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_evidence_live_eval.py:76: in _fixture
+    manifest = load_manifest(default_manifest_path())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/evidence/evaluation/runner.py:23: in load_manifest
+    return EvidenceEvalManifest.model_validate_json(path.read_text(encoding="utf-8"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_______ test_atom_semantics_match_when_pipeline_cites_shared_parent_span _______
+
+    def test_atom_semantics_match_when_pipeline_cites_shared_parent_span():
+>       _, corpus = _fixture()
+                    ^^^^^^^^^^
+
+tests/test_evidence_live_eval.py:215: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_evidence_live_eval.py:76: in _fixture
+    manifest = load_manifest(default_manifest_path())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/evidence/evaluation/runner.py:23: in load_manifest
+    return EvidenceEvalManifest.model_validate_json(path.read_text(encoding="utf-8"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+__________ test_existing_rows_can_be_rescored_without_provider_calls ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f06b966d610>
+
+    def test_existing_rows_can_be_rescored_without_provider_calls(monkeypatch):
+        monkeypatch.setenv("JOB_AGENT_LIVE_API_KEY", "test-key")
+>       manifest, corpus = _fixture()
+                           ^^^^^^^^^^
+
+tests/test_evidence_live_eval.py:233: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_evidence_live_eval.py:76: in _fixture
+    manifest = load_manifest(default_manifest_path())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/evidence/evaluation/runner.py:23: in load_manifest
+    return EvidenceEvalManifest.model_validate_json(path.read_text(encoding="utf-8"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_____ test_checkpoint_resume_skips_completed_rows_without_duplicate_calls ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f06b94a7fd0>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-183/test_checkpoint_resume_skips_c0')
+
+    def test_checkpoint_resume_skips_completed_rows_without_duplicate_calls(monkeypatch, tmp_path):
+        monkeypatch.setenv("JOB_AGENT_LIVE_API_KEY", "test-key")
+>       manifest, corpus = _fixture()
+                           ^^^^^^^^^^
+
+tests/test_evidence_live_eval.py:256: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_evidence_live_eval.py:76: in _fixture
+    manifest = load_manifest(default_manifest_path())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/evidence/evaluation/runner.py:23: in load_manifest
+    return EvidenceEvalManifest.model_validate_json(path.read_text(encoding="utf-8"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+______________ test_failed_checkpoint_row_requires_explicit_retry ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f06b972ca50>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-183/test_failed_checkpoint_row_req0')
+
+    def test_failed_checkpoint_row_requires_explicit_retry(monkeypatch, tmp_path):
+        monkeypatch.setenv("JOB_AGENT_LIVE_API_KEY", "test-key")
+>       manifest, corpus = _fixture()
+                           ^^^^^^^^^^
+
+tests/test_evidence_live_eval.py:310: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_evidence_live_eval.py:76: in _fixture
+    manifest = load_manifest(default_manifest_path())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/evidence/evaluation/runner.py:23: in load_manifest
+    return EvidenceEvalManifest.model_validate_json(path.read_text(encoding="utf-8"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+___________ test_production_pipeline_live_runner_handles_sparse_case ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f06b971abd0>
+
+    def test_production_pipeline_live_runner_handles_sparse_case(monkeypatch):
+        monkeypatch.setenv("JOB_AGENT_LIVE_API_KEY", "test-key")
+>       manifest, corpus = _fixture()
+                           ^^^^^^^^^^
+
+tests/test_evidence_live_eval.py:359: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_evidence_live_eval.py:76: in _fixture
+    manifest = load_manifest(default_manifest_path())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/evidence/evaluation/runner.py:23: in load_manifest
+    return EvidenceEvalManifest.model_validate_json(path.read_text(encoding="utf-8"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+________ test_production_pipeline_checkpoint_resume_avoids_repeat_calls ________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f06b966e290>
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-183/test_production_pipeline_check0')
+
+    def test_production_pipeline_checkpoint_resume_avoids_repeat_calls(monkeypatch, tmp_path):
+        monkeypatch.setenv("JOB_AGENT_LIVE_API_KEY", "test-key")
+>       manifest, corpus = _fixture()
+                           ^^^^^^^^^^
+
+tests/test_evidence_live_eval.py:391: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_evidence_live_eval.py:76: in _fixture
+    manifest = load_manifest(default_manifest_path())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/evidence/evaluation/runner.py:23: in load_manifest
+    return EvidenceEvalManifest.model_validate_json(path.read_text(encoding="utf-8"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+________ test_production_pipeline_maps_independent_c2_artifact_sources _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f06b96da150>
+
+    def test_production_pipeline_maps_independent_c2_artifact_sources(monkeypatch):
+        monkeypatch.setenv("JOB_AGENT_LIVE_API_KEY", "test-key")
+>       manifest, corpus = _fixture()
+                           ^^^^^^^^^^
+
+tests/test_evidence_live_eval.py:451: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_evidence_live_eval.py:76: in _fixture
+    manifest = load_manifest(default_manifest_path())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/evidence/evaluation/runner.py:23: in load_manifest
+    return EvidenceEvalManifest.model_validate_json(path.read_text(encoding="utf-8"))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/data/eval/evidence_v2/manifest_dev_v4.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_______ test_embedding_still_uses_normalized_documents_and_query_prompt ________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f06b8963150>
+
+    def test_embedding_still_uses_normalized_documents_and_query_prompt(monkeypatch):
+        calls = []
+        class Encoder:
+            def __init__(self, path, *, device):
+                assert path == 'synthetic-model' and device == 'cpu'
+            def encode(self, value, **kwargs):
+                calls.append((value, kwargs))
+                return SimpleNamespace(tolist=lambda: [[1.0, 0.0]] if isinstance(value, list) else [1.0, 0.0])
+        monkeypatch.setitem(sys.modules, 'sentence_transformers', SimpleNamespace(SentenceTransformer=Encoder))
+        from job_agent.knowledge.qwen_embedding import QwenEmbeddingBackend
+>       backend = QwenEmbeddingBackend('synthetic-model', device='cpu')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_source_audit_regressions.py:128: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <job_agent.knowledge.qwen_embedding.QwenEmbeddingBackend object at 0x7f06b89639d0>
+model_path = 'synthetic-model', device = 'cpu', local_files_only = False
+
+    def __init__(
+        self,
+        model_path: str | Path,
+        device: str = "cuda",
+        *, local_files_only: bool = False,
+    ) -> None:
+        # Import only at real model construction, so deterministic tests and
+        # skipif-gated model tests do not require the optional GPU dependency.
+        try:
+            from sentence_transformers import SentenceTransformer
+        except ModuleNotFoundError as exc:
+            raise ImportError(
+                "Real Qwen embedding requires the optional embedding dependencies; "
+                "install the project with .[embedding] and compatible torch."
+            ) from exc
+>       self.model = SentenceTransformer(
+            str(model_path),
+            device=device,
+            local_files_only=local_files_only,
+        )
+E       TypeError: test_embedding_still_uses_normalized_documents_and_query_prompt.<locals>.Encoder.__init__() got an unexpected keyword argument 'local_files_only'
+
+src/job_agent/knowledge/qwen_embedding.py:22: TypeError
+____________ test_stateful_eval_datasets_are_structured_and_frozen _____________
+
+    def test_stateful_eval_datasets_are_structured_and_frozen() -> None:
+>       dev = load_stateful_eval_dataset(DEV_DATASET)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_stateful_agent_evaluation.py:735: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/job_agent/agent_runtime/stateful_evaluation.py:807: in load_stateful_eval_dataset
+    Path(path).read_text(encoding="utf-8")
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/eval/stateful_agent/dev/cases.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/stateful_agent/dev/cases.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_________________ test_failure_attribution_reports_first_layer _________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-183/test_failure_attribution_repor0')
+
+    def test_failure_attribution_reports_first_layer(tmp_path) -> None:
+>       case = load_stateful_eval_dataset(FROZEN_DATASET).cases[3]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_stateful_agent_evaluation.py:763: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/job_agent/agent_runtime/stateful_evaluation.py:807: in load_stateful_eval_dataset
+    Path(path).read_text(encoding="utf-8")
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/eval/stateful_agent/test/cases.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/stateful_agent/test/cases.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+________________ test_frozen_stateful_agent_deterministic_eval _________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-183/test_frozen_stateful_agent_det0')
+
+    def test_frozen_stateful_agent_deterministic_eval(tmp_path) -> None:
+>       dataset = load_stateful_eval_dataset(FROZEN_DATASET)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_stateful_agent_evaluation.py:794: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/job_agent/agent_runtime/stateful_evaluation.py:807: in load_stateful_eval_dataset
+    Path(path).read_text(encoding="utf-8")
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/eval/stateful_agent/test/cases.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/stateful_agent/test/cases.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+________ test_redundant_safe_read_degrades_efficiency_not_task_success _________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-183/test_redundant_safe_read_degra0')
+
+    def test_redundant_safe_read_degrades_efficiency_not_task_success(tmp_path) -> None:
+        case = next(
+            item
+>           for item in load_stateful_eval_dataset(FROZEN_DATASET).cases
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            if item.case_id == "frozen-b-job-analysis"
+        )
+
+tests/test_stateful_agent_evaluation.py:822: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/job_agent/agent_runtime/stateful_evaluation.py:807: in load_stateful_eval_dataset
+    Path(path).read_text(encoding="utf-8")
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/eval/stateful_agent/test/cases.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/stateful_agent/test/cases.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_____________ test_optional_read_must_respect_ordering_constraint ______________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-183/test_optional_read_must_respec0')
+
+    def test_optional_read_must_respect_ordering_constraint(tmp_path) -> None:
+        case = next(
+            item
+>           for item in load_stateful_eval_dataset(FROZEN_DATASET).cases
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            if item.case_id == "frozen-c-contextual-track"
+        )
+
+tests/test_stateful_agent_evaluation.py:857: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/job_agent/agent_runtime/stateful_evaluation.py:807: in load_stateful_eval_dataset
+    Path(path).read_text(encoding="utf-8")
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/eval/stateful_agent/test/cases.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/stateful_agent/test/cases.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_____________ test_grounding_accepts_explicit_chinese_equivalents ______________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-183/test_grounding_accepts_explici0')
+
+    def test_grounding_accepts_explicit_chinese_equivalents(tmp_path) -> None:
+        case = next(
+            item
+>           for item in load_stateful_eval_dataset(FROZEN_DATASET).cases
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            if item.case_id == "frozen-b-job-analysis"
+        )
+
+tests/test_stateful_agent_evaluation.py:906: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/job_agent/agent_runtime/stateful_evaluation.py:807: in load_stateful_eval_dataset
+    Path(path).read_text(encoding="utf-8")
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/root/autodl-tmp/study/job-agent-v3/eval/stateful_agent/test/cases.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/study/job-agent-v3/eval/stateful_agent/test/cases.json'
+
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/pathlib.py:1044: FileNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_agent_graph_runtime.py::test_cli_agent_mock_mode_runs_five_calls_and_writes_sanitized_runtime_audit
+FAILED tests/test_agent_graph_runtime.py::test_cli_agent_failure_writes_sanitized_failure_audit
+FAILED tests/test_application_assistant_evaluation.py::test_application_assistant_eval_corpus_has_required_coverage
+FAILED tests/test_application_assistant_evaluation.py::test_application_assistant_eval_runs_real_loop_approval_and_recovery
+FAILED tests/test_atomic_evidence_v2.py::test_regression_benchmark_has_complete_atomic_lineage
+FAILED tests/test_atomic_evidence_v2.py::test_compound_parent_maps_atoms_and_multiple_acceptable_sources
+FAILED tests/test_atomic_evidence_v2.py::test_named_dev_review_cases_use_same_auditable_v2_schema
+FAILED tests/test_atomic_evidence_v2.py::test_atomic_observation_preserves_exact_quote_and_provenance
+FAILED tests/test_atomic_evidence_v2.py::test_changed_gold_requires_a_correction_log
+FAILED tests/test_backend_service_reliability.py::test_provider_admission_enforces_fairness_cooldown_circuit_and_fail_closed
+FAILED tests/test_backend_service_reliability.py::test_provider_admission_is_call_scoped_and_local_errors_do_not_open_circuit
+FAILED tests/test_durable_career_knowledge.py::test_real_career_eval_v1_has_frozen_split_and_metrics
+FAILED tests/test_durable_career_knowledge.py::test_private_career_sources_are_gitignored
+FAILED tests/test_evidence_eval_contracts.py::test_development_manifest_registers_three_fair_variants
+FAILED tests/test_evidence_eval_contracts.py::test_manifest_rejects_variant_budget_drift
+FAILED tests/test_evidence_eval_contracts.py::test_manifest_has_no_evidence_v1_quality_variant
+FAILED tests/test_evidence_eval_corpus_v2.py::test_frozen_builder_is_reproducible
+FAILED tests/test_evidence_eval_corpus_v2.py::test_100_cases_use_family_level_60_40_split_without_leakage
+FAILED tests/test_evidence_eval_corpus_v2.py::test_corpus_gold_spans_levels_and_edge_slices_are_auditable
+FAILED tests/test_evidence_eval_corpus_v2.py::test_no_network_mock_executes_all_300_variant_case_rows
+FAILED tests/test_evidence_eval_corpus_v2.py::test_audit_records_frozen_hashes_before_live_evaluation
+FAILED tests/test_evidence_eval_corpus_v5.py::test_v5_corpus_is_new_family_disjoint_and_frozen
+FAILED tests/test_evidence_eval_corpus_v5.py::test_v5_hashes_contracts_and_artifact_metadata_are_valid
+FAILED tests/test_evidence_eval_metrics.py::test_deterministic_runner_writes_non_quality_report
+FAILED tests/test_evidence_live_eval.py::test_live_dry_run_executes_all_three_variants_with_same_cases
+FAILED tests/test_evidence_live_eval.py::test_live_budget_gate_blocks_calls_before_provider_use
+FAILED tests/test_evidence_live_eval.py::test_canary_preserves_schema_failure_row
+FAILED tests/test_evidence_live_eval.py::test_scorer_separates_invalid_span_from_semantics_and_rejects_unverified_claim
+FAILED tests/test_evidence_live_eval.py::test_unknown_claim_reference_is_scored_instead_of_rejecting_row
+FAILED tests/test_evidence_live_eval.py::test_requirement_concept_matches_unique_containing_span
+FAILED tests/test_evidence_live_eval.py::test_semantic_score_and_exact_span_are_separate_axes
+FAILED tests/test_evidence_live_eval.py::test_atom_semantics_match_when_pipeline_cites_shared_parent_span
+FAILED tests/test_evidence_live_eval.py::test_existing_rows_can_be_rescored_without_provider_calls
+FAILED tests/test_evidence_live_eval.py::test_checkpoint_resume_skips_completed_rows_without_duplicate_calls
+FAILED tests/test_evidence_live_eval.py::test_failed_checkpoint_row_requires_explicit_retry
+FAILED tests/test_evidence_live_eval.py::test_production_pipeline_live_runner_handles_sparse_case
+FAILED tests/test_evidence_live_eval.py::test_production_pipeline_checkpoint_resume_avoids_repeat_calls
+FAILED tests/test_evidence_live_eval.py::test_production_pipeline_maps_independent_c2_artifact_sources
+FAILED tests/test_source_audit_regressions.py::test_embedding_still_uses_normalized_documents_and_query_prompt
+FAILED tests/test_stateful_agent_evaluation.py::test_stateful_eval_datasets_are_structured_and_frozen
+FAILED tests/test_stateful_agent_evaluation.py::test_failure_attribution_reports_first_layer
+FAILED tests/test_stateful_agent_evaluation.py::test_frozen_stateful_agent_deterministic_eval
+FAILED tests/test_stateful_agent_evaluation.py::test_redundant_safe_read_degrades_efficiency_not_task_success
+FAILED tests/test_stateful_agent_evaluation.py::test_optional_read_must_respect_ordering_constraint
+FAILED tests/test_stateful_agent_evaluation.py::test_grounding_accepts_explicit_chinese_equivalents
+45 failed, 839 passed, 50 skipped in 59.79s

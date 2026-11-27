@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="14" time="4.984" timestamp="2026-10-23T12:12:45.507207+08:00" hostname="autodl-container-81de49abb0-0a662bf5"><testcase classname="tests.test_review_r1_evaluation_integrity" name="test_invalid_online_assessment_cannot_commit_or_create_learning_and_is_not_replayed[omitted]" time="0.807"><failure message="AssertionError: {'variant': 'omitted', 'status': 'active', 'revision': 1}&#10;assert 'active' == 'failed'&#10;  &#10;  - failed&#10;  + active">env = (&lt;job_agent.resume_workspace.repository.SqliteResumeRepository object at 0x7ffbda0eb0d0&gt;, VersionRecord(resume_id='res...tetime(2026, 10, 23, 4, 12, 46, 703182, tzinfo=TzInfo(0)), confirmed_at=None, confirmation_scope='user_attested_only'))
+variant = 'omitted'
+
+    @pytest.mark.parametrize('variant',['omitted','empty','partial','duplicate','unknown_id','extra',
+                                      'quote_not_in_answer','correct_without_quote','correct_but_declared_missing'])
+    def test_invalid_online_assessment_cannot_commit_or_create_learning_and_is_not_replayed(env,variant):
+        ws,v=env;provider=AssessmentProvider(variant)
+        with TestClient(create_resume_app(ws,resolve_identity={'a':'alice'}.get,interview_engine=InterviewEngine(provider),task_worker_enabled=False)) as c:
+            initial=start(c,v);sid=initial['session_id'];url='/api/v2/interviews/'+sid;payload=answer(initial);payload['answer']=UNKNOWN
+            response=c.post(url+'/answers',headers=A,json=payload)
+            assert response.status_code==200 # Transport success is not business success.
+            view=response.json();state=read_state(ws,sid)
+&gt;           assert view['status']=='failed',{'variant':variant,'status':view['status'],'revision':view['revision']}
+E           AssertionError: {'variant': 'omitted', 'status': 'active', 'revision': 1}
+E           assert 'active' == 'failed'
+E             
+E             - failed
+E             + active
+
+tests/test_review_r1_evaluation_integrity.py:74: AssertionError</failure></testcase><testcase classname="tests.test_review_r1_evaluation_integrity" name="test_invalid_online_assessment_cannot_commit_or_create_learning_and_is_not_replayed[empty]" time="0.210"><failure message="AssertionError: {'variant': 'empty', 'status': 'active', 'revision': 1}&#10;assert 'active' == 'failed'&#10;  &#10;  - failed&#10;  + active">env = (&lt;job_agent.resume_workspace.repository.SqliteResumeRepository object at 0x7ffbda0f4a90&gt;, VersionRecord(resume_id='res...tetime(2026, 10, 23, 4, 12, 47, 597385, tzinfo=TzInfo(0)), confirmed_at=None, confirmation_scope='user_attested_only'))
+variant = 'empty'
+
+    @pytest.mark.parametrize('variant',['omitted','empty','partial','duplicate','unknown_id','extra',
+                                      'quote_not_in_answer','correct_without_quote','correct_but_declared_missing'])
+    def test_invalid_online_assessment_cannot_commit_or_create_learning_and_is_not_replayed(env,variant):
+        ws,v=env;provider=AssessmentProvider(variant)
+        with TestClient(create_resume_app(ws,resolve_identity={'a':'alice'}.get,interview_engine=InterviewEngine(provider),task_worker_enabled=False)) as c:
+            initial=start(c,v);sid=initial['session_id'];url='/api/v2/interviews/'+sid;payload=answer(initial);payload['answer']=UNKNOWN
+            response=c.post(url+'/answers',headers=A,json=payload)
+            assert response.status_code==200 # Transport success is not business success.
+            view=response.json();state=read_state(ws,sid)
+&gt;           assert view['status']=='failed',{'variant':variant,'status':view['status'],'revision':view['revision']}
+E           AssertionError: {'variant': 'empty', 'status': 'active', 'revision': 1}
+E           assert 'active' == 'failed'
+E             
+E             - failed
+E             + active
+
+tests/test_review_r1_evaluation_integrity.py:74: AssertionError</failure></testcase><testcase classname="tests.test_review_r1_evaluation_integrity" name="test_invalid_online_assessment_cannot_commit_or_create_learning_and_is_not_replayed[partial]" time="0.217" /><testcase classname="tests.test_review_r1_evaluation_integrity" name="test_invalid_online_assessment_cannot_commit_or_create_learning_and_is_not_replayed[duplicate]" time="0.219" /><testcase classname="tests.test_review_r1_evaluation_integrity" name="test_invalid_online_assessment_cannot_commit_or_create_learning_and_is_not_replayed[unknown_id]" time="0.217" /><testcase classname="tests.test_review_r1_evaluation_integrity" name="test_invalid_online_assessment_cannot_commit_or_create_learning_and_is_not_replayed[extra]" time="0.218" /><testcase classname="tests.test_review_r1_evaluation_integrity" name="test_invalid_online_assessment_cannot_commit_or_create_learning_and_is_not_replayed[quote_not_in_answer]" time="0.276" /><testcase classname="tests.test_review_r1_evaluation_integrity" name="test_invalid_online_assessment_cannot_commit_or_create_learning_and_is_not_replayed[correct_without_quote]" time="0.214" /><testcase classname="tests.test_review_r1_evaluation_integrity" name="test_invalid_online_assessment_cannot_commit_or_create_learning_and_is_not_replayed[correct_but_declared_missing]" time="0.201"><failure message="AssertionError: {'variant': 'correct_but_declared_missing', 'status': 'active', 'revision': 1}&#10;assert 'active' == 'failed'&#10;  &#10;  - failed&#10;  + active">env = (&lt;job_agent.resume_workspace.repository.SqliteResumeRepository object at 0x7ffbd5790e90&gt;, VersionRecord(resume_id='res...tetime(2026, 10, 23, 4, 12, 49, 189420, tzinfo=TzInfo(0)), confirmed_at=None, confirmation_scope='user_attested_only'))
+variant = 'correct_but_declared_missing'
+
+    @pytest.mark.parametrize('variant',['omitted','empty','partial','duplicate','unknown_id','extra',
+                                      'quote_not_in_answer','correct_without_quote','correct_but_declared_missing'])
+    def test_invalid_online_assessment_cannot_commit_or_create_learning_and_is_not_replayed(env,variant):
+        ws,v=env;provider=AssessmentProvider(variant)
+        with TestClient(create_resume_app(ws,resolve_identity={'a':'alice'}.get,interview_engine=InterviewEngine(provider),task_worker_enabled=False)) as c:
+            initial=start(c,v);sid=initial['session_id'];url='/api/v2/interviews/'+sid;payload=answer(initial);payload['answer']=UNKNOWN
+            response=c.post(url+'/answers',headers=A,json=payload)
+            assert response.status_code==200 # Transport success is not business success.
+            view=response.json();state=read_state(ws,sid)
+&gt;           assert view['status']=='failed',{'variant':variant,'status':view['status'],'revision':view['revision']}
+E           AssertionError: {'variant': 'correct_but_declared_missing', 'status': 'active', 'revision': 1}
+E           assert 'active' == 'failed'
+E             
+E             - failed
+E             + active
+
+tests/test_review_r1_evaluation_integrity.py:74: AssertionError</failure></testcase><testcase classname="tests.test_review_r1_evaluation_integrity" name="test_complete_legal_online_assessment_commits_and_produces_only_source_bound_observations" time="0.229" /><testcase classname="tests.test_review_r1_evaluation_integrity" name="test_complete_negative_assessments_cannot_remain_fully_covered_and_change_followup[incorrect]" time="0.199" /><testcase classname="tests.test_review_r1_evaluation_integrity" name="test_complete_negative_assessments_cannot_remain_fully_covered_and_change_followup[uncertain]" time="0.200" /><testcase classname="tests.test_review_r1_evaluation_integrity" name="test_rules_mode_remains_lexical_and_legacy_empty_list_can_be_read" time="0.201" /><testcase classname="tests.test_review_r1_evaluation_integrity" name="test_unknown_call_stays_unknown_without_commit_learning_or_automatic_replay" time="0.272" /></testsuite></testsuites>

@@ -1,0 +1,701 @@
+{
+  "algorithm_identity": "f063370b6d6d86eef43d113261774388f9e2a6676cb20d7c806e81d10423759b",
+  "claim_support": null,
+  "corpus_snapshot": "corpus-82fbd8c258a1eba4040a43cccafdea37367970e5bee983ade9bc429865d89992",
+  "cost": null,
+  "dataset_hash": "be2afaa69b94fdca377e324320db79fdfa02e354e3e48f394b38e5105cc6ae02",
+  "elapsed_ms": 1996.582,
+  "encoder_calls": {
+    "document_calls": 0,
+    "document_passages": 0,
+    "query_calls": 15
+  },
+  "ended_at_utc": "2026-10-23T06:09:44.971197+00:00",
+  "final_business_quality": null,
+  "heldout_scored": false,
+  "human_reviewed_count": 0,
+  "index_scopes": {
+    "dev": {
+      "chunk_ids": [
+        "chunk-0f78da3a0f62008c612c3d355263",
+        "chunk-10b689767a5632bb3d1ed0488b53",
+        "chunk-157a4d0243b0346f230c95a60de9",
+        "chunk-16b587447bd6b24f7d76bbb6a871",
+        "chunk-17e6dee4fcefb54126804e1db2db",
+        "chunk-1ef46a2b1d76300c5e0a481c5775",
+        "chunk-412c266c74009deb7534751f59d7",
+        "chunk-448949f67af449e5489fd5534088",
+        "chunk-4e111bbd383685fe8af3a00afedc",
+        "chunk-68fa94493e5164e95ea2c3af608d",
+        "chunk-7cc6352ab775f9129a5ee055d9a9",
+        "chunk-83757ba1e1fd0b977d38b9906a1d",
+        "chunk-87b17080aa7e57faff845e0d0b5b",
+        "chunk-880fbc93c34eb34b9dbf87e5bc7b",
+        "chunk-89f0adb45fce32699889ccdd35a6",
+        "chunk-8f25143f3216cb7c542b5e0cfa1a",
+        "chunk-9176f127be9cfdf4dfa94ec631c5",
+        "chunk-99cd533cba1d6a61e4058e383425",
+        "chunk-9e29cd6a27c78abf45eebb6f46cf",
+        "chunk-9ef9315365573544fe819fad03a4",
+        "chunk-a289f2ee98c92f11af51ea99dbe9",
+        "chunk-a8b951bb616aaf898709728f8104",
+        "chunk-b09b1f38b0a9419ee1fbec461efb",
+        "chunk-b56e49536e94cf0d2ef07af9db0d",
+        "chunk-c069ffd72f2cf102d623eb4b0923",
+        "chunk-c7e75c934a5864bc5cff8fce53d9",
+        "chunk-cd790a20e30acf058b803f77e37d",
+        "chunk-cefd152967d489d60aed3e1fe558",
+        "chunk-d200856ec6b463c9503754453c08",
+        "chunk-deaf50b5fa39573cc31286595457",
+        "chunk-df25d4e12497a793bc43baa1ff4d",
+        "chunk-dfc25a1a91eb3b732aa7fa174068",
+        "chunk-edbd2abf2ef09e08d967ee7929b1",
+        "chunk-ee81bc745a491d310d8c59ab19ab"
+      ],
+      "edges_hash": "c42ade7508dfc4d8709a1bb17b3fb3d217f1395296f1f389bec4b014558a327c",
+      "index_identity": "index-19f624f8b3e5283384c32e51cb291f500d84a5d6c57aca858bf06b43fba2a032",
+      "project_id": "project-8e51a615df1b45ac975989546b9e1628",
+      "public_versions": {},
+      "snapshot_id": "snapshot-a70d775592c24e85a4bf079c01a3a0de"
+    },
+    "test": {
+      "chunk_ids": [
+        "chunk-02259c4e20418ea9e21a199c8e3e",
+        "chunk-02b61dd792723e4fdf09d2c07894",
+        "chunk-02d03b029cddf70f26f055e75582",
+        "chunk-06cb2e06f51a8afa3b0409d2160b",
+        "chunk-081dfb5504673d07b8e274a25f37",
+        "chunk-109924aa308f007d2e9c5b2271f3",
+        "chunk-12eddfe452838a5694f70d2a715d",
+        "chunk-13ab4ff82d4260d5fd26a2fa8ff2",
+        "chunk-1e44eff136174a5eef70d738349f",
+        "chunk-200070bf03d0f843ff58242cfd38",
+        "chunk-276ceaaf0596a3ea6772d71a0f7e",
+        "chunk-342b7eb9b93f040a6ad4f1d8483b",
+        "chunk-349984342a5d31bb17bf7f682f47",
+        "chunk-392148261de9ea95b46a02249b94",
+        "chunk-511158f73a9021c40c6b17c8d142",
+        "chunk-5381569354969f193850a7464a08",
+        "chunk-542853b78909a70b97f8b9447066",
+        "chunk-54a85b34712f9a0d8c7d47688b95",
+        "chunk-559b3a7b5b204750cebdc426ff50",
+        "chunk-595f5afd462cd75ada80afbed31f",
+        "chunk-66d425ce8a2647b1293a8baee5f5",
+        "chunk-7f79894f221e136f62ab242ca662",
+        "chunk-836aa5e00f5654082425b896fa80",
+        "chunk-a1bccd703f9e22ad2bfb2c2a56f4",
+        "chunk-a42a042212b277770aabc0941823",
+        "chunk-a67c38703144a40e273063e3c1cd",
+        "chunk-a6a2040676efebe096b927225bb1",
+        "chunk-b94426446e99ce21b8f7215b73d1",
+        "chunk-d227eb3ca2cb654d67fce4a19dae",
+        "chunk-d4475e1b012cd718cb8eab2e04cb",
+        "chunk-d4d90858bb59a157dba8962bfcc8",
+        "chunk-d5fd723b406d1672851b955c0585",
+        "chunk-e38ce970b6542e00bdf5b281a3b4",
+        "chunk-e9f44da47dda2ab0eae50a36967d",
+        "chunk-ee208a0cea71ced940fa78f7e13f",
+        "chunk-f1070379cf81975f45c98b396ea1",
+        "chunk-f898fa7df4fa3d41bf4ee345a5bb",
+        "chunk-f8a0323172df116dd7f49e114cab",
+        "chunk-fda45e17dbad167368e7a03b139c"
+      ],
+      "edges_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "index_identity": "index-6a8916fe45af6a92fe4b8cb7812ae3065bb46e17e633159112f608f6127ef971",
+      "project_id": "project-9eb54b99789449aa8877998e925af3c7",
+      "public_versions": {},
+      "snapshot_id": "snapshot-1d9ccdb312fa4b53809ffb3e0ed8ffcb"
+    }
+  },
+  "known_scope_experiment": true,
+  "limit": 5,
+  "manifest_sha256": "4ebca5ca3a24b724e9d7e56439f859089dd20dadef301e21be17eeab4cb90a90",
+  "prepare_ms": 2081.281,
+  "prepared_algorithm_identity": "f063370b6d6d86eef43d113261774388f9e2a6676cb20d7c806e81d10423759b",
+  "prepared_full_code_identity": "9ae32e71b52729ea96da1741a064aad2bc0e8fc88421f01b2ff1e09162420500",
+  "quality_trial": 0,
+  "raw_sha256": "576101abe871829f75ee91b1c7f0371b9acb94dd6296c69ae7185190cad5229a",
+  "repeats": 3,
+  "run_id": "eval-ecbee13ec0b2458e803fca7f0fee0171",
+  "runtime": {
+    "embedding": {
+      "dimension": 1024,
+      "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+      "max_input_tokens": 1024,
+      "model": "Qwen3-Embedding-0.6B",
+      "normalization": "l2",
+      "provider": "sentence_transformers_local",
+      "query_template": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery:{query}",
+      "revision": "47191d5687dbf14319ccb312680caa31a179ed5e16539b8c06aeddc53b63ef6c"
+    },
+    "reranker": {
+      "encoder_version": "5.7.0/4.57.6/2.5.1+cu121",
+      "max_pair_tokens": 512,
+      "model": "mmarco-mMiniLMv2-L12-H384-v1",
+      "revision": "b1c51503835c2c85cbaa2061e7d0f96207576212ecf4e518f0bb3805bd195a51",
+      "score_semantics": "raw_logit"
+    },
+    "settings": {
+      "context_char_budget": 24000,
+      "dense_candidates": 20,
+      "fusion_candidates": 30,
+      "max_output": 20,
+      "relation_candidates": 8,
+      "rerank_candidates": 30,
+      "rerank_input_chars": 6000,
+      "rrf_k": 60,
+      "sparse_candidates": 20,
+      "version": "retrieval-policy-1"
+    }
+  },
+  "runtime_loaded": true,
+  "schema_version": "eval-run-1",
+  "split": "dev",
+  "started_at_utc": "2026-10-23T06:09:42.982239+00:00",
+  "status": "completed",
+  "summary": {
+    "A_bm25": {
+      "answerable_cases": 1,
+      "attempts": 3,
+      "cases": 1,
+      "citation_count": 0,
+      "claim_support": null,
+      "failed_attempts": 0,
+      "final_business_quality": null,
+      "invalid_citations": 0,
+      "latency_ms": {
+        "n": 3,
+        "p50": 8.75,
+        "p95": 13.078
+      },
+      "metrics_at_k": {
+        "1": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 0.0
+          }
+        },
+        "3": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 0.0
+          }
+        },
+        "5": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 0.0
+          }
+        }
+      },
+      "multi_evidence_sufficient": {
+        "cases": 0,
+        "mean": null
+      },
+      "unanswerable_context_cases": 0
+    },
+    "B_dense": {
+      "answerable_cases": 1,
+      "attempts": 3,
+      "cases": 1,
+      "citation_count": 5,
+      "claim_support": null,
+      "failed_attempts": 0,
+      "final_business_quality": null,
+      "invalid_citations": 0,
+      "latency_ms": {
+        "n": 3,
+        "p50": 86.567,
+        "p95": 579.256
+      },
+      "metrics_at_k": {
+        "1": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 1.0
+          }
+        },
+        "3": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 1.0
+          }
+        },
+        "5": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 1.0
+          }
+        }
+      },
+      "multi_evidence_sufficient": {
+        "cases": 0,
+        "mean": null
+      },
+      "unanswerable_context_cases": 0
+    },
+    "C_hybrid": {
+      "answerable_cases": 1,
+      "attempts": 3,
+      "cases": 1,
+      "citation_count": 5,
+      "claim_support": null,
+      "failed_attempts": 0,
+      "final_business_quality": null,
+      "invalid_citations": 0,
+      "latency_ms": {
+        "n": 3,
+        "p50": 83.425,
+        "p95": 83.679
+      },
+      "metrics_at_k": {
+        "1": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 1.0
+          }
+        },
+        "3": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 1.0
+          }
+        },
+        "5": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 1.0
+          }
+        }
+      },
+      "multi_evidence_sufficient": {
+        "cases": 0,
+        "mean": null
+      },
+      "unanswerable_context_cases": 0
+    },
+    "D_hybrid_rerank": {
+      "answerable_cases": 1,
+      "attempts": 3,
+      "cases": 1,
+      "citation_count": 5,
+      "claim_support": null,
+      "failed_attempts": 0,
+      "final_business_quality": null,
+      "invalid_citations": 0,
+      "latency_ms": {
+        "n": 3,
+        "p50": 137.514,
+        "p95": 161.096
+      },
+      "metrics_at_k": {
+        "1": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 0.0
+          }
+        },
+        "3": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 0.0
+          }
+        },
+        "5": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 0.2
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 1.0
+          }
+        }
+      },
+      "multi_evidence_sufficient": {
+        "cases": 0,
+        "mean": null
+      },
+      "unanswerable_context_cases": 0
+    },
+    "E_code_aware_no_relations": {
+      "answerable_cases": 1,
+      "attempts": 3,
+      "cases": 1,
+      "citation_count": 5,
+      "claim_support": null,
+      "failed_attempts": 0,
+      "final_business_quality": null,
+      "invalid_citations": 0,
+      "latency_ms": {
+        "n": 3,
+        "p50": 83.515,
+        "p95": 85.297
+      },
+      "metrics_at_k": {
+        "1": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 1.0
+          }
+        },
+        "3": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 1.0
+          }
+        },
+        "5": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 1.0
+          }
+        }
+      },
+      "multi_evidence_sufficient": {
+        "cases": 0,
+        "mean": null
+      },
+      "unanswerable_context_cases": 0
+    },
+    "F_code_aware_relations": {
+      "answerable_cases": 1,
+      "attempts": 3,
+      "cases": 1,
+      "citation_count": 5,
+      "claim_support": null,
+      "failed_attempts": 0,
+      "final_business_quality": null,
+      "invalid_citations": 0,
+      "latency_ms": {
+        "n": 3,
+        "p50": 83.272,
+        "p95": 83.288
+      },
+      "metrics_at_k": {
+        "1": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 1.0
+          }
+        },
+        "3": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 1.0
+          }
+        },
+        "5": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 1.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 1.0
+          }
+        }
+      },
+      "multi_evidence_sufficient": {
+        "cases": 0,
+        "mean": null
+      },
+      "unanswerable_context_cases": 0
+    },
+    "G_flat_bm25": {
+      "answerable_cases": 1,
+      "attempts": 3,
+      "cases": 1,
+      "citation_count": 0,
+      "claim_support": null,
+      "failed_attempts": 0,
+      "final_business_quality": null,
+      "invalid_citations": 0,
+      "latency_ms": {
+        "n": 3,
+        "p50": 5.641,
+        "p95": 5.645
+      },
+      "metrics_at_k": {
+        "1": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 0.0
+          }
+        },
+        "3": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 0.0
+          }
+        },
+        "5": {
+          "gold_span_recall": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "hit_any_gold": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "reciprocal_rank": {
+            "cases": 1,
+            "mean": 0.0
+          },
+          "sufficient_gold_retrieved": {
+            "cases": 1,
+            "mean": 0.0
+          }
+        }
+      },
+      "multi_evidence_sufficient": {
+        "cases": 0,
+        "mean": null
+      },
+      "unanswerable_context_cases": 0
+    }
+  },
+  "tokens": null,
+  "usage_missing_reason": "no generative call; embedding token usage and price not provided",
+  "variants": [
+    "A_bm25",
+    "B_dense",
+    "C_hybrid",
+    "D_hybrid_rerank",
+    "E_code_aware_no_relations",
+    "F_code_aware_relations",
+    "G_flat_bm25"
+  ]
+}

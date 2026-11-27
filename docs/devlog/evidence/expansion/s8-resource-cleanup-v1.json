@@ -1,0 +1,24 @@
+{
+  "scope": "only this run owned synthetic demo/dedicated UDS PostgreSQL/Redis",
+  "private_or_other_services_touched": false,
+  "steps": [
+    {
+      "resource": "owned_loopback_8119_demo",
+      "pid": 112423,
+      "signal": "SIGTERM if still present after exact cwd/command verification",
+      "synthetic_state_retained": true
+    },
+    {
+      "resource": "owned_Redis_UDS",
+      "shutdown": "SAVE/AOF retained",
+      "socket_removed": true
+    },
+    {
+      "resource": "owned_PostgreSQL_UDS",
+      "shutdown": "fast; data retained",
+      "pidfile_removed": true
+    }
+  ],
+  "prior_attempt": "pidfd_open unavailable; validation failed before any signal or shutdown",
+  "status": "passed"
+}

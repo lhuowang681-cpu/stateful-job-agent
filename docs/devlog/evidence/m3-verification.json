@@ -1,0 +1,202 @@
+{
+  "date": "2026-10-20",
+  "milestone": "M3 first product loop: pinned JD/version analysis and extractive order-only decisions; not free rewrite or full integrated product",
+  "environment": {
+    "python": "3.12.14",
+    "node": "v24.19.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "pytest": "9.1.1",
+      "fastapi": "0.115.14",
+      "pydantic": "2.14.0",
+      "httpx": "0.27.2"
+    }
+  },
+  "runs": [
+    {
+      "name": "m3-before",
+      "counts": {
+        "tests": 174,
+        "passed": 174,
+        "failed": 0,
+        "errored_cases": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "m3-new",
+      "counts": {
+        "tests": 22,
+        "passed": 21,
+        "failed": 1,
+        "errored_cases": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "m3-new-fixed",
+      "counts": {
+        "tests": 26,
+        "passed": 26,
+        "failed": 0,
+        "errored_cases": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "m3-related",
+      "counts": {
+        "tests": 200,
+        "passed": 200,
+        "failed": 0,
+        "errored_cases": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "m3-final",
+      "counts": {
+        "tests": 201,
+        "passed": 201,
+        "failed": 0,
+        "errored_cases": 0,
+        "skipped": 0
+      }
+    }
+  ],
+  "new_backend_cases": 27,
+  "frontend": {
+    "passed": 9,
+    "failed": 0,
+    "skipped": 0,
+    "build": "success"
+  },
+  "commands": {
+    "final": "python -m pytest -q tests/test_resume_import.py tests/test_resume_workspace.py tests/test_resume_pdf_autofill.py tests/test_resume_matching.py tests/test_source_audit_regressions.py tests/test_career_store.py tests/test_application_assistant_evaluation.py tests/test_backend_service.py tests/test_evidence_source_store.py tests/test_evidence_mapping_v2.py tests/test_evidence_projections.py tests/test_evidence_requirement_analyzer.py tests/test_knowledge_ingestion.py --basetemp=../../work/m3-final-temp --junitxml=../../work/m3-final.xml",
+    "baseline": "same related list without test_resume_matching.py; --basetemp=../../work/m3-before-temp --junitxml=../../work/m3-before.xml",
+    "frontend": [
+      "node --test src/model.test.js",
+      "node node_modules/vite/bin/vite.js build"
+    ],
+    "demo": "python scripts/demo_resume_workbench.py --port 8014",
+    "context": "cwd project root except frontend commands; installed audit venv; TEMP/TMP workspace work/tmp; permitted local API environment"
+  },
+  "failures": [
+    "m3-new: 21 passed/1 failed due to a test calling nonexistent append_version; corrected to actual save_version, original rejection assertion retained"
+  ],
+  "browser_manual_checks": [
+    "synthetic resume pasted -> parsed -> saved v1",
+    "JD sample -> four quoted rows",
+    "positive clues remain C1/unverified",
+    "Kubernetes negative/limit and PostgreSQL gap visible",
+    "source quote highlights original material",
+    "skills order proposal rejected",
+    "project order proposal accepted -> unconfirmed v2",
+    "reload/sign-in -> persisted v2 and analysis history -> snapshot/decisions reload"
+  ],
+  "browser_screenshots": [
+    "m3-match.png",
+    "m3-decisions.png",
+    "m3-version.png",
+    "m3-restored.png"
+  ],
+  "live_http": {
+    "date": "2026-10-20",
+    "url": "http://127.0.0.1:8014/",
+    "launcher": "python scripts/demo_resume_workbench.py --port 8014",
+    "scope": "standalone real loopback HTTP checks of synthetic browser-created data, not extra pytest or model-quality cases",
+    "checks": {
+      "health_ok": true,
+      "isolated_demo_no_model": true,
+      "browser_accept_created_exactly_two_versions": true,
+      "new_version_is_unconfirmed": true,
+      "related_project_moved_to_front": true,
+      "fact_inventory_and_source_spans_identical": true,
+      "analysis_history_persisted": true,
+      "analysis_bound_to_original_version": true,
+      "local_results_are_unverified": true,
+      "negative_kubernetes_visible": true,
+      "missing_postgresql_not_lack_of_ability": true,
+      "accepted_and_rejected_decisions_persisted": true,
+      "accept_retry_returns_same_version": true,
+      "jd_and_original_source_quotes_valid": true,
+      "latest_build_served": true
+    },
+    "quotes_verified": 5,
+    "resume_id": "res-72cffc12ce4c4cc0914960705c141973",
+    "match_id": "match-90e42798b1b44acb9c7e8b6061b8a191",
+    "provider_calls": 0
+  },
+  "semantic_model_scope": "FixtureProvider only; budgets/source/type/quote/partial-C1/forbidden JD guards tested, not real-model quality/cost",
+  "not_run": [
+    "whole repository regression",
+    "real-model semantic quality and cost",
+    "private or representative authorized resume/JD dataset",
+    "free rewrite and generated numeric/timeline validation",
+    "C2/C3 input integration",
+    "production PG/Redis/Worker recovery",
+    "RAG/OCR/PDF/full four-role workflow integration"
+  ],
+  "known_limits": [
+    "local finite vocabulary is not semantic entailment",
+    "C1 version facts only; independent evidence upload is not integrated",
+    "running records after process crash require manual inspection; no automatic worker resume",
+    "personal section omitted but experience-text PII is not automatically redacted",
+    "API sync wait may exceed UI wait; same request key does not automatically reissue model calls"
+  ],
+  "documentation_validation": {
+    "passed": true,
+    "documents_checked": 12,
+    "anchors_checked": 101,
+    "links_checked": 62,
+    "errors": [],
+    "phase_sections": 10
+  },
+  "frozen_eval_files_checked": 25,
+  "frozen_eval_changes": [],
+  "unchanged_evidence_kernel_files": 21,
+  "git": {
+    "branch": "main",
+    "head": "067bfc7d63408e1e6b0ab6c227e863bd08a5857a",
+    "status_short": "M .gitignore\n M README.md\n M docs/architecture.md\n M docs/evaluation.md\n M docs/interview_notes.md\n M docs/resume_notes.md\n M pyproject.toml\n M src/job_agent/backend_service/application_assistant.py\n M src/job_agent/backend_service/application_evaluation.py\n M src/job_agent/evidence/level_policy.py\n M src/job_agent/evidence/mapping.py\n M src/job_agent/evidence/pipeline.py\n M src/job_agent/evidence/projections.py\n M src/job_agent/evidence/sources.py\n M src/job_agent/knowledge/qwen_embedding.py\n M tests/test_application_assistant_evaluation.py\n M tests/test_ui_app_test.py\n?? AGENTS.md\n?? GIT_LOG.txt\n?? GIT_STATUS.txt\n?? UNCOMMITTED_DIFF.txt\n?? docs/CONTINUE_DEVELOPMENT.md\n?? docs/INTERVIEW_SOURCE_GUIDE.md\n?? docs/PROJECT_AUDIT.md\n?? docs/audit/\n?? docs/devlog/\n?? docs/upgrade/\n?? frontend/\n?? hits[1].score\n?? scripts/demo_resume_versions.py\n?? scripts/demo_resume_workbench.py\n?? src/job_agent/resume_workspace/\n?? tests/test_resume_import.py\n?? tests/test_resume_workspace.py\n?? tests/test_source_audit_regressions.py",
+    "diff_stat": ".gitignore                                         |   5 +\n README.md                                          |  84 ++++++++++++--\n docs/architecture.md                               |   5 +\n docs/evaluation.md                                 |   4 +\n docs/interview_notes.md                            |   5 +\n docs/resume_notes.md                               | 128 +++++++++++++++++++--\n pyproject.toml                                     |  12 +-\n .../backend_service/application_assistant.py       |   1 +\n .../backend_service/application_evaluation.py      |  25 ++--\n src/job_agent/evidence/level_policy.py             |   5 +\n src/job_agent/evidence/mapping.py                  |   2 +-\n src/job_agent/evidence/pipeline.py                 |   8 +-\n src/job_agent/evidence/projections.py              |   7 ++\n src/job_agent/evidence/sources.py                  |   3 +-\n src/job_agent/knowledge/qwen_embedding.py          |  14 ++-\n tests/test_application_assistant_evaluation.py     |  29 +++++\n tests/test_ui_app_test.py                          |   6 +-\n 17 files changed, 300 insertions(+), 43 deletions(-)",
+    "remote_actions": "none; no commits"
+  },
+  "base_m2a_sha256": "45f2374c09e54163eeab9a618bd0ad562e0d1c32e091a40c00843a07b90d7ac5",
+  "changed_public_code_files": [
+    "frontend/dist/assets/index-DPPLrk8H.js",
+    "frontend/dist/assets/index-DhichCI2.css",
+    "frontend/dist/index.html",
+    "frontend/src/MatchingPanel.jsx",
+    "frontend/src/main.jsx",
+    "frontend/src/matching.js",
+    "frontend/src/model.test.js",
+    "frontend/src/style.css",
+    "src/job_agent/resume_workspace/api.py",
+    "src/job_agent/resume_workspace/match_api.py",
+    "src/job_agent/resume_workspace/match_contracts.py",
+    "src/job_agent/resume_workspace/match_repository.py",
+    "src/job_agent/resume_workspace/matching.py",
+    "tests/test_resume_matching.py"
+  ],
+  "removed_generated_assets": [
+    "frontend/dist/assets/index-BhMLn20k.js",
+    "frontend/dist/assets/index-Cm4LbAs9.css"
+  ],
+  "source_sha256": {
+    "frontend/dist/assets/index-DPPLrk8H.js": "b2f1e7a2562f8c5002cff3259dfa016ad1bcfceec41f2d9c107ec698bdd80ffd",
+    "frontend/dist/assets/index-DhichCI2.css": "1617e003565ebe54eff5c77c3023fd2e3f843a9a0458f48a6fe6ce3d050cd4a2",
+    "frontend/dist/index.html": "3379b96852afac7833c958d16920ba71c83df366104c3d85f694b5cce809a783",
+    "frontend/src/MatchingPanel.jsx": "c0200aa4b3a6aae73449479d680a99773fefba61cb7dae322f49b7777eb7dbe4",
+    "frontend/src/main.jsx": "90d85e7ab88a43c3dfc5f9380c2924560944f7b265028f60f918831932d1889d",
+    "frontend/src/matching.js": "92f8bba803df8dad39228f40b74046ae577762042e3349bfff22b03763fe6edc",
+    "frontend/src/model.test.js": "3fde5c42a2a03dd86cbd5a96d6e930e0ac7535c9cd3203d12193ec73ac686611",
+    "frontend/src/style.css": "18b567a2f5753c3d5c2b3bd2d6857b753b93ee8eb83543c45dbc7ed18df9a3d1",
+    "src/job_agent/resume_workspace/api.py": "e3c3034910dfe041940fb59d8cfa327fb9ab735c469793ed28b77f9e6140dda9",
+    "src/job_agent/resume_workspace/match_api.py": "77e233753529ea3196702e8508891bbc9b10abc34be62e47ff22c5cace7a0661",
+    "src/job_agent/resume_workspace/match_contracts.py": "7ac28ab78c25f7c3f5abdd04960477fe9de9ac46e7b3e8d9ca4128aa52031c2f",
+    "src/job_agent/resume_workspace/match_repository.py": "401ae83cd38a830e970100ccbcd56ad3abb76f70b059c53be5befba01145e6f0",
+    "src/job_agent/resume_workspace/matching.py": "b6a739d4a54ce77e9ece91b486041a468fe7e66983963114b2038a6c50a6bdfe",
+    "tests/test_resume_matching.py": "9347d4c5920c36c56c6939519d18dc36d5b99ef151e89efaf3106bff3759b1a8"
+  }
+}

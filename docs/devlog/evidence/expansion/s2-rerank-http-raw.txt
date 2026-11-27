@@ -1,0 +1,1 @@
+{"checks": 7, "queries": 7, "output": "docs/devlog/evidence/expansion/s2-rerank-http.json", "model_loaded": true}

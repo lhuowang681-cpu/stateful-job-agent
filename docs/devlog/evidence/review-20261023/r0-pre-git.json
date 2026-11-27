@@ -1,0 +1,13 @@
+{
+  "recorded_at_utc": "2026-10-23T04:03:42.963845+00:00",
+  "previous_release_all_823_files_match": true,
+  "git_existed": false,
+  "planned_public_baseline_files": 821,
+  "excluded_sqlite_files": [
+    "tests/fixtures/expansion_research/index-v1/dev.sqlite",
+    "tests/fixtures/expansion_research/index-v1/test.sqlite"
+  ],
+  "source_identity": "b919d6152743ce47b41f52e3a810db8f97b0adb4bb1244a91204d67809abbb0b",
+  "review_tools_not_copied_or_modified": true,
+  "stage_scope": "authorized continuation baseline, not historical authorship; no ancestor repository; no private/runtime data"
+}

@@ -106,8 +106,10 @@ def _render_workbench(session_dir: Path) -> AppTest:
 class TestAppSmoke:
     """基本页面加载：不传输入，只验证无异常渲染。"""
 
-    def test_app_loads_without_exception(self) -> None:
-        at = AppTest.from_file("src/job_agent/ui/app.py")
+    def test_app_loads_without_exception(self, tmp_path: Path, monkeypatch) -> None:
+        monkeypatch.setenv("JOB_AGENT_OUTPUT_ROOT", str(tmp_path / "workbench"))
+        app_path = Path(__file__).resolve().parents[1] / "src" / "job_agent" / "ui" / "app.py"
+        at = AppTest.from_file(str(app_path))
         at.run()
         assert not at.exception
 

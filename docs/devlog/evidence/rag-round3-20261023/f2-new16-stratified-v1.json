@@ -1,0 +1,1186 @@
+{
+  "status": "completed",
+  "same_test_no_new_scoring": true,
+  "metrics": {
+    "A_bm25": {
+      "code": {
+        "cases": 10,
+        "minimum_sufficient": 0,
+        "original_union_sufficient": 0
+      },
+      "documentation": {
+        "cases": 2,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      },
+      "natural_language": {
+        "cases": 4,
+        "minimum_sufficient": 0,
+        "original_union_sufficient": 0
+      },
+      "exact_symbol": {
+        "cases": 3,
+        "minimum_sufficient": 0,
+        "original_union_sufficient": 0
+      },
+      "multi_evidence": {
+        "cases": 3,
+        "minimum_sufficient": 0,
+        "original_union_sufficient": 0
+      }
+    },
+    "B_dense": {
+      "code": {
+        "cases": 10,
+        "minimum_sufficient": 10,
+        "original_union_sufficient": 10
+      },
+      "documentation": {
+        "cases": 2,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      },
+      "natural_language": {
+        "cases": 4,
+        "minimum_sufficient": 4,
+        "original_union_sufficient": 4
+      },
+      "exact_symbol": {
+        "cases": 3,
+        "minimum_sufficient": 3,
+        "original_union_sufficient": 3
+      },
+      "multi_evidence": {
+        "cases": 3,
+        "minimum_sufficient": 3,
+        "original_union_sufficient": 3
+      }
+    },
+    "C_hybrid": {
+      "code": {
+        "cases": 10,
+        "minimum_sufficient": 4,
+        "original_union_sufficient": 4
+      },
+      "documentation": {
+        "cases": 2,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      },
+      "natural_language": {
+        "cases": 4,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      },
+      "exact_symbol": {
+        "cases": 3,
+        "minimum_sufficient": 2,
+        "original_union_sufficient": 2
+      },
+      "multi_evidence": {
+        "cases": 3,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      }
+    },
+    "D_hybrid_rerank": {
+      "code": {
+        "cases": 10,
+        "minimum_sufficient": 9,
+        "original_union_sufficient": 9
+      },
+      "documentation": {
+        "cases": 2,
+        "minimum_sufficient": 2,
+        "original_union_sufficient": 2
+      },
+      "natural_language": {
+        "cases": 4,
+        "minimum_sufficient": 4,
+        "original_union_sufficient": 4
+      },
+      "exact_symbol": {
+        "cases": 3,
+        "minimum_sufficient": 3,
+        "original_union_sufficient": 3
+      },
+      "multi_evidence": {
+        "cases": 3,
+        "minimum_sufficient": 2,
+        "original_union_sufficient": 2
+      }
+    },
+    "E_code_direct": {
+      "code": {
+        "cases": 10,
+        "minimum_sufficient": 6,
+        "original_union_sufficient": 6
+      },
+      "documentation": {
+        "cases": 2,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      },
+      "natural_language": {
+        "cases": 4,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      },
+      "exact_symbol": {
+        "cases": 3,
+        "minimum_sufficient": 3,
+        "original_union_sufficient": 3
+      },
+      "multi_evidence": {
+        "cases": 3,
+        "minimum_sufficient": 2,
+        "original_union_sufficient": 2
+      }
+    },
+    "F_legacy_relations": {
+      "code": {
+        "cases": 10,
+        "minimum_sufficient": 5,
+        "original_union_sufficient": 5
+      },
+      "documentation": {
+        "cases": 2,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      },
+      "natural_language": {
+        "cases": 4,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      },
+      "exact_symbol": {
+        "cases": 3,
+        "minimum_sufficient": 3,
+        "original_union_sufficient": 3
+      },
+      "multi_evidence": {
+        "cases": 3,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      }
+    },
+    "G_flat_bm25": {
+      "code": {
+        "cases": 10,
+        "minimum_sufficient": 4,
+        "original_union_sufficient": 4
+      },
+      "documentation": {
+        "cases": 2,
+        "minimum_sufficient": 2,
+        "original_union_sufficient": 2
+      },
+      "natural_language": {
+        "cases": 4,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      },
+      "exact_symbol": {
+        "cases": 3,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      },
+      "multi_evidence": {
+        "cases": 3,
+        "minimum_sufficient": 2,
+        "original_union_sufficient": 2
+      }
+    },
+    "H_hybrid_weighted": {
+      "code": {
+        "cases": 10,
+        "minimum_sufficient": 4,
+        "original_union_sufficient": 4
+      },
+      "documentation": {
+        "cases": 2,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      },
+      "natural_language": {
+        "cases": 4,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      },
+      "exact_symbol": {
+        "cases": 3,
+        "minimum_sufficient": 2,
+        "original_union_sufficient": 2
+      },
+      "multi_evidence": {
+        "cases": 3,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      }
+    },
+    "I_code_weighted": {
+      "code": {
+        "cases": 10,
+        "minimum_sufficient": 6,
+        "original_union_sufficient": 6
+      },
+      "documentation": {
+        "cases": 2,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      },
+      "natural_language": {
+        "cases": 4,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      },
+      "exact_symbol": {
+        "cases": 3,
+        "minimum_sufficient": 3,
+        "original_union_sufficient": 3
+      },
+      "multi_evidence": {
+        "cases": 3,
+        "minimum_sufficient": 2,
+        "original_union_sufficient": 2
+      }
+    },
+    "J_preserve_direct": {
+      "code": {
+        "cases": 10,
+        "minimum_sufficient": 6,
+        "original_union_sufficient": 6
+      },
+      "documentation": {
+        "cases": 2,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      },
+      "natural_language": {
+        "cases": 4,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      },
+      "exact_symbol": {
+        "cases": 3,
+        "minimum_sufficient": 3,
+        "original_union_sufficient": 3
+      },
+      "multi_evidence": {
+        "cases": 3,
+        "minimum_sufficient": 2,
+        "original_union_sufficient": 2
+      }
+    },
+    "K_weighted_preserve": {
+      "code": {
+        "cases": 10,
+        "minimum_sufficient": 6,
+        "original_union_sufficient": 6
+      },
+      "documentation": {
+        "cases": 2,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      },
+      "natural_language": {
+        "cases": 4,
+        "minimum_sufficient": 1,
+        "original_union_sufficient": 1
+      },
+      "exact_symbol": {
+        "cases": 3,
+        "minimum_sufficient": 3,
+        "original_union_sufficient": 3
+      },
+      "multi_evidence": {
+        "cases": 3,
+        "minimum_sufficient": 2,
+        "original_union_sufficient": 2
+      }
+    }
+  },
+  "repeat_consistency": [
+    {
+      "variant": "A_bm25",
+      "case_id": "rag16-pdf-owner-hash",
+      "same_references_all3": true
+    },
+    {
+      "variant": "A_bm25",
+      "case_id": "rag16-github-boundary",
+      "same_references_all3": true
+    },
+    {
+      "variant": "A_bm25",
+      "case_id": "rag16-zip-preflight",
+      "same_references_all3": true
+    },
+    {
+      "variant": "A_bm25",
+      "case_id": "rag16-match-chain",
+      "same_references_all3": true
+    },
+    {
+      "variant": "A_bm25",
+      "case_id": "rag16-upload-versus-quote",
+      "same_references_all3": true
+    },
+    {
+      "variant": "A_bm25",
+      "case_id": "rag16-archive-path",
+      "same_references_all3": true
+    },
+    {
+      "variant": "A_bm25",
+      "case_id": "rag16-historical-human",
+      "same_references_all3": true
+    },
+    {
+      "variant": "A_bm25",
+      "case_id": "rag16-all-private-scanned",
+      "same_references_all3": true
+    },
+    {
+      "variant": "A_bm25",
+      "case_id": "rag16-pack-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "A_bm25",
+      "case_id": "rag16-pdf-outcome",
+      "same_references_all3": true
+    },
+    {
+      "variant": "A_bm25",
+      "case_id": "rag16-match-load",
+      "same_references_all3": true
+    },
+    {
+      "variant": "A_bm25",
+      "case_id": "rag16-source-read",
+      "same_references_all3": true
+    },
+    {
+      "variant": "A_bm25",
+      "case_id": "rag16-ocr-measurement",
+      "same_references_all3": true
+    },
+    {
+      "variant": "A_bm25",
+      "case_id": "rag16-identity-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "A_bm25",
+      "case_id": "rag16-upload-limits",
+      "same_references_all3": true
+    },
+    {
+      "variant": "A_bm25",
+      "case_id": "rag16-parse-exact",
+      "same_references_all3": true
+    },
+    {
+      "variant": "B_dense",
+      "case_id": "rag16-pdf-owner-hash",
+      "same_references_all3": true
+    },
+    {
+      "variant": "B_dense",
+      "case_id": "rag16-github-boundary",
+      "same_references_all3": true
+    },
+    {
+      "variant": "B_dense",
+      "case_id": "rag16-zip-preflight",
+      "same_references_all3": true
+    },
+    {
+      "variant": "B_dense",
+      "case_id": "rag16-match-chain",
+      "same_references_all3": true
+    },
+    {
+      "variant": "B_dense",
+      "case_id": "rag16-upload-versus-quote",
+      "same_references_all3": true
+    },
+    {
+      "variant": "B_dense",
+      "case_id": "rag16-archive-path",
+      "same_references_all3": true
+    },
+    {
+      "variant": "B_dense",
+      "case_id": "rag16-historical-human",
+      "same_references_all3": true
+    },
+    {
+      "variant": "B_dense",
+      "case_id": "rag16-all-private-scanned",
+      "same_references_all3": true
+    },
+    {
+      "variant": "B_dense",
+      "case_id": "rag16-pack-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "B_dense",
+      "case_id": "rag16-pdf-outcome",
+      "same_references_all3": true
+    },
+    {
+      "variant": "B_dense",
+      "case_id": "rag16-match-load",
+      "same_references_all3": true
+    },
+    {
+      "variant": "B_dense",
+      "case_id": "rag16-source-read",
+      "same_references_all3": true
+    },
+    {
+      "variant": "B_dense",
+      "case_id": "rag16-ocr-measurement",
+      "same_references_all3": true
+    },
+    {
+      "variant": "B_dense",
+      "case_id": "rag16-identity-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "B_dense",
+      "case_id": "rag16-upload-limits",
+      "same_references_all3": true
+    },
+    {
+      "variant": "B_dense",
+      "case_id": "rag16-parse-exact",
+      "same_references_all3": true
+    },
+    {
+      "variant": "C_hybrid",
+      "case_id": "rag16-pdf-owner-hash",
+      "same_references_all3": true
+    },
+    {
+      "variant": "C_hybrid",
+      "case_id": "rag16-github-boundary",
+      "same_references_all3": true
+    },
+    {
+      "variant": "C_hybrid",
+      "case_id": "rag16-zip-preflight",
+      "same_references_all3": true
+    },
+    {
+      "variant": "C_hybrid",
+      "case_id": "rag16-match-chain",
+      "same_references_all3": true
+    },
+    {
+      "variant": "C_hybrid",
+      "case_id": "rag16-upload-versus-quote",
+      "same_references_all3": true
+    },
+    {
+      "variant": "C_hybrid",
+      "case_id": "rag16-archive-path",
+      "same_references_all3": true
+    },
+    {
+      "variant": "C_hybrid",
+      "case_id": "rag16-historical-human",
+      "same_references_all3": true
+    },
+    {
+      "variant": "C_hybrid",
+      "case_id": "rag16-all-private-scanned",
+      "same_references_all3": true
+    },
+    {
+      "variant": "C_hybrid",
+      "case_id": "rag16-pack-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "C_hybrid",
+      "case_id": "rag16-pdf-outcome",
+      "same_references_all3": true
+    },
+    {
+      "variant": "C_hybrid",
+      "case_id": "rag16-match-load",
+      "same_references_all3": true
+    },
+    {
+      "variant": "C_hybrid",
+      "case_id": "rag16-source-read",
+      "same_references_all3": true
+    },
+    {
+      "variant": "C_hybrid",
+      "case_id": "rag16-ocr-measurement",
+      "same_references_all3": true
+    },
+    {
+      "variant": "C_hybrid",
+      "case_id": "rag16-identity-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "C_hybrid",
+      "case_id": "rag16-upload-limits",
+      "same_references_all3": true
+    },
+    {
+      "variant": "C_hybrid",
+      "case_id": "rag16-parse-exact",
+      "same_references_all3": true
+    },
+    {
+      "variant": "D_hybrid_rerank",
+      "case_id": "rag16-pdf-owner-hash",
+      "same_references_all3": true
+    },
+    {
+      "variant": "D_hybrid_rerank",
+      "case_id": "rag16-github-boundary",
+      "same_references_all3": true
+    },
+    {
+      "variant": "D_hybrid_rerank",
+      "case_id": "rag16-zip-preflight",
+      "same_references_all3": true
+    },
+    {
+      "variant": "D_hybrid_rerank",
+      "case_id": "rag16-match-chain",
+      "same_references_all3": true
+    },
+    {
+      "variant": "D_hybrid_rerank",
+      "case_id": "rag16-upload-versus-quote",
+      "same_references_all3": true
+    },
+    {
+      "variant": "D_hybrid_rerank",
+      "case_id": "rag16-archive-path",
+      "same_references_all3": true
+    },
+    {
+      "variant": "D_hybrid_rerank",
+      "case_id": "rag16-historical-human",
+      "same_references_all3": true
+    },
+    {
+      "variant": "D_hybrid_rerank",
+      "case_id": "rag16-all-private-scanned",
+      "same_references_all3": true
+    },
+    {
+      "variant": "D_hybrid_rerank",
+      "case_id": "rag16-pack-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "D_hybrid_rerank",
+      "case_id": "rag16-pdf-outcome",
+      "same_references_all3": true
+    },
+    {
+      "variant": "D_hybrid_rerank",
+      "case_id": "rag16-match-load",
+      "same_references_all3": true
+    },
+    {
+      "variant": "D_hybrid_rerank",
+      "case_id": "rag16-source-read",
+      "same_references_all3": true
+    },
+    {
+      "variant": "D_hybrid_rerank",
+      "case_id": "rag16-ocr-measurement",
+      "same_references_all3": true
+    },
+    {
+      "variant": "D_hybrid_rerank",
+      "case_id": "rag16-identity-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "D_hybrid_rerank",
+      "case_id": "rag16-upload-limits",
+      "same_references_all3": true
+    },
+    {
+      "variant": "D_hybrid_rerank",
+      "case_id": "rag16-parse-exact",
+      "same_references_all3": true
+    },
+    {
+      "variant": "E_code_direct",
+      "case_id": "rag16-pdf-owner-hash",
+      "same_references_all3": true
+    },
+    {
+      "variant": "E_code_direct",
+      "case_id": "rag16-github-boundary",
+      "same_references_all3": true
+    },
+    {
+      "variant": "E_code_direct",
+      "case_id": "rag16-zip-preflight",
+      "same_references_all3": true
+    },
+    {
+      "variant": "E_code_direct",
+      "case_id": "rag16-match-chain",
+      "same_references_all3": true
+    },
+    {
+      "variant": "E_code_direct",
+      "case_id": "rag16-upload-versus-quote",
+      "same_references_all3": true
+    },
+    {
+      "variant": "E_code_direct",
+      "case_id": "rag16-archive-path",
+      "same_references_all3": true
+    },
+    {
+      "variant": "E_code_direct",
+      "case_id": "rag16-historical-human",
+      "same_references_all3": true
+    },
+    {
+      "variant": "E_code_direct",
+      "case_id": "rag16-all-private-scanned",
+      "same_references_all3": true
+    },
+    {
+      "variant": "E_code_direct",
+      "case_id": "rag16-pack-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "E_code_direct",
+      "case_id": "rag16-pdf-outcome",
+      "same_references_all3": true
+    },
+    {
+      "variant": "E_code_direct",
+      "case_id": "rag16-match-load",
+      "same_references_all3": true
+    },
+    {
+      "variant": "E_code_direct",
+      "case_id": "rag16-source-read",
+      "same_references_all3": true
+    },
+    {
+      "variant": "E_code_direct",
+      "case_id": "rag16-ocr-measurement",
+      "same_references_all3": true
+    },
+    {
+      "variant": "E_code_direct",
+      "case_id": "rag16-identity-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "E_code_direct",
+      "case_id": "rag16-upload-limits",
+      "same_references_all3": true
+    },
+    {
+      "variant": "E_code_direct",
+      "case_id": "rag16-parse-exact",
+      "same_references_all3": true
+    },
+    {
+      "variant": "F_legacy_relations",
+      "case_id": "rag16-pdf-owner-hash",
+      "same_references_all3": true
+    },
+    {
+      "variant": "F_legacy_relations",
+      "case_id": "rag16-github-boundary",
+      "same_references_all3": true
+    },
+    {
+      "variant": "F_legacy_relations",
+      "case_id": "rag16-zip-preflight",
+      "same_references_all3": true
+    },
+    {
+      "variant": "F_legacy_relations",
+      "case_id": "rag16-match-chain",
+      "same_references_all3": true
+    },
+    {
+      "variant": "F_legacy_relations",
+      "case_id": "rag16-upload-versus-quote",
+      "same_references_all3": true
+    },
+    {
+      "variant": "F_legacy_relations",
+      "case_id": "rag16-archive-path",
+      "same_references_all3": true
+    },
+    {
+      "variant": "F_legacy_relations",
+      "case_id": "rag16-historical-human",
+      "same_references_all3": true
+    },
+    {
+      "variant": "F_legacy_relations",
+      "case_id": "rag16-all-private-scanned",
+      "same_references_all3": true
+    },
+    {
+      "variant": "F_legacy_relations",
+      "case_id": "rag16-pack-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "F_legacy_relations",
+      "case_id": "rag16-pdf-outcome",
+      "same_references_all3": true
+    },
+    {
+      "variant": "F_legacy_relations",
+      "case_id": "rag16-match-load",
+      "same_references_all3": true
+    },
+    {
+      "variant": "F_legacy_relations",
+      "case_id": "rag16-source-read",
+      "same_references_all3": true
+    },
+    {
+      "variant": "F_legacy_relations",
+      "case_id": "rag16-ocr-measurement",
+      "same_references_all3": true
+    },
+    {
+      "variant": "F_legacy_relations",
+      "case_id": "rag16-identity-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "F_legacy_relations",
+      "case_id": "rag16-upload-limits",
+      "same_references_all3": true
+    },
+    {
+      "variant": "F_legacy_relations",
+      "case_id": "rag16-parse-exact",
+      "same_references_all3": true
+    },
+    {
+      "variant": "G_flat_bm25",
+      "case_id": "rag16-pdf-owner-hash",
+      "same_references_all3": true
+    },
+    {
+      "variant": "G_flat_bm25",
+      "case_id": "rag16-github-boundary",
+      "same_references_all3": true
+    },
+    {
+      "variant": "G_flat_bm25",
+      "case_id": "rag16-zip-preflight",
+      "same_references_all3": true
+    },
+    {
+      "variant": "G_flat_bm25",
+      "case_id": "rag16-match-chain",
+      "same_references_all3": true
+    },
+    {
+      "variant": "G_flat_bm25",
+      "case_id": "rag16-upload-versus-quote",
+      "same_references_all3": true
+    },
+    {
+      "variant": "G_flat_bm25",
+      "case_id": "rag16-archive-path",
+      "same_references_all3": true
+    },
+    {
+      "variant": "G_flat_bm25",
+      "case_id": "rag16-historical-human",
+      "same_references_all3": true
+    },
+    {
+      "variant": "G_flat_bm25",
+      "case_id": "rag16-all-private-scanned",
+      "same_references_all3": true
+    },
+    {
+      "variant": "G_flat_bm25",
+      "case_id": "rag16-pack-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "G_flat_bm25",
+      "case_id": "rag16-pdf-outcome",
+      "same_references_all3": true
+    },
+    {
+      "variant": "G_flat_bm25",
+      "case_id": "rag16-match-load",
+      "same_references_all3": true
+    },
+    {
+      "variant": "G_flat_bm25",
+      "case_id": "rag16-source-read",
+      "same_references_all3": true
+    },
+    {
+      "variant": "G_flat_bm25",
+      "case_id": "rag16-ocr-measurement",
+      "same_references_all3": true
+    },
+    {
+      "variant": "G_flat_bm25",
+      "case_id": "rag16-identity-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "G_flat_bm25",
+      "case_id": "rag16-upload-limits",
+      "same_references_all3": true
+    },
+    {
+      "variant": "G_flat_bm25",
+      "case_id": "rag16-parse-exact",
+      "same_references_all3": true
+    },
+    {
+      "variant": "H_hybrid_weighted",
+      "case_id": "rag16-pdf-owner-hash",
+      "same_references_all3": true
+    },
+    {
+      "variant": "H_hybrid_weighted",
+      "case_id": "rag16-github-boundary",
+      "same_references_all3": true
+    },
+    {
+      "variant": "H_hybrid_weighted",
+      "case_id": "rag16-zip-preflight",
+      "same_references_all3": true
+    },
+    {
+      "variant": "H_hybrid_weighted",
+      "case_id": "rag16-match-chain",
+      "same_references_all3": true
+    },
+    {
+      "variant": "H_hybrid_weighted",
+      "case_id": "rag16-upload-versus-quote",
+      "same_references_all3": true
+    },
+    {
+      "variant": "H_hybrid_weighted",
+      "case_id": "rag16-archive-path",
+      "same_references_all3": true
+    },
+    {
+      "variant": "H_hybrid_weighted",
+      "case_id": "rag16-historical-human",
+      "same_references_all3": true
+    },
+    {
+      "variant": "H_hybrid_weighted",
+      "case_id": "rag16-all-private-scanned",
+      "same_references_all3": true
+    },
+    {
+      "variant": "H_hybrid_weighted",
+      "case_id": "rag16-pack-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "H_hybrid_weighted",
+      "case_id": "rag16-pdf-outcome",
+      "same_references_all3": true
+    },
+    {
+      "variant": "H_hybrid_weighted",
+      "case_id": "rag16-match-load",
+      "same_references_all3": true
+    },
+    {
+      "variant": "H_hybrid_weighted",
+      "case_id": "rag16-source-read",
+      "same_references_all3": true
+    },
+    {
+      "variant": "H_hybrid_weighted",
+      "case_id": "rag16-ocr-measurement",
+      "same_references_all3": true
+    },
+    {
+      "variant": "H_hybrid_weighted",
+      "case_id": "rag16-identity-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "H_hybrid_weighted",
+      "case_id": "rag16-upload-limits",
+      "same_references_all3": true
+    },
+    {
+      "variant": "H_hybrid_weighted",
+      "case_id": "rag16-parse-exact",
+      "same_references_all3": true
+    },
+    {
+      "variant": "I_code_weighted",
+      "case_id": "rag16-pdf-owner-hash",
+      "same_references_all3": true
+    },
+    {
+      "variant": "I_code_weighted",
+      "case_id": "rag16-github-boundary",
+      "same_references_all3": true
+    },
+    {
+      "variant": "I_code_weighted",
+      "case_id": "rag16-zip-preflight",
+      "same_references_all3": true
+    },
+    {
+      "variant": "I_code_weighted",
+      "case_id": "rag16-match-chain",
+      "same_references_all3": true
+    },
+    {
+      "variant": "I_code_weighted",
+      "case_id": "rag16-upload-versus-quote",
+      "same_references_all3": true
+    },
+    {
+      "variant": "I_code_weighted",
+      "case_id": "rag16-archive-path",
+      "same_references_all3": true
+    },
+    {
+      "variant": "I_code_weighted",
+      "case_id": "rag16-historical-human",
+      "same_references_all3": true
+    },
+    {
+      "variant": "I_code_weighted",
+      "case_id": "rag16-all-private-scanned",
+      "same_references_all3": true
+    },
+    {
+      "variant": "I_code_weighted",
+      "case_id": "rag16-pack-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "I_code_weighted",
+      "case_id": "rag16-pdf-outcome",
+      "same_references_all3": true
+    },
+    {
+      "variant": "I_code_weighted",
+      "case_id": "rag16-match-load",
+      "same_references_all3": true
+    },
+    {
+      "variant": "I_code_weighted",
+      "case_id": "rag16-source-read",
+      "same_references_all3": true
+    },
+    {
+      "variant": "I_code_weighted",
+      "case_id": "rag16-ocr-measurement",
+      "same_references_all3": true
+    },
+    {
+      "variant": "I_code_weighted",
+      "case_id": "rag16-identity-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "I_code_weighted",
+      "case_id": "rag16-upload-limits",
+      "same_references_all3": true
+    },
+    {
+      "variant": "I_code_weighted",
+      "case_id": "rag16-parse-exact",
+      "same_references_all3": true
+    },
+    {
+      "variant": "J_preserve_direct",
+      "case_id": "rag16-pdf-owner-hash",
+      "same_references_all3": true
+    },
+    {
+      "variant": "J_preserve_direct",
+      "case_id": "rag16-github-boundary",
+      "same_references_all3": true
+    },
+    {
+      "variant": "J_preserve_direct",
+      "case_id": "rag16-zip-preflight",
+      "same_references_all3": true
+    },
+    {
+      "variant": "J_preserve_direct",
+      "case_id": "rag16-match-chain",
+      "same_references_all3": true
+    },
+    {
+      "variant": "J_preserve_direct",
+      "case_id": "rag16-upload-versus-quote",
+      "same_references_all3": true
+    },
+    {
+      "variant": "J_preserve_direct",
+      "case_id": "rag16-archive-path",
+      "same_references_all3": true
+    },
+    {
+      "variant": "J_preserve_direct",
+      "case_id": "rag16-historical-human",
+      "same_references_all3": true
+    },
+    {
+      "variant": "J_preserve_direct",
+      "case_id": "rag16-all-private-scanned",
+      "same_references_all3": true
+    },
+    {
+      "variant": "J_preserve_direct",
+      "case_id": "rag16-pack-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "J_preserve_direct",
+      "case_id": "rag16-pdf-outcome",
+      "same_references_all3": true
+    },
+    {
+      "variant": "J_preserve_direct",
+      "case_id": "rag16-match-load",
+      "same_references_all3": true
+    },
+    {
+      "variant": "J_preserve_direct",
+      "case_id": "rag16-source-read",
+      "same_references_all3": true
+    },
+    {
+      "variant": "J_preserve_direct",
+      "case_id": "rag16-ocr-measurement",
+      "same_references_all3": true
+    },
+    {
+      "variant": "J_preserve_direct",
+      "case_id": "rag16-identity-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "J_preserve_direct",
+      "case_id": "rag16-upload-limits",
+      "same_references_all3": true
+    },
+    {
+      "variant": "J_preserve_direct",
+      "case_id": "rag16-parse-exact",
+      "same_references_all3": true
+    },
+    {
+      "variant": "K_weighted_preserve",
+      "case_id": "rag16-pdf-owner-hash",
+      "same_references_all3": true
+    },
+    {
+      "variant": "K_weighted_preserve",
+      "case_id": "rag16-github-boundary",
+      "same_references_all3": true
+    },
+    {
+      "variant": "K_weighted_preserve",
+      "case_id": "rag16-zip-preflight",
+      "same_references_all3": true
+    },
+    {
+      "variant": "K_weighted_preserve",
+      "case_id": "rag16-match-chain",
+      "same_references_all3": true
+    },
+    {
+      "variant": "K_weighted_preserve",
+      "case_id": "rag16-upload-versus-quote",
+      "same_references_all3": true
+    },
+    {
+      "variant": "K_weighted_preserve",
+      "case_id": "rag16-archive-path",
+      "same_references_all3": true
+    },
+    {
+      "variant": "K_weighted_preserve",
+      "case_id": "rag16-historical-human",
+      "same_references_all3": true
+    },
+    {
+      "variant": "K_weighted_preserve",
+      "case_id": "rag16-all-private-scanned",
+      "same_references_all3": true
+    },
+    {
+      "variant": "K_weighted_preserve",
+      "case_id": "rag16-pack-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "K_weighted_preserve",
+      "case_id": "rag16-pdf-outcome",
+      "same_references_all3": true
+    },
+    {
+      "variant": "K_weighted_preserve",
+      "case_id": "rag16-match-load",
+      "same_references_all3": true
+    },
+    {
+      "variant": "K_weighted_preserve",
+      "case_id": "rag16-source-read",
+      "same_references_all3": true
+    },
+    {
+      "variant": "K_weighted_preserve",
+      "case_id": "rag16-ocr-measurement",
+      "same_references_all3": true
+    },
+    {
+      "variant": "K_weighted_preserve",
+      "case_id": "rag16-identity-design",
+      "same_references_all3": true
+    },
+    {
+      "variant": "K_weighted_preserve",
+      "case_id": "rag16-upload-limits",
+      "same_references_all3": true
+    },
+    {
+      "variant": "K_weighted_preserve",
+      "case_id": "rag16-parse-exact",
+      "same_references_all3": true
+    }
+  ],
+  "human_reviewed": 0
+}

@@ -1,0 +1,82 @@
+{
+  "actual_network_calls": 180,
+  "input_tokens": 216617,
+  "output_tokens": 23860,
+  "billing_amount": null,
+  "missing_price_reason": "No verified account charge; response usage only; shared first drafts counted once globally",
+  "data": "Authorized CC0 project-authored synthetic inputs and question references only; real owner code corpus stayed local",
+  "items": [
+    {
+      "artifact": "deepseek-rewrite-pilot-v1.json",
+      "actual_network_calls": 6,
+      "input_tokens": 5520,
+      "output_tokens": 554
+    },
+    {
+      "artifact": "deepseek-rewrite-pilot-v2.json",
+      "actual_network_calls": 6,
+      "input_tokens": 5682,
+      "output_tokens": 479
+    },
+    {
+      "artifact": "deepseek-rewrite-pilot-v3.json",
+      "actual_network_calls": 8,
+      "input_tokens": 7645,
+      "output_tokens": 821
+    },
+    {
+      "artifact": "deepseek-learning-pilot-v1.json",
+      "actual_network_calls": 2,
+      "input_tokens": 2601,
+      "output_tokens": 269
+    },
+    {
+      "artifact": "deepseek-learning-pilot-v2.json",
+      "actual_network_calls": 2,
+      "input_tokens": 2604,
+      "output_tokens": 238
+    },
+    {
+      "artifact": "deepseek-learning-pilot-v3.json",
+      "actual_network_calls": 12,
+      "input_tokens": 15737,
+      "output_tokens": 1572
+    },
+    {
+      "artifact": "deepseek-comparison-v2.json",
+      "actual_network_calls": 100,
+      "input_tokens": 108774,
+      "output_tokens": 14318
+    },
+    {
+      "artifact": "deepseek-final-rewrite-http-v1.json",
+      "actual_network_calls": 4,
+      "input_tokens": 4801,
+      "output_tokens": 514
+    },
+    {
+      "artifact": "r5-deepseek-launcher-learning-v1.json",
+      "actual_network_calls": 12,
+      "input_tokens": 15787,
+      "output_tokens": 1470
+    },
+    {
+      "artifact": "r5-deepseek-rewrite-http-v1.json",
+      "actual_network_calls": 4,
+      "input_tokens": 4761,
+      "output_tokens": 489
+    },
+    {
+      "artifact": "r5-deepseek-fixed-reference-learning-v1.json",
+      "actual_network_calls": 12,
+      "input_tokens": 21387,
+      "output_tokens": 1555
+    },
+    {
+      "artifact": "r5-deepseek-fixed-reference-learning-v2.json",
+      "actual_network_calls": 12,
+      "input_tokens": 21318,
+      "output_tokens": 1581
+    }
+  ]
+}

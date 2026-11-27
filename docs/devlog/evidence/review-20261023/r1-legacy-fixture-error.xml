@@ -1,0 +1,1369 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="4" time="3.899" timestamp="2026-10-23T12:23:02.690065+08:00" hostname="autodl-container-81de49abb0-0a662bf5"><testcase classname="tests.test_review_r1_evaluation_integrity" name="test_rules_mode_remains_lexical_and_legacy_empty_list_can_be_read" time="0.694" /><testcase classname="tests.test_review_r1_evaluation_integrity" name="test_legacy_llm_record_readable_but_incomplete_learning_source_is_excluded[0]" time="0.220"><failure message="sqlite3.IntegrityError: UNIQUE constraint failed: rw_learning_observations.owner_id, rw_learning_observations.session_id, rw_learning_observations.question_id, rw_learning_observations.point_id, rw_learning_observations.source_fingerprint">+ Exception Group Traceback (most recent call last):
+  |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_utils.py", line 76, in collapse_excgroups
+  |     yield
+  |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 177, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 815, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/runner.py", line 361, in from_call
+    |     result: TResult | None = func()
+    |                              ^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/runner.py", line 250, in &lt;lambda&gt;
+    |     lambda: runtest_hook(item=item, **kwds),
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    |     return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    |     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 167, in _multicall
+    |     raise exception
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    |     teardown.throw(exception)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/logging.py", line 865, in pytest_runtest_call
+    |     yield
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    |     teardown.throw(exception)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/capture.py", line 900, in pytest_runtest_call
+    |     return (yield)
+    |             ^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    |     teardown.throw(exception)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 53, in run_old_style_hookwrapper
+    |     return result.get_result()
+    |            ^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_result.py", line 103, in get_result
+    |     raise exc.with_traceback(tb)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 38, in run_old_style_hookwrapper
+    |     res = yield
+    |           ^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    |     teardown.throw(exception)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/skipping.py", line 268, in pytest_runtest_call
+    |     return (yield)
+    |             ^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    |     res = hook_impl.function(*args)
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/runner.py", line 184, in pytest_runtest_call
+    |     item.runtest()
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/python.py", line 1707, in runtest
+    |     self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    |     return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    |     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 167, in _multicall
+    |     raise exception
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    |     res = hook_impl.function(*args)
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/python.py", line 167, in pytest_pyfunc_call
+    |     result = testfunction(**testargs)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/tests/test_review_r1_evaluation_integrity.py", line 169, in test_legacy_llm_record_readable_but_incomplete_learning_source_is_excluded
+    |     response=c.post(url+'/learning-observations',headers=A)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 538, in post
+    |     return super().post(
+    |            ^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 1144, in post
+    |     return self.request(
+    |            ^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 437, in request
+    |     return super().request(
+    |            ^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 825, in request
+    |     return self.send(request, auth=auth, follow_redirects=follow_redirects)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    |     response = self._send_handling_auth(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    |     response = self._send_handling_redirects(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    |     response = self._send_single_request(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    |     response = transport.handle_request(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 340, in handle_request
+    |     raise exc
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 337, in handle_request
+    |     portal.call(self.app, scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/from_thread.py", line 338, in call
+    |     return cast(T_Retval, self.start_task_soon(func, *args).result())
+    |                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    |     return self.__get_result()
+    |            ^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    |     raise self._exception
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/from_thread.py", line 263, in _call_func
+    |     retval = await retval_or_awaitable
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    |     await super().__call__(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/applications.py", line 112, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    |     raise exc
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 176, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/contextlib.py", line 158, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    |     raise exc
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 178, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/api.py", line 85, in private_response
+    |     response = await call_next(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 156, in call_next
+    |     raise app_exc
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 141, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 714, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 734, in app
+    |     await route.handle(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 288, in handle
+    |     await self.app(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 76, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 73, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/routing.py", line 301, in app
+    |     raw_response = await run_endpoint_function(
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    |     return await run_in_threadpool(dependant.call, **values)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    |     return await anyio.to_thread.run_sync(func)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/to_thread.py", line 65, in run_sync
+    |     return await get_async_backend().run_sync_in_worker_thread(
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 2641, in run_sync_in_worker_thread
+    |     return await future
+    |            ^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 1033, in run
+    |     result = context.run(func, *args)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/learning_api.py", line 9, in materialize
+    |     def materialize(session_id:str,user:str=Depends(owner)):return learning.materialize(user,session_id)
+    |                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/learning.py", line 201, in materialize
+    |     db.execute('INSERT INTO rw_learning_observations VALUES (?,?,?,?,?,?,?,?,?,?,0,?)',
+    | sqlite3.IntegrityError: UNIQUE constraint failed: rw_learning_observations.owner_id, rw_learning_observations.session_id, rw_learning_observations.question_id, rw_learning_observations.point_id, rw_learning_observations.source_fingerprint
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/tests/test_review_r1_evaluation_integrity.py", line 169, in test_legacy_llm_record_readable_but_incomplete_learning_source_is_excluded
+    response=c.post(url+'/learning-observations',headers=A)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 538, in post
+    return super().post(
+           ^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 1144, in post
+    return self.request(
+           ^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 437, in request
+    return super().request(
+           ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 340, in handle_request
+    raise exc
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 337, in handle_request
+    portal.call(self.app, scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/from_thread.py", line 338, in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/from_thread.py", line 263, in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 176, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 178, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/api.py", line 85, in private_response
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 156, in call_next
+    raise app_exc
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/learning_api.py", line 9, in materialize
+    def materialize(session_id:str,user:str=Depends(owner)):return learning.materialize(user,session_id)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/learning.py", line 201, in materialize
+    db.execute('INSERT INTO rw_learning_observations VALUES (?,?,?,?,?,?,?,?,?,?,0,?)',
+sqlite3.IntegrityError: UNIQUE constraint failed: rw_learning_observations.owner_id, rw_learning_observations.session_id, rw_learning_observations.question_id, rw_learning_observations.point_id, rw_learning_observations.source_fingerprint
+
+During handling of the above exception, another exception occurred:
+
+env = (&lt;job_agent.resume_workspace.repository.SqliteResumeRepository object at 0x7f6245699f50&gt;, VersionRecord(resume_id='res...atetime(2026, 10, 23, 4, 23, 4, 333491, tzinfo=TzInfo(0)), confirmed_at=None, confirmation_scope='user_attested_only'))
+legacy_size = 0
+
+    @pytest.mark.parametrize('legacy_size',[0,1,3])
+    def test_legacy_llm_record_readable_but_incomplete_learning_source_is_excluded(env,legacy_size):
+        """Persistence simulation, not an assertion that a historical user did this."""
+        from job_agent.resume_workspace.interview_repository import digest,InterviewRepository
+        from job_agent.resume_workspace.interview_contracts import InterviewState
+        from job_agent.resume_workspace.learning import LearningRepository,observation_payload,encoded,digest as learning_digest
+        ws,v=env;provider=AssessmentProvider('complete')
+        with TestClient(create_resume_app(ws,resolve_identity={'a':'alice'}.get,interview_engine=InterviewEngine(provider),task_worker_enabled=False)) as c:
+            initial=start(c,v);sid=initial['session_id'];url='/api/v2/interviews/'+sid
+            c.post(url+'/answers',headers=A,json={**answer(initial),'answer':GOOD})
+            assert c.post(url+'/finish',headers=A,json={'expected_revision':1}).status_code==200
+            state=read_state(ws,sid)
+            state['turns'][0]['evaluation']['point_assessments']=state['turns'][0]['evaluation']['point_assessments'][:legacy_size]
+            state['turns'][0]['evaluation']['method_version']='s4-answer-1'
+            raw=json.dumps(state,ensure_ascii=False)
+            with ws._connection(write=True) as db:
+                db.execute('UPDATE rw_interviews SET state_json=?,state_hash=? WHERE session_id=?',(raw,digest(raw),sid))
+                s=InterviewState.model_validate(state)
+                data=observation_payload(s,s.turns[0],s.plan[0],'p0')
+                payload=encoded(data);controls=encoded({'confirmed':False,'paused':False,'deleted':False,'due_at':0})
+                db.execute('INSERT INTO rw_learning_observations VALUES (?,?,?,?,?,?,?,?,?,?,0,?)',
+                    ('legacy-review-observation','alice',sid,initial['current']['question_id'],'p0',learning_digest(data),
+                     payload,learning_digest(payload),controls,learning_digest(controls),0))
+            assert c.get(url,headers=A).status_code==200
+&gt;           response=c.post(url+'/learning-observations',headers=A)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_review_r1_evaluation_integrity.py:169: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py:538: in post
+    return super().post(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py:1144: in post
+    return self.request(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py:437: in request
+    return super().request(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py:914: in send
+    response = self._send_handling_auth(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py:340: in handle_request
+    raise exc
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py:337: in handle_request
+    portal.call(self.app, scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/from_thread.py:338: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/concurrent/futures/_base.py:456: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/concurrent/futures/_base.py:401: in __get_result
+    raise self._exception
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/from_thread.py:263: in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/applications.py:1054: in __call__
+    await super().__call__(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/applications.py:112: in __call__
+    await self.middleware_stack(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/errors.py:187: in __call__
+    raise exc
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/errors.py:165: in __call__
+    await self.app(scope, receive, _send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py:176: in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/contextlib.py:158: in __exit__
+    self.gen.throw(typ, value, traceback)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_utils.py:82: in collapse_excgroups
+    raise exc
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py:178: in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/resume_workspace/api.py:85: in private_response
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py:156: in call_next
+    raise app_exc
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py:141: in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/exceptions.py:62: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py:714: in __call__
+    await self.middleware_stack(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py:734: in app
+    await route.handle(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py:288: in handle
+    await self.app(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py:76: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py:73: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/routing.py:301: in app
+    raw_response = await run_endpoint_function(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/routing.py:214: in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/concurrency.py:37: in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/to_thread.py:65: in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py:2641: in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py:1033: in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/resume_workspace/learning_api.py:9: in materialize
+    def materialize(session_id:str,user:str=Depends(owner)):return learning.materialize(user,session_id)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;job_agent.resume_workspace.learning.LearningRepository object at 0x7f6244487e10&gt;
+owner = 'alice', sid = 'interview-c818876bccef45f1ba5658f37071749a'
+
+    def materialize(self,owner,sid):
+        with self.workspace._connection(write=True) as db:
+            _,s,_=self.interviews._load(db,owner,sid)
+            if s.status!='complete':raise WorkspaceConflict('learning_requires_completed_source')
+            topics={t.anchor_id:t for t in s.plan};withdrawn=withdrawn_questions(db,owner,sid)
+            payloads=[observation_payload(s,t,topics[t.question.topic_id],point) for t in s.turns if t.question.question_id not in withdrawn
+                for point in ([t.question.focus_id] if t.question.focus_id in topics[t.question.topic_id].points else topics[t.question.topic_id].points)]
+            if len(payloads)&gt;100:raise WorkspaceConflict('learning_session_quota_reached')
+            quota=db.execute('SELECT COUNT(*) FROM rw_learning_observations WHERE owner_id=?',(owner,)).fetchone()[0]
+            added=0
+            for data in payloads:
+                fp=digest(data);key='learn-'+digest([owner,sid,data['question_id'],data['point_id'],fp])[:32]
+                old_scope=db.execute('SELECT controls FROM rw_learning_observations WHERE owner_id=? AND session_id=? AND question_id=? AND point_id=?',
+                    (owner,sid,data['question_id'],data['point_id'])).fetchall()
+                if any(json.loads(old['controls']).get('deleted') for old in old_scope):continue
+                if db.execute('SELECT 1 FROM rw_learning_observations WHERE observation_id=?',(key,)).fetchone():continue
+                if quota+added&gt;=2000:raise WorkspaceConflict('learning_owner_quota_reached')
+                raw=encoded(data);controls=encoded({'confirmed':False,'paused':False,'deleted':False,'due_at':self.clock()})
+&gt;               db.execute('INSERT INTO rw_learning_observations VALUES (?,?,?,?,?,?,?,?,?,?,0,?)',
+                    (key,owner,sid,data['question_id'],data['point_id'],fp,raw,digest(raw),controls,digest(controls),self.clock()))
+E               sqlite3.IntegrityError: UNIQUE constraint failed: rw_learning_observations.owner_id, rw_learning_observations.session_id, rw_learning_observations.question_id, rw_learning_observations.point_id, rw_learning_observations.source_fingerprint
+
+src/job_agent/resume_workspace/learning.py:201: IntegrityError</failure></testcase><testcase classname="tests.test_review_r1_evaluation_integrity" name="test_legacy_llm_record_readable_but_incomplete_learning_source_is_excluded[1]" time="0.290"><failure message="sqlite3.IntegrityError: UNIQUE constraint failed: rw_learning_observations.owner_id, rw_learning_observations.session_id, rw_learning_observations.question_id, rw_learning_observations.point_id, rw_learning_observations.source_fingerprint">+ Exception Group Traceback (most recent call last):
+  |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_utils.py", line 76, in collapse_excgroups
+  |     yield
+  |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 177, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 815, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/runner.py", line 361, in from_call
+    |     result: TResult | None = func()
+    |                              ^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/runner.py", line 250, in &lt;lambda&gt;
+    |     lambda: runtest_hook(item=item, **kwds),
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    |     return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    |     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 167, in _multicall
+    |     raise exception
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    |     teardown.throw(exception)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/logging.py", line 865, in pytest_runtest_call
+    |     yield
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    |     teardown.throw(exception)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/capture.py", line 900, in pytest_runtest_call
+    |     return (yield)
+    |             ^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    |     teardown.throw(exception)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 53, in run_old_style_hookwrapper
+    |     return result.get_result()
+    |            ^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_result.py", line 103, in get_result
+    |     raise exc.with_traceback(tb)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 38, in run_old_style_hookwrapper
+    |     res = yield
+    |           ^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    |     teardown.throw(exception)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/skipping.py", line 268, in pytest_runtest_call
+    |     return (yield)
+    |             ^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    |     res = hook_impl.function(*args)
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/runner.py", line 184, in pytest_runtest_call
+    |     item.runtest()
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/python.py", line 1707, in runtest
+    |     self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    |     return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    |     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 167, in _multicall
+    |     raise exception
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    |     res = hook_impl.function(*args)
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/python.py", line 167, in pytest_pyfunc_call
+    |     result = testfunction(**testargs)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/tests/test_review_r1_evaluation_integrity.py", line 169, in test_legacy_llm_record_readable_but_incomplete_learning_source_is_excluded
+    |     response=c.post(url+'/learning-observations',headers=A)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 538, in post
+    |     return super().post(
+    |            ^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 1144, in post
+    |     return self.request(
+    |            ^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 437, in request
+    |     return super().request(
+    |            ^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 825, in request
+    |     return self.send(request, auth=auth, follow_redirects=follow_redirects)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    |     response = self._send_handling_auth(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    |     response = self._send_handling_redirects(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    |     response = self._send_single_request(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    |     response = transport.handle_request(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 340, in handle_request
+    |     raise exc
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 337, in handle_request
+    |     portal.call(self.app, scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/from_thread.py", line 338, in call
+    |     return cast(T_Retval, self.start_task_soon(func, *args).result())
+    |                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    |     return self.__get_result()
+    |            ^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    |     raise self._exception
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/from_thread.py", line 263, in _call_func
+    |     retval = await retval_or_awaitable
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    |     await super().__call__(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/applications.py", line 112, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    |     raise exc
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 176, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/contextlib.py", line 158, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    |     raise exc
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 178, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/api.py", line 85, in private_response
+    |     response = await call_next(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 156, in call_next
+    |     raise app_exc
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 141, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 714, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 734, in app
+    |     await route.handle(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 288, in handle
+    |     await self.app(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 76, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 73, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/routing.py", line 301, in app
+    |     raw_response = await run_endpoint_function(
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    |     return await run_in_threadpool(dependant.call, **values)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    |     return await anyio.to_thread.run_sync(func)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/to_thread.py", line 65, in run_sync
+    |     return await get_async_backend().run_sync_in_worker_thread(
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 2641, in run_sync_in_worker_thread
+    |     return await future
+    |            ^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 1033, in run
+    |     result = context.run(func, *args)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/learning_api.py", line 9, in materialize
+    |     def materialize(session_id:str,user:str=Depends(owner)):return learning.materialize(user,session_id)
+    |                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/learning.py", line 201, in materialize
+    |     db.execute('INSERT INTO rw_learning_observations VALUES (?,?,?,?,?,?,?,?,?,?,0,?)',
+    | sqlite3.IntegrityError: UNIQUE constraint failed: rw_learning_observations.owner_id, rw_learning_observations.session_id, rw_learning_observations.question_id, rw_learning_observations.point_id, rw_learning_observations.source_fingerprint
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/tests/test_review_r1_evaluation_integrity.py", line 169, in test_legacy_llm_record_readable_but_incomplete_learning_source_is_excluded
+    response=c.post(url+'/learning-observations',headers=A)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 538, in post
+    return super().post(
+           ^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 1144, in post
+    return self.request(
+           ^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 437, in request
+    return super().request(
+           ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 340, in handle_request
+    raise exc
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 337, in handle_request
+    portal.call(self.app, scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/from_thread.py", line 338, in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/from_thread.py", line 263, in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 176, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 178, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/api.py", line 85, in private_response
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 156, in call_next
+    raise app_exc
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/learning_api.py", line 9, in materialize
+    def materialize(session_id:str,user:str=Depends(owner)):return learning.materialize(user,session_id)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/learning.py", line 201, in materialize
+    db.execute('INSERT INTO rw_learning_observations VALUES (?,?,?,?,?,?,?,?,?,?,0,?)',
+sqlite3.IntegrityError: UNIQUE constraint failed: rw_learning_observations.owner_id, rw_learning_observations.session_id, rw_learning_observations.question_id, rw_learning_observations.point_id, rw_learning_observations.source_fingerprint
+
+During handling of the above exception, another exception occurred:
+
+env = (&lt;job_agent.resume_workspace.repository.SqliteResumeRepository object at 0x7f623f094ad0&gt;, VersionRecord(resume_id='res...atetime(2026, 10, 23, 4, 23, 5, 119720, tzinfo=TzInfo(0)), confirmed_at=None, confirmation_scope='user_attested_only'))
+legacy_size = 1
+
+    @pytest.mark.parametrize('legacy_size',[0,1,3])
+    def test_legacy_llm_record_readable_but_incomplete_learning_source_is_excluded(env,legacy_size):
+        """Persistence simulation, not an assertion that a historical user did this."""
+        from job_agent.resume_workspace.interview_repository import digest,InterviewRepository
+        from job_agent.resume_workspace.interview_contracts import InterviewState
+        from job_agent.resume_workspace.learning import LearningRepository,observation_payload,encoded,digest as learning_digest
+        ws,v=env;provider=AssessmentProvider('complete')
+        with TestClient(create_resume_app(ws,resolve_identity={'a':'alice'}.get,interview_engine=InterviewEngine(provider),task_worker_enabled=False)) as c:
+            initial=start(c,v);sid=initial['session_id'];url='/api/v2/interviews/'+sid
+            c.post(url+'/answers',headers=A,json={**answer(initial),'answer':GOOD})
+            assert c.post(url+'/finish',headers=A,json={'expected_revision':1}).status_code==200
+            state=read_state(ws,sid)
+            state['turns'][0]['evaluation']['point_assessments']=state['turns'][0]['evaluation']['point_assessments'][:legacy_size]
+            state['turns'][0]['evaluation']['method_version']='s4-answer-1'
+            raw=json.dumps(state,ensure_ascii=False)
+            with ws._connection(write=True) as db:
+                db.execute('UPDATE rw_interviews SET state_json=?,state_hash=? WHERE session_id=?',(raw,digest(raw),sid))
+                s=InterviewState.model_validate(state)
+                data=observation_payload(s,s.turns[0],s.plan[0],'p0')
+                payload=encoded(data);controls=encoded({'confirmed':False,'paused':False,'deleted':False,'due_at':0})
+                db.execute('INSERT INTO rw_learning_observations VALUES (?,?,?,?,?,?,?,?,?,?,0,?)',
+                    ('legacy-review-observation','alice',sid,initial['current']['question_id'],'p0',learning_digest(data),
+                     payload,learning_digest(payload),controls,learning_digest(controls),0))
+            assert c.get(url,headers=A).status_code==200
+&gt;           response=c.post(url+'/learning-observations',headers=A)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_review_r1_evaluation_integrity.py:169: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py:538: in post
+    return super().post(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py:1144: in post
+    return self.request(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py:437: in request
+    return super().request(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py:914: in send
+    response = self._send_handling_auth(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py:340: in handle_request
+    raise exc
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py:337: in handle_request
+    portal.call(self.app, scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/from_thread.py:338: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/concurrent/futures/_base.py:456: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/concurrent/futures/_base.py:401: in __get_result
+    raise self._exception
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/from_thread.py:263: in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/applications.py:1054: in __call__
+    await super().__call__(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/applications.py:112: in __call__
+    await self.middleware_stack(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/errors.py:187: in __call__
+    raise exc
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/errors.py:165: in __call__
+    await self.app(scope, receive, _send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py:176: in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/contextlib.py:158: in __exit__
+    self.gen.throw(typ, value, traceback)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_utils.py:82: in collapse_excgroups
+    raise exc
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py:178: in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/resume_workspace/api.py:85: in private_response
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py:156: in call_next
+    raise app_exc
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py:141: in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/exceptions.py:62: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py:714: in __call__
+    await self.middleware_stack(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py:734: in app
+    await route.handle(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py:288: in handle
+    await self.app(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py:76: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py:73: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/routing.py:301: in app
+    raw_response = await run_endpoint_function(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/routing.py:214: in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/concurrency.py:37: in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/to_thread.py:65: in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py:2641: in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py:1033: in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/resume_workspace/learning_api.py:9: in materialize
+    def materialize(session_id:str,user:str=Depends(owner)):return learning.materialize(user,session_id)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;job_agent.resume_workspace.learning.LearningRepository object at 0x7f62444a2910&gt;
+owner = 'alice', sid = 'interview-c3d23d26f6ff41d6826c18e92b5897e8'
+
+    def materialize(self,owner,sid):
+        with self.workspace._connection(write=True) as db:
+            _,s,_=self.interviews._load(db,owner,sid)
+            if s.status!='complete':raise WorkspaceConflict('learning_requires_completed_source')
+            topics={t.anchor_id:t for t in s.plan};withdrawn=withdrawn_questions(db,owner,sid)
+            payloads=[observation_payload(s,t,topics[t.question.topic_id],point) for t in s.turns if t.question.question_id not in withdrawn
+                for point in ([t.question.focus_id] if t.question.focus_id in topics[t.question.topic_id].points else topics[t.question.topic_id].points)]
+            if len(payloads)&gt;100:raise WorkspaceConflict('learning_session_quota_reached')
+            quota=db.execute('SELECT COUNT(*) FROM rw_learning_observations WHERE owner_id=?',(owner,)).fetchone()[0]
+            added=0
+            for data in payloads:
+                fp=digest(data);key='learn-'+digest([owner,sid,data['question_id'],data['point_id'],fp])[:32]
+                old_scope=db.execute('SELECT controls FROM rw_learning_observations WHERE owner_id=? AND session_id=? AND question_id=? AND point_id=?',
+                    (owner,sid,data['question_id'],data['point_id'])).fetchall()
+                if any(json.loads(old['controls']).get('deleted') for old in old_scope):continue
+                if db.execute('SELECT 1 FROM rw_learning_observations WHERE observation_id=?',(key,)).fetchone():continue
+                if quota+added&gt;=2000:raise WorkspaceConflict('learning_owner_quota_reached')
+                raw=encoded(data);controls=encoded({'confirmed':False,'paused':False,'deleted':False,'due_at':self.clock()})
+&gt;               db.execute('INSERT INTO rw_learning_observations VALUES (?,?,?,?,?,?,?,?,?,?,0,?)',
+                    (key,owner,sid,data['question_id'],data['point_id'],fp,raw,digest(raw),controls,digest(controls),self.clock()))
+E               sqlite3.IntegrityError: UNIQUE constraint failed: rw_learning_observations.owner_id, rw_learning_observations.session_id, rw_learning_observations.question_id, rw_learning_observations.point_id, rw_learning_observations.source_fingerprint
+
+src/job_agent/resume_workspace/learning.py:201: IntegrityError</failure></testcase><testcase classname="tests.test_review_r1_evaluation_integrity" name="test_legacy_llm_record_readable_but_incomplete_learning_source_is_excluded[3]" time="0.230"><failure message="sqlite3.IntegrityError: UNIQUE constraint failed: rw_learning_observations.owner_id, rw_learning_observations.session_id, rw_learning_observations.question_id, rw_learning_observations.point_id, rw_learning_observations.source_fingerprint">+ Exception Group Traceback (most recent call last):
+  |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_utils.py", line 76, in collapse_excgroups
+  |     yield
+  |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 177, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 815, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/runner.py", line 361, in from_call
+    |     result: TResult | None = func()
+    |                              ^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/runner.py", line 250, in &lt;lambda&gt;
+    |     lambda: runtest_hook(item=item, **kwds),
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    |     return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    |     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 167, in _multicall
+    |     raise exception
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    |     teardown.throw(exception)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/logging.py", line 865, in pytest_runtest_call
+    |     yield
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    |     teardown.throw(exception)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/capture.py", line 900, in pytest_runtest_call
+    |     return (yield)
+    |             ^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    |     teardown.throw(exception)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 53, in run_old_style_hookwrapper
+    |     return result.get_result()
+    |            ^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_result.py", line 103, in get_result
+    |     raise exc.with_traceback(tb)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 38, in run_old_style_hookwrapper
+    |     res = yield
+    |           ^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 139, in _multicall
+    |     teardown.throw(exception)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/skipping.py", line 268, in pytest_runtest_call
+    |     return (yield)
+    |             ^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    |     res = hook_impl.function(*args)
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/runner.py", line 184, in pytest_runtest_call
+    |     item.runtest()
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/python.py", line 1707, in runtest
+    |     self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_hooks.py", line 512, in __call__
+    |     return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    |     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 167, in _multicall
+    |     raise exception
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/pluggy/_callers.py", line 121, in _multicall
+    |     res = hook_impl.function(*args)
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/_pytest/python.py", line 167, in pytest_pyfunc_call
+    |     result = testfunction(**testargs)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/tests/test_review_r1_evaluation_integrity.py", line 169, in test_legacy_llm_record_readable_but_incomplete_learning_source_is_excluded
+    |     response=c.post(url+'/learning-observations',headers=A)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 538, in post
+    |     return super().post(
+    |            ^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 1144, in post
+    |     return self.request(
+    |            ^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 437, in request
+    |     return super().request(
+    |            ^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 825, in request
+    |     return self.send(request, auth=auth, follow_redirects=follow_redirects)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    |     response = self._send_handling_auth(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    |     response = self._send_handling_redirects(
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    |     response = self._send_single_request(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    |     response = transport.handle_request(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 340, in handle_request
+    |     raise exc
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 337, in handle_request
+    |     portal.call(self.app, scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/from_thread.py", line 338, in call
+    |     return cast(T_Retval, self.start_task_soon(func, *args).result())
+    |                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    |     return self.__get_result()
+    |            ^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    |     raise self._exception
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/from_thread.py", line 263, in _call_func
+    |     retval = await retval_or_awaitable
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    |     await super().__call__(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/applications.py", line 112, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    |     raise exc
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 176, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/contextlib.py", line 158, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    |     raise exc
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 178, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/api.py", line 85, in private_response
+    |     response = await call_next(request)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 156, in call_next
+    |     raise app_exc
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 141, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 714, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 734, in app
+    |     await route.handle(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 288, in handle
+    |     await self.app(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 76, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 73, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/routing.py", line 301, in app
+    |     raw_response = await run_endpoint_function(
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    |     return await run_in_threadpool(dependant.call, **values)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    |     return await anyio.to_thread.run_sync(func)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/to_thread.py", line 65, in run_sync
+    |     return await get_async_backend().run_sync_in_worker_thread(
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 2641, in run_sync_in_worker_thread
+    |     return await future
+    |            ^^^^^^^^^^^^
+    |   File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 1033, in run
+    |     result = context.run(func, *args)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/learning_api.py", line 9, in materialize
+    |     def materialize(session_id:str,user:str=Depends(owner)):return learning.materialize(user,session_id)
+    |                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/learning.py", line 201, in materialize
+    |     db.execute('INSERT INTO rw_learning_observations VALUES (?,?,?,?,?,?,?,?,?,?,0,?)',
+    | sqlite3.IntegrityError: UNIQUE constraint failed: rw_learning_observations.owner_id, rw_learning_observations.session_id, rw_learning_observations.question_id, rw_learning_observations.point_id, rw_learning_observations.source_fingerprint
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/tests/test_review_r1_evaluation_integrity.py", line 169, in test_legacy_llm_record_readable_but_incomplete_learning_source_is_excluded
+    response=c.post(url+'/learning-observations',headers=A)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 538, in post
+    return super().post(
+           ^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 1144, in post
+    return self.request(
+           ^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 437, in request
+    return super().request(
+           ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 340, in handle_request
+    raise exc
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py", line 337, in handle_request
+    portal.call(self.app, scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/from_thread.py", line 338, in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/from_thread.py", line 263, in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 176, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 178, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/api.py", line 85, in private_response
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 156, in call_next
+    raise app_exc
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 2641, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 1033, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/learning_api.py", line 9, in materialize
+    def materialize(session_id:str,user:str=Depends(owner)):return learning.materialize(user,session_id)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/study/job-agent-v3/output/review-20261023/source/src/job_agent/resume_workspace/learning.py", line 201, in materialize
+    db.execute('INSERT INTO rw_learning_observations VALUES (?,?,?,?,?,?,?,?,?,?,0,?)',
+sqlite3.IntegrityError: UNIQUE constraint failed: rw_learning_observations.owner_id, rw_learning_observations.session_id, rw_learning_observations.question_id, rw_learning_observations.point_id, rw_learning_observations.source_fingerprint
+
+During handling of the above exception, another exception occurred:
+
+env = (&lt;job_agent.resume_workspace.repository.SqliteResumeRepository object at 0x7f623fa37590&gt;, VersionRecord(resume_id='res...atetime(2026, 10, 23, 4, 23, 5, 897964, tzinfo=TzInfo(0)), confirmed_at=None, confirmation_scope='user_attested_only'))
+legacy_size = 3
+
+    @pytest.mark.parametrize('legacy_size',[0,1,3])
+    def test_legacy_llm_record_readable_but_incomplete_learning_source_is_excluded(env,legacy_size):
+        """Persistence simulation, not an assertion that a historical user did this."""
+        from job_agent.resume_workspace.interview_repository import digest,InterviewRepository
+        from job_agent.resume_workspace.interview_contracts import InterviewState
+        from job_agent.resume_workspace.learning import LearningRepository,observation_payload,encoded,digest as learning_digest
+        ws,v=env;provider=AssessmentProvider('complete')
+        with TestClient(create_resume_app(ws,resolve_identity={'a':'alice'}.get,interview_engine=InterviewEngine(provider),task_worker_enabled=False)) as c:
+            initial=start(c,v);sid=initial['session_id'];url='/api/v2/interviews/'+sid
+            c.post(url+'/answers',headers=A,json={**answer(initial),'answer':GOOD})
+            assert c.post(url+'/finish',headers=A,json={'expected_revision':1}).status_code==200
+            state=read_state(ws,sid)
+            state['turns'][0]['evaluation']['point_assessments']=state['turns'][0]['evaluation']['point_assessments'][:legacy_size]
+            state['turns'][0]['evaluation']['method_version']='s4-answer-1'
+            raw=json.dumps(state,ensure_ascii=False)
+            with ws._connection(write=True) as db:
+                db.execute('UPDATE rw_interviews SET state_json=?,state_hash=? WHERE session_id=?',(raw,digest(raw),sid))
+                s=InterviewState.model_validate(state)
+                data=observation_payload(s,s.turns[0],s.plan[0],'p0')
+                payload=encoded(data);controls=encoded({'confirmed':False,'paused':False,'deleted':False,'due_at':0})
+                db.execute('INSERT INTO rw_learning_observations VALUES (?,?,?,?,?,?,?,?,?,?,0,?)',
+                    ('legacy-review-observation','alice',sid,initial['current']['question_id'],'p0',learning_digest(data),
+                     payload,learning_digest(payload),controls,learning_digest(controls),0))
+            assert c.get(url,headers=A).status_code==200
+&gt;           response=c.post(url+'/learning-observations',headers=A)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_review_r1_evaluation_integrity.py:169: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py:538: in post
+    return super().post(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py:1144: in post
+    return self.request(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py:437: in request
+    return super().request(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py:914: in send
+    response = self._send_handling_auth(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/httpx/_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py:340: in handle_request
+    raise exc
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/testclient.py:337: in handle_request
+    portal.call(self.app, scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/from_thread.py:338: in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/concurrent/futures/_base.py:456: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/concurrent/futures/_base.py:401: in __get_result
+    raise self._exception
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/from_thread.py:263: in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/applications.py:1054: in __call__
+    await super().__call__(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/applications.py:112: in __call__
+    await self.middleware_stack(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/errors.py:187: in __call__
+    raise exc
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/errors.py:165: in __call__
+    await self.app(scope, receive, _send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py:176: in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/contextlib.py:158: in __exit__
+    self.gen.throw(typ, value, traceback)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_utils.py:82: in collapse_excgroups
+    raise exc
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py:178: in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/resume_workspace/api.py:85: in private_response
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py:156: in call_next
+    raise app_exc
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/base.py:141: in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/middleware/exceptions.py:62: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py:714: in __call__
+    await self.middleware_stack(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py:734: in app
+    await route.handle(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py:288: in handle
+    await self.app(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py:76: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/routing.py:73: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/routing.py:301: in app
+    raw_response = await run_endpoint_function(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/fastapi/routing.py:214: in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/starlette/concurrency.py:37: in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/to_thread.py:65: in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py:2641: in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+/root/miniconda3/envs/job-agent-mcp/lib/python3.11/site-packages/anyio/_backends/_asyncio.py:1033: in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+src/job_agent/resume_workspace/learning_api.py:9: in materialize
+    def materialize(session_id:str,user:str=Depends(owner)):return learning.materialize(user,session_id)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;job_agent.resume_workspace.learning.LearningRepository object at 0x7f62455ef0d0&gt;
+owner = 'alice', sid = 'interview-bab34a8b4cfc42c3bdde8bccc82a3c06'
+
+    def materialize(self,owner,sid):
+        with self.workspace._connection(write=True) as db:
+            _,s,_=self.interviews._load(db,owner,sid)
+            if s.status!='complete':raise WorkspaceConflict('learning_requires_completed_source')
+            topics={t.anchor_id:t for t in s.plan};withdrawn=withdrawn_questions(db,owner,sid)
+            payloads=[observation_payload(s,t,topics[t.question.topic_id],point) for t in s.turns if t.question.question_id not in withdrawn
+                for point in ([t.question.focus_id] if t.question.focus_id in topics[t.question.topic_id].points else topics[t.question.topic_id].points)]
+            if len(payloads)&gt;100:raise WorkspaceConflict('learning_session_quota_reached')
+            quota=db.execute('SELECT COUNT(*) FROM rw_learning_observations WHERE owner_id=?',(owner,)).fetchone()[0]
+            added=0
+            for data in payloads:
+                fp=digest(data);key='learn-'+digest([owner,sid,data['question_id'],data['point_id'],fp])[:32]
+                old_scope=db.execute('SELECT controls FROM rw_learning_observations WHERE owner_id=? AND session_id=? AND question_id=? AND point_id=?',
+                    (owner,sid,data['question_id'],data['point_id'])).fetchall()
+                if any(json.loads(old['controls']).get('deleted') for old in old_scope):continue
+                if db.execute('SELECT 1 FROM rw_learning_observations WHERE observation_id=?',(key,)).fetchone():continue
+                if quota+added&gt;=2000:raise WorkspaceConflict('learning_owner_quota_reached')
+                raw=encoded(data);controls=encoded({'confirmed':False,'paused':False,'deleted':False,'due_at':self.clock()})
+&gt;               db.execute('INSERT INTO rw_learning_observations VALUES (?,?,?,?,?,?,?,?,?,?,0,?)',
+                    (key,owner,sid,data['question_id'],data['point_id'],fp,raw,digest(raw),controls,digest(controls),self.clock()))
+E               sqlite3.IntegrityError: UNIQUE constraint failed: rw_learning_observations.owner_id, rw_learning_observations.session_id, rw_learning_observations.question_id, rw_learning_observations.point_id, rw_learning_observations.source_fingerprint
+
+src/job_agent/resume_workspace/learning.py:201: IntegrityError</failure></testcase></testsuite></testsuites>

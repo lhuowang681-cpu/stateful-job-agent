@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="17" time="1.239" timestamp="2026-10-20T16:47:17.096347+08:00" hostname="DESKTOP-94NI4DV"><testcase classname="tests.test_resume_pdf_autofill" name="test_ordinary_unlabeled_resume_extracts_identity_sections_and_plain_bullets" time="0.070"><failure message="AttributeError: 'NoneType' object has no attribute 'text'">tmp_path = WindowsPath('C:/Users/1/Documents/Codex/2026-10-18/ssh-p-27392-root-192-168-2/work/m2a-new-permitted-temp/test_ordinary_unlabeled_resume0')
+
+    def test_ordinary_unlabeled_resume_extracts_identity_sections_and_plain_bullets(tmp_path):
+        _, d = parse(tmp_path)
+        doc = d.document
+        assert doc.personal.name.text == "张晓明"
+        assert doc.personal.phone.text == "13800000000"
+        assert doc.personal.email.text == "demo@example.invalid"
+        assert doc.personal.location is None
+&gt;       assert doc.education[0].school.text == "示例大学"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'NoneType' object has no attribute 'text'
+
+tests\test_resume_pdf_autofill.py:55: AttributeError</failure></testcase><testcase classname="tests.test_resume_pdf_autofill" name="test_multiline_entry_metadata_and_dated_description_do_not_create_phantom_projects" time="0.021"><failure message="AttributeError: 'NoneType' object has no attribute 'text'">tmp_path = WindowsPath('C:/Users/1/Documents/Codex/2026-10-18/ssh-p-27392-root-192-168-2/work/m2a-new-permitted-temp/test_multiline_entry_metadata_0')
+
+    def test_multiline_entry_metadata_and_dated_description_do_not_create_phantom_projects(tmp_path):
+        _, d = parse(tmp_path, "姓名：合成同学\n项目经历\n合成平台\n2025.01 - 2025.06\n项目负责人\n负责 2025.03—2025.04 阶段测试。\n- 2025.04—2025.05 完成测试。\n第二行说明不带项目符号。")
+        assert len(d.document.projects) == 1
+        p = d.document.projects[0]
+        assert p.name.text == "合成平台" and p.role.text == "项目负责人"
+&gt;       assert p.period.text == "2025.01 - 2025.06"
+               ^^^^^^^^^^^^^
+E       AttributeError: 'NoneType' object has no attribute 'text'
+
+tests\test_resume_pdf_autofill.py:76: AttributeError</failure></testcase><testcase classname="tests.test_resume_pdf_autofill" name="test_heading_variants_preserve_unicode_offsets[cn]" time="0.020" /><testcase classname="tests.test_resume_pdf_autofill" name="test_heading_variants_preserve_unicode_offsets[alias]" time="0.020" /><testcase classname="tests.test_resume_pdf_autofill" name="test_heading_variants_preserve_unicode_offsets[spaced]" time="0.022" /><testcase classname="tests.test_resume_pdf_autofill" name="test_heading_variants_preserve_unicode_offsets[brackets]" time="0.021" /><testcase classname="tests.test_resume_pdf_autofill" name="test_heading_variants_preserve_unicode_offsets[markdown]" time="0.024" /><testcase classname="tests.test_resume_pdf_autofill" name="test_heading_variants_preserve_unicode_offsets[english]" time="0.022" /><testcase classname="tests.test_resume_pdf_autofill" name="test_duplicate_contacts_are_not_arbitrarily_selected" time="0.022" /><testcase classname="tests.test_resume_pdf_autofill" name="test_unknown_identity_remains_missing_instead_of_guessing[job-title]" time="0.022" /><testcase classname="tests.test_resume_pdf_autofill" name="test_unknown_identity_remains_missing_instead_of_guessing[resume-title]" time="0.020" /><testcase classname="tests.test_resume_pdf_autofill" name="test_unknown_identity_remains_missing_instead_of_guessing[target-role]" time="0.021" /><testcase classname="tests.test_resume_pdf_autofill" name="test_unknown_identity_remains_missing_instead_of_guessing[unknown]" time="0.023" /><testcase classname="tests.test_resume_pdf_autofill" name="test_reference_contact_in_project_body_is_not_personal_contact" time="0.022" /><testcase classname="tests.test_resume_pdf_autofill" name="test_missing_title_produces_incomplete_entry_with_original_description" time="0.021" /><testcase classname="tests.test_resume_pdf_autofill" name="test_real_pdf_bytes_to_draft_to_saved_version_without_manual_edits" time="0.412"><failure message="assert (422 == 201)&#10; +  where 422 = &lt;Response [422 Unprocessable Entity]&gt;.status_code">tmp_path = WindowsPath('C:/Users/1/Documents/Codex/2026-10-18/ssh-p-27392-root-192-168-2/work/m2a-new-permitted-temp/test_real_pdf_bytes_to_draft_t0')
+
+    def test_real_pdf_bytes_to_draft_to_saved_version_without_manual_edits(tmp_path):
+        raw = synthetic_pdf()
+        repo = SqliteResumeRepository(tmp_path / "http.sqlite")
+        client = TestClient(create_resume_app(repo, resolve_identity={"a": "synthetic", "b": "other"}.get))
+        headers = {"Authorization": "Bearer a"}
+        imported = client.post("/api/v2/imports?filename=synthetic-resume.pdf", headers=headers, content=raw)
+        assert imported.status_code == 201
+        data = imported.json()
+        assert data["raw_hash"] == hashlib.sha256(raw).hexdigest()
+        source_id = data["source_id"]
+        d = client.post(f"/api/v2/sources/{source_id}/parse", headers=headers, json={}).json()
+        assert d["document"]["personal"]["name"]["text"] == "张晓明"
+        assert len(d["document"]["projects"]) == 2
+        saved = client.post(f"/api/v2/drafts/{d['draft_id']}/accept", headers=headers, json={
+            "title": "合成 PDF 自动填表", "expected_source_hash": d["source_content_hash"], "user_reviewed": True, "edits": [],
+        })
+&gt;       assert saved.status_code == 201 and saved.json()["confirmed_at"] is None
+E       assert (422 == 201)
+E        +  where 422 = &lt;Response [422 Unprocessable Entity]&gt;.status_code
+
+tests\test_resume_pdf_autofill.py:150: AssertionError</failure></testcase><testcase classname="tests.test_resume_pdf_autofill" name="test_multipage_pdf_retains_canonical_citations_and_original_wording" time="0.039" /></testsuite></testsuites>

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Literal
+from typing import Any, Literal
 
 from pydantic import Field, model_validator
 
@@ -9,6 +9,7 @@ from job_agent.schemas import EvidenceLevel, StrictModel
 
 EvidenceImportance = Literal["must", "should", "nice"]
 EvidenceSupportStatus = Literal["supported", "partial", "unsupported", "contradictory"]
+SemanticSupportStatus = Literal["supported", "partial", "unsupported"]
 AtomMatchStatus = Literal["supported", "partial", "unverified_lead", "unsupported", "gap"]
 SourceKind = Literal["raw_jd", "original_resume", "user_artifact", "project_source"]
 
@@ -138,53 +139,60 @@ class RequirementAnalysis(StrictModel):
         return self
 
 
-class ParentRequirementCandidate(StrictModel):
-    requirement_id: str = Field(min_length=1)
+class RequirementCandidate(StrictModel):
     text: str = Field(min_length=1)
     importance: EvidenceImportance
     hard_gate: bool = False
-    source_locator: SourceQuoteLocator
-    atom_ids: list[str] = Field(min_length=1, max_length=4)
+    exact_quote: str = Field(min_length=1)
+    verification_signals: list[str] = Field(default_factory=list, max_length=4)
 
     @model_validator(mode="after")
-    def validate_shape(self) -> "ParentRequirementCandidate":
+    def validate_shape(self) -> "RequirementCandidate":
         if self.importance == "nice" and self.hard_gate:
             raise ValueError("nice requirements cannot be hard gates")
-        if len(self.atom_ids) != len(set(self.atom_ids)):
-            raise ValueError("parent atom ids must be unique")
         return self
-
-
-class RequirementAtomCandidate(StrictModel):
-    atom_id: str = Field(min_length=1)
-    parent_requirement_id: str = Field(min_length=1)
-    text: str = Field(min_length=1)
-    source_locator: SourceQuoteLocator
-    verification_signals: list[str] = Field(default_factory=list)
 
 
 class RequirementAnalysisCandidate(StrictModel):
-    parents: list[ParentRequirementCandidate] = Field(default_factory=list)
-    atoms: list[RequirementAtomCandidate] = Field(default_factory=list)
+    requirements: list[RequirementCandidate] = Field(default_factory=list, max_length=24)
     warnings: list[str] = Field(default_factory=list)
 
-    @model_validator(mode="after")
-    def validate_graph(self) -> "RequirementAnalysisCandidate":
-        parent_ids = [item.requirement_id for item in self.parents]
-        atom_ids = [item.atom_id for item in self.atoms]
-        if len(parent_ids) != len(set(parent_ids)) or len(atom_ids) != len(set(atom_ids)):
-            raise ValueError("requirement and atom ids must be unique")
-        if not self.parents and self.atoms:
-            raise ValueError("atoms require parents")
-        observed_by_parent: dict[str, set[str]] = {key: set() for key in parent_ids}
-        for atom in self.atoms:
-            if atom.parent_requirement_id not in observed_by_parent:
-                raise ValueError("atom references unknown parent")
-            observed_by_parent[atom.parent_requirement_id].add(atom.atom_id)
-        for parent in self.parents:
-            if observed_by_parent[parent.requirement_id] != set(parent.atom_ids):
-                raise ValueError("parent atom coverage mismatch")
-        return self
+    @model_validator(mode="before")
+    @classmethod
+    def migrate_legacy_fixture_shape(cls, value: Any) -> Any:
+        """Accept old recorded fixtures without exposing their graph fields to the LLM schema."""
+        if not isinstance(value, dict) or "requirements" in value:
+            return value
+        parents = value.get("parents")
+        atoms = value.get("atoms")
+        if not isinstance(parents, list) or not isinstance(atoms, list):
+            return value
+        parents_by_id = {
+            item.get("requirement_id"): item
+            for item in parents
+            if isinstance(item, dict)
+        }
+        requirements = []
+        for atom in atoms:
+            if not isinstance(atom, dict):
+                continue
+            parent = parents_by_id.get(atom.get("parent_requirement_id"), {})
+            locator = atom.get("source_locator")
+            if not isinstance(locator, dict):
+                locator = parent.get("source_locator", {})
+            requirements.append(
+                {
+                    "text": atom.get("text") or parent.get("text"),
+                    "importance": parent.get("importance", "must"),
+                    "hard_gate": parent.get("hard_gate", False),
+                    "exact_quote": locator.get("exact_quote"),
+                    "verification_signals": atom.get("verification_signals", []),
+                }
+            )
+        return {
+            "requirements": requirements,
+            "warnings": value.get("warnings", []),
+        }
 
 
 class EvidenceLink(StrictModel):
@@ -202,6 +210,7 @@ class EvidenceLink(StrictModel):
 class AtomEvidenceResult(StrictModel):
     atom_id: str = Field(min_length=1)
     match_status: AtomMatchStatus
+    semantic_support: SemanticSupportStatus | None = None
     has_contradiction: bool = False
     links: list[EvidenceLink] = Field(default_factory=list)
     rationale: str = Field(min_length=1)
@@ -263,6 +272,68 @@ class EvidenceMappingCandidate(StrictModel):
 
     @model_validator(mode="after")
     def unique_atom_results(self) -> "EvidenceMappingCandidate":
+        ids = [item.atom_id for item in self.atom_results]
+        if len(ids) != len(set(ids)):
+            raise ValueError("atom result ids must be unique")
+        return self
+
+
+class RetrievedCandidateEvidenceJudgment(StrictModel):
+    chunk_id: str = Field(min_length=1)
+    semantic_support: SemanticSupportStatus
+    exact_quote: str | None = Field(default=None, min_length=1)
+    rationale: str | None = Field(default=None, min_length=1, max_length=240)
+
+    @model_validator(mode="after")
+    def validate_quote(self) -> "RetrievedCandidateEvidenceJudgment":
+        if self.semantic_support == "unsupported" and self.exact_quote is not None:
+            raise ValueError("unsupported judgment cannot contain an exact quote")
+        if self.semantic_support != "unsupported" and self.exact_quote is None:
+            raise ValueError("positive judgment requires an exact quote")
+        return self
+
+
+class RetrievedAtomEvidenceCandidate(StrictModel):
+    atom_id: str = Field(min_length=1)
+    candidate_judgments: list[RetrievedCandidateEvidenceJudgment] = Field(
+        min_length=1
+    )
+
+    @model_validator(mode="before")
+    @classmethod
+    def migrate_single_selection_fixture(cls, value: Any) -> Any:
+        if not isinstance(value, dict) or "candidate_judgments" in value:
+            return value
+        if "semantic_support" not in value:
+            return value
+        chunk_id = value.get("selected_chunk_id")
+        if chunk_id is None:
+            chunk_id = "legacy-unsupported-candidate"
+        return {
+            "atom_id": value.get("atom_id"),
+            "candidate_judgments": [
+                {
+                    "chunk_id": chunk_id,
+                    "semantic_support": value.get("semantic_support"),
+                    "exact_quote": value.get("exact_quote"),
+                    "rationale": "legacy single-selection fixture",
+                }
+            ],
+        }
+
+    @model_validator(mode="after")
+    def unique_candidate_judgments(self) -> "RetrievedAtomEvidenceCandidate":
+        ids = [item.chunk_id for item in self.candidate_judgments]
+        if len(ids) != len(set(ids)):
+            raise ValueError("candidate chunk judgments must be unique")
+        return self
+
+
+class RetrievedEvidenceMappingCandidate(StrictModel):
+    atom_results: list[RetrievedAtomEvidenceCandidate] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def unique_atom_results(self) -> "RetrievedEvidenceMappingCandidate":
         ids = [item.atom_id for item in self.atom_results]
         if len(ids) != len(set(ids)):
             raise ValueError("atom result ids must be unique")

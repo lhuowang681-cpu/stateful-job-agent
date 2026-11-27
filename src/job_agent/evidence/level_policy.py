@@ -35,6 +35,11 @@ class EvidenceLevelPolicy:
     """Conservative deterministic maximum evidence level from source provenance."""
 
     def maximum_level(self, source: SourceDocumentRef) -> EvidenceLevel:
+        # Source kind is a stronger boundary than caller-supplied artifact tags.
+        if source.kind == "raw_jd":
+            return EvidenceLevel.NONE
+        if source.kind == "original_resume":
+            return EvidenceLevel.C1
         artifact_type = (source.artifact_type or "").casefold()
         if artifact_type in _C3_ARTIFACTS:
             return EvidenceLevel.C3

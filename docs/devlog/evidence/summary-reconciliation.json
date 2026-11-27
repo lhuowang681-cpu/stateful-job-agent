@@ -1,0 +1,19 @@
+{
+  "scope": "Historical summary arithmetic correction only; no test input/assertion/raw log modified.",
+  "original_junit": "work/upgrade-m2-tests.xml",
+  "original_junit_sha256": "8ec896ff3c49afae7bb30050d4c028c8eab6031e2be2d9a7535487cb4f61537f",
+  "unique_cases": 66,
+  "clean_passed": 65,
+  "unique_errored_cases": 1,
+  "error_events": 2,
+  "previous_summary": {
+    "tests": 66,
+    "failures": 0,
+    "errors": 2,
+    "skipped": 0,
+    "passed": 64
+  },
+  "reason": "One case produced two error events; naive subtraction undercounted clean passes.",
+  "original_verification_sha256": "e7cd0f0572fd2b6b62044728183c9f335d1a5a257790bed9421e6e9b188d5745",
+  "final_154_passed_result": "unchanged"
+}

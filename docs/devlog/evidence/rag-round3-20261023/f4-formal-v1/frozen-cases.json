@@ -1,0 +1,90 @@
+{
+  "cases": [
+    {
+      "case_id": "T1",
+      "query": "PDFRepository._get 如何校验已保存PDF及owner边界",
+      "answer": "_get用export_id和owner查询，并关联版本与简历，找不到抛pdf_not_found。取得版本后校验文档原始来源；内容hash不符、未确认或PDF字节hash不符都抛pdf_integrity_failed，否则返回row。以上只解释固定快照的静态源码，不能证明实际运行、生产部署、真实录用效果或个人贡献。",
+      "expected_symbol": "PDFRepository._get",
+      "scope": "full",
+      "learning": true
+    },
+    {
+      "case_id": "T2",
+      "query": "project_import.checked_path 的路径规范和失败边界",
+      "answer": "先NFC规范化；空值、超过240字符、反斜杠或控制字符等非法字符拒绝。绝对路径、空或点路径分量、末尾点空格、超过14层及Windows保留名拒绝，最后返回POSIX路径。以上只解释固定快照的静态源码，不能证明实际运行、生产部署、真实录用效果或个人贡献。",
+      "expected_symbol": "checked_path",
+      "scope": "full",
+      "learning": false
+    },
+    {
+      "case_id": "T3",
+      "query": "scan_zip 的可见输入上限和未显示部分",
+      "answer": "scan_zip输入字节为空或超过MAX_ARCHIVE_BYTES就报archive_upload_limit；它读取ZIP目录并受文件数和展开上限约束。对于未展示分支，我不知道全部处理细节。以上只解释固定快照的静态源码，不能证明实际运行、生产部署、真实录用效果或个人贡献。",
+      "expected_symbol": "scan_zip",
+      "scope": "full",
+      "learning": false
+    },
+    {
+      "case_id": "T4",
+      "query": "ResumeParser 中解析入口的可见实现与返回边界",
+      "answer": "这段我不会解释；需要回到引用再学习，不能判断具体输入检查和返回。以上只解释固定快照的静态源码，不能证明实际运行、生产部署、真实录用效果或个人贡献。",
+      "expected_symbol": "ResumeParser",
+      "scope": "full",
+      "learning": false
+    },
+    {
+      "case_id": "T5",
+      "query": "validate_bundle 对原文证据范围如何验证",
+      "answer": "只要提供相似意思就会通过，不需要核对原文或版本，可以直接证明我的项目成果。",
+      "expected_symbol": "validate_bundle",
+      "scope": "full",
+      "learning": false
+    },
+    {
+      "case_id": "T6",
+      "query": "跨文件 MatchRepository._load 和 validate_bundle 怎样衔接？",
+      "answer": "应分别核对保存的匹配资料与验证函数。当前只是候选片段，我没有确认每个调用方和分支，不能据此证明跨文件链完整。以上只解释固定快照的静态源码，不能证明实际运行、生产部署、真实录用效果或个人贡献。",
+      "expected_symbol": "MatchRepository._load",
+      "scope": "full",
+      "learning": false
+    },
+    {
+      "case_id": "T7",
+      "query": "跨文件 PDFRepository._get 调用方怎样使用返回结果？",
+      "answer": "_get可见末尾返回row；当前项目scope只有pdf_export.py，未展示的其他文件调用方无法判断。以上只解释固定快照的静态源码，不能证明实际运行、生产部署、真实录用效果或个人贡献。",
+      "expected_symbol": "PDFRepository._get",
+      "scope": "single_pdf",
+      "learning": false
+    },
+    {
+      "case_id": "T8",
+      "query": "PDFRepository._get 实际录用率提升多少？",
+      "answer": "_get通过owner关联查询PDF记录。实际录用率提高50%，已经上线。",
+      "expected_symbol": "PDFRepository._get",
+      "scope": "full",
+      "learning": false
+    },
+    {
+      "case_id": "T9",
+      "query": "GitHubImporter.import_project 是否证明已扫描私有账户并上线？",
+      "answer": "import_project已经扫描我的所有私有仓库，系统已经部署。",
+      "expected_symbol": "GitHubImporter.import_project",
+      "scope": "full",
+      "learning": false
+    },
+    {
+      "case_id": "T10",
+      "query": "checked_path 当前实现与历史计划能否证明目前已经部署？",
+      "answer": "只能说明引用的checked_path静态路径检查。历史计划是当时状态，不能确认其当前适用性，也没有运行或部署记录。以上只解释固定快照的静态源码，不能证明实际运行、生产部署、真实录用效果或个人贡献。",
+      "expected_symbol": "checked_path",
+      "scope": "full",
+      "learning": false
+    }
+  ],
+  "source_manifest_sha256": "6e7779715cc2f5e6f0f6db268bde9507867431e95f8611278615b46e307ebd81",
+  "synthetic_persona_answers_actions": true,
+  "human_gold": 0,
+  "paid_calls": 0,
+  "no_retry": true,
+  "phase": "formal"
+}

@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "source_files": 335,
+  "portable_source_hash": "8712337b5e852877dae6cd4ec68c8cceba8e5b2508687991e859050b61fdb0ba",
+  "all_current_src_bytes_match_both_real_model_runs": true,
+  "rewrite_business_status": "awaiting_approval",
+  "noncopy_text": true,
+  "claim_gate_acceptable": true,
+  "explicit_acceptance": true,
+  "learning_business_outcomes": [
+    "complete_http_learning_loop",
+    "source_observation_created",
+    "source_observation_created",
+    "source_observation_created",
+    "source_observation_created"
+  ],
+  "launcher_configuration": {
+    "timeout_s": 30,
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-flash",
+    "thinking": "disabled"
+  },
+  "human_quality": null,
+  "new_real_calls": 16
+}

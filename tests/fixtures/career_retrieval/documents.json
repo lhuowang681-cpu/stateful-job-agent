@@ -1,0 +1,66 @@
+[
+  {
+    "document_id": "real-agent-runtime-governance",
+    "source_type": "project",
+    "title": "Agent Runtime Tool Governance",
+    "material_kind": "real_project_material",
+    "source_uri": "docs/architecture.md",
+    "path": "agent_runtime_tool_governance.md"
+  },
+  {
+    "document_id": "real-mcp-integration",
+    "source_type": "project",
+    "title": "MCP Adapter and Stdio Bridge",
+    "material_kind": "real_project_material",
+    "source_uri": "src/job_agent/agent_runtime/mcp_adapter.py",
+    "path": "mcp_integration.md"
+  },
+  {
+    "document_id": "real-backend-reliability",
+    "source_type": "technical_material",
+    "title": "Asynchronous Backend Reliability",
+    "material_kind": "real_project_material",
+    "source_uri": "docs/tech-specs/backend_service.md",
+    "path": "backend_reliability.md"
+  },
+  {
+    "document_id": "real-evidence-provenance",
+    "source_type": "technical_material",
+    "title": "Evidence v2 Provenance",
+    "material_kind": "real_project_material",
+    "source_uri": "docs/architecture.md",
+    "path": "evidence_provenance.md"
+  },
+  {
+    "document_id": "real-career-store",
+    "source_type": "project",
+    "title": "CareerStore",
+    "material_kind": "real_project_material",
+    "source_uri": "README.md",
+    "path": "career_store.md"
+  },
+  {
+    "document_id": "real-adaptive-interview",
+    "source_type": "project",
+    "title": "Adaptive Interview",
+    "material_kind": "real_project_material",
+    "source_uri": "docs/architecture.md",
+    "path": "adaptive_interview.md"
+  },
+  {
+    "document_id": "real-dense-knowledge-retrieval",
+    "source_type": "project",
+    "title": "Dense Knowledge Retrieval",
+    "material_kind": "real_project_material",
+    "source_uri": "src/job_agent/knowledge/ingestion.py",
+    "path": "dense_knowledge_retrieval.md"
+  },
+  {
+    "document_id": "synthetic-jd-agent-engineer",
+    "source_type": "job_description",
+    "title": "SAMPLE Agent Engineer JD",
+    "material_kind": "synthetic_jd",
+    "source_uri": "synthetic://career-retrieval/agent-engineer-jd",
+    "path": "synthetic_agent_engineer_jd.md"
+  }
+]

@@ -1,0 +1,178 @@
+[
+  {
+    "artifact": "v3-f3-integrated.xml",
+    "sha256": "d3716302cc55153b0dcc54f55c6750300261bc2595be092d29db657b2698b14d",
+    "counts": {
+      "tests": 114,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 114
+    },
+    "duration_seconds": 10.947,
+    "skip_reasons": {},
+    "failures": []
+  },
+  {
+    "artifact": "v3-f4-related.xml",
+    "sha256": "30b5d92403bd40cc85d6ad919c45f0c765d3ff61aa1b656603351cab992c7953",
+    "counts": {
+      "tests": 75,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 75
+    },
+    "duration_seconds": 12.592,
+    "skip_reasons": {},
+    "failures": []
+  },
+  {
+    "artifact": "v3-f5-related.xml",
+    "sha256": "bf47dce188c4b664e5ca8db46dad262995073e198183b7795a1b35f3037e34b7",
+    "counts": {
+      "tests": 76,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 76
+    },
+    "duration_seconds": 14.931,
+    "skip_reasons": {},
+    "failures": []
+  },
+  {
+    "artifact": "v3-f5-final-related.xml",
+    "sha256": "def470decde718f793d76e4730c41c8918aef2e138af964d2763b347b2b7dca8",
+    "counts": {
+      "tests": 61,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 61
+    },
+    "duration_seconds": 8.355,
+    "skip_reasons": {},
+    "failures": []
+  },
+  {
+    "artifact": "v3-f5-full.xml",
+    "sha256": "47b0e3d60b4162f967aba6a6d16de3a15900b0508417f4c3053220adb749b05f",
+    "counts": {
+      "tests": 906,
+      "failures": 3,
+      "errors": 0,
+      "skipped": 50,
+      "passed": 853
+    },
+    "duration_seconds": 142.007,
+    "skip_reasons": {
+      "Phase 3 PostgreSQL is not running": 20,
+      "Phase 4 PostgreSQL is not running": 14,
+      "QWEN_EMBEDDING_MODEL_PATH is unavailable": 4,
+      "explicit DeepSeek durable-state acceptance opt-in required": 4,
+      "QWEN_EMBEDDING_MODEL_PATH is not set": 3,
+      "explicit DeepSeek agent eval opt-in and API_KEY are required": 1,
+      "explicit local model opt-in and QWEN2_5_MODEL_PATH are required": 1,
+      "JOB_AGENT_REAL_MODEL_PATH is unavailable": 1,
+      "explicit DeepSeek stateful eval opt-in and API_KEY are required": 1,
+      "explicit local stateful eval opt-in and model path are required": 1
+    },
+    "failures": [
+      {
+        "id": "tests.test_backend_service_reliability::test_provider_admission_enforces_fairness_cooldown_circuit_and_fail_closed",
+        "type": ""
+      },
+      {
+        "id": "tests.test_backend_service_reliability::test_provider_admission_is_call_scoped_and_local_errors_do_not_open_circuit",
+        "type": ""
+      },
+      {
+        "id": "tests.test_ui_live_runtime::test_v2_live_runner_commits_sparse_bundle_without_legacy_artifacts",
+        "type": ""
+      }
+    ]
+  },
+  {
+    "artifact": "v3-f6-full.xml",
+    "sha256": "d1d0ba255d388c76741352511c7abf92f639356164634f85e05111db8ae0ac4e",
+    "counts": {
+      "tests": 907,
+      "failures": 2,
+      "errors": 0,
+      "skipped": 50,
+      "passed": 855
+    },
+    "duration_seconds": 135.582,
+    "skip_reasons": {
+      "Phase 3 PostgreSQL is not running": 20,
+      "Phase 4 PostgreSQL is not running": 14,
+      "QWEN_EMBEDDING_MODEL_PATH is unavailable": 4,
+      "explicit DeepSeek durable-state acceptance opt-in required": 4,
+      "QWEN_EMBEDDING_MODEL_PATH is not set": 3,
+      "explicit DeepSeek agent eval opt-in and API_KEY are required": 1,
+      "explicit local model opt-in and QWEN2_5_MODEL_PATH are required": 1,
+      "JOB_AGENT_REAL_MODEL_PATH is unavailable": 1,
+      "explicit DeepSeek stateful eval opt-in and API_KEY are required": 1,
+      "explicit local stateful eval opt-in and model path are required": 1
+    },
+    "failures": [
+      {
+        "id": "tests.test_backend_service_reliability::test_provider_admission_enforces_fairness_cooldown_circuit_and_fail_closed",
+        "type": ""
+      },
+      {
+        "id": "tests.test_backend_service_reliability::test_provider_admission_is_call_scoped_and_local_errors_do_not_open_circuit",
+        "type": ""
+      }
+    ]
+  },
+  {
+    "artifact": "v3-f7-related.xml",
+    "sha256": "f5ad1ee7042a36af44fcecc39fd8908f131babbd0911abdd1f5f42ed66ad92b7",
+    "counts": {
+      "tests": 78,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 78
+    },
+    "duration_seconds": 24.04,
+    "skip_reasons": {},
+    "failures": []
+  },
+  {
+    "artifact": "v3-f7-final-full.xml",
+    "sha256": "44611e65d9a2744f2a77092cdd47984631024c15b422d93bb8c4618502ca2335",
+    "counts": {
+      "tests": 907,
+      "failures": 2,
+      "errors": 0,
+      "skipped": 50,
+      "passed": 855
+    },
+    "duration_seconds": 169.817,
+    "skip_reasons": {
+      "Phase 3 PostgreSQL is not running": 20,
+      "Phase 4 PostgreSQL is not running": 14,
+      "QWEN_EMBEDDING_MODEL_PATH is unavailable": 4,
+      "explicit DeepSeek durable-state acceptance opt-in required": 4,
+      "QWEN_EMBEDDING_MODEL_PATH is not set": 3,
+      "explicit DeepSeek agent eval opt-in and API_KEY are required": 1,
+      "explicit local model opt-in and QWEN2_5_MODEL_PATH are required": 1,
+      "JOB_AGENT_REAL_MODEL_PATH is unavailable": 1,
+      "explicit DeepSeek stateful eval opt-in and API_KEY are required": 1,
+      "explicit local stateful eval opt-in and model path are required": 1
+    },
+    "failures": [
+      {
+        "id": "tests.test_backend_service_reliability::test_provider_admission_enforces_fairness_cooldown_circuit_and_fail_closed",
+        "type": ""
+      },
+      {
+        "id": "tests.test_backend_service_reliability::test_provider_admission_is_call_scoped_and_local_errors_do_not_open_circuit",
+        "type": ""
+      }
+    ]
+  }
+]

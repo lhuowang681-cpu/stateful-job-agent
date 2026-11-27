@@ -1,0 +1,239 @@
+{
+  "phase": "S5",
+  "verified_scope": "engineering_contracts_isolated_real_postgres_synthetic_http_migration_local_embedding",
+  "source_identity": "e5061d03c9756172c3c863bf5f8dce68302bd6089a49b291d4cfd6d2681dea2f",
+  "latest_related_tests": {
+    "passed": 455,
+    "failed": 0,
+    "skipped": 4,
+    "seconds_pytest_summary": 32.34,
+    "artifact": "s5-related-v4.xml"
+  },
+  "limited_skips": "4 PostgreSQL-only cases at SQLite parameter branch; corresponding real PostgreSQL cases ran",
+  "real_http": {
+    "rules_build": {
+      "pid": 98493,
+      "source_identity": "50ec71900c3816a89a808f345b7bc10fe48d745fd2a1f1c6d85d08d0e38b3243",
+      "server_version": "14.24 (Ubuntu 14.24-0ubuntu0.22.04.1)",
+      "checks": [
+        "zip_snapshot_persistent_task_atomic_publication",
+        "project_interview_reads_selected_pg_code",
+        "queries_reuse_persisted_vectors_without_document_encoding",
+        "cross_owner_all_three_resources_404",
+        "no_sqlite_project_index_or_task_shadow_writes"
+      ],
+      "embedding_calls_after_startup": {
+        "documents": 0,
+        "queries": 0
+      },
+      "embedding_calls_total": {
+        "documents": 0,
+        "queries": 0
+      },
+      "sqlite_shadow_counts": {
+        "v3_projects": 0,
+        "v3_project_snapshots": 0,
+        "v3_code_indexes": 0,
+        "v3_tasks": 0
+      }
+    },
+    "rules_reload": {
+      "pid": 98619,
+      "source_identity": "50ec71900c3816a89a808f345b7bc10fe48d745fd2a1f1c6d85d08d0e38b3243",
+      "server_version": "14.24 (Ubuntu 14.24-0ubuntu0.22.04.1)",
+      "checks": [
+        "new_process_task_and_cross_domain_interview_reference_survived",
+        "queries_reuse_persisted_vectors_without_document_encoding",
+        "new_process_same_ranked_chunks_and_exact_references",
+        "cross_owner_all_three_resources_404",
+        "no_sqlite_project_index_or_task_shadow_writes"
+      ],
+      "embedding_calls_after_startup": {
+        "documents": 0,
+        "queries": 0
+      },
+      "embedding_calls_total": {
+        "documents": 0,
+        "queries": 0
+      },
+      "sqlite_shadow_counts": {
+        "v3_projects": 0,
+        "v3_project_snapshots": 0,
+        "v3_code_indexes": 0,
+        "v3_tasks": 0
+      }
+    },
+    "qwen_build": {
+      "pid": 98646,
+      "source_identity": "876063964b2bf665bdf26521673a56654d9dc606022414c09e7cc181180087f6",
+      "server_version": "14.24 (Ubuntu 14.24-0ubuntu0.22.04.1)",
+      "checks": [
+        "zip_snapshot_persistent_task_atomic_publication",
+        "project_interview_reads_selected_pg_code",
+        "queries_reuse_persisted_vectors_without_document_encoding",
+        "cross_owner_all_three_resources_404",
+        "no_sqlite_project_index_or_task_shadow_writes"
+      ],
+      "embedding_calls_after_startup": {
+        "documents": 2,
+        "queries": 2
+      },
+      "embedding_calls_total": {
+        "documents": 3,
+        "queries": 5
+      },
+      "sqlite_shadow_counts": {
+        "v3_projects": 0,
+        "v3_project_snapshots": 0,
+        "v3_code_indexes": 0,
+        "v3_tasks": 0
+      }
+    },
+    "qwen_reload": {
+      "pid": 99590,
+      "source_identity": "876063964b2bf665bdf26521673a56654d9dc606022414c09e7cc181180087f6",
+      "server_version": "14.24 (Ubuntu 14.24-0ubuntu0.22.04.1)",
+      "checks": [
+        "new_process_task_and_cross_domain_interview_reference_survived",
+        "queries_reuse_persisted_vectors_without_document_encoding",
+        "new_process_same_ranked_chunks_and_exact_references",
+        "cross_owner_all_three_resources_404",
+        "no_sqlite_project_index_or_task_shadow_writes"
+      ],
+      "embedding_calls_after_startup": {
+        "documents": 2,
+        "queries": 2
+      },
+      "embedding_calls_total": {
+        "documents": 2,
+        "queries": 4
+      },
+      "sqlite_shadow_counts": {
+        "v3_projects": 0,
+        "v3_project_snapshots": 0,
+        "v3_code_indexes": 0,
+        "v3_tasks": 0
+      }
+    }
+  },
+  "migration": {
+    "source_domain_identity": "95b6c48fa3407d226af7bc03ff5384a0c680407cc5138e5d0f22cfdd2b23222c",
+    "counts": {
+      "v3_projects": 2,
+      "v3_project_snapshots": 2,
+      "v3_project_files": 2,
+      "v3_code_indexes": 2,
+      "v3_code_symbols": 4,
+      "v3_code_chunks": 4,
+      "v3_code_edges": 0,
+      "v3_code_vectors": 0,
+      "v3_tasks": 1
+    },
+    "backup_sha256": "5f299f08189cb2e8829ec47ae107016c8f3f8bee8999b8f0aacfd1129e704259",
+    "backup_path": "/root/autodl-tmp/study/job-agent-v3/output/expansion/s5-migration-cli-apply-backup-v1.sqlite",
+    "stable_ids_preserved": true,
+    "active_source_writers_allowed": false,
+    "mode": "apply",
+    "production_migration_verified": false,
+    "source_preserved": true,
+    "source_writers_quiesced_asserted": true,
+    "import": {
+      "target_domain_identity": "95b6c48fa3407d226af7bc03ff5384a0c680407cc5138e5d0f22cfdd2b23222c",
+      "counts": {
+        "v3_projects": 2,
+        "v3_project_snapshots": 2,
+        "v3_project_files": 2,
+        "v3_code_indexes": 2,
+        "v3_code_symbols": 4,
+        "v3_code_chunks": 4,
+        "v3_code_edges": 0,
+        "v3_code_vectors": 0,
+        "v3_tasks": 1
+      },
+      "publication_map": {
+        "snapshot-1fac4eb901bf4815a5ea6d5c018b7c0f": "publication-migrated-f0661ea1583ecd3f9ec5581d0b06795b",
+        "snapshot-977370b868cf4878afae5b486fb07bd2": "publication-migrated-599dbc75b05d12d74e1374385a925afc"
+      },
+      "stable_ids_preserved": true,
+      "atomic_import_verified": true
+    }
+  },
+  "independent_worker": {
+    "standalone_process_observed": true,
+    "task": {
+      "task_id": "task-22944f9bc15b4e56b4b59b97512a0803",
+      "project_id": "project-5285892011074ed69ef653d467d483c9",
+      "snapshot_id": "snapshot-2814f41d7e474a578dae478bcbbe59c2",
+      "status": "SUCCEEDED",
+      "stage": "completed",
+      "attempts": 1,
+      "created_at": 1792674946.98077,
+      "updated_at": 1792674948.05768,
+      "error_code": null,
+      "generation": 1,
+      "config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+      "result": {
+        "chunks": 2,
+        "edges": 0,
+        "elapsed_ms": 1,
+        "embedding_model": null,
+        "file_manifest_hash": "074cc459e1c14b0c7a57e4a0e82fd62963b359bb2315dd82c566c6aed0cb5632",
+        "file_status": {
+          "receipt.py": "python_ast"
+        },
+        "files": 1,
+        "generation": 1,
+        "index_version": "code-syntax-v3-1/chunks-2",
+        "indexing_config_identity": "b66fb3e859e639504b16f13337c3223e71be74f7cac156f519c87962d90bf69d",
+        "oversized_lines_omitted": 0,
+        "publication_id": "publication-0a89fb8006b74140bc2a8603e606c8bc",
+        "runtime_executed": false,
+        "snapshot_id": "snapshot-2814f41d7e474a578dae478bcbbe59c2",
+        "storage_backend": "postgresql",
+        "symbols": 2,
+        "unresolved_references": 0,
+        "vector_index_identity": null,
+        "warnings": {}
+      },
+      "events": [
+        {
+          "seq": 1,
+          "kind": "submitted",
+          "attempt": 0,
+          "recorded_at": 1792674946.981596
+        },
+        {
+          "seq": 2,
+          "kind": "claimed",
+          "attempt": 1,
+          "recorded_at": 1792674948.051487
+        },
+        {
+          "seq": 3,
+          "kind": "publication_committed",
+          "attempt": 1,
+          "recorded_at": 1792674948.058133
+        }
+      ]
+    },
+    "atomic_publication": true
+  },
+  "server_restart": true,
+  "shadow_sqlite_writes": false,
+  "production_migration_verified": false,
+  "semantic_quality_gain_claim": null,
+  "future": [
+    "S1 final 60-80 candidate contract and human labels",
+    "S6 Outbox/Redis independent process fault matrix",
+    "S7 source learning",
+    "S8 unified delivery/eval-index replay"
+  ],
+  "failures_preserved": [
+    "s5-sqlite-extraction-v1.xml:252 passed/1 failure",
+    "s5-pg-download.log:stale14.23 mirror404",
+    "s5-pg-official-download.log:read timeout"
+  ],
+  "replay_scope": "single synthetic business fixture, dump restored into separate database; not final research index",
+  "real_http_and_v3_test_source_identity": "876063964b2bf665bdf26521673a56654d9dc606022414c09e7cc181180087f6",
+  "last_change": "Only shared concurrent owner quota/snapshot/file bound tests added after real HTTP; production implementation unchanged"
+}

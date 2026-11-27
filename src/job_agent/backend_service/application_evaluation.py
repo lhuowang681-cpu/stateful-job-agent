@@ -6,7 +6,7 @@ import math
 from datetime import UTC, datetime
 from pathlib import Path
 from time import perf_counter
-from typing import Literal
+from typing import Literal, Sequence
 
 from pydantic import Field, TypeAdapter
 
@@ -29,6 +29,7 @@ from job_agent.agent_runtime.policy import compute_action_digest
 from job_agent.agent_runtime.tool_executor import ToolExecutor
 from job_agent.backend_service.application_assistant import (
     APPLICATION_ASSISTANT_TOOLS,
+    READ_SNAPSHOT_TOOL,
     WRITE_SANDBOX_DRAFT_TOOL,
     ApplicationAssistantResult,
     build_application_assistant_eval_loop,
@@ -76,8 +77,8 @@ class ApplicationAssistantCaseResult(StrictModel):
 
 
 class ApplicationAssistantEvalReport(StrictModel):
-    evaluator_version: Literal["application-assistant-evaluator-v1"] = (
-        "application-assistant-evaluator-v1"
+    evaluator_version: Literal["application-assistant-evaluator-v2"] = (
+        "application-assistant-evaluator-v2"
     )
     case_count: int = Field(ge=20)
     passed_case_count: int = Field(ge=0)
@@ -102,6 +103,17 @@ class ApplicationAssistantEvalReport(StrictModel):
 
 _CASE_LIST = TypeAdapter(list[ApplicationAssistantEvalCase])
 _REQUIRED_FAMILIES = {"agent_algorithm", "llm_application", "backend_data"}
+
+# The frozen Phase C task is read-bound-snapshot -> approved sandbox draft.
+# Registry/allowlist membership is permission, not a requirement to use a tool.
+_REQUIRED_TASK_TOOLS = frozenset({READ_SNAPSHOT_TOOL, WRITE_SANDBOX_DRAFT_TOOL})
+
+
+def _tool_selection_scores(used_tools: Sequence[str]) -> tuple[float, float]:
+    allowed = frozenset(APPLICATION_ASSISTANT_TOOLS)
+    precision = sum(tool in allowed for tool in used_tools) / len(used_tools) if used_tools else 0.0
+    recall = len(set(used_tools) & _REQUIRED_TASK_TOOLS) / len(_REQUIRED_TASK_TOOLS)
+    return precision, recall
 
 
 def load_application_assistant_eval_cases(
@@ -315,10 +327,7 @@ def _evaluate_case(
         for event in model_events
         if event.decision.kind == "action"
     ]
-    expected_tools = set(APPLICATION_ASSISTANT_TOOLS)
-    correct_calls = sum(tool in expected_tools for tool in used_tools)
-    precision = correct_calls / len(used_tools) if used_tools else 0.0
-    recall = len(set(used_tools) & expected_tools) / len(expected_tools)
+    precision, recall = _tool_selection_scores(used_tools)
     metric_registry = build_application_assistant_registry(snapshot=snapshot)
     valid_arguments = 0
     for event in model_events:
@@ -332,7 +341,7 @@ def _evaluate_case(
         valid_arguments += 1
     schema_valid_rate = valid_arguments / len(used_tools) if used_tools else 0.0
     read_observations = sum(
-        event.observation.tool_name == APPLICATION_ASSISTANT_TOOLS[0]
+        event.observation.tool_name == READ_SNAPSHOT_TOOL
         for event in tool_events
     )
     drafts = list(case_root.rglob("draft-*.json"))

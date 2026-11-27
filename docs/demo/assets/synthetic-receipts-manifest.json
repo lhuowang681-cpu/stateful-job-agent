@@ -1,0 +1,23 @@
+{
+  "synthetic": true,
+  "license": "CC0-1.0",
+  "archive_sha256": "32524acc0cf8e8e224a17e113c7ef2cc2c4336c9a2f53965d33b3c3e6ad32b5e",
+  "projects": [
+    {
+      "owner": "synthetic-demo-user",
+      "project_id": "project-b97eb842163546c2b0d97ebe28d3b28f",
+      "snapshot": "snapshot-b99057c2da50475195305c03505c09fb",
+      "files": 6,
+      "symbols": 8
+    },
+    {
+      "owner": "synthetic-second-user",
+      "project_id": "project-df12d2d00fad457fb73bb23ab1f132d2",
+      "snapshot": "snapshot-46ced049258a43e79983f61ac1567b8e",
+      "files": 6,
+      "symbols": 8
+    }
+  ],
+  "source_execution": "not_run",
+  "model_calls": 0
+}
